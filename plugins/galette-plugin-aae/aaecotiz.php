@@ -20,7 +20,7 @@ use Galette\AAE\Preferences as AAE_Preferences;
 //but backup main Galette's template path before
 $orig_template_path = $tpl->template_dir;
 $tpl->template_dir = 'templates/' . $preferences->pref_theme;
-$tpl->compile_id = AAETOOLS_SMARTY_PREFIX;
+
 //set util paths
 $plugin_dir = basename(dirname($_SERVER['SCRIPT_NAME']));
 $tpl->assign(
