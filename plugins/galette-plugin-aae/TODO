@@ -1,0 +1,28 @@
+TODO
+----
+
+1/ Offres d'emplois :
+
+a/ gestion en base : (lib/GalletteAAE/Offres.php)			[en cours]
+	- ajouter/modifier offres
+		(rajouter les champs necessaires + compléter tableau data)
+
+b/ consultation : (offres.php listes_offres.tpl detail_offre.tpl)	[en cours]
+	- tableau récapitulatif des offres
+		- inclure lib dynatable
+		- quels champs afficher ?
+
+	- détail d'une offre
+		- quels champs afficher ?
+		- afficher contact (pour les adhérents uniquement ?)
+
+c/ gestion :								[en cours]
+	- ajouter_offres.php / .tpl
+		formulaire ok
+		--> .php recup param + envoyer en base
+
+	- gestion_offres.php / .tpl
+		tableau recap offre :
+		si admin / membre du bureau : toutes les offres
+		sinon mes offres
+		--> suppression / modification

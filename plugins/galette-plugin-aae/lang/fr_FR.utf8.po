@@ -1,0 +1,562 @@
+# Header entry was created by Lokalize.
+#
+# , 2013.
+# AGressin <adrien.gressin@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"PO-Revision-Date: 2014-12-18 13:31+0100\n"
+"Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
+"Language-Team: français <>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:54
+#, fuzzy
+msgid "Key word(s):"
+msgstr " Mot(s) clés :"
+
+#: ../templates/bootstrap/menu.tpl:5
+#, fuzzy
+msgid "Add or modify formations"
+msgstr "Ajouter une formation"
+
+#: ../templates/bootstrap/detail_offre.tpl:52
+msgid " , phone: "
+msgstr " , tel : "
+
+#: ../templates/bootstrap/ajouter_offre.tpl:51
+#: ../templates/bootstrap/ajouter_offre.tpl:65
+#, fuzzy
+msgid "(yyyy-mm-dd format)"
+msgstr "(format : aaaa)"
+
+#: ../templates/bootstrap/liste_offres.tpl:33
+#, fuzzy
+msgid "Offer type"
+msgstr " Type :"
+
+#: ../templates/bootstrap/liste_offres.tpl:32
+msgid "Publication date"
+msgstr "Date de publication"
+
+#: ../ajouter_offre.php:65
+msgid "Offer has been successfully modified."
+msgstr "L'offre a bien été modifiée"
+
+#: ../templates/bootstrap/detail_offre.tpl:25
+msgid "Posted on "
+msgstr "Posté le "
+
+#: ../templates/bootstrap/ajouter_offre.tpl:72
+msgid "Cursus:"
+msgstr "Cursus :"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:28
+msgid "CDD"
+msgstr "CDD"
+
+#: ../ajouter_offre.php:32
+msgid "creation"
+msgstr "Création"
+
+#: ../templates/bootstrap/aaetools.tpl:4 ../templates/default/aaetools.tpl:4
+#, fuzzy
+msgid "AAETools settings"
+msgstr "AAETools paramètres"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:27
+msgid "Stage"
+msgstr "Stage"
+
+#: ../templates/bootstrap/public_menu.tpl:6
+#: ../templates/bootstrap/public_menu.tpl:16
+#: ../templates/bootstrap/adh_fiche_action.tpl:6
+#: ../templates/default/public_menu.tpl:3
+#: ../templates/default/public_menu.tpl:6
+#: ../templates/default/adh_fiche_action.tpl:6
+msgid "How to contribute ?"
+msgstr "Comment cotiser ?"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:41
+msgid "Localisation:"
+msgstr "Localisation :"
+
+#: ../templates/bootstrap/liste_membres_aae.tpl:33
+#: ../templates/default/liste_membres_aae.tpl:34
+msgid "student"
+msgstr "étudiant"
+
+#: ../ajouter_offre.php:63
+msgid "Offer has not been modified!"
+msgstr "L'offre n'a pas été modifiée!"
+
+#: ../templates/bootstrap/detail_offre.tpl:50
+msgid " , email: "
+msgstr " , email : "
+
+#: ../templates/bootstrap/liste_offres.tpl:61
+msgid "Previous"
+msgstr "Précédent"
+
+#: ../templates/bootstrap/aaecotiz.tpl:17 ../templates/default/aaecotiz.tpl:16
+msgid ""
+"Merci de faire un virement avec l'intitulé 'cotis nom prenom' sur le compte "
+"suivant :"
+msgstr ""
+"Merci de faire un virement avec l'intitulé 'cotis nom prenom' sur le compte "
+"suivant :"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:36
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:43
+#: ../templates/default/ajouter_formation_eleve.tpl:36
+#: ../templates/default/ajouter_formation_eleve.tpl:43
+msgid "(yyyy format)"
+msgstr "(format : aaaa)"
+
+#: ../templates/bootstrap/gestion_formations.tpl:11
+#: ../templates/default/gestion_formations.tpl:11
+#, fuzzy
+msgid "Actions"
+msgstr "Actions"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:76
+msgid "Tech_majeures:"
+msgstr "Techniques majeures :"
+
+#: ../templates/bootstrap/liste_membres_aae.tpl:40
+#: ../templates/default/liste_membres_aae.tpl:41
+msgid "Name"
+msgstr "Nom"
+
+#: ../templates/bootstrap/adh_fiche_action.tpl:23
+#: ../templates/default/adh_fiche_action.tpl:23
+msgid "Add a formation"
+msgstr "Ajouter une formation"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:58
+msgid "Duration:"
+msgstr "Durée :"
+
+#: ../liste_eleves.php:55
+msgid "Members list"
+msgstr "Liste des membres"
+
+#: ../templates/bootstrap/liste_membres_aae.tpl:24
+#: ../templates/default/liste_membres_aae.tpl:21
+msgid "Refresh"
+msgstr "Rafraîchir"
+
+#: ../templates/bootstrap/menu.tpl:8
+msgid "Add job offer"
+msgstr "Ajouter une offre d'emploi"
+
+#: ../templates/bootstrap/detail_offre.tpl:43
+msgid "Pay: "
+msgstr "Salaire : "
+
+#: ../templates/bootstrap/ajouter_offre.tpl:12
+msgid "Contact Name:"
+msgstr "Nom du contact : "
+
+#: ../templates/bootstrap/aaecotiz.tpl:21 ../templates/default/aaecotiz.tpl:20
+msgid ""
+"En cas de virement groupé pour plusieurs personnes, merci de le préciser "
+"dans votre mail."
+msgstr ""
+"En cas de virement groupé pour plusieurs personnes, merci de le préciser "
+"dans votre mail."
+
+#: ../templates/bootstrap/ajouter_offre.tpl:45
+msgid "Site:"
+msgstr "Site :"
+
+#: ../templates/bootstrap/aaecotiz.tpl:3 ../templates/default/aaecotiz.tpl:3
+msgid "Contribution process"
+msgstr "Procédure de cotisation"
+
+#: ../templates/bootstrap/aaetools.tpl:6 ../templates/default/aaetools.tpl:6
+msgid "RIB"
+msgstr "RIB"
+
+#: ../templates/bootstrap/detail_offre.tpl:37
+msgid " of "
+msgstr " de "
+
+#: ../templates/bootstrap/ajouter_offre.tpl:26
+msgid " select a type "
+msgstr "-- choisir un type --"
+
+#: ../templates/bootstrap/aaecotiz.tpl:11
+#: ../templates/bootstrap/aaecotiz.tpl:19 ../templates/default/aaecotiz.tpl:10
+#: ../templates/default/aaecotiz.tpl:18
+msgid "et de prévenir de votre paiement en envoyant un mail à"
+msgstr "et de prévenir de votre paiement en envoyant un mail à"
+
+#: ../templates/bootstrap/aaecotiz.tpl:5 ../templates/default/aaecotiz.tpl:4
+msgid "Paiement par chèque"
+msgstr "Paiement par chèque"
+
+#: ../templates/bootstrap/liste_offres.tpl:64
+msgid "Show:"
+msgstr "Montrer"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:33
+msgid "Description:"
+msgstr "Description :"
+
+#: ../aaetools.php:56
+msgid "RIB has not been modified!"
+msgstr "Le RIB n'a pas été modifié"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:33
+#: ../templates/default/ajouter_formation_eleve.tpl:33
+#, fuzzy
+msgid "Beging of the formation:"
+msgstr "Début de la formation :"
+
+#: ../aaecotiz.php:40 ../templates/bootstrap/menu.tpl:7
+#: ../templates/default/menu.tpl:6
+msgid "Contribution"
+msgstr "Cotisation"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:49
+msgid "Available until:"
+msgstr "Disponible jusqu'au :"
+
+#: ../templates/bootstrap/gestion_formations.tpl:9
+#: ../templates/default/gestion_formations.tpl:9
+msgid "End"
+msgstr "Fin"
+
+#: ../templates/bootstrap/detail_offre.tpl:46
+msgid "Contact: "
+msgstr "Contact : "
+
+#: ../templates/bootstrap/ajouter_offre.tpl:8
+msgid "Title:"
+msgstr "Titre :"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:47
+#: ../templates/default/ajouter_formation_eleve.tpl:47
+msgid "Speciality:"
+msgstr "Spécialité :"
+
+#: ../templates/bootstrap/menu.tpl:9 ../templates/default/menu.tpl:7
+#, fuzzy
+msgid "Add formation"
+msgstr "Ajouter une formation"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:55
+#: ../templates/bootstrap/aaetools.tpl:13
+#: ../templates/bootstrap/ajouter_offre.tpl:82
+#: ../templates/default/ajouter_formation_eleve.tpl:55
+#: ../templates/default/aaetools.tpl:13
+msgid "Save"
+msgstr "Sauver"
+
+#: ../ajouter_offre.php:30
+msgid "modification"
+msgstr "modification"
+
+#: ../templates/bootstrap/detail_offre.tpl:28
+msgid " by "
+msgstr " par "
+
+#: ../templates/bootstrap/ajouter_offre.tpl:29
+msgid "CDI"
+msgstr "CDI"
+
+#: ../gestion_formations_eleve.php:22
+msgid "Formations managment"
+msgstr "Gestion des formations"
+
+#: ../templates/bootstrap/detail_offre.tpl:34
+#, fuzzy
+msgid " Type:"
+msgstr " Type :"
+
+#: ../templates/bootstrap/detail_offre.tpl:31
+#, fuzzy
+msgid " Key word(s):"
+msgstr " Mot(s) clés :"
+
+#: ../templates/bootstrap/menu.tpl:1 ../templates/default/menu.tpl:1
+msgid "AAE"
+msgstr "AAE"
+
+#: ../templates/bootstrap/menu.tpl:7 ../templates/default/menu.tpl:6
+msgid "Who to contribute ?"
+msgstr "Comment cotiser ?"
+
+#: ../templates/bootstrap/liste_offres.tpl:31
+msgid "Enterprise"
+msgstr "Entreprise"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:40
+#: ../templates/default/ajouter_formation_eleve.tpl:40
+msgid "End of the formation:"
+msgstr "Fin de la formation"
+
+#: ../templates/bootstrap/aaecotiz.tpl:25 ../templates/default/aaecotiz.tpl:24
+#, fuzzy
+msgid "Veuillez vous identifier pour obtenir le RIB, ou le demander à"
+msgstr ""
+"Veuillez vous identifier pour obtenir le RIB, ou vous pouvez le demander à"
+
+#: ../templates/bootstrap/gestion_formations.tpl:6
+#: ../templates/default/gestion_formations.tpl:6
+msgid "Cycle"
+msgstr "Cycle"
+
+#: ../templates/bootstrap/adh_fiche_action.tpl:14
+#: ../templates/default/adh_fiche_action.tpl:14
+msgid "View formations"
+msgstr "Voir les formations"
+
+#: ../templates/bootstrap/aaecotiz.tpl:14 ../templates/default/aaecotiz.tpl:13
+msgid "Paiement par RIB"
+msgstr "Paiement par RIB"
+
+#: ../aaetools.php:64 ../templates/bootstrap/menu.tpl:4
+#: ../templates/default/menu.tpl:4
+msgid "AAE Tools"
+msgstr "Outils pour l'AAE"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:5
+#: ../templates/bootstrap/ajouter_offre.tpl:4
+#: ../templates/default/ajouter_formation_eleve.tpl:5
+msgid "NB : The mandatory fields are in"
+msgstr "NB : Les champs obligatoire sont en "
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:64
+#: ../templates/default/ajouter_formation_eleve.tpl:64
+msgid "No member registered!"
+msgstr "Aucun membre existant"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:16
+msgid "Contact Mail:"
+msgstr "e-mail du contact : "
+
+#: ../templates/bootstrap/detail_offre.tpl:40
+msgid ", begining "
+msgstr ", commençant le "
+
+#: ../liste_offres.php:32
+#, fuzzy
+msgid "Job offer details"
+msgstr "Détails de l'offre"
+
+#: ../templates/bootstrap/liste_offres.tpl:30
+#, fuzzy
+msgid "Title"
+msgstr "Titre :"
+
+#: ../liste_offres.php:44 ../templates/bootstrap/public_menu.tpl:9
+#: ../templates/bootstrap/public_menu.tpl:19
+#, fuzzy
+msgid "Job offers list"
+msgstr "Liste des offres d'emplois"
+
+#: ../templates/bootstrap/detail_offre.tpl:55
+msgid "Please log in to access contact information."
+msgstr "Merci de vous connecter pour accéder aux informations du contact."
+
+#: ../templates/bootstrap/ajouter_offre.tpl:20
+msgid "Contact Phone number:"
+msgstr "Numéro de tel du contact :"
+
+#: ../templates/bootstrap/detail_offre.tpl:48
+#, fuzzy
+msgid " Name: "
+msgstr " Nom: "
+
+#: ../templates/bootstrap/liste_membres_aae.tpl:15
+#: ../templates/default/liste_membres_aae.tpl:13
+msgid "Promotion:"
+msgstr "Promotion :"
+
+#: ../templates/bootstrap/liste_membres_aae.tpl:3
+#: ../templates/default/liste_membres_aae.tpl:3
+msgid "Select cycle and promotion"
+msgstr "Sélectionner le cycle et la promotion"
+
+#: ../templates/bootstrap/liste_membres_aae.tpl:24
+#: ../templates/default/liste_membres_aae.tpl:25
+#, fuzzy
+msgid "Continue"
+msgstr "Continuer"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:5
+#: ../templates/bootstrap/ajouter_offre.tpl:4
+#: ../templates/default/ajouter_formation_eleve.tpl:5
+msgid "red"
+msgstr "rouge"
+
+#: ../templates/bootstrap/menu.tpl:4 ../templates/default/menu.tpl:4
+msgid "Various tools for AAE"
+msgstr "Différents outils pour l'AAE"
+
+#: ../templates/bootstrap/liste_membres_aae.tpl:43
+#: ../templates/default/liste_membres_aae.tpl:44
+msgid "First Name"
+msgstr "Prénom"
+
+#: ../templates/bootstrap/liste_offres.tpl:62
+msgid "Next"
+msgstr "Suivant"
+
+#: ../templates/bootstrap/menu.tpl:9 ../templates/default/menu.tpl:7
+#, fuzzy
+msgid "Add a formation to someone"
+msgstr "Ajouter une formation"
+
+#: ../templates/bootstrap/aaecotiz.tpl:7 ../templates/default/aaecotiz.tpl:6
+msgid ""
+"Merci d'envoyer un chèque à l'ordre de l'AAE-ENSG à l'adresse suivante :"
+msgstr ""
+"Merci d'envoyer un chèque à l'ordre de l'AAE-ENSG à l'adresse suivante :"
+
+#: ../templates/bootstrap/menu.tpl:5
+#, fuzzy
+msgid "Formation Gestion"
+msgstr "Gestion des formations"
+
+#: ../templates/bootstrap/detail_offre.tpl:28
+msgid " from "
+msgstr " de "
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:68
+#: ../templates/default/ajouter_formation_eleve.tpl:68
+msgid "please create a member"
+msgstr "merci de créer un membre"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:37
+msgid "Organisme:"
+msgstr "Organisme :"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:9
+#: ../templates/default/ajouter_formation_eleve.tpl:9
+msgid "Member:"
+msgstr "Membre :"
+
+#: ../templates/bootstrap/public_menu.tpl:3
+#: ../templates/bootstrap/public_menu.tpl:13
+#: ../templates/default/public_menu.tpl:2
+#: ../templates/default/public_menu.tpl:5
+msgid "Former students list"
+msgstr "Liste des anciens élèves"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:68
+msgid "Salary:"
+msgstr "Salaire :"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:7
+#: ../templates/default/ajouter_formation_eleve.tpl:7
+msgid "Select a member "
+msgstr "Sélectionner un membre "
+
+#: ../templates/bootstrap/liste_offres.tpl:75
+msgid "No offer to show"
+msgstr "Aucune offres à afficher"
+
+#: ../templates/bootstrap/gestion_formations.tpl:7
+#: ../templates/bootstrap/liste_membres_aae.tpl:46
+#: ../templates/default/gestion_formations.tpl:7
+#: ../templates/default/liste_membres_aae.tpl:47
+msgid "Speciality"
+msgstr "Spécialité"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:63
+msgid "Beginning:"
+msgstr "Début :"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:24
+#, fuzzy
+msgid "Offer Type:"
+msgstr " Type :"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:24
+#: ../templates/bootstrap/liste_membres_aae.tpl:5
+#: ../templates/default/ajouter_formation_eleve.tpl:24
+#: ../templates/default/liste_membres_aae.tpl:5
+#, fuzzy
+msgid "Cycle:"
+msgstr "Cycle :"
+
+#: ../templates/bootstrap/gestion_formations.tpl:8
+#: ../templates/default/gestion_formations.tpl:8
+msgid "Begin"
+msgstr "Début"
+
+#: ../templates/bootstrap/liste_offres.tpl:63
+msgid "Search:"
+msgstr "Recherche :"
+
+#: ../templates/bootstrap/aaetools.tpl:7 ../templates/default/aaetools.tpl:7
+msgid "(Max 255 characters)"
+msgstr "(Max 255 characters)"
+
+#: ../aaetools.php:58
+msgid "RIB has been successfully modified."
+msgstr "RIB bien enregistré"
+
+#: ../ajouter_offre.php:28
+#, fuzzy
+msgid "Job offer"
+msgstr "Liste des offres d'emplois"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:12
+#: ../templates/default/ajouter_formation_eleve.tpl:12
+msgid "-- select a name --"
+msgstr "-- choisir un nom --"
+
+#: ../templates/bootstrap/liste_membres_aae.tpl:33
+#: ../templates/default/liste_membres_aae.tpl:34
+msgid "students"
+msgstr "étudiants"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:66
+#: ../templates/default/ajouter_formation_eleve.tpl:66
+msgid "Unfortunately, there is no member in your database yet,"
+msgstr "Il n'y a aucun membre dans votre base de donnée,"
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:22
+#: ../templates/default/ajouter_formation_eleve.tpl:22
+msgid "Formation details"
+msgstr "Détails des formations"
+
+#: ../templates/bootstrap/liste_membres_aae.tpl:62
+#: ../templates/default/liste_membres_aae.tpl:63
+msgid "No member to show"
+msgstr "Pas de membres à afficher"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:60
+msgid "(e.g., 3 months or 2 years; leave empty for permanent job)"
+msgstr "(exemple : 3 mois, 2 ans; laisser vide pour un CDI)"
+
+#: ../templates/bootstrap/liste_offres.tpl:65
+msgid "Pages:"
+msgstr "Pages :"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:6
+#, fuzzy
+msgid "Offer detail "
+msgstr "Détails de l'offre"
+
+#~ msgid "offer"
+#~ msgstr "offre"
+
+#~ msgid " Key word(s) :"
+#~ msgstr " Mot(s) clés :"
+
+#~ msgid "offers"
+#~ msgstr "offres"
+
+#~ msgid "Pay : "
+#~ msgstr "Salaire : "

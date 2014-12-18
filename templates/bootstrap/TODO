@@ -1,0 +1,14 @@
+
+logo :
+	mettre les logos dans dossier images
+	+ lien vers ces logos : css + public_page.tpl
+	verif couleur sur petit écran
+
+Page d'acceuil :
+	- mots de passe perdu (public_page.tpl):
+ 		à mettre sur la page d'acceuil
+
+	- texte bienvenue / présentation / explication ?
+		- adhésion en ligne
+		- annuaire
+		- offres d'emplois

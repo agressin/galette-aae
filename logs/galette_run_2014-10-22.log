@@ -1,0 +1,224 @@
+192.168.56.101 - 2014-10-22 12:39:09 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 201
+192.168.56.101 - 2014-10-22 12:39:09 - 5 - PHP Notice: Undefined variable: StartYear in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 216
+192.168.56.101 - 2014-10-22 12:39:09 - 4 - Unable to retrieve members promotion for "1". | ". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-22 12:39:09 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_adherents`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_adherents` WHERE (galette_aae_formations.annee_debut = ?) AND (galette_aae_formations.id_cycle = '1') AND (galette_aae_formations.id_adh = galette_adherents.id_adh) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#6 {main}
+192.168.56.101 - 2014-10-22 12:39:18 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 201
+192.168.56.101 - 2014-10-22 12:39:18 - 5 - PHP Notice: Undefined variable: StartYear in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 216
+192.168.56.101 - 2014-10-22 12:39:18 - 4 - Unable to retrieve members promotion for "1". | ". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-22 12:39:18 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_adherents`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_adherents` WHERE (galette_aae_formations.annee_debut = ?) AND (galette_aae_formations.id_cycle = '1') AND (galette_aae_formations.id_adh = galette_adherents.id_adh) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#6 {main}
+192.168.56.101 - 2014-10-22 12:40:10 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 201
+192.168.56.101 - 2014-10-22 12:40:10 - 5 - PHP Notice: Undefined variable: StartYear in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 216
+192.168.56.101 - 2014-10-22 12:40:10 - 4 - Unable to retrieve members promotion for "1". | ". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-22 12:40:10 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_adherents`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_adherents` WHERE (galette_aae_formations.annee_debut = ?) AND (galette_aae_formations.id_cycle = '1') AND (galette_aae_formations.id_adh = galette_adherents.id_adh) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#6 {main}
+192.168.56.101 - 2014-10-22 12:40:22 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 201
+192.168.56.101 - 2014-10-22 12:40:22 - 5 - PHP Notice: Undefined variable: StartYear in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 216
+192.168.56.101 - 2014-10-22 12:40:22 - 4 - Unable to retrieve members promotion for "1". | ". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-22 12:40:22 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_adherents`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_adherents` WHERE (galette_aae_formations.annee_debut = ?) AND (galette_aae_formations.id_cycle = '1') AND (galette_aae_formations.id_adh = galette_adherents.id_adh) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#6 {main}
+192.168.56.101 - 2014-10-22 12:41:27 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 201
+192.168.56.101 - 2014-10-22 12:41:27 - 5 - PHP Notice: Undefined variable: StartYear in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 216
+192.168.56.101 - 2014-10-22 12:41:27 - 4 - Unable to retrieve members promotion for "1". | ". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-22 12:41:27 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_adherents`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_adherents` WHERE (galette_aae_formations.annee_debut = ?) AND (galette_aae_formations.id_cycle = '1') AND (galette_aae_formations.id_adh = galette_adherents.id_adh) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#6 {main}
+192.168.56.101 - 2014-10-22 12:41:41 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 201
+192.168.56.101 - 2014-10-22 12:41:41 - 5 - PHP Notice: Undefined variable: StartYear in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 216
+192.168.56.101 - 2014-10-22 12:41:41 - 4 - Unable to retrieve members promotion for "1". | ". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-22 12:41:41 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_adherents`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_adherents` WHERE (galette_aae_formations.annee_debut = ?) AND (galette_aae_formations.id_cycle = '1') AND (galette_aae_formations.id_adh = galette_adherents.id_adh) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2013')
+#6 {main}
+192.168.56.101 - 2014-10-22 12:42:07 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 201
+192.168.56.101 - 2014-10-22 12:42:07 - 5 - PHP Notice: Undefined variable: StartYear in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 216
+192.168.56.101 - 2014-10-22 12:42:07 - 4 - Unable to retrieve members promotion for "1". | ". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-22 12:42:07 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_adherents`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_adherents` WHERE (galette_aae_formations.annee_debut = ?) AND (galette_aae_formations.id_cycle = '1') AND (galette_aae_formations.id_adh = galette_adherents.id_adh) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2010')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2010')
+#6 {main}
+192.168.56.101 - 2014-10-22 13:22:04 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 201
+192.168.56.101 - 2014-10-22 13:22:04 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 216
+192.168.56.101 - 2014-10-22 13:22:04 - 4 - Unable to retrieve members promotion for "1". | ". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-22 13:22:04 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_adherents`.`id_adh`, `galette_adherents`.`nom_adh`, `galette_adherents`.`prenom_adh` FROM `galette_aae_formations`
+ INNER JOIN `galette_adherents` WHERE (galette_aae_formations.annee_debut = ?) AND (galette_aae_formations.id_cycle = '1') AND (galette_aae_formations.id_adh = galette_adherents.id_adh) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2010')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(205): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2010')
+#6 {main}
+192.168.56.101 - 2014-10-22 13:23:59 - 4 - toto
+192.168.56.101 - 2014-10-22 13:23:59 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 202
+192.168.56.101 - 2014-10-22 13:23:59 - 4 - toto1
+192.168.56.101 - 2014-10-22 13:23:59 - 5 - PHP Notice: Undefined variable: Sannee_debut in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 217
+192.168.56.101 - 2014-10-22 13:23:59 - 4 - Unable to retrieve members promotion for "1". | ". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-22 13:23:59 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_adherents`.`id_adh`, `galette_adherents`.`nom_adh`, `galette_adherents`.`prenom_adh` FROM `galette_aae_formations`
+ INNER JOIN `galette_adherents` WHERE (galette_aae_formations.annee_debut = ?) AND (galette_aae_formations.id_cycle = '1') AND (galette_aae_formations.id_adh = galette_adherents.id_adh) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(206): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2010')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(206): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/public.php(45): Galette\AAE\Formations->getPromotion('1', '2010')
+#6 {main}
+192.168.56.101 - 2014-10-22 13:24:34 - 4 - toto
+192.168.56.101 - 2014-10-22 13:24:34 - 4 - toto1
+192.168.56.101 - 2014-10-22 13:25:18 - 4 - toto
+192.168.56.101 - 2014-10-22 13:25:18 - 4 - toto1
+192.168.56.101 - 2014-10-22 13:26:37 - 4 - toto
+192.168.56.101 - 2014-10-22 13:26:37 - 4 - toto1
