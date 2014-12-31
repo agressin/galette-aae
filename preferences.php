@@ -15,7 +15,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2004-2013 The Galette Team
+ * Copyright © 2004-2014 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -37,7 +37,7 @@
  *
  * @author    Frédéric Jaqcuot <unknown@unknow.com>
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2004-2013 The Galette Team
+ * @copyright 2004-2014 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
@@ -45,7 +45,7 @@
  */
 
 use Galette\Core;
-use Analog\Analog as Analog;
+use Analog\Analog;
 
 /** @ignore */
 require_once 'includes/galette.inc.php';
@@ -276,9 +276,12 @@ if ( isset($_POST['valid']) && $_POST['valid'] == '1' ) {
         }
     }
 
-    if (GALETTE_MODE !== 'DEMO' ) {
-        // Check passwords. MD5 hash will be done into the Preferences class
-        if (strcmp($insert_values['pref_admin_pass'], $_POST['pref_admin_pass_check']) != 0) {
+    if (GALETTE_MODE !== 'DEMO' && $login->isSuperAdmin() ) {
+        // Check passwords. Hash will be done into the Preferences class
+        if ( strcmp(
+            $insert_values['pref_admin_pass'],
+            $_POST['pref_admin_pass_check']
+        ) != 0 ) {
             $error_detected[] = _T("Passwords mismatch");
         }
     }
@@ -304,7 +307,8 @@ if ( isset($_POST['valid']) && $_POST['valid'] == '1' ) {
                 || (!$login->isSuperAdmin()
                 && ($champ != 'pref_admin_pass' && $champ != 'pref_admin_login'))
             ) {
-                if ( ($champ == "pref_admin_pass" && $_POST['pref_admin_pass'] !=  '')
+                if ( ($champ == "pref_admin_pass"
+                    && $_POST['pref_admin_pass'] !=  '')
                     || ($champ != "pref_admin_pass")
                 ) {
                     $preferences->$champ = $valeur;
@@ -419,8 +423,7 @@ $tpl->assign(
         10 => '10',
         20 => '20',
         50 => '50',
-        100 => '100',
-        0 => _T("All")
+        100 => '100'
     )
 );
 $tpl->assign('page_title', _T("Settings"));

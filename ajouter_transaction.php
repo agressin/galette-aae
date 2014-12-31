@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2004-2013 The Galette Team
+ * Copyright © 2004-2014 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -29,19 +29,19 @@
  *
  * @author    Laurent Pelecq <laurent.pelecq@soleil.org>
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2004-2013 The Galette Team
+ * @copyright 2004-2014 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
  * @since     Available since 0.62
  */
 
-use Galette\Entity\Adherent as Adherent;
-use Galette\Entity\DynamicFields as DynamicFields;
-use Galette\Entity\Transaction as Transaction;
-use Galette\Entity\Contribution as Contribution;
-use Galette\Repository\Contributions as Contributions;
-use Galette\Repository\Members as Members;
+use Galette\Entity\Adherent;
+use Galette\Entity\DynamicFields;
+use Galette\Entity\Transaction;
+use Galette\Entity\Contribution;
+use Galette\Repository\Contributions;
+use Galette\Repository\Members;
 
 require_once 'includes/galette.inc.php';
 
@@ -106,10 +106,24 @@ if ( $trans_id != '' ) {
 $transaction['dyn'] = array();
 
 if ( isset($_POST['valid']) ) {
-    $transaction['dyn'] = $dyn_fields->extractPosted($_POST, array());
-
+    // dynamic fields
+    $transaction['dyn'] = $dyn_fields->extractPosted(
+        $_POST,
+        $_FILES,
+        array(),
+        $transaction['id_adh']
+    );
+    $dyn_fields_errors = $dyn_fields->getErrors();
+    if ( count($dyn_fields_errors) > 0 ) {
+        $error_detected = array_merge($error_detected, $dyn_fields_errors);
+    }
+    // regular fields
     $valid = $trans->check($_POST, $required, $disabled);
-    if ( $valid === true ) {
+    if ( $valid !== true ) {
+        $error_detected = array_merge($error_detected, $valid);
+    }
+
+    if ( count($error_detected) == 0) {
         //all goes well, we can proceed
         $new = false;
         if ( $trans->id == '' ) {

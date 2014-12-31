@@ -145,6 +145,11 @@
     {if $login->isAdmin() or $login->isStaff()}
                             <li><input type="submit" name="csv" value="{_T string="Export as CSV"}"/></li>
     {/if}
+    {if $plugin_batch_actions|@count != 0}
+        {foreach from=$plugin_batch_actions item=action}
+            {include file=$action}
+        {/foreach}
+    {/if}
                         </ul>
                     </td>
                 </tr>
@@ -413,7 +418,8 @@
                         showOn: 'button',
                         buttonImage: '{$template_subdir}images/calendar.png',
                         buttonImageOnly: true,
-                        yearRange: 'c:c+5'
+                        yearRange: 'c:c+5',
+                        buttonText: '{_T string="Select a date" escape="js"}'
                     });
                 },
                 error: function() {

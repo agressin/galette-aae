@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2012-2013 The Galette Team
+ * Copyright © 2012-2014 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,19 +28,19 @@
  * @package   Galette
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2013 The Galette Team
+ * @copyright 2012-2014 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
  * @since     Available since 0.7.3dev - 2012-10-11
  */
 
-use Galette\Filters\MembersList as MembersList;
-use Galette\Filters\AdvancedMembersList as AdvancedMembersList;
-use Galette\Entity\Adherent as Adherent;
-use Galette\Entity\DynamicFields as DynamicFields;
-use Galette\Entity\FieldsConfig as FieldsConfig;
-use Galette\Entity\Contribution as Contribution;
+use Galette\Filters\MembersList;
+use Galette\Filters\AdvancedMembersList;
+use Galette\Entity\Adherent;
+use Galette\Entity\DynamicFields;
+use Galette\Entity\FieldsConfig;
+use Galette\Entity\Contribution;
 
 /** @ignore */
 require_once 'includes/galette.inc.php';

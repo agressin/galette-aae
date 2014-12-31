@@ -1,5 +1,5 @@
 /**
- * Copyright © 2007-2013 The Galette Team
+ * Copyright © 2007-2014 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -20,7 +20,7 @@
  * @package   Galette
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2007-2013 The Galette Team
+ * @copyright 2007-2014 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
@@ -138,4 +138,17 @@ $(function() {
         }
     });
     $('.selected').addClass('ui-state-disabled');
+
+    if ( $('#back2top').length > 0 ) {
+        if (!$('#wrapper').scrollTop() && !$('html').scrollTop() ) {
+            $('#back2top').fadeOut();
+        }
+        $(window).scroll(function() {
+            if ($(this).scrollTop()) {
+                $('#back2top').fadeIn();
+            } else {
+                $('#back2top').fadeOut();
+            }
+        });
+    }
 });

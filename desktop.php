@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2011-2013 The Galette Team
+ * Copyright © 2011-2014 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,7 +28,7 @@
  * @package   Galette
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2011-2013 The Galette Team
+ * @copyright 2011-2014 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
@@ -52,6 +52,9 @@ $tpl->assign('page_title', _T("Dashboard"));
 $tpl->assign('contentcls', 'desktop');
 $tpl->assign('show_dashboard', $_COOKIE['show_galette_dashboard']);
 $tpl->assign('require_cookie', true);
+
+$news = new Galette\IO\News($preferences->pref_rss_url);
+$tpl->assign('news', $news->getPosts());
 
 $content = $tpl->fetch('desktop.tpl');
 $tpl->assign('content', $content);

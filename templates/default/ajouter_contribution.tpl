@@ -63,7 +63,7 @@
                         {html_options options=$type_cotis_options selected=$selectedid}
                     </select>
     {if $type_selected eq 1}
-                    <a class="button" id="btnback" href="javascript:back();" title="{_T string="Back to previous window, if you want to select a contribution type that is not listed here"}">{_T string="Back"}</a>
+                    <a class="button" id="btnback" href="javascript:history.back();" title="{_T string="Back to previous window, if you want to select a contribution type that is not listed here"}">{_T string="Back"}</a>
     {/if}
                 </p>
             </fieldset>
@@ -87,11 +87,19 @@
                     </select>
                 </p>
                 <p>
+                    <label class="bline" for="date_enreg">
+                        {_T string="Record date:"}
+                    </label>
+                    <input class="past-date-pick" type="text" name="date_enreg" id="date_enreg" value="{$contribution->date}" maxlength="10"{if $required.date_enreg eq 1} required{/if}/>
+                    <span class="exemple">{_T string="(yyyy-mm-dd format)"}</span>
+                </p>
+
+                <p>
                     <label class="bline" for="date_debut_cotis">
                         {if $contribution->isCotis()}
-                            {_T string="Date of contribution:"}
-                        {else}
                             {_T string="Start date of membership:"}
+                        {else}
+                            {_T string="Date of contribution:"}
                         {/if}
                     </label>
                     <input class="past-date-pick" type="text" name="date_debut_cotis" id="date_debut_cotis" value="{$contribution->begin_date}" maxlength="10"{if $required.date_debut_cotis eq 1} required{/if}/>
@@ -144,12 +152,13 @@
     <script type="text/javascript">
         $(function(){
             $.datepicker.setDefaults($.datepicker.regional['{$galette_lang}']);
-            $('#date_debut_cotis, #date_fin_cotis').datepicker({
+            $('#date_debut_cotis, #date_fin_cotis, #date_enreg').datepicker({
                 changeMonth: true,
                 changeYear: true,
                 showOn: 'button',
                 buttonImage: '{$template_subdir}images/calendar.png',
-                buttonImageOnly: true
+                buttonImageOnly: true,
+                buttonText: '{_T string="Select a date" escape="js"}'
             });
         });
     </script>

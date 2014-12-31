@@ -97,9 +97,9 @@
                 <legend>{_T string="Galette's parameters"}</legend>
                 <p>
                     <label for="pref_lang" class="bline">{_T string="Default language:"}</label>
-                    <select name="pref_lang" id="pref_lang">
+                    <select name="pref_lang" id="pref_lang" class="lang">
 {foreach item=langue from=$languages}
-                        <option value="{$langue->getID()}" {if $pref.pref_lang eq $langue->getID()}selected="selected"{/if} style="padding-left: 30px; background-image: url({$langue->getFlag()}); background-repeat: no-repeat">{$langue->getName()|ucfirst}</option>
+                        <option value="{$langue->getID()}" {if $pref.pref_lang eq $langue->getID()}selected="selected"{/if} style="background-image: url({$langue->getFlag()});">{$langue->getName()|ucfirst}</option>
 {/foreach}
                     </select>
                 </p>
@@ -156,6 +156,11 @@
                     <span class="tip">{_T string="Enter a script URI that would be called after adding a new contribution.<br/>Script URI must be prefixed by one of '<em>galette://</em>' for Galette internal call. '<em>file://</em>' for a direct file call, '<em>get://</em>' or '<em>post://</em>' for HTTP calls (prefix will be replaced by http:// in those cases)."}</span>
                     <input type="text" name="pref_new_contrib_script" id="pref_new_contrib_script" value="{$pref.pref_new_contrib_script}"{if isset($required.pref_new_contrib_script) and $required.pref_new_contrib_script eq 1} required{/if}/>
                 </p>
+                <p>
+                    <label for="pref_rss_url" class="bline tooltip" title="{_T string="URL to the RSS feed."}">{_T string="RSS feed URL"}</label>
+                    <span class="tip">{_T string="Enter the full URL to the RSS feed. It will be displayed on Galette desktop."}</span>
+                    <input type="text" name="pref_rss_url" id="pref_rss_url" value="{$pref.pref_rss_url}"{if isset($required.pref_new_contrib_script) and $required.pref_new_contrib_script eq 1} required{/if}/>
+                </p>
             </fieldset>
 
             <fieldset class="cssform" id="mail">
@@ -182,12 +187,18 @@
                     <input type="text" name="pref_email_newadh" id="pref_email_newadh" value="{$pref.pref_email_newadh}" maxlength="100" size="30"{if isset($required.pref_email_newadh) and $required.pref_email_newadh eq 1} required{/if}/>
                 </p>
                 <p>
-                    <label for="pref_bool_mailadh" class="bline tooltip" title="{_T string="Sends an email each time a new member registers online"}">{_T string="Send email to administrators ?"}</label>
+                    <label for="pref_bool_mailadh" class="bline tooltip" title="{_T string="Sends an email each time a new member registers online"}">{_T string="Send email to administrators?"}</label>
                     <span class="tip">{_T string="Sends an email each time a new member registers online"}</span>
                     <input type="checkbox" name="pref_bool_mailadh" id="pref_bool_mailadh" value="1" {if $pref.pref_bool_mailadh eq 1}checked="checked"{/if}{if isset($required.pref_bool_mailadh) and $required.pref_bool_mailadh eq 1} required{/if}/>
                 </p>
                 <p>
-                    <label for="pref_editor_enabled" class="bline tooltip" title="{_T string="Should HTML editor be activated on page load ?"}">{_T string="Activate HTML editor ?"}</label>
+                    <label for="pref_bool_wrap_mails" class="bline tooltip" title="{_T string="Automatically wrap text mails before sending"}">{_T string="Wrap text mails?"}</label>
+                    <span class="tip">{_T string="Automatically wrap text mails before sending. Make sure to wrap yourself if you disable that. Please note that current editing mailing will not be affected by a change."}</span>
+                    <input type="checkbox" name="pref_bool_wrap_mails" id="pref_bool_wrap_mails" value="1" {if $pref.pref_bool_wrap_mails eq 1}checked="checked"{/if}{if isset($required.pref_bool_wrap_mails) and $required.pref_bool_wrap_mails eq 1} required{/if}/>
+                </p>
+
+                <p>
+                    <label for="pref_editor_enabled" class="bline tooltip" title="{_T string="Should HTML editor be activated on page load ?"}">{_T string="Activate HTML editor?"}</label>
                     <span class="tip">{_T string="Should HTML editor be activated on page load ?"}</span>
                     <input type="checkbox" name="pref_editor_enabled" id="pref_editor_enabled" value="1" {if $pref.pref_editor_enabled eq 1}checked="checked"{/if}{if isset($required.pref_editor_enabled) and $required.pref_editor_enabled eq 1} required{/if}/>
                 </p>

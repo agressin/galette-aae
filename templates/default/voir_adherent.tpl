@@ -2,7 +2,7 @@
     <nav>
         <a id="prev" href="{if isset($navigate.prev)}?id_adh={$navigate.prev}{else}#{/if}" class="button{if !isset($navigate.prev)} selected{/if}">{_T string="Previous"}</a>
         {$navigate.pos}/{$navigate.count}
-        <a id="next" href="{if isset($navigate.next)}?id_adh={$navigate.next}{else}#{/if}"class="button{if !isset($navigate.next)} selected{/if}">{_T string="Next"}</a>
+        <a id="next" href="{if isset($navigate.next)}?id_adh={$navigate.next}{else}#{/if}" class="button{if !isset($navigate.next)} selected{/if}">{_T string="Next"}</a>
     </nav>
 {/if}
         <ul id="details_menu">
@@ -10,7 +10,7 @@
             <li>
                 <a class="button{if !$member->isUp2Date()} disabled{/if}" href="{if $member->isUp2Date()}carte_adherent.php?id_adh={$member->id}{else}#{/if}" id="btn_membercard">{_T string="Generate Member Card"}</a>
             </li>
-    {if $pref_mail_method neq constant('Galette\Core\GaletteMail::METHOD_DISABLED')}
+    {if $pref_mail_method neq constant('Galette\Core\GaletteMail::METHOD_DISABLED') && ($login->isAdmin() || $login->isStaff())}
             <li>
                 <a class="button" href="lostpasswd.php?id_adh={$member->id}" id="btn_lostpassword" title="{_T string="Send member a link to generate a new passord, as if had used the 'lost password' functionnality."}">{_T string="New password"}</a>
             </li>
@@ -291,6 +291,7 @@ We have to use a template file, so Smarty will do its work (like replacing varia
         </table>
 
 {include file="display_dynamic_fields.tpl" is_form=false}
+        <a href="#" id="back2top">{_T string="Back to top"}</a>
     </div>
 {if $login->isAdmin() or $login->isStaff() or $login->login eq $member->login}
     <script type="text/javascript">

@@ -3,7 +3,7 @@
     <legend class="ui-state-active ui-corner-top">{_T string="Additionnal fields:"}</legend>
     <div>
 {foreach from=$dynamic_fields item=field}
-{if $field.field_perm ne 1 || $login->isAdmin() || $login->isStaff()}
+{if $field.field_perm eq 0 || $login->isAdmin() || $login->isStaff() && $field.field_perm eq 2}
     {if $field.field_type eq 0}
         <div class="separator">{$field.field_name|escape}</div>
     {else}
@@ -63,12 +63,24 @@
                 {if isset($disabled.dyn[$field.field_id])} {$disabled.dyn[$field.field_id]}{/if}
                 {if $field.field_required eq 1} required{/if}
             />
+        {elseif $field.field_type eq 6}
+            {_T string="new"}: <input type="file" name="info_field_{$field.field_id}_{$smarty.section.fieldLoop.index}" id="info_field_{$field.field_id}_{$smarty.section.fieldLoop.index}_{$count}_new"
+                {if isset($disabled.dyn[$field.field_id])} {$disabled.dyn[$field.field_id]}{/if}
+                {if $field.field_required eq 1} required{/if}
+            />
+            {_T string="current"}: <input type="text" name="info_field_{$field.field_id}_{$smarty.section.fieldLoop.index}" id="info_field_{$field.field_id}_{$smarty.section.fieldLoop.index}_{$count}_current" disabled
+                value="{if isset($data.dyn[$field.field_id][$smarty.section.fieldLoop.index])}{$data.dyn[$field.field_id][$smarty.section.fieldLoop.index]|escape}{/if}"
+            />
+            {_T string="delete"}: <input type="checkbox" name="info_field_{$field.field_id}_{$smarty.section.fieldLoop.index}" id="info_field_{$field.field_id}_{$smarty.section.fieldLoop.index}_{$count}_delete"
+                {if isset($data.dyn[$field.field_id][$smarty.section.fieldLoop.index]) && !$data.dyn[$field.field_id][$smarty.section.fieldLoop.index]}disabled{/if}
+                onclick="this.form.info_field_{$field.field_id}_{$smarty.section.fieldLoop.index}_{$count}_new.disabled = this.checked;"
+            />
         {/if}
     {/section}
         </p>
     {/if}
     {if $field.field_type neq 0}
-        {if $field.config_field_repeat == 0}
+        {if $field.config_field_repeat == 0 and $field.config_field_repeat neq null}
         <p class="exemple">{_T string="Enter as many occurences you want."}</p>
         {elseif $field.config_field_repeat > 1}
         <p class="exemple">{_T string="Enter up to %count occurences." pattern="/%count/" replace=$field.field_repeat}</p>
@@ -146,7 +158,8 @@
             changeYear: true,
             showOn: 'button',
             buttonImage: '{$template_subdir}images/calendar.png',
-            buttonImageOnly: true
+            buttonImageOnly: true,
+            buttonText: '{_T string="Select a date" escape="js"}'
         });
                 {/section}
             {/if}

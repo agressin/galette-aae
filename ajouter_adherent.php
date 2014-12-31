@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2004-2013 The Galette Team
+ * Copyright © 2004-2014 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -29,23 +29,23 @@
  *
  * @author    Frédéric Jacquot <unknown@unknwown.com>
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2004-2013 The Galette Team
+ * @copyright 2004-2014 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
  * @since     Available since 0.62
  */
 
-use Analog\Analog as Analog;
-use Galette\Core\GaletteMail as GaletteMail;
-use Galette\Entity\Adherent as Adherent;
-use Galette\Entity\FieldsConfig as FieldsConfig;
-use Galette\Entity\Texts as Texts;
-use Galette\Entity\DynamicFields as DynamicFields;
-use Galette\Repository\Members as Members;
-use Galette\Repository\Titles as Titles;
-use Galette\Repository\Groups as Groups;
-use Galette\Filters\MembersList as MembersList;
+use Analog\Analog;
+use Galette\Core\GaletteMail;
+use Galette\Entity\Adherent;
+use Galette\Entity\FieldsConfig;
+use Galette\Entity\Texts;
+use Galette\Entity\DynamicFields;
+use Galette\Repository\Members;
+use Galette\Repository\Titles;
+use Galette\Repository\Groups;
+use Galette\Filters\MembersList;
 
 /** @ignore */
 require_once 'includes/galette.inc.php';
@@ -128,9 +128,18 @@ $real_requireds = array_diff(array_keys($required), array_keys($disabled));
 
 // Validation
 if ( isset($_POST[array_shift($real_requireds)]) ) {
-    $adherent['dyn'] = $dyn_fields->extractPosted($_POST, $disabled);
+    $adherent['dyn'] = $dyn_fields->extractPosted($_POST, $_FILES, $disabled, $member->id);
+    $dyn_fields_errors = $dyn_fields->getErrors();
+    if ( count($dyn_fields_errors) > 0 ) {
+        $error_detected = array_merge($error_detected, $dyn_fields_errors);
+    }
+    // regular fields
     $valid = $member->check($_POST, $required, $disabled);
-    if ( $valid === true ) {
+    if ( $valid !== true ) {
+        $error_detected = array_merge($error_detected, $valid);
+    }
+
+    if ( count($error_detected ) == 0) {
         //all goes well, we can proceed
 
         $new = false;
@@ -295,9 +304,6 @@ if ( isset($_POST[array_shift($real_requireds)]) ) {
             //something went wrong :'(
             $error_detected[] = _T("An error occured while storing the member.");
         }
-    } else {
-        //hum... there are errors :'(
-        $error_detected = $valid;
     }
 
     if ( count($error_detected) == 0 ) {
@@ -388,19 +394,19 @@ if ( isset($session['filters']['members']) ) {
 if ( ($login->isAdmin() || $login->isStaff()) && count($filters) > 0 ) {
     $m = new Members();
     $ids = $m->getList(false, array(Adherent::PK, 'nom_adh', 'prenom_adh'));
-    //print_r($ids);
+    $ids = $ids->toArray();
     foreach ( $ids as $k=>$m ) {
-        if ( $m->id_adh == $member->id ) {
+        if ( $m['id_adh'] == $member->id ) {
             $navigate = array(
-                'cur'  => $m->id_adh,
+                'cur'  => $m['id_adh'],
                 'count' => count($ids),
                 'pos' => $k+1
             );
             if ( $k > 0 ) {
-                $navigate['prev'] = $ids[$k-1]->id_adh;
+                $navigate['prev'] = $ids[$k-1]['id_adh'];
             }
             if ( $k < count($ids)-1 ) {
-                $navigate['next'] = $ids[$k+1]->id_adh;
+                $navigate['next'] = $ids[$k+1]['id_adh'];
             }
             break;
         }

@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2012-2013 The Galette Team
+ * Copyright © 2012-2014 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,15 +28,15 @@
  * @package   Galette
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2013 The Galette Team
+ * @copyright 2012-2014 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
  * @since     0.7.2.8 - 2012-12-18
  */
 
-use Galette\Entity\FieldsConfig as FieldsConfig;
-use Galette\Entity\FieldsCategories as FieldsCategories;
+use Galette\Entity\FieldsConfig;
+use Galette\Entity\FieldsCategories;
 
 $members_fields = array(
     'id_adh' => array(

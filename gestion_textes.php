@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2007-2013 The Galette Team
+ * Copyright © 2007-2014 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,14 +28,14 @@
  * @package   Galette
  *
  * @author    John Perr <johnperr@abul.org>
- * @copyright 2007-2013 The Galette Team
+ * @copyright 2007-2014 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
  * @since     Availaible since 0.7dev - 2007-10-16
  */
 
-use Galette\Entity\Texts as Texts;
+use Galette\Entity\Texts;
 
 /** @ignore */
 require_once 'includes/galette.inc.php';
