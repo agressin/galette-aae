@@ -9,15 +9,19 @@ require_once '_config.inc.php';
 require_once 'lib/GaletteAAE/Offres.php';
 use Galette\AAE\Offres as Offres;
 
-
-if (!$login->isLogged() ) {
-    //header('location:'. GALETTE_BASE_PATH .'index.php');
-    //die();
+if ( !$preferences->showPublicPages($login) ) {
+    //public pages are not actives
+    header('location:' . GALETTE_BASE_PATH  . 'index.php');
+    die();
 }
 
-//print_r($login);
+//Recup Offres
+if ( $login->isAdmin() || $login->isStaff() ){
+    $haveRights = true;
 
-$valid = $login->isLogged();
+}else{
+    $haveRights = false;
+}
 
 $offres = new Offres();
 
@@ -28,6 +32,10 @@ $id_adh = get_numeric_form_value('id_adh', $login->id);
 $title = _T("Job offer");
 if ( $id_offre != '' ) {
     $title .= ' (' . _T("modification") . ')';
+    if( ! $haveRights) {
+		$id_offre=''; // on efface pour interdire la consultation d'une offre sans etre connecte
+		$warning_detected[] = _T("You don't have the permission to modify an existing offer.");
+	}
 } else {
     $title .= ' (' . _T("creation") . ')';
 }
@@ -56,7 +64,7 @@ if (isset($_POST['valid']) && $_POST['valid'] == '1') {
 		$_POST['remuneration'],
 		$_POST['cursus'],
 		$_POST['rech_majeures'],
-		$valid
+		$haveRights
     );
 
     if ( !$res ) {
@@ -67,15 +75,16 @@ if (isset($_POST['valid']) && $_POST['valid'] == '1') {
 }
 
 //Recup offre
-if ($id_offre!='') {
+if ( $id_offre!='') {
 	$offre = $offres->getOffre($id_offre);
 	$tpl->assign('offer', $offre);
-}else if ($login->isLogged() )  {
+}else if ( $haveRights )  {
 		$offre['nom_contact'] =  $login->name . " " . $login->surname;
 		$tpl->assign('offer', $offre);
 }
 
 //Error
+$tpl->assign('warning_detected', $warning_detected);
 $tpl->assign('error_detected', $error_detected);
 $tpl->assign('success_detected', $success_detected);
 
@@ -92,5 +101,7 @@ $tpl->assign('content', $content);
 
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
+
 $tpl->display('page.tpl');
+
 ?>

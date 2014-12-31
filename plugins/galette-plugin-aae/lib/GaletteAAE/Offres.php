@@ -16,13 +16,50 @@ class Offres
      *
      * @return array
      */
-    public function getAllOffres()
+    public function getAllOffres($onlyValidOffer=true)
     {
         global $zdb;
 
         try {
             $select = new \Zend_Db_Select($zdb->db);
-            $select->from($this->getTableName())->where("valide=true");
+            if($onlyValidOffer) {
+				$select->from($this->getTableName())->where("valide= ?",true);
+			} else {
+				$select->from($this->getTableName())->where(true);;
+			}
+            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+            if ( count($res) > 0 ) {
+                return $res;
+            } else {
+                return array();
+            }
+        } catch (\Exception $e) {
+            Analog::log(
+                'Unable to retrieve offres : "' . $e->getMessage(),
+                Analog::WARNING
+            );
+            Analog::log(
+                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
+                Analog::ERROR
+            );
+            return false;
+        }
+    }
+    
+ /**
+     * Retrieve offers to valid
+     *
+     * @param 
+     *
+     * @return array
+     */
+    public function getOffresToValid()
+    {
+        global $zdb;
+
+        try {
+            $select = new \Zend_Db_Select($zdb->db);
+			$select->from($this->getTableName())->where("valide= ?",false);
             $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
             if ( count($res) > 0 ) {
                 return $res;
@@ -163,6 +200,35 @@ class Offres
         }
     }
  
+ 
+ /**
+     * ValidOffre
+     * @param int $id_offre
+     * @param ...
+     */
+    public function ValidOffre($id_offre,$valide)
+    {
+		global $zdb;
+
+        try {
+
+            $data = array( 'valide'	=> $valide);
+            //update
+            $res = $zdb->db->update(
+                $this->getTableName(),
+                $data,
+                self::PK . '=' . $id_offre
+            );
+            return ($res > 0);
+        } catch ( \Exception $e ) {
+            Analog::log(
+                'Unable to valid offer ' .
+                $id_offre . ' | ' . $e->getMessage(),
+                Analog::ERROR
+            );
+            return false;
+        }
+    }
 
     /**
      * Get table's name

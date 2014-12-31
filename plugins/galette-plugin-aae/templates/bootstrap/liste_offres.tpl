@@ -1,29 +1,7 @@
-{* TODO
-- passer toute les offres en JSON
-- bosser avec dynatable
-*}
-
 {if $nb_offres > 0}
-{* TODO : liste des attributs à afficher
-o  titre text  NOT NULL,
-?  organisme text  NOT NULL,
-?  localisation text,
-  site text,
-  nom_contact text  NOT NULL,
-  mail_contact text  NOT NULL,
-  tel_contact text,
-o  date_parution date NOT NULL,
-?  date_fin date NOT NULL,
-o  type_offre enum('Stage','CDD','CDI') NOT NULL,
-  desc_offre text,
-?  mots_cles text  NOT NULL,
-?  duree text,
-?  date_debut date NOT NULL,
-?  remuneration text,
-?  cursus text,
-?  tech_majeures text,
-*}
 
+	{_T string="Subscrite to "} <a href="{$galette_base_path}plugins/galette-plugin-aae/liste_offres.php?rss"> <img src="{$galette_base_path}/templates/bootstrap/images/rss.png" width="20" height=20 alt="RSS"> </a>
+	<br>
 	<table id='table_offre' class="listing">
         <thead>
             <tr>
@@ -36,7 +14,7 @@ o  type_offre enum('Stage','CDD','CDI') NOT NULL,
         <tbody>
     		{foreach from=$offres item=offre}
 	            <tr class="formation_row">
-	                <td class="center nowrap">{utf8_encode($offre.titre)}</td>
+	                <td class="center nowrap"> <a href="{$galette_base_path}plugins/galette-plugin-aae/liste_offres.php?id_offre={$offre.id}"> {utf8_encode($offre.titre)} </a> </td>
 	                <td class="center nowrap">{utf8_encode($offre.organisme)}</td>
 	                <td class="center nowrap">{utf8_encode($offre.date_parution)}</td>
 	                <td class="center nowrap">{utf8_encode($offre.type_offre)}</td>

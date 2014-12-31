@@ -3,10 +3,11 @@
         <div class="bigtable">
             <p>{_T string="NB : The mandatory fields are in"} <span class="required">{_T string="red"}</span></p>
             <fieldset class="cssform">
-                <legend class="ui-state-active ui-corner-top">{_T string="Offer detail "}</legend>
+                <legend class="ui-state-active ui-corner-top">{_T string="Offer general "}</legend>
+                <div>
                 <p>
                     <label for="titre_offre" class="bline">{_T string="Title:"}</label>
-                    <input type="text" name="titre_offre" id="titre_offre" value="{$offer.titre}" maxlength="150" required/>
+                    <input type="text" name="titre_offre" id="titre_offre" value="{utf8_encode($offer.titre)}" maxlength="150" required/>
                 </p>
                 <p>
                     <label for="nom_contact" class="bline">{_T string="Contact Name:"}</label>
@@ -31,15 +32,20 @@
                 </p>
                 <p>
                     <label for="desc_offre" class="bline">{_T string="Description:"}</label>
-                    <textarea name="desc_offre" id="desc_offre" cols="40" rows="4" required> {$offer.desc_offre} </textarea>
-                </p>  
+                    <textarea name="desc_offre" id="desc_offre" cols="40" rows="4" required> {utf8_encode($offer.desc_offre)} </textarea>
+                </p>
+                </div>
+			</fieldset>
+			<fieldset class="cssform">
+                <legend class="ui-state-active ui-corner-top">{_T string="Offer detail "}</legend>
+                <div>
                 <p>
                     <label for="organisme" class="bline">{_T string="Organisme:"}</label>
-                    <input type="text" name="organisme" id="organisme" value="{$offer.organisme}" maxlength="150"/>
+                    <input type="text" name="organisme" id="organisme" value="{utf8_encode($offer.organisme)}" maxlength="150"/>
                 </p>
                 <p>
                     <label for="localisation" class="bline">{_T string="Localisation:"}</label>
-                    <textarea name="localisation" id="localisation" cols="40" rows="4"> {$offer.localisation} </textarea>
+                    <textarea name="localisation" id="localisation" cols="40" rows="4"> {utf8_encode($offer.localisation)} </textarea>
                 </p>
                 <p>
                     <label for="site" class="bline">{_T string="Site:"}</label>
@@ -52,7 +58,7 @@
                 </p>
                 <p>
                     <label for="mots_cles" class="bline">{_T string="Key word(s):"}</label>
-                    <input type="text" name="mots_cles" id="mots_cles" value="{$offer.mots_cles}" maxlength="150"/>
+                    <input type="text" name="mots_cles" id="mots_cles" value="{utf8_encode($offer.mots_cles)}" maxlength="150"/>
                 </p>
                 <p>
                     <label for="duree" class="bline">{_T string="Duration:"}</label>
@@ -76,8 +82,8 @@
                     <label for="tech_majeures" class="bline">{_T string="Tech_majeures:"}</label>
                     <input type="text" name="tech_majeures" id="tech_majeures" value="{$offer.tech_majeures}" maxlength="150"/>
                 </p>
- 
-            </fieldset>
+			</div>
+        </fieldset>
         <div class="button-container">
             <input type="submit" id="btnsave" value="{_T string="Save"}"/>
             <input type="hidden" name="id_offre" value="{$offer.id}"/>

@@ -1,4 +1,6 @@
 
+	<a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php" title="{_T string="Add job offer"}">{_T string="Add job offer"}</a>
+
     <table id='table_offre' class="listing">
         <thead>
             <tr>
@@ -14,7 +16,7 @@
 
     {foreach from=$offres item=offre}
             <tr class="offre_row">
-                <td class="center nowrap"><a href="{$galette_base_path}plugins/galette-plugin-aae/liste_offres.php?id_offre={$offre.id}"> {utf8_encode($offre.titre)} </a></td>
+                <td class="center nowrap"><a href="{$galette_base_path}plugins/galette-plugin-aae/ajouter_offre.php?id_offre={$offre.id}"> {utf8_encode($offre.titre)} </a></td>
                 {if $haveRights}
                 <td class="center nowrap">
                     <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$offre.id}' align="middle" /> 
