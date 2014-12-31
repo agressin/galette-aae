@@ -1,0 +1,649 @@
+192.168.56.101 - 2014-10-19 15:38:12 - 3 - Unable to set formation  | SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+192.168.56.101 - 2014-10-19 15:44:17 - 5 - PHP Notice: Undefined variable: form in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 118
+192.168.56.101 - 2014-10-19 15:44:25 - 5 - PHP Notice: Undefined variable: form in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 118
+192.168.56.101 - 2014-10-19 15:44:27 - 5 - PHP Notice: Undefined variable: form in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 118
+192.168.56.101 - 2014-10-19 15:45:40 - 5 - PHP Notice: Undefined variable: content in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 120
+192.168.56.101 - 2014-10-19 15:45:42 - 5 - PHP Notice: Undefined variable: content in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 120
+192.168.56.101 - 2014-10-19 15:46:00 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:46:00 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:46:01 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:46:01 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:46:17 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:46:17 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:46:19 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:46:19 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:46:23 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:46:23 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:46:35 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:46:35 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:46:36 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:46:36 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:46:57 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:46:57 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:47:03 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:47:03 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:47:06 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:47:06 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:47:10 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:47:10 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:47:16 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:47:16 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:47:17 - 4 - Unable to retrieve formation with id : "". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 15:47:17 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(85): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(81): Galette\AAE\Formations->getFormation(NULL)
+#6 {main}
+192.168.56.101 - 2014-10-19 15:47:31 - 3 - Unable to set formation  | SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+192.168.56.101 - 2014-10-19 15:57:33 - 3 - Unable to set formation  | SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+192.168.56.101 - 2014-10-19 15:59:13 - 3 - Unable to set formation  | SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+192.168.56.101 - 2014-10-19 16:02:51 - 4 - setFormation
+192.168.56.101 - 2014-10-19 16:02:51 - 4 - setFormation : UPDATE
+192.168.56.101 - 2014-10-19 16:02:51 - 3 - Unable to set formation  | SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+192.168.56.101 - 2014-10-19 16:07:49 - 4 - setFormation: {"id_cycle":"2","specialite":"","annee_debut":"2010","annee_fin":"2013","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:07:49 - 4 - setFormation : UPDATE
+192.168.56.101 - 2014-10-19 16:07:49 - 3 - Unable to set formation  | SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+192.168.56.101 - 2014-10-19 16:14:56 - 4 - setFormation: {"id_cycle":"2","specialite":"","annee_debut":"2010","annee_fin":"2013","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:14:56 - 4 - setFormation : UPDATEgalette_aae_formations
+192.168.56.101 - 2014-10-19 16:14:56 - 3 - Unable to set formation  | SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+192.168.56.101 - 2014-10-19 16:15:54 - 4 - setFormation: {"id_cycle":"1","specialite":"","annee_debut":"2010","annee_fin":"2013","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:15:54 - 4 - setFormation : UPDATE
+192.168.56.101 - 2014-10-19 16:15:54 - 3 - Unable to set formation  | SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+192.168.56.101 - 2014-10-19 16:17:05 - 4 - setFormation: {"id_cycle":"1","specialite":"","annee_debut":"2010","annee_fin":"2014","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:17:05 - 4 - setFormation : INSERT
+192.168.56.101 - 2014-10-19 16:18:02 - 4 - setFormation: {"id_cycle":"1","specialite":"test","annee_debut":"2010","annee_fin":"2014","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:18:02 - 4 - setFormation : INSERT
+192.168.56.101 - 2014-10-19 16:19:00 - 4 - setFormation: {"id_cycle":"1","specialite":"toto","annee_debut":"2010","annee_fin":"2014","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:19:00 - 4 - setFormation : INSERT
+192.168.56.101 - 2014-10-19 16:20:14 - 4 - setFormation: $id_form {"id_cycle":"1","specialite":"test","annee_debut":"2010","annee_fin":"2014","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:20:14 - 4 - setFormation : UPDATE
+192.168.56.101 - 2014-10-19 16:21:01 - 4 - setFormation: 3{"id_cycle":"1","specialite":"test","annee_debut":"2010","annee_fin":"2014","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:21:01 - 4 - setFormation : UPDATE
+192.168.56.101 - 2014-10-19 16:21:34 - 4 - setFormation: {"id_cycle":"3","specialite":"toto","annee_debut":"1990","annee_fin":"1992","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:21:34 - 4 - setFormation : INSERT
+192.168.56.101 - 2014-10-19 16:22:03 - 4 - setFormation: 5{"id_cycle":"3","specialite":"test","annee_debut":"1990","annee_fin":"1992","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:22:03 - 4 - setFormation : UPDATE
+192.168.56.101 - 2014-10-19 16:22:30 - 4 - setFormation: 5{"id_cycle":"2","specialite":"toto","annee_debut":"1990","annee_fin":"1992","id_adh":"1935"}
+192.168.56.101 - 2014-10-19 16:22:30 - 4 - setFormation : UPDATE
+192.168.56.101 - 2014-10-19 17:03:34 - 5 - PHP Notice: Undefined variable: id in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 46
+192.168.56.101 - 2014-10-19 17:03:34 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 17:03:34 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id_adh = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:03:45 - 5 - PHP Notice: Undefined variable: id in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 46
+192.168.56.101 - 2014-10-19 17:03:45 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 17:03:45 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id_adh = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:05:11 - 5 - PHP Notice: Undefined variable: id in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 46
+192.168.56.101 - 2014-10-19 17:05:11 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 17:05:11 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id_adh = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:05:40 - 5 - PHP Notice: Undefined variable: id in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 46
+192.168.56.101 - 2014-10-19 17:05:40 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 17:05:40 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id_adh = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:12:32 - 5 - PHP Notice: Undefined variable: id in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 46
+192.168.56.101 - 2014-10-19 17:12:32 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 17:12:32 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id_adh = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:12:40 - 5 - PHP Notice: Undefined variable: id in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 46
+192.168.56.101 - 2014-10-19 17:12:40 - 4 - Unable to retrieve members formations for "816". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 17:12:40 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id_adh = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('816')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('816')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:13:16 - 5 - PHP Notice: Undefined variable: id in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 46
+192.168.56.101 - 2014-10-19 17:13:16 - 4 - Unable to retrieve members formations for "816". | SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+192.168.56.101 - 2014-10-19 17:13:16 - 3 - Query was: SELECT `galette_aae_formations`.* FROM `galette_aae_formations` WHERE (id_adh = ?) exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('816')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[HY093]: Invalid parameter number: no parameters were bound' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('816')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:15:27 - 4 - Unable to retrieve members formations for "816". | SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id_adh' in where clause is ambiguous
+192.168.56.101 - 2014-10-19 17:15:27 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_aae_formations_2`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_aae_formations` AS `galette_aae_formations_2` ON galette_aae_formations.id = galette_aae_formations.id WHERE (id_adh = '816') exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id_adh' in where clause is ambiguous' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('816')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id_adh' in where clause is ambiguous' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('816')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:15:27 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id_adh' in where clause is ambiguous
+192.168.56.101 - 2014-10-19 17:15:27 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_aae_formations_2`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_aae_formations` AS `galette_aae_formations_2` ON galette_aae_formations.id = galette_aae_formations.id WHERE (id_adh = '1935') exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id_adh' in where clause is ambiguous' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id_adh' in where clause is ambiguous' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:15:29 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id_adh' in where clause is ambiguous
+192.168.56.101 - 2014-10-19 17:15:29 - 3 - Query was: SELECT `galette_aae_formations`.*, `galette_aae_formations_2`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_aae_formations` AS `galette_aae_formations_2` ON galette_aae_formations.id = galette_aae_formations.id WHERE (id_adh = '1935') exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id_adh' in where clause is ambiguous' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id_adh' in where clause is ambiguous' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:23:57 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_formations' in 'field list'
+192.168.56.101 - 2014-10-19 17:23:57 - 3 - Query was: SELECT `galette_aae_formations`.`galette_aae_formations` FROM `galette_aae_formations` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id = galette_aae_formations.id) exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_formations' in 'field list'' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_formations' in 'field list'' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:27:08 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_formations' in 'field list'
+192.168.56.101 - 2014-10-19 17:27:08 - 3 - Query was: SELECT `galette_aae_formations`.`galette_aae_formations` FROM `galette_aae_formations` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id_adh = galette_aae_formations.id) exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_formations' in 'field list'' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_formations' in 'field list'' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:27:18 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_formations' in 'field list'
+192.168.56.101 - 2014-10-19 17:27:18 - 3 - Query was: SELECT `galette_aae_formations`.`galette_aae_formations` FROM `galette_aae_formations` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id_adh = galette_aae_formations.id) exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_formations' in 'field list'' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_formations' in 'field list'' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:28:49 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_cycles' in 'field list'
+192.168.56.101 - 2014-10-19 17:28:49 - 3 - Query was: SELECT `galette_aae_formations`.`galette_aae_cycles` FROM `galette_aae_formations` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id_adh = galette_aae_cycles.id_cycle) exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_cycles' in 'field list'' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'galette_aae_formations.galette_aae_cycles' in 'field list'' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:29:47 - 4 - Unable to retrieve members formations for "1935". | SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_aae_formations , galette_aae_cycles' doesn't exist
+192.168.56.101 - 2014-10-19 17:29:47 - 3 - Query was: SELECT `galette_aae_formations , galette_aae_cycles`.* FROM `galette_aae_formations , galette_aae_cycles` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id_adh = galette_aae_cycles.id_cycle) exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_aae_formations , galette_aae_cycles' doesn't exist' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_aae_formations , galette_aae_cycles' doesn't exist' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(50): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/gestion_formations_eleve.php(35): Galette\AAE\Formations->getFormations('1935')
+#6 {main}
+192.168.56.101 - 2014-10-19 17:33:08 - 5 - PHP Notice: Undefined variable: e in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 53
+192.168.56.101 - 2014-10-19 17:33:09 - 5 - PHP Notice: Undefined variable: e in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 53
+192.168.56.101 - 2014-10-19 17:33:22 - 4 - Query is: SELECT `galette_aae_formations`.*, `galette_aae_cycles`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_aae_cycles` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id_adh = galette_aae_cycles.id_cycle) 
+192.168.56.101 - 2014-10-19 17:36:36 - 4 - Query is: SELECT `galette_aae_formations`.*, `galette_aae_cycles`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_aae_cycles` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id_cycle = galette_aae_cycles.id_cycle) 
+192.168.56.101 - 2014-10-19 17:36:52 - 4 - Query is: SELECT `galette_aae_formations`.*, `galette_aae_cycles`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_aae_cycles` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id_cycle = galette_aae_cycles.id_cycle) 
+192.168.56.101 - 2014-10-19 17:36:53 - 4 - Query is: SELECT `galette_aae_formations`.*, `galette_aae_cycles`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_aae_cycles` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id_cycle = galette_aae_cycles.id_cycle) 
+192.168.56.101 - 2014-10-19 17:37:37 - 4 - Query is: SELECT `galette_aae_formations`.*, `galette_aae_cycles`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_aae_cycles` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id_cycle = galette_aae_cycles.id_cycle) 
+192.168.56.101 - 2014-10-19 17:37:52 - 4 - Query is: SELECT `galette_aae_formations`.*, `galette_aae_cycles`.* FROM `galette_aae_formations`
+ INNER JOIN `galette_aae_cycles` WHERE (galette_aae_formations.id_adh = '1935') AND (galette_aae_formations.id_cycle = galette_aae_cycles.id_cycle) 

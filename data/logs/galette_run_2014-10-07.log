@@ -1,0 +1,80 @@
+192.168.56.101 - 2014-10-07 19:00:39 - 5 - PHP Notice: Use of undefined constant AAE_PREFIX - assumed 'AAE_PREFIX' in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 135
+192.168.56.101 - 2014-10-07 19:00:39 - 4 - Unable to retrieve members formations for "1070". | SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_AAE_PREFIXformations' doesn't exist
+192.168.56.101 - 2014-10-07 19:00:39 - 3 - Query was: SELECT `galette_AAE_PREFIXformations`.* FROM `galette_AAE_PREFIXformations` WHERE (id_adh = '1070') exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_AAE_PREFIXformations' doesn't exist' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formations_eleve.php(33): Galette\AAE\Formations->getFormations('1070')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_AAE_PREFIXformations' doesn't exist' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formations_eleve.php(33): Galette\AAE\Formations->getFormations('1070')
+#6 {main}
+192.168.56.101 - 2014-10-07 19:00:39 - 5 - PHP Notice: Use of undefined constant AAE_PREFIX - assumed 'AAE_PREFIX' in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php on line 135
+192.168.56.101 - 2014-10-07 19:00:39 - 4 - Unable to retrieve members formations for "". | SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_AAE_PREFIXformations' doesn't exist
+192.168.56.101 - 2014-10-07 19:00:39 - 3 - Query was: SELECT `galette_AAE_PREFIXformations`.* FROM `galette_AAE_PREFIXformations` WHERE (id_adh = '') exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_AAE_PREFIXformations' doesn't exist' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formations_eleve.php(35): Galette\AAE\Formations->getFormations(false, '1070')
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_AAE_PREFIXformations' doesn't exist' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Formations.php(47): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formations_eleve.php(35): Galette\AAE\Formations->getFormations(false, '1070')
+#6 {main}
+192.168.56.101 - 2014-10-07 19:19:22 - 5 - PHP Notice: Undefined variable: contrib in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:19:22 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:19:28 - 5 - PHP Notice: Undefined variable: contrib in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:19:28 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:23:00 - 5 - PHP Notice: Undefined variable: contrib in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:23:00 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:23:01 - 5 - PHP Notice: Undefined variable: contrib in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:23:01 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:24:12 - 5 - PHP Notice: Undefined variable: contrib in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:24:12 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:24:15 - 5 - PHP Notice: Undefined variable: contrib in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:24:15 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:24:22 - 5 - PHP Notice: Undefined variable: contrib in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 19:24:22 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php on line 39
+192.168.56.101 - 2014-10-07 20:54:54 - 5 - PHP Notice: Use of undefined constant AAE_PREFIX - assumed 'AAE_PREFIX' in /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Cycles.php on line 93
+192.168.56.101 - 2014-10-07 20:54:54 - 4 - Unable to retrieve cycles : "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_AAE_PREFIXcycles' doesn't exist
+192.168.56.101 - 2014-10-07 20:54:54 - 3 - Query was: SELECT `galette_AAE_PREFIXcycles`.* FROM `galette_AAE_PREFIXcycles` WHERE (1) exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_AAE_PREFIXcycles' doesn't exist' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Cycles.php(33): Zend_Db_Select->query(2)
+#6 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(46): Galette\AAE\Cycles->getAllCycles()
+#7 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'aaeensgeoqtest.galette_AAE_PREFIXcycles' doesn't exist' in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#2 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Select.php(686): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select))
+#4 /var/www/aae-ensg/plugins/galette-plugin-aae/lib/GaletteAAE/Cycles.php(33): Zend_Db_Select->query(2)
+#5 /var/www/aae-ensg/plugins/galette-plugin-aae/ajouter_formation_eleve.php(46): Galette\AAE\Cycles->getAllCycles()
+#6 {main}

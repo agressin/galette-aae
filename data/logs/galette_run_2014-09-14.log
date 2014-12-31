@@ -1,0 +1,4 @@
+192.168.56.101 - 2014-09-14 10:26:35 - 4 - PHP Warning: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php on line 129
+192.168.56.101 - 2014-09-14 10:26:35 - 1 - [Db] No connexion (2002|SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known)
+192.168.56.101 - 2014-09-14 10:26:38 - 4 - PHP Warning: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /var/www/aae-ensg/includes/Zend-1.12.3/Zend/Db/Adapter/Pdo/Abstract.php on line 129
+192.168.56.101 - 2014-09-14 10:26:38 - 1 - [Db] No connexion (2002|SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known)
