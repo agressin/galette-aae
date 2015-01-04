@@ -2088,3 +2088,49 @@ Stack trace:
 192.168.56.101 - 2014-12-31 12:45:19 - 4 - PHP Warning: unlink(/var/www/aae-ensg/includes/../plugins/galette-plugin-aae/_disabled): No such file or directory in /var/www/aae-ensg/lib/Galette/Core/Plugins.php on line 266
 192.168.56.101 - 2014-12-31 12:45:19 - 4 - Plugin AAE Tools is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
 192.168.56.101 - 2014-12-31 12:45:19 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:51:14 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:51:15 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:51:23 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:51:24 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:51:30 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:51:30 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 30
+192.168.56.101 - 2014-12-31 12:51:30 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 30
+192.168.56.101 - 2014-12-31 12:51:34 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:51:35 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:51:37 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:51:39 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:51:40 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:52:52 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:52:52 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:52:56 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:53:00 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:53:02 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:53:04 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:53:06 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:53:12 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:53:14 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:53:24 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 42
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 48
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 54
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 60
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 69
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 71
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 73
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 80
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 92
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 98
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 104
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 117
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 123
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 131
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 139
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 145
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 151
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 159
+192.168.56.101 - 2014-12-31 12:53:25 - 5 - PHP Notice: Trying to get property of non-object in /var/www/aae-ensg/includes/Smarty-3.1.19/sysplugins/smarty_internal_templatebase.php(157) : eval()'d code on line 161
+192.168.56.101 - 2014-12-31 12:53:25 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 13:32:47 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 13:32:50 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 13:32:52 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8
+192.168.56.101 - 2014-12-31 13:33:17 - 4 - Plugin Galette Fullcard is known to be compatible with Galette 0.7.5 only, but you current installation require a plugin compatible with at least 0.8

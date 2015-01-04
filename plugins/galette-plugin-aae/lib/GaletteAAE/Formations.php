@@ -32,13 +32,14 @@ class Formations
         global $zdb;
 
         try {
-            $select = new \Zend_Db_Select($zdb->db);
+        //TODO
+            $select = $zdb->select();
             $select->from($this->getTableName())
 					->from(Cycles::getTableName())
 					->where($this->getTableName() . '.' . Adherent::PK . ' = ?', $id_adh)
 					->where($this->getTableName().'.id_cycle = '. Cycles::getTableName() . '.' . Cycles::PK);
 
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+            $res = $select->toArray();
 
             
             if ( count($res) > 0 ) {
@@ -51,10 +52,6 @@ class Formations
                 'Unable to retrieve members formations for "' .
                 $id_adh  . '". | ' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -72,10 +69,10 @@ class Formations
         global $zdb;
 
         try {
-            $select = new \Zend_Db_Select($zdb->db);
-            $select->from($this->getTableName())->where(Formations::PK . ' = ?', $id_form);
+            $select = $zdb->select($this->getTableName());
+            $select->>where->equalTo(Formations::PK, $id_form);
 
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+            $res = $select->toArray();
             if ( count($res) > 0 ) {
                 return $res[0];
             } else {
@@ -86,10 +83,6 @@ class Formations
                 'Unable to retrieve formation with id : "' .
                 $id_form  . '". | ' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -181,18 +174,31 @@ class Formations
         global $zdb;
 
         try {
-            $select = new \Zend_Db_Select($zdb->db);
+            $select = $zdb->sql->select();
             $table_adh = PREFIX_DB . Adherent::TABLE;
-            
+            /*
             $select->from($this->getTableName(),array('specialite'))
 					->from($table_adh,array(Adherent::PK, 'nom_adh', 'prenom_adh'))
-					->distinct()
+					//->distinct()
 					->where($this->getTableName() . '.annee_debut = ?', $annee_debut)
 					->where($this->getTableName() . '.id_cycle = ?', $id_cycle)
 					->where($this->getTableName() . '.id_adh = '. $table_adh . '.' . Adherent::PK);
-					
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+			*/
+			$select->from(
+					array('a' => $table_adh)
+				);
+			$select->columns(array(Adherent::PK, 'nom_adh', 'prenom_adh'));
+							
+			$select->join(array('f' => $this->getTableName()),
+				'f.id_adh = a.' . Adherent::PK,
+				array('specialite'));
+				
 
+			$select->where->equalTo('f.annee_debut', $annee_debut)
+					->where->equalTo('f.id_cycle', $id_cycle);
+            
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
             
             if ( count($res) > 0 ) {
                 return $res;
@@ -202,12 +208,8 @@ class Formations
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve members promotion for "' .
-                $id_cycle  . '". | ' . $Sannee_debut .'". | ' . $e->getMessage(),
+                $id_cycle  . '" | "' . $annee_debut .'" | ' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }

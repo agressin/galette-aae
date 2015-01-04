@@ -21,6 +21,7 @@ class Offres
         global $zdb;
 
         try {
+        //TODO
             $select = new \Zend_Db_Select($zdb->db);
             if($onlyValidOffer) {
 				$select->from($this->getTableName())->where("valide= ?",true);
@@ -58,6 +59,7 @@ class Offres
         global $zdb;
 
         try {
+        //TODO
             $select = new \Zend_Db_Select($zdb->db);
 			$select->from($this->getTableName())->where("valide= ?",false);
             $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
@@ -91,6 +93,7 @@ class Offres
         global $zdb;
 
         try {
+        //TODO
             $select = new \Zend_Db_Select($zdb->db);
             $select->from($this->getTableName())->where(self::PK . ' = ?', $id);
             $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();

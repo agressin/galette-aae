@@ -21,9 +21,8 @@ class Cycles
         global $zdb;
 
         try {
-            $select = new \Zend_Db_Select($zdb->db);
-            $select->from($this->getTableName())->where(true);
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+            $select = $zdb->selectAll($this->getTableName());
+            $res = $select->toArray();
             if ( count($res) > 0 ) {
                 return $res;
             } else {
@@ -33,10 +32,6 @@ class Cycles
             Analog::log(
                 'Unable to retrieve cycles : "' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -54,9 +49,9 @@ class Cycles
         global $zdb;
 
         try {
-            $select = new \Zend_Db_Select($zdb->db);
-            $select->from($this->getTableName())->where(self::PK . ' = ?', $id);
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+            $select = $zdb->select($this->getTableName());
+            $select->where(self::PK . ' = ?', $id);
+            $res = $select->toArray();
             if ( count($res) > 0 ) {
                 return $res[0];
             } else {
@@ -67,10 +62,6 @@ class Cycles
                 'Unable to retrieve cycle information for "' .
                 $id  . '". | ' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -83,7 +74,7 @@ class Cycles
      */
     static public function getTableName()
     {
-        return PREFIX_DB . AAE_PREFIX  . self::TABLE;
+        return  AAE_PREFIX  . self::TABLE;
     }
 }
 ?>

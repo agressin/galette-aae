@@ -21,6 +21,7 @@ class Preferences
         global $zdb;
 
         try {
+        //TODO
             $select = new \Zend_Db_Select($zdb->db);
             $select->from($this->getTableName())->where('nom_pref = '. self::PK);
             $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
