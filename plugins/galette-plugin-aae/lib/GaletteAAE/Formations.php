@@ -17,7 +17,7 @@ use Galette\AAE\Cycles as Cycles;
 
 class Formations
 {
-    const TABLE = 'formations';
+    const TABLE =  'formations';
     const PK = 'id';
 
     /**
@@ -32,21 +32,26 @@ class Formations
         global $zdb;
 
         try {
-        //TODO
-            $select = $zdb->select();
-            $select->from($this->getTableName())
-					->from(Cycles::getTableName())
-					->where($this->getTableName() . '.' . Adherent::PK . ' = ?', $id_adh)
-					->where($this->getTableName().'.id_cycle = '. Cycles::getTableName() . '.' . Cycles::PK);
+        
+        	$select = $zdb->sql->select();
+        	$select->from(array('f' => $this->getTableName()));
+							
+			$select->join(array('c' => Cycles::getTableName()),
+				'f.id_cycle = c.' . Cycles::PK,
+				array('id_cycle','nom'));
+				
 
-            $res = $select->toArray();
-
+			$select->where->equalTo('f.'. Adherent::PK, $id_adh);
+            
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
             
             if ( count($res) > 0 ) {
                 return $res;
             } else {
                 return array();
             }
+
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve members formations for "' .
@@ -70,9 +75,11 @@ class Formations
 
         try {
             $select = $zdb->select($this->getTableName());
-            $select->>where->equalTo(Formations::PK, $id_form);
+            $select->where->equalTo(Formations::PK, $id_form);
 
-            $res = $select->toArray();
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+            
             if ( count($res) > 0 ) {
                 return $res[0];
             } else {
@@ -113,17 +120,21 @@ class Formations
 
             if ( $id_form == '' ) {
                 //Formation does not exists yet
-                $res = $zdb->db->insert(
-                    $this->getTableName(),
-                    $data
-                );
+                $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
+                $insert->values($data);
+                $add = $zdb->execute($insert);
+                
+                if ( $add->count() == 0) {
+                    Analog::log('An error occured inserting new formation!' );
+                }
+                
             } else {
-                //Formation already exists, just update
-                $res = $zdb->db->update(
-                    $this->getTableName(),
-                    $data,
-                    self::PK . '=' . $id_form
-                );
+                //Formation already exists, just update               
+                $update = $zdb->update(AAE_PREFIX . self::TABLE);
+                $update->set($data)->where->equalTo(self::PK,$id_form);
+                $edit = $zdb->execute($update);
+                //edit == 0 does not mean there were an error, but that there
+                //were nothing to change
             }
             return ($res > 0);
         } catch ( \Exception $e ) {
@@ -145,11 +156,11 @@ class Formations
         global $zdb;
 
         try {
-            $del = $zdb->db->delete(
-                $this->getTableName(),
-                self::PK . '=' . $id_form
-            );
-            return ($del > 0);
+
+            $delete = $zdb->delete(AAE_PREFIX . self::TABLE);
+            $delete->where->equalTo(self::PK, $id_form);
+            $zdb->execute($delete);
+            return true;
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to delete formation ' .
@@ -176,14 +187,6 @@ class Formations
         try {
             $select = $zdb->sql->select();
             $table_adh = PREFIX_DB . Adherent::TABLE;
-            /*
-            $select->from($this->getTableName(),array('specialite'))
-					->from($table_adh,array(Adherent::PK, 'nom_adh', 'prenom_adh'))
-					//->distinct()
-					->where($this->getTableName() . '.annee_debut = ?', $annee_debut)
-					->where($this->getTableName() . '.id_cycle = ?', $id_cycle)
-					->where($this->getTableName() . '.id_adh = '. $table_adh . '.' . Adherent::PK);
-			*/
 			$select->from(
 					array('a' => $table_adh)
 				);
@@ -195,7 +198,7 @@ class Formations
 				
 
 			$select->where->equalTo('f.annee_debut', $annee_debut)
-					->where->equalTo('f.id_cycle', $id_cycle);
+				   ->where->equalTo('f.id_cycle', $id_cycle);
             
             $res = $zdb->execute($select);
             $res = $res->toArray();
@@ -223,7 +226,7 @@ class Formations
      */
     protected function getTableName()
     {
-        return PREFIX_DB . AAE_PREFIX  . self::TABLE;
+        return PREFIX_DB . AAE_PREFIX . self::TABLE;
     }
 }
 ?>

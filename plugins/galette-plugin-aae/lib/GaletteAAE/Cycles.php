@@ -21,7 +21,7 @@ class Cycles
         global $zdb;
 
         try {
-            $select = $zdb->selectAll($this->getTableName());
+            $select = $zdb->selectAll(AAE_PREFIX . self::TABLE);
             $res = $select->toArray();
             if ( count($res) > 0 ) {
                 return $res;
@@ -49,8 +49,8 @@ class Cycles
         global $zdb;
 
         try {
-            $select = $zdb->select($this->getTableName());
-            $select->where(self::PK . ' = ?', $id);
+            $select = $zdb->select(AAE_PREFIX . self::TABLE);
+            $select->where->equalTo(self::PK,$id);
             $res = $select->toArray();
             if ( count($res) > 0 ) {
                 return $res[0];
@@ -74,7 +74,7 @@ class Cycles
      */
     static public function getTableName()
     {
-        return  AAE_PREFIX  . self::TABLE;
+        return  PREFIX_DB . AAE_PREFIX  .  self::TABLE;
     }
 }
 ?>
