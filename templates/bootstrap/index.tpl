@@ -13,6 +13,7 @@
 				<div class="col-xs-4">
 				  <input type="password" class="form-control" name="password" id="password" placeholder="{_T string="Password"}">
 				</div>
+				<a href="{$galette_base_path}lostpasswd.php">{_T string="Lost your password?"}</a>
 			  </div>
 			  <div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">

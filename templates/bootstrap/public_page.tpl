@@ -73,11 +73,13 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 						<a href="{$galette_base_path}self_adherent.php">{_T string="Subscribe"}</a>
 					</li>
         {/if}
+        <!--
         {if $pref_mail_method neq constant('Galette\Core\GaletteMail::METHOD_DISABLED')}
         			<li class="{if $PAGENAME eq "lostpasswd.php"}current_{/if}page_item">
 						<a href="{$galette_base_path}lostpasswd.php">{_T string="Lost your password?"}</a>
 					</li>
         {/if}
+        -->
     {/if}
     {if $preferences->showPublicPages($login) eq true}
             		<li class="{if $PAGENAME eq "liste_membres.php"}current_{/if}page_item">

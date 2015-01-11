@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-12-31 13:43:50
+<?php /* Smarty version Smarty-3.1.19, created on 2015-01-11 19:30:08
          compiled from "/var/www/aae-ensg/templates/bootstrap/public_page.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:103852909554a3ef86a71929-85899944%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a9f8ba506dc2d001d268c0d41bd40e0f6d26a797' => 
     array (
       0 => '/var/www/aae-ensg/templates/bootstrap/public_page.tpl',
-      1 => 1418902533,
+      1 => 1421001003,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_54a3ef86c9abe3_24555805',
   'variables' => 
   array (
     'galette_lang' => 0,
@@ -40,8 +42,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'content' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_54a3ef86c9abe3_24555805',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_54a3ef86c9abe3_24555805')) {function content_54a3ef86c9abe3_24555805($_smarty_tpl) {?><?php if (!is_callable('smarty_function__T')) include '/var/www/aae-ensg/includes/../includes/smarty_plugins/function._T.php';
 ?><!DOCTYPE html>
@@ -146,6 +146,7 @@ self_adherent.php"><?php echo smarty_function__T(array('string'=>"Subscribe"),$_
 </a>
 					</li>
         <?php }?>
+        <!--
         <?php if ($_smarty_tpl->tpl_vars['pref_mail_method']->value!=constant('Galette\Core\GaletteMail::METHOD_DISABLED')) {?>
         			<li class="<?php if ($_smarty_tpl->tpl_vars['PAGENAME']->value=="lostpasswd.php") {?>current_<?php }?>page_item">
 						<a href="<?php echo $_smarty_tpl->tpl_vars['galette_base_path']->value;?>
@@ -153,6 +154,7 @@ lostpasswd.php"><?php echo smarty_function__T(array('string'=>"Lost your passwor
 </a>
 					</li>
         <?php }?>
+        -->
     <?php }?>
     <?php if ($_smarty_tpl->tpl_vars['preferences']->value->showPublicPages($_smarty_tpl->tpl_vars['login']->value)==true) {?>
             		<li class="<?php if ($_smarty_tpl->tpl_vars['PAGENAME']->value=="liste_membres.php") {?>current_<?php }?>page_item">
