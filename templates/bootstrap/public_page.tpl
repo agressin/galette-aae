@@ -93,17 +93,7 @@ We have to use a template file, so Smarty will do its work (like replacing varia
             {* Include plugins menu entries *}
             {$plugins->getPublicMenus($tpl, $preferences, true)}
     {/if}
-    
-					<li class="page_item page_item_has_children">
-					{_T string="Change language"}
-						<ul class='children'>
-			{foreach item=langue from=$languages}
-							<li class="page_item">
-								<a href="?pref_lang={$langue->getID()}"><img src="{$langue->getFlag()}" alt="{$langue->getName()}" lang="{$langue->getAbbrev()}" class="flag"/> {$langue->getName()} </a>
-							</li>
-			{/foreach}
-						</ul>
-					</il>
+
     {if $login->isLogged()}
 					<li class="page_item page_item_has_children">
 					{$login->loggedInAs(true)}
@@ -117,6 +107,14 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 						</ul>
 					</il>
 	{/if}
+
+			{foreach item=langue from=$languages}
+							<li class="page_item">
+								<a href="?pref_lang={$langue->getID()}"><img src="{$langue->getFlag()}" alt="{$langue->getName()}" lang="{$langue->getAbbrev()}" class="flag"/>  </a>
+							</li>
+			{/foreach}
+
+
 				</ul>
 			</div>
 	</nav><!-- #site-navigation -->	

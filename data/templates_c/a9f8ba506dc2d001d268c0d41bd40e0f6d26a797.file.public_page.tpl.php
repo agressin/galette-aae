@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-01-11 19:30:08
+<?php /* Smarty version Smarty-3.1.19, created on 2015-01-11 19:47:52
          compiled from "/var/www/aae-ensg/templates/bootstrap/public_page.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:103852909554a3ef86a71929-85899944%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a9f8ba506dc2d001d268c0d41bd40e0f6d26a797' => 
     array (
       0 => '/var/www/aae-ensg/templates/bootstrap/public_page.tpl',
-      1 => 1421001003,
+      1 => 1421002059,
       2 => 'file',
     ),
   ),
@@ -173,27 +173,7 @@ public/trombinoscope.php"><?php echo smarty_function__T(array('string'=>"Trombin
             <?php echo $_smarty_tpl->tpl_vars['plugins']->value->getPublicMenus($_smarty_tpl->tpl_vars['tpl']->value,$_smarty_tpl->tpl_vars['preferences']->value,true);?>
 
     <?php }?>
-    
-					<li class="page_item page_item_has_children">
-					<?php echo smarty_function__T(array('string'=>"Change language"),$_smarty_tpl);?>
 
-						<ul class='children'>
-			<?php  $_smarty_tpl->tpl_vars['langue'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['langue']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['languages']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['langue']->key => $_smarty_tpl->tpl_vars['langue']->value) {
-$_smarty_tpl->tpl_vars['langue']->_loop = true;
-?>
-							<li class="page_item">
-								<a href="?pref_lang=<?php echo $_smarty_tpl->tpl_vars['langue']->value->getID();?>
-"><img src="<?php echo $_smarty_tpl->tpl_vars['langue']->value->getFlag();?>
-" alt="<?php echo $_smarty_tpl->tpl_vars['langue']->value->getName();?>
-" lang="<?php echo $_smarty_tpl->tpl_vars['langue']->value->getAbbrev();?>
-" class="flag"/> <?php echo $_smarty_tpl->tpl_vars['langue']->value->getName();?>
- </a>
-							</li>
-			<?php } ?>
-						</ul>
-					</il>
     <?php if ($_smarty_tpl->tpl_vars['login']->value->isLogged()) {?>
 					<li class="page_item page_item_has_children">
 					<?php echo $_smarty_tpl->tpl_vars['login']->value->loggedInAs(true);?>
@@ -212,6 +192,22 @@ index.php?logout=1"><?php echo smarty_function__T(array('string'=>"Log off"),$_s
 						</ul>
 					</il>
 	<?php }?>
+
+			<?php  $_smarty_tpl->tpl_vars['langue'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['langue']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['languages']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['langue']->key => $_smarty_tpl->tpl_vars['langue']->value) {
+$_smarty_tpl->tpl_vars['langue']->_loop = true;
+?>
+							<li class="page_item">
+								<a href="?pref_lang=<?php echo $_smarty_tpl->tpl_vars['langue']->value->getID();?>
+"><img src="<?php echo $_smarty_tpl->tpl_vars['langue']->value->getFlag();?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['langue']->value->getName();?>
+" lang="<?php echo $_smarty_tpl->tpl_vars['langue']->value->getAbbrev();?>
+" class="flag"/>  </a>
+							</li>
+			<?php } ?>
+
+
 				</ul>
 			</div>
 	</nav><!-- #site-navigation -->	
