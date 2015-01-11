@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-12-31 13:43:35
+<?php /* Smarty version Smarty-3.1.19, created on 2015-01-11 21:36:27
          compiled from "/var/www/aae-ensg/templates/bootstrap/default_header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142679063654a3ef77575710-83570688%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '525ad602733d2568b964bdcd0712f8cab3b72e77' => 
     array (
       0 => '/var/www/aae-ensg/templates/bootstrap/default_header.tpl',
-      1 => 1414326550,
+      1 => 1421008344,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_54a3ef77681290_99130115',
   'variables' => 
   array (
     'pref_slogan' => 0,
@@ -30,17 +32,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'localprintstylesheet' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_54a3ef77681290_99130115',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_54a3ef77681290_99130115')) {function content_54a3ef77681290_99130115($_smarty_tpl) {?>
 <title><?php if ($_smarty_tpl->tpl_vars['pref_slogan']->value!='') {?><?php echo $_smarty_tpl->tpl_vars['pref_slogan']->value;?>
  - <?php }?><?php if ($_smarty_tpl->tpl_vars['page_title']->value!='') {?><?php echo $_smarty_tpl->tpl_vars['page_title']->value;?>
  - <?php }?>Galette <?php echo $_smarty_tpl->tpl_vars['GALETTE_VERSION']->value;?>
 </title>
-        <meta charset="UTF-8" />
-        
-        
+        <!-- <meta charset="UTF-8" />-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['template_subdir']->value;?>
 galette.css" />
         
@@ -51,7 +50,6 @@ $_smarty_tpl->tpl_vars["localstylesheet"]->value = ((string)$_smarty_tpl->tpl_va
             <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['localstylesheet']->value;?>
 " />
         <?php }?>
-        
         <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['jquery_dir']->value;?>
 jquery-<?php echo $_smarty_tpl->tpl_vars['jquery_version']->value;?>
 .min.js"></script>

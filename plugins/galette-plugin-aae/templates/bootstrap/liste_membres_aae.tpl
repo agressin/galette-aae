@@ -50,9 +50,9 @@
             <tbody>
     {foreach from=$eleves item=eleve name=alleleves}
                 <tr class="{if $smarty.foreach.allmembers.iteration % 2 eq 0}even{else}odd{/if}">
-                    <td class="nowrap username_row">{utf8_encode($eleve.nom_adh)}</td>
-                    <td class="nowrap">{utf8_encode($eleve.prenom_adh)}</td>
-                    <td class="nowrap">{utf8_encode($eleve.specialite)}</td>
+                    <td class="nowrap username_row">{$eleve.nom_adh}</td>
+                    <td class="nowrap">{$eleve.prenom_adh}</td>
+                    <td class="nowrap">{$eleve.specialite}</td>
                 </tr>
     {/foreach}
             </tbody>

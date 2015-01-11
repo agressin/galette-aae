@@ -4,16 +4,14 @@ These file contains common html headers to include for Galette Smarty rendering.
 Just put a {include file='common_header.tpl'} into the head tag.
 *}
 <title>{if $pref_slogan ne ""}{$pref_slogan} - {/if}{if $page_title ne ""}{$page_title} - {/if}Galette {$GALETTE_VERSION}</title>
-        <meta charset="UTF-8" />
-        
-        
+        <!-- <meta charset="UTF-8" />-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" type="text/css" href="{$template_subdir}galette.css" />
         {* Let's see if a local CSS exists and include it *}
         {assign var="localstylesheet" value="`$template_subdir`galette_local.css"}
         {if file_exists($localstylesheet)}
             <link rel="stylesheet" type="text/css" href="{$localstylesheet}" />
         {/if}
-        
         <script type="text/javascript" src="{$jquery_dir}jquery-{$jquery_version}.min.js"></script>
         <script type="text/javascript" src="{$jquery_dir}jquery-migrate-{$jquery_migrate_version}.min.js"></script>
         {* IE8 doe not know html5 tags *}
