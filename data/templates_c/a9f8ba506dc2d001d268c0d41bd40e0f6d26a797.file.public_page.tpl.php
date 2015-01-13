@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-01-11 19:47:52
+<?php /* Smarty version Smarty-3.1.19, created on 2015-01-12 21:18:01
          compiled from "/var/www/aae-ensg/templates/bootstrap/public_page.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:103852909554a3ef86a71929-85899944%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a9f8ba506dc2d001d268c0d41bd40e0f6d26a797' => 
     array (
       0 => '/var/www/aae-ensg/templates/bootstrap/public_page.tpl',
-      1 => 1421002059,
+      1 => 1421093864,
       2 => 'file',
     ),
   ),
@@ -161,6 +161,13 @@ lostpasswd.php"><?php echo smarty_function__T(array('string'=>"Lost your passwor
 						<a href="<?php echo $_smarty_tpl->tpl_vars['galette_base_path']->value;?>
 public/liste_membres.php"><?php echo smarty_function__T(array('string'=>"Members list"),$_smarty_tpl);?>
 </a>
+						<ul class='children'>
+							<li class="page_item">
+						    	<a href="<?php echo $_smarty_tpl->tpl_vars['galette_base_path']->value;?>
+public/trombinoscope.php"><?php echo smarty_function__T(array('string'=>"Trombinoscope"),$_smarty_tpl);?>
+</a>
+						    </li>
+						</ul>
 					</li>
 			<!--
             		<li class="<?php if ($_smarty_tpl->tpl_vars['PAGENAME']->value=="trombinoscope.php") {?>current_<?php }?>page_item">
@@ -175,15 +182,11 @@ public/trombinoscope.php"><?php echo smarty_function__T(array('string'=>"Trombin
     <?php }?>
 
     <?php if ($_smarty_tpl->tpl_vars['login']->value->isLogged()) {?>
-					<li class="page_item page_item_has_children">
-					<?php echo $_smarty_tpl->tpl_vars['login']->value->loggedInAs(true);?>
-
-						<ul class='children'>
-							<li class="page_item">
-								<a href="<?php echo $_smarty_tpl->tpl_vars['galette_base_path']->value;?>
-voir_adherent.php"><?php echo smarty_function__T(array('string'=>"View your member card"),$_smarty_tpl);?>
+					<li class="page_item">
+					<a href="<?php echo $_smarty_tpl->tpl_vars['galette_base_path']->value;?>
+voir_adherent.php"><?php echo $_smarty_tpl->tpl_vars['login']->value->login;?>
 </a>
-							</li>
+						<ul class='children'>
 							<li class="page_item">
 						    	<a  href="<?php echo $_smarty_tpl->tpl_vars['galette_base_path']->value;?>
 index.php?logout=1"><?php echo smarty_function__T(array('string'=>"Log off"),$_smarty_tpl);?>

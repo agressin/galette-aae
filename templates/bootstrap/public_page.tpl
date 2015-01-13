@@ -84,6 +84,11 @@ We have to use a template file, so Smarty will do its work (like replacing varia
     {if $preferences->showPublicPages($login) eq true}
             		<li class="{if $PAGENAME eq "liste_membres.php"}current_{/if}page_item">
 						<a href="{$galette_base_path}public/liste_membres.php">{_T string="Members list"}</a>
+						<ul class='children'>
+							<li class="page_item">
+						    	<a href="{$galette_base_path}public/trombinoscope.php">{_T string="Trombinoscope"}</a>
+						    </li>
+						</ul>
 					</li>
 			<!--
             		<li class="{if $PAGENAME eq "trombinoscope.php"}current_{/if}page_item">
@@ -95,12 +100,9 @@ We have to use a template file, so Smarty will do its work (like replacing varia
     {/if}
 
     {if $login->isLogged()}
-					<li class="page_item page_item_has_children">
-					{$login->loggedInAs(true)}
+					<li class="page_item">
+					<a href="{$galette_base_path}voir_adherent.php">{$login->login}</a>
 						<ul class='children'>
-							<li class="page_item">
-								<a href="{$galette_base_path}voir_adherent.php">{_T string="View your member card"}</a>
-							</li>
 							<li class="page_item">
 						    	<a  href="{$galette_base_path}index.php?logout=1">{_T string="Log off"}</a>
 						    </li>

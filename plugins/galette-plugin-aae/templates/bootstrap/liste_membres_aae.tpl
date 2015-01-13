@@ -3,8 +3,15 @@
 			<legend>{_T string="Select cycle and promotion"}</legend>
 			  <div class="form-group">
 				<label for="id_cycle" class="col-sm-2 control-label">{_T string="Cycle:"}</label>
+				<div class="col-xs-2">
+					<input type= "radio" name="id_cycle_simple" value="IT" {if $id_cycle_simple == "IT"} checked{/if}> Ingénieur </br>
+					<input type= "radio" name="id_cycle_simple" value="G"  {if $id_cycle_simple == "G"} checked{/if} > Géomètre   </br>
+					<input type= "radio" name="id_cycle_simple" value="DC" {if $id_cycle_simple == "DC"} checked{/if}> Dessinateur </br>
+				</div>
 				<div class="col-xs-3">
+					<label for="id_cycle" class="col-sm-1 control-label">{_T string="or"}</label>
 					<select class="form-control" name="id_cycle" id="id_cycle">
+						<option value="0" {if $param_selected eq 1} selected="selected"{/if} > -- </option>
 					{foreach from=$cycles item=cycle name=allcycles}
 						<option value="{$cycle.id_cycle}" {if $id_cycle == $cycle.id_cycle} selected="selected"{/if} >{$cycle.nom}</option>
 					{/foreach}
@@ -80,7 +87,15 @@
                 };
             };
 
+
             initiateSelects();
             
+            $('#id_cycle').on('change', function() {
+  				$('input[name=id_cycle_simple]').attr('checked',false);
+			});
+			
+			$('input[name=id_cycle_simple]').live('change', function() {
+				$('#id_cycle').val('0');
+			});
 
         </script>

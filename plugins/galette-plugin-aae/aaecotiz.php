@@ -49,10 +49,10 @@ $tpl->assign('content', $content);
 $tpl->template_dir = $orig_template_path;
 
 //restricted to user only
-if ( $login->isLogged() ) {
-    $tpl->display('page.tpl', AAETOOLS_SMARTY_PREFIX);
-} else {
+//if ( $login->isLogged() ) {
+//    $tpl->display('page.tpl', AAETOOLS_SMARTY_PREFIX);
+//} else {
 		$tpl->display('public_page.tpl');
-}
+//}
 
 ?>

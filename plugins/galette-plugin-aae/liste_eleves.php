@@ -30,12 +30,36 @@ foreach ($allCycles as $key => $cycle) {
 array_multisort($tmp, SORT_ASC, $allCycles);
 $tpl->assign('cycles', $allCycles);
 
+$simple = !empty($_POST['id_cycle_simple']);
+if($simple) {
+	$id_cycle_simple = $_POST['id_cycle_simple'];
+}
 $id_cycle = get_numeric_form_value('id_cycle', '');
 $annee_debut = get_numeric_form_value('annee_debut', '');
-$param_selected = ($id_cycle != '') && ($annee_debut != '');
+
+$param_selected = ($simple || ($id_cycle != '') ) && ($annee_debut != '');
 
 if($param_selected) {
-	$eleves = $formation->getPromotion($id_cycle,$annee_debut);
+	
+	if($simple){
+	
+		switch ($id_cycle_simple) {
+		case "IT":
+		    $eleves = $formation->getIngPromotion($annee_debut);
+		    break;
+		case "G":
+		    $eleves = $formation->getPromotion(52,$annee_debut);
+		    break;
+		case "DC":
+		    $eleves = $formation->getPromotion(6,$annee_debut);
+		    break;
+		}
+	//
+	
+	} else{
+		$eleves = $formation->getPromotion($id_cycle,$annee_debut);
+	}
+	
 
 
 	// Obtient une liste de colonnes
@@ -52,12 +76,11 @@ if($param_selected) {
 	$tpl->assign('nb_eleves', count($eleves));
 }
 
-$tpl->assign('page_title', _T("Members list"));
+$tpl->assign('page_title', _T("Former students list"));
 $tpl->assign('param_selected', $param_selected);
 $tpl->assign('id_cycle', $id_cycle);
+$tpl->assign('id_cycle_simple', $id_cycle_simple);
 $tpl->assign('annee_debut', $annee_debut);
-//$tpl->assign('members', $members);
-//$tpl->assign('nb_members', $m->getCount());
 
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before

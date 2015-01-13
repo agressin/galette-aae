@@ -1,6 +1,6 @@
 {if $loginfault}
                 <div id="errorbox">{_T string="Login failed."}</div>
-{/if}   
+{/if}
 			<form class="form-horizontal" action="index.php" method="post">
 			  <div class="form-group">
 				<label for="login" class="col-sm-2 control-label">{_T string="Username:"}</label>
