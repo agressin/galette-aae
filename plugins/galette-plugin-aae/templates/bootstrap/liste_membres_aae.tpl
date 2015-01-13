@@ -1,36 +1,36 @@
 	<form class="form-horizontal" action="liste_eleves.php" method="post">
 		<fieldset>
 			<legend>{_T string="Select cycle and promotion"}</legend>
-			  <div class="form-group">
-				<label for="id_cycle" class="col-sm-2 control-label">{_T string="Cycle:"}</label>
-				<div class="col-xs-2">
-					<input type= "radio" name="id_cycle_simple" value="IT" {if $id_cycle_simple == "IT"} checked{/if}> Ingénieur </br>
-					<input type= "radio" name="id_cycle_simple" value="G"  {if $id_cycle_simple == "G"} checked{/if} > Géomètre   </br>
-					<input type= "radio" name="id_cycle_simple" value="DC" {if $id_cycle_simple == "DC"} checked{/if}> Dessinateur </br>
-				</div>
-				<div class="col-xs-3">
-					<label for="id_cycle" class="col-sm-1 control-label">{_T string="or"}</label>
-					<select class="form-control" name="id_cycle" id="id_cycle">
-						<option value="0" {if $param_selected eq 1} selected="selected"{/if} > -- </option>
+				<div class="row col-sm-offset-1">
+					<div class="form-group col-md-4">
+						<label for="id_cycle" class="control-label">{_T string="Cycle:"}</label> <br>
+						<input name="id_cycle_simple" value="IT" type="radio"> Ingénieur <br>
+						<input name="id_cycle_simple" value="G" type="radio"> Géomètre   <br>
+						<input name="id_cycle_simple" value="DC" type="radio"> Dessinateur <br>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="id_cycle" class="control-label">{_T string="or, among all available cycle:"}</label> <br>
+						<select class="form-control" name="id_cycle" id="id_cycle">
+							<option value="0" {if $param_selected eq 1} selected="selected"{/if} > -- </option>
 					{foreach from=$cycles item=cycle name=allcycles}
-						<option value="{$cycle.id_cycle}" {if $id_cycle == $cycle.id_cycle} selected="selected"{/if} >{$cycle.nom}</option>
+							<option value="{$cycle.id_cycle}" {if $id_cycle == $cycle.id_cycle} selected="selected"{/if} >{$cycle.nom}</option>
 					{/foreach}
-					</select>
+						</select>
+					</div>
 				</div>
-			  </div>
-			  <div class="form-group">
-				<label for="annee_debut" class="col-sm-2 control-label">{_T string="Promotion:"}</label>
-				<div class="col-xs-3">
-					<select class="form-control" name="annee_debut" id="annee_debut">
-
-					</select>
+				<div class="row col-sm-offset-1">
+			  		<div class="form-group col-md-2">
+			  			<label for="annee_debut" class="control-label">{_T string="Promotion:"}</label><br>
+						<select class="form-control" name="annee_debut" id="annee_debut">
+						</select>
+					</div>
 				</div>
-			  </div>
-			  <div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-				  <button type="submit"  class="btn btn-primary">{if $param_selected eq 1} {_T string="Refresh"} {else} {_T string="Continue"} {/if}</button>
+				<div class="row col-xs-offset-2">
+				  <div class="form-group">
+					<div class=" col-sm-10">
+					  <button type="submit"  class="btn btn-primary">{if $param_selected eq 1} {_T string="Refresh"} {else} {_T string="Continue"} {/if}</button>
+					</div>
 				</div>
-			  </div>
 		</fieldset>
 	</form>
 {if $param_selected eq 1}
