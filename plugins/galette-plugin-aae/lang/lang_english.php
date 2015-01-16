@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Tue Jan 13 17:54:10 2015 (GMT)
+// This file was automatically generated on Fri Jan 16 21:43:24 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -90,11 +90,11 @@ $lang['RIB'] = 'RIB';
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/default/ajouter_formation_eleve.tpl:5 
 $lang['red'] = 'red';
 
-// ../templates/bootstrap/gestion_formations.tpl:6 ../templates/default/gestion_formations.tpl:6 
-$lang['Cycle'] = 'Cycle';
+// ../templates/bootstrap/gestion_formations.tpl:143 
+$lang['You are not allowed to modify your formations. However, if you see an error, please send an email to:'] = 'You are not allowed to modify your formations. However, if you see an error, please send an email to:';
 
 // ../templates/bootstrap/aaecotiz.tpl:17 ../templates/default/aaecotiz.tpl:16 
-$lang['Merci de faire un virement avec l\'intitulé \'cotis nom prenom\' sur le compte suivant :'] = '';
+$lang['Merci de faire un virement avec l\'intitulé \'cotis nom prenom\' sur le compte suivant :'] = 'Thank you to make a transfer with the title \'cotis surname first name\' to the following account:';
 
 // ../templates/bootstrap/liste_membres_aae.tpl:47 ../templates/default/liste_membres_aae.tpl:41 
 $lang['Name'] = 'Name';
@@ -112,13 +112,13 @@ $lang['Refresh'] = 'Refresh';
 $lang['please create a member'] = 'please create a member';
 
 // ../templates/bootstrap/aaecotiz.tpl:25 ../templates/default/aaecotiz.tpl:24 
-$lang['Veuillez vous identifier pour obtenir le RIB, ou le demander à'] = '';
+$lang['Veuillez vous identifier pour obtenir le RIB, ou le demander à'] = 'Please login to get GDI, or ask it to';
 
 // ../templates/bootstrap/liste_membres_aae.tpl:69 ../templates/default/liste_membres_aae.tpl:63 
 $lang['No member to show'] = 'No member to show';
 
 // ../templates/bootstrap/aaecotiz.tpl:21 ../templates/default/aaecotiz.tpl:20 
-$lang['En cas de virement groupé pour plusieurs personnes, merci de le préciser dans votre mail.'] = '';
+$lang['En cas de virement groupé pour plusieurs personnes, merci de le préciser dans votre mail.'] = 'In case of transfer grouped for several people, thank you specify in your email.';
 
 // ../templates/bootstrap/liste_membres_aae.tpl:40 ../templates/default/liste_membres_aae.tpl:34 
 $lang['student'] = 'student';
@@ -162,8 +162,11 @@ $lang['Continue'] = 'Continue';
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:22 ../templates/default/ajouter_formation_eleve.tpl:22 
 $lang['Formation details'] = 'Formation details';
 
+// ../templates/bootstrap/gestion_formations.tpl:6 ../templates/default/gestion_formations.tpl:6 
+$lang['Cycle'] = 'Cycle';
+
 // ../templates/bootstrap/aaecotiz.tpl:11 ../templates/bootstrap/aaecotiz.tpl:19 ../templates/default/aaecotiz.tpl:10 ../templates/default/aaecotiz.tpl:18 
-$lang['et de prévenir de votre paiement en envoyant un mail à'] = '';
+$lang['et de prévenir de votre paiement en envoyant un mail à'] = 'and prevent your payment by sending an email to';
 
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:9 ../templates/default/ajouter_formation_eleve.tpl:9 
 $lang['Member:'] = 'Member:';

@@ -1,12 +1,12 @@
 # Header entry was created by Lokalize.
 #
 # , 2013.
-# AGressin <adrien.gressin@gmail.com>, 2014.
+# AGressin <adrien.gressin@gmail.com>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2014-12-31 13:32+0100\n"
+"PO-Revision-Date: 2015-01-16 22:43+0100\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -25,6 +25,8 @@ msgid ""
 "En cas de virement groupé pour plusieurs personnes, merci de le préciser "
 "dans votre mail."
 msgstr ""
+"In case of transfer grouped for several people, thank you specify in your "
+"email."
 
 #: ../templates/bootstrap/menu.tpl:9 ../templates/default/menu.tpl:6
 msgid "Who to contribute ?"
@@ -41,6 +43,14 @@ msgstr "Contribution process"
 #: ../gestion_formations_eleve.php:22
 msgid "Formations managment"
 msgstr "Formations managment"
+
+#: ../templates/bootstrap/gestion_formations.tpl:143
+msgid ""
+"You are not allowed to modify your formations. However, if you see an error, "
+"please send an email to:"
+msgstr ""
+"You are not allowed to modify your formations. However, if you see an error, "
+"please send an email to:"
 
 #: ../templates/bootstrap/aaetools.tpl:6 ../templates/default/aaetools.tpl:6
 msgid "RIB"
@@ -65,7 +75,7 @@ msgstr "please create a member"
 #: ../templates/bootstrap/aaecotiz.tpl:19 ../templates/default/aaecotiz.tpl:10
 #: ../templates/default/aaecotiz.tpl:18
 msgid "et de prévenir de votre paiement en envoyant un mail à"
-msgstr ""
+msgstr "and prevent your payment by sending an email to"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:9
 #: ../templates/default/ajouter_formation_eleve.tpl:9
@@ -128,7 +138,7 @@ msgstr "End of the formation:"
 
 #: ../templates/bootstrap/aaecotiz.tpl:25 ../templates/default/aaecotiz.tpl:24
 msgid "Veuillez vous identifier pour obtenir le RIB, ou le demander à"
-msgstr ""
+msgstr "Please login to get GDI, or ask it to"
 
 #: ../templates/bootstrap/gestion_formations.tpl:6
 #: ../templates/default/gestion_formations.tpl:6
@@ -195,6 +205,8 @@ msgid ""
 "Merci de faire un virement avec l'intitulé 'cotis nom prenom' sur le compte "
 "suivant :"
 msgstr ""
+"Thank you to make a transfer with the title 'cotis surname first name' to "
+"the following account:"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:36
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:43

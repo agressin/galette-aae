@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-01-13 18:54+0100\n"
+"PO-Revision-Date: 2015-01-16 22:40+0100\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -43,6 +43,14 @@ msgstr "Procédure de cotisation"
 #: ../gestion_formations_eleve.php:22
 msgid "Formations managment"
 msgstr "Gestion des formations"
+
+#: ../templates/bootstrap/gestion_formations.tpl:143
+msgid ""
+"You are not allowed to modify your formations. However, if you see an error, "
+"please send an email to:"
+msgstr ""
+"Vous n'êtes pas autorisé à modifier vos formations, si vous voyez une erreur "
+"merci de contacter le responsable du site à l'adresse suivante :"
 
 #: ../templates/bootstrap/aaetools.tpl:6 ../templates/default/aaetools.tpl:6
 msgid "RIB"

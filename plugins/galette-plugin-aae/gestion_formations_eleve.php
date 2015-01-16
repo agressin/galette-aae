@@ -34,16 +34,22 @@ foreach ($allCycles as $cycle) {
 }
 $tpl->assign('cycles', $cycles_options);
 
+$member = new Galette\Entity\Adherent();
 //Liste les formations 
 if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
     $list_formations = $formation->getFormations($_GET['id_adh']);
     $tpl->assign('haveRights', true);
     $tpl->assign('mid', $_GET['id_adh']);
+
+    $member->load($_GET['id_adh']);
+    
 }else{
     $list_formations = $formation->getFormations($login->id);
     $tpl->assign('haveRights', false);
     $tpl->assign('mid', $login->id);
+    $member->load($login->id);
 }
+$tpl->assign('member', $member);
 
 //Tri le tableau en fonction de la date de début.
 usort($list_formations, function($a, $b) {

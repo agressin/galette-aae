@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Tue Jan 13 17:55:04 2015 (GMT)
+// This file was automatically generated on Fri Jan 16 21:43:24 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -90,8 +90,8 @@ $lang['RIB'] = 'RIB';
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/default/ajouter_formation_eleve.tpl:5 
 $lang['red'] = 'rouge';
 
-// ../templates/bootstrap/gestion_formations.tpl:6 ../templates/default/gestion_formations.tpl:6 
-$lang['Cycle'] = 'Cycle';
+// ../templates/bootstrap/gestion_formations.tpl:143 
+$lang['You are not allowed to modify your formations. However, if you see an error, please send an email to:'] = 'Vous n\'êtes pas autorisé à modifier vos formations, si vous voyez une erreur merci de contacter le responsable du site à l\'adresse suivante :';
 
 // ../templates/bootstrap/aaecotiz.tpl:17 ../templates/default/aaecotiz.tpl:16 
 $lang['Merci de faire un virement avec l\'intitulé \'cotis nom prenom\' sur le compte suivant :'] = 'Merci de faire un virement avec l\'intitulé \'cotis nom prenom\' sur le compte suivant :';
@@ -161,6 +161,9 @@ $lang['Continue'] = 'Continuer';
 
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:22 ../templates/default/ajouter_formation_eleve.tpl:22 
 $lang['Formation details'] = 'Détails des formations';
+
+// ../templates/bootstrap/gestion_formations.tpl:6 ../templates/default/gestion_formations.tpl:6 
+$lang['Cycle'] = 'Cycle';
 
 // ../templates/bootstrap/aaecotiz.tpl:11 ../templates/bootstrap/aaecotiz.tpl:19 ../templates/default/aaecotiz.tpl:10 ../templates/default/aaecotiz.tpl:18 
 $lang['et de prévenir de votre paiement en envoyant un mail à'] = 'et de prévenir de votre paiement en envoyant un mail à';

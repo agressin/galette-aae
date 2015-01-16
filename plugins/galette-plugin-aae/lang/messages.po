@@ -22,6 +22,10 @@ msgstr ""
 msgid "Formations managment"
 msgstr ""
 
+#: ../templates/bootstrap/gestion_formations.tpl:143
+msgid "You are not allowed to modify your formations. However, if you see an error, please send an email to:"
+msgstr ""
+
 #: ../templates/bootstrap/aaetools.tpl:6 ../templates/default/aaetools.tpl:6
 msgid "RIB"
 msgstr ""

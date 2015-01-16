@@ -1,4 +1,4 @@
-
+ <strong>{$member->sname}</strong>
     <table id='table_formation' class="listing">
         <thead>
             <tr>
@@ -13,8 +13,7 @@
         </thead>
 
         <tbody>
-            
-
+ 
     {foreach from=$list_formations item=form}
             <tr class="formation_row">
                 <td class="center nowrap">{$form.nom}</td>
@@ -52,8 +51,10 @@
                     <input id='btn_add' border=0 src="{$template_subdir}images/icon-add.png" type=image align="middle" /> 
                 </td>
             </tr>
-
-        
+	{/if}
+       </tbody>
+    </table>    
+    {if $haveRights}
         <script type="text/javascript">
 
             var intiateSelects = function() {
@@ -138,6 +139,8 @@
                     });
             }
         </script>
+        {else}
+        {_T string="You are not allowed to modify your formations. However, if you see an error, please send an email to:"}
+        <a href='mailto:{$preferences->pref_email}'>{$preferences->pref_email}</a>
         {/if}
-        </tbody>
-    </table>
+
