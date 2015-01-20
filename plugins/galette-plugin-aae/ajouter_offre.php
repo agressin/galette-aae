@@ -42,7 +42,8 @@ if ( $id_offre != '' ) {
 
 $tpl->assign('page_title', $title);
 
-if (isset($_POST['valid']) && $_POST['valid'] == '1') {
+//if (isset($_POST['valid']) && !empty($_POST['valid'] ) ) {
+if (isset($_POST['titre_offre']) ) {
     //form was send normally, we try to store new values
 
     $res = $offres->setOffre(
@@ -64,7 +65,7 @@ if (isset($_POST['valid']) && $_POST['valid'] == '1') {
 		$_POST['remuneration'],
 		$_POST['cursus'],
 		$_POST['rech_majeures'],
-		$haveRights
+		isset($_POST['valid'] ) //$haveRights
     );
 
     if ( !$res ) {
@@ -77,11 +78,14 @@ if (isset($_POST['valid']) && $_POST['valid'] == '1') {
 //Recup offre
 if ( $id_offre!='') {
 	$offre = $offres->getOffre($id_offre);
+	var_dump($offre);
 	$tpl->assign('offer', $offre);
 }else if ( $haveRights )  {
 		$offre['nom_contact'] =  $login->name . " " . $login->surname;
 		$tpl->assign('offer', $offre);
 }
+
+$tpl->assign('haveRights', $haveRights);
 
 //Error
 $tpl->assign('warning_detected', $warning_detected);

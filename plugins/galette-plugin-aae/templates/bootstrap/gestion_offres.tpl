@@ -58,7 +58,7 @@
 
             $('.btn_supp').click(function(e) {
                 e.preventDefault();
-                alert("supp");
+                // alert("supp");
                 $.get( 'supprimer_offre.php',
                     {
                         id_offre: e.target.value

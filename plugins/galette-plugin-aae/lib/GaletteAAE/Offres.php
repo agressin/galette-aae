@@ -21,14 +21,17 @@ class Offres
         global $zdb;
 
         try {
-        //TODO
-            $select = new \Zend_Db_Select($zdb->db);
+
+            $select = $zdb->sql->select();
+
             if($onlyValidOffer) {
-				$select->from($this->getTableName())->where("valide= ?",true);
+				$select->from($this->getTableName())->where->equalTo("valide",true);
 			} else {
 				$select->from($this->getTableName())->where(true);;
 			}
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
             if ( count($res) > 0 ) {
                 return $res;
             } else {
@@ -38,10 +41,6 @@ class Offres
             Analog::log(
                 'Unable to retrieve offres : "' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -59,11 +58,13 @@ class Offres
         global $zdb;
 
         try {
-        //TODO
-            $select = new \Zend_Db_Select($zdb->db);
-			$select->from($this->getTableName())->where("valide= ?",false);
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
-            if ( count($res) > 0 ) {
+
+            $select = $zdb->sql->select();
+            $select->from($this->getTableName())->where->equalTo("valide",false);
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+
+			if ( count($res) > 0 ) {
                 return $res;
             } else {
                 return array();
@@ -72,10 +73,6 @@ class Offres
             Analog::log(
                 'Unable to retrieve offres : "' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -93,10 +90,12 @@ class Offres
         global $zdb;
 
         try {
-        //TODO
-            $select = new \Zend_Db_Select($zdb->db);
-            $select->from($this->getTableName())->where(self::PK . ' = ?', $id);
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+
+            $select = $zdb->sql->select();
+            $select->from($this->getTableName())->where->equalTo(self::PK,$id);
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+
             if ( count($res) > 0 ) {
                 return $res[0];
             } else {
@@ -107,10 +106,6 @@ class Offres
                 'Unable to retrieve offre information for "' .
                 $id  . '". | ' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -156,19 +151,17 @@ class Offres
 
             if ( $id_offre == '' ) {
                 //Offer does not exists yet
-                $res = $zdb->db->insert(
-                    $this->getTableName(),
-                    $data
-                );
+                $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
+                $insert->values($data);
+                $add = $zdb->execute($insert);
+
             } else {
                 //Offer already exists, just update
-                $res = $zdb->db->update(
-                    $this->getTableName(),
-                    $data,
-                    self::PK . '=' . $id_offre
-                );
+                $update = $zdb->update(AAE_PREFIX . self::TABLE);
+                $update->set($data)->where->equalTo(self::PK,$id_offre);
+                $edit = $zdb->execute($update);
             }
-            return ($res > 0);
+            return (true);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set offer ' .
@@ -188,11 +181,12 @@ class Offres
         global $zdb;
 
         try {
-            $del = $zdb->db->delete(
-                $this->getTableName(),
-                self::PK . '=' . $id_offre
-            );
-            return ($del > 0);
+
+            $delete = $zdb->delete(AAE_PREFIX . self::TABLE);
+            $delete->where->equalTo(self::PK, $id_offre);
+            $zdb->execute($delete);
+
+            return (true);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to delete offer ' .
@@ -217,12 +211,12 @@ class Offres
 
             $data = array( 'valide'	=> $valide);
             //update
-            $res = $zdb->db->update(
-                $this->getTableName(),
-                $data,
-                self::PK . '=' . $id_offre
-            );
-            return ($res > 0);
+            $update = $zdb->update(AAE_PREFIX . self::TABLE);
+            $update->set($data)->where->equalTo(self::PK,$id_offre);
+            $edit = $zdb->execute($update);
+
+
+            return (true);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to valid offer ' .

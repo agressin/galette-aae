@@ -5,9 +5,15 @@
             <fieldset class="cssform">
                 <legend class="ui-state-active ui-corner-top">{_T string="Offer general "}</legend>
                 <div>
+                {if $haveRights}
+                <p>
+                    <label for="valid" class="bline">{_T string="Validation:"}</label>
+                    <input type="checkbox" name="valid" id="valid" {if $offer.valide} checked  {/if}/>
+                </p>
+                {/if}
                 <p>
                     <label for="titre_offre" class="bline">{_T string="Title:"}</label>
-                    <input type="text" name="titre_offre" id="titre_offre" value="{utf8_encode($offer.titre)}" maxlength="150" required/>
+                    <input type="text" name="titre_offre" id="titre_offre" value="{$offer.titre}" maxlength="150" required/>
                 </p>
                 <p>
                     <label for="nom_contact" class="bline">{_T string="Contact Name:"}</label>
@@ -87,9 +93,8 @@
         <div class="button-container">
             <input type="submit" id="btnsave" value="{_T string="Save"}"/>
             <input type="hidden" name="id_offre" value="{$offer.id}"/>
-            <input type="hidden" name="id_offre" value="{$offer.id}"/>
-            {* Second step validator *}
-            <input type="hidden" name="valid" value="1"/>
+            {* Second step validator <input type="hidden" name="valid" value="1"/> *}
+            
 
         </div>
         </form>
