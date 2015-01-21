@@ -4,9 +4,9 @@
 				<div class="row col-sm-offset-1">
 					<div class="form-group col-md-4">
 						<label for="id_cycle" class="control-label">{_T string="Cycle:"}</label> <br>
-						<input name="id_cycle_simple" value="IT" type="radio"> Ingénieur <br>
-						<input name="id_cycle_simple" value="G" type="radio"> Géomètre   <br>
-						<input name="id_cycle_simple" value="DC" type="radio"> Dessinateur <br>
+						<input name="id_cycle_simple" value="IT" type="radio" {if $id_cycle_simple == "IT"} checked {/if}> Ingénieur <br>
+						<input name="id_cycle_simple" value="G" type="radio" {if $id_cycle_simple == "G"} checked {/if}> Géomètre   <br>
+						<input name="id_cycle_simple" value="DC" type="radio" {if $id_cycle_simple == "DC"} checked {/if}> Dessinateur <br>
 					</div>
 					<div class="form-group col-md-3">
 						<label for="id_cycle" class="control-label">{_T string="or, among all available cycle:"}</label> <br>
@@ -49,9 +49,6 @@
                     <th class="left">
                             {_T string="First Name"}
                     </th> 
-                    <th class="left"> 
-                       {_T string="Speciality"}
-                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -59,7 +56,6 @@
                 <tr class="{if $smarty.foreach.allmembers.iteration % 2 eq 0}even{else}odd{/if}">
                     <td class="nowrap username_row">{$eleve.nom_adh}</td>
                     <td class="nowrap">{$eleve.prenom_adh}</td>
-                    <td class="nowrap">{$eleve.specialite}</td>
                 </tr>
     {/foreach}
             </tbody>
