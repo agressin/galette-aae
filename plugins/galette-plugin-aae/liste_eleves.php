@@ -51,7 +51,7 @@ if($param_selected) {
 		    $eleves = $formation->getPromotion(52,$annee_debut);
 		    break;
 		case "DC":
-		    $eleves = $formation->getPromotion(6,$annee_debut);
+		    $eleves = $formation->getDCPromotion($annee_debut);
 		    break;
 		}
 	//

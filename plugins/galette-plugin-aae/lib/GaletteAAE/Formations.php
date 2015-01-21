@@ -267,6 +267,54 @@ class Formations
         }
     }
 
+/**
+     * Retrieve member from one dc promotion
+     *
+     * @param int $StartYear
+     *
+     * @return array
+     */
+    public function getDCPromotion($annee_debut)
+    {
+        global $zdb;
+
+        try {
+            $select = $zdb->sql->select();
+            $table_adh = PREFIX_DB . Adherent::TABLE;
+			$select->from(
+					array('a' => $table_adh)
+				);
+			$select->columns(array(Adherent::PK, 'nom_adh', 'prenom_adh'));
+							
+			$select->join(array('f' => $this->getTableName()),
+				'f.id_adh = a.' . Adherent::PK,
+				array('specialite'));
+				
+
+			$select->where->equalTo('f.annee_debut', $annee_debut)
+				   ->NEST
+				   ->where->equalTo('f.id_cycle', 6)
+				   ->OR
+				   ->where->equalTo('f.id_cycle', 56)
+				   ->UNNEST;
+            
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+            
+            if ( count($res) > 0 ) {
+                return $res;
+            } else {
+                return array();
+            }
+        } catch (\Exception $e) {
+            Analog::log(
+                'Unable to retrieve members promotion for "' .
+                $id_cycle  . '" | "' . $annee_debut .'" | ' . $e->getMessage(),
+                Analog::WARNING
+            );
+            return false;
+        }
+    }
     
     /**
      * Get table's name
