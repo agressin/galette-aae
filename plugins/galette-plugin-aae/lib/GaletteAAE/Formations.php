@@ -136,7 +136,7 @@ class Formations
                 //edit == 0 does not mean there were an error, but that there
                 //were nothing to change
             }
-            return ($res > 0);
+            return (true);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set formation ' .

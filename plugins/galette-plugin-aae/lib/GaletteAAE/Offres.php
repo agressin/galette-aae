@@ -21,19 +21,18 @@ class Offres
         global $zdb;
 
         try {
-        
-        	
-        //TODO : ok ?
+
             $select = $zdb->sql->select();
+
             if($onlyValidOffer) {
-				$select->from($this->getTableName())->where("valide= ?",true);
+				$select->from($this->getTableName())->where->equalTo("valide",true);
 			} else {
 				$select->from($this->getTableName())->where(true);;
 			}
 			
             $res = $zdb->execute($select);
             $res = $res->toArray();
-            
+         
             if ( count($res) > 0 ) {
                 return $res;
             } else {
@@ -60,7 +59,7 @@ class Offres
         global $zdb;
 
         try {
-        //TODO : ok ?
+
             $select = $zdb->sql->select();
 			$select->from($this->getTableName())->where("valide= ?",false);
 			
@@ -93,13 +92,13 @@ class Offres
         global $zdb;
 
         try {
-        //TODO
+
             $select = $zdb->sql->select();
-            $select->from($this->getTableName())->where(self::PK . ' = ?', $id);
+            $select->from($this->getTableName())->where->equalTo(self::PK,$id);
 
             $res = $zdb->execute($select);
             $res = $res->toArray();
-            
+
             if ( count($res) > 0 ) {
                 return $res[0];
             } else {
@@ -154,18 +153,18 @@ class Offres
                     );
 
             if ( $id_offre == '' ) {
-            	//Offer does not exists yet
+                //Offer does not exists yet
                 $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
                 $insert->values($data);
                 $add = $zdb->execute($insert);
 
             } else {
-            	//Offer already exists, just update
+                //Offer already exists, just update
                 $update = $zdb->update(AAE_PREFIX . self::TABLE);
                 $update->set($data)->where->equalTo(self::PK,$id_offre);
                 $edit = $zdb->execute($update);
             }
-            return ($res > 0);
+            return (true);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set offer ' .
@@ -185,11 +184,12 @@ class Offres
         global $zdb;
 
         try {
-            $del = $zdb->db->delete(
-                $this->getTableName(),
-                self::PK . '=' . $id_offre
-            );
-            return ($del > 0);
+
+            $delete = $zdb->delete(AAE_PREFIX . self::TABLE);
+            $delete->where->equalTo(self::PK, $id_offre);
+            $zdb->execute($delete);
+
+            return (true);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to delete offer ' .
@@ -218,6 +218,7 @@ class Offres
             $update->set($data)->where->equalTo(self::PK,$id_offre);
             $edit = $zdb->execute($update);
 
+            return (true);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to valid offer ' .
