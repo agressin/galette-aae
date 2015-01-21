@@ -50,6 +50,8 @@ if($detail_mode){
 	$tpl->assign('offres', $allOffres);
 
 	if($rss_mode) {
+		$tpl->assign('url', "http://aae-dev.eu/");
+		header("Content-Type: text/xml");
 		$tpl->display('liste_offres_rss.tpl');
 	} else {
 		$tpl->assign('page_title', _T("Job offers list"));
@@ -63,9 +65,11 @@ if(! $rss_mode) {
 	//Set path back to main Galette's template
 	$tpl->template_dir = $orig_template_path;
 
+	/*
 	if($login->isLogged())
 		$tpl->display('page.tpl');
 	else
+	*/
 		$tpl->display('public_page.tpl');
 }
 

@@ -21,14 +21,19 @@ class Offres
         global $zdb;
 
         try {
-        //TODO
-            $select = new \Zend_Db_Select($zdb->db);
+        
+        	
+        //TODO : ok ?
+            $select = $zdb->sql->select();
             if($onlyValidOffer) {
 				$select->from($this->getTableName())->where("valide= ?",true);
 			} else {
 				$select->from($this->getTableName())->where(true);;
 			}
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+			
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+            
             if ( count($res) > 0 ) {
                 return $res;
             } else {
@@ -38,10 +43,6 @@ class Offres
             Analog::log(
                 'Unable to retrieve offres : "' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -59,10 +60,13 @@ class Offres
         global $zdb;
 
         try {
-        //TODO
-            $select = new \Zend_Db_Select($zdb->db);
+        //TODO : ok ?
+            $select = $zdb->sql->select();
 			$select->from($this->getTableName())->where("valide= ?",false);
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+			
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+            
             if ( count($res) > 0 ) {
                 return $res;
             } else {
@@ -72,10 +76,6 @@ class Offres
             Analog::log(
                 'Unable to retrieve offres : "' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -94,9 +94,12 @@ class Offres
 
         try {
         //TODO
-            $select = new \Zend_Db_Select($zdb->db);
+            $select = $zdb->sql->select();
             $select->from($this->getTableName())->where(self::PK . ' = ?', $id);
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+            
             if ( count($res) > 0 ) {
                 return $res[0];
             } else {
@@ -107,10 +110,6 @@ class Offres
                 'Unable to retrieve offre information for "' .
                 $id  . '". | ' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -155,18 +154,16 @@ class Offres
                     );
 
             if ( $id_offre == '' ) {
-                //Offer does not exists yet
-                $res = $zdb->db->insert(
-                    $this->getTableName(),
-                    $data
-                );
+            	//Offer does not exists yet
+                $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
+                $insert->values($data);
+                $add = $zdb->execute($insert);
+
             } else {
-                //Offer already exists, just update
-                $res = $zdb->db->update(
-                    $this->getTableName(),
-                    $data,
-                    self::PK . '=' . $id_offre
-                );
+            	//Offer already exists, just update
+                $update = $zdb->update(AAE_PREFIX . self::TABLE);
+                $update->set($data)->where->equalTo(self::PK,$id_offre);
+                $edit = $zdb->execute($update);
             }
             return ($res > 0);
         } catch ( \Exception $e ) {
@@ -217,12 +214,10 @@ class Offres
 
             $data = array( 'valide'	=> $valide);
             //update
-            $res = $zdb->db->update(
-                $this->getTableName(),
-                $data,
-                self::PK . '=' . $id_offre
-            );
-            return ($res > 0);
+            $update = $zdb->update(AAE_PREFIX . self::TABLE);
+            $update->set($data)->where->equalTo(self::PK,$id_offre);
+            $edit = $zdb->execute($update);
+
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to valid offer ' .
@@ -238,7 +233,7 @@ class Offres
      *
      * @return string
      */
-    static public function getTableName()
+    protected function getTableName()
     {
         return PREFIX_DB . AAE_PREFIX  . self::TABLE;
     }
