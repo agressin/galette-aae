@@ -60,6 +60,8 @@
     {/foreach}
             </tbody>
         </table>
+		{_T string="If you see an error, please send an email to:"}
+        <a href='mailto:{$preferences->pref_email}'>{$preferences->pref_email}</a>
 
 {else}
     <div id="infobox">{_T string="No member to show"}</div>
