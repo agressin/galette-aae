@@ -38,7 +38,7 @@
                 </p>
                 <p>
                     <label for="desc_offre" class="bline">{_T string="Description:"}</label>
-                    <textarea name="desc_offre" id="desc_offre" cols="40" rows="4" required> {utf8_encode($offer.desc_offre)} </textarea>
+                    <textarea name="desc_offre" id="desc_offre" cols="40" rows="4" required> {$offer.desc_offre} </textarea>
                 </p>
                 </div>
 			</fieldset>
@@ -47,11 +47,11 @@
                 <div>
                 <p>
                     <label for="organisme" class="bline">{_T string="Organisme:"}</label>
-                    <input type="text" name="organisme" id="organisme" value="{utf8_encode($offer.organisme)}" maxlength="150"/>
+                    <input type="text" name="organisme" id="organisme" value="{$offer.organisme}" maxlength="150"/>
                 </p>
                 <p>
                     <label for="localisation" class="bline">{_T string="Localisation:"}</label>
-                    <textarea name="localisation" id="localisation" cols="40" rows="4"> {utf8_encode($offer.localisation)} </textarea>
+                    <textarea name="localisation" id="localisation" cols="40" rows="4"> {$offer.localisation} </textarea>
                 </p>
                 <p>
                     <label for="site" class="bline">{_T string="Site:"}</label>
@@ -64,7 +64,7 @@
                 </p>
                 <p>
                     <label for="mots_cles" class="bline">{_T string="Key word(s):"}</label>
-                    <input type="text" name="mots_cles" id="mots_cles" value="{utf8_encode($offer.mots_cles)}" maxlength="150"/>
+                    <input type="text" name="mots_cles" id="mots_cles" value="{$offer.mots_cles}" maxlength="150"/>
                 </p>
                 <p>
                     <label for="duree" class="bline">{_T string="Duration:"}</label>
@@ -93,9 +93,7 @@
         <div class="button-container">
             <input type="submit" id="btnsave" value="{_T string="Save"}"/>
             <input type="hidden" name="id_offre" value="{$offer.id}"/>
-            {* Second step validator <input type="hidden" name="valid" value="1"/> *}
-            
-
+            <input type="hidden" name="id_adh" value="{$offer.id_adh}"/>
         </div>
         </form>
         <script type="text/javascript">

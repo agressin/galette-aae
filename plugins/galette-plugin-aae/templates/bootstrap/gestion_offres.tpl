@@ -6,9 +6,8 @@
             <tr>
                 <!-- <th class="listing id_row">#</th> -->
                 <th class="listing left">{_T string="Titre"}</th>
-                {if $haveRights}
+                <th class="listing left">{_T string="Type"}</th>
                 <th class="listing actions_row">{_T string="Actions"}</th>
-                {/if}
         </thead>
 
         <tbody>
@@ -16,20 +15,27 @@
 
     {foreach from=$offres item=offre}
             <tr class="offre_row">
-                <td class="center nowrap"><a href="{$galette_base_path}plugins/galette-plugin-aae/ajouter_offre.php?id_offre={$offre.id}"> {utf8_encode($offre.titre)} </a></td>
-                {if $haveRights}
+                <td class="center nowrap"><a href="{$galette_base_path}plugins/galette-plugin-aae/ajouter_offre.php?id_offre={$offre.id}"> {$offre.titre} </a></td>
+                <td class="center nowrap"> {$offre.type} </a></td>
                 <td class="center nowrap">
-                    <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$offre.id}' align="middle" /> 
+                    <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$offre.id}' align="middle" />
+               {if $haveRights}
                     {if $offre.valide}
 						<input class='btn_valid' border=0 src="{$template_subdir}images/ok.png" type=image Value='{$offre.id}' align="middle" /> 
 					{else}
 						<input class='btn_invalid' border=0 src="{$template_subdir}images/icon-warning.png" type=image Value='{$offre.id}' align="middle" /> 
 					{/if}
+				{/if}
                 </td>
-                {/if}
             </tr>
     {/foreach}
+    <div>
+    Actions : <img src="{$template_subdir}images/delete.png" />  to delete offer </br>
     {if $haveRights}
+    	<img src="{$template_subdir}images/ok.png" />  to unvalide a valide offer </br>
+    	<img src="{$template_subdir}images/icon-warning.png" />  to valide a unvalide offer </br>
+    {/if}
+    </div>
         <script type="text/javascript">
 
             $('.btn_valid').click(function(e) {
@@ -78,6 +84,5 @@
                     });
             }
         </script>
-        {/if}
         </tbody>
     </table>

@@ -49,6 +49,6 @@
 
     </script>
 
-	{else}
+{else}
     <div id="infobox">{_T string="No offer to show"}</div>
 {/if} {* $nb_offres > 0 *}

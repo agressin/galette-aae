@@ -61,7 +61,40 @@ class Offres
         try {
 
             $select = $zdb->sql->select();
-			$select->from($this->getTableName())->where("valide= ?",false);
+			$select->from($this->getTableName())->where->equalTo("valide",false);
+			
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+            
+            if ( count($res) > 0 ) {
+                return $res;
+            } else {
+                return array();
+            }
+        } catch (\Exception $e) {
+            Analog::log(
+                'Unable to retrieve offres : "' . $e->getMessage(),
+                Analog::WARNING
+            );
+            return false;
+        }
+    }
+ 
+ /**
+     * Retrieve offers of one adh
+     *
+     * @param id_adh
+     *
+     * @return array
+     */
+    public function getAdhOffres($id_adh)
+    {
+        global $zdb;
+
+        try {
+
+            $select = $zdb->sql->select();
+			$select->from($this->getTableName())->where->equalTo("id_adh",$id_adh);
 			
             $res = $zdb->execute($select);
             $res = $res->toArray();

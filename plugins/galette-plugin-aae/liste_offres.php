@@ -50,7 +50,7 @@ if($detail_mode){
 	$tpl->assign('offres', $allOffres);
 
 	if($rss_mode) {
-		$tpl->assign('url', "http://aae-dev.eu/");
+		$tpl->assign('url', "http://".$_SERVER['HTTP_HOST']);
 		header("Content-Type: text/xml");
 		$tpl->display('liste_offres_rss.tpl');
 	} else {

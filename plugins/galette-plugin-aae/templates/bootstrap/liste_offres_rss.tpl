@@ -12,7 +12,7 @@
 				<title>{utf8_encode($offre.titre)}</title>
 				<organisme>{utf8_encode($offre.organisme)}</organisme>
 				<pubDate>{date("D, d M o",strtotime($offre.date_parution))}</pubDate>
-				<link>{$url}{$aaetools_path}liste_offres.php?id_offre={$offre.id}</link>
+				<link>{$url}/{$aaetools_path}liste_offres.php?id_offre={$offre.id}</link>
 			</item>
 	    	{/foreach}
     </channel>

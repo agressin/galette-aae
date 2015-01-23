@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Wed Dec 31 12:25:47 2014 (GMT)
+// This file was automatically generated on Fri Jan 23 17:37:01 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -30,7 +30,7 @@ $lang['Add a formation'] = 'Ajouter une formation';
 // ../templates/bootstrap/liste_offres.tpl:3 
 $lang['Subscrite to '] = 'Abonnez vous : ';
 
-// ../ajouter_offre.php:71 
+// ../ajouter_offre.php:78 
 $lang['Offer has not been modified!'] = 'L\'offre n\'a pas été modifiée!';
 
 // ../templates/bootstrap/public_menu.tpl:25 
@@ -54,19 +54,19 @@ $lang['Pay: '] = 'Salaire : ';
 // ../templates/bootstrap/liste_membres_aae.tpl:24 ../templates/default/liste_membres_aae.tpl:21 
 $lang['Refresh'] = 'Rafraîchir';
 
-// ../ajouter_offre.php:34 
+// ../ajouter_offre.php:44 
 $lang['modification'] = 'modification';
 
-// ../templates/bootstrap/ajouter_offre.tpl:34 
+// ../templates/bootstrap/ajouter_offre.tpl:40 
 $lang['Description:'] = 'Description :';
 
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:36 ../templates/bootstrap/ajouter_formation_eleve.tpl:43 ../templates/default/ajouter_formation_eleve.tpl:36 ../templates/default/ajouter_formation_eleve.tpl:43 
 $lang['(yyyy format)'] = '(format : aaaa)';
 
-// ../templates/bootstrap/ajouter_offre.tpl:74 
+// ../templates/bootstrap/ajouter_offre.tpl:80 
 $lang['Salary:'] = 'Salaire :';
 
-// ../templates/bootstrap/ajouter_offre.tpl:66 
+// ../templates/bootstrap/ajouter_offre.tpl:72 
 $lang['(e.g., 3 months or 2 years; leave empty for permanent job)'] = '(exemple : 3 mois, 2 ans; laisser vide pour un CDI)';
 
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/bootstrap/ajouter_offre.tpl:4 ../templates/default/ajouter_formation_eleve.tpl:5 
@@ -81,13 +81,13 @@ $lang['Cycle'] = 'Cycle';
 // ../templates/bootstrap/liste_offres.tpl:39 
 $lang['Previous'] = 'Précédent';
 
-// ../templates/bootstrap/ajouter_offre.tpl:47 
+// ../templates/bootstrap/ajouter_offre.tpl:53 
 $lang['Localisation:'] = 'Localisation :';
 
 // ../templates/bootstrap/gestion_formations.tpl:9 ../templates/default/gestion_formations.tpl:9 
 $lang['End'] = 'Fin';
 
-// ../templates/bootstrap/ajouter_offre.tpl:82 
+// ../templates/bootstrap/ajouter_offre.tpl:88 
 $lang['Tech_majeures:'] = 'Techniques majeures :';
 
 // ../templates/bootstrap/menu.tpl:11 
@@ -96,7 +96,7 @@ $lang['Add or modify job offers'] = 'Ajouter une formation';
 // ../templates/bootstrap/menu.tpl:5 ../templates/default/menu.tpl:4 
 $lang['Various tools for AAE'] = 'Différents outils pour l\'AAE';
 
-// ../ajouter_offre.php:40 
+// ../ajouter_offre.php:46 
 $lang['creation'] = 'Création';
 
 // ../templates/bootstrap/aaecotiz.tpl:3 ../templates/default/aaecotiz.tpl:3 
@@ -111,43 +111,43 @@ $lang['Cycle:'] = 'Cycle :';
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:12 ../templates/default/ajouter_formation_eleve.tpl:12 
 $lang['-- select a name --'] = '-- choisir un nom --';
 
-// ../templates/bootstrap/ajouter_offre.tpl:55 
+// ../templates/bootstrap/ajouter_offre.tpl:61 
 $lang['Available until:'] = 'Disponible jusqu\'au :';
 
-// ../templates/bootstrap/detail_offre.tpl:10 
-$lang[' by '] = ' par ';
+// ../templates/bootstrap/ajouter_offre.tpl:66 
+$lang['Key word(s):'] = ' Mot(s) clés :';
 
-// ../templates/bootstrap/ajouter_formation_eleve.tpl:55 ../templates/bootstrap/aaetools.tpl:13 ../templates/bootstrap/ajouter_offre.tpl:88 ../templates/default/ajouter_formation_eleve.tpl:55 ../templates/default/aaetools.tpl:13 
+// ../templates/bootstrap/ajouter_formation_eleve.tpl:55 ../templates/bootstrap/aaetools.tpl:13 ../templates/bootstrap/ajouter_offre.tpl:94 ../templates/default/ajouter_formation_eleve.tpl:55 ../templates/default/aaetools.tpl:13 
 $lang['Save'] = 'Sauver';
 
-// ../liste_offres.php:55 ../templates/bootstrap/public_menu.tpl:9 ../templates/bootstrap/public_menu.tpl:22 
+// ../liste_offres.php:57 ../templates/bootstrap/public_menu.tpl:9 ../templates/bootstrap/public_menu.tpl:22 
 $lang['Job offers list'] = 'Liste des offres d\'emplois';
 
 // ../aaetools.php:64 ../templates/bootstrap/menu.tpl:5 ../templates/default/menu.tpl:4 
 $lang['AAE Tools'] = 'Outils pour l\'AAE';
 
-// ../templates/bootstrap/ajouter_offre.tpl:27 
+// ../templates/bootstrap/ajouter_offre.tpl:33 
 $lang[' select a type '] = '-- choisir un type --';
 
 // ../templates/bootstrap/aaecotiz.tpl:14 ../templates/default/aaecotiz.tpl:13 
 $lang['Paiement par RIB'] = 'Paiement par RIB';
 
-// ../ajouter_offre.php:32 
+// ../ajouter_offre.php:42 
 $lang['Job offer'] = 'Liste des offres d\'emplois';
 
 // ../aaetools.php:58 
 $lang['RIB has been successfully modified.'] = 'RIB bien enregistré';
 
-// ../templates/bootstrap/ajouter_offre.tpl:9 
+// ../templates/bootstrap/ajouter_offre.tpl:15 
 $lang['Title:'] = 'Titre :';
 
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:47 ../templates/default/ajouter_formation_eleve.tpl:47 
 $lang['Speciality:'] = 'Spécialité :';
 
-// ../templates/bootstrap/ajouter_offre.tpl:21 
+// ../templates/bootstrap/ajouter_offre.tpl:27 
 $lang['Contact Phone number:'] = 'Numéro de tel du contact :';
 
-// ../templates/bootstrap/ajouter_offre.tpl:28 
+// ../templates/bootstrap/ajouter_offre.tpl:34 
 $lang['Stage'] = 'Stage';
 
 // ../templates/bootstrap/gestion_formations.tpl:7 ../templates/bootstrap/liste_membres_aae.tpl:46 ../templates/default/gestion_formations.tpl:7 ../templates/default/liste_membres_aae.tpl:47 
@@ -168,6 +168,9 @@ $lang['et de prévenir de votre paiement en envoyant un mail à'] = 'et de prév
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:9 ../templates/default/ajouter_formation_eleve.tpl:9 
 $lang['Member:'] = 'Membre :';
 
+// ../templates/bootstrap/ajouter_offre.tpl:10 
+$lang['Validation:'] = 'Localisation :';
+
 // ../templates/bootstrap/liste_offres.tpl:42 
 $lang['Show:'] = 'Montrer';
 
@@ -183,10 +186,13 @@ $lang['No offer to show'] = 'Aucune offres à afficher';
 // ../templates/bootstrap/liste_offres.tpl:43 
 $lang['Pages:'] = 'Pages :';
 
+// ../templates/bootstrap/detail_offre.tpl:10 
+$lang[' by '] = ' par ';
+
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:40 ../templates/default/ajouter_formation_eleve.tpl:40 
 $lang['End of the formation:'] = 'Fin de la formation';
 
-// ../gestion_offres.php:18 
+// ../gestion_offres.php:17 
 $lang['Job offers managment'] = 'Liste des offres d\'emplois';
 
 // ../templates/bootstrap/menu.tpl:11 
@@ -201,13 +207,13 @@ $lang['Add formation'] = 'Ajouter une formation';
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:64 ../templates/default/ajouter_formation_eleve.tpl:64 
 $lang['No member registered!'] = 'Aucun membre existant';
 
-// ../templates/bootstrap/ajouter_offre.tpl:43 
+// ../templates/bootstrap/ajouter_offre.tpl:49 
 $lang['Organisme:'] = 'Organisme :';
 
 // ../templates/bootstrap/detail_offre.tpl:23 
 $lang[' of '] = ' de ';
 
-// ../ajouter_offre.php:73 
+// ../ajouter_offre.php:81 
 $lang['Offer has been successfully modified.'] = 'L\'offre a bien été modifiée';
 
 // ../templates/bootstrap/gestion_offres.tpl:2 ../templates/bootstrap/public_menu.tpl:12 
@@ -228,7 +234,7 @@ $lang['Enterprise'] = 'Entreprise';
 // ../aaecotiz.php:40 ../templates/bootstrap/menu.tpl:15 ../templates/default/menu.tpl:6 
 $lang['Contribution'] = 'Cotisation';
 
-// ../templates/bootstrap/ajouter_offre.tpl:29 
+// ../templates/bootstrap/ajouter_offre.tpl:35 
 $lang['CDD'] = 'CDD';
 
 // ../templates/default/menu.tpl:7 
@@ -240,10 +246,10 @@ $lang['Former students list'] = 'Liste des anciens élèves';
 // ../templates/bootstrap/aaetools.tpl:4 ../templates/default/aaetools.tpl:4 
 $lang['AAETools settings'] = 'AAETools paramètres';
 
-// ../templates/bootstrap/ajouter_offre.tpl:30 
+// ../templates/bootstrap/ajouter_offre.tpl:36 
 $lang['CDI'] = 'CDI';
 
-// ../templates/bootstrap/ajouter_offre.tpl:69 
+// ../templates/bootstrap/ajouter_offre.tpl:75 
 $lang['Beginning:'] = 'Début :';
 
 // ../templates/bootstrap/detail_offre.tpl:38 
@@ -264,11 +270,11 @@ $lang['(Max 255 characters)'] = '(Max 255 characters)';
 // ../templates/bootstrap/liste_membres_aae.tpl:43 ../templates/default/liste_membres_aae.tpl:44 
 $lang['First Name'] = 'Prénom';
 
-// ../templates/bootstrap/ajouter_offre.tpl:78 
+// ../templates/bootstrap/ajouter_offre.tpl:84 
 $lang['Cursus:'] = 'Cursus :';
 
-// ../templates/bootstrap/ajouter_offre.tpl:60 
-$lang['Key word(s):'] = ' Mot(s) clés :';
+// ../ajouter_offre.php:83 
+$lang['Offer has been successfully created, you will receive an confirmation email.'] = 'L\'offre a bien été modifiée';
 
 // ../templates/bootstrap/gestion_offres.tpl:8 
 $lang['Titre'] = 'Titre';
@@ -300,10 +306,10 @@ $lang['How to contribute ?'] = 'Comment cotiser ?';
 // ../gestion_formations_eleve.php:22 
 $lang['Formations managment'] = 'Gestion des formations';
 
-// ../templates/bootstrap/ajouter_offre.tpl:13 
+// ../templates/bootstrap/ajouter_offre.tpl:19 
 $lang['Contact Name:'] = 'Nom du contact : ';
 
-// ../templates/bootstrap/ajouter_offre.tpl:51 
+// ../templates/bootstrap/ajouter_offre.tpl:57 
 $lang['Site:'] = 'Site :';
 
 // ../templates/bootstrap/liste_membres_aae.tpl:40 ../templates/default/liste_membres_aae.tpl:41 
@@ -312,10 +318,10 @@ $lang['Name'] = 'Nom';
 // ../templates/bootstrap/liste_membres_aae.tpl:33 ../templates/default/liste_membres_aae.tpl:34 
 $lang['students'] = 'étudiants';
 
-// ../templates/bootstrap/ajouter_offre.tpl:17 
+// ../templates/bootstrap/ajouter_offre.tpl:23 
 $lang['Contact Mail:'] = 'e-mail du contact : ';
 
-// ../templates/bootstrap/ajouter_offre.tpl:40 
+// ../templates/bootstrap/ajouter_offre.tpl:46 
 $lang['Offer detail '] = 'Détails de l\'offre';
 
 // ../templates/bootstrap/liste_membres_aae.tpl:24 ../templates/default/liste_membres_aae.tpl:25 
@@ -327,10 +333,10 @@ $lang[' Type:'] = ' Type :';
 // ../templates/bootstrap/liste_membres_aae.tpl:33 ../templates/default/liste_membres_aae.tpl:34 
 $lang['student'] = 'étudiant';
 
-// ../templates/bootstrap/ajouter_offre.tpl:57 ../templates/bootstrap/ajouter_offre.tpl:71 
+// ../templates/bootstrap/ajouter_offre.tpl:63 ../templates/bootstrap/ajouter_offre.tpl:77 
 $lang['(yyyy-mm-dd format)'] = '(format : aaaa)';
 
-// ../templates/bootstrap/ajouter_offre.tpl:64 
+// ../templates/bootstrap/ajouter_offre.tpl:70 
 $lang['Duration:'] = 'Durée :';
 
 // ../templates/bootstrap/detail_offre.tpl:28 
@@ -345,7 +351,7 @@ $lang['Beging of the formation:'] = 'Début de la formation :';
 // ../templates/bootstrap/gestion_offres.tpl:10 ../templates/bootstrap/gestion_formations.tpl:11 ../templates/default/gestion_formations.tpl:11 
 $lang['Actions'] = 'Actions';
 
-// ../templates/bootstrap/ajouter_offre.tpl:25 
+// ../templates/bootstrap/ajouter_offre.tpl:31 
 $lang['Offer Type:'] = ' Type :';
 
 // ../templates/bootstrap/detail_offre.tpl:14 

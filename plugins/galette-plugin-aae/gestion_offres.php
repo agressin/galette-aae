@@ -21,11 +21,9 @@ $offres = new Offres();
 if ( $login->isAdmin() || $login->isStaff() ){
     $tpl->assign('haveRights', true);
     $allOffres = $offres->getAllOffres(false);
-    //$allOffres = $offres->getOffresToValid();
-
 }else{
     $tpl->assign('haveRights', false);
-    $allOffres = $offres->getAllOffres();
+    $allOffres = $offres->getAdhOffres($login->id);
 }
 
 $tpl->assign('nb_offres', count($allOffres));
