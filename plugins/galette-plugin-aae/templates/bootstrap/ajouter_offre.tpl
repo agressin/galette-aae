@@ -38,7 +38,7 @@
                 </p>
                 <p>
                     <label for="desc_offre" class="bline">{_T string="Description:"}</label>
-                    <textarea name="desc_offre" id="desc_offre" cols="40" rows="4" required> {$offer.desc_offre} </textarea>
+                    <textarea name="desc_offre" id="desc_offre" cols="40" rows="4" required>{$offer.desc_offre}</textarea>
                 </p>
                 </div>
 			</fieldset>
@@ -59,8 +59,8 @@
                 </p>
                 <p>
                     <label for="date_fin" class="bline">{_T string="Available until:"}</label>
-                    <input type="text" name="date_fin" id="date_fin" value="" maxlength="10"/>
-                    <span class="exemple">{_T string="(yyyy-mm-dd format)"}</span>
+                    <input class="past-date-pick" type="text" name="date_fin" id="date_fin" value="{$offer.date_fin}" maxlength="10"/>
+                    <span class="exemple">{_T string="(dd/mm/yyyy format)"}</span>
                 </p>
                 <p>
                     <label for="mots_cles" class="bline">{_T string="Key word(s):"}</label>
@@ -73,8 +73,8 @@
                 </p>
                 <p>
                     <label for="date_debut" class="bline">{_T string="Beginning:"}</label>
-                    <input type="text" name="date_debut" id="date_debut" value="{$offer.date_debut}" maxlength="10"/>
-                    <span class="exemple">{_T string="(yyyy-mm-dd format)"}</span>
+                    <input class="past-date-pick" type="text" name="date_debut" id="date_debut" value="{$offer.date_debut}" maxlength="10"/>
+                    <span class="exemple">{_T string="(dd/mm/yyyy format)"}</span>
                 </p>
                 <p>
                     <label for="remuneration" class="bline">{_T string="Salary:"}</label>
@@ -101,7 +101,7 @@
 
                 _collapsibleFieldsets();
 
-                $('#Date_fin').datepicker({
+                $('#date_fin').datepicker({
                     changeMonth: true,
                     changeYear: true,
                     showOn: 'button',
@@ -111,7 +111,7 @@
                     yearRange: 'c-100:c+0'
                 });
                 
-                $('#Date_debut').datepicker({
+                $('#date_debut').datepicker({
                     changeMonth: true,
                     changeYear: true,
                     showOn: 'button',

@@ -1,6 +1,6 @@
 {if $nb_offres > 0}
 
-	{_T string="Subscrite to "} <a href="{$galette_base_path}plugins/galette-plugin-aae/liste_offres.php?rss"> <img src="{$galette_base_path}/templates/bootstrap/images/rss.png" width="20" height=20 alt="RSS"> </a>
+	<a href="{$galette_base_path}plugins/galette-plugin-aae/liste_offres.php?rss"> {_T string="Subscrite to "} <img src="{$galette_base_path}/templates/bootstrap/images/rss.png" width="20" height=20 alt="RSS"> </a> / <a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php">{_T string="Add job offers"}</a>
 	<br>
 	<table id='table_offre' class="listing">
         <thead>

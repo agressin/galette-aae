@@ -56,6 +56,18 @@ $tpl->assign('page_title', $title);
 if (isset($_POST['titre_offre']) ) {
     //form was send normally, we try to store new values
 
+    $d = \DateTime::createFromFormat(_T("Y-m-d"), $_POST['date_fin']);
+    if ( $d === false ) {
+        throw new \Exception('Incorrect format');
+    }
+    $date_fin = $d->format('Y-m-d');
+ 
+    $d = \DateTime::createFromFormat(_T("Y-m-d"), $_POST['date_debut']);
+    if ( $d === false ) {
+        throw new \Exception('Incorrect format');
+    }
+    $date_debut = $d->format('Y-m-d');
+    
     $res = $offres->setOffre(
 		$id_offre,
 		$id_adh,
@@ -66,12 +78,12 @@ if (isset($_POST['titre_offre']) ) {
 		$_POST['nom_contact'],
 		$_POST['mail_contact'],
 		$_POST['tel_contact'],
-		$_POST['date_fin'],
+		$date_fin,
 		$_POST['type_offre'],
 		$_POST['desc_offre'],
 		$_POST['mots_cles'],
 		$_POST['duree'],
-		$_POST['date_debut'],
+		$date_debut,
 		$_POST['remuneration'],
 		$_POST['cursus'],
 		$_POST['rech_majeures'],
@@ -90,15 +102,19 @@ if (isset($_POST['titre_offre']) ) {
                 $mail->setSubject(
                     _T("Job offer post")
                 );
+                
                 // TODO: add mail to offer contact
                 $mail->setRecipients(
-                    array($_POST['mail_contact'] => $_POST['nom_contact'])
+                    array($_POST['mail_contact'] => $_POST['nom_contact'],
+                    $preferences->pref_email => "Admin")
                 );
 
                 $message = _T("Your job offer has been successfully created.");
                 $message .= "\n" . _T("You can view or modify your offer using the link below.");
                 $message .= "\n\n";
-                $message .= "http://".$_SERVER['HTTP_HOST']."plugins/galette-plugin-aae/ajouter_offre.php?id_offre=".$id_offre; //TODO adresse plugin
+                
+                //TODO adresse plugin
+                $message .= "http://".$_SERVER['HTTP_HOST']."/plugins/galette-plugin-aae/ajouter_offre.php?id_offre=".$res; 
 
                 $mail->setMessage($message);
                 $sent = $mail->send();
@@ -115,7 +131,7 @@ if (isset($_POST['titre_offre']) ) {
 		            $txt = preg_replace(
 		                array('/%name/', '/%email/'),
 		                array($_POST['nom_contact'], $_POST['mail_contact']),
-		                _T("A problem happened while sending post offer confirmation to user %name (%email)")
+		                _T("A problem happened while sending job offer confirmation to user %name (%email)")
 		            );
 		            $hist->add($txt);
 		            $error_detected[] = $txt;
@@ -136,6 +152,13 @@ if (isset($_POST['titre_offre']) ) {
 if ( $id_offre!='') {
 	//Recup offre
 	$offre = $offres->getOffre($id_offre);
+	
+	$d = new \DateTime($offre->date_debut);
+    $offre['date_debut'] = $d->format(_T("Y-m-d"));
+
+	$d = new \DateTime($offre->date_fin);
+    $offre['date_fin'] =  $d->format(_T("Y-m-d"));
+    
 	$tpl->assign('offer', $offre);
 	
 }else if ( $login->isLogged() )  {

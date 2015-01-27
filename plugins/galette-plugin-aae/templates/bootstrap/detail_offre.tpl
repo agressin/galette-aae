@@ -4,10 +4,11 @@
 			<h1 class="entry-title">{$offre.titre}</h1>
 			<div class="entry-meta">
 			<span class="posted-on">
-				{_T string="Posted on "} {date("d F o",strtotime($offre.date_parution))}
+				{_T string="Posted on "} {date("d/m/o",strtotime($offre.date_parution))}
 			</span>
 			<span class="by">
-				{_T string=" by "} {$member->sfullname} {if  $offre.organisme!=""} {_T string=" from "} {$offre.organisme} {/if}
+				{_T string=" by "} {$member->sfullname}
+				{if  $offre.organisme!=""} {_T string=" from "} {$offre.organisme} {/if}
 			</span>  <br>
 			{if  $offre.mots_cles!=""}
 			<span class="keyword">
@@ -25,7 +26,7 @@
 			{/if}
 			{if $offre.date_debut!="0000-00-00"}
 			<span class="from">
-				{_T string=", begining "} {date("d F o",strtotime($offre.date_debut))}
+				{_T string=", begining "} {date("d/m/o",strtotime($offre.date_debut))}
 			</span>
 			{/if}
 			<br>

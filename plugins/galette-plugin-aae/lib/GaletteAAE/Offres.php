@@ -190,14 +190,14 @@ class Offres
                 $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
                 $insert->values($data);
                 $add = $zdb->execute($insert);
-
+				$id_offre = $add->getGeneratedValue();
             } else {
                 //Offer already exists, just update
                 $update = $zdb->update(AAE_PREFIX . self::TABLE);
                 $update->set($data)->where->equalTo(self::PK,$id_offre);
                 $edit = $zdb->execute($update);
             }
-            return (true);
+            return ($id_offre);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set offer ' .
