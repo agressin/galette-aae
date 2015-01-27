@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-01-27 19:20:48
+<?php /* Smarty version Smarty-3.1.19, created on 2015-01-27 19:37:12
          compiled from "/var/www/aae-ensg/templates/bootstrap/public_page.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:103852909554a3ef86a71929-85899944%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a9f8ba506dc2d001d268c0d41bd40e0f6d26a797' => 
     array (
       0 => '/var/www/aae-ensg/templates/bootstrap/public_page.tpl',
-      1 => 1422382838,
+      1 => 1422383826,
       2 => 'file',
     ),
   ),
@@ -187,6 +187,12 @@ public/trombinoscope.php"><?php echo smarty_function__T(array('string'=>"Trombin
 voir_adherent.php"><?php echo $_smarty_tpl->tpl_vars['login']->value->login;?>
 </a>
 						<ul class='children'>
+							<li class="page_item">
+						    	<a href="<?php echo $_smarty_tpl->tpl_vars['galette_base_path']->value;?>
+voir_adherent.php" title="<?php echo smarty_function__T(array('string'=>"View my member card"),$_smarty_tpl);?>
+"><?php echo smarty_function__T(array('string'=>"My information"),$_smarty_tpl);?>
+</a>
+						    </li>			
 							<li class="page_item">
 						    	<a  href="<?php echo $_smarty_tpl->tpl_vars['galette_base_path']->value;?>
 index.php?logout=1"><?php echo smarty_function__T(array('string'=>"Log off"),$_smarty_tpl);?>

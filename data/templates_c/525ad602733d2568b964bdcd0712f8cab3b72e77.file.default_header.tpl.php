@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-01-11 21:36:27
+<?php /* Smarty version Smarty-3.1.19, created on 2015-01-27 19:50:01
          compiled from "/var/www/aae-ensg/templates/bootstrap/default_header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142679063654a3ef77575710-83570688%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '525ad602733d2568b964bdcd0712f8cab3b72e77' => 
     array (
       0 => '/var/www/aae-ensg/templates/bootstrap/default_header.tpl',
-      1 => 1421008344,
+      1 => 1422384519,
       2 => 'file',
     ),
   ),
@@ -102,8 +102,6 @@ $_smarty_tpl->tpl_vars["localprintstylesheet"]->value = ((string)$_smarty_tpl->t
             <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['localprintstylesheet']->value;?>
 " media="print" />
         <?php }?>
-        <!--
         <link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['template_subdir']->value;?>
 images/favicon.png" />
-        -->
 <?php }} ?>

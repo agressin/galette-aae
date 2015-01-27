@@ -54,6 +54,4 @@ Just put a {include file='common_header.tpl'} into the head tag.
         {if file_exists($localprintstylesheet)}
             <link rel="stylesheet" type="text/css" href="{$localprintstylesheet}" media="print" />
         {/if}
-        <!--
         <link rel="shortcut icon" href="{$template_subdir}images/favicon.png" />
-        -->
