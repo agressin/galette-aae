@@ -63,9 +63,9 @@
                 <tr class="{if $smarty.foreach.allmembers.iteration % 2 eq 0}even{else}odd{/if}">
                     <td class="{$member->getRowClass(true)} nowrap username_row">
    					{if $member->email != ''}
-                        <a href="{$galette_base_path}plugins/galette-plugin-aae/send_message.php?id_adh={$member->id}"><img src="{$template_subdir}images/icon-mail.png" alt="" width="16" height="16"/></a>
+                        	<a href="{$galette_base_path}plugins/galette-plugin-aae/send_message.php?id_adh={$member->id}"><img src="{$template_subdir}images/icon-mail.png" alt="" width="16" height="16"/></a>
                     {else}
-                        <img src="{$template_subdir}images/icon-empty.png" alt="" width="16" height="16"/>
+                        	<img src="{$template_subdir}images/icon-empty.png" alt="" width="16" height="16"/>
                     {/if}
                     {if $member->isCompany()}
                         <img src="{$template_subdir}images/icon-company.png" alt="" width="16" height="16"/>

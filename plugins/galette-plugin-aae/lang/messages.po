@@ -2,7 +2,7 @@
 msgid "Key word(s):"
 msgstr ""
 
-#: ../ajouter_offre.php:119
+#: ../ajouter_offre.php:134
 msgid "A problem happened while sending job offer confirmation to user %name (%email)"
 msgstr ""
 
@@ -30,7 +30,7 @@ msgstr ""
 msgid "Publication date"
 msgstr ""
 
-#: ../ajouter_offre.php:85
+#: ../ajouter_offre.php:97
 msgid "Offer has been successfully modified."
 msgstr ""
 
@@ -72,11 +72,11 @@ msgstr ""
 msgid "Localisation:"
 msgstr ""
 
-#: ../ajouter_offre.php:91
+#: ../ajouter_offre.php:103
 msgid "Job offer post"
 msgstr ""
 
-#: ../send_message.php:39
+#: ../send_message.php:42
 msgid "Un ancien de l'ENSG cherche a vous contacter :\n"
 msgstr ""
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "student"
 msgstr ""
 
-#: ../ajouter_offre.php:82
+#: ../ajouter_offre.php:94
 msgid "Offer has not been modified!"
 msgstr ""
 
@@ -250,8 +250,9 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: ../ajouter_offre.php:48
-msgid "modification"
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/bootstrap/ajouter_offre.tpl:4
+#: ../templates/bootstrap/send_message.tpl:4 ../templates/default/ajouter_formation_eleve.tpl:5
+msgid "red"
 msgstr ""
 
 #: ../templates/bootstrap/gestion_formations.tpl:7 ../templates/bootstrap/liste_membres_aae.tpl:46
@@ -267,7 +268,7 @@ msgstr ""
 msgid "CDI"
 msgstr ""
 
-#: ../ajouter_offre.php:112
+#: ../ajouter_offre.php:127
 msgid "Mail sent to user %name (%email)"
 msgstr ""
 
@@ -275,7 +276,7 @@ msgstr ""
 msgid "Formations managment"
 msgstr ""
 
-#: ../ajouter_offre.php:87
+#: ../ajouter_offre.php:99
 msgid "Offer has been successfully created, you will receive an confirmation email."
 msgstr ""
 
@@ -315,7 +316,7 @@ msgstr ""
 msgid "Cycle"
 msgstr ""
 
-#: ../ajouter_offre.php:128
+#: ../ajouter_offre.php:143
 msgid "Trying to send a mail to a member (%name) with an invalid adress: %email"
 msgstr ""
 
@@ -366,6 +367,10 @@ msgstr ""
 msgid "Please log in to access contact information."
 msgstr ""
 
+#: ../send_message.php:39
+msgid "[AAE-ENSG] Un adhérent cherche à vous contacter"
+msgstr ""
+
 #: ../templates/bootstrap/ajouter_offre.tpl:27
 msgid "Contact Phone number:"
 msgstr ""
@@ -386,9 +391,8 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
-#: ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/bootstrap/ajouter_offre.tpl:4
-#: ../templates/bootstrap/send_message.tpl:4 ../templates/default/ajouter_formation_eleve.tpl:5
-msgid "red"
+#: ../ajouter_offre.php:48
+msgid "modification"
 msgstr ""
 
 #: ../templates/bootstrap/menu.tpl:5 ../templates/default/menu.tpl:4
@@ -431,7 +435,7 @@ msgstr ""
 msgid "Member:"
 msgstr ""
 
-#: ../send_message.php:67
+#: ../send_message.php:69
 msgid "Mail sent to user %name"
 msgstr ""
 
@@ -440,7 +444,7 @@ msgstr ""
 msgid "Former students list"
 msgstr ""
 
-#: ../send_message.php:75
+#: ../send_message.php:77
 msgid "A problem happened while sending email to user %name"
 msgstr ""
 
@@ -448,7 +452,7 @@ msgstr ""
 msgid "Salary:"
 msgstr ""
 
-#: ../ajouter_offre.php:99
+#: ../ajouter_offre.php:112
 msgid "Your job offer has been successfully created."
 msgstr ""
 
@@ -476,7 +480,7 @@ msgstr ""
 msgid "Offer Type:"
 msgstr ""
 
-#: ../ajouter_offre.php:100
+#: ../ajouter_offre.php:113
 msgid "You can view or modify your offer using the link below."
 msgstr ""
 
@@ -503,6 +507,10 @@ msgstr ""
 
 #: ../aaetools.php:58
 msgid "RIB has been successfully modified."
+msgstr ""
+
+#: ../templates/bootstrap/ajouter_offre.tpl:72
+msgid "(e.g., 3 months or 2 years; leave empty for permanent job)"
 msgstr ""
 
 #: ../ajouter_offre.php:46
@@ -533,8 +541,9 @@ msgstr ""
 msgid "No member to show"
 msgstr ""
 
-#: ../templates/bootstrap/ajouter_offre.tpl:72
-msgid "(e.g., 3 months or 2 years; leave empty for permanent job)"
+#: ../ajouter_offre.php:59 ../ajouter_offre.php:65
+#: ../ajouter_offre.php:157 ../ajouter_offre.php:160
+msgid "Y-m-d"
 msgstr ""
 
 #: ../templates/bootstrap/liste_offres.tpl:43

@@ -1,10 +1,10 @@
 <?php
-// This file was automatically generated on Tue Jan 27 20:01:32 2015 (GMT)
+// This file was automatically generated on Sun Feb  1 10:25:46 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
 // ../templates/bootstrap/send_message.tpl:16 
-$lang['Message:'] = '';
+$lang['Message:'] = 'Message:';
 
 // ../templates/bootstrap/liste_offres.tpl:8 
 $lang['Title'] = 'Title';
@@ -36,7 +36,7 @@ $lang['Add a formation'] = 'Add a formation';
 // ../templates/bootstrap/liste_offres.tpl:3 
 $lang['Subscrite to '] = 'Subscrite to ';
 
-// ../ajouter_offre.php:82 
+// ../ajouter_offre.php:94 
 $lang['Offer has not been modified!'] = 'Offer has not been modified!';
 
 // ../templates/bootstrap/liste_offres.tpl:3 ../templates/bootstrap/public_menu.tpl:25 
@@ -75,8 +75,8 @@ $lang['Salary:'] = 'Salary:';
 // ../templates/bootstrap/ajouter_offre.tpl:72 
 $lang['(e.g., 3 months or 2 years; leave empty for permanent job)'] = '(e.g., 3 months or 2 years; leave empty for permanent job)';
 
-// ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/bootstrap/ajouter_offre.tpl:4 ../templates/bootstrap/send_message.tpl:4 ../templates/default/ajouter_formation_eleve.tpl:5 
-$lang['red'] = 'red';
+// ../templates/bootstrap/ajouter_offre.tpl:27 
+$lang['Contact Phone number:'] = 'Contact Phone number:';
 
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:22 ../templates/default/ajouter_formation_eleve.tpl:22 
 $lang['Formation details'] = 'Formation details';
@@ -102,7 +102,7 @@ $lang['Add or modify job offers'] = 'Add or modify job offers';
 // ../templates/bootstrap/menu.tpl:5 ../templates/default/menu.tpl:4 
 $lang['Various tools for AAE'] = 'Various tools for AAE';
 
-// ../ajouter_offre.php:119 
+// ../ajouter_offre.php:134 
 $lang['A problem happened while sending job offer confirmation to user %name (%email)'] = 'A problem happened while sending post offer confirmation to user %name (%email)';
 
 // ../ajouter_offre.php:50 
@@ -159,13 +159,13 @@ $lang['Title:'] = 'Title:';
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:47 ../templates/default/ajouter_formation_eleve.tpl:47 
 $lang['Speciality:'] = 'Speciality:';
 
-// ../templates/bootstrap/ajouter_offre.tpl:27 
-$lang['Contact Phone number:'] = 'Contact Phone number:';
+// ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/bootstrap/ajouter_offre.tpl:4 ../templates/bootstrap/send_message.tpl:4 ../templates/default/ajouter_formation_eleve.tpl:5 
+$lang['red'] = 'red';
 
 // ../templates/bootstrap/ajouter_offre.tpl:34 
 $lang['Stage'] = 'Internship';
 
-// ../ajouter_offre.php:128 
+// ../ajouter_offre.php:143 
 $lang['Trying to send a mail to a member (%name) with an invalid adress: %email'] = 'Trying to send a mail to a member (%name) with an invalid adress: %email';
 
 // ../templates/bootstrap/gestion_formations.tpl:7 ../templates/bootstrap/liste_membres_aae.tpl:46 ../templates/default/gestion_formations.tpl:7 ../templates/default/liste_membres_aae.tpl:47 
@@ -201,11 +201,14 @@ $lang['Promotion:'] = 'Promotion:';
 // ../templates/bootstrap/detail_offre.tpl:47 
 $lang['Please log in to access contact information.'] = 'Please log in to access contact information.';
 
-// ../ajouter_offre.php:99 
+// ../ajouter_offre.php:112 
 $lang['Your job offer has been successfully created.'] = 'Your job offer has been successfully created.';
 
 // ../templates/bootstrap/liste_offres.tpl:53 
 $lang['No offer to show'] = 'No offer to show';
+
+// ../send_message.php:39 
+$lang['[AAE-ENSG] Un adhérent cherche à vous contacter'] = '';
 
 // ../templates/bootstrap/liste_offres.tpl:43 
 $lang['Pages:'] = 'Pages:';
@@ -228,7 +231,7 @@ $lang['NB : The mandatory fields are in'] = 'NB : The mandatory fields are in';
 // ../templates/default/menu.tpl:7 
 $lang['Add formation'] = 'Add formation';
 
-// ../ajouter_offre.php:112 
+// ../ajouter_offre.php:127 
 $lang['Mail sent to user %name (%email)'] = 'Mail sent to user %name (%email)';
 
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:64 ../templates/default/ajouter_formation_eleve.tpl:64 
@@ -240,7 +243,7 @@ $lang['Organisme:'] = 'Compagny:';
 // ../templates/bootstrap/send_message.tpl:13 
 $lang['Votre message sera précédé du message suivant :'] = '';
 
-// ../ajouter_offre.php:85 
+// ../ajouter_offre.php:97 
 $lang['Offer has been successfully modified.'] = 'Offer has been successfully modified.';
 
 // ../templates/bootstrap/gestion_offres.tpl:2 ../templates/bootstrap/public_menu.tpl:12 
@@ -249,7 +252,7 @@ $lang['Add job offer'] = 'Add job offer';
 // ../templates/bootstrap/aaecotiz.tpl:25 ../templates/default/aaecotiz.tpl:24 
 $lang['Veuillez vous identifier pour obtenir le RIB, ou le demander à'] = '';
 
-// ../ajouter_offre.php:91 
+// ../ajouter_offre.php:103 
 $lang['Job offer post'] = 'Job offer post';
 
 // ../templates/bootstrap/liste_membres_aae.tpl:62 ../templates/default/liste_membres_aae.tpl:63 
@@ -288,13 +291,13 @@ $lang['Beginning:'] = 'Beginning:';
 // ../templates/bootstrap/detail_offre.tpl:39 
 $lang['Contact: '] = 'Contact: ';
 
-// ../send_message.php:75 
+// ../send_message.php:77 
 $lang['A problem happened while sending email to user %name'] = 'A problem happened while sending email to user %name';
 
 // ../templates/bootstrap/menu.tpl:1 ../templates/default/menu.tpl:1 
 $lang['AAE'] = 'AAE';
 
-// ../ajouter_offre.php:100 
+// ../ajouter_offre.php:113 
 $lang['You can view or modify your offer using the link below.'] = 'You can view or modify your offer using the link below.';
 
 // ../gestion_offres.php:17 
@@ -312,7 +315,7 @@ $lang['First Name'] = 'First Name';
 // ../templates/bootstrap/ajouter_offre.tpl:84 
 $lang['Cursus:'] = 'Cursus';
 
-// ../ajouter_offre.php:87 
+// ../ajouter_offre.php:99 
 $lang['Offer has been successfully created, you will receive an confirmation email.'] = 'Offer has been successfully created, you will receive an confirmation email.';
 
 // ../templates/bootstrap/gestion_offres.tpl:8 
@@ -338,6 +341,9 @@ $lang['Search:'] = 'Search:';
 
 // ../ajouter_offre.php:41 
 $lang['You don\'t have the permission to modify an existing offer.'] = 'You don\'t have the permission to modify an existing offer.';
+
+// ../ajouter_offre.php:59 ../ajouter_offre.php:65 ../ajouter_offre.php:157 ../ajouter_offre.php:160 
+$lang['Y-m-d'] = 'Y-m-d';
 
 // ../templates/bootstrap/public_menu.tpl:6 ../templates/bootstrap/public_menu.tpl:19 ../templates/bootstrap/adh_fiche_action.tpl:6 ../templates/default/public_menu.tpl:3 ../templates/default/public_menu.tpl:6 ../templates/default/adh_fiche_action.tpl:6 
 $lang['How to contribute ?'] = 'How to contribute ?';
@@ -372,7 +378,7 @@ $lang['Continue'] = 'Continue';
 // ../templates/bootstrap/detail_offre.tpl:20 
 $lang[' Type:'] = ' Type:';
 
-// ../send_message.php:39 
+// ../send_message.php:42 
 $lang['Un ancien de l\'ENSG cherche a vous contacter :\n'] = '';
 
 // ../templates/bootstrap/liste_membres_aae.tpl:33 ../templates/default/liste_membres_aae.tpl:34 
@@ -396,7 +402,7 @@ $lang['Actions'] = 'Actions';
 // ../templates/bootstrap/ajouter_offre.tpl:31 
 $lang['Offer Type:'] = 'Offer Type:';
 
-// ../send_message.php:67 
+// ../send_message.php:69 
 $lang['Mail sent to user %name'] = 'Mail sent to user %name';
 
 // ../templates/bootstrap/detail_offre.tpl:15 

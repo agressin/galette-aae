@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-01-27 21:07+0100\n"
+"PO-Revision-Date: 2015-02-01 11:24+0100\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Key word(s):"
 msgstr "Mot(s) clés :"
 
-#: ../ajouter_offre.php:119
+#: ../ajouter_offre.php:134
 msgid ""
 "A problem happened while sending job offer confirmation to user %name "
 "(%email)"
@@ -54,7 +54,7 @@ msgstr "Type :"
 msgid "Publication date"
 msgstr "Date de publication"
 
-#: ../ajouter_offre.php:85
+#: ../ajouter_offre.php:97
 msgid "Offer has been successfully modified."
 msgstr "L'offre a bien été modifiée"
 
@@ -99,11 +99,11 @@ msgstr "Comment cotiser ?"
 msgid "Localisation:"
 msgstr "Localisation :"
 
-#: ../ajouter_offre.php:91
+#: ../ajouter_offre.php:103
 msgid "Job offer post"
 msgstr "Ajouter une offre d'emploi"
 
-#: ../send_message.php:39
+#: ../send_message.php:42
 msgid "Un ancien de l'ENSG cherche a vous contacter :\n"
 msgstr "Un ancien de l'ENSG cherche a vous contacter :"
 
@@ -116,7 +116,7 @@ msgstr "Vous n'avez pas la permission de modifier une offre existante."
 msgid "student"
 msgstr "étudiant"
 
-#: ../ajouter_offre.php:82
+#: ../ajouter_offre.php:94
 msgid "Offer has not been modified!"
 msgstr "L'offre n'a pas été modifiée!"
 
@@ -296,9 +296,12 @@ msgstr "Ajouter une formation"
 msgid "Save"
 msgstr "Sauver"
 
-#: ../ajouter_offre.php:48
-msgid "modification"
-msgstr "modification"
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:5
+#: ../templates/bootstrap/ajouter_offre.tpl:4
+#: ../templates/bootstrap/send_message.tpl:4
+#: ../templates/default/ajouter_formation_eleve.tpl:5
+msgid "red"
+msgstr "rouge"
 
 #: ../templates/bootstrap/gestion_formations.tpl:7
 #: ../templates/bootstrap/liste_membres_aae.tpl:46
@@ -315,7 +318,7 @@ msgstr "Salaire : "
 msgid "CDI"
 msgstr "CDI"
 
-#: ../ajouter_offre.php:112
+#: ../ajouter_offre.php:127
 msgid "Mail sent to user %name (%email)"
 msgstr "Message envoyé à l'utilisateur %name (%email)"
 
@@ -323,7 +326,7 @@ msgstr "Message envoyé à l'utilisateur %name (%email)"
 msgid "Formations managment"
 msgstr "Gestion des formations"
 
-#: ../ajouter_offre.php:87
+#: ../ajouter_offre.php:99
 msgid ""
 "Offer has been successfully created, you will receive an confirmation email."
 msgstr ""
@@ -368,7 +371,7 @@ msgstr ""
 msgid "Cycle"
 msgstr "Cycle"
 
-#: ../ajouter_offre.php:128
+#: ../ajouter_offre.php:143
 msgid ""
 "Trying to send a mail to a member (%name) with an invalid adress: %email"
 msgstr ""
@@ -425,6 +428,10 @@ msgstr "Liste des offres d'emploi"
 msgid "Please log in to access contact information."
 msgstr "Merci de vous connecter pour accéder aux informations du contact."
 
+#: ../send_message.php:39
+msgid "[AAE-ENSG] Un adhérent cherche à vous contacter"
+msgstr "[AAE-ENSG] Un adhérent cherche à vous contacter"
+
 #: ../templates/bootstrap/ajouter_offre.tpl:27
 msgid "Contact Phone number:"
 msgstr "Numéro de tel du contact :"
@@ -449,12 +456,9 @@ msgstr "Voir les formations"
 msgid "Continue"
 msgstr "Continuer"
 
-#: ../templates/bootstrap/ajouter_formation_eleve.tpl:5
-#: ../templates/bootstrap/ajouter_offre.tpl:4
-#: ../templates/bootstrap/send_message.tpl:4
-#: ../templates/default/ajouter_formation_eleve.tpl:5
-msgid "red"
-msgstr "rouge"
+#: ../ajouter_offre.php:48
+msgid "modification"
+msgstr "modification"
 
 #: ../templates/bootstrap/menu.tpl:5 ../templates/default/menu.tpl:4
 msgid "Various tools for AAE"
@@ -501,7 +505,7 @@ msgstr "Organisme :"
 msgid "Member:"
 msgstr "Membre :"
 
-#: ../send_message.php:67
+#: ../send_message.php:69
 msgid "Mail sent to user %name"
 msgstr "Message envoyé à l'utilisateur %name"
 
@@ -512,7 +516,7 @@ msgstr "Message envoyé à l'utilisateur %name"
 msgid "Former students list"
 msgstr "Liste des anciens élèves"
 
-#: ../send_message.php:75
+#: ../send_message.php:77
 msgid "A problem happened while sending email to user %name"
 msgstr ""
 "Un problème est survenu lors de l'envoi du message à l'utilisateur %name"
@@ -521,7 +525,7 @@ msgstr ""
 msgid "Salary:"
 msgstr "Salaire :"
 
-#: ../ajouter_offre.php:99
+#: ../ajouter_offre.php:112
 msgid "Your job offer has been successfully created."
 msgstr "L'offre a bien été créée."
 
@@ -550,7 +554,7 @@ msgstr "Envoyer"
 msgid "Offer Type:"
 msgstr "Type :"
 
-#: ../ajouter_offre.php:100
+#: ../ajouter_offre.php:113
 msgid "You can view or modify your offer using the link below."
 msgstr ""
 "Vous pouvez voir ou modifier votre offre d'emploi en utilisant le lien ci-"
@@ -583,6 +587,10 @@ msgstr "Sujet :"
 #: ../aaetools.php:58
 msgid "RIB has been successfully modified."
 msgstr "RIB bien enregistré"
+
+#: ../templates/bootstrap/ajouter_offre.tpl:72
+msgid "(e.g., 3 months or 2 years; leave empty for permanent job)"
+msgstr "(exemple : 3 mois, 2 ans; laisser vide pour un CDI)"
 
 #: ../ajouter_offre.php:46
 msgid "Job offer"
@@ -617,9 +625,10 @@ msgstr "Détails des formations"
 msgid "No member to show"
 msgstr "Pas de membres à afficher"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:72
-msgid "(e.g., 3 months or 2 years; leave empty for permanent job)"
-msgstr "(exemple : 3 mois, 2 ans; laisser vide pour un CDI)"
+#: ../ajouter_offre.php:59 ../ajouter_offre.php:65 ../ajouter_offre.php:157
+#: ../ajouter_offre.php:160
+msgid "Y-m-d"
+msgstr "Y-m-d"
 
 #: ../templates/bootstrap/liste_offres.tpl:43
 msgid "Pages:"

@@ -7,7 +7,7 @@
                 <div>
                 <p>
                     <label for="subject" class="bline">{_T string="Subject:"}</label>
-                    <input type="text" name="subject" id="subject" value="{$subject}"  maxlength="150" required/>
+                    {$sujet}
                 </p>
                 <p>
                 	{_T string="Votre message sera précédé du message suivant :"} </br> {$pre_message}

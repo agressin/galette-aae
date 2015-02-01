@@ -36,28 +36,30 @@ if( $id_adh !='') {
 	$to_adh_email = $adh->email;
 	$tpl->assign('to_adh_name', $to_adh_name);
 
+	$sujet =  _T("[AAE-ENSG] Un adhérent cherche à vous contacter");
+	$tpl->assign('sujet', $sujet);
+
 	$pre_message =  _T("Un ancien de l'ENSG cherche a vous contacter :\n");
 	$pre_message .= $from_adh_name . " (" . $from_adh_email . ")";
 	$tpl->assign('pre_message', $pre_message);
 	
-	if( isset($_POST['subject']) and isset($_POST['message'])) {
-
-	
+	if(isset($_POST['message'])) {
+		$message_user=$_POST['message'];
 		if ( GaletteMail::isValidEmail($from_adh_email) and GaletteMail::isValidEmail($to_adh_email) ) {
 			$mail = new GaletteMail();
-		    $mail->setSubject($_POST['subject']);
+		    $mail->setSubject($sujet);
 
 		    $mail->setRecipients( array($to_adh_email => $to_adh_name));
 			
 			$message = $pre_message;
 		    $message .= "\n\n";
-		    $message .= $_POST['message'];
+		    $message .= $message_user;
 
 		    $mail->setMessage($message);
 		    $sent = $mail->send();
 		    
-		    $tpl->assign('subject', $_POST['subject']);
-			$tpl->assign('message', $message);
+		    $tpl->assign('subject', $sujet);
+			$tpl->assign('message', $message_user);
 		
 		    if ( $sent ) {
 		    	
