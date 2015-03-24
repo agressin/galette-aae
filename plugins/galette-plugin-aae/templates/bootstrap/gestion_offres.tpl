@@ -1,5 +1,6 @@
 
-	<a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php" title="{_T string="Add job offer"}">{_T string="Add job offer"}</a>
+	<a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php" title="{_T string="Add job offer"}">{_T string="Add job offer"}</a> / 
+	<a href="{$galette_base_path}{$aaetools_path}liste_offres.php">{_T string="Job offers list"}</a>
 
     <table id='table_offre' class="listing">
         <thead>
@@ -79,9 +80,9 @@
       	</tbody>
     </table>
     <div>
-    Actions : <img src="{$template_subdir}images/delete.png" />  to delete offer </br>
+    {_T string="Actions:"} <img src="{$template_subdir}images/delete.png" />  {_T string="to delete offer"}</br>
     {if $haveRights}
-    	Statut : on <img src="{$template_subdir}images/icon-on.png" /> / off <img src="{$template_subdir}images/icon-off.png" /> (click to change)
+    	{_T string="Statut : "} on <img src="{$template_subdir}images/icon-on.png" /> / off <img src="{$template_subdir}images/icon-off.png" />  {_T string="(click to change)"}
     {/if}
     </div>
   

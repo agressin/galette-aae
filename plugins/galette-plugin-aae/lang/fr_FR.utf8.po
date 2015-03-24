@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-02-01 11:24+0100\n"
+"PO-Revision-Date: 2015-03-24 21:48+0100\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Key word(s):"
 msgstr "Mot(s) clés :"
 
-#: ../ajouter_offre.php:134
+#: ../ajouter_offre.php:136
 msgid ""
 "A problem happened while sending job offer confirmation to user %name "
 "(%email)"
@@ -48,13 +48,13 @@ msgstr "(format : jj/mm/aaaa)"
 
 #: ../templates/bootstrap/liste_offres.tpl:11
 msgid "Offer type"
-msgstr "Type :"
+msgstr "Type"
 
 #: ../templates/bootstrap/liste_offres.tpl:10
 msgid "Publication date"
 msgstr "Date de publication"
 
-#: ../ajouter_offre.php:97
+#: ../ajouter_offre.php:99
 msgid "Offer has been successfully modified."
 msgstr "L'offre a bien été modifiée"
 
@@ -99,11 +99,12 @@ msgstr "Comment cotiser ?"
 msgid "Localisation:"
 msgstr "Localisation :"
 
-#: ../ajouter_offre.php:103
+#: ../ajouter_offre.php:105
 msgid "Job offer post"
 msgstr "Ajouter une offre d'emploi"
 
 #: ../send_message.php:42
+#, fuzzy
 msgid "Un ancien de l'ENSG cherche a vous contacter :\n"
 msgstr "Un ancien de l'ENSG cherche a vous contacter :"
 
@@ -116,11 +117,11 @@ msgstr "Vous n'avez pas la permission de modifier une offre existante."
 msgid "student"
 msgstr "étudiant"
 
-#: ../ajouter_offre.php:94
+#: ../ajouter_offre.php:96
 msgid "Offer has not been modified!"
 msgstr "L'offre n'a pas été modifiée!"
 
-#: ../templates/bootstrap/gestion_offres.tpl:9
+#: ../templates/bootstrap/gestion_offres.tpl:10
 msgid "Type"
 msgstr "Type"
 
@@ -140,7 +141,7 @@ msgstr ""
 msgid "Subscrite to "
 msgstr "Abonnez vous : "
 
-#: ../templates/bootstrap/gestion_offres.tpl:10
+#: ../templates/bootstrap/gestion_offres.tpl:11
 #: ../templates/bootstrap/gestion_formations.tpl:11
 #: ../templates/default/gestion_formations.tpl:11
 msgid "Actions"
@@ -190,7 +191,7 @@ msgstr "Rafraîchir"
 msgid "Add job offer"
 msgstr "Ajouter une offre d'emploi"
 
-#: ../templates/bootstrap/gestion_offres.tpl:8
+#: ../templates/bootstrap/gestion_offres.tpl:9
 msgid "Titre"
 msgstr "Titre"
 
@@ -205,6 +206,10 @@ msgid ""
 msgstr ""
 "En cas de virement groupé pour plusieurs personnes, merci de le préciser "
 "dans votre mail."
+
+#: ../templates/bootstrap/gestion_offres.tpl:83
+msgid "to delete offer"
+msgstr "pour supprimer l'offre"
 
 #: ../templates/bootstrap/ajouter_offre.tpl:57
 msgid "Site:"
@@ -240,9 +245,9 @@ msgstr "Paiement par chèque"
 msgid "Show:"
 msgstr "Montrer"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:40
-msgid "Description:"
-msgstr "Description :"
+#: ../templates/bootstrap/liste_offres.tpl:43
+msgid "Pages:"
+msgstr "Pages :"
 
 #: ../aaetools.php:56
 msgid "RIB has not been modified!"
@@ -270,6 +275,10 @@ msgstr "Fin"
 #: ../templates/bootstrap/detail_offre.tpl:39
 msgid "Contact: "
 msgstr "Contact : "
+
+#: ../templates/bootstrap/gestion_offres.tpl:83
+msgid "Actions:"
+msgstr "Actions :"
 
 #: ../templates/bootstrap/ajouter_offre.tpl:15
 msgid "Title:"
@@ -318,7 +327,11 @@ msgstr "Salaire : "
 msgid "CDI"
 msgstr "CDI"
 
-#: ../ajouter_offre.php:127
+#: ../templates/bootstrap/menu.tpl:1 ../templates/default/menu.tpl:1
+msgid "AAE"
+msgstr "AAE"
+
+#: ../ajouter_offre.php:129
 msgid "Mail sent to user %name (%email)"
 msgstr "Message envoyé à l'utilisateur %name (%email)"
 
@@ -326,7 +339,7 @@ msgstr "Message envoyé à l'utilisateur %name (%email)"
 msgid "Formations managment"
 msgstr "Gestion des formations"
 
-#: ../ajouter_offre.php:99
+#: ../ajouter_offre.php:101
 msgid ""
 "Offer has been successfully created, you will receive an confirmation email."
 msgstr ""
@@ -344,9 +357,9 @@ msgstr " Type :"
 msgid " Key word(s):"
 msgstr " Mot(s) clés :"
 
-#: ../templates/bootstrap/menu.tpl:1 ../templates/default/menu.tpl:1
-msgid "AAE"
-msgstr "AAE"
+#: ../templates/bootstrap/gestion_offres.tpl:85
+msgid "Statut : "
+msgstr "Statut :"
 
 #: ../templates/bootstrap/menu.tpl:15 ../templates/default/menu.tpl:6
 msgid "Who to contribute ?"
@@ -371,7 +384,7 @@ msgstr ""
 msgid "Cycle"
 msgstr "Cycle"
 
-#: ../ajouter_offre.php:143
+#: ../ajouter_offre.php:145
 msgid ""
 "Trying to send a mail to a member (%name) with an invalid adress: %email"
 msgstr ""
@@ -417,9 +430,10 @@ msgstr "Description :"
 
 #: ../templates/bootstrap/liste_offres.tpl:8
 msgid "Title"
-msgstr "Titre ;"
+msgstr "Titre"
 
-#: ../liste_offres.php:57 ../templates/bootstrap/public_menu.tpl:9
+#: ../liste_offres.php:57 ../templates/bootstrap/gestion_offres.tpl:3
+#: ../templates/bootstrap/public_menu.tpl:9
 #: ../templates/bootstrap/public_menu.tpl:22
 msgid "Job offers list"
 msgstr "Liste des offres d'emploi"
@@ -525,7 +539,7 @@ msgstr ""
 msgid "Salary:"
 msgstr "Salaire :"
 
-#: ../ajouter_offre.php:112
+#: ../ajouter_offre.php:115
 msgid "Your job offer has been successfully created."
 msgstr "L'offre a bien été créée."
 
@@ -542,6 +556,10 @@ msgstr "Aucune offres à afficher"
 msgid " by "
 msgstr " par "
 
+#: ../templates/bootstrap/gestion_offres.tpl:85
+msgid "(click to change)"
+msgstr "(cliquer pour changer)"
+
 #: ../templates/bootstrap/ajouter_offre.tpl:75
 msgid "Beginning:"
 msgstr "Début :"
@@ -554,7 +572,7 @@ msgstr "Envoyer"
 msgid "Offer Type:"
 msgstr "Type :"
 
-#: ../ajouter_offre.php:113
+#: ../ajouter_offre.php:116
 msgid "You can view or modify your offer using the link below."
 msgstr ""
 "Vous pouvez voir ou modifier votre offre d'emploi en utilisant le lien ci-"
@@ -615,28 +633,28 @@ msgstr "étudiants"
 msgid "Unfortunately, there is no member in your database yet,"
 msgstr "Il n'y a aucun membre dans votre base de donnée,"
 
-#: ../templates/bootstrap/ajouter_formation_eleve.tpl:22
-#: ../templates/default/ajouter_formation_eleve.tpl:22
-msgid "Formation details"
-msgstr "Détails des formations"
+#: ../templates/bootstrap/ajouter_offre.tpl:46
+msgid "Offer detail "
+msgstr "Détails de l'offre"
 
 #: ../templates/bootstrap/liste_membres_aae.tpl:62
 #: ../templates/default/liste_membres_aae.tpl:63
 msgid "No member to show"
 msgstr "Pas de membres à afficher"
 
-#: ../ajouter_offre.php:59 ../ajouter_offre.php:65 ../ajouter_offre.php:157
-#: ../ajouter_offre.php:160
+#: ../ajouter_offre.php:58 ../ajouter_offre.php:66 ../ajouter_offre.php:159
+#: ../ajouter_offre.php:162
 msgid "Y-m-d"
-msgstr "Y-m-d"
+msgstr "d/m/Y"
 
-#: ../templates/bootstrap/liste_offres.tpl:43
-msgid "Pages:"
-msgstr "Pages :"
+#: ../templates/bootstrap/ajouter_offre.tpl:40
+msgid "Description:"
+msgstr "Description :"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:46
-msgid "Offer detail "
-msgstr "Détails de l'offre"
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:22
+#: ../templates/default/ajouter_formation_eleve.tpl:22
+msgid "Formation details"
+msgstr "Détails des formations"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:36
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:43

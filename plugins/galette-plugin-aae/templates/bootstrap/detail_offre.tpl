@@ -7,7 +7,7 @@
 				{_T string="Posted on "} {date("d/m/o",strtotime($offre.date_parution))}
 			</span>
 			<span class="by">
-				{_T string=" by "} {$member->sfullname}
+				{if ($member->sfullname!=" ") && ($member->sfullname!="") } {_T string=" by "} {$member->sfullname} {/if}
 				{if  $offre.organisme!=""} {_T string=" from "} {$offre.organisme} {/if}
 			</span>  <br>
 			{if  $offre.mots_cles!=""}
@@ -57,5 +57,5 @@
 			<footer class="entry-meta">
 				<ul class="entry-meta-taxonomy"></ul>
 			</footer><!-- .entry-meta -->
-
-		</article><!-- #post-## -->
+<a href="{$galette_base_path}{$aaetools_path}liste_offres.php">{_T string="Job offers list"}</a>
+	</article><!-- #post-## -->

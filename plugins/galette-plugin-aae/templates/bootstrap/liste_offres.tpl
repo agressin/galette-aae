@@ -1,6 +1,6 @@
 {if $nb_offres > 0}
 
-	<a href="{$galette_base_path}plugins/galette-plugin-aae/liste_offres.php?rss"> {_T string="Subscrite to "} <img src="{$galette_base_path}/templates/bootstrap/images/rss.png" width="20" height=20 alt="RSS"> </a> / <a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php">{_T string="Add job offers"}</a>
+	<a href="{$galette_base_path}{$aaetools_path}liste_offres.php?rss"> {_T string="Subscrite to "} <img src="{$galette_base_path}/templates/bootstrap/images/rss.png" width="20" height=20 alt="RSS"> </a> / <a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php">{_T string="Add job offers"}</a>
 	<br>
 	<table id='table_offre' class="listing">
         <thead>
@@ -14,7 +14,7 @@
         <tbody>
     		{foreach from=$offres item=offre}
 	            <tr class="formation_row">
-	                <td class="center nowrap"> <a href="{$galette_base_path}plugins/galette-plugin-aae/liste_offres.php?id_offre={$offre.id}"> {utf8_encode($offre.titre)} </a> </td>
+	                <td class="center nowrap"> <a href="{$galette_base_path}{$aaetools_path}liste_offres.php?id_offre={$offre.id}"> {utf8_encode($offre.titre)} </a> </td>
 	                <td class="center nowrap">{utf8_encode($offre.organisme)}</td>
 	                <td class="center nowrap">{utf8_encode($offre.date_parution)}</td>
 	                <td class="center nowrap">{utf8_encode($offre.type_offre)}</td>

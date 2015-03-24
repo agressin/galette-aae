@@ -52,22 +52,24 @@ if ( $id_offre != '' ) {
 
 $tpl->assign('page_title', $title);
 
-//if (isset($_POST['valid']) && !empty($_POST['valid'] ) ) {
 if (isset($_POST['titre_offre']) ) {
     //form was send normally, we try to store new values
 
     $d = \DateTime::createFromFormat(_T("Y-m-d"), $_POST['date_fin']);
     if ( $d === false ) {
-        throw new \Exception('Incorrect format');
-    }
-    $date_fin = $d->format('Y-m-d');
- 
+        #throw new \Exception('Incorrect format');
+        $date_fin = "";
+    }else{
+		$date_fin = $d->format('Y-m-d');
+	}
+	
     $d = \DateTime::createFromFormat(_T("Y-m-d"), $_POST['date_debut']);
     if ( $d === false ) {
-        throw new \Exception('Incorrect format');
-    }
-    $date_debut = $d->format('Y-m-d');
-    
+        #throw new \Exception('Incorrect format');
+        $date_debut = "";
+    }else{
+		$date_debut = $d->format('Y-m-d');
+	}
     $res = $offres->setOffre(
 		$id_offre,
 		$id_adh,
@@ -103,17 +105,16 @@ if (isset($_POST['titre_offre']) ) {
                     _T("Job offer post")
                 );
                 
-                // TODO: add mail to offer contact
+				//Send mail to contact + admin
                 $mail->setRecipients(
-                    array($_POST['mail_contact'] => $_POST['nom_contact'],
-                    $preferences->pref_email => "Admin")
+                    array(
+						$_POST['mail_contact'] => $_POST['nom_contact'],
+						$preferences->pref_email => "Admin"
+                    )
                 );
-
                 $message = _T("Your job offer has been successfully created.");
                 $message .= "\n" . _T("You can view or modify your offer using the link below.");
                 $message .= "\n\n";
-                
-                //TODO adresse plugin
                 $message .= "http://".$_SERVER['HTTP_HOST']."/plugins/galette-plugin-aae/ajouter_offre.php?id_offre=".$res; 
 
                 $mail->setMessage($message);

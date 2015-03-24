@@ -17,18 +17,19 @@ if ( !$preferences->showPublicPages($login) ) {
 }
 
 $offres = new Offres();
-
+$detail_mode = false;
 $id_offre = get_numeric_form_value('id_offre', '');
-$detail_mode = $id_offre !='';
-
+if($id_offre !='') {
+	$offre = $offres->getOffre($id_offre);
+	
+	$detail_mode = ! empty($offre); # si l'offre n'existe pas, on reste sur la liste des offres
+}
 $rss_mode = isset($_GET['rss']);
 
 $orig_template_path = $tpl->template_dir;
 $tpl->template_dir = 'templates/' . $preferences->pref_theme;
 
 if($detail_mode){
-	
-	$offre = $offres->getOffre($id_offre);
 	$tpl->assign('offre', $offre);
 	
 	$member = new Adherent();
@@ -64,12 +65,6 @@ if($detail_mode){
 if(! $rss_mode) {
 	//Set path back to main Galette's template
 	$tpl->template_dir = $orig_template_path;
-
-	/*
-	if($login->isLogged())
-		$tpl->display('page.tpl');
-	else
-	*/
-		$tpl->display('public_page.tpl');
+	$tpl->display('public_page.tpl');
 }
 

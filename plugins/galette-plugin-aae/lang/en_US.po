@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-02-01 11:25+0100\n"
+"PO-Revision-Date: 2015-03-24 21:12+0100\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Key word(s):"
 msgstr " Key word(s) :"
 
-#: ../ajouter_offre.php:134
+#: ../ajouter_offre.php:136
 msgid ""
 "A problem happened while sending job offer confirmation to user %name "
 "(%email)"
@@ -54,7 +54,7 @@ msgstr "Type :"
 msgid "Publication date"
 msgstr "Publication date"
 
-#: ../ajouter_offre.php:97
+#: ../ajouter_offre.php:99
 msgid "Offer has been successfully modified."
 msgstr "Offer has been successfully modified."
 
@@ -99,7 +99,7 @@ msgstr "How to contribute ?"
 msgid "Localisation:"
 msgstr "Localisation:"
 
-#: ../ajouter_offre.php:103
+#: ../ajouter_offre.php:105
 msgid "Job offer post"
 msgstr "Job offer post"
 
@@ -116,11 +116,11 @@ msgstr "You don't have the permission to modify an existing offer."
 msgid "student"
 msgstr "student"
 
-#: ../ajouter_offre.php:94
+#: ../ajouter_offre.php:96
 msgid "Offer has not been modified!"
 msgstr "Offer has not been modified!"
 
-#: ../templates/bootstrap/gestion_offres.tpl:9
+#: ../templates/bootstrap/gestion_offres.tpl:10
 msgid "Type"
 msgstr "Type"
 
@@ -138,7 +138,7 @@ msgstr ""
 msgid "Subscrite to "
 msgstr "Subscrite to "
 
-#: ../templates/bootstrap/gestion_offres.tpl:10
+#: ../templates/bootstrap/gestion_offres.tpl:11
 #: ../templates/bootstrap/gestion_formations.tpl:11
 #: ../templates/default/gestion_formations.tpl:11
 msgid "Actions"
@@ -188,7 +188,7 @@ msgstr "Refresh"
 msgid "Add job offer"
 msgstr "Add job offer"
 
-#: ../templates/bootstrap/gestion_offres.tpl:8
+#: ../templates/bootstrap/gestion_offres.tpl:9
 msgid "Titre"
 msgstr "Title"
 
@@ -201,6 +201,10 @@ msgid ""
 "En cas de virement groupé pour plusieurs personnes, merci de le préciser "
 "dans votre mail."
 msgstr ""
+
+#: ../templates/bootstrap/gestion_offres.tpl:83
+msgid "to delete offer"
+msgstr "to delete offer"
 
 #: ../templates/bootstrap/ajouter_offre.tpl:57
 msgid "Site:"
@@ -236,9 +240,9 @@ msgstr "Payment by check"
 msgid "Show:"
 msgstr "Show:"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:40
-msgid "Description:"
-msgstr "Description:"
+#: ../templates/bootstrap/liste_offres.tpl:43
+msgid "Pages:"
+msgstr "Pages:"
 
 #: ../aaetools.php:56
 msgid "RIB has not been modified!"
@@ -266,6 +270,10 @@ msgstr "End"
 #: ../templates/bootstrap/detail_offre.tpl:39
 msgid "Contact: "
 msgstr "Contact: "
+
+#: ../templates/bootstrap/gestion_offres.tpl:83
+msgid "Actions:"
+msgstr "Actions:"
 
 #: ../templates/bootstrap/ajouter_offre.tpl:15
 msgid "Title:"
@@ -314,7 +322,11 @@ msgstr "Pay: "
 msgid "CDI"
 msgstr "CDI"
 
-#: ../ajouter_offre.php:127
+#: ../templates/bootstrap/menu.tpl:1 ../templates/default/menu.tpl:1
+msgid "AAE"
+msgstr "AAE"
+
+#: ../ajouter_offre.php:129
 msgid "Mail sent to user %name (%email)"
 msgstr "Mail sent to user %name (%email)"
 
@@ -322,7 +334,7 @@ msgstr "Mail sent to user %name (%email)"
 msgid "Formations managment"
 msgstr "Formations managment"
 
-#: ../ajouter_offre.php:99
+#: ../ajouter_offre.php:101
 msgid ""
 "Offer has been successfully created, you will receive an confirmation email."
 msgstr ""
@@ -340,9 +352,9 @@ msgstr " Type:"
 msgid " Key word(s):"
 msgstr " Key word(s) :"
 
-#: ../templates/bootstrap/menu.tpl:1 ../templates/default/menu.tpl:1
-msgid "AAE"
-msgstr "AAE"
+#: ../templates/bootstrap/gestion_offres.tpl:85
+msgid "Statut : "
+msgstr "Statut: "
 
 #: ../templates/bootstrap/menu.tpl:15 ../templates/default/menu.tpl:6
 msgid "Who to contribute ?"
@@ -366,7 +378,7 @@ msgstr ""
 msgid "Cycle"
 msgstr "Cycle"
 
-#: ../ajouter_offre.php:143
+#: ../ajouter_offre.php:145
 msgid ""
 "Trying to send a mail to a member (%name) with an invalid adress: %email"
 msgstr ""
@@ -413,7 +425,8 @@ msgstr "Description: "
 msgid "Title"
 msgstr "Title"
 
-#: ../liste_offres.php:57 ../templates/bootstrap/public_menu.tpl:9
+#: ../liste_offres.php:57 ../templates/bootstrap/gestion_offres.tpl:3
+#: ../templates/bootstrap/public_menu.tpl:9
 #: ../templates/bootstrap/public_menu.tpl:22
 msgid "Job offers list"
 msgstr "Job offers list"
@@ -517,7 +530,7 @@ msgstr "A problem happened while sending email to user %name"
 msgid "Salary:"
 msgstr "Salary:"
 
-#: ../ajouter_offre.php:112
+#: ../ajouter_offre.php:115
 msgid "Your job offer has been successfully created."
 msgstr "Your job offer has been successfully created."
 
@@ -534,6 +547,10 @@ msgstr "No offer to show"
 msgid " by "
 msgstr " by "
 
+#: ../templates/bootstrap/gestion_offres.tpl:85
+msgid "(click to change)"
+msgstr "(click to change)"
+
 #: ../templates/bootstrap/ajouter_offre.tpl:75
 msgid "Beginning:"
 msgstr "Beginning:"
@@ -546,7 +563,7 @@ msgstr "Send"
 msgid "Offer Type:"
 msgstr "Offer Type:"
 
-#: ../ajouter_offre.php:113
+#: ../ajouter_offre.php:116
 msgid "You can view or modify your offer using the link below."
 msgstr "You can view or modify your offer using the link below."
 
@@ -605,28 +622,28 @@ msgstr "students"
 msgid "Unfortunately, there is no member in your database yet,"
 msgstr "Unfortunately, there is no member in your database yet,"
 
-#: ../templates/bootstrap/ajouter_formation_eleve.tpl:22
-#: ../templates/default/ajouter_formation_eleve.tpl:22
-msgid "Formation details"
-msgstr "Formation details"
+#: ../templates/bootstrap/ajouter_offre.tpl:46
+msgid "Offer detail "
+msgstr "Offer detail "
 
 #: ../templates/bootstrap/liste_membres_aae.tpl:62
 #: ../templates/default/liste_membres_aae.tpl:63
 msgid "No member to show"
 msgstr "No member to show"
 
-#: ../ajouter_offre.php:59 ../ajouter_offre.php:65 ../ajouter_offre.php:157
-#: ../ajouter_offre.php:160
+#: ../ajouter_offre.php:58 ../ajouter_offre.php:66 ../ajouter_offre.php:159
+#: ../ajouter_offre.php:162
 msgid "Y-m-d"
 msgstr "Y-m-d"
 
-#: ../templates/bootstrap/liste_offres.tpl:43
-msgid "Pages:"
-msgstr "Pages:"
+#: ../templates/bootstrap/ajouter_offre.tpl:40
+msgid "Description:"
+msgstr "Description:"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:46
-msgid "Offer detail "
-msgstr "Offer detail "
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:22
+#: ../templates/default/ajouter_formation_eleve.tpl:22
+msgid "Formation details"
+msgstr "Formation details"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:36
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:43
