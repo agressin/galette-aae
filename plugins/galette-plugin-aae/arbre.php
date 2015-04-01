@@ -23,3 +23,17 @@ if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
 
 $formation = new Formations();
 $cycles = new Cycles();
+
+
+
+//Set the path to the current plugin's templates,
+//but backup main Galette's template path before
+$orig_template_path = $tpl->template_dir;
+$tpl->template_dir = 'templates/' . $preferences->pref_theme;
+
+$content = $tpl->fetch('arbre.tpl');
+$tpl->assign('content', $content);
+
+//Set path back to main Galette's template
+$tpl->template_dir = $orig_template_path;
+$tpl->display('public_page.tpl');

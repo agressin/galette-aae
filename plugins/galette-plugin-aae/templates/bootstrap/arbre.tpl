@@ -1,0 +1,3 @@
+{if $login->isLogged()}	
+
+{/if}
