@@ -15,7 +15,7 @@ use Galette\AAE\Formations as Formations;
 require_once 'lib/GaletteAAE/Cycles.php';
 use Galette\AAE\Cycles as Cycles;
 
-if ( !$preferences->showPublicPages($login) ) {
+if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
     //public pages are not actives
     header('location:' . GALETTE_BASE_PATH  . 'index.php');
     die();

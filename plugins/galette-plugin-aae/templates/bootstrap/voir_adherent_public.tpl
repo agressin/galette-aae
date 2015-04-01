@@ -1,6 +1,7 @@
+{if $login->isLogged()}	
 	<div class="bigtable wrmenu">
 		<div class="bigtable wrmenu">
-			<div id="member_stateofdue" class="{$member->getRowClass()}">{$member->getDues()}</div>
+			<!--<div id="member_stateofdue" class="{$member->getRowClass()}">{$member->getDues()}</div>-->
 			<table class="details">
 				<legend>{_T string="Identity:"}</legend>
 				<tr>
@@ -55,7 +56,7 @@
 				<tr>
 					<th>{_T string="Cycle:"}</th>
 					<form class="form-horizontal" action="liste_eleves.php" method="post">
-					<td><a href="promotion.php?cycle={$key.id_cycle}&year={$key.annee_debut}">{$key.nom}	{$key.annee_debut}</a></td>
+					<td><a href="liste_eleves.php?cycle={$key.id_cycle}&year={$key.annee_debut}">{$key.nom}	{$key.annee_debut}</a></td>
 					</form>
 				</tr>
 
@@ -102,5 +103,14 @@
 	{/if}
 
 			</table>
+{else}
+		<p>
+			{_T string="Please, log on in order to display information."}
+		</p>
+		<p> <a href="http://192.168.56.101/galette-aae/index.php?id_adh={$form[0]['id_adh']}" class="btn btn-primary">{_T string="Login"}</a> </p>
+		
 
+
+
+{/if}
 	

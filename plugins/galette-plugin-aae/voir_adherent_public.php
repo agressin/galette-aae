@@ -28,7 +28,6 @@ $member->load($id_adh);
 
 $annuaire = new Annuaire();
 $form = $annuaire->getInfoById($id_adh);
-
 $fc = new FieldsConfig(Adherent::TABLE, $member->fields);
 $visibles = $fc->getVisibilities();
 
