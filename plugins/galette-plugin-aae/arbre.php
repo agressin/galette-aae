@@ -29,46 +29,61 @@ $annuaire = new Annuaire();
 //Recuperation cycles
 $allCycles = $cycles->getAllCycles();
 foreach ($allCycles as $key => $cycle) {
-	$tmp[$key] = $cycle["nom"];
+	$tmp[$key] = $cycle["nomprenom"];
 }
 
 //Tri ascendant
 array_multisort($tmp, SORT_ASC, $allCycles);
 $tpl->assign('cycles', $allCycles);
 
-if(($nom!='')||($prenom!='')){
-	$eleves = $annuaire -> getPromotion($cycle,$year);
-}
-else{
+
+//if ($nomprenom != ''){
 	//search among "ingenieurs"
-	$id_cycle_simple = 51;//starting year
+	//$id_cycle_simple = 51;//starting year
 	//$annee_debut = get_numeric_form_value('annee_debut', '');//starting year
-	$tri=$_POST['tri'];
+	//$tri=$_POST['tri'];
 	//$tpl->assign('id_cycle', $id_cycle);
 	
 	//If there is a name
-	if ($_POST["nom"]!="")
-	{	
-		$researched_name=$_POST["nom"];
+	if ($_POST["nomprenom"]!="")
+	{
+		/*$chaine1 = array();
+		$chaine2 = array();
+		$i = 0;
+		$j = 0;
+		while(ord($_POST["nomprenom"]) != 124){
+			$chaine1[$i] = $_POST["nomprenom"][$i];
+			$i++;
+		}
+		while()
+		$chaine2[$j] = $_POST["nomprenom"][$i+1];*/
 		
-		//Text to uppercase
+		$researched_name=$_POST["nomprenom"];
+		$researched_surname=$_POST["nomprenom"];
+		
+		//Text to the good case
 		$researched_name = strtoupper($researched_name);
+		$researched_surname = strtolower($researched_surname);
+		$researched_surname[0] = strtoupper($researched_surname[0]);
 		
 		//Get all students name
 		$studentsName = $annuaire->getNameOfAllStudents();
+		$studentsSurname= $annuaire->getSurnameOfAllStudents();
 		
 		//Récupération du nom le plus proche
 		$found_name=$annuaire->proximite_levenshtein($researched_name,$studentsName);
+		$found_surname=$annuaire->proximite_levenshtein($researched_surname,$studentsSurname);
+
 	};
 	
-	if ($_POST["prenom"]!="")
+	/*if ($_POST["prenom"]!="")
 	{
 		$researched_surname=$_POST["prenom"];
 		
 		//Transforme le prenom en minuscule
 		$researched_surname = strtolower($researched_surname);
 		
-		//Transforme la premièrer lettre en majuscule
+		//Transforme la première lettre en majuscule
 		$researched_surname[0] = strtoupper($researched_surname[0]);
 		
 		//Creation d'un tableau contenant les prénoms de chaque eleve
@@ -77,7 +92,7 @@ else{
 		//Récupération du nom le plus proche
 		$found_surname=$annuaire->proximite_levenshtein($researched_surname,$studentsSurname);
 		
-	};
+	};*/
 	
 	$param_selected = ((($id_cycle != '') && ($annee_debut != '')) || $found_name!=NULL || $found_surname!=Null);
 	
@@ -93,7 +108,7 @@ else{
 			
 		}
 	}
-}	
+//}	
 // Obtient une liste de colonnes
 foreach ($eleves as $key => $row) {
 	$id_adh[$key]=$row['id_adh'];

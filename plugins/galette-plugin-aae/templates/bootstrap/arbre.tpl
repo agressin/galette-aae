@@ -7,36 +7,12 @@
 						<div class="form-group col-md-4">
 						
 							{*Searching student by name*}
-							<label>{_T string="Name"}
-								<input type="text" name ="nom" {if isset($smarty.post.nom)} value="{$smarty.post.nom}" {/if}/> 
+							<label>{_T string="name or first name"}
+								<input type="text" name ="nomprenom" {if isset($smarty.post.nomprenom)} value="{$smarty.post.nomprenom}" {/if}/> 
 								<!--<input type="text" name="nom"/>-->
 							</label><br>
-							{*Searching student by first name*}
-							<label>{_T string="First Name"}
-								<input type="text" name="prenom" {if isset($smarty.post.prenom)} value="{$smarty.post.prenom}" {/if}/>
-							</label><br>
-							
-							{*Searching student by promotion*}
-							<label for="annee_debut" class="control-label">{_T string="Promotion:"}</label><br>
-							<select class="form-control" name="annee_debut" id="annee_debut" >
-								<option value="0" {if $param_selected eq 1} selected="selected"{/if} >--</option>
-							</select><br>
 						</div>
-						<div class="form-group col-md-3">
-							{*Searching student by Formation*}
-							<label for="id_formation" class="control-label">{_T string="Formation:"}</label> <br>
-								<input name="id_cycle_simple" value="51" type="radio" {if $smarty.post.id_cycle_simple eq 51}checked {/if}> Ingénieur <br>
-								<input name="id_cycle_simple" value="52" type="radio" {if $smarty.post.id_cycle_simple eq 52} checked {/if}> Géomètre   <br>
-								<input name="id_cycle_simple" value="6" type="radio" {if $smarty.post.id_cycle_simple eq 6} checked {/if}> Dessinateur <br>
-							{*Searching student by Cycle*}
-							<label for="id_cycle" class="control-label">{_T string="or by Cycle:"}</label> <br>
-							<select class="form-control" name="id_cycle" id="id_cycle">
-								<option value="0" {if $param_selected eq 1} selected="selected"{/if} > -- </option>
-								{foreach from=$cycles item=cycle name=allcycles}
-								<option value="{$cycle.id_cycle}" {if $cycle.id_cycle eq $id_cycle} selected="selected"{/if} >{$cycle.nom}</option>
-								{/foreach}
-							</select>
-						</div>
+						
 					</div>
 					
 					<div class="row col-xs-offset-2">
@@ -74,12 +50,14 @@
 				<tbody>
 		{*Display all student*}
 		{foreach from=$eleves item=eleve name=alleleves}
+		{if ($eleve.annee_debut >= 2000) && (($eleve.id_cycle == 51) || ($eleve.id_cycle == 2))}{
 					<tr class="{if $smarty.foreach.allmembers.iteration % 2 eq 0}even{else}odd{/if}">
 						<td class="nowrap username_row"><a href="voir_adherent_public.php?id_adh={$eleve.id_adh}">{$eleve.nom_adh}</a></td>
 						<td class="nowrap"><a href="voir_adherent_public.php?id_adh={$eleve.id_adh}">{$eleve.prenom_adh}</a></td>
 						<td class="nowrap"><a href="liste_eleves.php?cycle={$eleve.id_cycle}&year={$eleve.annee_debut}">{$eleve.annee_debut}</td>
 						<td class="nowrap">{$eleve.nom}</td>
-					</tr>
+					</tr>}
+		{/if}
 		{/foreach}
 				</tbody>
 			</table>
