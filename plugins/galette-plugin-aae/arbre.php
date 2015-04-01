@@ -9,11 +9,12 @@ require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 //Constants and classes from plugin
 require_once '_config.inc.php';
 
-require_once 'lib/GaletteAAE/Formations.php';
-use Galette\AAE\Formations as Formations;
+require_once 'lib/GaletteAAE/Annuaire.php';
+use Galette\AAE\Annuaire as Annuaire;
 
 require_once 'lib/GaletteAAE/Cycles.php';
 use Galette\AAE\Cycles as Cycles;
+
 
 if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
     //public pages are not actives
@@ -21,7 +22,7 @@ if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
     die();
 }
 
-$formation = new Formations();
+$annuaire = new Annuaire();
 $cycles = new Cycles();
 
 
