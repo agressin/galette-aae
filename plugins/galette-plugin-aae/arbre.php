@@ -47,68 +47,80 @@ $tpl->assign('cycles', $allCycles);
 	//If there is a name
 	if ($_POST["nomprenom"]!="")
 	{
-		/*$chaine1 = array();
-		$chaine2 = array();
-		$i = 0;
-		$j = 0;
-		while(ord($_POST["nomprenom"]) != 124){
-			$chaine1[$i] = $_POST["nomprenom"][$i];
-			$i++;
+		$req = explode(" ", $_POST["nomprenom"]);
+		$count = count($req);
+		echo($count);
+		$eleves = array();
+
+		if($count == 1){
+			//Search the words of the request as names
+			$researched_name=$req[0];			
+			//Text to upper
+			$researched_name = strtoupper($researched_name);			
+			//Get all students name
+			$studentsName = $annuaire->getNameOfAllStudents();			
+			//Récupération du nom le plus proche
+			$found_name=$annuaire->proximite_levenshtein($researched_name,$studentsName);
+			//Récupération de l'élève avec ce nom ou nom proche
+			$eleves = $annuaire -> getStudent($found_name);
+			
+			//Search the words of the request as surnames
+			$researched_surname=$req[0];
+			//Text to lower, first letter to upper
+			$researched_surname[0] = strtoupper($researched_surname[0]);
+			$researched_surname = strtolower($researched_surname);
+			//Get all students surname
+			$studentsSurname= $annuaire->getSurnameOfAllStudents();
+			//Récupération du prénom le plus proche
+			$found_surname=$annuaire->proximite_levenshtein($researched_surname,$studentsSurname);
+			//Récupération de l'élève avec ce prenom ou prenom proche
+			$elevesprenom = $annuaire -> getStudent(NULL, $found_surname);
+			
+			//concatène les 2 tableaux obtenus
+			$eleves = array_merge($eleves, $elevesprenom);
 		}
-		while()
-		$chaine2[$j] = $_POST["nomprenom"][$i+1];*/
 		
-		$researched_name=$_POST["nomprenom"];
-		$researched_surname=$_POST["nomprenom"];
+		if($count == 2){
+			$found_name = array();
+			$found_surname = array();
+			for ($i=0; $i<$count; $i++){
+				//Search the words of the request as names
+				$researched_name=$req[$i];			
+				//Text to upper
+				$researched_name = strtoupper($researched_name);			
+				//Get all students name
+				$studentsName = $annuaire->getNameOfAllStudents();			
+				//Récupération du nom le plus proche
+				$found_name1=$annuaire->proximite_levenshtein($researched_name,$studentsName);
+				$found_name = array_merge($found_name, $found_name1);
+				
+				//Search the words of the request as surnames
+				$researched_surname=$req[$i];
+				//Text to lower, first letter to upper
+				$researched_surname[0] = strtoupper($researched_surname[0]);
+				$researched_surname = strtolower($researched_surname);
+				//Get all students surname
+				$studentsSurname= $annuaire->getSurnameOfAllStudents();
+				//Récupération du prénom le plus proche
+				$found_surname1=$annuaire->proximite_levenshtein($researched_surname,$studentsSurname);
+				$found_surname = array_merge($found_surname, $found_surname1);
+			}
 		
-		//Text to the good case
-		$researched_name = strtoupper($researched_name);
-		$researched_surname = strtolower($researched_surname);
-		$researched_surname[0] = strtoupper($researched_surname[0]);
-		
-		//Get all students name
-		$studentsName = $annuaire->getNameOfAllStudents();
-		$studentsSurname= $annuaire->getSurnameOfAllStudents();
-		
-		//Récupération du nom le plus proche
-		$found_name=$annuaire->proximite_levenshtein($researched_name,$studentsName);
-		$found_surname=$annuaire->proximite_levenshtein($researched_surname,$studentsSurname);
+			//Récupération de l'élève
+			for($i=0; $i<count($found_name); $i++){
+				for($j=0; $j<count($found_surname); $j++){
+					$eleves = $annuaire -> getStudent($found_name[$i], $found_surname[$j]);
+					$eleves1 = $annuaire -> getStudent($found_surname[$j], $found_name[$i]);
+				}
+			}
+			
+			//concatène les 2 tableaux obtenus
+			$eleves = array_merge($eleves, $eleves1);
+		}
 
 	};
 	
-	/*if ($_POST["prenom"]!="")
-	{
-		$researched_surname=$_POST["prenom"];
-		
-		//Transforme le prenom en minuscule
-		$researched_surname = strtolower($researched_surname);
-		
-		//Transforme la première lettre en majuscule
-		$researched_surname[0] = strtoupper($researched_surname[0]);
-		
-		//Creation d'un tableau contenant les prénoms de chaque eleve
-		$studentsSurname= $annuaire->getSurnameOfAllStudents();
-	
-		//Récupération du nom le plus proche
-		$found_surname=$annuaire->proximite_levenshtein($researched_surname,$studentsSurname);
-		
-	};*/
-	
-	$param_selected = ((($id_cycle != '') && ($annee_debut != '')) || $found_name!=NULL || $found_surname!=Null);
-	
-	if($param_selected) {
-		
-		if($id_cycle_simple==''){
-			
-			$eleves = $annuaire -> getStudent($found_name,$found_surname);
-		}
-		else{
-		
-			$eleves = $annuaire -> getStudent($found_name,$found_surname);
-			
-		}
-	}
-//}	
+
 // Obtient une liste de colonnes
 foreach ($eleves as $key => $row) {
 	$id_adh[$key]=$row['id_adh'];
