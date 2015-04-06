@@ -41,9 +41,29 @@ class Annuaire
             
             $res = $zdb->execute($select);
             $res = $res->toArray();
-            
-            if ( count($res) > 0 ) {
-                return $res;
+		
+			//Get colums with students names
+			foreach ($res as $cle => $valeur) 
+			{
+				$nom[$cle]  = $valeur['nom_adh'];
+			};
+
+			//Sort table 
+			//Add $student to sort by same key
+			array_multisort($nom, SORT_ASC, $res);
+
+			//Table with all names 
+			//Initialisation du tableau
+			$listOfStudents=array();
+			
+			//Remplissage du tableau
+			foreach ($res as $cle => $valeur) 
+			{
+				$listOfStudents[]=$valeur['nom_adh'];
+			}
+			
+            if ( count($listOfStudents) > 0 ) {
+                return $listOfStudents;
             } else {
                 return array();
             }
@@ -60,7 +80,8 @@ class Annuaire
     /*Get first name of all student
 	IN : 
 	OUT : array with all names
-	COM : For levhenstein research by first name*/
+	COM : For levhenstein research by first name
+		  Same process as getNameOfAllStudents*/
 	
 	public function getSurnameOfAllStudents()
     {
@@ -78,8 +99,21 @@ class Annuaire
             $res = $zdb->execute($select);
             $res = $res->toArray();
             
-            if ( count($res) > 0 ) {
-                return $res;
+			foreach ($res as $cle => $valeur) 
+			{
+				$prenom[$cle]  = $valeur['prenom_adh'];
+			};
+
+			array_multisort($prenom, SORT_ASC, $res);
+
+			$listOfStudentsSurname=array();
+			
+			foreach ($res as $cle => $valeur) 
+			{
+				$listOfStudentsSurname[]=$valeur['prenom_adh'];
+			};
+            if ( count($listOfStudentsSurname) > 0 ) {
+                return $listOfStudentsSurname;
             } else {
                 return array();
             }
@@ -188,7 +222,7 @@ class Annuaire
 			if ($compteur==0){
 				$select->where->equalTo('a.nom_adh', '-');}; #Displaying nothing if nothing is specified
 				
-			while ($compteur!=0){
+			//while ($compteur!=0){
 				if ($nom==1){
 					$select->where->equalTo('a.nom_adh', $post_nom);
 					$compteur=$compteur-1;
@@ -211,7 +245,7 @@ class Annuaire
 					$select->where->equalTo('f.annee_debut', $post_promo);
 					$compteur=$compteur-1;
 					$promo=0;}; #This line is never reach
-				};
+			//	};
             
             $res = $zdb->execute($select);
             $res = $res->toArray();
@@ -258,6 +292,48 @@ class Annuaire
 			array('nom'));
 							
 			$select->where->equalTo('a.id_adh', $id_adh);
+            
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+            
+            if ( count($res) > 0 ) {
+                return $res;
+            } else {
+                return array();
+            }
+        } catch (\Exception $e) {
+            Analog::log(
+                'Unable to retrieve members promotion for "' .
+                $id_cycle  . '" | "' . $annee_debut .'" | ' . $e->getMessage(),
+                Analog::WARNING
+            );
+            return false;
+        }
+    }
+	
+	public function getPromotion($id_cycle,$year)
+    {
+        global $zdb;
+
+        try {
+            $select = $zdb->sql->select();
+            $table_adh = PREFIX_DB . Adherent::TABLE;
+			$select->from(
+					array('a' => $table_adh)
+				);
+			
+			$select->columns(array(Adherent::PK, 'nom_adh', 'prenom_adh'));
+			
+ 			$select->join(array('f' => Formations::getTableName()),
+				'f.id_adh = a.' . Adherent::PK,
+				array('id_cycle','annee_debut'));
+			
+			$select->join(array('c' => Cycles::getTableName()),
+			'f.id_cycle = c.' . Cycles::PK,
+			array('nom'));
+							
+			$select->where->equalTo('f.id_cycle', $id_cycle)
+				   ->where->equalTo('f.annee_debut', $year);
             
             $res = $zdb->execute($select);
             $res = $res->toArray();
