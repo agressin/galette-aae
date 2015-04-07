@@ -15,7 +15,7 @@ use Galette\AAE\Cycles as Cycles;
 use Galette\Entity\Adherent as Adherent;
 use Galette\Entity\FieldsConfig;
 
-if ( !$preferences->showPublicPages($login) ) {
+if ( !$preferences->showPublicPages($login) || !$login->isLogged() ) {
     //public pages are not actives
     header('location:' . GALETTE_BASE_PATH  . 'index.php');
     die();
