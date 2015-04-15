@@ -15,6 +15,9 @@ use Galette\AAE\Annuaire as Annuaire;
 require_once 'lib/GaletteAAE/Cycles.php';
 use Galette\AAE\Cycles as Cycles;
 
+//require_once 'generation_json.js';
+require_once 'donnees_json.php';
+
 
 if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
     //public pages are not actives
@@ -138,6 +141,10 @@ foreach ($eleves as $key => $row) {
 	//$promo[$key] = $row['annee_debut'];
 	//$id_cycle[$key] = $row['id_cycle'];
 }
+	
+	//$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+
+	//echo json_encode($arr);
 	
 // Trie les données par nom et prenom croissant
 // Ajoute $eleves en tant que dernier paramètre, pour trier par la clé commune
