@@ -1,6 +1,7 @@
 {if $login->isLogged()}	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
+	<input type="button" value="Ajouter/Modifier" onclick="self.location.href='ajout_modif_parr_fillot.php'"/>
 	<form action="arbre.php" method="post">
 		<fieldset class="form-group">
 			<div class="row">
@@ -9,7 +10,7 @@
 					<label>{_T string="name or first name"}
 						<input type="text" name ="nomprenom" {if isset($smarty.post.nomprenom)} value="{$smarty.post.nomprenom}" {/if}/> 								
 					</label>
-					<button type="submit" class="btn btn-primary"><img src="templates/bootstrap/images/loupe.png" class="img-responsive" alt="Responsive image" alt="Search" />{if $param_selected eq 1} {_T string="Refresh"} {else} {""} {/if}</button>
+					<button type="submit" class="btn btn-primary"><img src="templates/bootstrap/images/loupe.png" class="img-responsive" />{if $param_selected eq 1} {_T string="Refresh"} {else} {""} {/if}</button>
 				</div>	
 			</div>
 		</fieldset>
@@ -29,7 +30,7 @@
 		</div>
 	{/if}
 	<div id="cy">
-		<script src="arbreJS.js"></script>
+
 	</div>
 	<div class="row">
 		{_T string="If you see an error, please send an email to:"}
