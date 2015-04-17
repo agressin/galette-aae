@@ -16,7 +16,7 @@
 		cy.style()
 			.selector('node')
 			.css({
-				'content':'data(name)'
+				'content':'data(id)'
 			})
 			.selector('edge')
 			.css({

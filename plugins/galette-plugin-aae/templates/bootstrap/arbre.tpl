@@ -29,8 +29,10 @@
 			{/foreach}
 		</div>
 	{/if}
-	<div id="cy">
-
+	<div class="row">
+		<div class="col-md-15">
+			<div id="cy" style="border: 2px black solid; height:700px;"></div>
+		</div>
 	</div>
 	<div class="row">
 		{_T string="If you see an error, please send an email to:"}
