@@ -134,6 +134,13 @@ foreach ($eleves as $key => $row) {
 	$prenom[$key] = $row['prenom_adh'];
 }
 
+//Lecture du fichier json
+$content = "";
+$lines = file("donnees.json");
+foreach($lines as $n => $line){
+	$content .=$line;
+}
+
 	
 // Trie les données par nom et prenom croissant
 // Ajoute $eleves en tant que dernier paramètre, pour trier par la clé commune
@@ -149,6 +156,7 @@ $orig_template_path = $tpl->template_dir;
 $tpl->template_dir = 'templates/' . $preferences->pref_theme;
 
 $content = $tpl->fetch('arbre.tpl');
+$content .= $tpl->fetch('arbreJS.tpl');
 $tpl->assign('content', $content);
 
 //Set path back to main Galette's template
