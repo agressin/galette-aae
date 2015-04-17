@@ -135,10 +135,10 @@ foreach ($eleves as $key => $row) {
 }
 
 //Lecture du fichier json
-$content = "";
+$contenu_json = "";
 $lines = file("donnees.json");
 foreach($lines as $n => $line){
-	$content .=$line;
+	$contenu_json .=$line;
 }
 
 	
@@ -149,6 +149,7 @@ $tpl->assign('eleves', $eleves);
 $tpl->assign('nb_eleves', count($eleves));
 $tpl->assign('tri',$tri);
 $tpl->assign('page_title', _T("Parrain-fillots tree"));
+$tpl->assign('content_json', $contenu_json);
 
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before

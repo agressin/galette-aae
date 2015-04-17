@@ -1,7 +1,7 @@
 <script type="text/javascript">
 	$(function(){
 		//Get the Json
-		var contenu = <?php echo $content;?>; //Get the content of the file
+		var contenu = <?php echo $content_json;?>; //Get the content of the file
 		var contenu_string = JSON.stringify(contenu); //Transform it into a string
 		var cara1 = contenu_string.substring(0,1); //Get the first letter
 		var lng = contenu_string.length; //Calculate the string's length
@@ -16,7 +16,7 @@
 		cy.style()
 			.selector('node')
 			.css({
-				'content':'data(id)'
+				'content':'data(name)'
 			})
 			.selector('edge')
 			.css({
@@ -29,7 +29,7 @@
 
 		cy.on('tap', 'node', { foo: 'bar' }, function(evt){ //affiche l'id du noeud sur lequel on a cliqué (cy.off() pour enlever)
 			var node = evt.cyTarget;
-			if (node.id >= 2000){ //Test à modifier pour savoir qu'on a tapé une année
+			if (node.id() >= 2000){
 				console.log(node.id() );
 			}else{
 				console.log( 'tapped ' + node.id() );
