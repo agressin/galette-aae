@@ -1,7 +1,7 @@
 {if $login->isLogged()}	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
-	<input type="button" value="Ajouter/Modifier" onclick="self.location.href='ajout_modif_parr_fillot.php'"/>
+	<input type="button" value={_T string="Add/Modify"} onclick="self.location.href='ajout_modif_parr_fillot.php'"/>
 	<form action="arbre.php" method="post">
 		<fieldset class="form-group">
 			<div class="row">
