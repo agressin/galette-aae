@@ -1,7 +1,7 @@
 <script type="text/javascript">
 	$(function(){
 		//Get the Json
-		var contenu = <?php echo $content_json;?>; //Get the content of the file
+		var contenu = {$content_json}; //Get the content of the file
 		var contenu_string = JSON.stringify(contenu); //Transform it into a string
 		var cara1 = contenu_string.substring(0,1); //Get the first letter
 		var lng = contenu_string.length; //Calculate the string's length
