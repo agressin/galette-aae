@@ -181,7 +181,7 @@ class Annuaire
 	OUT : array
 	COM : - Our principal fonction to select student*/
 	
-	public function getStudent($post_nom,$post_prenom, $post_promo, $post_formation, $post_cycle)
+	public function getStudent($post_nom,$post_prenom, $post_promo, $post_formation, $post_cycle, $post_employeur)
     {
         global $zdb;
 
@@ -205,7 +205,6 @@ class Annuaire
 				
 			$compteur=0;
 			
-			
 			#Count number of parameters selected
 			if ($post_nom!=""){
 				$compteur=$compteur+1;$nom=1;};
@@ -217,6 +216,8 @@ class Annuaire
 				$compteur=$compteur+1;$formation=1;};
 			if ($post_cycle!=0){
 				$compteur=$compteur+1;$cycle=1;};
+			if ($post_employeur){
+				$compteur=$compteur+1;$employeur=1;};
 				
 			
 			if ($compteur==0){
@@ -225,27 +226,37 @@ class Annuaire
 			//while ($compteur!=0){
 				if ($nom==1){
 					$select->where->equalTo('a.nom_adh', $post_nom);
-					$compteur=$compteur-1;
-					$nom==0;};#No request with name
+					//$compteur=$compteur-1;
+					$nom==0;
+				};#No request with name
 				if ($prenom==1){
 					$select->where->equalTo('a.prenom_adh', $post_prenom);
-					$compteur=$compteur-1;
-					$prenom=0;};#No request with first name
+					//$compteur=$compteur-1;
+					$prenom=0;
+				};#No request with first name
 				if ($formation==1){
 					$select->where->equalTo('f.id_cycle', $post_formation);
-					$compteur=$compteur-1;
+					//$compteur=$compteur-1;
 					$formation=0;
-					$cycle=0;};#No request with cycle
+					$cycle=0;
+				};#No request with cycle
 				if ($cycle==1){
 					$select->where->equalTo('f.id_cycle', $post_cycle);
-					$compteur=$compteur-1;
+					//$compteur=$compteur-1;
 					$cycle=0;
-					$formation=0;};#No request with cycle
+					$formation=0;
+				};#No request with cycle
 				if ($promo==1){
 					$select->where->equalTo('f.annee_debut', $post_promo);
-					$compteur=$compteur-1;
-					$promo=0;}; #This line is never reach
-			//	};
+					//$compteur=$compteur-1;
+					$promo=0;
+				}; #This line is never reach
+				if ($employeur==1){
+					$select->where->equalTo('f.id_employeur', $post_employeur);
+					//$compteur=$compteur-1;
+					$employeur=0;
+				}; 
+			//};
             
             $res = $zdb->execute($select);
             $res = $res->toArray();
