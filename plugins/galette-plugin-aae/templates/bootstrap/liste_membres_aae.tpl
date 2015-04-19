@@ -4,15 +4,18 @@
 				<legend>{_T string="Select cycle and promotion"}</legend>
 					<div class="row col-sm-offset-1">
 						<div class="form-group col-md-4">
+						
 							{*Searching student by name*}
-							<label>{_T string="Name"}
-							<input type="text" name ="nom" {if isset($smarty.post.nom)} value="{$smarty.post.nom}" {/if}/> 
-							<!--<input type="text" name="nom"/>-->
+							<label>{_T string="Name"}{if !$login->isLogged()} (*) {/if}
+							<input type="text" name ="nom" {if isset($smarty.post.nom)} value="{$smarty.post.nom}" {/if}
+							{if !$login->isLogged()} DISABLED {/if} /> 
 							</label><br>
 							{*Searching student by first name*}
-							<label>{_T string="First Name"}
-							<input type="text" name="prenom" {if isset($smarty.post.prenom)} value="{$smarty.post.prenom}" {/if}/>
+							<label>{_T string="First Name"}{if !$login->isLogged()} (*) {/if}
+							<input type="text" name="prenom" {if isset($smarty.post.prenom)} value="{$smarty.post.prenom}" {/if}
+							{if !$login->isLogged()} DISABLED {/if} />
 							</label><br>
+							{if !$login->isLogged()} * {_T string="Please sign in to access search by name"} <br> {/if}
 							{*Searching student by promotion*}
 							<label for="annee_debut" class="control-label">{_T string="Promotion:"}</label><br>
 							<select class="form-control" name="annee_debut" id="annee_debut" >
@@ -72,9 +75,27 @@
 		{*Display all student*}
 		{foreach from=$eleves item=eleve name=alleleves}
 					<tr class="{if $smarty.foreach.allmembers.iteration % 2 eq 0}even{else}odd{/if}">
-						<td class="nowrap username_row"><a href="voir_adherent_public.php?id_adh={$eleve.id_adh}">{$eleve.nom_adh}</a></td>
-						<td class="nowrap"><a href="voir_adherent_public.php?id_adh={$eleve.id_adh}">{$eleve.prenom_adh}</a></td>
-						<td class="nowrap"><a href="liste_eleves.php?cycle={$eleve.id_cycle}&year={$eleve.annee_debut}">{$eleve.annee_debut}</td>
+						<td class="nowrap username_row">
+							{if $login->isLogged()}
+								<a href="voir_adherent_public.php?id_adh={$eleve.id_adh}">{$eleve.nom_adh}</a>
+							{else}
+								{$eleve.nom_adh}
+							{/if}
+						</td>
+						<td class="nowrap">
+							{if $login->isLogged()}
+								<a href="voir_adherent_public.php?id_adh={$eleve.id_adh}">{$eleve.prenom_adh}</a>
+							{else}
+								{$eleve.prenom_adh}
+							{/if}
+						</td>
+						<td class="nowrap">
+							{if $login->isLogged()}
+								<a href="liste_eleves.php?cycle={$eleve.id_cycle}&year={$eleve.annee_debut}">{$eleve.annee_debut}</a>
+							{else}
+								{$eleve.annee_debut}
+							{/if}
+						</td>
 						<td class="nowrap">{$eleve.nom}</td>
 					</tr>
 		{/foreach}
