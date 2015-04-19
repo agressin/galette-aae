@@ -51,15 +51,17 @@
 				</tr>
 	{/if}
 
-	{foreach $form as $key}
 				<tr>
-					<th>{_T string="Cycle:"}</th>
+					<th>{_T string="Cycle(s):"}</th>
 					<form class="form-horizontal" action="liste_eleves.php" method="post">
-					<td><a href="promotion.php?cycle={$key.id_cycle}&year={$key.annee_debut}">{$key.nom}	{$key.annee_debut}</a></td>
+					<td>
+					{foreach $form as $key}
+					<a href="promotion.php?cycle={$key.id_cycle}&year={$key.annee_debut}">{$key.nom}	{$key.annee_debut}</a>  
+					{/foreach}
+					</td>
 					</form>
 				</tr>
 
-	{/foreach}
 			</table>
 			
 			
