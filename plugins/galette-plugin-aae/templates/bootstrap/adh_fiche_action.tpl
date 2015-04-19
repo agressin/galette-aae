@@ -14,14 +14,6 @@
       {_T string="View formations"}
    </a>
 </li>
-<li>
-   <a
-      class="button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
-      href="{$galette_base_path}{$aaetools_path}gestion_postes.php?id_adh={$member->id}"
-      id="btn_plugins_aaeTools">
-      {_T string="View jobs"}
-   </a>
-</li>
 <!-- {if $login->isStaff() or $login->isAdmin()}  
 <li>
    <a
