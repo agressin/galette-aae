@@ -15,7 +15,7 @@ use Galette\AAE\Cycles as Cycles;
 use Galette\Entity\Adherent as Adherent;
 use Galette\Entity\FieldsConfig;
 
-if ( !$preferences->showPublicPages($login) || !$login->isLogged() ) {
+if ( !$preferences->showPublicPages($login) ) {
     //public pages are not actives
     header('location:' . GALETTE_BASE_PATH  . 'index.php');
     die();
@@ -28,9 +28,38 @@ $member->load($id_adh);
 
 $annuaire = new Annuaire();
 $form = $annuaire->getInfoById($id_adh);
-
 $fc = new FieldsConfig(Adherent::TABLE, $member->fields);
 $visibles = $fc->getVisibilities();
+
+//----------------POSTES---------------------
+
+require_once 'lib/GaletteAAE/Postes.php';
+use Galette\AAE\Postes as Postes;
+require_once 'lib/GaletteAAE/Entreprises.php';
+use Galette\AAE\Entreprises as Entreprises;
+$postes = new Postes();
+$entreprises = new Entreprises();
+
+$i=0;
+
+$list_postes = $postes->getPostes($id_adh);  
+foreach ($list_postes as $pos){
+        $id_ent = $pos['id_entreprise'];
+        $ent = $entreprises->getEntreprise($id_ent);
+        $list_postes[$i]['employeur'] = $ent['employeur'];
+        $list_postes[$i]['website'] = $ent['website'];
+        $i=$i+1;
+    }
+
+//Tri le tableau en fonction de la date de début.
+usort($list_postes, function($a, $b) {
+    return $b['annee_ini'] - $a['annee_ini'];
+});
+
+
+$tpl->assign('list_postes', $list_postes);
+
+//----------------POSTES Fin---------------------
 
 
 $tpl->assign('form',$form);
