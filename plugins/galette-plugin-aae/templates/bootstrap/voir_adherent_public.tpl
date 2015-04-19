@@ -124,7 +124,7 @@
 					<th>{_T string="End"}</th>
 					<td>{$key.annee_fin|htmlspecialchars}</td>
 				</tr>
-			{if $key.encadrement eq '1'}
+			{if $key.encadrement ne '1'}
 				<tr>
 					<th>{_T string="Encadrement:"}</th>
 					<td>
@@ -135,7 +135,7 @@
 				<tr>
 					<th>{_T string="Website:"}</th>
 					<td>
-						<a href="{$key.website}">{$key.website}</a>
+						<a href="http://{$key.website}">{$key.website}</a>
 					</td>
 				</tr>
 	
