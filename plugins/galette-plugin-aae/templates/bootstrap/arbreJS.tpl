@@ -27,9 +27,9 @@
 			})
 			.update();
 
-		cy.on('tap', 'node', { foo: 'bar' }, function(evt){ //affiche l'id du noeud sur lequel on a cliqué (cy.off() pour enlever)
+		cy.on('tap', 'node', { foo: 'bar' }, function(evt){
 			var node = evt.cyTarget;
-			if (node.id() >= 2000){
+			if (node.id() >= 2000){ //if a year were tapped
 				console.log(node.id() );
 			}else{
 				console.log( 'tapped ' + node.id() );
@@ -40,11 +40,13 @@
 		cy.userZoomingEnabled( false ); //Block the tree zooming
 		cy.autoungrabify( true ); //Block the node moving
 
-		var i = cy.$("#i");
-		i.hide()
-
-		var e = cy.$("#e");
-		e.hide()
+		//Look each element's id
+		cy.nodes().forEach(function( ele ){
+			//If the id is negative, the element were hiden
+			if (ele.id() < 0){
+				ele.hide()
+			}
+		});
 
 	}); //fin de la fonction jquery
 </script>
