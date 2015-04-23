@@ -91,7 +91,7 @@
 						</td>
 						<td class="nowrap">
 							{if $login->isLogged()}
-								<a href="liste_eleves.php?cycle={$eleve.id_cycle}&year={$eleve.annee_debut}">{$eleve.annee_debut}</a>
+								<a href="liste_eleves.php?id_cycle={$eleve.id_cycle}&annee_debut={$eleve.annee_debut}">{$eleve.annee_debut}</a>
 							{else}
 								{$eleve.annee_debut}
 							{/if}

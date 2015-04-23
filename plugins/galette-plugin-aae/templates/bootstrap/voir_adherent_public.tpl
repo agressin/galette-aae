@@ -1,6 +1,5 @@
 	<div class="bigtable wrmenu">
 		<div class="bigtable wrmenu">
-			<div id="member_stateofdue" class="{$member->getRowClass()}">{$member->getDues()}</div>
 			<table class="details">
 				<legend>{_T string="Identity:"}</legend>
 				<tr>
@@ -56,7 +55,7 @@
 					<form class="form-horizontal" action="liste_eleves.php" method="post">
 					<td>
 					{foreach $form as $key}
-					<a href="promotion.php?cycle={$key.id_cycle}&year={$key.annee_debut}">{$key.nom}	{$key.annee_debut}</a>  
+					<a href="liste_eleves.php?id_cycle={$key.id_cycle}&annee_debut={$key.annee_debut}">{$key.nom}	{$key.annee_debut}</a>  
 					{/foreach}
 					</td>
 					</form>

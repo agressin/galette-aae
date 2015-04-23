@@ -31,69 +31,61 @@ foreach ($allCycles as $key => $cycle) {
 array_multisort($tmp, SORT_ASC, $allCycles);
 $tpl->assign('cycles', $allCycles);
 
-//We get variables
-$cycle = get_numeric_form_value('cycle', '');
-$year = get_numeric_form_value('year', '');
+$id_cycle = get_numeric_form_value('id_cycle', '');//cycle id
+$id_cycle_simple = get_numeric_form_value('id_cycle_simple', '');//starting year
+$id_formation = get_numeric_form_value('id_formation', '');//formation id same as cycle id but for a faster research
+$annee_debut = get_numeric_form_value('annee_debut', '');//starting year
+$tri=$_POST['tri'];
+$tpl->assign('id_cycle', $id_cycle);
 
-if(($cycle!='')&&($year!='')){
-	$eleves = $annuaire -> getPromotion($cycle,$year);
-}
-else{
-	$id_cycle = get_numeric_form_value('id_cycle', '');//cycle id
-	$id_cycle_simple = get_numeric_form_value('id_cycle_simple', '');//starting year
-	$id_formation = get_numeric_form_value('id_formation', '');//formation id same as cycle id but for a faster research
-	$annee_debut = get_numeric_form_value('annee_debut', '');//starting year
-	$tri=$_POST['tri'];
-	$tpl->assign('id_cycle', $id_cycle);
+//If there is a name
+if ($_POST["nom"]!="")
+{	
+	$researched_name=$_POST["nom"];
 	
-	//If there is a name
-	if ($_POST["nom"]!="")
-	{	
-		$researched_name=$_POST["nom"];
-		
-		//Text to uppercase
-		$researched_name = strtoupper($researched_name);
-		
-		//Get all students name
-		$studentsName = $annuaire->getNameOfAllStudents();
-		
-		//Récupération du nom le plus proche
-		$found_name=$annuaire->proximite_levenshtein($researched_name,$studentsName);
-	};
+	//Text to uppercase
+	$researched_name = strtoupper($researched_name);
 	
-	if ($_POST["prenom"]!="")
-	{
-		$researched_surname=$_POST["prenom"];
-		
-		//Transforme le prenom en minuscule
-		$researched_surname = strtolower($researched_surname);
-		
-		//Transforme la premièrer lettre en majuscule
-		$researched_surname[0] = strtoupper($researched_surname[0]);
-		
-		//Creation d'un tableau contenant les prénoms de chaque eleve
-		$studentsSurname= $annuaire->getSurnameOfAllStudents();
+	//Get all students name
+	$studentsName = $annuaire->getNameOfAllStudents();
 	
-		//Récupération du nom le plus proche
-		$found_surname=$annuaire->proximite_levenshtein($researched_surname,$studentsSurname);
-		
-	};
+	//Récupération du nom le plus proche
+	$found_name=$annuaire->proximite_levenshtein($researched_name,$studentsName);
+};
 	
-	$param_selected = ((($id_cycle != '') && ($annee_debut != '')) || $found_name!=NULL || $found_surname!=Null);
+if ($_POST["prenom"]!="")
+{
+	$researched_surname=$_POST["prenom"];
 	
-	if($param_selected) {
+	//Transforme le prenom en minuscule
+	$researched_surname = strtolower($researched_surname);
+	
+	//Transforme la premièrer lettre en majuscule
+	$researched_surname[0] = strtoupper($researched_surname[0]);
+	
+	//Creation d'un tableau contenant les prénoms de chaque eleve
+	$studentsSurname= $annuaire->getSurnameOfAllStudents();
+
+	//Récupération du nom le plus proche
+	$found_surname=$annuaire->proximite_levenshtein($researched_surname,$studentsSurname);
+	
+};
+
+$param_selected = ((($id_cycle != '') && ($annee_debut != '')) || $found_name!=NULL || $found_surname!=Null);
+
+if($param_selected) {
+	
+	if($id_cycle_simple==''){
 		
-		if($id_cycle_simple==''){
-			
-			$eleves = $annuaire -> getStudent($found_name,$found_surname,$annee_debut,$id_formation,$id_cycle);
-		}
-		else{
-		
-			$eleves = $annuaire -> getStudent($found_name,$found_surname,$annee_debut,$id_formation,$id_cycle_simple);
-			
-		}
+		$eleves = $annuaire -> getStudent($found_name,$found_surname,$annee_debut,$id_formation,$id_cycle);
 	}
-}	
+	else{
+	
+		$eleves = $annuaire -> getStudent($found_name,$found_surname,$annee_debut,$id_formation,$id_cycle_simple);
+		
+	}
+}
+
 // Obtient une liste de colonnes
 foreach ($eleves as $key => $row) {
 	$id_adh[$key]=$row['id_adh'];
