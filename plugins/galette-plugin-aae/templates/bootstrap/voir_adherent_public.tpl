@@ -55,15 +55,12 @@
 				<tr>
 					<th>{_T string="Cycle:"}</th>
 					<form class="form-horizontal" action="liste_eleves.php" method="post">
-					<td><a href="liste_eleves.php?cycle={$key.id_cycle}&year={$key.annee_debut}">{$key.nom}	{$key.annee_debut}</a></td>
+					<td><a href="liste_eleves.php?id_cycle={$key.id_cycle}&annee_debut={$key.annee_debut}">{$key.nom}	{$key.annee_debut}</a></td>
 					</form>
 				</tr>
 
 	{/foreach}
 			</table>
-			
-			
-			
 			
 			
 			<table class="details">
@@ -113,7 +110,7 @@
 				</tr>
 				<tr>
 					<th>{_T string="Employeur:"}</th>
-					<td>{$key.employeur|htmlspecialchars}</td>
+					<td><a href="liste_job.php?id_entreprise={$key.id_entreprise}">{$key.employeur|htmlspecialchars}</a></td>
 				</tr>
 
 				<tr>

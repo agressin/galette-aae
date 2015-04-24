@@ -203,14 +203,36 @@ class Annuaire
 			$select->columns(array(Adherent::PK, 'id_adh','nom_adh', 'prenom_adh'));
 				
 			$init=false;
+			if (array_key_exists("nom_prenom",$req)){
+				//TODO cf arbre.php
+			};
 			if (array_key_exists("nom",$req)){
-				//TODO
-				$select->where->equalTo('a.nom_adh', $req["nom"]);
+				//
+				$researched_name=$req["nom"];
+				//Text to uppercase
+				$researched_name = strtoupper($researched_name);
+				//Get all students name
+				$studentsName = $this->getNameOfAllStudents();
+				//Récupération du nom le plus proche
+				$found_name = $this->proximite_levenshtein($researched_name,$studentsName);
+
+				$select->where->equalTo('a.nom_adh', $found_name);
 				$init=true;
 			};
 			if (array_key_exists("prenom",$req)){
-				//TODO
-				$select->where->equalTo('a.prenom_adh', $req["prenom"]);
+				//
+				$researched_surname=$req["prenom"];
+	
+				//Transforme le prenom en minuscule
+				$researched_surname = strtolower($researched_surname);
+				//Transforme la premièrer lettre en majuscule
+				$researched_surname[0] = strtoupper($researched_surname[0]);
+				//Creation d'un tableau contenant les prénoms de chaque eleve
+				$studentsSurname = $this->getSurnameOfAllStudents();
+				//Récupération du nom le plus proche
+				$found_surname = $this->proximite_levenshtein($researched_surname,$studentsSurname);
+				
+				$select->where->equalTo('a.prenom_adh', $found_surname);
 				$init=true;
 			};
 			if (array_key_exists("cycle",$req)){
@@ -218,9 +240,30 @@ class Annuaire
 				$init=true;
 			};
 			if (array_key_exists("cycle_simple",$req)){
-				//TODO
-				//$select->where->equalTo('f.id_cycle', $req["cycle"]);
-				//$init=true;
+				switch ($req["cycle_simple"]) {
+				case "IT":
+					$select->NEST
+						->where->equalTo('f.id_cycle', 2)
+						->OR
+						->where->equalTo('f.id_cycle', 51)
+						->UNNEST;
+					break;
+				case "G":
+					$select->NEST
+						->where->equalTo('f.id_cycle', 3)
+						->OR
+						->where->equalTo('f.id_cycle', 52)
+						->UNNEST;
+					break;
+				case "DC":
+					$select->NEST
+						->where->equalTo('f.id_cycle', 6)
+						->OR
+						->where->equalTo('f.id_cycle', 56)
+						->UNNEST;
+					break;
+				}
+				$init=true;
 			};
 			if (array_key_exists("promo",$req)){
 				$select->where->equalTo('f.annee_debut', $req["promo"]);

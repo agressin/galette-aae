@@ -46,6 +46,7 @@ $list_postes = $postes->getPostes($id_adh);
 foreach ($list_postes as $pos){
         $id_ent = $pos['id_entreprise'];
         $ent = $entreprises->getEntreprise($id_ent);
+        $list_postes[$i]['id_entreprise'] = $ent['id_entreprise'];
         $list_postes[$i]['employeur'] = $ent['employeur'];
         $list_postes[$i]['website'] = $ent['website'];
         $i=$i+1;
