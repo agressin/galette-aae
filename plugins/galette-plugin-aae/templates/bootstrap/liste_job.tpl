@@ -7,7 +7,7 @@
 							{*Searching poste by Entreprise*}
 							<label for="id_entreprise" class="control-label">{_T string="Entreprise:"}</label> <br>
 							<select class="form-control" name="id_entreprise" id="id_cycle">
-								<option value="0" {if $param_selected eq 1} selected="selected"{/if} > -- </option>
+								<option value="" {if $id_entreprise eq ""} selected="selected"{/if} > -- </option>
 								{foreach from=$entreprises item=entreprise name=allentreprises}
 								<option value="{$entreprise.id_entreprise}" {if $entreprise.id_entreprise eq $id_entreprise} selected="selected"{/if} >{$entreprise.employeur}</option>
 								{/foreach}
