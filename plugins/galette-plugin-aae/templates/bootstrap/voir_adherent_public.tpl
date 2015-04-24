@@ -1,5 +1,6 @@
 	<div class="bigtable wrmenu">
 		<div class="bigtable wrmenu">
+			<!--<div id="member_stateofdue" class="{$member->getRowClass()}">{$member->getDues()}</div>-->
 			<table class="details">
 				<legend>{_T string="Identity:"}</legend>
 				<tr>
@@ -50,17 +51,15 @@
 				</tr>
 	{/if}
 
+	{foreach $form as $key}
 				<tr>
-					<th>{_T string="Cycle(s):"}</th>
+					<th>{_T string="Cycle:"}</th>
 					<form class="form-horizontal" action="liste_eleves.php" method="post">
-					<td>
-					{foreach $form as $key}
-					<a href="liste_eleves.php?id_cycle={$key.id_cycle}&annee_debut={$key.annee_debut}">{$key.nom}	{$key.annee_debut}</a>  
-					{/foreach}
-					</td>
+					<td><a href="liste_eleves.php?cycle={$key.id_cycle}&year={$key.annee_debut}">{$key.nom}	{$key.annee_debut}</a></td>
 					</form>
 				</tr>
 
+	{/foreach}
 			</table>
 			
 			
@@ -104,4 +103,43 @@
 
 			</table>
 
+			{foreach $list_postes as $key}
+			<table class="details">
+				<legend>{_T string="Job information:"}</legend>
+	
+				<tr>
+					<th>{_T string="Principal Activity:"}</th>
+					<td>{$key.activite_principale|htmlspecialchars}</td>
+				</tr>
+				<tr>
+					<th>{_T string="Employeur:"}</th>
+					<td>{$key.employeur|htmlspecialchars}</td>
+				</tr>
+
+				<tr>
+					<th>{_T string="Begin"}</th>
+					<td>{$key.annee_ini|htmlspecialchars}</td>
+				</tr>
+				<tr>
+					<th>{_T string="End"}</th>
+					<td>{$key.annee_fin|htmlspecialchars}</td>
+				</tr>
+			{if $key.encadrement eq '1'}
+				<tr>
+					<th>{_T string="Encadrement:"}</th>
+					<td>
+						{$key.nb_personne_encadre} {_T string="personnes."}
+					</td>
+				</tr>
+			{/if}
+				<tr>
+					<th>{_T string="Website:"}</th>
+					<td>
+						<a href="{$key.website}">{$key.website}</a>
+					</td>
+				</tr>
+	
+
+			</table>
+{/foreach}
 	
