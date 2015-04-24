@@ -6,30 +6,31 @@
 						<div class="form-group col-md-4">
 						
 							{*Searching student by name*}
-							<label>{_T string="Name"}{if !$login->isLogged()} (*) {/if}
-							<input type="text" name ="nom" {if isset($smarty.post.nom)} value="{$smarty.post.nom}" {/if}
+							<label>{_T string="Name and/or First Name"}{if !$login->isLogged()} (*) {/if}
+							<input type="text" name ="nom_prenom" {if isset($smarty.post.nom)} value="{$smarty.post.nom}" {/if}
 							{if !$login->isLogged()} DISABLED {/if} /> 
 							</label><br>
-							{*Searching student by first name*}
+							{*Searching student by first name
 							<label>{_T string="First Name"}{if !$login->isLogged()} (*) {/if}
 							<input type="text" name="prenom" {if isset($smarty.post.prenom)} value="{$smarty.post.prenom}" {/if}
 							{if !$login->isLogged()} DISABLED {/if} />
-							</label><br>
+							</label><br>*}
 							{if !$login->isLogged()} * {_T string="Please sign in to access search by name"} <br> {/if}
 							{*Searching student by promotion*}
-							<label for="annee_debut" class="control-label">{_T string="Promotion:"}</label><br>
+							<label for="annee_debut" class="control-label">{_T string="Promotion"}</label><br>
 							<select class="form-control" name="annee_debut" id="annee_debut" >
 								<option value="0" {if $param_selected eq 1} selected="selected"{/if} >--</option>
 							</select><br>
 						</div>
+						<div class="form-group col-md-1"></div>
 						<div class="form-group col-md-3">
 							{*Searching student by Formation*}
-							<label for="id_cycle_simple" class="control-label">{_T string="Formation:"}</label> <br>
+							<label for="id_cycle_simple" class="control-label">{_T string="Formation"}</label> <br>
 								<input name="id_cycle_simple" value="IT" type="radio" {if $id_cycle_simple == "IT"} checked {/if} > Ingénieur <br>
 								<input name="id_cycle_simple" value="G" type="radio" {if $id_cycle_simple == "G"} checked {/if} > Géomètre   <br>
 								<input name="id_cycle_simple" value="DC" type="radio" {if $id_cycle_simple == "DC"} checked {/if}> Dessinateur <br>
 							{*Searching student by Cycle*}
-							<label for="id_cycle" class="control-label">{_T string="or by Cycle:"}</label> <br>
+							<label for="id_cycle" class="control-label">{_T string="or by Cycle"}</label> <br>
 							<select class="form-control" name="id_cycle" id="id_cycle">
 								<option value="0" {if $param_selected eq 1} selected="selected"{/if} > -- </option>
 								{foreach from=$cycles item=cycle name=allcycles}
@@ -64,10 +65,10 @@
 								{_T string="First Name"}
 						</th> 
 						<th class="left">
-								{_T string="Promotion:"}
+								{_T string="Promotion"}
 						</th>
 						<th class="left">
-								{_T string="Cycle:"}
+								{_T string="Cycle"}
 						</th>
 					</tr>
 				</thead>
@@ -149,9 +150,9 @@
 					inputs: {
 						paginationPrev: '{_T string="Previous"}',
 						paginationNext: '{_T string="Next"}',
-						searchText: '{_T string="Search:"}',
-						perPageText: '{_T string="Show:"}',
-						pageText: '{_T string="Pages:"}'
+						searchText: '{_T string="Search"}',
+						perPageText: '{_T string="Show"}',
+						pageText: '{_T string="Pages"}'
 		
 					},
 					dataset: {

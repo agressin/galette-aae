@@ -138,7 +138,8 @@ class Annuaire
 
         try {
 			// aucune distance de trouvée pour le moment
-			$shortest = -1;
+			$res = array( "dist" => -1,
+						  "name" => "");
 
 			// boucle sur les des mots pour trouver le plus près
 			foreach ($listOfStudents as $cle=>$possible_student) {
@@ -150,8 +151,8 @@ class Annuaire
 				if ($lev == 0) {
 
 					// le mot le plus près est celui-ci (correspondance exacte)
-					$closest = $possible_student;
-					$shortest = 0;
+					$res["name"] = $possible_student;
+					$res["dist"] = 0;
 
 					// on sort de la boucle ; nous avons trouvé une correspondance exacte
 					break;
@@ -159,13 +160,14 @@ class Annuaire
 
 				// Si la distance est plus petite que la prochaine distance trouvée
 				// OU, si le prochain mot le plus près n'a pas encore été trouvé
-				if ($lev <= $shortest || $shortest < 0) {
+				if ($lev <= $res["dist"] || $res["dist"] < 0) {
 					// définition du mot le plus près ainsi que la distance
-					$closest  = $possible_student;
-					$shortest = $lev;
+					$res["name"]  = $possible_student;
+					$res["dist"] = $lev;
 				};
 			};
-			return $closest;
+			return $res;
+			
 		} catch (\Exception $e) {
 			Analog::log(
 				'Unable to retrieve members promotion for "' .
@@ -175,9 +177,111 @@ class Annuaire
 			return false;
 		};
 	}
+
+    /*Select the closest element of one other in a list with levhenstein distance
+	IN : one element+one liste of same element types
+	OUT : the closest element found
+	COM : levhenstein was soon implemented in php*/
+	
+	public function search_name_surname($researched_name_surname)
+	{
+		$req = explode(" ", $researched_name_surname);
+		$count = count($req);
+		
+		//Get all students name
+		$studentsName = $this->getNameOfAllStudents();
+		//Creation d'un tableau contenant les prénoms de chaque eleve
+		$studentsSurname = $this->getSurnameOfAllStudents();
+
+		if($count == 1){
+			// Search for Name
+			$researched_name=$req[0];
+			//Text to uppercase
+			$researched_name = strtoupper($researched_name);
+			//Récupération du nom le plus proche
+			$found_name = $this->proximite_levenshtein($researched_name,$studentsName);
+
+			// Search for Surname
+			$researched_surname=$req[0];
+			$researched_surname = strtolower($researched_surname);
+			//Transforme la premièrer lettre en majuscule
+			$researched_surname[0] = strtoupper($researched_surname[0]);
+			//Récupération du nom le plus proche
+			$found_surname = $this->proximite_levenshtein($researched_surname,$studentsSurname);
+
+			// on garde le plus proche (ou les deux si =)
+			if($found_name["dist"] <= $found_surname["dist"]){
+				$out = array("nom" => $found_name["name"]);
+			} else { //if ($found_name["dist"] > $found_surname["dist"])
+				$out = array("prenom" => $found_surname["name"]);
+			}
+		}
+		if($count == 2){
+			//Case Name / Surname
+			// Search for Name
+			$researched_name=$req[0];
+			//Text to uppercase
+			$researched_name = strtoupper($researched_name);
+			//Récupération du nom le plus proche
+			$found_name_first = $this->proximite_levenshtein($researched_name,$studentsName);
+
+			// Search for Surname
+			$researched_name=$req[1];
+			$researched_surname = strtolower($researched_surname);
+			//Transforme la premièrer lettre en majuscule
+			$researched_surname[0] = strtoupper($researched_surname[0]);
+			//Récupération du nom le plus proche
+			$found_surname_second = $this->proximite_levenshtein($researched_surname,$studentsSurname);
+			
+			$dist_case_name_surname = $found_name_first["dist"] + $found_surname_second["dist"];
+
+			//Case Surname / Name
+			// Search for Name
+			$researched_name=$req[1];
+			//Text to uppercase
+			$researched_name = strtoupper($researched_name);
+			//Récupération du nom le plus proche
+			$found_name_second = $this->proximite_levenshtein($researched_name,$studentsName);
+
+			// Search for Surname
+			$researched_name=$req[0];
+			$researched_surname = strtolower($researched_surname);
+			//Transforme la premièrer lettre en majuscule
+			$researched_surname[0] = strtoupper($researched_surname[0]);
+			//Récupération du nom le plus proche
+			$found_surname_first = $this->proximite_levenshtein($researched_surname,$studentsSurname);
+			
+			$dist_case_surname_name = $found_name_second["dist"] + $found_surname_first["dist"];
+			
+			// Get the better combinaison :
+			if($dist_case_name_surname <= $dist_case_surname_name ){
+				$out = array(
+					"nom" => $found_name_first["name"],
+					"prenom" => $found_surname_second["name"],		
+				);
+			} else {
+				$out = array(
+					"nom" => $found_name_second["name"],
+					"prenom" => $found_surname_first["name"],		
+				);
+			}
+			
+		}
+		return $out;
+		
+	}
 	
 	/*Get student by all elements
-	IN : name+first name+promotion+cycle (each one is optional, you just have to put only one)
+	IN :	array(
+	* 			"nom" => ?,
+	* 			"prenom" => ?,
+	* 			"nom_prenom"  => ?,
+	* 			"cycle"  => ?,
+	* 			"cycle_simple"  => ?,
+	* 			"annee_debut" => ?,
+	*  			"employeur"  => ?,
+	* 		)
+	* (each one is optional, you just have to put only one)
 	OUT : array
 	COM : - Our principal fonction to select student*/
 	
@@ -204,7 +308,8 @@ class Annuaire
 				
 			$init=false;
 			if (array_key_exists("nom_prenom",$req)){
-				//TODO cf arbre.php
+				$res = $this->search_name_surname($req["nom_prenom"]);
+				$req = array_merge($req, $res);
 			};
 			if (array_key_exists("nom",$req)){
 				//
@@ -214,7 +319,7 @@ class Annuaire
 				//Get all students name
 				$studentsName = $this->getNameOfAllStudents();
 				//Récupération du nom le plus proche
-				$found_name = $this->proximite_levenshtein($researched_name,$studentsName);
+				$found_name = $this->proximite_levenshtein($researched_name,$studentsName)["name"];
 
 				$select->where->equalTo('a.nom_adh', $found_name);
 				$init=true;
@@ -230,7 +335,7 @@ class Annuaire
 				//Creation d'un tableau contenant les prénoms de chaque eleve
 				$studentsSurname = $this->getSurnameOfAllStudents();
 				//Récupération du nom le plus proche
-				$found_surname = $this->proximite_levenshtein($researched_surname,$studentsSurname);
+				$found_surname = $this->proximite_levenshtein($researched_surname,$studentsSurname)["name"];
 				
 				$select->where->equalTo('a.prenom_adh', $found_surname);
 				$init=true;
@@ -265,8 +370,8 @@ class Annuaire
 				}
 				$init=true;
 			};
-			if (array_key_exists("promo",$req)){
-				$select->where->equalTo('f.annee_debut', $req["promo"]);
+			if (array_key_exists("annee_debut",$req)){
+				$select->where->equalTo('f.annee_debut', $req["annee_debut"]);
 				$init=true;
 			};
 			if (array_key_exists("employeur",$req)){
@@ -334,8 +439,8 @@ class Annuaire
             }
         } catch (\Exception $e) {
             Analog::log(
-                'Unable to retrieve members promotion for "' .
-                $id_cycle  . '" | "' . $annee_debut .'" | ' . $e->getMessage(),
+                'Unable to retrieve Student : "' .
+                $req .'" | ' . $e->getMessage(),
                 Analog::WARNING
             );
             return false;
