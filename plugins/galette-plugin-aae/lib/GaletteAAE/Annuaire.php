@@ -192,7 +192,6 @@ class Annuaire
 					array('a' => $table_adh)
 				);
 			
-			
  			$select->join(array('f' => Formations::getTableName()),
 				'f.id_adh = a.' . Adherent::PK,
 				array('specialite','annee_debut'));
@@ -203,60 +202,30 @@ class Annuaire
 						
 			$select->columns(array(Adherent::PK, 'id_adh','nom_adh', 'prenom_adh'));
 				
-			$compteur=0;
-			
-			#Count number of parameters selected
+			$init=false;
 			if ($post_nom!=""){
-				$compteur=$compteur+1;$nom=1;};
+				$select->where->equalTo('a.nom_adh', $post_nom);
+				$init=true;
+			};
 			if ($post_prenom!=""){
-				$compteur=$compteur+1;$prenom=1;};
-			if ($post_promo!=0){
-				$compteur=$compteur+1;$promo=1;};
-			if ($post_formation!=0){
-				$compteur=$compteur+1;$formation=1;};
+				$select->where->equalTo('a.prenom_adh', $post_prenom);
+				$init=true;
+			};
 			if ($post_cycle!=0){
-				$compteur=$compteur+1;$cycle=1;};
-			if ($post_employeur){
-				$compteur=$compteur+1;$employeur=1;};
-				
-			
-			if ($compteur==0){
-				$select->where->equalTo('a.nom_adh', '-');}; #Displaying nothing if nothing is specified
-				
-			//while ($compteur!=0){
-				if ($nom==1){
-					$select->where->equalTo('a.nom_adh', $post_nom);
-					//$compteur=$compteur-1;
-					$nom==0;
-				};#No request with name
-				if ($prenom==1){
-					$select->where->equalTo('a.prenom_adh', $post_prenom);
-					//$compteur=$compteur-1;
-					$prenom=0;
-				};#No request with first name
-				if ($formation==1){
-					$select->where->equalTo('f.id_cycle', $post_formation);
-					//$compteur=$compteur-1;
-					$formation=0;
-					$cycle=0;
-				};#No request with cycle
-				if ($cycle==1){
-					$select->where->equalTo('f.id_cycle', $post_cycle);
-					//$compteur=$compteur-1;
-					$cycle=0;
-					$formation=0;
-				};#No request with cycle
-				if ($promo==1){
-					$select->where->equalTo('f.annee_debut', $post_promo);
-					//$compteur=$compteur-1;
-					$promo=0;
-				}; #This line is never reach
-				if ($employeur==1){
-					$select->where->equalTo('f.id_employeur', $post_employeur);
-					//$compteur=$compteur-1;
-					$employeur=0;
-				}; 
-			//};
+				$select->where->equalTo('f.id_cycle', $post_cycle);
+				$init=true;
+			};
+			if ($post_promo!=0){
+				$select->where->equalTo('f.annee_debut', $post_promo);
+				$init=true;
+			};
+			if ($post_employeur!=0){
+				$select->where->equalTo('f.id_employeur', $post_employeur);
+				$init=true;
+			}; 
+			if (!$init){
+				$select->where->equalTo('a.nom_adh', '-');
+			};
             
             $res = $zdb->execute($select);
             $res = $res->toArray();
