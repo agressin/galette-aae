@@ -181,7 +181,7 @@ class Annuaire
 	OUT : array
 	COM : - Our principal fonction to select student*/
 	
-	public function getStudent($post_nom,$post_prenom, $post_promo, $post_formation, $post_cycle, $post_employeur)
+	public function getStudent($req)
     {
         global $zdb;
 
@@ -203,24 +203,31 @@ class Annuaire
 			$select->columns(array(Adherent::PK, 'id_adh','nom_adh', 'prenom_adh'));
 				
 			$init=false;
-			if ($post_nom!=""){
-				$select->where->equalTo('a.nom_adh', $post_nom);
+			if (array_key_exists("nom",$req)){
+				//TODO
+				$select->where->equalTo('a.nom_adh', $req["nom"]);
 				$init=true;
 			};
-			if ($post_prenom!=""){
-				$select->where->equalTo('a.prenom_adh', $post_prenom);
+			if (array_key_exists("prenom",$req)){
+				//TODO
+				$select->where->equalTo('a.prenom_adh', $req["prenom"]);
 				$init=true;
 			};
-			if ($post_cycle!=0){
-				$select->where->equalTo('f.id_cycle', $post_cycle);
+			if (array_key_exists("cycle",$req)){
+				$select->where->equalTo('f.id_cycle', $req["cycle"]);
 				$init=true;
 			};
-			if ($post_promo!=0){
-				$select->where->equalTo('f.annee_debut', $post_promo);
+			if (array_key_exists("cycle_simple",$req)){
+				//TODO
+				//$select->where->equalTo('f.id_cycle', $req["cycle"]);
+				//$init=true;
+			};
+			if (array_key_exists("promo",$req)){
+				$select->where->equalTo('f.annee_debut', $req["promo"]);
 				$init=true;
 			};
-			if ($post_employeur!=0){
-				$select->where->equalTo('f.id_employeur', $post_employeur);
+			if (array_key_exists("employeur",$req)){
+				$select->where->equalTo('f.id_employeur', $req["employeur"]);
 				$init=true;
 			}; 
 			if (!$init){
@@ -244,6 +251,7 @@ class Annuaire
             return false;
         }
     }
+
 	
 	/*Get information of one student
 	IN : id
@@ -291,47 +299,6 @@ class Annuaire
         }
     }
 	
-	public function getPromotion($id_cycle,$year)
-    {
-        global $zdb;
-
-        try {
-            $select = $zdb->sql->select();
-            $table_adh = PREFIX_DB . Adherent::TABLE;
-			$select->from(
-					array('a' => $table_adh)
-				);
-			
-			$select->columns(array(Adherent::PK, 'nom_adh', 'prenom_adh'));
-			
- 			$select->join(array('f' => Formations::getTableName()),
-				'f.id_adh = a.' . Adherent::PK,
-				array('id_cycle','annee_debut'));
-			
-			$select->join(array('c' => Cycles::getTableName()),
-			'f.id_cycle = c.' . Cycles::PK,
-			array('nom'));
-							
-			$select->where->equalTo('f.id_cycle', $id_cycle)
-				   ->where->equalTo('f.annee_debut', $year);
-            
-            $res = $zdb->execute($select);
-            $res = $res->toArray();
-            
-            if ( count($res) > 0 ) {
-                return $res;
-            } else {
-                return array();
-            }
-        } catch (\Exception $e) {
-            Analog::log(
-                'Unable to retrieve members promotion for "' .
-                $id_cycle  . '" | "' . $annee_debut .'" | ' . $e->getMessage(),
-                Analog::WARNING
-            );
-            return false;
-        }
-    }
 	
 }
 

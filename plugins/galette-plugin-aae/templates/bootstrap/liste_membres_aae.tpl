@@ -24,10 +24,10 @@
 						</div>
 						<div class="form-group col-md-3">
 							{*Searching student by Formation*}
-							<label for="id_formation" class="control-label">{_T string="Formation:"}</label> <br>
-								<input name="id_cycle_simple" value="51" type="radio" {if $smarty.post.id_cycle_simple eq 51}checked {/if}> Ingénieur <br>
-								<input name="id_cycle_simple" value="52" type="radio" {if $smarty.post.id_cycle_simple eq 52} checked {/if}> Géomètre   <br>
-								<input name="id_cycle_simple" value="6" type="radio" {if $smarty.post.id_cycle_simple eq 6} checked {/if}> Dessinateur <br>
+							<label for="id_cycle_simple" class="control-label">{_T string="Formation:"}</label> <br>
+								<input name="id_cycle_simple" value="IT" type="radio" {if $id_cycle_simple == "IT"} checked {/if} > Ingénieur <br>
+								<input name="id_cycle_simple" value="G" type="radio" {if $id_cycle_simple == "G"} checked {/if} > Géomètre   <br>
+								<input name="id_cycle_simple" value="DC" type="radio" {if $id_cycle_simple == "DC"} checked {/if}> Dessinateur <br>
 							{*Searching student by Cycle*}
 							<label for="id_cycle" class="control-label">{_T string="or by Cycle:"}</label> <br>
 							<select class="form-control" name="id_cycle" id="id_cycle">
