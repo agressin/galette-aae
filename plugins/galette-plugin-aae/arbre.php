@@ -16,8 +16,7 @@ use Galette\AAE\Annuaire as Annuaire;
 require_once 'lib/GaletteAAE/Cycles.php';
 use Galette\AAE\Cycles as Cycles;
 
-//require_once 'generation_json.js';
-//require_once 'donnees_json.php';
+require_once 'donnees_json.php';
 
 
 if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
