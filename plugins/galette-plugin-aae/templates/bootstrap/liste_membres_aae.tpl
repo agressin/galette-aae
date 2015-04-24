@@ -26,9 +26,9 @@
 						<div class="form-group col-md-3">
 							{*Searching student by Formation*}
 							<label for="id_cycle_simple" class="control-label">{_T string="Formation"}</label> <br>
-								<input name="id_cycle_simple" value="IT" type="radio" {if $id_cycle_simple == "IT"} checked {/if} > Ingénieur <br>
-								<input name="id_cycle_simple" value="G" type="radio" {if $id_cycle_simple == "G"} checked {/if} > Géomètre   <br>
-								<input name="id_cycle_simple" value="DC" type="radio" {if $id_cycle_simple == "DC"} checked {/if}> Dessinateur <br>
+								<input name="id_cycle_simple" id="IT" value="IT" type="radio" {if $id_cycle_simple == "IT"} checked {/if} > <label for="IT"> Ingénieur </label>  <br>
+								<input name="id_cycle_simple" id="G" value="G" type="radio" {if $id_cycle_simple == "G"} checked {/if} > <label for="G"> Géomètre  </label> <br>
+								<input name="id_cycle_simple" id="DC" value="DC" type="radio" {if $id_cycle_simple == "DC"} checked {/if}> <label for="DC"> Dessinateur </label> <br>
 							{*Searching student by Cycle*}
 							<label for="id_cycle" class="control-label">{_T string="or by Cycle"}</label> <br>
 							<select class="form-control" name="id_cycle" id="id_cycle">

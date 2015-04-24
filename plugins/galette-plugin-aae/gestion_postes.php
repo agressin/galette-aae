@@ -37,38 +37,37 @@ $tpl->assign('entreprises', $entreprises_options);
 
 
 $member = new Galette\Entity\Adherent();
-//Liste les postes 
-if ($login->isLogged() && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
-    $list_postes = $postes->getPostes($_GET['id_adh']);
-    $i=0;
-    foreach ($list_postes as $pos){
-        $id_ent = $pos['id_entreprise'];
-        $ent = $entreprises->getEntreprise($id_ent);
-        $list_postes[$i]['employeur'] = $ent['employeur'];
-        $list_postes[$i]['website'] = $ent['website'];
-        $i=$i+1;
-    }
-    // $list_postes['employeur']=$ent;
-    $tpl->assign('haveRights', true);
-    $tpl->assign('mid', $_GET['id_adh']);
 
-    $member->load($_GET['id_adh']);
-    
-}else{
-    $list_postes = $postes->getPostes($login->id);
-    $tpl->assign('haveRights', false);
-    $tpl->assign('mid', $login->id);
-    $member->load($login->id);
+$id_adh = $login->id;
+if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
+	$id_adh = $_GET['id_adh'];
 }
-$tpl->assign('member', $member);
+
+//Liste les postes 
+$list_postes = $postes->getPostes($id_adh);
+$i=0;
+foreach ($list_postes as $pos){
+	$id_ent = $pos['id_entreprise'];
+	$ent = $entreprises->getEntreprise($id_ent);
+	$list_postes[$i]['employeur'] = $ent['employeur'];
+	$list_postes[$i]['website'] = $ent['website'];
+	$i=$i+1;
+}
+// $list_postes['employeur']=$ent;
 
 //Tri le tableau en fonction de la date de début.
 usort($list_postes, function($a, $b) {
     return $a['annee_ini'] - $b['annee_ini'];
 });
-
-
 $tpl->assign('list_postes', $list_postes);
+
+$tpl->assign('haveRights', true);
+$tpl->assign('mid', $id_adh);
+
+$member->load($id_adh);
+
+$tpl->assign('member', $member);
+
 
 if (isset($error_detected)) {
     $tpl->assign('error_detected', $error_detected);

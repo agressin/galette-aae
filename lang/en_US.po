@@ -16,17 +16,11 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../templates/bootstrap/gestion_contributions.tpl:38
-#: ../templates/default/gestion_contributions.tpl:44
-msgid "contributions"
-msgstr "contributions"
-
 #: ../templates/bootstrap/charts.tpl:41 ../templates/default/charts.tpl:41
 msgid "Contributions types repartition"
 msgstr "Contributions types repartition"
 
-#: ../ajax_plugins_initdb.php:192 ../install/steps/db_checks.php:110
-#: ../install/old.index.php:822
+#: ../ajax_plugins_initdb.php:192
 msgid "SELECT operation allowed"
 msgstr "SELECT operation allowed"
 
@@ -73,11 +67,6 @@ msgstr "among:"
 #: ../templates/default/voir_adherent.tpl:137
 msgid "Phone:"
 msgstr "Phone:"
-
-#: ../templates/bootstrap/import_model.tpl:28
-#: ../templates/default/import_model.tpl:28
-msgid "Generate empty CSV file"
-msgstr "Generate empty CSV file"
 
 #: ../templates/bootstrap/gestion_contributions.tpl:229
 #: ../templates/default/gestion_contributions.tpl:227
@@ -153,9 +142,16 @@ msgstr "Manage mailings that has been sent"
 msgid "%membercount members"
 msgstr "%membercount members"
 
-#: ../install/old.index.php:693
-msgid "Check the parameters and the existence of the database"
-msgstr "Check the parameters and the existence of the database"
+#: ../templates/bootstrap/gestion_adherents.tpl:198
+#: ../templates/default/gestion_adherents.tpl:204
+msgid ""
+"Do you really want to delete this member from the base? This will also "
+"delete the history of his fees. You could instead disable the account.\\n"
+"\\nDo you still want to delete this member ?"
+msgstr ""
+"Do you really want to delete this member from the base? This will also "
+"delete the history of his fees. You could instead disable the account.\\n"
+"\\nDo you still want to delete this member ?"
 
 #: ../templates/bootstrap/advanced_search.tpl:49
 #: ../templates/bootstrap/advanced_search.tpl:56
@@ -188,6 +184,11 @@ msgstr "State of dues"
 msgid "No active plugin."
 msgstr "No active plugin."
 
+#: ../templates/bootstrap/gestion_pdf.tpl:45
+#: ../templates/default/gestion_pdf.tpl:57
+msgid "Contribution label"
+msgstr "Contribution label"
+
 #: ../templates/bootstrap/advanced_search.tpl:3
 #: ../templates/default/advanced_search.tpl:3
 msgid "Simple search"
@@ -198,8 +199,7 @@ msgstr "Simple search"
 msgid "Public pages enabled?"
 msgstr "Public pages enabled?"
 
-#: ../ajax_plugins_initdb.php:248 ../install/steps/db_checks.php:168
-#: ../install/old.index.php:889
+#: ../ajax_plugins_initdb.php:248
 msgid "Permissions to database are OK."
 msgstr "Permissions to database are OK."
 
@@ -214,15 +214,6 @@ msgstr "End date of membership:"
 msgid "SMTP port:"
 msgstr "SMTP port:"
 
-#: ../templates/bootstrap/gestion_adherents.tpl:313
-#: ../templates/default/gestion_adherents.tpl:319
-msgid "No member selected"
-msgstr "No member selected"
-
-#: ../templates/bootstrap/page.tpl:129 ../templates/default/page.tpl:129
-msgid "View and filter all my contributions"
-msgstr "View and filter all my contributions"
-
 #: ../templates/bootstrap/preferences.tpl:180
 #: ../templates/bootstrap/preferences.tpl:181
 #: ../templates/default/preferences.tpl:185
@@ -234,9 +225,9 @@ msgstr "Recipient of new online registation emails"
 msgid "Edit field"
 msgstr "Edit field"
 
-#: ../install/steps/check.php:71
-msgid "Temporary images"
-msgstr "Temporary images"
+#: ../templates/bootstrap/charts.tpl:54 ../templates/default/charts.tpl:54
+msgid "Individuals and Companies"
+msgstr "Individuals and Companies"
 
 #: ../preferences.php:124 ../lib/Galette/Entity/Adherent.php:887
 msgid "- Non-valid E-Mail address!"
@@ -362,16 +353,20 @@ msgstr "Previous page (%i)"
 msgid "Contribution id"
 msgstr "Contribution id"
 
-#: ../install/scripts/upgrade-to-0.8.php:203
-msgid "Directory %dir has been moved!"
-msgstr "Directory %dir has been moved!"
+#: ../templates/bootstrap/config_fields.tpl:21
+#: ../templates/bootstrap/configurer_fiche_content.tpl:8
+#: ../templates/bootstrap/configurer_fiches.tpl:20
+#: ../templates/default/config_fields.tpl:21
+#: ../templates/default/configurer_fiche_content.tpl:8
+#: ../templates/default/configurer_fiches.tpl:20
+msgid "Required"
+msgstr "Required"
 
 #: ../includes/fields_defs/members_fields.php:260
 msgid "Modification date:"
 msgstr "Modification date:"
 
-#: ../ajax_plugins_initdb.php:178 ../install/steps/db_checks.php:96
-#: ../install/old.index.php:812
+#: ../ajax_plugins_initdb.php:178
 msgid "UPDATE operation allowed"
 msgstr "UPDATE operation allowed"
 
@@ -380,9 +375,10 @@ msgstr "UPDATE operation allowed"
 msgid "to"
 msgstr "to"
 
-#: ../install/old.index.php:1158
-msgid "Admin settings"
-msgstr "Admin settings"
+#: ../templates/bootstrap/preferences.tpl:147
+#: ../templates/default/preferences.tpl:147
+msgid "Admin and staff only"
+msgstr "Admin and staff only"
 
 #: ../charts.php:59 ../templates/bootstrap/page.tpl:127
 #: ../templates/default/page.tpl:127
@@ -409,7 +405,7 @@ msgstr "Version"
 msgid "(yyyy-mm-dd format)"
 msgstr "(mm/dd/yyyy format)"
 
-#: ../ajax_plugins_initdb.php:329 ../install/old.index.php:1496
+#: ../ajax_plugins_initdb.php:329
 msgid "Installation complete !"
 msgstr "Installation complete !"
 
@@ -421,9 +417,7 @@ msgstr "Members management"
 msgid "Address (continuation):"
 msgstr "Address (continuation):"
 
-#: ../templates/bootstrap/index.tpl:16
-#: ../templates/bootstrap/public_page.tpl:79
-#: ../templates/default/public_page.tpl:66
+#: ../templates/bootstrap/index.tpl:16 ../templates/default/public_page.tpl:66
 msgid "Lost your password?"
 msgstr "Lost your password?"
 
@@ -528,10 +522,6 @@ msgstr "Jabber"
 msgid "contribution"
 msgstr "contribution"
 
-#: ../install/steps/check.php:70
-msgid "Cache"
-msgstr "Cache"
-
 #: ../lib/Galette/Core/Install.php:1111
 msgid "Preferences"
 msgstr "Preferences"
@@ -557,7 +547,6 @@ msgid "Invoice"
 msgstr "Invoice"
 
 #: ../ajax_plugins_initdb.php:255 ../lib/Galette/Core/Install.php:134
-#: ../install/steps/db_select_version.php:45
 msgid "Previous version selection"
 msgstr "Previous version selection"
 
@@ -568,14 +557,12 @@ msgid "An error occured displaying plugin database initialization interface :("
 msgstr ""
 "An error occured displaying plugin database initialization interface :("
 
-#: ../templates/bootstrap/gestion_pdf.tpl:45
-#: ../templates/default/gestion_pdf.tpl:57
-msgid "Contribution label"
-msgstr "Contribution label"
+#: ../templates/bootstrap/public_page.tpl:98
+#, fuzzy
+msgid "My formations"
+msgstr "My information"
 
 #: ../champs_adherents.php:62 ../includes/fields_defs/members_fields.php:244
-#: ../install/steps/admin.php:50 ../install/steps/db.php:86
-#: ../install/old.index.php:628 ../install/old.index.php:1174
 #: ../templates/bootstrap/index.tpl:12 ../templates/bootstrap/member.tpl:317
 #: ../templates/bootstrap/member.tpl:329
 #: ../templates/bootstrap/preferences.tpl:407
@@ -584,15 +571,6 @@ msgstr "Contribution label"
 #: ../templates/default/preferences.tpl:418
 msgid "Password:"
 msgstr "Password:"
-
-#: ../templates/bootstrap/gestion_contributions.tpl:194
-#: ../templates/bootstrap/gestion_contributions.tpl:200
-#: ../templates/bootstrap/ajouter_contribution.tpl:15
-#: ../templates/default/gestion_contributions.tpl:192
-#: ../templates/default/gestion_contributions.tpl:198
-#: ../templates/default/ajouter_contribution.tpl:15
-msgid "[view]"
-msgstr "[view]"
 
 #: ../templates/bootstrap/gestion_textes.tpl:91
 #: ../templates/default/gestion_textes.tpl:91
@@ -615,12 +593,6 @@ msgstr "Show contributions by"
 #: ../needs_update.php:72
 msgid "Please run install or upgrade procedure (check the documentation)"
 msgstr "Please run install or upgrade procedure (check the documentation)"
-
-#: ../templates/bootstrap/page.tpl:151 ../templates/default/page.tpl:151
-msgid ""
-"Customize fields order, set which are required, and for who they're visibles"
-msgstr ""
-"Customize fields order, set which are required, and for who they're visibles"
 
 #: ../includes/i18n.inc.php:362
 msgid "Company cotisation"
@@ -673,9 +645,9 @@ msgstr "You are not part of managers for the requested group."
 msgid "(Choose address printed below name)"
 msgstr "(Choose address printed below name)"
 
-#: ../install/old.index.php:1263
-msgid "Default preferences were successfully stored."
-msgstr "Default preferences were successfully stored."
+#: ../templates/bootstrap/member.tpl:77 ../templates/default/member.tpl:77
+msgid "Is company?"
+msgstr "Is company?"
 
 #: ../lib/Galette/Entity/Contribution.php:368
 #: ../lib/Galette/Entity/Contribution.php:1212
@@ -702,13 +674,18 @@ msgstr "Strip Background colors:"
 msgid "Label height:"
 msgstr "Label height:"
 
-#: ../install/old.index.php:315
-msgid ""
-"You're installing Galette for the first time, or you wish to erase an older "
-"version of Galette without keeping your data"
-msgstr ""
-"You're installing Galette for the first time, or you wish to erase an older "
-"version of Galette without keeping your data"
+#: ../templates/bootstrap/gestion_transactions.tpl:111
+#: ../templates/bootstrap/gestion_contributions.tpl:230
+#: ../templates/bootstrap/gestion_contributions.tpl:250
+#: ../templates/bootstrap/gestion_mailings.tpl:122
+#: ../templates/bootstrap/gestion_adherents.tpl:198
+#: ../templates/default/gestion_transactions.tpl:119
+#: ../templates/default/gestion_contributions.tpl:228
+#: ../templates/default/gestion_contributions.tpl:248
+#: ../templates/default/gestion_mailings.tpl:122
+#: ../templates/default/gestion_adherents.tpl:204
+msgid "[del]"
+msgstr "[del]"
 
 #: ../templates/bootstrap/index.tpl:2 ../templates/default/index.tpl:2
 msgid "Login failed."
@@ -724,13 +701,9 @@ msgstr "Contribution full date"
 msgid "Send email to administrators ?"
 msgstr "Send email to administrators?"
 
-#: ../install/steps/check.php:111 ../install/old.index.php:440
-msgid ""
-"Some PHP modules are missing. Please install them or contact your support."
-"<br/>More informations on required modules may be found in the documentation."
-msgstr ""
-"Some PHP modules are missing. Please install them or contact your support."
-"<br/>More informations on required modules may be found in the documentation."
+#: ../templates/bootstrap/import.tpl:94 ../templates/default/import.tpl:94
+msgid "Please make sure to select one file to upload."
+msgstr "Please make sure to select one file to upload."
 
 #: ../templates/bootstrap/gestion_adherents.tpl:137
 #: ../templates/default/gestion_adherents.tpl:137
@@ -745,11 +718,6 @@ msgstr "Password:"
 #: ../lib/Galette/Entity/Group.php:352
 msgid "Group has been detached from its parent"
 msgstr "Group has been detached from its parent"
-
-#: ../templates/bootstrap/preferences.tpl:107
-#: ../templates/default/preferences.tpl:107
-msgid "Default theme:"
-msgstr "Default theme:"
 
 #: ../templates/bootstrap/mailing_adherents.tpl:70
 #: ../templates/bootstrap/mailing_adherents.tpl:92
@@ -822,8 +790,7 @@ msgstr "Home"
 msgid "Group managers selection"
 msgstr "Group managers selection"
 
-#: ../ajax_plugins_initdb.php:143 ../install/steps/db_checks.php:61
-#: ../install/old.index.php:787
+#: ../ajax_plugins_initdb.php:143
 msgid "CREATE operation not allowed"
 msgstr "CREATE operation not allowed"
 
@@ -836,15 +803,14 @@ msgstr "- This label is already used!"
 msgid "Email Subject"
 msgstr "Email Subject"
 
-#: ../install/installer.php:277
 #: ../templates/default/ajax_plugins_initdb.tpl:130
 msgid "Version selection"
 msgstr "Version selection"
 
-#: ../templates/bootstrap/traduire_libelles.tpl:12
-#: ../templates/default/traduire_libelles.tpl:12
-msgid "Original text: '%s'"
-msgstr "Original text: '%s'"
+#: ../templates/bootstrap/ajax_plugins_initdb.tpl:44
+#: ../templates/default/ajax_plugins_initdb.tpl:75
+msgid "(Errors on DROP and RENAME operations can be ignored)"
+msgstr "(Errors on DROP and RENAME operations can be ignored)"
 
 #: ../lostpasswd.php:160
 msgid "Mails adress %s does not exist"
@@ -913,9 +879,9 @@ msgstr "Save"
 msgid "Delete '%s' field"
 msgstr "Delete '%s' field"
 
-#: ../install/steps/admin.php:68
-msgid "Password mismatch!"
-msgstr "Password mismatch!"
+#: ../templates/bootstrap/page.tpl:124 ../templates/default/page.tpl:124
+msgid "Manage mailings"
+msgstr "Manage mailings"
 
 #: ../templates/bootstrap/page.tpl:98 ../templates/default/page.tpl:98
 msgid ""
@@ -925,12 +891,11 @@ msgstr ""
 "You are actually logged-in as superadmin. Some functionnalities may not be "
 "available since this is *not* a regular member."
 
-#: ../install/old.index.php:1280
-msgid "Default status cannot be initialized."
-msgstr "Default status cannot be initialized."
+#: ../templates/bootstrap/page.tpl:156 ../templates/default/page.tpl:156
+msgid "Emails content"
+msgstr "Emails content"
 
-#: ../preferences.php:285 ../install/installer.php:160
-#: ../install/old.index.php:173
+#: ../preferences.php:285
 msgid "Passwords mismatch"
 msgstr "Passwords mismatch"
 
@@ -964,10 +929,6 @@ msgstr "URL to the RSS feed."
 #: ../templates/bootstrap/group.tpl:59 ../templates/default/group.tpl:59
 msgid "Manage members"
 msgstr "Manage members"
-
-#: ../install/old.index.php:337
-msgid "Your current Galette version is"
-msgstr "Your current Galette version is"
 
 #: ../templates/bootstrap/voir_adherent.tpl:15
 #: ../templates/default/voir_adherent.tpl:15
@@ -1019,14 +980,6 @@ msgstr "donation in kind"
 msgid "PDF models"
 msgstr "PDF models"
 
-#: ../install/steps/db_checks.php:184 ../install/old.index.php:724
-msgid ""
-"Database can't be reached. Please go back to enter the connection parameters "
-"again."
-msgstr ""
-"Database can't be reached. Please go back to enter the connection parameters "
-"again."
-
 #: ../lib/Galette/Entity/Adherent.php:1320
 #: ../templates/bootstrap/member.tpl:267 ../templates/default/member.tpl:267
 msgid "Active"
@@ -1046,10 +999,6 @@ msgstr ""
 msgid "Transaction"
 msgstr "Transaction"
 
-#: ../install/steps/db_checks.php:230
-#: ../install/steps/db_select_version.php:118 ../install/steps/type.php:67
-#: ../install/steps/db_install.php:94 ../install/steps/galette.php:92
-#: ../install/steps/db.php:109
 #: ../templates/bootstrap/ajouter_contribution.tpl:66
 #: ../templates/default/ajouter_contribution.tpl:66
 msgid "Back"
@@ -1077,10 +1026,9 @@ msgstr "Membership"
 msgid "With"
 msgstr "With"
 
-#: ../templates/bootstrap/config_fields.tpl:35
-#: ../templates/default/config_fields.tpl:35
-msgid "Field '%field' cannot be set as required."
-msgstr "Field '%field' cannot be set as required."
+#: ../templates/default/preferences.tpl:160
+msgid "RSS feed URL"
+msgstr "RSS feed URL"
 
 #: ../templates/bootstrap/member.tpl:29 ../templates/default/member.tpl:29
 msgid "Picture:"
@@ -1089,11 +1037,6 @@ msgstr "Picture:"
 #: ../preferences.php:254
 msgid "- You must provide a password for SMTP authentication."
 msgstr "- You must provide a password for SMTP authentication."
-
-#: ../templates/bootstrap/gestion_adherents.tpl:339
-#: ../templates/default/gestion_adherents.tpl:345
-msgid "Resume"
-msgstr "Resume"
 
 #: ../gestion_intitules.php:254
 msgid "Edit contribution type"
@@ -1153,10 +1096,6 @@ msgstr "contains"
 #: ../templates/default/preferences.tpl:176
 msgid "Sender Email:"
 msgstr "Sender Email:"
-
-#: ../install/old.index.php:1284
-msgid "Default status were successfully stored."
-msgstr "Default status were successfully stored."
 
 #: ../lib/Galette/Core/Pagination.php:253
 msgid "Next page (%i)"
@@ -1220,8 +1159,7 @@ msgstr "Vertical spacing:"
 msgid "- Unknown payment type"
 msgstr "- Unknown payment type"
 
-#: ../ajax_plugins_initdb.php:185 ../install/steps/db_checks.php:103
-#: ../install/old.index.php:817
+#: ../ajax_plugins_initdb.php:185
 msgid "SELECT operation not allowed"
 msgstr "SELECT operation not allowed"
 
@@ -1245,12 +1183,11 @@ msgstr "No member registered!"
 msgid "My transactions"
 msgstr "My transactions"
 
-#: ../install/old.index.php:1400
-msgid "Default texts cannot be initialized."
-msgstr "Default texts cannot be initialized."
+#: ../templates/bootstrap/plugins.tpl:9 ../templates/default/plugins.tpl:9
+msgid "Release date"
+msgstr "Release date"
 
-#: ../ajax_plugins_initdb.php:213 ../install/steps/db_checks.php:131
-#: ../install/old.index.php:837
+#: ../ajax_plugins_initdb.php:213
 msgid "DROP operation not allowed"
 msgstr "DROP operation not allowed"
 
@@ -1337,7 +1274,6 @@ msgstr "Member's Cards"
 msgid "header and footer should not be empty!"
 msgstr "header and footer should not be empty!"
 
-#: ../install/old.index.php:311
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:11
 msgid "Select installation mode to launch"
 msgstr "Select installation mode to launch"
@@ -1447,18 +1383,9 @@ msgstr "Short form:"
 msgid "Failed to write file to disk"
 msgstr "Failed to write file to disk"
 
-#: ../ajax_plugins_initdb.php:171 ../install/steps/db_checks.php:89
-#: ../install/old.index.php:807
+#: ../ajax_plugins_initdb.php:171
 msgid "UPDATE operation not allowed"
 msgstr "UPDATE operation not allowed"
-
-#: ../install/old.index.php:853
-msgid "ALTER Operation allowed"
-msgstr "ALTER Operation allowed"
-
-#: ../install/installer.php:273
-msgid "Database access/permissions"
-msgstr "Database access/permissions"
 
 #: ../lib/Galette/IO/FileTrait.php:540
 msgid ""
@@ -1476,9 +1403,7 @@ msgstr "Please make sure to select at least one reminder."
 msgid "Do member want to appear publically?"
 msgstr "Do member want to appear publically?"
 
-#: ../change_passwd.php:59 ../install/installer.php:107
-#: ../install/installer.php:152 ../install/old.index.php:107
-#: ../install/old.index.php:164
+#: ../change_passwd.php:59
 msgid "No password"
 msgstr "No password"
 
@@ -1499,9 +1424,10 @@ msgstr ""
 "Select an existing contribution in the database, and attach it to the "
 "current transaction"
 
-#: ../templates/bootstrap/charts.tpl:54 ../templates/default/charts.tpl:54
-msgid "Individuals and Companies"
-msgstr "Individuals and Companies"
+#: ../templates/bootstrap/gestion_mailings.tpl:58
+#: ../templates/default/gestion_mailings.tpl:58
+msgid "Att."
+msgstr "Att."
 
 #: ../templates/bootstrap/gestion_pdf.tpl:27
 #: ../templates/default/gestion_pdf.tpl:27
@@ -1531,12 +1457,12 @@ msgid ""
 msgstr ""
 "- 'Extends membership?' field must be either 0 or 1! (current value: %s)"
 
-#: ../install/steps/db_checks.php:189 ../install/old.index.php:765
-msgid "Permissions on the base"
-msgstr "Permissions on the base"
+#: ../templates/bootstrap/preferences.tpl:190
+#, fuzzy
+msgid "Activate HTML editor ?"
+msgstr "Activate HTML editor?"
 
-#: ../ajax_plugins_initdb.php:164 ../install/steps/db_checks.php:82
-#: ../install/old.index.php:802
+#: ../ajax_plugins_initdb.php:164
 msgid "INSERT operation allowed"
 msgstr "INSERT operation allowed"
 
@@ -1550,14 +1476,6 @@ msgstr " (continuation)"
 msgid "Email: '%s' has been successfully modified."
 msgstr "Email: '%s' has been successfully modified."
 
-#: ../install/steps/type.php:59
-msgid ""
-"you already have installed Galette, and you want to upgrade to the latest "
-"version"
-msgstr ""
-"you already have installed Galette, and you want to upgrade to the latest "
-"version"
-
 #: ../templates/bootstrap/member.tpl:370
 #: ../templates/bootstrap/voir_adherent.tpl:273
 #: ../templates/default/member.tpl:370
@@ -1565,14 +1483,12 @@ msgstr ""
 msgid "Groups:"
 msgstr "Groups:"
 
-#: ../templates/bootstrap/public_page.tpl:57
-#: ../templates/bootstrap/page.tpl:104 ../templates/default/public_page.tpl:53
-#: ../templates/default/page.tpl:104
-msgid "Demonstration"
-msgstr "Demonstration"
+#: ../templates/bootstrap/gestion_contributions.tpl:28
+#: ../templates/default/gestion_contributions.tpl:34
+msgid "Show all members contributions"
+msgstr "Show all members contributions"
 
-#: ../ajax_plugins_initdb.php:243 ../install/steps/db_checks.php:195
-#: ../install/old.index.php:862
+#: ../ajax_plugins_initdb.php:243
 msgid ""
 "GALETTE hasn't got enough permissions on the database to continue the "
 "installation."
@@ -1608,18 +1524,14 @@ msgstr "Never contribute"
 msgid "starts with"
 msgstr "starts with"
 
-#: ../install/old.index.php:314
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:13
 msgid "New installation:"
 msgstr "New installation:"
 
-#: ../install/steps/db_install.php:53
-msgid "Database has been installed :)"
-msgstr "Database has been installed :)"
-
-#: ../install/steps/db_install.php:49
-msgid "Database has not been upgraded!"
-msgstr "Database has not been upgraded!"
+#: ../templates/bootstrap/preferences.tpl:304
+#: ../templates/default/preferences.tpl:315
+msgid "Cards generation parameters"
+msgstr "Cards generation parameters"
 
 #: ../lostpasswd.php:149
 msgid "Your account (%s) do not contain any valid mail adress"
@@ -1631,10 +1543,6 @@ msgstr "Your account (%s) do not contain any valid mail adress"
 #: ../templates/default/gestion_adherents.tpl:6
 msgid "in:"
 msgstr "in:"
-
-#: ../install/old.index.php:922
-msgid "Installation Report"
-msgstr "Installation Report"
 
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:60
 #: ../templates/default/ajax_plugins_initdb.tpl:91
@@ -1675,9 +1583,10 @@ msgstr "(De)Activate HTML editor"
 msgid "- The password must be of at least %i characters!"
 msgstr "- The password must be of at least %i characters!"
 
-#: ../install/steps/db.php:65 ../install/old.index.php:607
-msgid "Database type:"
-msgstr "Database type:"
+#: ../templates/bootstrap/lostpasswd.tpl:15
+#: ../templates/default/lostpasswd.tpl:8
+msgid "Recover password"
+msgstr "Recover password"
 
 #: ../templates/bootstrap/gestion_pdf.tpl:21
 #: ../templates/bootstrap/gestion_pdf.tpl:23
@@ -1701,7 +1610,7 @@ msgstr "globally available"
 msgid "Job"
 msgstr "Job"
 
-#: ../install/steps/galette.php:56 ../templates/bootstrap/gestion_pdf.tpl:112
+#: ../templates/bootstrap/gestion_pdf.tpl:112
 #: ../templates/bootstrap/configurer_fiches.tpl:85
 #: ../templates/default/gestion_pdf.tpl:124
 #: ../templates/default/configurer_fiches.tpl:85
@@ -1732,10 +1641,6 @@ msgstr ""
 #: ../templates/default/member.tpl:268
 msgid "Inactive"
 msgstr "Inactive"
-
-#: ../templates/default/preferences.tpl:195
-msgid "Automatically wrap text mails before sending"
-msgstr "Automatically wrap text mails before sending"
 
 #: ../doandget_export.php:186 ../doandget_export.php:189
 #: ../doandget_export.php:192 ../doandget_export.php:195
@@ -1785,10 +1690,6 @@ msgstr "Address:"
 msgid "Mister"
 msgstr "Mister"
 
-#: ../install/scripts/upgrade-to-0.8.php:94
-msgid "Unable to create main datadir in %path!"
-msgstr "Unable to create main datadir in %path!"
-
 #: ../import.php:130
 msgid "CVS members import"
 msgstr "CVS members import"
@@ -1809,10 +1710,6 @@ msgstr "- You must provide a login for SMTP authentication."
 #: ../lib/Galette/Core/Plugins.php:237 ../lib/Galette/Core/Plugins.php:259
 msgid "No such module."
 msgstr "No such module."
-
-#: ../install/old.index.php:202 ../install/old.index.php:1524
-msgid "Language"
-msgstr "Language"
 
 #: ../templates/bootstrap/mailing_adherents.tpl:281
 #: ../templates/default/mailing_adherents.tpl:281
@@ -1914,17 +1811,10 @@ msgid "ends with"
 msgstr "ends with"
 
 #: ../ajax_plugins_initdb.php:116 ../lib/Galette/Core/Install.php:125
-#: ../install/installer.php:271 ../install/steps/type.php:40
-#: ../install/old.index.php:205 ../install/old.index.php:310
-#: ../install/old.index.php:1525
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:96
 #: ../templates/default/ajax_plugins_initdb.tpl:127
 msgid "Installation mode"
 msgstr "Installation mode"
-
-#: ../install/old.index.php:289
-msgid "Please select your administration language"
-msgstr "Please select your administration language"
 
 #: ../lib/Galette/Core/Install.php:146
 msgid "Galette initialization"
@@ -1952,8 +1842,7 @@ msgstr "Attendance sheet details"
 msgid "Username or email:"
 msgstr "Username or email:"
 
-#: ../install/steps/check.php:72 ../templates/bootstrap/page.tpl:147
-#: ../templates/default/page.tpl:147
+#: ../templates/bootstrap/page.tpl:147 ../templates/default/page.tpl:147
 msgid "Configuration"
 msgstr "Configuration"
 
@@ -1986,10 +1875,6 @@ msgstr "Woman"
 msgid "Managed groups selection"
 msgstr "Managed groups selection"
 
-#: ../templates/bootstrap/page.tpl:123 ../templates/default/page.tpl:123
-msgid "View application's logs"
-msgstr "View application's logs"
-
 #: ../templates/bootstrap/member.tpl:136
 #: ../templates/bootstrap/voir_adherent.tpl:105
 #: ../templates/default/member.tpl:136
@@ -2001,9 +1886,10 @@ msgstr "Contact information:"
 msgid "Donation in money"
 msgstr "Donation in money"
 
-#: ../install/steps/db.php:82 ../install/old.index.php:624
-msgid "User:"
-msgstr "User:"
+#: ../templates/bootstrap/gestion_groupes.tpl:106
+#: ../templates/default/gestion_groupes.tpl:106
+msgid "An error occured loading selected group :("
+msgstr "An error occured loading selected group :("
 
 #: ../templates/bootstrap/advanced_search.tpl:160
 #: ../templates/default/advanced_search.tpl:167
@@ -2036,11 +1922,6 @@ msgstr "[pdf]"
 msgid "- Mandatory field empty: "
 msgstr "- Mandatory field empty: "
 
-#: ../templates/bootstrap/change_passwd.tpl:12
-#: ../templates/default/change_passwd.tpl:12
-msgid "Confirmation:"
-msgstr "Confirmation:"
-
 #: ../templates/bootstrap/ajax_mailing_preview.tpl:5
 #: ../templates/default/ajax_mailing_preview.tpl:5
 msgid "Headers"
@@ -2071,14 +1952,9 @@ msgstr "Member photo has been changed."
 msgid "Change search criterias"
 msgstr "Change search criterias"
 
-#: ../templates/bootstrap/gestion_adherents.tpl:329
-#: ../templates/default/gestion_adherents.tpl:335
-msgid ""
-"A mailing already exists. Do you want to create a new one or resume the "
-"existing?"
-msgstr ""
-"A mailing already exists. Do you want to create a new one or resume the "
-"existing?"
+#: ../templates/default/ajax_plugins_initdb.tpl:17
+msgid "New installation"
+msgstr "New installation"
 
 #: ../champs_adherents.php:45 ../includes/fields_defs/members_fields.php:99
 #: ../templates/bootstrap/member.tpl:98
@@ -2092,11 +1968,13 @@ msgstr "Birth date:"
 msgid "Add new transaction in database"
 msgstr "Add new transaction in database"
 
-#: ../install/steps/check.php:145 ../install/old.index.php:486
-msgid "Under UNIX/Linux, you can give the permissions using those commands"
-msgstr "Under UNIX/Linux, you can give the permissions using those commands"
+#: ../templates/bootstrap/ajouter_transaction.tpl:44
+#: ../templates/default/ajouter_transaction.tpl:44
+msgid ""
+"Create a new contribution that will be attached to the current transaction"
+msgstr ""
+"Create a new contribution that will be attached to the current transaction"
 
-#: ../install/old.index.php:1105
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:52
 #: ../templates/default/ajax_plugins_initdb.tpl:83
 msgid "Your database is maybe not usable, try to restore the older version."
@@ -2166,10 +2044,6 @@ msgstr "Admin only"
 msgid "Warning"
 msgstr "Warning"
 
-#: ../install/old.index.php:1378
-msgid "Required fields upgrade has failed :("
-msgstr "Required fields upgrade has failed :("
-
 #: ../ajax_recipients.php:78 ../templates/bootstrap/mailing_adherents.tpl:21
 #: ../templates/default/mailing_adherents.tpl:21
 msgid "None of the selected members has an email address."
@@ -2179,10 +2053,6 @@ msgstr "None of the selected members has an email address."
 #: ../templates/default/edit_title.tpl:9
 msgid "Long form:"
 msgstr "Long form:"
-
-#: ../install/steps/check.php:146 ../install/old.index.php:487
-msgid "file_name"
-msgstr "file_name"
 
 #: ../templates/bootstrap/preferences.tpl:75
 #: ../templates/default/preferences.tpl:75
@@ -2222,10 +2092,20 @@ msgstr "Pleade provide a group name"
 msgid "System informations"
 msgstr "System informations"
 
-#: ../install/old.index.php:225 ../install/old.index.php:1530
-#: ../templates/bootstrap/ajax_plugins_initdb.tpl:98
-msgid "Tables Creation/Update"
-msgstr "Tables Creation/Update"
+#: ../templates/bootstrap/gestion_intitule_content.tpl:16
+#: ../templates/bootstrap/gestion_transactions.tpl:69
+#: ../templates/bootstrap/gestion_contributions.tpl:150
+#: ../templates/bootstrap/configurer_fiche_content.tpl:9
+#: ../templates/bootstrap/gestion_adherents.tpl:125
+#: ../templates/bootstrap/gestion_titres.tpl:8
+#: ../templates/default/gestion_intitule_content.tpl:16
+#: ../templates/default/gestion_transactions.tpl:77
+#: ../templates/default/gestion_contributions.tpl:148
+#: ../templates/default/configurer_fiche_content.tpl:9
+#: ../templates/default/gestion_adherents.tpl:125
+#: ../templates/default/gestion_titres.tpl:8
+msgid "Actions"
+msgstr "Actions"
 
 #: ../ajouter_groupe.php:72 ../gestion_groupes.php:145
 msgid "An error occured while storing the group."
@@ -2268,11 +2148,6 @@ msgstr "see"
 msgid "Sent"
 msgstr "Sent"
 
-#: ../templates/bootstrap/preferences.tpl:278
-#: ../templates/default/preferences.tpl:289
-msgid "Label width:"
-msgstr "Label width:"
-
 #: ../lib/Galette/Entity/Transaction.php:298
 msgid "- Empty transaction description!"
 msgstr "- Empty transaction description!"
@@ -2284,21 +2159,9 @@ msgstr "- Empty transaction description!"
 msgid "Show existing variables"
 msgstr "Show existing variables"
 
-#: ../templates/default/preferences.tpl:160
-msgid "RSS feed URL"
-msgstr "RSS feed URL"
-
-#: ../install/old.index.php:925
-msgid "Update Report"
-msgstr "Update Report"
-
-#: ../templates/bootstrap/import.tpl:57 ../templates/default/import.tpl:57
-msgid "Select a file:"
-msgstr "Select a file:"
-
-#: ../templates/bootstrap/group.tpl:60 ../templates/default/group.tpl:60
-msgid "Manage managers"
-msgstr "Manage managers"
+#: ../templates/bootstrap/page.tpl:123 ../templates/default/page.tpl:123
+msgid "View application's logs"
+msgstr "View application's logs"
 
 #: ../gestion_textes.php:94
 msgid "Automatic emails texts edition"
@@ -2326,10 +2189,6 @@ msgstr "This comment is reserved to the member."
 #: ../templates/default/voir_adherent.tpl:254
 msgid "Last modification date:"
 msgstr "Last modification date:"
-
-#: ../install/scripts/upgrade-to-0.8.php:224
-msgid "Directory %dir is not in its original path and will not be moved."
-msgstr "Directory %dir is not in its original path and will not be moved."
 
 #: ../templates/bootstrap/advanced_search.tpl:26
 #: ../templates/default/advanced_search.tpl:26
@@ -2399,15 +2258,6 @@ msgid ""
 msgstr ""
 "Enter a script URI that would be called after adding a new contribution."
 
-#: ../templates/bootstrap/gestion_adherents.tpl:313
-#: ../templates/default/gestion_adherents.tpl:319
-msgid ""
-"Please make sure to select at least one member from the list to perform this "
-"action."
-msgstr ""
-"Please make sure to select at least one member from the list to perform this "
-"action."
-
 #: ../templates/bootstrap/ajouter_contribution.tpl:42
 #: ../templates/default/ajouter_contribution.tpl:42
 msgid "Select contributor and contribution type"
@@ -2435,11 +2285,6 @@ msgstr ""
 "Please make sure to select at least one field from the list to perform this "
 "action."
 
-#: ../templates/bootstrap/ajax_attendance_sheet_details.tpl:22
-#: ../templates/default/ajax_attendance_sheet_details.tpl:22
-msgid "With photos?"
-msgstr "With photos?"
-
 #: ../lib/Galette/IO/PdfContribution.php:144
 msgid "receipt"
 msgstr "receipt"
@@ -2460,15 +2305,11 @@ msgstr ""
 "Select files to add as attachments.<br/>Multiple file selection using 'ctrl' "
 "or 'shift' keys are only available on compatible browsers."
 
-#: ../public/liste_membres.php:86 ../templates/bootstrap/public_page.tpl:86
+#: ../public/liste_membres.php:86 ../templates/bootstrap/public_page.tpl:79
 #: ../templates/bootstrap/page.tpl:140 ../templates/default/public_page.tpl:70
 #: ../templates/default/page.tpl:140
 msgid "Members list"
 msgstr "Members list"
-
-#: ../install/installer.php:110 ../install/old.index.php:110
-msgid "No database name"
-msgstr "No database name"
 
 #: ../templates/bootstrap/preferences.tpl:293
 #: ../templates/default/preferences.tpl:304
@@ -2483,14 +2324,10 @@ msgstr "Number of label lines:"
 msgid "Contributions"
 msgstr "Contributions"
 
-#: ../templates/bootstrap/preferences.tpl:147
-#: ../templates/default/preferences.tpl:147
-msgid "Admin and staff only"
-msgstr "Admin and staff only"
-
-#: ../install/steps/end.php:55 ../install/old.index.php:1513
-msgid "Homepage"
-msgstr "Homepage"
+#: ../templates/bootstrap/public_page.tpl:110
+#, fuzzy
+msgid "Identification"
+msgstr "Modification"
 
 #: ../editer_champ.php:77
 msgid "Unable to retrieve field informations."
@@ -2550,10 +2387,6 @@ msgstr ""
 msgid "Contribution"
 msgstr "Contribution"
 
-#: ../install/steps/check.php:146 ../install/old.index.php:487
-msgid "apache_user"
-msgstr "apache_user"
-
 #: ../templates/bootstrap/liste_membres.tpl:6
 #: ../templates/bootstrap/gestion_adherents.tpl:47
 #: ../templates/default/liste_membres.tpl:6
@@ -2570,11 +2403,6 @@ msgstr "Titles"
 msgid "Initialize database"
 msgstr "Initialize database"
 
-#: ../templates/bootstrap/gestion_adherents.tpl:146
-#: ../templates/default/gestion_adherents.tpl:146
-msgid "Export as CSV"
-msgstr "Export as CSV"
-
 #: ../includes/i18n.inc.php:349
 msgid "President"
 msgstr "President"
@@ -2584,15 +2412,16 @@ msgstr "President"
 msgid "Generate Member Card"
 msgstr "Generate Member Card"
 
-#: ../templates/bootstrap/config_fields.tpl:41
-#: ../templates/default/config_fields.tpl:41
-msgid "Change '%field' visibility"
-msgstr "Change '%field' visibility"
+#: ../templates/bootstrap/gestion_mailings.tpl:57
+#: ../templates/bootstrap/mailing_adherents.tpl:44
+#: ../templates/default/gestion_mailings.tpl:57
+#: ../templates/default/mailing_adherents.tpl:44
+msgid "Attachments"
+msgstr "Attachments"
 
-#: ../templates/bootstrap/voir_adherent.tpl:283
-#: ../templates/default/voir_adherent.tpl:283
-msgid "[manager]"
-msgstr "[manager]"
+#: ../templates/default/public_page.tpl:47
+msgid "View your member card"
+msgstr "View your member card"
 
 #: ../reminder.php:105
 msgid "Reminder has not been sent:"
@@ -2602,10 +2431,6 @@ msgstr "Reminder has not been sent:"
 #: ../templates/default/preferences.tpl:359
 msgid "(Members will be able to generate their own member card)"
 msgstr "(Members will be able to generate their own member card)"
-
-#: ../install/steps/check.php:69
-msgid "Photos"
-msgstr "Photos"
 
 #: ../templates/bootstrap/ajouter_transaction.tpl:51
 #: ../templates/bootstrap/history.tpl:23 ../templates/bootstrap/export.tpl:22
@@ -2642,7 +2467,7 @@ msgstr "Due free"
 msgid "My contributions"
 msgstr "My contributions"
 
-#: ../lib/Galette/Core/Install.php:325 ../install/old.index.php:93
+#: ../lib/Galette/Core/Install.php:325
 msgid "Database type unknown"
 msgstr "Database type unknown"
 
@@ -2674,9 +2499,10 @@ msgstr "An error occured adding member to its groups."
 msgid "Group members selection"
 msgstr "Group members selection"
 
-#: ../install/old.index.php:1259
-msgid "Default preferences cannot be initialized."
-msgstr "Default preferences cannot be initialized."
+#: ../templates/bootstrap/config_fields.tpl:35
+#: ../templates/default/config_fields.tpl:35
+msgid "Field '%field' cannot be set as required."
+msgstr "Field '%field' cannot be set as required."
 
 #: ../templates/bootstrap/advanced_search.tpl:6
 #: ../templates/bootstrap/gestion_adherents.tpl:4
@@ -2685,13 +2511,9 @@ msgstr "Default preferences cannot be initialized."
 msgid "Search:"
 msgstr "Search:"
 
-#: ../templates/default/edit_dynamic_fields.tpl:74
-msgid "delete"
-msgstr "delete"
-
-#: ../install/steps/galette.php:54
-msgid "Data initialized."
-msgstr "Data initialized."
+#: ../templates/bootstrap/page.tpl:152 ../templates/default/page.tpl:152
+msgid "Manage additional fields for various forms"
+msgstr "Manage additional fields for various forms"
 
 #: ../lib/Galette/Entity/DynamicFields.php:129
 msgid "admin"
@@ -2705,17 +2527,18 @@ msgstr "Main"
 msgid "Status #%id does not exists in database."
 msgstr "Status #%id does not exists in database."
 
-#: ../install/steps/galette.php:53 ../install/old.index.php:1225
-msgid "Configuration file created!"
-msgstr "Configuration file created!"
-
 #: ../preferences.php:140 ../lib/Galette/Entity/Adherent.php:952
 msgid "- This username is already in use, please choose another one!"
 msgstr "- This username is already in use, please choose another one!"
 
-#: ../install/steps/check.php:38 ../install/old.index.php:287
-msgid "Welcome to the Galette Install!"
-msgstr "Welcome to the Galette Install!"
+#: ../templates/bootstrap/gestion_contributions.tpl:194
+#: ../templates/bootstrap/gestion_contributions.tpl:200
+#: ../templates/bootstrap/ajouter_contribution.tpl:15
+#: ../templates/default/gestion_contributions.tpl:192
+#: ../templates/default/gestion_contributions.tpl:198
+#: ../templates/default/ajouter_contribution.tpl:15
+msgid "[view]"
+msgstr "[view]"
 
 #: ../lib/Galette/Entity/Contribution.php:136
 #: ../templates/bootstrap/ajouter_contribution.tpl:94
@@ -2727,11 +2550,7 @@ msgstr "Start date of membership:"
 msgid "The following files seems ready to import on the disk:"
 msgstr "The following files seems ready to import on the disk:"
 
-#: ../install/steps/check.php:99
-msgid "PHP version"
-msgstr "PHP version"
-
-#: ../ajax_plugins_initdb.php:235 ../install/steps/db_checks.php:153
+#: ../ajax_plugins_initdb.php:235
 msgid "ALTER operation allowed"
 msgstr "ALTER operation allowed"
 
@@ -2751,17 +2570,6 @@ msgstr "A problem happened while sending email to admin for account '%s'."
 #: ../templates/bootstrap/page.tpl:118 ../templates/default/page.tpl:118
 msgid "List of transactions"
 msgstr "List of transactions"
-
-#: ../templates/bootstrap/gestion_pdf.tpl:16
-#: ../templates/bootstrap/gestion_pdf.tpl:17
-#: ../templates/bootstrap/gestion_textes.tpl:38
-#: ../templates/bootstrap/gestion_textes.tpl:39
-#: ../templates/default/gestion_pdf.tpl:16
-#: ../templates/default/gestion_pdf.tpl:17
-#: ../templates/default/gestion_textes.tpl:38
-#: ../templates/default/gestion_textes.tpl:39
-msgid "Existing variables"
-msgstr "Existing variables"
 
 #: ../gestion_groupes.php:88
 msgid "Group is not empty, it cannot be deleted. Use cascade delete instead."
@@ -2783,15 +2591,6 @@ msgstr "For the selection:"
 #: ../templates/default/preferences.tpl:145
 msgid "Everyone"
 msgstr "Everyone"
-
-#: ../install/old.index.php:233 ../install/old.index.php:1532
-msgid "Saving the parameters"
-msgstr "Saving the parameters"
-
-#: ../templates/bootstrap/preferences.tpl:190
-#, fuzzy
-msgid "Activate HTML editor ?"
-msgstr "Activate HTML editor?"
 
 #: ../lib/Galette/IO/FileTrait.php:481
 msgid ""
@@ -2848,10 +2647,6 @@ msgstr "Additionnaly, which table(s) do you want to export?"
 msgid "Update preferences"
 msgstr "Update preferences"
 
-#: ../install/steps/end.php:49 ../install/old.index.php:1507
-msgid "Galette has been successfully updated!"
-msgstr "Galette has been successfully updated!"
-
 #: ../lib/Galette/Core/Plugins.php:263 ../lib/Galette/Core/Plugins.php:267
 msgid "Cannot activate plugin."
 msgstr "Cannot activate plugin."
@@ -2869,7 +2664,6 @@ msgstr "Member's name"
 msgid "Nickname:"
 msgstr "Nickname:"
 
-#: ../install/installer.php:278
 #: ../templates/default/ajax_plugins_initdb.tpl:133
 msgid "Database upgrade"
 msgstr "Database upgrade"
@@ -2884,13 +2678,10 @@ msgstr "Date:"
 msgid "Late of %days days (since %date)"
 msgstr "Late of %days days (since %date)"
 
-#: ../install/steps/check.php:76
-#: ../templates/bootstrap/gestion_mailings.tpl:57
-#: ../templates/bootstrap/mailing_adherents.tpl:44
-#: ../templates/default/gestion_mailings.tpl:57
-#: ../templates/default/mailing_adherents.tpl:44
-msgid "Attachments"
-msgstr "Attachments"
+#: ../templates/bootstrap/config_fields.tpl:41
+#: ../templates/default/config_fields.tpl:41
+msgid "Change '%field' visibility"
+msgstr "Change '%field' visibility"
 
 #: ../templates/bootstrap/advanced_search.tpl:69
 #: ../templates/default/advanced_search.tpl:76
@@ -2916,8 +2707,7 @@ msgstr "- Label does not exist"
 msgid "An error has occured while looking if login already exists."
 msgstr "An error has occured while looking if login already exists."
 
-#: ../ajax_plugins_initdb.php:157 ../install/steps/db_checks.php:75
-#: ../install/old.index.php:797
+#: ../ajax_plugins_initdb.php:157
 msgid "INSERT operation not allowed"
 msgstr "INSERT operation not allowed"
 
@@ -2926,31 +2716,22 @@ msgstr "INSERT operation not allowed"
 msgid "(Show or not title in front of name)"
 msgstr "(Show or not title in front of name)"
 
-#: ../install/old.index.php:1464
-msgid ""
-"This can come from the permissions on the configuration file or the "
-"impossibility to make an INSERT into the database."
-msgstr ""
-"This can come from the permissions on the configuration file or the "
-"impossibility to make an INSERT into the database."
-
-#: ../index.php:103
+#: ../index.php:104
 msgid "Authentication failed"
 msgstr "Authentication failed"
 
-#: ../templates/bootstrap/preferences.tpl:21
-#: ../templates/default/preferences.tpl:21
-msgid "Association's short description:"
-msgstr "Association's short description:"
+#: ../templates/bootstrap/gestion_adherents.tpl:166
+#: ../templates/bootstrap/voir_adherent.tpl:47
+#: ../templates/default/gestion_adherents.tpl:172
+#: ../templates/default/voir_adherent.tpl:47
+msgid "[C]"
+msgstr "[C]"
 
-#: ../templates/bootstrap/preferences.tpl:228
-#: ../templates/default/preferences.tpl:239
+#: ../templates/bootstrap/page.tpl:151 ../templates/default/page.tpl:151
 msgid ""
-"Would emailing use any SMTP authentication? You'll have to provide username "
-"and passwrod below. For GMail, authentication will always be on."
+"Customize fields order, set which are required, and for who they're visibles"
 msgstr ""
-"Would emailing use any SMTP authentication? You'll have to provide username "
-"and passwrod below. For GMail, authentication will always be on."
+"Customize fields order, set which are required, and for who they're visibles"
 
 #: ../lib/Galette/Entity/Contribution.php:127
 #: ../templates/bootstrap/ajouter_contribution.tpl:114
@@ -2988,7 +2769,6 @@ msgstr "Password misrepeated: "
 msgid "galette_import_model.csv"
 msgstr "galette_import_model.csv"
 
-#: ../install/steps/admin.php:54 ../install/old.index.php:1178
 #: ../templates/bootstrap/preferences.tpl:411
 #: ../templates/default/preferences.tpl:422
 msgid "Retype password:"
@@ -2998,9 +2778,10 @@ msgstr "Retype password:"
 msgid "This comment is only displayed for admins and staff members."
 msgstr "This comment is only displayed for admins and staff members."
 
-#: ../templates/bootstrap/plugins.tpl:29 ../templates/default/plugins.tpl:29
-msgid "Initialize '%name' database"
-msgstr "Initialize '%name' database"
+#: ../templates/bootstrap/import_model.tpl:10
+#: ../templates/default/import_model.tpl:10
+msgid "Default fields"
+msgstr "Default fields"
 
 #: ../templates/bootstrap/page.tpl:113 ../templates/default/page.tpl:113
 msgid "Perform advanced search into members list"
@@ -3055,8 +2836,7 @@ msgstr "User"
 msgid "from a staff user"
 msgstr "from a staff user"
 
-#: ../ajax_plugins_initdb.php:220 ../install/steps/db_checks.php:138
-#: ../install/old.index.php:842
+#: ../ajax_plugins_initdb.php:220
 msgid "DROP operation allowed"
 msgstr "DROP operation allowed"
 
@@ -3076,18 +2856,10 @@ msgstr "A file with that name already exists!"
 msgid "Import members from CSV files"
 msgstr "Import members from CSV files"
 
-#: ../templates/bootstrap/gestion_transactions.tpl:111
-#: ../templates/bootstrap/gestion_contributions.tpl:230
-#: ../templates/bootstrap/gestion_contributions.tpl:250
-#: ../templates/bootstrap/gestion_mailings.tpl:122
-#: ../templates/bootstrap/gestion_adherents.tpl:198
-#: ../templates/default/gestion_transactions.tpl:119
-#: ../templates/default/gestion_contributions.tpl:228
-#: ../templates/default/gestion_contributions.tpl:248
-#: ../templates/default/gestion_mailings.tpl:122
-#: ../templates/default/gestion_adherents.tpl:204
-msgid "[del]"
-msgstr "[del]"
+#: ../templates/bootstrap/gestion_pdf.tpl:29
+#: ../templates/default/gestion_pdf.tpl:29
+msgid "Your organisation website"
+msgstr "Your organisation website"
 
 #: ../templates/bootstrap/mailing_adherents.tpl:61
 #: ../templates/default/mailing_adherents.tpl:61
@@ -3108,20 +2880,10 @@ msgstr "An error occured reordering groups :("
 msgid "Active Member Color:"
 msgstr "Active Member Color:"
 
-#: ../install/steps/type.php:50
-msgid "you wish to erase an older version of Galette without keeping your data"
-msgstr ""
-"you wish to erase an older version of Galette without keeping your data"
-
 #: ../templates/bootstrap/preferences.tpl:207
 #: ../templates/default/preferences.tpl:218
 msgid "Using GMAIL as SMTP server (slower)"
 msgstr "Using GMAIL as SMTP server (slower)"
-
-#: ../templates/bootstrap/gestion_adherents.tpl:241
-#: ../templates/default/gestion_adherents.tpl:247
-msgid "Membership in order"
-msgstr "Membership in order"
 
 #: ../lib/Galette/IO/CsvIn.php:324 ../lib/Galette/IO/CsvIn.php:335
 msgid "An error occured storing member at row %row (%name):"
@@ -3151,15 +2913,6 @@ msgstr "french"
 #: ../champs_adherents.php:39 ../includes/fields_defs/members_fields.php:43
 msgid "Identifiant:"
 msgstr "Identifiant:"
-
-#: ../templates/bootstrap/gestion_contributions.tpl:247
-#: ../templates/bootstrap/gestion_adherents.tpl:251
-#: ../templates/bootstrap/voir_adherent.tpl:20
-#: ../templates/default/gestion_contributions.tpl:245
-#: ../templates/default/gestion_adherents.tpl:257
-#: ../templates/default/voir_adherent.tpl:20
-msgid "Modification"
-msgstr "Modification"
 
 #: ../templates/default/footer.tpl:10
 msgid "Documentation"
@@ -3206,10 +2959,9 @@ msgstr "Show public pages for"
 msgid "Continue"
 msgstr "Continue"
 
-#: ../templates/bootstrap/preferences.tpl:7
-#: ../templates/default/preferences.tpl:7
-msgid "E-Mail"
-msgstr "E-Mail"
+#: ../templates/bootstrap/page.tpl:129 ../templates/default/page.tpl:129
+msgid "View and filter all my contributions"
+msgstr "View and filter all my contributions"
 
 #: ../lib/Galette/Entity/PdfModel.php:489
 #: ../templates/bootstrap/ajax_attendance_sheet_details.tpl:13
@@ -3218,11 +2970,6 @@ msgstr "E-Mail"
 #: ../templates/default/gestion_pdf_content.tpl:10
 msgid "Subtitle"
 msgstr "Subtitle"
-
-#: ../templates/bootstrap/gestion_titres.tpl:35
-#: ../templates/default/gestion_titres.tpl:35
-msgid "Edit '%s' title"
-msgstr "Edit '%s' title"
 
 #: ../etiquettes_adherents.php:90
 msgid "Member's Labels"
@@ -3243,10 +2990,6 @@ msgstr "Show/hide query"
 msgid "Remove model and back to defaults"
 msgstr "Remove model and back to defaults"
 
-#: ../install/old.index.php:1331
-msgid "Mr."
-msgstr "Mr."
-
 #: ../templates/default/footer.tpl:17
 msgid "%s on Google+!"
 msgstr "%s on Google+!"
@@ -3266,12 +3009,15 @@ msgstr "Author"
 msgid "All accounts"
 msgstr "All accounts"
 
-#: ../install/steps/db_checks.php:176 ../install/old.index.php:717
-msgid "Unable to connect to the database"
-msgstr "Unable to connect to the database"
+#: ../templates/bootstrap/export.tpl:2 ../templates/default/export.tpl:2
+msgid ""
+"Each selected export will be stored into a separate file in the exports "
+"directory."
+msgstr ""
+"Each selected export will be stored into a separate file in the exports "
+"directory."
 
-#: ../public/trombinoscope.php:53 ../templates/bootstrap/public_page.tpl:89
-#: ../templates/bootstrap/public_page.tpl:95
+#: ../public/trombinoscope.php:53 ../templates/bootstrap/public_page.tpl:82
 #: ../templates/bootstrap/page.tpl:141 ../templates/default/public_page.tpl:71
 #: ../templates/default/page.tpl:141
 msgid "Trombinoscope"
@@ -3336,10 +3082,6 @@ msgstr "No files has been seleted for upload!"
 msgid "Do you really want to delete this mailing from the base?"
 msgstr "Do you really want to delete this mailing from the base?"
 
-#: ../install/steps/check.php:137 ../install/old.index.php:481
-msgid "Files permissions are not OK!"
-msgstr "Files permissions are not OK!"
-
 #: ../templates/bootstrap/ajouter_transaction.tpl:216
 #: ../templates/bootstrap/ajouter_contribution.tpl:162
 #: ../templates/default/ajouter_transaction.tpl:217
@@ -3364,10 +3106,6 @@ msgstr "Admin account (independant of members)"
 msgid "- The amount must be an integer!"
 msgstr "- The amount must be an integer!"
 
-#: ../install/steps/type.php:49
-msgid "you're installing Galette for the first time"
-msgstr "you're installing Galette for the first time"
-
 #: ../ajouter_contribution.php:200
 msgid "You can find contribution information and script output below."
 msgstr "You can find contribution information and script output below."
@@ -3380,7 +3118,7 @@ msgstr "Configure import model"
 msgid "Flush the logs"
 msgstr "Flush the logs"
 
-#: ../lib/Galette/Core/Install.php:1065 ../install/old.index.php:1230
+#: ../lib/Galette/Core/Install.php:1065
 msgid "Unable to create configuration file (%path)"
 msgstr "Unable to create configuration file (%path)"
 
@@ -3413,9 +3151,10 @@ msgstr "Manage emails texts and subjects"
 msgid "New occurence"
 msgstr "New occurence"
 
-#: ../install/steps/end.php:52 ../install/old.index.php:1510
-msgid "To secure the system, please delete the install directory"
-msgstr "To secure the system, please delete the install directory"
+#: ../templates/bootstrap/gestion_adherents.tpl:339
+#: ../templates/default/gestion_adherents.tpl:345
+msgid "Resume"
+msgstr "Resume"
 
 #: ../templates/bootstrap/gestion_adherents.tpl:292
 #: ../templates/default/gestion_adherents.tpl:298
@@ -3439,6 +3178,11 @@ msgstr "separator"
 #: ../includes/i18n.inc.php:356
 msgid "Benefactor member"
 msgstr "Benefactor member"
+
+#: ../templates/bootstrap/preferences.tpl:313
+#: ../templates/default/preferences.tpl:324
+msgid "(65 characters max)"
+msgstr "(65 characters max)"
 
 #: ../lib/Galette/Filters/MembersList.php:308
 msgid "Close expiries"
@@ -3487,16 +3231,10 @@ msgstr "Delete"
 msgid "Fields configuration has been successfully stored"
 msgstr "Fields configuration has been successfully stored"
 
-#: ../templates/bootstrap/ajouter_transaction.tpl:37
-#: ../templates/bootstrap/member.tpl:23 ../templates/bootstrap/group.tpl:68
-#: ../templates/bootstrap/preferences.tpl:423
-#: ../templates/bootstrap/ajouter_contribution.tpl:40
-#: ../templates/default/ajouter_transaction.tpl:37
-#: ../templates/default/member.tpl:23 ../templates/default/group.tpl:69
-#: ../templates/default/preferences.tpl:434
-#: ../templates/default/ajouter_contribution.tpl:40
-msgid "NB : The mandatory fields are in"
-msgstr "NB : The mandatory fields are in"
+#: ../templates/bootstrap/mailing_adherents.tpl:36
+#: ../templates/default/mailing_adherents.tpl:36
+msgid "Go back to members list"
+msgstr "Go back to members list"
 
 #: ../templates/bootstrap/page.tpl:118 ../templates/bootstrap/desktop.tpl:10
 #: ../templates/default/page.tpl:118 ../templates/default/desktop.tpl:10
@@ -3521,7 +3259,7 @@ msgstr ""
 "account to be visible here, edit your profile and check 'Be visible in the "
 "members list'"
 
-#: ../templates/bootstrap/public_page.tpl:107
+#: ../templates/bootstrap/public_page.tpl:104
 #: ../templates/bootstrap/page.tpl:172 ../templates/default/public_page.tpl:48
 #: ../templates/default/page.tpl:172
 msgid "Log off"
@@ -3551,6 +3289,10 @@ msgstr "New account mail sent to admin for '%s'."
 msgid "Notify member"
 msgstr "Notify member"
 
+#: ../templates/default/ajax_plugins_initdb.tpl:59
+msgid "comprised between"
+msgstr "comprised between"
+
 #: ../templates/bootstrap/lostpasswd.tpl:10
 #, fuzzy
 msgid "Username or email"
@@ -3570,15 +3312,10 @@ msgstr "Title '%s' has been successfully modified."
 msgid "Visible"
 msgstr "Visible"
 
-#: ../install/old.index.php:1334
 #: ../templates/bootstrap/gestion_adherents.tpl:226
 #: ../templates/default/gestion_adherents.tpl:232
 msgid "Mrs."
 msgstr "Mrs."
-
-#: ../install/steps/db.php:94 ../install/old.index.php:643
-msgid "Table prefix:"
-msgstr "Table prefix:"
 
 #: ../lib/Galette/Core/Install.php:166
 #: ../lib/Galette/Core/CheckModules.php:184
@@ -3587,20 +3324,12 @@ msgstr "Table prefix:"
 msgid "Ok"
 msgstr "Ok"
 
-#: ../templates/bootstrap/page.tpl:138 ../templates/default/page.tpl:138
-msgid "Public pages"
-msgstr "Public pages"
-
 #: ../templates/bootstrap/ajax_mailing_preview.tpl:15
 #: ../templates/bootstrap/reminder.tpl:35
 #: ../templates/default/ajax_mailing_preview.tpl:15
 #: ../templates/default/reminder.tpl:35
 msgid "Subject:"
 msgstr "Subject:"
-
-#: ../templates/bootstrap/plugins.tpl:57 ../templates/default/plugins.tpl:57
-msgid "No inactive plugin."
-msgstr "No inactive plugin."
 
 #: ../lib/Galette/IO/Charts.php:230
 msgid "Up to date"
@@ -3627,10 +3356,10 @@ msgstr "either 'mysql', 'pgsql' or 'sqlite' PDO driver"
 msgid "Script output"
 msgstr "Script output"
 
-#: ../templates/bootstrap/ajax_plugins_initdb.tpl:62
-#: ../templates/default/ajax_plugins_initdb.tpl:93
-msgid "Plugin '%name' has been successfully updated!"
-msgstr "Plugin '%name' has been successfully updated!"
+#: ../templates/bootstrap/preferences.tpl:17
+#: ../templates/default/preferences.tpl:17
+msgid "Name of the association:"
+msgstr "Name of the association:"
 
 #: ../champs_adherents.php:65 ../includes/fields_defs/members_fields.php:276
 #: ../templates/bootstrap/member.tpl:287
@@ -3640,22 +3369,12 @@ msgstr "Plugin '%name' has been successfully updated!"
 msgid "Galette Admin:"
 msgstr "Galette Admin:"
 
-#: ../install/steps/db_checks.php:221 ../install/steps/check.php:166
-#: ../install/steps/admin.php:59 ../install/steps/db_select_version.php:117
-#: ../install/steps/type.php:66 ../install/steps/db_install.php:83
-#: ../install/steps/galette.php:81 ../install/steps/db.php:108
-#: ../install/old.index.php:304 ../install/old.index.php:350
-#: ../install/old.index.php:510 ../install/old.index.php:649
-#: ../install/old.index.php:746 ../install/old.index.php:892
-#: ../install/old.index.php:1137 ../install/old.index.php:1183
-#: ../install/old.index.php:1440
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:81
 #: ../templates/default/ajax_plugins_initdb.tpl:112
 msgid "Next step"
 msgstr "Next step"
 
-#: ../install/steps/check.php:74 ../templates/bootstrap/page.tpl:126
-#: ../templates/default/page.tpl:126
+#: ../templates/bootstrap/page.tpl:126 ../templates/default/page.tpl:126
 msgid "Imports"
 msgstr "Imports"
 
@@ -3706,25 +3425,10 @@ msgstr ""
 msgid "transaction"
 msgstr "transaction"
 
-#: ../install/old.index.php:1465
-msgid "Check above errors to know what went wrong."
-msgstr "Check above errors to know what went wrong."
-
 #: ../templates/bootstrap/ajouter_contribution.tpl:13
 #: ../templates/default/ajouter_contribution.tpl:13
 msgid "View transaction"
 msgstr "View transaction"
-
-#: ../templates/bootstrap/gestion_adherents.tpl:198
-#: ../templates/default/gestion_adherents.tpl:204
-msgid ""
-"Do you really want to delete this member from the base? This will also "
-"delete the history of his fees. You could instead disable the account.\\n"
-"\\nDo you still want to delete this member ?"
-msgstr ""
-"Do you really want to delete this member from the base? This will also "
-"delete the history of his fees. You could instead disable the account.\\n"
-"\\nDo you still want to delete this member ?"
 
 #: ../templates/bootstrap/lostpasswd.tpl:4
 msgid ""
@@ -3771,19 +3475,25 @@ msgstr "CSS styles"
 msgid "Mailing informations"
 msgstr "Mailing informations"
 
-#: ../install/steps/db_install.php:55
-msgid "Database has been upgraded :)"
-msgstr "Database has been upgraded :)"
+#: ../templates/bootstrap/gestion_transactions.tpl:121
+#: ../templates/bootstrap/gestion_transactions.tpl:122
+#: ../templates/bootstrap/gestion_contributions.tpl:241
+#: ../templates/bootstrap/gestion_contributions.tpl:242
+#: ../templates/bootstrap/gestion_adherents.tpl:216
+#: ../templates/bootstrap/gestion_adherents.tpl:217
+#: ../templates/default/gestion_transactions.tpl:129
+#: ../templates/default/gestion_transactions.tpl:130
+#: ../templates/default/gestion_contributions.tpl:239
+#: ../templates/default/gestion_contributions.tpl:240
+#: ../templates/default/gestion_adherents.tpl:222
+#: ../templates/default/gestion_adherents.tpl:223
+msgid "Legend"
+msgstr "Legend"
 
-#: ../install/old.index.php:292
-#, fuzzy
-msgid "Choose language"
-msgstr "Choose language"
-
-#: ../templates/bootstrap/preferences.tpl:304
-#: ../templates/default/preferences.tpl:315
-msgid "Cards generation parameters"
-msgstr "Cards generation parameters"
+#: ../templates/bootstrap/gestion_contributions.tpl:38
+#: ../templates/default/gestion_contributions.tpl:44
+msgid "contributions"
+msgstr "contributions"
 
 #: ../groups_list.php:145
 msgid "GSM"
@@ -3807,10 +3517,6 @@ msgstr "Database access and permissions"
 msgid "Birth date"
 msgstr "Birth date"
 
-#: ../templates/bootstrap/import.tpl:94 ../templates/default/import.tpl:94
-msgid "Please make sure to select one file to upload."
-msgstr "Please make sure to select one file to upload."
-
 #: ../templates/bootstrap/gestion_mailings.tpl:103
 #: ../templates/default/gestion_mailings.tpl:103
 msgid "Show mailing %s details"
@@ -3830,19 +3536,6 @@ msgstr "Superadmin"
 #: ../ajouter_adherent.php:335 ../preferences.php:353 ../preferences.php:387
 msgid "Delete failed"
 msgstr "Delete failed"
-
-#: ../install/steps/db_select_version.php:50
-msgid ""
-"Your previous version should be selected and <strong>displayed in bold</"
-"strong>."
-msgstr ""
-"Your previous version should be selected and <strong>displayed in bold</"
-"strong>."
-
-#: ../templates/bootstrap/gestion_adherents.tpl:197
-#: ../templates/default/gestion_adherents.tpl:203
-msgid "[$]"
-msgstr "[$]"
 
 #: ../lib/Galette/Core/Install.php:137
 msgid "Datapase upgrade"
@@ -3928,11 +3621,10 @@ msgstr "Error creating temporary png file from "
 msgid "creation"
 msgstr "creation"
 
-#: ../install/steps/check.php:142 ../install/old.index.php:484
-msgid ""
-"In order to be updated, Galette needs write permission on files listed above."
-msgstr ""
-"In order to be updated, Galette needs write permission on files listed above."
+#: ../templates/bootstrap/voir_adherent.tpl:283
+#: ../templates/default/voir_adherent.tpl:283
+msgid "[manager]"
+msgstr "[manager]"
 
 #: ../templates/bootstrap/preferences.tpl:258
 #: ../templates/bootstrap/preferences.tpl:375
@@ -3945,30 +3637,14 @@ msgstr "Vertical margins:"
 msgid "New account mail sent to '%s'."
 msgstr "New account mail sent to '%s'."
 
-#: ../install/steps/check.php:148 ../install/old.index.php:489
-msgid ""
-"Under Windows, check these directories are not in Read-Only mode in their "
-"property panel."
-msgstr ""
-"Under Windows, check these directories are not in Read-Only mode in their "
-"property panel."
+#: ../templates/default/ajax_plugins_initdb.tpl:133
+msgid "Database installation"
+msgstr "Database installation"
 
-#: ../install/steps/db.php:48 ../install/old.index.php:537
-msgid "Enter connection data for the existing database."
-msgstr "Enter connection data for the existing database."
-
-#: ../templates/bootstrap/ajouter_transaction.tpl:53
-#: ../templates/bootstrap/gestion_contributions.tpl:82
-#: ../templates/default/ajouter_transaction.tpl:53
-#: ../templates/default/gestion_contributions.tpl:6
-#: ../templates/default/gestion_contributions.tpl:88
-msgid "End"
-msgstr "End"
-
-#: ../templates/bootstrap/preferences.tpl:313
-#: ../templates/default/preferences.tpl:324
-msgid "(65 characters max)"
-msgstr "(65 characters max)"
+#: ../templates/bootstrap/public_page.tpl:95
+#: ../templates/bootstrap/page.tpl:133 ../templates/default/page.tpl:133
+msgid "My information"
+msgstr "My information"
 
 #: ../templates/bootstrap/gestion_mailings.tpl:152
 #: ../templates/bootstrap/mailing_adherents.tpl:143
@@ -3981,7 +3657,6 @@ msgstr "An error occured displaying preview :("
 msgid "An mail has been sent to the member."
 msgstr "An mail has been sent to the member."
 
-#: ../install/old.index.php:1103
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:50
 #: ../templates/default/ajax_plugins_initdb.tpl:81
 msgid ""
@@ -3997,10 +3672,10 @@ msgstr ""
 msgid "Add a contribution"
 msgstr "Add a contribution"
 
-#: ../templates/bootstrap/editer_champ.tpl:33
-#: ../templates/default/editer_champ.tpl:33
-msgid "Height:"
-msgstr "Height:"
+#: ../templates/bootstrap/gestion_adherents.tpl:146
+#: ../templates/default/gestion_adherents.tpl:146
+msgid "Export as CSV"
+msgstr "Export as CSV"
 
 #: ../champs_adherents.php:59 ../includes/fields_defs/members_fields.php:220
 #: ../templates/bootstrap/member.tpl:359
@@ -4034,10 +3709,6 @@ msgstr "Member"
 msgid "Not supplied"
 msgstr "Not supplied"
 
-#: ../install/steps/end.php:46 ../install/old.index.php:1504
-msgid "Galette has been successfully installed!"
-msgstr "Galette has been successfully installed!"
-
 #: ../import.php:65 ../export.php:69
 msgid "'%export' file has been removed from disk."
 msgstr "'%export' file has been removed from disk."
@@ -4061,29 +3732,14 @@ msgstr "- The duration must be a positive integer!"
 msgid "Type"
 msgstr "Type"
 
-#: ../lib/Galette/Core/Install.php:128 ../install/installer.php:272
-#: ../install/steps/db.php:41 ../install/steps/db.php:63
-#: ../install/old.index.php:213 ../install/old.index.php:521
-#: ../install/old.index.php:605 ../install/old.index.php:1527
+#: ../lib/Galette/Core/Install.php:128
 msgid "Database"
 msgstr "Database"
 
-#: ../install/steps/check.php:103 ../install/old.index.php:410
-msgid "Date settings"
-msgstr "Date settings"
+#: ../templates/default/gestion_transactions.tpl:3
+msgid "Show transactions since"
+msgstr "Show transactions since"
 
-#: ../install/steps/db_select_version.php:62
-msgid ""
-"It seems you already use latest Galette version!<br/>Are you sure you want "
-"to upgrade?"
-msgstr ""
-"It seems you already use latest Galette version!<br/>Are you sure you want "
-"to upgrade?"
-
-#: ../install/steps/check.php:158 ../install/steps/db_install.php:78
-#: ../install/steps/galette.php:76 ../install/old.index.php:501
-#: ../install/old.index.php:872 ../install/old.index.php:1111
-#: ../install/old.index.php:1470
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:79
 #: ../templates/default/ajax_plugins_initdb.tpl:110
 msgid "Retry"
@@ -4136,10 +3792,6 @@ msgstr "available only for new contributions"
 #: ../templates/bootstrap/history.tpl:59 ../templates/default/history.tpl:59
 msgid "Action"
 msgstr "Action"
-
-#: ../install/steps/db_select_version.php:88
-msgid "older than %version"
-msgstr "older than %version"
 
 #: ../templates/bootstrap/ajouter_contribution.tpl:124
 #: ../templates/default/ajouter_contribution.tpl:132
@@ -4209,10 +3861,6 @@ msgstr "An error occured displaying contributions :("
 msgid "Reference:"
 msgstr "Reference:"
 
-#: ../install/old.index.php:1291 ../install/old.index.php:1364
-msgid "Default fields configuration cannot be initialized."
-msgstr "Default fields configuration cannot be initialized."
-
 #: ../templates/bootstrap/reminder.tpl:59 ../templates/default/reminder.tpl:59
 msgid "No reminder selected"
 msgstr "No reminder selected"
@@ -4233,29 +3881,19 @@ msgstr ""
 "You asked Galette to send a confirmation mail to the member, but mail has "
 "been disabled in the preferences."
 
-#: ../install/old.index.php:1414
-msgid "PDF models were successfully stored."
-msgstr "PDF models were successfully stored."
+#: ../templates/bootstrap/import.tpl:57 ../templates/default/import.tpl:57
+msgid "Select a file:"
+msgstr "Select a file:"
 
 #: ../templates/bootstrap/gestion_adherents.tpl:229
 #: ../templates/default/gestion_adherents.tpl:235
 msgid "Inactive account"
 msgstr "Inactive account"
 
-#: ../install/old.index.php:221 ../install/old.index.php:1529
-#: ../templates/bootstrap/ajax_plugins_initdb.tpl:97
-#: ../templates/default/ajax_plugins_initdb.tpl:128
-msgid "Access permissions to database"
-msgstr "Access permissions to database"
-
 #: ../templates/bootstrap/gestion_groupes.tpl:21
 #: ../templates/default/gestion_groupes.tpl:21
 msgid "Group informations"
 msgstr "Group informations"
-
-#: ../install/old.index.php:1420
-msgid "PDF models cannot be initialized."
-msgstr "PDF models cannot be initialized."
 
 #: ../templates/bootstrap/advanced_search.tpl:40
 #: ../templates/bootstrap/gestion_adherents.tpl:32
@@ -4268,22 +3906,23 @@ msgstr "Without"
 msgid "- The username must be composed of at least %i characters!"
 msgstr "- The username must be composed of at least %i characters!"
 
-#: ../install/steps/db_select_version.php:57
-msgid "No update script found!"
-msgstr "No update script found!"
+#: ../templates/bootstrap/preferences.tpl:21
+#: ../templates/default/preferences.tpl:21
+msgid "Association's short description:"
+msgstr "Association's short description:"
 
 #: ../templates/bootstrap/plugins.tpl:49 ../templates/default/plugins.tpl:49
 msgid "Click here to activate plugin '%name'"
 msgstr "Click here to activate plugin '%name'"
 
-#: ../history.php:77 ../install/steps/check.php:75
-#: ../templates/bootstrap/page.tpl:123 ../templates/default/page.tpl:123
+#: ../history.php:77 ../templates/bootstrap/page.tpl:123
+#: ../templates/default/page.tpl:123
 msgid "Logs"
 msgstr "Logs"
 
-#: ../templates/bootstrap/member.tpl:324 ../templates/default/member.tpl:324
-msgid "(Confirmation)"
-msgstr "(Confirmation)"
+#: ../templates/bootstrap/plugins.tpl:29 ../templates/default/plugins.tpl:29
+msgid "Initialize '%name' database"
+msgstr "Initialize '%name' database"
 
 #: ../templates/bootstrap/ajouter_transaction.tpl:95
 #: ../templates/default/ajouter_transaction.tpl:95
@@ -4306,14 +3945,12 @@ msgid ""
 msgstr ""
 "Application runs under demo mode. This functionnality is not enabled, sorry."
 
-#: ../install/old.index.php:1337
 #: ../templates/bootstrap/gestion_adherents.tpl:226
 #: ../templates/default/gestion_adherents.tpl:232
 msgid "Miss"
 msgstr "Miss"
 
-#: ../ajax_plugins_initdb.php:245 ../install/steps/db_checks.php:197
-#: ../install/old.index.php:865
+#: ../ajax_plugins_initdb.php:245
 msgid ""
 "GALETTE hasn't got enough permissions on the database to continue the update."
 msgstr ""
@@ -4342,14 +3979,6 @@ msgstr "Membership will expire soon (&lt;30d)"
 msgid "Extends membership?"
 msgstr "Extends membership?"
 
-#: ../templates/default/editer_champ.tpl:42
-msgid "Maximum file size, in Ko."
-msgstr "Maximum file size, in Ko."
-
-#: ../install/steps/db_checks.php:167 ../install/old.index.php:713
-msgid "Connection to database successfull"
-msgstr "Connection to database successfull"
-
 #: ../templates/bootstrap/configurer_fiches.tpl:48
 #: ../templates/default/configurer_fiches.tpl:48
 msgid "Add new dynamic field"
@@ -4369,7 +3998,6 @@ msgid "logs are empty"
 msgstr "logs are empty"
 
 #: ../champs_adherents.php:61 ../includes/fields_defs/members_fields.php:236
-#: ../install/steps/admin.php:46 ../install/old.index.php:1170
 #: ../templates/bootstrap/index.tpl:6 ../templates/bootstrap/member.tpl:306
 #: ../templates/bootstrap/preferences.tpl:403
 #: ../templates/bootstrap/voir_adherent.tpl:241
@@ -4407,10 +4035,10 @@ msgstr "Loading..."
 msgid "Is member a company?"
 msgstr "Is member a company?"
 
-#: ../templates/bootstrap/gestion_groupes.tpl:106
-#: ../templates/default/gestion_groupes.tpl:106
-msgid "An error occured loading selected group :("
-msgstr "An error occured loading selected group :("
+#: ../templates/bootstrap/preferences.tpl:7
+#: ../templates/default/preferences.tpl:7
+msgid "E-Mail"
+msgstr "E-Mail"
 
 #: ../templates/bootstrap/gestion_textes.tpl:69
 #: ../templates/bootstrap/gestion_textes.tpl:73
@@ -4419,7 +4047,6 @@ msgstr "An error occured loading selected group :("
 msgid "available only for new password request"
 msgstr "available only for new password request"
 
-#: ../install/installer.php:268 ../install/old.index.php:1522
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:94
 #: ../templates/default/ajax_plugins_initdb.tpl:125
 msgid "Steps:"
@@ -4455,10 +4082,13 @@ msgstr "Your organisation logo"
 msgid "Contributor:"
 msgstr "Contributor:"
 
-#: ../install/installer.php:282
-#: ../templates/default/ajax_plugins_initdb.tpl:133
-msgid "Database installation"
-msgstr "Database installation"
+#: ../templates/bootstrap/ajouter_transaction.tpl:53
+#: ../templates/bootstrap/gestion_contributions.tpl:82
+#: ../templates/default/ajouter_transaction.tpl:53
+#: ../templates/default/gestion_contributions.tpl:6
+#: ../templates/default/gestion_contributions.tpl:88
+msgid "End"
+msgstr "End"
 
 #: ../templates/bootstrap/gestion_pdf_content.tpl:15
 #: ../templates/default/gestion_pdf_content.tpl:15
@@ -4479,26 +4109,29 @@ msgstr "New attached contribution"
 msgid "Group `%groupname` has been successfully saved."
 msgstr "Group `%groupname` has been successfully saved."
 
-#: ../install/steps/db.php:90 ../install/old.index.php:632
-msgid "Database:"
-msgstr "Database:"
-
 #: ../lib/Galette/Entity/DynamicFields.php:136
 #: ../templates/bootstrap/desktop.tpl:10 ../templates/default/desktop.tpl:10
 msgid "Transactions"
 msgstr "Transactions"
 
-#: ../install/steps/check.php:77
-msgid "Files"
-msgstr "Files"
+#: ../templates/bootstrap/import_model.tpl:28
+#: ../templates/default/import_model.tpl:28
+msgid "Generate empty CSV file"
+msgstr "Generate empty CSV file"
 
-#: ../install/installer.php:101 ../install/old.index.php:101
-msgid "No port"
-msgstr "No port"
+#: ../templates/bootstrap/advanced_search.tpl:201
+#: ../templates/default/advanced_search.tpl:211
+msgid ""
+"If your query does not begin with a 'SELECT' statement, it will "
+"automatically be added."
+msgstr ""
+"If your query does not begin with a 'SELECT' statement, it will "
+"automatically be added."
 
-#: ../install/installer.php:213 ../install/old.index.php:279
-msgid "Galette installation"
-msgstr "Galette installation"
+#: ../templates/bootstrap/ajax_plugins_initdb.tpl:97
+#: ../templates/default/ajax_plugins_initdb.tpl:128
+msgid "Access permissions to database"
+msgstr "Access permissions to database"
 
 #: ../templates/bootstrap/import.tpl:45 ../templates/default/import.tpl:45
 msgid "Import"
@@ -4619,17 +4252,15 @@ msgstr "Add a new group"
 msgid "Contribution informations"
 msgstr "Contribution informations"
 
-#: ../install/old.index.php:333
-msgid "Your current Galette version is comprised between"
-msgstr "Your current Galette version is comprised between"
-
 #: ../lib/Galette/Entity/Group.php:366
 msgid "Unable to detach group :("
 msgstr "Unable to detach group :("
 
-#: ../install/installer.php:191 ../install/old.index.php:245
-msgid "Galette Installation"
-msgstr "Galette Installation"
+#: ../templates/bootstrap/public_page.tpl:57
+#: ../templates/bootstrap/page.tpl:104 ../templates/default/public_page.tpl:53
+#: ../templates/default/page.tpl:104
+msgid "Demonstration"
+msgstr "Demonstration"
 
 #: ../templates/bootstrap/change_passwd.tpl:16
 #: ../templates/default/change_passwd.tpl:16
@@ -4641,10 +4272,6 @@ msgstr "(at least 4 characters)"
 msgid "Contribution end date"
 msgstr "Contribution end date"
 
-#: ../install/old.index.php:1130
-msgid "The tables has been correctly created."
-msgstr "The tables has been correctly created."
-
 #: ../self_adherent.php:242
 msgid "Subscription"
 msgstr "Subscription"
@@ -4654,18 +4281,19 @@ msgstr "Subscription"
 msgid "modification"
 msgstr "modification"
 
-#: ../templates/bootstrap/preferences.tpl:53
-#: ../templates/default/preferences.tpl:53
+#: ../templates/bootstrap/gestion_adherents.tpl:313
+#: ../templates/default/gestion_adherents.tpl:319
 msgid ""
-"Use either the adress setted below or select a staff member to retrieve he's "
-"adress."
+"Please make sure to select at least one member from the list to perform this "
+"action."
 msgstr ""
-"Use either the adress setted below or select a staff member to retrieve he's "
-"adress."
+"Please make sure to select at least one member from the list to perform this "
+"action."
 
-#: ../install/old.index.php:1382
-msgid "Required fields have been upgraded successfully."
-msgstr "Required fields have been upgraded successfully."
+#: ../templates/bootstrap/preferences.tpl:278
+#: ../templates/default/preferences.tpl:289
+msgid "Label width:"
+msgstr "Label width:"
 
 #: ../templates/bootstrap/export.tpl:17 ../templates/default/export.tpl:17
 msgid "The following exports already seems to exist on the disk:"
@@ -4755,10 +4383,6 @@ msgstr "Some warnings has been thrown:"
 msgid "Nickname"
 msgstr "Nickname"
 
-#: ../install/steps/db.php:100 ../install/old.index.php:639
-msgid "(Indicate the CURRENT prefix of your Galette tables)"
-msgstr "(Indicate the CURRENT prefix of your Galette tables)"
-
 #: ../ajouter_contribution.php:349
 msgid "Mail sent to admin for user %name (%email)"
 msgstr "Mail sent to admin for user %name (%email)"
@@ -4819,7 +4443,7 @@ msgstr "List of members"
 msgid "- The name field cannot be void."
 msgstr "- The name field cannot be void."
 
-#: ../index.php:70 ../index.php:85 ../index.php:112
+#: ../index.php:70 ../index.php:85 ../index.php:113
 #: ../templates/bootstrap/index.tpl:20 ../templates/default/index.tpl:16
 msgid "Login"
 msgstr "Login"
@@ -4837,10 +4461,6 @@ msgstr "file"
 #: ../templates/default/preferences.tpl:250
 msgid "SMTP (or GMail) user:"
 msgstr "SMTP (or GMail) user:"
-
-#: ../install/old.index.php:217 ../install/old.index.php:1528
-msgid "Access to the database"
-msgstr "Access to the database"
 
 #: ../templates/bootstrap/preferences.tpl:260
 #: ../templates/bootstrap/preferences.tpl:265
@@ -4962,26 +4582,14 @@ msgstr "Signature"
 msgid "Manage statuses"
 msgstr "Manage statuses"
 
-#: ../templates/bootstrap/public_page.tpl:34
-#: ../templates/bootstrap/page.tpl:89 ../templates/default/public_page.tpl:34
-#: ../templates/default/page.tpl:89
-msgid ""
-"Your browser version is way too old and no longer supported in Galette for a "
-"while."
-msgstr ""
-"Your browser version is way too old and no longer supported in Galette for a "
-"while."
-
 #: ../lib/Galette/Filters/MembersList.php:322
 msgid "Inactive accounts"
 msgstr "Inactive accounts"
 
-#: ../templates/bootstrap/ajouter_transaction.tpl:44
-#: ../templates/default/ajouter_transaction.tpl:44
-msgid ""
-"Create a new contribution that will be attached to the current transaction"
-msgstr ""
-"Create a new contribution that will be attached to the current transaction"
+#: ../templates/bootstrap/gestion_titres.tpl:35
+#: ../templates/default/gestion_titres.tpl:35
+msgid "Edit '%s' title"
+msgstr "Edit '%s' title"
 
 #: ../templates/bootstrap/import.tpl:43 ../templates/default/import.tpl:43
 msgid "Run the import process, but do *not* store anything in the database"
@@ -4992,15 +4600,15 @@ msgstr "Run the import process, but do *not* store anything in the database"
 msgid "Contribution comment"
 msgstr "Contribution comment"
 
-#: ../templates/bootstrap/export.tpl:2 ../templates/default/export.tpl:2
-msgid ""
-"Each selected export will be stored into a separate file in the exports "
-"directory."
-msgstr ""
-"Each selected export will be stored into a separate file in the exports "
-"directory."
+#: ../templates/bootstrap/gestion_contributions.tpl:247
+#: ../templates/bootstrap/gestion_adherents.tpl:251
+#: ../templates/bootstrap/voir_adherent.tpl:20
+#: ../templates/default/gestion_contributions.tpl:245
+#: ../templates/default/gestion_adherents.tpl:257
+#: ../templates/default/voir_adherent.tpl:20
+msgid "Modification"
+msgstr "Modification"
 
-#: ../install/old.index.php:1100
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:48
 #: ../templates/default/ajax_plugins_initdb.tpl:79
 msgid "The tables are not totally created, it may be a permission problem."
@@ -5011,17 +4619,9 @@ msgstr "The tables are not totally created, it may be a permission problem."
 msgid "Viadeo"
 msgstr "Viadeo"
 
-#: ../install/steps/check.php:94 ../install/old.index.php:415
-msgid ""
-"Your PHP date settings are not correct. Maybe you've missed the timezone "
-"settings that is mandatory since PHP 5.3?"
-msgstr ""
-"Your PHP date settings are not correct. Maybe you've missed the timezone "
-"settings that is mandatory since PHP 5.3?"
-
-#: ../install/steps/check.php:108 ../install/old.index.php:435
-msgid "PHP Modules"
-msgstr "PHP Modules"
+#: ../templates/bootstrap/group.tpl:60 ../templates/default/group.tpl:60
+msgid "Manage managers"
+msgstr "Manage managers"
 
 #: ../ajouter_contribution.php:211
 msgid ""
@@ -5043,9 +4643,9 @@ msgstr "Mobile phone:"
 msgid "Record date:"
 msgstr "Record date:"
 
-#: ../install/steps/db.php:74 ../install/old.index.php:616
-msgid "Host:"
-msgstr "Host:"
+#: ../templates/bootstrap/member.tpl:324 ../templates/default/member.tpl:324
+msgid "(Confirmation)"
+msgstr "(Confirmation)"
 
 #: ../includes/i18n.inc.php:348
 msgid "Publisher:"
@@ -5160,9 +4760,10 @@ msgstr "Hexadecimal color notation: #RRGGBB"
 msgid "Current model"
 msgstr "Current model"
 
-#: ../install/scripts/upgrade-to-0.8.php:110
-msgid "Unable to create datadir in %dir!"
-msgstr "Unable to create datadir in %dir!"
+#: ../templates/bootstrap/gestion_adherents.tpl:313
+#: ../templates/default/gestion_adherents.tpl:319
+msgid "No member selected"
+msgstr "No member selected"
 
 #: ../templates/bootstrap/plugins.tpl:25 ../templates/default/plugins.tpl:25
 msgid "Click here to deactivate plugin '%name'"
@@ -5196,7 +4797,7 @@ msgstr "No import file actually exists."
 msgid "(at least %i characters)"
 msgstr "(at least %i characters)"
 
-#: ../ajax_plugins_initdb.php:262 ../install/old.index.php:917
+#: ../ajax_plugins_initdb.php:262
 msgid "Update of the tables"
 msgstr "Update of the tables"
 
@@ -5236,24 +4837,10 @@ msgstr "Footer"
 msgid "no member"
 msgstr "no member"
 
-#: ../templates/bootstrap/gestion_transactions.tpl:121
-#: ../templates/bootstrap/gestion_transactions.tpl:122
-#: ../templates/bootstrap/gestion_contributions.tpl:241
-#: ../templates/bootstrap/gestion_contributions.tpl:242
-#: ../templates/bootstrap/gestion_adherents.tpl:216
-#: ../templates/bootstrap/gestion_adherents.tpl:217
-#: ../templates/default/gestion_transactions.tpl:129
-#: ../templates/default/gestion_transactions.tpl:130
-#: ../templates/default/gestion_contributions.tpl:239
-#: ../templates/default/gestion_contributions.tpl:240
-#: ../templates/default/gestion_adherents.tpl:222
-#: ../templates/default/gestion_adherents.tpl:223
-msgid "Legend"
-msgstr "Legend"
-
-#: ../templates/bootstrap/import.tpl:54 ../templates/default/import.tpl:54
-msgid "Upload new file"
-msgstr "Upload new file"
+#: ../templates/bootstrap/preferences.tpl:107
+#: ../templates/default/preferences.tpl:107
+msgid "Default theme:"
+msgstr "Default theme:"
 
 #: ../includes/fields_defs/pdfmodels_fields.php:117
 #: ../includes/fields_defs/pdfmodels_fields.php:162
@@ -5264,9 +4851,9 @@ msgstr "on"
 msgid "Your subscription has been registered."
 msgstr "Your subscription has been registered."
 
-#: ../templates/bootstrap/page.tpl:124 ../templates/default/page.tpl:124
-msgid "Manage mailings"
-msgstr "Manage mailings"
+#: ../templates/default/preferences.tpl:195
+msgid "Automatically wrap text mails before sending"
+msgstr "Automatically wrap text mails before sending"
 
 #: ../templates/bootstrap/gestion_transactions.tpl:19
 #: ../templates/bootstrap/gestion_contributions.tpl:45
@@ -5275,10 +4862,10 @@ msgstr "Manage mailings"
 msgid "Show:"
 msgstr "Show:"
 
-#: ../templates/bootstrap/plugins.tpl:2 ../templates/bootstrap/plugins.tpl:15
-#: ../templates/default/plugins.tpl:2 ../templates/default/plugins.tpl:15
-msgid "Active plugins"
-msgstr "Active plugins"
+#: ../templates/bootstrap/voir_adherent.tpl:280
+#: ../templates/default/voir_adherent.tpl:280
+msgid "[member]"
+msgstr "[member]"
 
 #: ../mailing_adherents.php:256
 msgid "Mailing"
@@ -5306,14 +4893,6 @@ msgstr "(Un)Check all"
 msgid "Write your mailing"
 msgstr "Write your mailing"
 
-#: ../templates/bootstrap/plugins.tpl:50 ../templates/default/plugins.tpl:50
-msgid "Enable plugin"
-msgstr "Enable plugin"
-
-#: ../templates/bootstrap/page.tpl:156 ../templates/default/page.tpl:156
-msgid "Emails content"
-msgstr "Emails content"
-
 #: ../templates/bootstrap/advanced_search.tpl:178
 #: ../templates/default/advanced_search.tpl:188
 msgid "is"
@@ -5323,13 +4902,16 @@ msgstr "is"
 msgid "- Priority must be an integer!"
 msgstr "- Priority must be an integer!"
 
-#: ../install/steps/db_select_version.php:46
-msgid "Select your previous Galette version below, and then click next."
-msgstr "Select your previous Galette version below, and then click next."
-
-#: ../install/old.index.php:1133
-msgid "The tables has been correctly updated."
-msgstr "The tables has been correctly updated."
+#: ../templates/bootstrap/gestion_pdf.tpl:16
+#: ../templates/bootstrap/gestion_pdf.tpl:17
+#: ../templates/bootstrap/gestion_textes.tpl:38
+#: ../templates/bootstrap/gestion_textes.tpl:39
+#: ../templates/default/gestion_pdf.tpl:16
+#: ../templates/default/gestion_pdf.tpl:17
+#: ../templates/default/gestion_textes.tpl:38
+#: ../templates/default/gestion_textes.tpl:39
+msgid "Existing variables"
+msgstr "Existing variables"
 
 #: ../lib/Galette/Core/CheckModules.php:70
 #: ../lib/Galette/Core/CheckModules.php:75
@@ -5363,9 +4945,10 @@ msgstr "Address"
 msgid "Cannot remove a member who still have dependencies (mailings, ...)"
 msgstr "Cannot remove a member who still have dependencies (mailings, ...)"
 
-#: ../install/installer.php:149 ../install/old.index.php:160
-msgid "The username cannot contain the @ character"
-msgstr "The username cannot contain the @ character"
+#: ../templates/bootstrap/ajax_attendance_sheet_details.tpl:22
+#: ../templates/default/ajax_attendance_sheet_details.tpl:22
+msgid "With photos?"
+msgstr "With photos?"
 
 #: ../templates/bootstrap/advanced_search.tpl:96
 #: ../templates/default/advanced_search.tpl:103
@@ -5379,10 +4962,6 @@ msgstr "- Invalid format of beginning of membership."
 #: ../lib/Galette/Entity/Reminder.php:283
 msgid "Unable to send %membership reminder (no mail address)."
 msgstr "Unable to send %membership reminder (no mail address)."
-
-#: ../templates/default/gestion_transactions.tpl:3
-msgid "Show transactions since"
-msgstr "Show transactions since"
 
 #: ../lib/Galette/Entity/DynamicFields.php:117
 msgid "free text"
@@ -5412,8 +4991,7 @@ msgstr "Association %s"
 msgid "Create"
 msgstr "Create"
 
-#: ../ajax_plugins_initdb.php:199 ../install/steps/db_checks.php:117
-#: ../install/old.index.php:827
+#: ../ajax_plugins_initdb.php:199
 msgid "DELETE operation not allowed"
 msgstr "DELETE operation not allowed"
 
@@ -5460,10 +5038,6 @@ msgstr "%plugin plugin installation"
 msgid "Add a transaction"
 msgstr "Add a transaction"
 
-#: ../install/steps/check.php:118 ../install/old.index.php:475
-msgid "Files permissions"
-msgstr "Files permissions"
-
 #: ../lib/Galette/Entity/Transaction.php:107
 #: ../templates/bootstrap/ajouter_transaction.tpl:11
 #: ../templates/default/ajouter_transaction.tpl:11
@@ -5484,14 +5058,12 @@ msgstr "Contribution begin date"
 msgid "SQL query"
 msgstr "SQL query"
 
-#: ../install/steps/db.php:60 ../install/old.index.php:602
-msgid ""
-"The needed permissions are CREATE, DROP, DELETE, UPDATE, SELECT and INSERT."
-msgstr ""
-"The needed permissions are CREATE, DROP, DELETE, UPDATE, SELECT and INSERT."
+#: ../templates/bootstrap/ajax_plugins_initdb.tpl:62
+#: ../templates/default/ajax_plugins_initdb.tpl:93
+msgid "Plugin '%name' has been successfully updated!"
+msgstr "Plugin '%name' has been successfully updated!"
 
-#: ../lib/Galette/Core/Install.php:122 ../install/installer.php:270
-#: ../install/old.index.php:209 ../install/old.index.php:1526
+#: ../lib/Galette/Core/Install.php:122
 msgid "Checks"
 msgstr "Checks"
 
@@ -5578,13 +5150,6 @@ msgstr "Filter"
 msgid "Send a mail"
 msgstr "Send a mail"
 
-#: ../templates/bootstrap/gestion_adherents.tpl:166
-#: ../templates/bootstrap/voir_adherent.tpl:47
-#: ../templates/default/gestion_adherents.tpl:172
-#: ../templates/default/voir_adherent.tpl:47
-msgid "[C]"
-msgstr "[C]"
-
 #: ../templates/bootstrap/gestion_adherents.tpl:144
 #: ../templates/default/gestion_adherents.tpl:144
 msgid "Generate Member Cards"
@@ -5614,16 +5179,16 @@ msgstr "Individuals"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../install/old.index.php:848
-msgid "ALTER Operation not allowed"
-msgstr "ALTER Operation not allowed"
+#: ../templates/bootstrap/mailing_adherents.tpl:81
+#: ../templates/default/mailing_adherents.tpl:81
+msgid "Preview"
+msgstr "Preview"
 
 #: ../import.php:115
 msgid "An error occured importing the file :("
 msgstr "An error occured importing the file :("
 
-#: ../install/steps/check.php:73 ../templates/bootstrap/page.tpl:125
-#: ../templates/default/page.tpl:125
+#: ../templates/bootstrap/page.tpl:125 ../templates/default/page.tpl:125
 msgid "Exports"
 msgstr "Exports"
 
@@ -5652,19 +5217,13 @@ msgstr "%membername: contributions"
 msgid "Size:"
 msgstr "Size:"
 
-#: ../templates/bootstrap/preferences.tpl:99
-#: ../templates/default/preferences.tpl:99
-msgid "Default language:"
-msgstr "Default language:"
-
 #: ../templates/bootstrap/export.tpl:50 ../templates/default/export.tpl:50
 msgid "Parameted exports"
 msgstr "Parameted exports"
 
-#: ../templates/bootstrap/gestion_pdf.tpl:29
-#: ../templates/default/gestion_pdf.tpl:29
-msgid "Your organisation website"
-msgstr "Your organisation website"
+#: ../templates/bootstrap/public_page.tpl:101
+msgid "My jobs"
+msgstr ""
 
 #: ../lib/Galette/Filters/MembersList.php:306
 msgid "All members"
@@ -5673,10 +5232,6 @@ msgstr "All members"
 #: ../templates/bootstrap/page.tpl:151 ../templates/default/page.tpl:151
 msgid "Customize fields"
 msgstr "Customize fields"
-
-#: ../install/steps/check.php:146 ../install/old.index.php:487
-msgid "directory_name"
-msgstr "directory_name"
 
 #: ../templates/bootstrap/page.tpl:119 ../templates/default/page.tpl:119
 msgid "Add a member"
@@ -5750,25 +5305,14 @@ msgstr "Advanced search"
 msgid "Member's zipcode"
 msgstr "Member's zipcode"
 
-#: ../templates/bootstrap/gestion_intitule_content.tpl:16
-#: ../templates/bootstrap/gestion_transactions.tpl:69
-#: ../templates/bootstrap/gestion_contributions.tpl:150
-#: ../templates/bootstrap/configurer_fiche_content.tpl:9
-#: ../templates/bootstrap/gestion_adherents.tpl:125
-#: ../templates/bootstrap/gestion_titres.tpl:8
-#: ../templates/default/gestion_intitule_content.tpl:16
-#: ../templates/default/gestion_transactions.tpl:77
-#: ../templates/default/gestion_contributions.tpl:148
-#: ../templates/default/configurer_fiche_content.tpl:9
-#: ../templates/default/gestion_adherents.tpl:125
-#: ../templates/default/gestion_titres.tpl:8
-msgid "Actions"
-msgstr "Actions"
+#: ../templates/bootstrap/ajax_plugins_initdb.tpl:98
+msgid "Tables Creation/Update"
+msgstr "Tables Creation/Update"
 
-#: ../templates/bootstrap/gestion_contributions.tpl:224
-#: ../templates/default/gestion_contributions.tpl:222
-msgid "Print an invoice or a receipt (depending on contribution type)"
-msgstr "Print an invoice or a receipt (depending on contribution type)"
+#: ../templates/bootstrap/preferences.tpl:99
+#: ../templates/default/preferences.tpl:99
+msgid "Default language:"
+msgstr "Default language:"
 
 #: ../import_model.php:62
 msgid "Import model has been successfully stored :)"
@@ -5778,20 +5322,6 @@ msgstr "Import model has been successfully stored :)"
 msgid "Non-member"
 msgstr "Non-member"
 
-#: ../templates/bootstrap/mailing_adherents.tpl:36
-#: ../templates/default/mailing_adherents.tpl:36
-msgid "Go back to members list"
-msgstr "Go back to members list"
-
-#: ../templates/bootstrap/config_fields.tpl:21
-#: ../templates/bootstrap/configurer_fiche_content.tpl:8
-#: ../templates/bootstrap/configurer_fiches.tpl:20
-#: ../templates/default/config_fields.tpl:21
-#: ../templates/default/configurer_fiche_content.tpl:8
-#: ../templates/default/configurer_fiches.tpl:20
-msgid "Required"
-msgstr "Required"
-
 #: ../includes/i18n.inc.php:355
 msgid "Active member"
 msgstr "Active member"
@@ -5800,12 +5330,6 @@ msgstr "Active member"
 #: ../templates/default/gestion_mailings.tpl:120
 msgid "Delete mailing '%subject'"
 msgstr "Delete mailing '%subject'"
-
-#: ../install/steps/check.php:140 ../install/old.index.php:483
-msgid ""
-"To work as excpected, Galette needs write permission on files listed above."
-msgstr ""
-"To work as excpected, Galette needs write permission on files listed above."
 
 #: ../templates/bootstrap/gestion_textes.tpl:73
 #: ../templates/default/gestion_textes.tpl:73
@@ -5862,9 +5386,14 @@ msgstr "Email: '%s' has not been modified!"
 msgid "Member's email address"
 msgstr "Member's email address"
 
-#: ../install/installer.php:292
-msgid "Galette initialisation"
-msgstr "Galette initialisation"
+#: ../templates/bootstrap/preferences.tpl:53
+#: ../templates/default/preferences.tpl:53
+msgid ""
+"Use either the adress setted below or select a staff member to retrieve he's "
+"adress."
+msgstr ""
+"Use either the adress setted below or select a staff member to retrieve he's "
+"adress."
 
 #: ../champs_adherents.php:66 ../includes/fields_defs/members_fields.php:284
 #: ../templates/bootstrap/member.tpl:296
@@ -5900,15 +5429,6 @@ msgstr ""
 msgid "Detailed"
 msgstr "Detailed"
 
-#: ../install/installer.php:104 ../install/installer.php:146
-#: ../install/old.index.php:104 ../install/old.index.php:156
-msgid "No user name"
-msgstr "No user name"
-
-#: ../install/steps/db.php:78 ../install/old.index.php:620
-msgid "Port:"
-msgstr "Port:"
-
 #: ../lib/Galette/Repository/Members.php:305
 msgid "Member Picture deleted"
 msgstr "Member Picture deleted"
@@ -5920,9 +5440,9 @@ msgstr "Member Picture deleted"
 msgid "Social networks"
 msgstr "Social networks"
 
-#: ../templates/bootstrap/page.tpl:133 ../templates/default/page.tpl:133
-msgid "My information"
-msgstr "My information"
+#: ../templates/bootstrap/plugins.tpl:57 ../templates/default/plugins.tpl:57
+msgid "No inactive plugin."
+msgstr "No inactive plugin."
 
 #: ../gestion_titres.php:65
 msgid "Title '%name' has been successfully deleted."
@@ -5931,11 +5451,6 @@ msgstr "Title '%name' has been successfully deleted."
 #: ../templates/default/ajax_plugins_initdb.tpl:20
 msgid "you're installing %name for the first time"
 msgstr "you're installing %name for the first time"
-
-#: ../templates/bootstrap/voir_adherent.tpl:280
-#: ../templates/default/voir_adherent.tpl:280
-msgid "[member]"
-msgstr "[member]"
 
 #: ../templates/bootstrap/preferences.tpl:121
 #: ../templates/default/preferences.tpl:121
@@ -5983,7 +5498,7 @@ msgstr "Mailing has not been sent yet"
 msgid "single line"
 msgstr "single line"
 
-#: ../ajax_plugins_initdb.php:331 ../install/old.index.php:1499
+#: ../ajax_plugins_initdb.php:331
 msgid "Update complete !"
 msgstr "Update complete !"
 
@@ -6002,14 +5517,6 @@ msgstr "Members selection"
 msgid "MSN"
 msgstr "MSN"
 
-#: ../install/steps/db_checks.php:171 ../install/old.index.php:692
-msgid "Check of the database"
-msgstr "Check of the database"
-
-#: ../install/steps/db.php:45 ../install/old.index.php:534
-msgid "If it hadn't been made, create a database and a user for Galette."
-msgstr "If it hadn't been made, create a database and a user for Galette."
-
 #: ../templates/bootstrap/ajouter_transaction.tpl:214
 #: ../templates/bootstrap/ajouter_contribution.tpl:160
 #: ../templates/default/ajouter_transaction.tpl:215
@@ -6022,16 +5529,16 @@ msgstr "Unfortunately, there is no member in your database yet,"
 msgid "General information"
 msgstr "General information"
 
-#: ../install/steps/db_select_version.php:68
-msgid "Your current Galette version is..."
-msgstr "Your current Galette version is..."
+#: ../templates/bootstrap/editer_champ.tpl:33
+#: ../templates/default/editer_champ.tpl:33
+msgid "Height:"
+msgstr "Height:"
 
 #: ../templates/bootstrap/gestion_adherents.tpl:250
 #: ../templates/default/gestion_adherents.tpl:256
 msgid "Modify"
 msgstr "Modify"
 
-#: ../install/steps/db_select_version.php:92 ../install/old.index.php:334
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:24
 #: ../templates/bootstrap/advanced_search.tpl:51
 #: ../templates/bootstrap/advanced_search.tpl:58
@@ -6098,10 +5605,6 @@ msgstr ""
 msgid "Creation date"
 msgstr "Creation date"
 
-#: ../templates/bootstrap/page.tpl:152 ../templates/default/page.tpl:152
-msgid "Manage additional fields for various forms"
-msgstr "Manage additional fields for various forms"
-
 #: ../advanced_search.php:123 ../lib/Galette/Entity/Contribution.php:1123
 #: ../templates/bootstrap/gestion_contributions.tpl:14
 #: ../templates/bootstrap/ajouter_contribution.tpl:85
@@ -6121,14 +5624,6 @@ msgstr "An error occured removing title '%name' :("
 #: ../templates/default/gestion_contributions.tpl:3
 msgid "Show contributions by"
 msgstr "Show contributions by"
-
-#: ../install/old.index.php:382
-msgid "Galette requires at least PHP version %ver!"
-msgstr "Galette requires at least PHP version %ver!"
-
-#: ../install/scripts/upgrade-to-0.8.php:190
-msgid "File %file has not been moved :-/"
-msgstr "File %file has not been moved :-/"
 
 #: ../templates/bootstrap/gestion_transactions.tpl:117
 #: ../templates/default/gestion_transactions.tpl:125
@@ -6251,11 +5746,6 @@ msgstr "Fail to add new group."
 msgid "fingerprint:"
 msgstr "fingerprint:"
 
-#: ../templates/bootstrap/gestion_mailings.tpl:58
-#: ../templates/default/gestion_mailings.tpl:58
-msgid "Att."
-msgstr "Att."
-
 #: ../export.php:122
 msgid ""
 "Export file could not be write on disk for '%export'. Make sure web server "
@@ -6263,11 +5753,6 @@ msgid ""
 msgstr ""
 "Export file could not be write on disk for '%export'. Make sure web server "
 "can write in the exports directory."
-
-#: ../templates/bootstrap/lostpasswd.tpl:15
-#: ../templates/default/lostpasswd.tpl:8
-msgid "Recover password"
-msgstr "Recover password"
 
 #: ../desktop.php:51 ../templates/bootstrap/page.tpl:111
 #: ../templates/default/page.tpl:111
@@ -6321,11 +5806,6 @@ msgstr "A problem happened while sending impending membership mail"
 msgid "Mail body"
 msgstr "Mail body"
 
-#: ../templates/bootstrap/import_model.tpl:10
-#: ../templates/default/import_model.tpl:10
-msgid "Default fields"
-msgstr "Default fields"
-
 #: ../lib/Galette/Entity/Group.php:409
 msgid "Group added"
 msgstr "Group added"
@@ -6336,8 +5816,7 @@ msgstr "Group added"
 msgid "Up to date members"
 msgstr "Up to date members"
 
-#: ../lib/Galette/Core/Install.php:149 ../install/installer.php:293
-#: ../install/old.index.php:237 ../install/old.index.php:1533
+#: ../lib/Galette/Core/Install.php:149
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:99
 #: ../templates/default/ajax_plugins_initdb.tpl:134
 msgid "End!"
@@ -6357,10 +5836,6 @@ msgstr "Generate labels"
 #: ../templates/default/voir_adherent.tpl:260
 msgid "Other informations (admin):"
 msgstr "Other informations (admin):"
-
-#: ../templates/default/footer.tpl:14
-msgid "%s on Twitter!"
-msgstr "%s on Twitter!"
 
 #: ../templates/bootstrap/member.tpl:375 ../templates/default/member.tpl:375
 msgid "Manage user's managed groups"
@@ -6421,8 +5896,6 @@ msgstr "Upload file"
 msgid "A problem happened while sending password for account '%s'"
 msgstr "A problem happened while sending password for account '%s'"
 
-#: ../install/installer.php:230 ../install/old.index.php:526
-#: ../install/old.index.php:1162 ../install/old.index.php:1463
 #: ../templates/bootstrap/global_messages.tpl:4
 #: ../templates/bootstrap/mailing_adherents.tpl:3
 #: ../templates/default/global_messages.tpl:4
@@ -6430,11 +5903,10 @@ msgstr "A problem happened while sending password for account '%s'"
 msgid "- ERROR -"
 msgstr "- ERROR -"
 
-#: ../install/old.index.php:1094
-#: ../templates/bootstrap/ajax_plugins_initdb.tpl:44
-#: ../templates/default/ajax_plugins_initdb.tpl:75
-msgid "(Errors on DROP and RENAME operations can be ignored)"
-msgstr "(Errors on DROP and RENAME operations can be ignored)"
+#: ../templates/bootstrap/traduire_libelles.tpl:12
+#: ../templates/default/traduire_libelles.tpl:12
+msgid "Original text: '%s'"
+msgstr "Original text: '%s'"
 
 #: ../ajouter_contribution.php:199
 msgid "The configured post contribution script has failed."
@@ -6457,7 +5929,7 @@ msgstr "Account:"
 msgid "Members"
 msgstr "Members"
 
-#: ../ajax_plugins_initdb.php:228 ../install/steps/db_checks.php:146
+#: ../ajax_plugins_initdb.php:228
 msgid "ALTER operation not allowed"
 msgstr "ALTER operation not allowed"
 
@@ -6477,20 +5949,10 @@ msgstr "Society"
 msgid "Long Text (Bottom Line):"
 msgstr "Long Text (Bottom Line):"
 
-#: ../templates/bootstrap/preferences.tpl:363
-#: ../templates/default/ajax_members.tpl:9
-#: ../templates/default/preferences.tpl:374
-msgid "Zip - Town"
-msgstr "Zip - Town"
-
-#: ../templates/bootstrap/gestion_transactions.tpl:140
-#: ../templates/bootstrap/gestion_contributions.tpl:271
-#: ../templates/bootstrap/gestion_adherents.tpl:297
-#: ../templates/default/gestion_transactions.tpl:148
-#: ../templates/default/gestion_contributions.tpl:269
-#: ../templates/default/gestion_adherents.tpl:303
-msgid "Show legend"
-msgstr "Show legend"
+#: ../templates/bootstrap/gestion_contributions.tpl:224
+#: ../templates/default/gestion_contributions.tpl:222
+msgid "Print an invoice or a receipt (depending on contribution type)"
+msgstr "Print an invoice or a receipt (depending on contribution type)"
 
 #: ../lib/Galette/Repository/Contributions.php:628
 #: ../lib/Galette/Repository/Contributions.php:665
@@ -6566,8 +6028,7 @@ msgstr "Email Body:"
 msgid "Add new free search criteria"
 msgstr "Add new free search criteria"
 
-#: ../ajax_plugins_initdb.php:150 ../install/steps/db_checks.php:68
-#: ../install/old.index.php:792
+#: ../ajax_plugins_initdb.php:150
 msgid "CREATE operation allowed"
 msgstr "CREATE operation allowed"
 
@@ -6598,12 +6059,6 @@ msgstr "Website"
 #: ../templates/default/ajax_members.tpl:54
 msgid "Selected members"
 msgstr "Selected members"
-
-#: ../templates/bootstrap/gestion_contributions.tpl:5
-#: ../templates/default/gestion_transactions.tpl:5
-#: ../templates/default/gestion_contributions.tpl:11
-msgid "until"
-msgstr "until"
 
 #: ../lib/Galette/Entity/Title.php:182
 msgid "You cannot delete Mr. or Mrs. titles!"
@@ -6636,20 +6091,15 @@ msgstr "Admin"
 msgid "Display mailing '%subject' details in preview window"
 msgstr "Display mailing '%subject' details in preview window"
 
-#: ../templates/bootstrap/advanced_search.tpl:201
-#: ../templates/default/advanced_search.tpl:211
-msgid ""
-"If your query does not begin with a 'SELECT' statement, it will "
-"automatically be added."
-msgstr ""
-"If your query does not begin with a 'SELECT' statement, it will "
-"automatically be added."
+#: ../templates/bootstrap/gestion_adherents.tpl:241
+#: ../templates/default/gestion_adherents.tpl:247
+msgid "Membership in order"
+msgstr "Membership in order"
 
 #: ../import.php:122
 msgid "File '%filename%' has been successfully imported :)"
 msgstr "File '%filename%' has been successfully imported :)"
 
-#: ../install/steps/type.php:56 ../install/old.index.php:323
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:17
 #: ../templates/default/ajax_plugins_initdb.tpl:28
 msgid "Update"
@@ -6667,10 +6117,14 @@ msgstr "no contribution"
 msgid "Modification date"
 msgstr "Modification date"
 
-#: ../install/steps/type.php:46
-#: ../templates/default/ajax_plugins_initdb.tpl:17
-msgid "New installation"
-msgstr "New installation"
+#: ../templates/bootstrap/gestion_adherents.tpl:329
+#: ../templates/default/gestion_adherents.tpl:335
+msgid ""
+"A mailing already exists. Do you want to create a new one or resume the "
+"existing?"
+msgstr ""
+"A mailing already exists. Do you want to create a new one or resume the "
+"existing?"
 
 #: ../includes/fields_defs/pdfmodels_fields.php:110
 #: ../includes/fields_defs/pdfmodels_fields.php:155
@@ -6686,10 +6140,10 @@ msgstr ""
 "Back to previous window, if you want to select a contribution type that is "
 "not listed here"
 
-#: ../install/steps/db_select_version.php:91
-#: ../templates/default/ajax_plugins_initdb.tpl:59
-msgid "comprised between"
-msgstr "comprised between"
+#: ../templates/bootstrap/plugins.tpl:2 ../templates/bootstrap/plugins.tpl:15
+#: ../templates/default/plugins.tpl:2 ../templates/default/plugins.tpl:15
+msgid "Active plugins"
+msgstr "Active plugins"
 
 #: ../templates/bootstrap/preferences.tpl:327
 #: ../templates/default/preferences.tpl:338
@@ -6780,7 +6234,6 @@ msgstr "Vice-treasurer"
 msgid "File upload stopped by extension"
 msgstr "File upload stopped by extension"
 
-#: ../install/old.index.php:768
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:36
 msgid ""
 "To run, Galette needs a number of rights on the database (CREATE, DROP, "
@@ -6793,7 +6246,6 @@ msgstr ""
 msgid "- Invalid number of months of membership extension."
 msgstr "- Invalid number of months of membership extension."
 
-#: ../install/steps/type.php:61 ../install/old.index.php:324
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:9
 #: ../templates/bootstrap/import.tpl:8
 #: ../templates/default/ajax_plugins_initdb.tpl:33
@@ -6801,9 +6253,11 @@ msgstr "- Invalid number of months of membership extension."
 msgid "Warning: Don't forget to backup your current database."
 msgstr "Warning: Don't forget to backup your current database."
 
-#: ../install/old.index.php:1269
-msgid "Default contributions types cannot be initialized."
-msgstr "Default contributions types cannot be initialized."
+#: ../templates/bootstrap/gestion_contributions.tpl:5
+#: ../templates/default/gestion_transactions.tpl:5
+#: ../templates/default/gestion_contributions.tpl:11
+msgid "until"
+msgstr "until"
 
 #: ../templates/bootstrap/gestion_adherents.tpl:175
 #: ../templates/default/gestion_adherents.tpl:181
@@ -6825,9 +6279,14 @@ msgstr "Edit the contribution"
 msgid "Mailing preview"
 msgstr "Mailing preview"
 
-#: ../install/old.index.php:417
-msgid "Your PHP date settings seem correct."
-msgstr "Your PHP date settings seem correct."
+#: ../templates/bootstrap/preferences.tpl:228
+#: ../templates/default/preferences.tpl:239
+msgid ""
+"Would emailing use any SMTP authentication? You'll have to provide username "
+"and passwrod below. For GMail, authentication will always be on."
+msgstr ""
+"Would emailing use any SMTP authentication? You'll have to provide username "
+"and passwrod below. For GMail, authentication will always be on."
 
 #: ../templates/bootstrap/preferences.tpl:136
 #: ../templates/default/preferences.tpl:136
@@ -6845,12 +6304,7 @@ msgstr "- The username cannot contain the @ character"
 msgid "Receipt"
 msgstr "Receipt"
 
-#: ../templates/bootstrap/gestion_contributions.tpl:28
-#: ../templates/default/gestion_contributions.tpl:34
-msgid "Show all members contributions"
-msgstr "Show all members contributions"
-
-#: ../ajax_plugins_initdb.php:260 ../install/old.index.php:914
+#: ../ajax_plugins_initdb.php:260
 msgid "Creation of the tables"
 msgstr "Creation of the tables"
 
@@ -6869,18 +6323,14 @@ msgstr "- Mandatory field empty."
 msgid "[M]"
 msgstr "[M]"
 
-#: ../templates/bootstrap/preferences.tpl:17
-#: ../templates/default/preferences.tpl:17
-msgid "Name of the association:"
-msgstr "Name of the association:"
+#: ../templates/default/edit_dynamic_fields.tpl:74
+msgid "delete"
+msgstr "delete"
 
-#: ../install/installer.php:98 ../install/old.index.php:98
-msgid "No host"
-msgstr "No host"
-
-#: ../install/steps/admin.php:44 ../install/old.index.php:1168
-msgid "Please chose the parameters of the admin account on Galette"
-msgstr "Please chose the parameters of the admin account on Galette"
+#: ../templates/bootstrap/gestion_adherents.tpl:197
+#: ../templates/default/gestion_adherents.tpl:203
+msgid "[$]"
+msgstr "[$]"
 
 #: ../templates/bootstrap/mailing_adherents.tpl:15
 #: ../templates/default/mailing_adherents.tpl:15
@@ -6900,9 +6350,16 @@ msgstr "No file was uploaded"
 msgid "Reply-To Email:"
 msgstr "Reply-To Email:"
 
-#: ../install/steps/check.php:68
-msgid "Compilation"
-msgstr "Compilation"
+#: ../templates/bootstrap/ajouter_transaction.tpl:37
+#: ../templates/bootstrap/member.tpl:23 ../templates/bootstrap/group.tpl:68
+#: ../templates/bootstrap/preferences.tpl:423
+#: ../templates/bootstrap/ajouter_contribution.tpl:40
+#: ../templates/default/ajouter_transaction.tpl:37
+#: ../templates/default/member.tpl:23 ../templates/default/group.tpl:69
+#: ../templates/default/preferences.tpl:434
+#: ../templates/default/ajouter_contribution.tpl:40
+msgid "NB : The mandatory fields are in"
+msgstr "NB : The mandatory fields are in"
 
 #: ../templates/bootstrap/gestion_pdf.tpl:69
 #: ../templates/default/gestion_pdf.tpl:81
@@ -6945,10 +6402,6 @@ msgstr "(Months)"
 msgid "Identity:"
 msgstr "Identity:"
 
-#: ../install/steps/db_checks.php:188 ../install/old.index.php:743
-msgid "Database exists and connection parameters are OK."
-msgstr "Database exists and connection parameters are OK."
-
 #: ../templates/bootstrap/gestion_titres.tpl:41
 #: ../templates/default/gestion_titres.tpl:41
 msgid "Delete '%s' title"
@@ -6975,8 +6428,7 @@ msgstr "Fail to add new contribution."
 msgid "Translate additionnals fields labels"
 msgstr "Translate additionnals fields labels"
 
-#: ../lib/Galette/Core/Install.php:143 ../install/installer.php:288
-#: ../install/old.index.php:229 ../install/old.index.php:1531
+#: ../lib/Galette/Core/Install.php:143
 msgid "Admin parameters"
 msgstr "Admin parameters"
 
@@ -7009,26 +6461,19 @@ msgstr "Cannot remove '%export' from disk :/"
 msgid "Companies"
 msgstr "Companies"
 
-#: ../install/old.index.php:71 ../install/old.index.php:82
-msgid "Installation mode unknown"
-msgstr "Installation mode unknown"
-
 #: ../templates/bootstrap/advanced_search.tpl:185
 #: ../templates/default/advanced_search.tpl:195
 msgid "Remove criteria"
 msgstr "Remove criteria"
 
-#: ../install/old.index.php:388
-msgid "PHP version %version"
-msgstr "PHP version %version"
+#: ../templates/default/editer_champ.tpl:42
+msgid "Maximum file size, in Ko."
+msgstr "Maximum file size, in Ko."
 
-#: ../templates/bootstrap/plugins.tpl:9 ../templates/default/plugins.tpl:9
-msgid "Release date"
-msgstr "Release date"
-
-#: ../install/old.index.php:1295 ../install/old.index.php:1368
-msgid "Default fields configuration was successfully stored."
-msgstr "Default fields configuration was successfully stored."
+#: ../templates/bootstrap/change_passwd.tpl:12
+#: ../templates/default/change_passwd.tpl:12
+msgid "Confirmation:"
+msgstr "Confirmation:"
 
 #: ../templates/bootstrap/advanced_search.tpl:7
 #: ../templates/bootstrap/gestion_adherents.tpl:5
@@ -7051,11 +6496,6 @@ msgstr "Edit field %field"
 #: ../templates/default/traduire_libelles.tpl:6
 msgid "Choose label to translate"
 msgstr "Choose label to translate"
-
-#: ../templates/bootstrap/mailing_adherents.tpl:81
-#: ../templates/default/mailing_adherents.tpl:81
-msgid "Preview"
-msgstr "Preview"
 
 #: ../templates/bootstrap/gestion_intitule_content.tpl:72
 #: ../templates/bootstrap/gestion_titres.tpl:40
@@ -7092,9 +6532,15 @@ msgstr "Subject"
 msgid "None"
 msgstr "None"
 
-#: ../install/old.index.php:1464
-msgid "Parameters couldn't be saved."
-msgstr "Parameters couldn't be saved."
+#: ../templates/bootstrap/public_page.tpl:34
+#: ../templates/bootstrap/page.tpl:89 ../templates/default/public_page.tpl:34
+#: ../templates/default/page.tpl:89
+msgid ""
+"Your browser version is way too old and no longer supported in Galette for a "
+"while."
+msgstr ""
+"Your browser version is way too old and no longer supported in Galette for a "
+"while."
 
 #: ../gestion_adherents.php:255
 msgid "Unable to remove selected member(s)"
@@ -7106,10 +6552,6 @@ msgstr "Unable to remove selected member(s)"
 #: ../templates/default/import_model.tpl:40
 msgid "Field"
 msgstr "Field"
-
-#: ../install/old.index.php:727
-msgid "Go back"
-msgstr "Go back"
 
 #: ../templates/bootstrap/reminder.tpl:3 ../templates/default/reminder.tpl:3
 msgid "Choose wich reminder(s) you want to send:"
@@ -7124,9 +6566,11 @@ msgstr "An error occured trying to remove group :/"
 msgid "ICQ"
 msgstr "ICQ"
 
-#: ../install/old.index.php:1306 ../install/old.index.php:1356
-msgid "Titles were successfully stored."
-msgstr "Titles were successfully stored."
+#: ../templates/bootstrap/preferences.tpl:363
+#: ../templates/default/ajax_members.tpl:9
+#: ../templates/default/preferences.tpl:374
+msgid "Zip - Town"
+msgstr "Zip - Town"
 
 #: ../includes/fields_defs/members_fields.php:124
 msgid "Address (continuation)"
@@ -7171,10 +6615,6 @@ msgstr ""
 "You're installing '%name' plugin for the first time, or you wish to erase an "
 "older version of the plugin without keeping your data"
 
-#: ../install/steps/db_install.php:47
-msgid "Database has not been installed!"
-msgstr "Database has not been installed!"
-
 #: ../gestion_contributions.php:123
 msgid "- Unknown payment type!"
 msgstr "- Unknown payment type!"
@@ -7206,8 +6646,7 @@ msgstr "Page %i"
 msgid "Unable to convert GIF file "
 msgstr "Unable to convert GIF file "
 
-#: ../ajax_plugins_initdb.php:206 ../install/steps/db_checks.php:124
-#: ../install/old.index.php:832
+#: ../ajax_plugins_initdb.php:206
 msgid "DELETE operation allowed"
 msgstr "DELETE operation allowed"
 
@@ -7221,10 +6660,6 @@ msgstr "Your current %name version is comprised between"
 #: ../templates/default/gestion_adherents.tpl:47
 msgid "member"
 msgstr "member"
-
-#: ../install/old.index.php:1302 ../install/old.index.php:1352
-msgid "Titles cannot be initialized."
-msgstr "Titles cannot be initialized."
 
 #: ../champs_adherents.php:68 ../includes/fields_defs/members_fields.php:300
 msgid "Due date:"
@@ -7260,10 +6695,6 @@ msgstr "A group cannot be set as its own parent!"
 msgid "An error occured while storing the contribution."
 msgstr "An error occured while storing the contribution."
 
-#: ../install/old.index.php:1207
-msgid "Save the parameters"
-msgstr "Save the parameters"
-
 #: ../import_model.php:118
 msgid "CVS import model"
 msgstr "CVS import model"
@@ -7292,9 +6723,9 @@ msgstr "Preview your mailing"
 msgid "Sent reminder mail for late membership"
 msgstr "Sent reminder mail for late membership"
 
-#: ../install/scripts/upgrade-to-0.8.php:215
-msgid "Directory %dir has not been moved :("
-msgstr "Directory %dir has not been moved :("
+#: ../templates/bootstrap/page.tpl:138 ../templates/default/page.tpl:138
+msgid "Public pages"
+msgstr "Public pages"
 
 #: ../lib/Galette/Core/Authentication.php:268
 msgid "Logged in as:<br/>%login"
@@ -7305,9 +6736,9 @@ msgstr "Logged in as:<br/>%login"
 msgid "View and manage groups"
 msgstr "View and manage groups"
 
-#: ../templates/bootstrap/member.tpl:77 ../templates/default/member.tpl:77
-msgid "Is company?"
-msgstr "Is company?"
+#: ../templates/default/footer.tpl:14
+msgid "%s on Twitter!"
+msgstr "%s on Twitter!"
 
 #: ../templates/bootstrap/gestion_textes.tpl:49
 #: ../templates/default/gestion_textes.tpl:49
@@ -7330,9 +6761,14 @@ msgstr "Missing PDF model type!"
 msgid "Begin"
 msgstr "Begin"
 
-#: ../install/old.index.php:1404
-msgid "Default texts were successfully stored."
-msgstr "Default texts were successfully stored."
+#: ../templates/bootstrap/gestion_transactions.tpl:140
+#: ../templates/bootstrap/gestion_contributions.tpl:271
+#: ../templates/bootstrap/gestion_adherents.tpl:297
+#: ../templates/default/gestion_transactions.tpl:148
+#: ../templates/default/gestion_contributions.tpl:269
+#: ../templates/default/gestion_adherents.tpl:303
+msgid "Show legend"
+msgstr "Show legend"
 
 #: ../ajouter_transaction.php:88
 msgid "Unable to attach contribution to transaction"
@@ -7370,7 +6806,7 @@ msgid "Font size:"
 msgstr "Font size:"
 
 #: ../templates/bootstrap/liste_membres.tpl:96
-#: ../templates/bootstrap/trombinoscope.tpl:7
+#: ../templates/bootstrap/trombinoscope.tpl:26
 #: ../templates/default/liste_membres.tpl:101
 #: ../templates/default/trombinoscope.tpl:7
 msgid "No member to show"
@@ -7380,10 +6816,6 @@ msgstr "No member to show"
 #: ../templates/default/gestion_titres.tpl:7
 msgid "Long form"
 msgstr "Long form"
-
-#: ../install/old.index.php:374
-msgid "PHP Version"
-msgstr "PHP Version"
 
 #: ../change_passwd.php:91
 msgid ""
@@ -7412,7 +6844,6 @@ msgstr "Related transaction informations"
 msgid "Priority:"
 msgstr "Priority:"
 
-#: ../install/old.index.php:771
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:39
 msgid ""
 "In order to be updated, Galette needs a number of rights on the database "
@@ -7449,10 +6880,6 @@ msgstr "Contribution amount"
 msgid "Additionnal fields:"
 msgstr "Additionnal fields:"
 
-#: ../templates/default/public_page.tpl:47
-msgid "View your member card"
-msgstr "View your member card"
-
 #: ../templates/bootstrap/config_fields.tpl:12
 #: ../templates/default/config_fields.tpl:12
 msgid "Add new category"
@@ -7462,9 +6889,9 @@ msgstr "Add new category"
 msgid "%A, %B %#d%O %Y"
 msgstr "%A, %B %#d%O %Y"
 
-#: ../install/old.index.php:1273
-msgid "Default contributions types were successfully stored."
-msgstr "Default contributions types were successfully stored."
+#: ../templates/bootstrap/plugins.tpl:50 ../templates/default/plugins.tpl:50
+msgid "Enable plugin"
+msgstr "Enable plugin"
 
 #: ../lib/Galette/Entity/Adherent.php:1048
 msgid "An error has occured while looking if status is already in use."
@@ -7478,9 +6905,410 @@ msgstr "Login %s does not exist"
 msgid "Donation"
 msgstr "Donation"
 
-#: ../install/steps/check.php:90
-msgid "Galette requirements are met :)"
-msgstr "Galette requirements are met :)"
+#: ../templates/bootstrap/import.tpl:54 ../templates/default/import.tpl:54
+msgid "Upload new file"
+msgstr "Upload new file"
+
+#~ msgid "Check the parameters and the existence of the database"
+#~ msgstr "Check the parameters and the existence of the database"
+
+#~ msgid "Temporary images"
+#~ msgstr "Temporary images"
+
+#~ msgid "Directory %dir has been moved!"
+#~ msgstr "Directory %dir has been moved!"
+
+#~ msgid "Admin settings"
+#~ msgstr "Admin settings"
+
+#~ msgid "Cache"
+#~ msgstr "Cache"
+
+#~ msgid "Default preferences were successfully stored."
+#~ msgstr "Default preferences were successfully stored."
+
+#~ msgid ""
+#~ "You're installing Galette for the first time, or you wish to erase an "
+#~ "older version of Galette without keeping your data"
+#~ msgstr ""
+#~ "You're installing Galette for the first time, or you wish to erase an "
+#~ "older version of Galette without keeping your data"
+
+#~ msgid ""
+#~ "Some PHP modules are missing. Please install them or contact your support."
+#~ "<br/>More informations on required modules may be found in the "
+#~ "documentation."
+#~ msgstr ""
+#~ "Some PHP modules are missing. Please install them or contact your support."
+#~ "<br/>More informations on required modules may be found in the "
+#~ "documentation."
+
+#~ msgid "Password mismatch!"
+#~ msgstr "Password mismatch!"
+
+#~ msgid "Default status cannot be initialized."
+#~ msgstr "Default status cannot be initialized."
+
+#~ msgid "Your current Galette version is"
+#~ msgstr "Your current Galette version is"
+
+#~ msgid ""
+#~ "Database can't be reached. Please go back to enter the connection "
+#~ "parameters again."
+#~ msgstr ""
+#~ "Database can't be reached. Please go back to enter the connection "
+#~ "parameters again."
+
+#~ msgid "Default status were successfully stored."
+#~ msgstr "Default status were successfully stored."
+
+#~ msgid "Default texts cannot be initialized."
+#~ msgstr "Default texts cannot be initialized."
+
+#~ msgid "ALTER Operation allowed"
+#~ msgstr "ALTER Operation allowed"
+
+#~ msgid "Database access/permissions"
+#~ msgstr "Database access/permissions"
+
+#~ msgid "Permissions on the base"
+#~ msgstr "Permissions on the base"
+
+#~ msgid ""
+#~ "you already have installed Galette, and you want to upgrade to the latest "
+#~ "version"
+#~ msgstr ""
+#~ "you already have installed Galette, and you want to upgrade to the latest "
+#~ "version"
+
+#~ msgid "Database has been installed :)"
+#~ msgstr "Database has been installed :)"
+
+#~ msgid "Database has not been upgraded!"
+#~ msgstr "Database has not been upgraded!"
+
+#~ msgid "Installation Report"
+#~ msgstr "Installation Report"
+
+#~ msgid "Database type:"
+#~ msgstr "Database type:"
+
+#~ msgid "Unable to create main datadir in %path!"
+#~ msgstr "Unable to create main datadir in %path!"
+
+#~ msgid "Language"
+#~ msgstr "Language"
+
+#~ msgid "Please select your administration language"
+#~ msgstr "Please select your administration language"
+
+#~ msgid "User:"
+#~ msgstr "User:"
+
+#~ msgid "Under UNIX/Linux, you can give the permissions using those commands"
+#~ msgstr "Under UNIX/Linux, you can give the permissions using those commands"
+
+#~ msgid "Required fields upgrade has failed :("
+#~ msgstr "Required fields upgrade has failed :("
+
+#~ msgid "file_name"
+#~ msgstr "file_name"
+
+#~ msgid "Update Report"
+#~ msgstr "Update Report"
+
+#~ msgid "Directory %dir is not in its original path and will not be moved."
+#~ msgstr "Directory %dir is not in its original path and will not be moved."
+
+#~ msgid "No database name"
+#~ msgstr "No database name"
+
+#~ msgid "Homepage"
+#~ msgstr "Homepage"
+
+#~ msgid "apache_user"
+#~ msgstr "apache_user"
+
+#~ msgid "Photos"
+#~ msgstr "Photos"
+
+#~ msgid "Default preferences cannot be initialized."
+#~ msgstr "Default preferences cannot be initialized."
+
+#~ msgid "Data initialized."
+#~ msgstr "Data initialized."
+
+#~ msgid "Configuration file created!"
+#~ msgstr "Configuration file created!"
+
+#~ msgid "Welcome to the Galette Install!"
+#~ msgstr "Welcome to the Galette Install!"
+
+#~ msgid "PHP version"
+#~ msgstr "PHP version"
+
+#~ msgid "Saving the parameters"
+#~ msgstr "Saving the parameters"
+
+#~ msgid "Galette has been successfully updated!"
+#~ msgstr "Galette has been successfully updated!"
+
+#~ msgid ""
+#~ "This can come from the permissions on the configuration file or the "
+#~ "impossibility to make an INSERT into the database."
+#~ msgstr ""
+#~ "This can come from the permissions on the configuration file or the "
+#~ "impossibility to make an INSERT into the database."
+
+#~ msgid ""
+#~ "you wish to erase an older version of Galette without keeping your data"
+#~ msgstr ""
+#~ "you wish to erase an older version of Galette without keeping your data"
+
+#~ msgid "Mr."
+#~ msgstr "Mr."
+
+#~ msgid "Unable to connect to the database"
+#~ msgstr "Unable to connect to the database"
+
+#~ msgid "Files permissions are not OK!"
+#~ msgstr "Files permissions are not OK!"
+
+#~ msgid "you're installing Galette for the first time"
+#~ msgstr "you're installing Galette for the first time"
+
+#~ msgid "To secure the system, please delete the install directory"
+#~ msgstr "To secure the system, please delete the install directory"
+
+#~ msgid "Table prefix:"
+#~ msgstr "Table prefix:"
+
+#~ msgid "Check above errors to know what went wrong."
+#~ msgstr "Check above errors to know what went wrong."
+
+#~ msgid "Database has been upgraded :)"
+#~ msgstr "Database has been upgraded :)"
+
+#, fuzzy
+#~ msgid "Choose language"
+#~ msgstr "Choose language"
+
+#~ msgid ""
+#~ "Your previous version should be selected and <strong>displayed in bold</"
+#~ "strong>."
+#~ msgstr ""
+#~ "Your previous version should be selected and <strong>displayed in bold</"
+#~ "strong>."
+
+#~ msgid ""
+#~ "In order to be updated, Galette needs write permission on files listed "
+#~ "above."
+#~ msgstr ""
+#~ "In order to be updated, Galette needs write permission on files listed "
+#~ "above."
+
+#~ msgid ""
+#~ "Under Windows, check these directories are not in Read-Only mode in their "
+#~ "property panel."
+#~ msgstr ""
+#~ "Under Windows, check these directories are not in Read-Only mode in their "
+#~ "property panel."
+
+#~ msgid "Enter connection data for the existing database."
+#~ msgstr "Enter connection data for the existing database."
+
+#~ msgid "Galette has been successfully installed!"
+#~ msgstr "Galette has been successfully installed!"
+
+#~ msgid "Date settings"
+#~ msgstr "Date settings"
+
+#~ msgid ""
+#~ "It seems you already use latest Galette version!<br/>Are you sure you "
+#~ "want to upgrade?"
+#~ msgstr ""
+#~ "It seems you already use latest Galette version!<br/>Are you sure you "
+#~ "want to upgrade?"
+
+#~ msgid "older than %version"
+#~ msgstr "older than %version"
+
+#~ msgid "Default fields configuration cannot be initialized."
+#~ msgstr "Default fields configuration cannot be initialized."
+
+#~ msgid "PDF models were successfully stored."
+#~ msgstr "PDF models were successfully stored."
+
+#~ msgid "PDF models cannot be initialized."
+#~ msgstr "PDF models cannot be initialized."
+
+#~ msgid "No update script found!"
+#~ msgstr "No update script found!"
+
+#~ msgid "Connection to database successfull"
+#~ msgstr "Connection to database successfull"
+
+#~ msgid "Database:"
+#~ msgstr "Database:"
+
+#~ msgid "Files"
+#~ msgstr "Files"
+
+#~ msgid "No port"
+#~ msgstr "No port"
+
+#~ msgid "Galette installation"
+#~ msgstr "Galette installation"
+
+#~ msgid "Your current Galette version is comprised between"
+#~ msgstr "Your current Galette version is comprised between"
+
+#~ msgid "Galette Installation"
+#~ msgstr "Galette Installation"
+
+#~ msgid "The tables has been correctly created."
+#~ msgstr "The tables has been correctly created."
+
+#~ msgid "Required fields have been upgraded successfully."
+#~ msgstr "Required fields have been upgraded successfully."
+
+#~ msgid "(Indicate the CURRENT prefix of your Galette tables)"
+#~ msgstr "(Indicate the CURRENT prefix of your Galette tables)"
+
+#~ msgid "Access to the database"
+#~ msgstr "Access to the database"
+
+#~ msgid ""
+#~ "Your PHP date settings are not correct. Maybe you've missed the timezone "
+#~ "settings that is mandatory since PHP 5.3?"
+#~ msgstr ""
+#~ "Your PHP date settings are not correct. Maybe you've missed the timezone "
+#~ "settings that is mandatory since PHP 5.3?"
+
+#~ msgid "PHP Modules"
+#~ msgstr "PHP Modules"
+
+#~ msgid "Host:"
+#~ msgstr "Host:"
+
+#~ msgid "Unable to create datadir in %dir!"
+#~ msgstr "Unable to create datadir in %dir!"
+
+#~ msgid "Select your previous Galette version below, and then click next."
+#~ msgstr "Select your previous Galette version below, and then click next."
+
+#~ msgid "The tables has been correctly updated."
+#~ msgstr "The tables has been correctly updated."
+
+#~ msgid "The username cannot contain the @ character"
+#~ msgstr "The username cannot contain the @ character"
+
+#~ msgid "Files permissions"
+#~ msgstr "Files permissions"
+
+#~ msgid ""
+#~ "The needed permissions are CREATE, DROP, DELETE, UPDATE, SELECT and "
+#~ "INSERT."
+#~ msgstr ""
+#~ "The needed permissions are CREATE, DROP, DELETE, UPDATE, SELECT and "
+#~ "INSERT."
+
+#~ msgid "ALTER Operation not allowed"
+#~ msgstr "ALTER Operation not allowed"
+
+#~ msgid "directory_name"
+#~ msgstr "directory_name"
+
+#~ msgid ""
+#~ "To work as excpected, Galette needs write permission on files listed "
+#~ "above."
+#~ msgstr ""
+#~ "To work as excpected, Galette needs write permission on files listed "
+#~ "above."
+
+#~ msgid "Galette initialisation"
+#~ msgstr "Galette initialisation"
+
+#~ msgid "No user name"
+#~ msgstr "No user name"
+
+#~ msgid "Port:"
+#~ msgstr "Port:"
+
+#~ msgid "Check of the database"
+#~ msgstr "Check of the database"
+
+#~ msgid "If it hadn't been made, create a database and a user for Galette."
+#~ msgstr "If it hadn't been made, create a database and a user for Galette."
+
+#~ msgid "Your current Galette version is..."
+#~ msgstr "Your current Galette version is..."
+
+#~ msgid "Galette requires at least PHP version %ver!"
+#~ msgstr "Galette requires at least PHP version %ver!"
+
+#~ msgid "File %file has not been moved :-/"
+#~ msgstr "File %file has not been moved :-/"
+
+#~ msgid "Default contributions types cannot be initialized."
+#~ msgstr "Default contributions types cannot be initialized."
+
+#~ msgid "Your PHP date settings seem correct."
+#~ msgstr "Your PHP date settings seem correct."
+
+#~ msgid "No host"
+#~ msgstr "No host"
+
+#~ msgid "Please chose the parameters of the admin account on Galette"
+#~ msgstr "Please chose the parameters of the admin account on Galette"
+
+#~ msgid "Compilation"
+#~ msgstr "Compilation"
+
+#~ msgid "Database exists and connection parameters are OK."
+#~ msgstr "Database exists and connection parameters are OK."
+
+#~ msgid "Installation mode unknown"
+#~ msgstr "Installation mode unknown"
+
+#~ msgid "PHP version %version"
+#~ msgstr "PHP version %version"
+
+#~ msgid "Default fields configuration was successfully stored."
+#~ msgstr "Default fields configuration was successfully stored."
+
+#~ msgid "Parameters couldn't be saved."
+#~ msgstr "Parameters couldn't be saved."
+
+#~ msgid "Go back"
+#~ msgstr "Go back"
+
+#~ msgid "Titles were successfully stored."
+#~ msgstr "Titles were successfully stored."
+
+#~ msgid "Database has not been installed!"
+#~ msgstr "Database has not been installed!"
+
+#~ msgid "Titles cannot be initialized."
+#~ msgstr "Titles cannot be initialized."
+
+#~ msgid "Save the parameters"
+#~ msgstr "Save the parameters"
+
+#~ msgid "Directory %dir has not been moved :("
+#~ msgstr "Directory %dir has not been moved :("
+
+#~ msgid "Default texts were successfully stored."
+#~ msgstr "Default texts were successfully stored."
+
+#~ msgid "PHP Version"
+#~ msgstr "PHP Version"
+
+#~ msgid "Default contributions types were successfully stored."
+#~ msgstr "Default contributions types were successfully stored."
+
+#~ msgid "Galette requirements are met :)"
+#~ msgstr "Galette requirements are met :)"
 
 #~ msgid "d/m/Y"
 #~ msgstr "d/m/Y"

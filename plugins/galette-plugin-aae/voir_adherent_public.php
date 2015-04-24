@@ -15,13 +15,15 @@ use Galette\AAE\Cycles as Cycles;
 use Galette\Entity\Adherent as Adherent;
 use Galette\Entity\FieldsConfig;
 
-if ( !$preferences->showPublicPages($login) ) {
-    //public pages are not actives
-    header('location:' . GALETTE_BASE_PATH  . 'index.php');
+if ( !$login->isLogged() ) {
+    header('location:'. GALETTE_BASE_PATH .'index.php');
     die();
 }
 
 $id_adh = get_numeric_form_value('id_adh', '');
+if($id_adh == ''){
+	$id_adh = $login->id;
+}
 
 $member = new Adherent();
 $member->load($id_adh);
