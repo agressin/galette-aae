@@ -375,6 +375,7 @@ class Annuaire
 				$init=true;
 			};
 			if (array_key_exists("employeur",$req)){
+				//TODO : ça ne peut pas fonctionner !? il faut utiliser la table entreprises ...
 				$select->where->equalTo('f.id_employeur', $req["employeur"]);
 				$init=true;
 			}; 
