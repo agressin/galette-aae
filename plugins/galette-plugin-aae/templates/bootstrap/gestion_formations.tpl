@@ -57,7 +57,7 @@
     {if $haveRights}
         <script type="text/javascript">
 
-            var intiateSelects = function() {
+            var initiateSelects = function() {
                 var myDate = new Date();
             
                 var year = myDate.getFullYear();
@@ -67,6 +67,7 @@
                 };
 
                 $('#EndYear').append('<option value="'+year+'">'+year+'</option>');
+                updateSelect();
             };
 
             var updateSelect = function () {
@@ -80,13 +81,12 @@
 
                 var myDate = new Date();
             
-                var year = myDate.getFullYear();
+                var year = myDate.getFullYear() +3;
 
                 for(var i = year; i >= 1950; i--){
-                    if(i>startYearSave) $('#EndYear').append('<option value="'+i+'">'+i+'</option>');
-                    if((i-1)<endYearSave)
+                    if(i>=startYearSave) $('#EndYear').append('<option value="'+i+'">'+i+'</option>');
+                    if((i-1)<=endYearSave)
                     {
-                        
                         $('#StartYear').append('<option value="'+ (i-1) +'">'+ (i-1) +'</option>');
                     } 
                 };
@@ -95,13 +95,8 @@
                 $('#EndYear').val(endYearSave);
 
             };
-
-            $('#StartYear').change(updateSelect);
-            $('#EndYear').change(updateSelect);
-
-            intiateSelects();
-
-            $('#btn_add').click(function(e) {
+            
+            var addFormation = function(e) {
 
                 $.post( 'ajouter_formation_eleve.php',
                     {
@@ -115,9 +110,9 @@
                 .done(function(data) {       
                     reloadTable();
                 });
-            });
-
-            $('.btn_supp').click(function(e) {
+            };
+            
+            var rmFormation = function(e) {
                 e.preventDefault();
                 
                 $.get( 'supprimer_formation_eleve.php',
@@ -127,8 +122,17 @@
                 .done(function(data) {       
                     reloadTable();
                 });
-            });
+            };
 
+			var init = function() {
+				$('#StartYear').change(updateSelect);
+				$('#EndYear').change(updateSelect);
+
+				initiateSelects();
+
+				$('#btn_add').click(addFormation);
+				$('.btn_supp').click(rmFormation);
+			};
 
             var reloadTable = function(){
                 $.get( 'gestion_formations_eleve.php?id_adh={$mid}')
@@ -136,8 +140,11 @@
                         var $response=$(data);
                         var table = $response.find('#table_formation').html();
                         $('#table_formation').html(table);
+                        init();
                     });
-            }
+            };
+            
+            init();
         </script>
         {else}
         {_T string="You are not allowed to modify your formations. However, if you see an error, please send an email to:"}

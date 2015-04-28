@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-04-24 21:48+0200\n"
+"PO-Revision-Date: 2015-04-28 22:40+0200\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -20,24 +20,23 @@ msgstr ""
 msgid "Annee de fin :"
 msgstr "Année de fin :"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:108
-msgid "Principal Activity:"
-msgstr "Activité principale :"
-
 #: ../templates/bootstrap/voir_adherent_public.tpl:112
-msgid "Employeur:"
-msgstr "Employeur :"
+#: ../templates/bootstrap/gestion_postes.tpl:35
+#: ../templates/bootstrap/gestion_postes.tpl:92
+#: ../templates/bootstrap/gestion_postes.tpl:127
+msgid "present"
+msgstr "actuel"
 
 #: ../templates/bootstrap/aaetools.tpl:4 ../templates/default/aaetools.tpl:4
 msgid "AAETools settings"
 msgstr "AAETools paramètres"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:128
-msgid "personnes."
-msgstr "personnes."
+#: ../templates/bootstrap/voir_adherent_public.tpl:108
+msgid "Jobs information:"
+msgstr "Information des postes :"
 
-#: ../templates/bootstrap/public_menu.tpl:9
-#: ../templates/bootstrap/public_menu.tpl:21
+#: ../templates/bootstrap/public_menu.tpl:12
+#: ../templates/bootstrap/public_menu.tpl:24
 #: ../templates/bootstrap/adh_fiche_action.tpl:6
 #: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:6
@@ -53,7 +52,7 @@ msgstr "Sélectionner une entreprise"
 msgid "Name and/or First Name"
 msgstr "Nom et/ou Prénom"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:82
+#: ../templates/bootstrap/voir_adherent_public.tpl:85
 msgid "E-Mail:"
 msgstr "Mail :"
 
@@ -63,8 +62,8 @@ msgstr "Mail :"
 msgid "student"
 msgstr "étudiant"
 
-#: ../liste_eleves.php:88 ../templates/bootstrap/public_menu.tpl:3
-#: ../templates/bootstrap/public_menu.tpl:13
+#: ../liste_eleves.php:88 ../templates/bootstrap/public_menu.tpl:6
+#: ../templates/bootstrap/public_menu.tpl:16
 #: ../templates/default/public_menu.tpl:2
 #: ../templates/default/public_menu.tpl:5
 msgid "Former students list"
@@ -144,8 +143,7 @@ msgstr ""
 msgid "Who to contribute ?"
 msgstr "Comment cotiser ?"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:92
-#: ../templates/bootstrap/voir_adherent_public.tpl:133
+#: ../templates/bootstrap/voir_adherent_public.tpl:95
 msgid "Website:"
 msgstr "Site :"
 
@@ -161,11 +159,11 @@ msgstr "RIB"
 msgid "Identity:"
 msgstr "Identité :"
 
-#: ../templates/bootstrap/gestion_postes.tpl:8
-msgid "Employeur"
-msgstr "Employeur"
+#: ../templates/bootstrap/public_menu.tpl:31
+msgid "My formations"
+msgstr "Mes formations"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:67
+#: ../templates/bootstrap/voir_adherent_public.tpl:70
 msgid "Contact information:"
 msgstr "Information du contact :"
 
@@ -217,19 +215,10 @@ msgid "Birth date:"
 msgstr "Date de naissance :"
 
 #: ../templates/bootstrap/gestion_formations.tpl:9
-#: ../templates/bootstrap/voir_adherent_public.tpl:121
 #: ../templates/bootstrap/gestion_postes.tpl:16
 #: ../templates/default/gestion_formations.tpl:9
 msgid "End"
 msgstr "Fin"
-
-#: ../templates/bootstrap/voir_adherent_public.tpl:105
-msgid "Job information:"
-msgstr "Information du poste :"
-
-#: ../templates/bootstrap/voir_adherent_public.tpl:126
-msgid "Encadrement:"
-msgstr "Encadrement :"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:47
 #: ../templates/bootstrap/ajouter_poste.tpl:25
@@ -242,7 +231,7 @@ msgstr "Encadrement :"
 msgid "Speciality:"
 msgstr "Spécialité :"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:76
+#: ../templates/bootstrap/voir_adherent_public.tpl:79
 msgid "Country:"
 msgstr "Pays :"
 
@@ -250,8 +239,8 @@ msgstr "Pays :"
 msgid "Annee de debut:"
 msgstr "Année de début :"
 
-#: ../liste_job.php:60 ../templates/bootstrap/public_menu.tpl:6
-#: ../templates/bootstrap/public_menu.tpl:16
+#: ../liste_job.php:60 ../templates/bootstrap/public_menu.tpl:9
+#: ../templates/bootstrap/public_menu.tpl:19
 msgid "Jobs list"
 msgstr "Liste des postes"
 
@@ -273,7 +262,7 @@ msgstr "Sauver"
 msgid "red"
 msgstr "rouge"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:70
+#: ../templates/bootstrap/voir_adherent_public.tpl:73
 msgid "City:"
 msgstr "Ville :"
 
@@ -323,8 +312,8 @@ msgstr "Surnom : "
 msgid "AAE"
 msgstr "AAE"
 
-#: ../templates/bootstrap/gestion_formations.tpl:143
-#: ../templates/bootstrap/gestion_postes.tpl:216
+#: ../templates/bootstrap/gestion_formations.tpl:150
+#: ../templates/bootstrap/gestion_postes.tpl:224
 msgid ""
 "You are not allowed to modify your formations. However, if you see an error, "
 "please send an email to:"
@@ -364,6 +353,10 @@ msgstr "[M]"
 #: ../templates/bootstrap/aaecotiz.tpl:14 ../templates/default/aaecotiz.tpl:13
 msgid "Paiement par RIB"
 msgstr "Paiement par RIB"
+
+#: ../templates/bootstrap/voir_adherent_public.tpl:56
+msgid "Cycle(s):"
+msgstr "Cycle(s) :"
 
 #: ../aaetools.php:64 ../templates/bootstrap/menu.tpl:5
 #: ../templates/default/menu.tpl:4
@@ -419,6 +412,11 @@ msgstr "Voir les formations"
 msgid "Continue"
 msgstr "Continuer"
 
+#: ../templates/bootstrap/public_menu.tpl:3
+#: ../templates/bootstrap/public_menu.tpl:28
+msgid "My public profil"
+msgstr "Mon profil public"
+
 #: ../templates/bootstrap/menu.tpl:5 ../templates/default/menu.tpl:4
 msgid "Various tools for AAE"
 msgstr "Différents outils pour l'AAE"
@@ -446,6 +444,10 @@ msgid ""
 msgstr ""
 "Merci d'envoyer un chèque à l'ordre de l'AAE-ENSG à l'adresse suivante :"
 
+#: ../templates/bootstrap/gestion_postes.tpl:8
+msgid "Employeur"
+msgstr "Employeur"
+
 #: ../templates/default/menu.tpl:7
 msgid "Add a formation to someone"
 msgstr "Ajouter une formation"
@@ -460,7 +462,7 @@ msgstr "merci de créer un membre"
 msgid "Pages"
 msgstr "Pages"
 
-#: ../templates/bootstrap/gestion_postes.tpl:64
+#: ../templates/bootstrap/gestion_postes.tpl:63
 msgid "No"
 msgstr "Non"
 
@@ -477,6 +479,10 @@ msgstr "Membre :"
 #: ../templates/bootstrap/liste_job.tpl:30
 msgid "job"
 msgstr "poste"
+
+#: ../templates/bootstrap/public_menu.tpl:34
+msgid "My jobs"
+msgstr "Mes postes"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:7
 #: ../templates/bootstrap/ajouter_poste.tpl:7
@@ -497,7 +503,6 @@ msgid "Adresse"
 msgstr "Adresse"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:24
-#: ../templates/bootstrap/voir_adherent_public.tpl:56
 #: ../templates/bootstrap/promotion.tpl:22
 #: ../templates/default/ajouter_formation_eleve.tpl:24
 #: ../templates/default/liste_membres_aae.tpl:5
@@ -505,7 +510,6 @@ msgid "Cycle:"
 msgstr "Cycle :"
 
 #: ../templates/bootstrap/gestion_formations.tpl:8
-#: ../templates/bootstrap/voir_adherent_public.tpl:117
 #: ../templates/bootstrap/gestion_postes.tpl:15
 #: ../templates/default/gestion_formations.tpl:8
 msgid "Begin"
@@ -524,7 +528,7 @@ msgstr "[W]"
 msgid "(Max 255 characters)"
 msgstr "(Max 255 characters)"
 
-#: ../templates/bootstrap/gestion_postes.tpl:63
+#: ../templates/bootstrap/gestion_postes.tpl:62
 msgid "Yes"
 msgstr "Oui"
 
@@ -589,6 +593,18 @@ msgstr "Pas de membres à afficher"
 #: ../templates/default/ajouter_formation_eleve.tpl:22
 msgid "Formation details"
 msgstr "Détails des formations"
+
+#~ msgid "Principal Activity:"
+#~ msgstr "Activité principale :"
+
+#~ msgid "Employeur:"
+#~ msgstr "Employeur :"
+
+#~ msgid "personnes."
+#~ msgstr "personnes."
+
+#~ msgid "Encadrement:"
+#~ msgstr "Encadrement :"
 
 #~ msgid "Key word(s):"
 #~ msgstr "Mot(s) clés :"

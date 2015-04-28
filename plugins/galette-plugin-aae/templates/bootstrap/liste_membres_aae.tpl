@@ -106,7 +106,7 @@
 			<a href='mailto:{$preferences->pref_email}'>{$preferences->pref_email}</a>
 
 	{else}
-		<div id="infobox">{_T string="No member to show"}</div>
+		<div id="warningbox">{_T string="No member to show"}</div>
 	{/if}
 
 		   <script type="text/javascript">

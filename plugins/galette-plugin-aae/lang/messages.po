@@ -2,23 +2,21 @@
 msgid "Annee de fin :"
 msgstr ""
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:108
-msgid "Principal Activity:"
-msgstr ""
-
-#: ../templates/bootstrap/voir_adherent_public.tpl:112
-msgid "Employeur:"
+#: ../templates/bootstrap/voir_adherent_public.tpl:112 ../templates/bootstrap/gestion_postes.tpl:35
+#: ../templates/bootstrap/gestion_postes.tpl:92 ../templates/bootstrap/gestion_postes.tpl:127
+#: ../templates/bootstrap/gestion_postes.tpl:127
+msgid "present"
 msgstr ""
 
 #: ../templates/bootstrap/aaetools.tpl:4 ../templates/default/aaetools.tpl:4
 msgid "AAETools settings"
 msgstr ""
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:128
-msgid "personnes."
+#: ../templates/bootstrap/voir_adherent_public.tpl:108
+msgid "Jobs information:"
 msgstr ""
 
-#: ../templates/bootstrap/public_menu.tpl:9 ../templates/bootstrap/public_menu.tpl:21
+#: ../templates/bootstrap/public_menu.tpl:12 ../templates/bootstrap/public_menu.tpl:24
 #: ../templates/bootstrap/adh_fiche_action.tpl:6 ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:6 ../templates/default/adh_fiche_action.tpl:6
 msgid "How to contribute ?"
@@ -32,7 +30,7 @@ msgstr ""
 msgid "Name and/or First Name"
 msgstr ""
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:82
+#: ../templates/bootstrap/voir_adherent_public.tpl:85
 msgid "E-Mail:"
 msgstr ""
 
@@ -41,8 +39,8 @@ msgstr ""
 msgid "student"
 msgstr ""
 
-#: ../liste_eleves.php:88 ../templates/bootstrap/public_menu.tpl:3
-#: ../templates/bootstrap/public_menu.tpl:13 ../templates/default/public_menu.tpl:2
+#: ../liste_eleves.php:88 ../templates/bootstrap/public_menu.tpl:6
+#: ../templates/bootstrap/public_menu.tpl:16 ../templates/default/public_menu.tpl:2
 #: ../templates/default/public_menu.tpl:5
 msgid "Former students list"
 msgstr ""
@@ -105,7 +103,7 @@ msgstr ""
 msgid "Who to contribute ?"
 msgstr ""
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:92 ../templates/bootstrap/voir_adherent_public.tpl:133
+#: ../templates/bootstrap/voir_adherent_public.tpl:95
 msgid "Website:"
 msgstr ""
 
@@ -121,11 +119,11 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: ../templates/bootstrap/gestion_postes.tpl:8
-msgid "Employeur"
+#: ../templates/bootstrap/public_menu.tpl:31
+msgid "My formations"
 msgstr ""
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:67
+#: ../templates/bootstrap/voir_adherent_public.tpl:70
 msgid "Contact information:"
 msgstr ""
 
@@ -172,17 +170,9 @@ msgstr ""
 msgid "Birth date:"
 msgstr ""
 
-#: ../templates/bootstrap/gestion_formations.tpl:9 ../templates/bootstrap/voir_adherent_public.tpl:121
-#: ../templates/bootstrap/gestion_postes.tpl:16 ../templates/default/gestion_formations.tpl:9
+#: ../templates/bootstrap/gestion_formations.tpl:9 ../templates/bootstrap/gestion_postes.tpl:16
+#: ../templates/default/gestion_formations.tpl:9
 msgid "End"
-msgstr ""
-
-#: ../templates/bootstrap/voir_adherent_public.tpl:105
-msgid "Job information:"
-msgstr ""
-
-#: ../templates/bootstrap/voir_adherent_public.tpl:126
-msgid "Encadrement:"
 msgstr ""
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:47 ../templates/bootstrap/ajouter_poste.tpl:25
@@ -192,7 +182,7 @@ msgstr ""
 msgid "Speciality:"
 msgstr ""
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:76
+#: ../templates/bootstrap/voir_adherent_public.tpl:79
 msgid "Country:"
 msgstr ""
 
@@ -200,8 +190,8 @@ msgstr ""
 msgid "Annee de debut:"
 msgstr ""
 
-#: ../liste_job.php:60 ../templates/bootstrap/public_menu.tpl:6
-#: ../templates/bootstrap/public_menu.tpl:16
+#: ../liste_job.php:60 ../templates/bootstrap/public_menu.tpl:9
+#: ../templates/bootstrap/public_menu.tpl:19
 msgid "Jobs list"
 msgstr ""
 
@@ -220,7 +210,7 @@ msgstr ""
 msgid "red"
 msgstr ""
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:70
+#: ../templates/bootstrap/voir_adherent_public.tpl:73
 msgid "City:"
 msgstr ""
 
@@ -266,7 +256,7 @@ msgstr ""
 msgid "AAE"
 msgstr ""
 
-#: ../templates/bootstrap/gestion_formations.tpl:143 ../templates/bootstrap/gestion_postes.tpl:216
+#: ../templates/bootstrap/gestion_formations.tpl:150 ../templates/bootstrap/gestion_postes.tpl:224
 msgid "You are not allowed to modify your formations. However, if you see an error, please send an email to:"
 msgstr ""
 
@@ -298,6 +288,10 @@ msgstr ""
 
 #: ../templates/bootstrap/aaecotiz.tpl:14 ../templates/default/aaecotiz.tpl:13
 msgid "Paiement par RIB"
+msgstr ""
+
+#: ../templates/bootstrap/voir_adherent_public.tpl:56
+msgid "Cycle(s):"
 msgstr ""
 
 #: ../aaetools.php:64 ../templates/bootstrap/menu.tpl:5
@@ -348,6 +342,10 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
+#: ../templates/bootstrap/public_menu.tpl:3 ../templates/bootstrap/public_menu.tpl:28
+msgid "My public profil"
+msgstr ""
+
 #: ../templates/bootstrap/menu.tpl:5 ../templates/default/menu.tpl:4
 msgid "Various tools for AAE"
 msgstr ""
@@ -370,6 +368,10 @@ msgstr ""
 msgid "Merci d'envoyer un chèque à l'ordre de l'AAE-ENSG à l'adresse suivante :"
 msgstr ""
 
+#: ../templates/bootstrap/gestion_postes.tpl:8
+msgid "Employeur"
+msgstr ""
+
 #: ../templates/default/menu.tpl:7
 msgid "Add a formation to someone"
 msgstr ""
@@ -383,7 +385,7 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
-#: ../templates/bootstrap/gestion_postes.tpl:64
+#: ../templates/bootstrap/gestion_postes.tpl:63
 msgid "No"
 msgstr ""
 
@@ -398,6 +400,10 @@ msgstr ""
 
 #: ../templates/bootstrap/liste_job.tpl:30
 msgid "job"
+msgstr ""
+
+#: ../templates/bootstrap/public_menu.tpl:34
+msgid "My jobs"
 msgstr ""
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:7 ../templates/bootstrap/ajouter_poste.tpl:7
@@ -417,14 +423,13 @@ msgstr ""
 msgid "Adresse"
 msgstr ""
 
-#: ../templates/bootstrap/ajouter_formation_eleve.tpl:24 ../templates/bootstrap/voir_adherent_public.tpl:56
-#: ../templates/bootstrap/promotion.tpl:22 ../templates/default/ajouter_formation_eleve.tpl:24
-#: ../templates/default/liste_membres_aae.tpl:5
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:24 ../templates/bootstrap/promotion.tpl:22
+#: ../templates/default/ajouter_formation_eleve.tpl:24 ../templates/default/liste_membres_aae.tpl:5
 msgid "Cycle:"
 msgstr ""
 
-#: ../templates/bootstrap/gestion_formations.tpl:8 ../templates/bootstrap/voir_adherent_public.tpl:117
-#: ../templates/bootstrap/gestion_postes.tpl:15 ../templates/default/gestion_formations.tpl:8
+#: ../templates/bootstrap/gestion_formations.tpl:8 ../templates/bootstrap/gestion_postes.tpl:15
+#: ../templates/default/gestion_formations.tpl:8
 msgid "Begin"
 msgstr ""
 
@@ -440,7 +445,7 @@ msgstr ""
 msgid "(Max 255 characters)"
 msgstr ""
 
-#: ../templates/bootstrap/gestion_postes.tpl:63
+#: ../templates/bootstrap/gestion_postes.tpl:62
 msgid "Yes"
 msgstr ""
 

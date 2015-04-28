@@ -93,5 +93,5 @@
             });
         </script>
 {else}
-    <div id="infobox">{_T string="No member to show"}</div>
+    <div id="warningbox">{_T string="No member to show"}</div>
 {/if}

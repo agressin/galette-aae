@@ -24,19 +24,19 @@
             <tr class="poste_row">
                 <!-- <th class="listing id_row">#</th> -->
     
-                <td class="center nowrap">{$form.employeur}</td>
-                <td class="center nowrap">{$form.activite_principale}</td>
-                <td class="center nowrap">{$form.encadrement}</td>
-                <td class="center nowrap">{$form.nb_personne_encadre}</td>
+                <td class="center nowrap">{$form.employeur|htmlspecialchars}</td>
+                <td class="center nowrap">{$form.activite_principale|htmlspecialchars}</td>
+                <td class="center nowrap">{$form.encadrement|htmlspecialchars}</td>
+                <td class="center nowrap">{$form.nb_personne_encadre|htmlspecialchars}</td>
             
-                <td class="center nowrap">{$form.adresse}</td>
-                <td class="center nowrap">{$form.website}</td>
-                <td class="center nowrap">{$form.annee_ini}</td>
-                <td class="center nowrap">{$form.annee_fin}</td>
+                <td class="center nowrap">{$form.adresse|htmlspecialchars}</td>
+                <td class="center nowrap">{$form.website|htmlspecialchars}</td>
+                <td class="center nowrap">{$form.annee_ini|htmlspecialchars}</td>
+                <td class="center nowrap">{if $form.annee_fin eq 0} {_T string="present"} {else} {$form.annee_fin|htmlspecialchars} {/if}</td>
                 {if $haveRights}
                 <td class="center nowrap">
 
-                    <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$form.id_poste}' align="middle" /> 
+                    <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$form.id_poste|htmlspecialchars}' align="middle" /> 
 
                 </td>
                 {/if}
@@ -45,7 +45,6 @@
 
     {if $haveRights}
             <tr>
-               
                 <td class="center nowrap">
                     <input list="entreprise" id="employeur" type="text">
                     <datalist id="entreprise" type="text">
@@ -90,7 +89,8 @@
     {if $haveRights}
         <script type="text/javascript">
 
-            var intiateSelects = function() {
+			var present = "{_T string="present"}";
+            var initiateSelects = function() {
                 var myDate = new Date();
             
                 var year = myDate.getFullYear();
@@ -100,6 +100,8 @@
                 };
 
                 $('#EndYear').append('<option value="'+year+'">'+year+'</option>');
+                $('#EndYear').append('<option value="'+present+'">'+present+'</option>');
+                updateSelect();
             };
 
             var updateSelect = function () {
@@ -108,55 +110,52 @@
                 var startYearSave = $('#StartYear').find(":selected").val();
                 var endYearSave = $('#EndYear').find(":selected").val();
 
+
                 $('#StartYear').find('option').remove();
                 $('#EndYear').find('option').remove();
 
                 var myDate = new Date();
             
-                var year = myDate.getFullYear();
-
+                var year = myDate.getFullYear() +3;
+                
+                isPresent = false;
+                if(endYearSave == present)
+                {
+					endYearSave = myDate.getFullYear();
+					isPresent = true;
+				}
+				$('#EndYear').append('<option value="{_T string="present"}">{_T string="present"}</option>');
                 for(var i = year; i >= 1950; i--){
-                    if(i>startYearSave) $('#EndYear').append('<option value="'+i+'">'+i+'</option>');
-                    if((i-1)<endYearSave)
+                    if(i>=startYearSave) $('#EndYear').append('<option value="'+i+'">'+i+'</option>');
+                    if((i-1)<=endYearSave)
                     {
-                        
                         $('#StartYear').append('<option value="'+ (i-1) +'">'+ (i-1) +'</option>');
                     } 
                 };
+                
 
                 $('#StartYear').val(startYearSave);
-                $('#EndYear').val(endYearSave);
+                if(isPresent)
+					$('#EndYear').val(present);
+                else
+					$('#EndYear').val(endYearSave);
 
             };
-
-            $('#StartYear').change(updateSelect);
-            $('#EndYear').change(updateSelect);
 
 
             var updateEncadre = function () {
-
                 //sauvegarde du choix de l'utilisateur :
                 var form = document.getElementById('formbutton');
-
-                        if(form.encadr[0].checked) document.getElementById('nb_personne_encadre').disabled = false;
-                       
-                        else if (form.encadr[1].checked) document.getElementById('nb_personne_encadre').disabled = true;
+				if(form.encadr[0].checked)
+					document.getElementById('nb_personne_encadre').disabled = false;
+                else if (form.encadr[1].checked)
+					document.getElementById('nb_personne_encadre').disabled = true;
             };
 
-
-            $('#encadrement1').change(updateEncadre );
-            $('#encadrement2').change(updateEncadre );
-            intiateSelects();
-
-            $('#btn_add').click(function(e) {
-
-               
+			var addPoste = function(e) {
                 var form = document.getElementById('formbutton');
                 $.post( 'ajouter_poste.php',
                     {
-                        
-                        
-
                         id_adh: {$mid},
                         employeur: $('#employeur').val(), 
                         activite_principale: $('#activite_principale').val(),
@@ -171,9 +170,9 @@
                 .done(function(data) {       
                     reloadTable();
                 });
-            });
-
-            $('.btn_supp').click(function(e) {
+            };
+            
+            var rmPoste = function(e) {
                 e.preventDefault();
                 
                 $.get( 'supprimer_poste.php',
@@ -183,8 +182,8 @@
                 .done(function(data) {       
                     reloadTable();
                 });
-            });
-
+            };
+            
 
             var reloadTable = function(){
                 $.get( 'gestion_postes.php?id_adh={$mid}')
@@ -192,6 +191,7 @@
                         var $response=$(data);
                         var table = $response.find('#table_poste').html();
                         $('#table_poste').html(table);
+                        init();
                     });
 
             }
@@ -203,17 +203,24 @@
                             if (this.value=="{$v.employeur}") {
                                  $('#employeur_website').val("{$v.website}");
                             };
-                            
-                        {/foreach}
-                
-
+                 {/foreach}
             }
-             document.getElementById("employeur").addEventListener("change", changeEmployeur, false); 
-             
-
+            
+            var init = function(){
+				$('#StartYear').change(updateSelect);
+				$('#EndYear').change(updateSelect);
+				$('#encadrement1').change(updateEncadre );
+				$('#encadrement2').change(updateEncadre );
+				initiateSelects();
+				$('#btn_add').click(addPoste);
+				$('.btn_supp').click(rmPoste);
+				document.getElementById("employeur").addEventListener("change", changeEmployeur, false); 
+			};
+            
+            init();
         </script>
+        
         {else}
         {_T string="You are not allowed to modify your formations. However, if you see an error, please send an email to:"}
         <a href='mailto:{$preferences->pref_email}'>{$preferences->pref_email}</a>
         {/if}
-

@@ -52,6 +52,8 @@ $members = $m->getPublicList(true, null);
 
 $tpl->assign('page_title', _T("Trombinoscope"));
 $tpl->assign('additionnal_html_class', 'trombinoscope');
+$nb_members = count($members);
+$tpl->assign('nb_members', $nb_members);
 $tpl->assign('members', $members);
 $tpl->assign('time', time());
 $content = $tpl->fetch('trombinoscope.tpl');

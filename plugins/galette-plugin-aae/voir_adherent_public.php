@@ -53,12 +53,11 @@ foreach ($list_postes as $pos){
         $list_postes[$i]['website'] = $ent['website'];
         $i=$i+1;
     }
-
+ 
 //Tri le tableau en fonction de la date de début.
 usort($list_postes, function($a, $b) {
     return $b['annee_ini'] - $a['annee_ini'];
 });
-
 
 $tpl->assign('list_postes', $list_postes);
 

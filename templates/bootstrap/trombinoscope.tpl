@@ -16,13 +16,15 @@
 </style>
 
 
+{if $nb_members > 0}
 <div class="row">
-{foreach from=$members item=member}
+	{foreach from=$members item=member}
         <div class="item">
             <img src="{$galette_base_path}picture.php?id_adh={$member->id}&amp;rand={$time}" height="{$member->picture->getOptimalHeight()}" width="{$member->picture->getOptimalWidth()}" alt="{$member->sfullname}{if $member->nickname ne ''} ({$member->nickname|htmlspecialchars}){/if}"/>
             <br/>{$member->sfullname}{if $member->nickname ne ''} ({$member->nickname|htmlspecialchars}){/if}
         </div>
-{foreachelse}
-        <div id="infobox">{_T string="No member to show"}</div>
-{/foreach}
+    {/foreach}
 </div>
+{else}
+        <div id="warningbox">{_T string="No member to show"}</div>
+{/if}
