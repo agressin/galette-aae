@@ -1,5 +1,32 @@
  <strong>{$member->sname}</strong>
  
+ 
+ 			<table id='table_poste' class="listing">
+				<legend>{_T string="Jobs information:"}</legend>
+		{foreach $list_postes as $key}
+		
+				<tr>
+					<th style="width:50%" >
+						{$key.annee_ini|htmlspecialchars} - {if $key.annee_fin eq 0} {_T string="present"} {else} {$key.annee_fin|htmlspecialchars} {/if}
+					</th>
+					<td>
+						{$key.activite_principale|htmlspecialchars}
+					</td>
+					<td>
+						<a href="liste_job.php?id_entreprise={$key.id_entreprise}">{$key.employeur|htmlspecialchars}</a>
+					</td>
+					<td>
+						<a href="{$key.website}">{$key.website}</a>
+					</td>
+					<td class="center nowrap">
+						<input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$key.id_poste|htmlspecialchars}' align="middle" />
+					</td>
+				</tr>
+		{/foreach}
+					<input id='btn_add' border=0 src="{$template_subdir}images/icon-add.png" type=image align="middle" /> 
+			</table>
+ 
+ {*
     <table id='table_poste' class="listing">
         
         <thead>
@@ -33,17 +60,10 @@
                 <td class="center nowrap">{$form.website|htmlspecialchars}</td>
                 <td class="center nowrap">{$form.annee_ini|htmlspecialchars}</td>
                 <td class="center nowrap">{if $form.annee_fin eq 0} {_T string="present"} {else} {$form.annee_fin|htmlspecialchars} {/if}</td>
-                {if $haveRights}
-                <td class="center nowrap">
-
-                    <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$form.id_poste|htmlspecialchars}' align="middle" /> 
-
-                </td>
-                {/if}
+                <td class="center nowrap"><input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$form.id_poste|htmlspecialchars}' align="middle" /> </td>
             </tr>
     {/foreach}
 
-    {if $haveRights}
             <tr>
                 <td class="center nowrap">
                     <input list="entreprise" id="employeur" type="text">
@@ -82,11 +102,10 @@
                     <input id='btn_add' border=0 src="{$template_subdir}images/icon-add.png" type=image align="middle" /> 
                 </td>
             </tr>
-	{/if}
+
        </tbody>
     </table>    
-
-    {if $haveRights}
+*}
         <script type="text/javascript">
 
 			var present = "{_T string="present"}";
@@ -196,6 +215,7 @@
 
             }
             
+            /*
             var changeEmployeur = function(){
                 // console.log($('#employeur').val());
                 console.log(this.value);
@@ -204,7 +224,8 @@
                                  $('#employeur_website').val("{$v.website}");
                             };
                  {/foreach}
-            }
+            };
+            */
             
             var init = function(){
 				$('#StartYear').change(updateSelect);
@@ -214,13 +235,8 @@
 				initiateSelects();
 				$('#btn_add').click(addPoste);
 				$('.btn_supp').click(rmPoste);
-				document.getElementById("employeur").addEventListener("change", changeEmployeur, false); 
+				//document.getElementById("employeur").addEventListener("change", changeEmployeur, false); 
 			};
             
             init();
         </script>
-        
-        {else}
-        {_T string="You are not allowed to modify your formations. However, if you see an error, please send an email to:"}
-        <a href='mailto:{$preferences->pref_email}'>{$preferences->pref_email}</a>
-        {/if}

@@ -61,7 +61,6 @@ usort($list_postes, function($a, $b) {
 });
 $tpl->assign('list_postes', $list_postes);
 
-$tpl->assign('haveRights', true);
 $tpl->assign('mid', $id_adh);
 
 $member->load($id_adh);
