@@ -38,8 +38,8 @@ if ($id_cycle != '0') {
 }
 $tpl->assign('id_cycle', $id_cycle);
 
-$id_cycle_simple = get_numeric_form_value('id_cycle_simple', '0');
-if ($id_cycle_simple != '0') {
+$id_cycle_simple = $_POST["id_cycle_simple"];
+if ($id_cycle_simple!="") {
 	$req["cycle_simple"] = $id_cycle_simple;
 }
 $tpl->assign('id_cycle_simple', $id_cycle_simple);

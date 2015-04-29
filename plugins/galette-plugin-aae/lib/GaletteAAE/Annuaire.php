@@ -226,7 +226,7 @@ class Annuaire
 			$found_name_first = $this->proximite_levenshtein($researched_name,$studentsName);
 
 			// Search for Surname
-			$researched_name=$req[1];
+			$researched_surname=$req[1];
 			$researched_surname = strtolower($researched_surname);
 			//Transforme la premièrer lettre en majuscule
 			$researched_surname[0] = strtoupper($researched_surname[0]);
@@ -244,7 +244,7 @@ class Annuaire
 			$found_name_second = $this->proximite_levenshtein($researched_name,$studentsName);
 
 			// Search for Surname
-			$researched_name=$req[0];
+			$researched_surname=$req[0];
 			$researched_surname = strtolower($researched_surname);
 			//Transforme la premièrer lettre en majuscule
 			$researched_surname[0] = strtoupper($researched_surname[0]);
@@ -308,7 +308,9 @@ class Annuaire
 				
 			$init=false;
 			if (array_key_exists("nom_prenom",$req)){
+				//Get possible name / surname
 				$res = $this->search_name_surname($req["nom_prenom"]);
+				//Add it to the normal query
 				$req = array_merge($req, $res);
 			};
 			if (array_key_exists("nom",$req)){
@@ -344,27 +346,29 @@ class Annuaire
 				$select->where->equalTo('f.id_cycle', $req["cycle"]);
 				$init=true;
 			};
+			var_dump($req);
 			if (array_key_exists("cycle_simple",$req)){
+				var_dump($req["cycle_simple"]);
 				switch ($req["cycle_simple"]) {
 				case "IT":
-					$select->NEST
-						->where->equalTo('f.id_cycle', 2)
+					$select->where->NEST
+						->equalTo('f.id_cycle', 2)
 						->OR
-						->where->equalTo('f.id_cycle', 51)
+						->equalTo('f.id_cycle', 51)
 						->UNNEST;
 					break;
 				case "G":
-					$select->NEST
-						->where->equalTo('f.id_cycle', 3)
+					$select->where->NEST
+						->equalTo('f.id_cycle', 3)
 						->OR
-						->where->equalTo('f.id_cycle', 52)
+						->equalTo('f.id_cycle', 52)
 						->UNNEST;
 					break;
 				case "DC":
-					$select->NEST
-						->where->equalTo('f.id_cycle', 6)
+					$select->where->NEST
+						->equalTo('f.id_cycle', 6)
 						->OR
-						->where->equalTo('f.id_cycle', 56)
+						->equalTo('f.id_cycle', 56)
 						->UNNEST;
 					break;
 				}
