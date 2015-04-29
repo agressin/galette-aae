@@ -23,7 +23,8 @@
 	<li class="{if $PAGENAME eq "aaecotiz.php"}current_{/if}page_item">
 		<a href="{$galette_base_path}{$aaetools_path}aaecotiz.php">{_T string="How to contribute ?"}</a>
 	</li>
-	
+
+	{if $login->isLogged()}	
 	<li class="{if $PAGENAME eq "voir_adherent_public.php"}current_{/if}page_item">
 		<a href="{$galette_base_path}{$aaetools_path}voir_adherent_public.php">{_T string="My public profil"}</a>
 		<ul class='children'>
@@ -35,5 +36,5 @@
 			</li>
 		</ul>
 	</li>
-
+	{/if}
 {/if}
