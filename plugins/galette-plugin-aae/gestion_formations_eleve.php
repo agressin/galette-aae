@@ -35,9 +35,15 @@ foreach ($allCycles as $cycle) {
 $tpl->assign('cycles', $cycles_options);
 
 $member = new Galette\Entity\Adherent();
+
+if(isset($_GET['id_adh']) && $_GET['id_adh'] != '')
+	$id_adh = $_GET['id_adh'];
+else
+	$id_adh = $login->id;
 //Liste les formations 
-if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
-    $list_formations = $formation->getFormations($_GET['id_adh']);
+if ( ($login->isAdmin() || $login->isStaff()) ){ // && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
+	
+    $list_formations = $formation->getFormations($id_adh);
     $tpl->assign('haveRights', true);
     $tpl->assign('mid', $_GET['id_adh']);
 
