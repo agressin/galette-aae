@@ -12,7 +12,6 @@ use Galette\AAE\Postes as Postes;
 require_once 'lib/GaletteAAE/Entreprises.php';
 use Galette\AAE\Entreprises as Entreprises;
 
-
 $postes = new Postes();
 $entreprises = new Entreprises();
 
@@ -78,6 +77,18 @@ if (isset($_POST['id_adh'])  && isset($_POST['annee_ini']) && isset($_POST['empl
 
 
 }
+
+// page generation
+$orig_template_path = $tpl->template_dir;
+$tpl->template_dir = 'templates/' . $preferences->pref_theme;
+$content = $tpl->fetch('ajouter_poste.tpl');
+
+$tpl->assign('content', $content);
+
+//Set path back to main Galette's template
+$tpl->template_dir = $orig_template_path;
+
+$tpl->display('public_page.tpl');
 
 
 ?>

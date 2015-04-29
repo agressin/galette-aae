@@ -23,7 +23,7 @@
 					</td>
 				</tr>
 		{/foreach}
-					<input id='btn_add' border=0 src="{$template_subdir}images/icon-add.png" type=image align="middle" /> 
+					<input id='btn_add' border=0 src="{$template_subdir}images/icon-add.png" type=image align="middle"  onclick="window.location.href='ajouter_poste.php'"/> 
 			</table>
  
  {*
@@ -108,6 +108,34 @@
 *}
         <script type="text/javascript">
 
+
+            var rmPoste = function(e) {
+                e.preventDefault();
+                
+                $.get( 'supprimer_poste.php',
+                    {
+                        id_form: e.target.value
+                    })
+                .done(function(data) {       
+                    reloadTable();
+                });
+            };
+            
+
+            var reloadTable = function(){
+                $.get( 'gestion_postes.php?id_adh={$mid}')
+                    .done(function(data) {
+                        var $response=$(data);
+                        var table = $response.find('#table_poste').html();
+                        $('#table_poste').html(table);
+                        init();
+                    });
+
+            }
+            
+		/*************************************************************************************
+		* TODO : à supprimer si plus besoin  
+		
 			var present = "{_T string="present"}";
             var initiateSelects = function() {
                 var myDate = new Date();
@@ -191,31 +219,7 @@
                 });
             };
             
-            var rmPoste = function(e) {
-                e.preventDefault();
-                
-                $.get( 'supprimer_poste.php',
-                    {
-                        id_form: e.target.value
-                    })
-                .done(function(data) {       
-                    reloadTable();
-                });
-            };
-            
 
-            var reloadTable = function(){
-                $.get( 'gestion_postes.php?id_adh={$mid}')
-                    .done(function(data) {
-                        var $response=$(data);
-                        var table = $response.find('#table_poste').html();
-                        $('#table_poste').html(table);
-                        init();
-                    });
-
-            }
-            
-            /*
             var changeEmployeur = function(){
                 // console.log($('#employeur').val());
                 console.log(this.value);
@@ -225,15 +229,16 @@
                             };
                  {/foreach}
             };
-            */
+            ***************************************************************************/
             
             var init = function(){
-				$('#StartYear').change(updateSelect);
-				$('#EndYear').change(updateSelect);
-				$('#encadrement1').change(updateEncadre );
-				$('#encadrement2').change(updateEncadre );
-				initiateSelects();
-				$('#btn_add').click(addPoste);
+				//TODO : à supprimer si plus besoin
+				//$('#StartYear').change(updateSelect);
+				//$('#EndYear').change(updateSelect);
+				//$('#encadrement1').change(updateEncadre );
+				//$('#encadrement2').change(updateEncadre );
+				//initiateSelects();
+				//$('#btn_add').click(addPoste);
 				$('.btn_supp').click(rmPoste);
 				//document.getElementById("employeur").addEventListener("change", changeEmployeur, false); 
 			};
