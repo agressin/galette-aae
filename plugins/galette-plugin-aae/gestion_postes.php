@@ -87,7 +87,11 @@ $tpl->assign('content', $content);
 
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
-$tpl->display('page.tpl');
+
+if ($login->isAdmin() || $login->isStaff())
+	$tpl->display('page.tpl');
+else
+	$tpl->display('public_page.tpl');
 
 
 
