@@ -53,11 +53,13 @@ $tpl->assign('annee_debut', $annee_debut);
 $param_selected = (($id_cycle != '0') || ($id_cycle_simple != '0')) && ($annee_debut != '0');
 
 //If there is a name or surname
-if ($_POST["nom_prenom"]!="")
+$nom_prenom = $_POST["nom_prenom"];
+if ($nom_prenom!="")
 {	
-	$req["nom_prenom"] = $_POST["nom_prenom"];
+	$req["nom_prenom"] = $nom_prenom;
 	$param_selected = true;
 };
+$tpl->assign('nom_prenom', $nom_prenom);
 
 $tpl->assign('param_selected', $param_selected);
 

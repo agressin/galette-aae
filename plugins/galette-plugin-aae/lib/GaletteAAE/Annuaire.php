@@ -346,9 +346,8 @@ class Annuaire
 				$select->where->equalTo('f.id_cycle', $req["cycle"]);
 				$init=true;
 			};
-			var_dump($req);
+
 			if (array_key_exists("cycle_simple",$req)){
-				var_dump($req["cycle_simple"]);
 				switch ($req["cycle_simple"]) {
 				case "IT":
 					$select->where->NEST

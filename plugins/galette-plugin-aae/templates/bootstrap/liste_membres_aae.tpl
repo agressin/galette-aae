@@ -7,14 +7,16 @@
 						
 							{*Searching student by name*}
 							<label>{_T string="Name and/or First Name"}{if !$login->isLogged()} (*) {/if}
-							<input type="text" name ="nom_prenom" {if isset($smarty.post.nom)} value="{$smarty.post.nom}" {/if}
+							<input type="text" name ="nom_prenom" {if isset($nom_prenom)} value="{$nom_prenom}" {/if}
 							{if !$login->isLogged()} DISABLED {/if} /> 
 							</label><br>
-							{*Searching student by first name
+						{*
+							Searching student by first name
 							<label>{_T string="First Name"}{if !$login->isLogged()} (*) {/if}
 							<input type="text" name="prenom" {if isset($smarty.post.prenom)} value="{$smarty.post.prenom}" {/if}
 							{if !$login->isLogged()} DISABLED {/if} />
-							</label><br>*}
+							</label><br>
+						*}
 							{if !$login->isLogged()} * {_T string="Please sign in to access search by name"} <br> {/if}
 							{*Searching student by promotion*}
 							<label for="annee_debut" class="control-label">{_T string="Promotion"}</label><br>
