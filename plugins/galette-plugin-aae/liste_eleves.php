@@ -50,7 +50,13 @@ if ($annee_debut != '0') {
 }
 $tpl->assign('annee_debut', $annee_debut);
 
-$param_selected = (($id_cycle != '0') || ($id_cycle_simple != '0')) && ($annee_debut != '0');
+if ( !$login->isLogged() ) {
+	//Non connecté : on est obligé de sélectionner 1 cycle ET 1 année de début
+	$param_selected = (($id_cycle != '0') || ($id_cycle_simple != '')) && ($annee_debut != '0');
+} else {
+	// Connecté on peut ne rien saisir
+	$param_selected = true;
+}
 
 //If there is a name or surname
 $nom_prenom = $_POST["nom_prenom"];

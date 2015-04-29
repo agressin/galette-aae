@@ -16,6 +16,11 @@ use Galette\AAE\Entreprises as Entreprises;
 $postes = new Postes();
 $entreprises = new Entreprises();
 
+if ( !$login->isLogged() ) {
+    header('location:'. GALETTE_BASE_PATH .'index.php');
+    die();
+}
+
 if (isset($_POST['id_adh'])  && isset($_POST['annee_ini']) && isset($_POST['employeur']))
 {
 
