@@ -16,7 +16,9 @@
 		cy.style()
 			.selector('node')
 			.css({
-				'content':'data(id)'
+				'content':'data(name)',
+				'text-halign':'center',
+				'text-valign':'center'
 			})
 			.selector('edge')
 			.css({
@@ -29,7 +31,7 @@
 
 		cy.on('tap', 'node', { foo: 'bar' }, function(evt){
 			var node = evt.cyTarget;
-			if (node.id() >= 2000){ //if a year were tapped
+			if (node.id() <= 100){ //if a year were tapped
 				console.log(node.id() );
 			}else{
 				console.log( 'tapped ' + node.id() );
@@ -45,6 +47,17 @@
 			//If the id is negative, the element were hiden
 			if (ele.id() < 0){
 				ele.hide()
+			}
+		});
+
+		cy.nodes().qtip({
+			content: 'Hello!',
+			style: {
+				classes: 'qtip-bootstrap',
+				tip: {
+					width: 16,
+					height: 8
+				}
 			}
 		});
 
