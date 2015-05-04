@@ -352,7 +352,6 @@ class Annuaire
             return false;
         }
     }
-	
 }
 
 

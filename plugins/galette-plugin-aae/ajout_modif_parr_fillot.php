@@ -28,8 +28,8 @@ use Galette\AAE\Formations as Formations;
 //require_once 'generation_json.js';
 //require_once 'donnees_json.php';
 
-$id_parrain=0;
-$id_fillot=0;
+$id_parrain = $_GET['id_parrain'];
+$id_fillot = $_GET['id_fillot'];
 
 if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
     //public pages are not actives
@@ -255,10 +255,9 @@ $tpl->assign('content', $content);
 $tpl->template_dir = $orig_template_path;
 $tpl->display('public_page.tpl');
 
-$id_parrain = $_GET['id_parrain'];
-$id_fillot = $_GET['id_fillot'];
 
-if($id_parrain!=0 && $id_fillot!=0){
+
+if($id_parrain!='' && $id_fillot!=''){
 	global $zdb;
 
 	try {
