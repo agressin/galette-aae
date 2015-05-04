@@ -3,7 +3,7 @@
  *					ajout_modif_parr_fillot.php
  ***************************************************************************/
  
-//Look for a student in the database, same code as in arbre.php
+//Look for a student in the database
 
 use Analog\Analog as Analog;
 use Galette\Entity\Adherent as Adherent;
@@ -28,8 +28,16 @@ use Galette\AAE\Formations as Formations;
 //require_once 'generation_json.js';
 //require_once 'donnees_json.php';
 
-$id_parrain = $_GET['id_parrain'];
-$id_fillot = $_GET['id_fillot'];
+//teste l'égalité d'une chaine de caractères ch au milieu de plusieurs chaines chaines
+/*function chaines_egales($ch, $chaines){
+	for($i=0;$i<count($chaines);$i++){
+		 if ($ch === $chaines[$i]) {
+			return $ch;
+		}
+	}
+}*/
+
+
 
 if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
     //public pages are not actives
@@ -51,38 +59,13 @@ array_multisort($tmp, SORT_ASC, $allCycles);
 $tpl->assign('cycles', $allCycles);
 
 
-	
 if ($_POST["parrain"]!="")
 {
 	$req = explode(" ", $_POST["parrain"]);
 	$count = count($req);
-
+	
 	if($count == 1){
-		//Search the words of the request as names
-		$researched_name=$req[0];			
-		//Text to upper
-		$researched_name = strtoupper($researched_name);			
-		//Get all students' names
-		$studentsName = $annuaire->getNameOfAllStudents();			
-		//Récupération du nom le plus proche
-		$found_name=$annuaire->proximite_levenshtein($researched_name,$studentsName);
-		//Récupération de l'élève avec ce nom ou nom proche
-		$parrains = $annuaire -> getStudent($found_name);
-		
-		//Search the words of the request as surnames
-		$researched_surname=$req[0];
-		//Text to lower, first letter to upper
-		$researched_surname[0] = strtoupper($researched_surname[0]);
-		$researched_surname = strtolower($researched_surname);
-		//Get all students' surnames
-		$studentsSurname= $annuaire->getSurnameOfAllStudents();
-		//Récupération du prénom le plus proche
-		$found_surname=$annuaire->proximite_levenshtein($researched_surname,$studentsSurname);
-		//Récupération de l'élève avec ce prenom ou prenom proche
-		$elevesprenom = $annuaire -> getStudent(NULL, $found_surname);
-		
-		//concatène les 2 tableaux obtenus
-		$parrains = array_merge($parrains, $elevesprenom);
+		echo("il manque une information");
 	}
 	
 	if($count == 2){
@@ -95,6 +78,12 @@ if ($_POST["parrain"]!="")
 		$studentsName1 = $annuaire->getNameOfAllStudents();			
 		//Récupération des noms les plus proches
 		$found_namefirst=$annuaire->proximite_levenshtein($researched_namefirst,$studentsName1);
+		/*foreach($studentsName1 as $word){
+			if ($researched_namefirst === $word){
+				$found_namefirst = $word;
+			}
+		}*/
+		//$found_namefirst=chaines_egales($researched_namefirst,$studentsName1);
 		
 		//Search the second word of the request as a surname
 		$researched_surnamesecond=$req[1];
@@ -105,8 +94,14 @@ if ($_POST["parrain"]!="")
 		$studentsSurname1= $annuaire->getSurnameOfAllStudents();
 		//Récupération des prénoms les plus proches
 		$found_surnamesecond=$annuaire->proximite_levenshtein($researched_surnamesecond,$studentsSurname1);
+		/*foreach($studentsSurname1 as $word){
+			if ($researched_surnamesecond === $word){
+				$found_surnamesecond = $word;
+			}
+		}*/
+		//$found_surnamesecond=$annuaire->chaines_egales($researched_surnamesecond,$studentsSurname1);
 		
-		$parrains = $annuaire -> getStudent($found_namefirst, $found_surnamesecond);
+		$parr = $annuaire -> getStudent($found_namefirst, $found_surnamesecond);
 		
 		//CASE SURNAME NAME
 		//Search the first word of the request as a surname
@@ -118,6 +113,13 @@ if ($_POST["parrain"]!="")
 		$studentsSurname2 = $annuaire->getSurnameOfAllStudents();			
 		//Récupération des prénoms les plus proches
 		$found_surnamefirst=$annuaire->proximite_levenshtein($researched_surnamefirst,$studentsSurname2);
+		/*foreach($studentsSurname2 as $word){
+			if ($researched_surnamefirst === $word){
+				$found_surnamefirst = $word;
+			}
+		}*/
+		//$found_surnamefirst=$annuaire->chaines_egales($researched_surnamefirst,$studentsSurname2);
+		
 		
 		//Search the second word of the request as a name
 		$researched_namesecond=$req[1];
@@ -127,11 +129,27 @@ if ($_POST["parrain"]!="")
 		$studentsName2= $annuaire->getNameOfAllStudents();
 		//Récupération des noms les plus proches
 		$found_namesecond=$annuaire->proximite_levenshtein($researched_namesecond,$studentsName2);
+		/*foreach($studentsName2 as $word){
+			if ($researched_namesecond === $word){
+				$found_namesecond = $word;
+			}
+		}*/
+		//$found_namesecond=$annuaire->chaines_egales($researched_namesecond,$studentsName2);
 		
-		$eleves1 = $annuaire -> getStudent($found_namesecond, $found_surnamefirst);
+		$parr1 = $annuaire -> getStudent($found_namesecond, $found_surnamefirst);
 		
 		//UNION OF BOTH CASES TO DISPLAY THE RESULT		
-		$parrains = array_merge($parrains, $eleves1);
+		$parr = array_merge($parr, $parr1);
+		//print_r($parr);
+		if (count($parr) == 0){
+			echo("il y a 0 possibilité");
+		}
+		else if (count($parr) == 1){
+			echo("une seule possibilite");
+		}
+		else{
+			echo("il y a plusieurs possibilités de noms de parrain");
+		}
 	}
 	
 };
@@ -148,31 +166,7 @@ if ($_POST["fillot"]!="")
 	$count = count($req);
 
 	if($count == 1){
-		//Search the words of the request as names
-		$researched_name=$req[0];			
-		//Text to upper
-		$researched_name = strtoupper($researched_name);			
-		//Get all students' names
-		$studentsName = $annuaire->getNameOfAllStudents();			
-		//Récupération du nom le plus proche
-		$found_name=$annuaire->proximite_levenshtein($researched_name,$studentsName);
-		//Récupération de l'élève avec ce nom ou nom proche
-		$fillots = $annuaire -> getStudent($found_name);
-		
-		//Search the words of the request as surnames
-		$researched_surname=$req[0];
-		//Text to lower, first letter to upper
-		$researched_surname[0] = strtoupper($researched_surname[0]);
-		$researched_surname = strtolower($researched_surname);
-		//Get all students' surnames
-		$studentsSurname= $annuaire->getSurnameOfAllStudents();
-		//Récupération du prénom le plus proche
-		$found_surname=$annuaire->proximite_levenshtein($researched_surname,$studentsSurname);
-		//Récupération de l'élève avec ce prenom ou prenom proche
-		$elevesprenom = $annuaire -> getStudent(NULL, $found_surname);
-		
-		//concatène les 2 tableaux obtenus
-		$fillots = array_merge($fillots, $elevesprenom);
+		echo("il manque une information");
 	}
 	
 	if($count == 2){
@@ -185,6 +179,12 @@ if ($_POST["fillot"]!="")
 		$studentsName1 = $annuaire->getNameOfAllStudents();			
 		//Récupération des noms les plus proches
 		$found_namefirst=$annuaire->proximite_levenshtein($researched_namefirst,$studentsName1);
+		/*foreach($studentsName1 as $word){
+			if ($researched_namefirst === $word){
+				$found_namefirst = $word;
+			}
+		}*/
+		//$found_namefirst= chaines_egales($researched_namefirst, $studentsName1);
 		
 		//Search the second word of the request as a surname
 		$researched_surnamesecond=$req[1];
@@ -195,8 +195,14 @@ if ($_POST["fillot"]!="")
 		$studentsSurname1= $annuaire->getSurnameOfAllStudents();
 		//Récupération des prénoms les plus proches
 		$found_surnamesecond=$annuaire->proximite_levenshtein($researched_surnamesecond,$studentsSurname1);
+		/*foreach($studentsSurname1 as $word){
+			if ($researched_surnamesecond === $word){
+				$found_surnamesecond = $word;
+			}
+		}*/
+		//$found_surnamesecond=chaines_egales($researched_surnamesecond,$studentsSurname1);
 		
-		$fillots = $annuaire -> getStudent($found_namefirst, $found_surnamesecond);
+		$fill = $annuaire -> getStudent($found_namefirst, $found_surnamesecond);
 		
 		//CASE SURNAME NAME
 		//Search the first word of the request as a surname
@@ -208,6 +214,12 @@ if ($_POST["fillot"]!="")
 		$studentsSurname2 = $annuaire->getSurnameOfAllStudents();			
 		//Récupération des prénoms les plus proches
 		$found_surnamefirst=$annuaire->proximite_levenshtein($researched_surnamefirst,$studentsSurname2);
+		/*foreach($studentsSurname2 as $word){
+			if ($researched_surnamefirst === $word){
+				$found_surnamefirst = $word;
+			}
+		}*/
+		//$found_surnamefirst=$annuaire->chaines_egales($researched_surnamefirst,$studentsSurname2);
 		
 		//Search the second word of the request as a name
 		$researched_namesecond=$req[1];
@@ -217,13 +229,28 @@ if ($_POST["fillot"]!="")
 		$studentsName2= $annuaire->getNameOfAllStudents();
 		//Récupération des noms les plus proches
 		$found_namesecond=$annuaire->proximite_levenshtein($researched_namesecond,$studentsName2);
+		/*foreach($studentsName2 as $word){
+			if ($researched_namesecond === $word){
+				$found_namesecond = $word;
+			}
+		}*/
+		//$found_namesecond=$annuaire->chaines_egales($researched_namesecond,$studentsName2);
 		
-		$eleves1 = $annuaire -> getStudent($found_namesecond, $found_surnamefirst);
+		$fill1 = $annuaire -> getStudent($found_namesecond, $found_surnamefirst);
 		
 		//UNION OF BOTH CASES TO DISPLAY THE RESULT		
-		$fillots = array_merge($fillots, $eleves1);
+		$fill = array_merge($fill, $fill1);
+		//print_r($fill);
+		if (count($fill) == 0){
+			echo("il y a 0 possibilité");
+		}
+		else if (count($fill) == 1){
+			echo("une seule possibilite");
+		}
+		else{
+			echo("il y a plusieurs possibilités de noms de fillot");
+		}
 	}
-	
 };
 
 
@@ -236,10 +263,8 @@ if ($_POST["fillot"]!="")
 
 // Trie les données par nom et prenom croissant
 // Ajoute $eleves en tant que dernier paramètre, pour trier par la clé commune
-$tpl->assign('parrains', $parrains);
-$tpl->assign('nb_parrains', count($parrains));
-$tpl->assign('fillots', $fillots);
-$tpl->assign('nb_fillots', count($fillots));
+$tpl->assign('parrains', $parr);
+$tpl->assign('fillots', $fill);
 $tpl->assign('tri',$tri);
 $tpl->assign('page_title', _T("Add or modify the tree"));
 
@@ -257,14 +282,15 @@ $tpl->display('public_page.tpl');
 
 
 
-if($id_parrain!='' && $id_fillot!=''){
+if($_POST["parrain"]!='' && $_POST["fillot"]!=''){
 	global $zdb;
 
 	try {
 		$table_familles = AAE_PREFIX . 'familles';
+		var_dump($fill[0]["id_adh"]);
 		$data = array(
-			'id_parrain' => $id_parrain,
-			'id_fillot' => $id_fillot
+			'id_parrain' => $parr[0]["id_adh"],
+			'id_fillot' => $fill[0]["id_adh"]
 		);
 		 
 		$table_familles->insert($data);
@@ -279,3 +305,4 @@ if($id_parrain!='' && $id_fillot!=''){
 	}
 }
 
+?>
