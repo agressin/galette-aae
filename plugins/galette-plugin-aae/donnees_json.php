@@ -16,8 +16,8 @@ $annuaire = new Annuaire();
 //echo("coucou");
 
 $idn = 0;
-$ide = 1000;
-$idh = -1;
+$ide = 100000;
+$idh = 1000000;
 
 $json = '{"elements": { ';
 $nodes = '"nodes":[';
@@ -47,6 +47,7 @@ $idparrain2 = [];
 do  {
 	$idparrain2 = [];
 	$idparrain3 = [];
+	$idracines = [];
 	//Pour chaque parrain on chercher ses parrains
 	foreach ($idparrain as $cle => $valeur) 
 			{
@@ -55,19 +56,20 @@ do  {
 				//Recuperation des annees debut
 				$infos = [];
 				$infos = $annuaire->getInfoById($valeur);
-				if (strlen ($infos[0][nom])>3){ //Si jamais les infos sur le parrain sont liées à son cursus IT3, in enlève 2 ans à son année d'entrée pour savoir quand il et arrivé à l'école
-					$infos[0][annee_debut] = $infos[0][annee_debut] - 2;
-				}
-				//var_dump($infos[0][nom]);
-				$annee_deb = $infos[0][annee_debut];
-				if ($annee_deb < $annee_debut){
-					$annee_debut = $annee_deb;
+				if ($valeur < 1000000){
+					if (strlen ($infos[0][nom])>3){ //Si jamais les infos sur le parrain sont liées à son cursus IT3, in enlève 2 ans à son année d'entrée pour savoir quand il et arrivé à l'école
+						$infos[0][annee_debut] = $infos[0][annee_debut] - 2;
+					}
+					//var_dump($infos[0][nom]);
+					$annee_deb = $infos[0][annee_debut];
+					if ($annee_deb < $annee_debut){
+						$annee_debut = $annee_deb;
+					}
 				}
 				if (sizeOf(getParrains($valeur))>0){
 					//for (i=1:sizeOf(getParrains($valeur))){
 						$idparrain2=array_merge($idparrain2,getParrains($valeur));//On stocke les parrains
 						$idparrain3 = getParrains($valeur);
-						//var_dump($idparrain3);
 						//echo(" ");
 						/*foreach ($idparrain2 as $cle => $valeur){
 							echo ($valeur);
@@ -80,6 +82,7 @@ do  {
 				}
 				if (empty($idparrain3)/*&&*sizeOf($idparrain)!=1 && sizeOf($idparrain2) == 0*/){
 					//var_dump($idparrain2);
+					//echo("blabla");
 					$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$infos[0][prenom_adh]/*.'" "'.$infos[0][nom_adh]*/.'"}},';
 					$idn = $idn+1;
 					$idvieux = $idn-1;
@@ -87,9 +90,13 @@ do  {
 					//$idparrain2[] = $idh;
 					//echo(sizeOf($idparrain));
 					//echo("blabla");
-					$nodes = $nodes.'{"data":{"id":"'.$idh.'","name":"'.$idh.'"}},';
-					$edges = $edges.'{"data":{"id":"'.$idh.'","source":"'.$idh.'","target":"'.$valeur.'"}},';
-					$idh = $idh - 1;
+					/*$nodes = $nodes.'{"data":{"id":"'.$idh.'","name":"'.$idh.'"}},';*/
+					$edges = $edges.'{"data":{"id":"'.$ide.'","source":"'.$idh.'","target":"'.$valeur.'"}},';
+					array_push($idparrain2,$idh);
+					$idh = $idh + 1;
+					$ide++;
+					array_push($idracines,$valeur);
+					//var_dump($idparrain2);
 				}
 				
 				//TODO : pour les redoublants : insérer un élément vide entre eux et leur fillot
@@ -102,7 +109,7 @@ do  {
 					$nodes = $nodes.'{"data":{"id":'.$idh.',"name":'.$idh/*." ".$infos[0][nom_adh].*/.'}},';
 					$edges = $edges.'{"data":{"id":'.$ide.',"source":'.$idh.',"target":'.$infos[0][id_adh].'}},';
 					$ide = $ide+1;
-					$idh = $idh-1;
+					$idh = $idh+1;
 				}
 				else {
 					//var_dump($infos[0][annee_fin]);
@@ -116,6 +123,7 @@ do  {
 							//echo($nouveauparrain);
 							$edges = $edges.'{"data":{"id":"'.$ide.'","source":"'.$nouveauparrain.'","target":"'.$valeur.'"}},';
 							$ide = $ide+1;
+							array_push($idracines,$nouveauparrain);
 						}
 						
 					}
@@ -126,6 +134,7 @@ do  {
 							foreach ($idparrain3 as $cle => $nouveauparrain){
 								$edges = $edges.'{"data":{"id":"'.$ide.'","source":"'.$nouveauparrain.'","target":"'.$valeur.'"}},';
 								$ide = $ide+1;
+								array_push($idracines,$nouveauparrain);
 							}
 						//}
 						//echo($idvieux);
@@ -134,8 +143,17 @@ do  {
 			}
 			$idp = $idvieux;
 			$idparrain = $idparrain2;//On commence une nouvelle boucle avec les nouveaux parrains obtenus
+			$idpositif = 0;
+			foreach ($idparrain2 as $cle => $positif){
+				if ($positif < 1000000){
+					$idpositif++;
+				}
+			}
+			//var_dump($idparrain2);
 			$idparrain2 = [];
-} while (count($idparrain) > 0);
+} while ($idpositif > 0);
+
+var_dump($idracines);
 
 //Récupération des fillots
 $id_parrain1 = 1847;
@@ -158,14 +176,16 @@ do  {
 				//echo($valeur);
 				//Recuperation des annees debut
 				$infos = [];
-				$infos = $annuaire->getInfoById($valeur);
-				if (strlen ($infos[0][nom])>3){ //Si jamais les infos sur le parrain sont liées à son cursus IT3, in enlève 2 ans à son année d'entrée pour savoir quand il et arrivé à l'école
-					$infos[0][annee_debut] = $infos[0][annee_debut] - 2;
-				}
-				//var_dump($infos[0][nom]);
-				$annee_final = $infos[0][annee_debut];
-				if ($annee_final > $annee_fin){
-					$annee_fin = $annee_final;
+				if ($valeur < 1000000){
+					$infos = $annuaire->getInfoById($valeur);
+					if (strlen ($infos[0][nom])>3){ //Si jamais les infos sur le parrain sont liées à son cursus IT3, in enlève 2 ans à son année d'entrée pour savoir quand il et arrivé à l'école
+						$infos[0][annee_debut] = $infos[0][annee_debut] - 2;
+					}
+					//var_dump($infos[0][nom]);
+					$annee_final = $infos[0][annee_debut];
+					if ($annee_final > $annee_fin){
+						$annee_fin = $annee_final;
+					}
 				}
 				if (sizeOf(getFillots($valeur))>0){
 					//for (i=1:sizeOf(getParrains($valeur))){
@@ -236,21 +256,28 @@ do  {
 			$idfillot2 = [];
 } while (count($idfillot) > 0);
 
-$ide = 1;
 //echo($annee_debut);
-$nodes = $nodes.'{"data":{"id":"'.$annee_debut .'","name":"'.$annee_debut .'"}},';
+$premiereannee = $annee_debut - 2000;
+$nodes = $nodes.'{"data":{"id":"'.$premiereannee .'","name":"'.$annee_debut .'"}},';
 //var_dump($annee_debut);
 //echo($annee_debut);
-$ancienneannee = $annee_debut;
+$ancienneannee = $annee_debut - 2000;
 //echo($annee_debut+1);
 for ($i = $annee_debut+1; $i <= $annee_fin; $i++){
-	$nodes = $nodes.'{"data":{"id":"'.$i .'","name":"'.$i .'"}},';
-	$edges = $edges.'{"data":{"id":"'.$ide.'","source":"'. $ancienneannee .'","target":"'.$i .'"}},';
+	$nouvelleannee = $i - 2000;
+	$nodes = $nodes.'{"data":{"id":"'.$nouvelleannee .'","name":"'.$i .'"}},';
+	$edges = $edges.'{"data":{"id":"'.$ide.'","source":"'. $ancienneannee .'","target":"'.$nouvelleannee .'"}},';
 	$ide++;
-	$ancienneannee = $i;
+	$ancienneannee = $i - 2000;
 }
 
-$layout = '"layout": {"name": "breadthfirst", "directed": true, "roots":"#8772, #'.$annee_debut.'", "padding": 10} }';
+$roots = '"roots":'.'"';
+var_dump($idracines);
+foreach ($idracines as $cle => $racine){
+	$roots = $roots.'#'.$racine.',';
+}
+//echo($roots);
+$layout = '"layout": {"name": "breadthfirst", "directed": true, '.$roots.'#'.$premiereannee.'", "padding": 10} }';
 //,"style": "node { content: data(name);}"
 $infos = $annuaire->getInfoById($id_fillot1);
 $nodes = $nodes.'{"data":{"id":"9999","name":"'.$infos[0][prenom_adh]/*.'" "'.$infos[0][nom_adh]*/.'"}}';
