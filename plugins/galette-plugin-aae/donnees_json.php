@@ -23,18 +23,19 @@ $json = '{"elements": { ';
 $nodes = '"nodes":[';
 $edges = '"edges":[';
 
-$nom = 'GUINARD';
-$prenom = 'Stéphane';
+//echo($_POST["id_adh"]);
+$id = $_GET["id_adh"];
+//var_dump($_GET);
 
 $array = [];
 $annee_debut = 9999;
 
 $annee_fin = 0;
 
-$array_points = $annuaire->getStudent($nom,$prenom);
+$array_points = $annuaire->getInfoById($id);
 
 //Récupération des parrains
-$id_fillot1 = 1847;
+$id_fillot1 = $id;
 
 $idp = $id_fillot1;
 
@@ -156,10 +157,10 @@ do  {
 			$idparrain2 = [];
 } while ($idpositif > 0);
 
-var_dump($idracines);
+//var_dump($idracines);
 
 //Récupération des fillots
-$id_parrain1 = 1847;
+$id_parrain1 = $id;
 //Idem que pour les parrains mais avec les fillots
 $idfillot = getFillots($id_parrain1);
 $id_fillot = [];
@@ -261,6 +262,7 @@ do  {
 } while (count($idfillot) > 0);
 
 //echo($annee_debut);
+/*var_dump($annee_debut);
 $premiereannee = $annee_debut - 2000;
 $nodes = $nodes.'{"data":{"id":"'.$premiereannee .'","name":"'.$annee_debut .'"}},';
 //var_dump($annee_debut);
@@ -273,20 +275,22 @@ for ($i = $annee_debut+1; $i <= $annee_fin; $i++){
 	$edges = $edges.'{"data":{"id":"'.$ide.'","source":"'. $ancienneannee .'","target":"'.$nouvelleannee .'"}},';
 	$ide++;
 	$ancienneannee = $i - 2000;
-}
+}*/
 
 $roots = '"roots":'.'"';
-var_dump($idracines);
+//var_dump($idracines);
 foreach ($idracines as $cle => $racine){
 	$roots = $roots.'#'.$racine.',';
 }
 //echo($roots);
-$layout = '"layout": {"name": "breadthfirst", "directed": true, '.$roots.'#'.$premiereannee.'", "padding": 10} }';
+$roots = substr($roots,0,-1);
+$layout = '"layout": {"name": "breadthfirst", "directed": true, '.$roots/*.'#'.$premiereannee*/.'", "padding": 10} }';
 //,"style": "node { content: data(name);}"
 $infos = $annuaire->getInfoById($id_fillot1);
 $personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
 $nodes = $nodes.'{"data":{"id":"9999","name":"'.$personne.'"}}';
 $edges = substr($edges,0,-1);
+
 $json = $json.$nodes."],".$edges."]},".$layout;
 //echo($json);
 if (!$fp = fopen("donnees.json","w+")) { 
