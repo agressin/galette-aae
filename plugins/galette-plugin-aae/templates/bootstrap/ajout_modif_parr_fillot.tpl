@@ -9,7 +9,8 @@
 				<div class="col-md-4">						
 					{*Searching parrains by name*}
 					<label>{_T string="Research of parrain"}
-						<input type="text" name ="parrain" {if isset($smarty.post.parrain)} value="{$smarty.post.parrain}" {/if}/> 								
+						<input type="text" name ="parrain" {if isset($parrain)} value="{$parrain}" {/if}/> 
+						<input type="hidden" name ="id_p" {if isset($id_p)} value="{$id_p}" {/if}/> 							
 					</label>
 					<div id="image">
 					</div>
@@ -42,7 +43,7 @@
 				<div class="col-md-4">
 					{*Searching fillots by name*}
 					<label>{_T string="Research of fillot"}
-						<input type="text" name ="fillot" {if isset($smarty.post.fillot)} value="{$smarty.post.fillot}" {/if}/> 								
+						<input type="text" name ="fillot" {if isset($fillot)} value="{$fillot}" {/if}/> 								
 					</label>
 					<button type="submit" class="btn btn-primary"><img src="templates/bootstrap/images/loupe.png" class="img-responsive" />{if $param_selected eq 1} {_T string="Refresh"} {else} {""} {/if}</button>				
 					{*Display parrains found*}

@@ -46,34 +46,25 @@ if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
 $cycles = new Cycles();
 $annuaire = new Annuaire();
 
-//Recuperation cycles
-$allCycles = $cycles->getAllCycles();
-foreach ($allCycles as $key => $cycle) {
-	$tmp[$key] = $cycle["parrain"];
-}
-
-//Tri ascendant
-array_multisort($tmp, SORT_ASC, $allCycles);
-$tpl->assign('cycles', $allCycles);
-
-if ($_POST["parrain"]!="")
-{
-	$parr = $annuaire->rechercheParNom($_POST["parrain"]);
-};
-
-//Recuperation cycles
-$allCycles = $cycles->getAllCycles();
-foreach ($allCycles as $key => $cycle) {
-	$tmp[$key] = $cycle["fillot"];
-}
-	
-if ($_POST["fillot"]!="")
-{
-	$fill = $annuaire->rechercheParNom($_POST["fillot"]);
-};
-
 $id_fillot = $_GET["id_f"];
 $id_parrain = $_GET["id_p"];
+
+if ($id_parrain=="")
+{
+	$parr = $annuaire->rechercheParNom($_POST["parrain"]);
+	$tpl->assign('parrain', '');
+}else {
+	$tpl->assign('parrain', $_POST["parrain"]);
+	if ($id_fillot=="")
+	{
+		$fill = $annuaire->rechercheParNom($_POST["fillot"]);
+		$tpl->assign('fillot', '');
+	}else{
+		$tpl->assign('fillot', $_POST["fillot"]);
+	}
+}
+
+
 $val = $_GET["value"];
 
 // Trie les données par nom et prenom croissant
@@ -82,7 +73,7 @@ $tpl->assign('parrains', $parr);
 $tpl->assign('nb_parr', count($parr));
 $tpl->assign('fillots', $fill);
 $tpl->assign('nb_fill', count($fill));
-$tpl->assign('tri',$tri);
+
 $tpl->assign('page_title', _T("Add or modify the tree"));
 $tpl->assign('value', $val);
 
@@ -100,7 +91,7 @@ $tpl->display('public_page.tpl');
 
 $annuaire->maFonction($content);
 
-if($_POST["parrain"]!='' && $_POST["fillot"]!=''){
+if($_POST["id_parrain"]!='' && $_POST["id_fillot"]!=''){
 	global $zdb;
 
 	try {
