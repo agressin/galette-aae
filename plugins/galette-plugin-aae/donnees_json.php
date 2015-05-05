@@ -17,7 +17,7 @@ $annuaire = new Annuaire();
 
 $idn = 0;
 $ide = 100000;
-$idh = 1000000;
+$idh = -1;
 
 $json = '{"elements": { ';
 $nodes = '"nodes":[';
@@ -56,7 +56,7 @@ do  {
 				//Recuperation des annees debut
 				$infos = [];
 				$infos = $annuaire->getInfoById($valeur);
-				if ($valeur < 1000000){
+				if ($valeur > 0){
 					if (strlen ($infos[0][nom])>3){ //Si jamais les infos sur le parrain sont liées à son cursus IT3, in enlève 2 ans à son année d'entrée pour savoir quand il et arrivé à l'école
 						$infos[0][annee_debut] = $infos[0][annee_debut] - 2;
 					}
@@ -83,7 +83,8 @@ do  {
 				if (empty($idparrain3)/*&&*sizeOf($idparrain)!=1 && sizeOf($idparrain2) == 0*/){
 					//var_dump($idparrain2);
 					//echo("blabla");
-					$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$infos[0][prenom_adh]/*.'" "'.$infos[0][nom_adh]*/.'"}},';
+					$personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
+					$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$personne.'"}},';
 					$idn = $idn+1;
 					$idvieux = $idn-1;
 					//$idparrain2 = [];
@@ -93,7 +94,7 @@ do  {
 					/*$nodes = $nodes.'{"data":{"id":"'.$idh.'","name":"'.$idh.'"}},';*/
 					$edges = $edges.'{"data":{"id":"'.$ide.'","source":"'.$idh.'","target":"'.$valeur.'"}},';
 					array_push($idparrain2,$idh);
-					$idh = $idh + 1;
+					$idh = $idh - 1;
 					$ide++;
 					array_push($idracines,$valeur);
 					//var_dump($idparrain2);
@@ -103,18 +104,20 @@ do  {
 				else if ($infos[0][annee_fin] - $infos[0][annee_debut] == 4){
 					
 					echo("redoublant");
-					$nodes = $nodes.'{"data":{"id":'.$infos[0][id_adh].',"name":'.$infos[0][prenom_adh]/*." ".$infos[0][nom_adh]*/.'}},';
+					$personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
+					$nodes = $nodes.'{"data":{"id":'.$infos[0][id_adh].',"name":'.$personne.'}},';
 					$idn = $idn+1;
 					$idvieux = $idn-1;
 					$nodes = $nodes.'{"data":{"id":'.$idh.',"name":'.$idh/*." ".$infos[0][nom_adh].*/.'}},';
 					$edges = $edges.'{"data":{"id":'.$ide.',"source":'.$idh.',"target":'.$infos[0][id_adh].'}},';
 					$ide = $ide+1;
-					$idh = $idh+1;
+					$idh = $idh-1;
 				}
 				else {
 					//var_dump($infos[0][annee_fin]);
 					//echo($infos[0][annee_fin] - $infos[0][annee_debut]);
-					$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$infos[0][prenom_adh]/*.'" "'.$infos[0][nom_adh]*/.'"}},';
+					$personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
+					$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$personne.'"}},';
 					$idn = $idn+1;
 					$idvieux = $idn-1;
 					//echo($idvieux);
@@ -145,7 +148,7 @@ do  {
 			$idparrain = $idparrain2;//On commence une nouvelle boucle avec les nouveaux parrains obtenus
 			$idpositif = 0;
 			foreach ($idparrain2 as $cle => $positif){
-				if ($positif < 1000000){
+				if ($positif > 0){
 					$idpositif++;
 				}
 			}
@@ -176,7 +179,7 @@ do  {
 				//echo($valeur);
 				//Recuperation des annees debut
 				$infos = [];
-				if ($valeur < 1000000){
+				if ($valeur > 0){
 					$infos = $annuaire->getInfoById($valeur);
 					if (strlen ($infos[0][nom])>3){ //Si jamais les infos sur le parrain sont liées à son cursus IT3, in enlève 2 ans à son année d'entrée pour savoir quand il et arrivé à l'école
 						$infos[0][annee_debut] = $infos[0][annee_debut] - 2;
@@ -226,7 +229,8 @@ do  {
 					$idh = $idh-1;
 				}*/
 				//else {
-					$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$infos[0][prenom_adh]/*.'" "'.$infos[0][nom_adh]*/.'"}},';
+					$personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
+					$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$personne.'"}},';
 					$idn = $idn+1;
 					$idvieux = $idn-1;
 					//echo($idvieux);
@@ -280,7 +284,8 @@ foreach ($idracines as $cle => $racine){
 $layout = '"layout": {"name": "breadthfirst", "directed": true, '.$roots.'#'.$premiereannee.'", "padding": 10} }';
 //,"style": "node { content: data(name);}"
 $infos = $annuaire->getInfoById($id_fillot1);
-$nodes = $nodes.'{"data":{"id":"9999","name":"'.$infos[0][prenom_adh]/*.'" "'.$infos[0][nom_adh]*/.'"}}';
+$personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
+$nodes = $nodes.'{"data":{"id":"9999","name":"'.$personne.'"}}';
 $edges = substr($edges,0,-1);
 $json = $json.$nodes."],".$edges."]},".$layout;
 //echo($json);
