@@ -91,24 +91,29 @@ do  {
 					$edges = $edges.'{"data":{"id":"'.$idh.'","source":"'.$idh.'","target":"'.$valeur.'"}},';
 					$idh = $idh - 1;
 				}
+				
 				//TODO : pour les redoublants : insérer un élément vide entre eux et leur fillot
-				/*else if ($infos[0][annee_fin] - $infos[0][annee_fin] == 4){
-					$nodes = $nodes."{data:{id:".$idn.",name:".$infos[0][prenom_adh]." ".$infos[0][nom_adh]."}},";
+				else if ($infos[0][annee_fin] - $infos[0][annee_debut] == 4){
+					
+					echo("redoublant");
+					$nodes = $nodes.'{"data":{"id":'.$infos[0][id_adh].',"name":'.$infos[0][prenom_adh]/*." ".$infos[0][nom_adh]*/.'}},';
 					$idn = $idn+1;
 					$idvieux = $idn-1;
-					$nodes = $nodes."{data:{id:".$idh.",name:".$infos[0][prenom_adh]." ".$infos[0][nom_adh]."}},";
-					$edges = $edges."{data:{id:".$ide.",source:".$idh.",target:$idvieux}},";
+					$nodes = $nodes.'{"data":{"id":'.$idh.',"name":'.$idh/*." ".$infos[0][nom_adh].*/.'}},';
+					$edges = $edges.'{"data":{"id":'.$ide.',"source":'.$idh.',"target":'.$infos[0][id_adh].'}},';
 					$ide = $ide+1;
 					$idh = $idh-1;
-				}*/
+				}
 				else {
+					var_dump($infos[0][annee_fin]);
+					//echo($infos[0][annee_fin] - $infos[0][annee_debut]);
 					$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$infos[0][prenom_adh]/*.'" "'.$infos[0][nom_adh]*/.'"}},';
 					$idn = $idn+1;
 					$idvieux = $idn-1;
 					//echo($idvieux);
 					if ($idp != $id_fillot1){
 						foreach ($idparrain3 as $cle => $nouveauparrain){
-							echo($nouveauparrain);
+							//echo($nouveauparrain);
 							$edges = $edges.'{"data":{"id":"'.$ide.'","source":"'.$nouveauparrain.'","target":"'.$valeur.'"}},';
 							$ide = $ide+1;
 						}
@@ -205,7 +210,7 @@ do  {
 					//echo($idvieux);
 					if ($idp != $id_fillot1){
 						foreach ($idfillot3 as $cle => $nouveaufillot){
-							echo($nouveaufillot);
+							//echo($nouveaufillot);
 							$edges = $edges.'{"data":{"id":"'.$ide.'","source":"'.$valeur.'","target":"'.$nouveaufillot.'"}},';
 							$ide = $ide+1;
 						}
@@ -228,6 +233,7 @@ do  {
 			$idfillot = $idfillot2;//On commence une nouvelle boucle avec les nouveaux parrains obtenus
 			$idfillot2 = [];
 } while (count($idfillot) > 0);
+
 
 $layout = '"layout": {"name": "breadthfirst", "directed": true, "roots":"#8772", "padding": 10} }';
 //,"style": "node { content: data(name);}"
