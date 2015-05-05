@@ -92,9 +92,6 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 					<a href="{$galette_base_path}voir_adherent.php">{$login->login}</a>
 						<ul class='children'>
 							<li class="page_item">
-						    	<a href="{$galette_base_path}voir_adherent.php">{_T string="My information"}</a>
-						    </li>
-							<li class="page_item">
 						    	<a  href="{$galette_base_path}index.php?logout=1">{_T string="Log off"}</a>
 						    </li>
 						</ul>

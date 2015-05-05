@@ -57,7 +57,7 @@
 					<td class="left">{$nb_eleves} {if $nb_eleves != 1}{_T string="students"}{else}{_T string="student"}{/if}</td>
 				</tr>
 			</table>
-			<table id="table_eleves" class="listing table">
+			<table id="table_eleves" class="table table-hover">
 				<thead>
 					<tr>
 						<th class="left">

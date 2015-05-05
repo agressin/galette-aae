@@ -1,5 +1,5 @@
  <strong>{$member->sname}</strong>
-    <table id='table_formation' class="listing">
+    <table id='table_formation' class="table table-hover">
         <thead>
             <tr>
                 <!-- <th class="listing id_row">#</th> -->

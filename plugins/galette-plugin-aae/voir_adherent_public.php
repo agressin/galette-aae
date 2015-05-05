@@ -69,7 +69,7 @@ $tpl->assign('visibles', $visibles);
 $tpl->assign('member', $member);
 $nom = $member->sfullname;
 
-$tpl->assign('page_title', 'Profil de '.$nom);
+$tpl->assign('page_title', _T("Profil of ").$nom);
 
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before

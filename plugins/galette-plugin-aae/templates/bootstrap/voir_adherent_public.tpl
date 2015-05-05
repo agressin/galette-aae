@@ -1,10 +1,10 @@
 	<div class="bigtable wrmenu">
 		<div class="bigtable wrmenu">
 			<!--<div id="member_stateofdue" class="{$member->getRowClass()}">{$member->getDues()}</div>-->
-			<table class="details">
-				<legend>{_T string="Identity:"}</legend>
+			<table class="details table-hover">
+				<legend>{_T string="Identity"}</legend>
 				<tr>
-					<th style="width:50%" >{_T string="Name:"}</th>
+					<th style="width:50%" >{_T string="Name"}</th>
 					<td>
 						{if $member->isCompany()}
 							<img src="{$template_subdir}images/icon-company.png" alt="{_T string="[C]"}" width="16" height="16"/>
@@ -27,33 +27,33 @@
 	{if $visibles.societe_adh eq constant('Galette\Entity\FieldsConfig::VISIBLE') or ($visibles.societe_adh eq constant('Galette\Entity\FieldsConfig::ADMIN') and ($login->isStaff() or $login->isAdmin() or $login->isSuperAdmin()))}
 		{if $member->isCompany()}
 				<tr>
-					<th style="width:50%" >{_T string="Company:"}</th>
+					<th style="width:50%" >{_T string="Company"}</th>
 					<td>{$member->company_name}</td>
 				</tr>
 		{/if}
 	{/if}
 	{if $visibles.pseudo_adh eq constant('Galette\Entity\FieldsConfig::VISIBLE') or ($visibles.pseudo_adh eq constant('Galette\Entity\FieldsConfig::ADMIN') and ($login->isStaff() or $login->isAdmin() or $login->isSuperAdmin()))}
 				<tr>
-					<th style="width:50%" >{_T string="Nickname:"}</th>
+					<th style="width:50%" >{_T string="Nickname"}</th>
 					<td>{$member->nickname|htmlspecialchars}</td>
 				</tr>
 	{/if}
 	{if $visibles.ddn_adh eq constant('Galette\Entity\FieldsConfig::VISIBLE') or ($visibles.ddn_adh eq constant('Galette\Entity\FieldsConfig::ADMIN') and ($login->isStaff() or $login->isAdmin() or $login->isSuperAdmin()))}
 				<tr>
-					<th style="width:50%" >{_T string="Birth date:"}</th>
+					<th style="width:50%" >{_T string="Birth date"}</th>
 					<td>{$member->birthdate}</td>
 				</tr>
 	{/if}
 	{if $visibles.prof_adh eq constant('Galette\Entity\FieldsConfig::VISIBLE') or ($visibles.prof_adh eq constant('Galette\Entity\FieldsConfig::ADMIN') and ($login->isStaff() or $login->isAdmin() or $login->isSuperAdmin()))}
 				<tr>
-					<th style="width:50%" >{_T string="Profession:"}</th>
+					<th style="width:50%" >{_T string="Profession"}</th>
 					<td>{$member->job|htmlspecialchars}</td>
 				</tr>
 	{/if}
 
 	
 				<tr>
-					<th style="width:50%" >{_T string="Cycle(s):"}</th>
+					<th style="width:50%" >{_T string="Cycle(s)"}</th>
 					<form class="form-horizontal" action="liste_eleves.php" method="post">
 					<td>
 	{foreach $form as $key}
@@ -66,23 +66,23 @@
 	
 			</table>
 			
-			<table class="details">
-				<legend>{_T string="Contact information:"}</legend>
+			<table class="details table-hover">
+				<legend>{_T string="Contact information"}</legend>
 	{if $visibles.ville_adh eq constant('Galette\Entity\FieldsConfig::VISIBLE') or ($visibles.ville_adh eq constant('Galette\Entity\FieldsConfig::ADMIN') and ($login->isStaff() or $login->isAdmin() or $login->isSuperAdmin()))}
 				<tr>
-					<th style="width:50%" >{_T string="City:"}</th>
+					<th style="width:50%" >{_T string="City"}</th>
 					<td>{$member->town|htmlspecialchars}</td>
 				</tr>
 	{/if}
 	{if $visibles.pays_adh eq constant('Galette\Entity\FieldsConfig::VISIBLE') or ($visibles.pays_adh eq constant('Galette\Entity\FieldsConfig::ADMIN') and ($login->isStaff() or $login->isAdmin() or $login->isSuperAdmin()))}
 				<tr>
-					<th style="width:50%" >{_T string="Country:"}</th>
+					<th style="width:50%" >{_T string="Country"}</th>
 					<td>{$member->country|htmlspecialchars}</td>
 				</tr>
 	{/if}
 	{if $visibles.email_adh eq constant('Galette\Entity\FieldsConfig::VISIBLE') or ($visibles.email_adh eq constant('Galette\Entity\FieldsConfig::ADMIN') and ($login->isStaff() or $login->isAdmin() or $login->isSuperAdmin()))}
 				<tr>
-					<th style="width:50%" >{_T string="E-Mail:"}</th>
+					<th style="width:50%" >{_T string="E-Mail"}</th>
 					<td>
 		{if $member->email ne ''}
 						<a href="mailto:{$member->email}">{$member->email}</a>
@@ -92,7 +92,7 @@
 	{/if}
 	{if $visibles.url_adh eq constant('Galette\Entity\FieldsConfig::VISIBLE') or ($visibles.url_adh eq constant('Galette\Entity\FieldsConfig::ADMIN') and ($login->isStaff() or $login->isAdmin() or $login->isSuperAdmin()))}
 				<tr>
-					<th style="width:50%" >{_T string="Website:"}</th>
+					<th style="width:50%" >{_T string="Website"}</th>
 					<td>
 		{if $member->website ne ''}
 						<a href="{$member->website}">{$member->website}</a>
@@ -104,12 +104,12 @@
 			</table>
 
 			
-			<table class="details">
-				<legend>{_T string="Jobs information:"}</legend>
+			<table class="details table-hover">
+				<legend>{_T string="Jobs information"}</legend>
 		{foreach $list_postes as $key}
 		
 				<tr>
-					<th style="width:50%" >{$key.annee_ini|htmlspecialchars} - {if $key.annee_fin eq 0} {_T string="present"} {else} {$key.annee_fin|htmlspecialchars} {/if} </th>
+					<th style="width:25%" >{$key.annee_ini|htmlspecialchars} - {if $key.annee_fin eq 0} {_T string="present"} {else} {$key.annee_fin|htmlspecialchars} {/if} </th>
 					<td>{$key.activite_principale|htmlspecialchars}</td>
 					<td><a href="liste_job.php?id_entreprise={$key.id_entreprise}">{$key.employeur|htmlspecialchars}</a></td>
 					<td>

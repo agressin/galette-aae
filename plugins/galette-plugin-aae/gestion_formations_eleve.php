@@ -19,7 +19,7 @@ if ( !$login->isLogged() ) {
     die();
 }
 
-$tpl->assign('page_title', _T("Formations managment"));
+
 
 
 $formation = new Formations();
@@ -72,6 +72,8 @@ if (isset($warning_detected)) {
     $tpl->assign('warning_detected', $warning_detected);
 }
 
+$nom = $member->sfullname;
+$tpl->assign('page_title', _T("Formations managment: ").$nom);
 
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
