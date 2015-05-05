@@ -2,7 +2,7 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
-	<input type="button" value={_T string="Backtotree"} onclick="self.location.href='arbre.php'"/>
+	<input type="button" id="buttonparrain" value={_T string="Backtotree"} onclick="self.location.href='arbre.php'"/>
 	<form action="ajout_modif_parr_fillot.php" method="post">
 		<fieldset class="form-group">
 			<div class="row">
@@ -19,9 +19,14 @@
 							{foreach from=$parrains item=p name=allparrains}
 								{if ($p.annee_debut >= 2000) && (($p.id_cycle == 51) || ($p.id_cycle == 2))}
 										<!-- On ne fait qu'un seul lien du nom+prénom-->
-										<div class="row"><a href="ajout_modif_parr_fillot.php?id_p=$p.id_adh">{$p.nom_adh}{" "}{$p.prenom_adh}<br \></a></div>
+										<div class="row" id="jesuisleparrain"><a href="ajout_modif_parr_fillot.php?id_adh=$p.id_adh">{$p.nom_adh}{" "}{$p.prenom_adh}<br \></a></div>
 										<script type="text/javascript">
-										
+											document.getElementById("jesuisleparrain").addEventListener("click", function(event){ 
+																													console.log("blabla");
+																													var img = document.createElement('img');
+																													img.src = 'templates/bootstrap/images/loupe.png';
+																													document.getElementById('buttonparrain').appendChild(img);
+																													}, false);
 										</script>
 								{/if}
 							{/foreach}
@@ -40,12 +45,13 @@
 							{foreach from=$fillots item=f name=allfillots}
 								{if ($f.annee_debut >= 2000) && (($f.id_cycle == 51) || ($f.id_cycle == 2))}
 										<!-- On ne fait qu'un seul lien du nom+prénom-->
-										<div class="row"><a href="voir_adherent_public.php?id_adh=$f.id_adh">{$f.nom_adh}{" "}{$f.prenom_adh}<br \></a></div>
+										<div class="row"><a href="ajout_modif_parr_fillot.php?id_p=$p.id_adh&id_f=$f.id_adh">{$f.nom_adh}{" "}{$f.prenom_adh}<br \></a></div>
 								{/if}
 							{/foreach}
-						</div>
 					{/if}
 				</div>
+					
+			</div>
 		</fieldset>
 	</form>
 
