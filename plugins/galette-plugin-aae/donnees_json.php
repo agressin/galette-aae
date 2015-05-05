@@ -105,7 +105,7 @@ do  {
 					$idh = $idh-1;
 				}
 				else {
-					var_dump($infos[0][annee_fin]);
+					//var_dump($infos[0][annee_fin]);
 					//echo($infos[0][annee_fin] - $infos[0][annee_debut]);
 					$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$infos[0][prenom_adh]/*.'" "'.$infos[0][nom_adh]*/.'"}},';
 					$idn = $idn+1;
@@ -234,6 +234,15 @@ do  {
 			$idfillot2 = [];
 } while (count($idfillot) > 0);
 
+
+//echo($annee_debut);
+$nodes = $nodes.'{"data":{"id":"'.$annee_debut .'","name":"'.$annee_debut .'"}},';
+//var_dump($annee_debut);
+//echo($annee_debut);
+/*for ($i = $annee_debut+1, $i < $annee_fin, $i++){
+	$nodes = $nodes.'{"data":{"id":"'.$i .'","name":"'.$i .'"}},';
+	//$edges = $edges.'{"data":{"id":"'.$i.'","source":"'. $i-1 .'","target":"'.$i .'"}},';
+}*/
 
 $layout = '"layout": {"name": "breadthfirst", "directed": true, "roots":"#8772", "padding": 10} }';
 //,"style": "node { content: data(name);}"
