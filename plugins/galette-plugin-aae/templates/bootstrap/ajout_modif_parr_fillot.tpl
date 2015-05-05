@@ -11,6 +11,8 @@
 					<label>{_T string="Research of parrain"}
 						<input type="text" name ="parrain" {if isset($smarty.post.parrain)} value="{$smarty.post.parrain}" {/if}/> 								
 					</label>
+					<div id="image">
+					</div>
 					<button type="submit" class="btn btn-primary"><img src="templates/bootstrap/images/loupe.png" class="img-responsive" />{if $param_selected eq 1} {_T string="Refresh"} {else} {""} {/if}</button>				
 					
 					{*Display parrains found*}
@@ -19,13 +21,17 @@
 							{foreach from=$parrains item=p name=allparrains}
 								{if ($p.annee_debut >= 2000) && (($p.id_cycle == 51) || ($p.id_cycle == 2))}
 										<!-- On ne fait qu'un seul lien du nom+prénom-->
-										<div class="row" id="jesuisleparrain"><a href="ajout_modif_parr_fillot.php?id_adh=$p.id_adh">{$p.nom_adh}{" "}{$p.prenom_adh}<br \></a></div>
+										<div class="row" id="jesuisleparrain"><a href="ajout_modif_parr_fillot.php?id_p={$p.id_adh}&value=ok">{$p.nom_adh}{" "}{$p.prenom_adh}<br \></a></div>
 										<script type="text/javascript">
 											document.getElementById("jesuisleparrain").addEventListener("click", function(event){ 
 																													console.log("blabla");
-																													var img = document.createElement('img');
-																													img.src = 'templates/bootstrap/images/loupe.png';
-																													document.getElementById('buttonparrain').appendChild(img);
+																													if (value==ok){
+																														var img = document.getElementById("image");
+																														var im_valid;
+																														im_valid = document.createElement('img');
+																														im_valid.src = 'templates/bootstrap/images/valid-icon.png';
+																														img.appendChild(im_valid);
+																														}
 																													}, false);
 										</script>
 								{/if}
@@ -45,7 +51,7 @@
 							{foreach from=$fillots item=f name=allfillots}
 								{if ($f.annee_debut >= 2000) && (($f.id_cycle == 51) || ($f.id_cycle == 2))}
 										<!-- On ne fait qu'un seul lien du nom+prénom-->
-										<div class="row"><a href="ajout_modif_parr_fillot.php?id_p=$p.id_adh&id_f=$f.id_adh">{$f.nom_adh}{" "}{$f.prenom_adh}<br \></a></div>
+										<div class="row"><a href="ajout_modif_parr_fillot.php?id_p={$p.id_adh}&id_f={$f.id_adh}">{$f.nom_adh}{" "}{$f.prenom_adh}<br \></a></div>
 								{/if}
 							{/foreach}
 					{/if}

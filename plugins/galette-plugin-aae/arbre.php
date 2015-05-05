@@ -45,8 +45,7 @@ $tpl->assign('cycles', $allCycles);
 if ($_POST["nomprenom"]!="")
 {
 	$eleves = $annuaire->rechercheParNom($_POST["nomprenom"]);
-};
-	
+};	
 
 // Obtient une liste de colonnes
 foreach ($eleves as $key => $row) {

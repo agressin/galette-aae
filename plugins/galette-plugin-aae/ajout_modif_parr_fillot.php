@@ -72,6 +72,10 @@ if ($_POST["fillot"]!="")
 	$fill = $annuaire->rechercheParNom($_POST["fillot"]);
 };
 
+$id_fillot = $_GET["id_f"];
+$id_parrain = $_GET["id_p"];
+$val = $_GET["value"];
+
 // Trie les données par nom et prenom croissant
 // Ajoute $eleves en tant que dernier paramètre, pour trier par la clé commune
 $tpl->assign('parrains', $parr);
@@ -80,6 +84,7 @@ $tpl->assign('fillots', $fill);
 $tpl->assign('nb_fill', count($fill));
 $tpl->assign('tri',$tri);
 $tpl->assign('page_title', _T("Add or modify the tree"));
+$tpl->assign('value', $val);
 
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
@@ -102,8 +107,10 @@ if($_POST["parrain"]!='' && $_POST["fillot"]!=''){
 		$table_familles = AAE_PREFIX . 'familles';
 		var_dump($fill[0]["id_adh"]);
 		$data = array(
-			'id_parrain' => $parr[0]["id_adh"],
-			'id_fillot' => $fill[0]["id_adh"]
+			'id_parrain'=>$id_parrain,
+			'id_fillot'=>$id_fillot
+			//'id_parrain' => $parr[0]["id_adh"],
+			//'id_fillot' => $fill[0]["id_adh"]
 		);
 		 
 		$table_familles->insert($data);
