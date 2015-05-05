@@ -29,15 +29,6 @@
 			})
 			.update();
 
-		cy.on('tap', 'node', { foo: 'bar' }, function(evt){
-			var node = evt.cyTarget;
-			if (node.id() <= 100){ //if a year were tapped
-				console.log(node.id() );
-			}else{
-				console.log( 'tapped ' + node.id() );
-			}
-		});
-
 		cy.userPanningEnabled( false ); //Block the tree moving
 		cy.userZoomingEnabled( false ); //Block the tree zooming
 		cy.autoungrabify( true ); //Block the node moving
@@ -50,16 +41,50 @@
 			}
 		});
 
-		cy.nodes().qtip({
-			content: 'Hello!',
-			style: {
-				classes: 'qtip-bootstrap',
-				tip: {
-					width: 16,
-					height: 8
-				}
+		//variable initialisation
+		var canvas = document.getElementById("cy");
+		var infobulle = document.getElementById("popup");
+		var x_souris = 0;
+		var y_souris = 0;
+
+		infobulle.style.display = 'none'; //hide the tooltip
+
+		//Mouse's coordinates
+		function getMousePos(canvas, evt) {
+			var rect = canvas.getBoundingClientRect();
+			return {
+				x: evt.clientX - rect.left,
+				y: evt.clientY - rect.top
+			};
+		}
+
+		//Get coordinate at each moment
+		canvas.addEventListener('mousemove', function(evt) {
+			var mousePos = getMousePos(canvas, evt);
+			x_souris = mousePos.x;
+			y_souris = mousePos.y;
+		}, false);
+
+		cy.on('tap', 'node', function(evt){ 
+			var node = evt.cyTarget;
+			var clic = node.id();
+			if (clic <= 100){ //If we tap a year
+				console.log(clic);
+			}else{ //If we tap someone
+				infobulle.style.height = 100+"px";
+				infobulle.style.width = 100+"px";
+				infobulle.style.backgroundColor = "#53AAFF";
+				infobulle.style.position = "absolute";
+				infobulle.style.left = (x_souris+15) + "px";
+				infobulle.style.top = (y_souris-100) + "px";
+				//masq and display the tooltip
+				if (infobulle.style.display == 'none')
+					infobulle.style.display = 'block';
+				else
+					infobulle.style.display = 'none';
 			}
 		});
 
-	}); //fin de la fonction jquery
+
+	}); //end of the jquery's function
 </script>
