@@ -23,7 +23,7 @@
 				{if ($eleve.annee_debut >= 2000) && (($eleve.id_cycle == 51) || ($eleve.id_cycle == 2))}
 					<div class="col-md-4 col-md-offset-9">
 						<!-- On ne fait qu'un seul lien du nom+prénom-->
-						<div class="row"><a href="voir_adherent_public.php?id_adh={$eleve.id_adh}">{$eleve.nom_adh}{" "}{$eleve.prenom_adh}<br \></a></div>
+						<div class="row"><a href="arbre.php?id_adh={$eleve.id_adh}">{$eleve.nom_adh}{" "}{$eleve.prenom_adh}<br \></a></div>
 					</div>
 				{/if}
 			{/foreach}
