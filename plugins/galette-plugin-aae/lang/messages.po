@@ -46,6 +46,10 @@ msgstr ""
 msgid "creation"
 msgstr ""
 
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:47
+msgid "Research of fillot"
+msgstr ""
+
 #: ../templates/default/aaetools.tpl:4 ../templates/bootstrap/aaetools.tpl:4
 msgid "AAETools settings"
 msgstr ""
@@ -68,6 +72,10 @@ msgstr ""
 msgid "E-Mail:"
 msgstr ""
 
+#: ../arbre.php:71
+msgid "Parrain-fillots tree"
+msgstr ""
+
 #: ../ajouter_offre.php:37
 msgid "You don't have the permission to modify an existing offer."
 msgstr ""
@@ -77,8 +85,10 @@ msgstr ""
 msgid "student"
 msgstr ""
 
-#: ../ajouter_offre.php:71
-msgid "Offer has not been modified!"
+#: ../promotion.php:57 ../liste_eleves.php:113
+#: ../templates/default/public_menu.tpl:2 ../templates/default/public_menu.tpl:5
+#: ../templates/bootstrap/public_menu.tpl:3 ../templates/bootstrap/public_menu.tpl:13
+msgid "Former students list"
 msgstr ""
 
 #: ../templates/bootstrap/liste_offres.tpl:39 ../templates/bootstrap/promotion.tpl:51
@@ -116,7 +126,8 @@ msgstr ""
 msgid "Duration:"
 msgstr ""
 
-#: ../templates/default/liste_membres_aae.tpl:21 ../templates/bootstrap/arbre.tpl:10
+#: ../templates/default/liste_membres_aae.tpl:21 ../templates/bootstrap/ajout_modif_parr_fillot.tpl:17
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:51 ../templates/bootstrap/arbre.tpl:15
 #: ../templates/bootstrap/liste_membres_aae.tpl:42
 msgid "Refresh"
 msgstr ""
@@ -264,7 +275,7 @@ msgstr ""
 msgid "You are not allowed to modify your formations. However, if you see an error, please send an email to:"
 msgstr ""
 
-#: ../templates/bootstrap/promotion.tpl:38 ../templates/bootstrap/arbre.tpl:29
+#: ../templates/bootstrap/promotion.tpl:38 ../templates/bootstrap/arbre.tpl:45
 #: ../templates/bootstrap/liste_membres_aae.tpl:83
 msgid "If you see an error, please send an email to:"
 msgstr ""
@@ -287,6 +298,10 @@ msgstr ""
 
 #: ../templates/bootstrap/detail_offre.tpl:14
 msgid " Key word(s):"
+msgstr ""
+
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:5
+msgid "Backtotree"
 msgstr ""
 
 #: ../templates/default/menu.tpl:1 ../templates/bootstrap/menu.tpl:1
@@ -370,7 +385,7 @@ msgstr ""
 msgid "Please log in to access contact information."
 msgstr ""
 
-#: ../templates/bootstrap/arbre.tpl:7
+#: ../templates/bootstrap/arbre.tpl:12
 msgid "name or first name"
 msgstr ""
 
@@ -409,6 +424,14 @@ msgstr ""
 msgid "First Name"
 msgstr ""
 
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:11
+msgid "Research of parrain"
+msgstr ""
+
+#: ../ajout_modif_parr_fillot.php:82
+msgid "Add or modify the tree"
+msgstr ""
+
 #: ../templates/bootstrap/liste_offres.tpl:40 ../templates/bootstrap/promotion.tpl:52
 #: ../templates/bootstrap/liste_membres_aae.tpl:130
 msgid "Next"
@@ -430,6 +453,10 @@ msgstr ""
 msgid "please create a member"
 msgstr ""
 
+#: ../templates/bootstrap/arbre.tpl:5
+msgid "Add/Modify"
+msgstr ""
+
 #: ../templates/bootstrap/ajouter_offre.tpl:43
 msgid "Organisme:"
 msgstr ""
@@ -442,11 +469,8 @@ msgstr ""
 msgid "Member:"
 msgstr ""
 
-#: ../arbre.php:155 ../promotion.php:57
-#: ../liste_eleves.php:113 ../templates/default/public_menu.tpl:2
-#: ../templates/default/public_menu.tpl:5 ../templates/bootstrap/public_menu.tpl:3
-#: ../templates/bootstrap/public_menu.tpl:13
-msgid "Former students list"
+#: ../ajouter_offre.php:71
+msgid "Offer has not been modified!"
 msgstr ""
 
 #: ../templates/bootstrap/ajouter_offre.tpl:74

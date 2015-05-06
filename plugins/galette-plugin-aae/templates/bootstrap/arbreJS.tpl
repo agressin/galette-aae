@@ -75,9 +75,9 @@
 			if (clic <= 100){ //If we tap a year
 				console.log(clic);
 			}else{ //If we tap someone
-				infobulle.style.height = 100+"px";
-				infobulle.style.width = 100+"px";
-				infobulle.style.backgroundColor = "#53AAFF";
+				infobulle.style.height = 80+"px";
+				infobulle.style.width = 90+"px";
+				infobulle.style.backgroundColor = "#E0DAD0";
 				infobulle.style.position = "absolute";
 				infobulle.style.left = (x_souris+15) + "px";
 				infobulle.style.top = (y_souris-100) + "px";

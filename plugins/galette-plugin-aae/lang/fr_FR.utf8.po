@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-01-16 22:40+0100\n"
+"PO-Revision-Date: 2015-05-06 12:09+0200\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -70,6 +70,10 @@ msgstr "Liste des offres d'emplois"
 msgid "creation"
 msgstr "Création"
 
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:47
+msgid "Research of fillot"
+msgstr "Rechercher un fillot"
+
 #: ../templates/default/aaetools.tpl:4 ../templates/bootstrap/aaetools.tpl:4
 #, fuzzy
 msgid "AAETools settings"
@@ -94,7 +98,11 @@ msgstr "Localisation :"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:86
 msgid "E-Mail:"
-msgstr ""
+msgstr "E-mail :"
+
+#: ../arbre.php:71
+msgid "Parrain-fillots tree"
+msgstr "Arbre parrain-fillots"
 
 #: ../ajouter_offre.php:37
 msgid "You don't have the permission to modify an existing offer."
@@ -106,9 +114,13 @@ msgstr "Vous n'avez pas la permission de modifier une offre existante."
 msgid "student"
 msgstr "étudiant"
 
-#: ../ajouter_offre.php:71
-msgid "Offer has not been modified!"
-msgstr "L'offre n'a pas été modifiée!"
+#: ../promotion.php:57 ../liste_eleves.php:113
+#: ../templates/default/public_menu.tpl:2
+#: ../templates/default/public_menu.tpl:5
+#: ../templates/bootstrap/public_menu.tpl:3
+#: ../templates/bootstrap/public_menu.tpl:13
+msgid "Former students list"
+msgstr "Liste des anciens élèves"
 
 #: ../templates/bootstrap/liste_offres.tpl:39
 #: ../templates/bootstrap/promotion.tpl:51
@@ -156,7 +168,9 @@ msgid "Duration:"
 msgstr "Durée :"
 
 #: ../templates/default/liste_membres_aae.tpl:21
-#: ../templates/bootstrap/arbre.tpl:10
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:17
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:51
+#: ../templates/bootstrap/arbre.tpl:15
 #: ../templates/bootstrap/liste_membres_aae.tpl:42
 msgid "Refresh"
 msgstr "Rafraîchir"
@@ -200,7 +214,7 @@ msgstr "RIB"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:6
 msgid "Identity:"
-msgstr ""
+msgstr "Identité :"
 
 #: ../templates/bootstrap/detail_offre.tpl:23
 msgid " of "
@@ -272,7 +286,7 @@ msgstr "Spécialité :"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:80
 msgid "Country:"
-msgstr ""
+msgstr "Pays :"
 
 #: ../templates/default/menu.tpl:7
 #, fuzzy
@@ -293,7 +307,7 @@ msgstr "modification"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:74
 msgid "City:"
-msgstr ""
+msgstr "Ville :"
 
 #: ../templates/default/gestion_formations.tpl:7
 #: ../templates/default/liste_membres_aae.tpl:47
@@ -327,7 +341,7 @@ msgstr ""
 "Vous n'êtes pas autorisé à modifier vos formations, si vous voyez une erreur "
 "merci de contacter le responsable du site à l'adresse suivante :"
 
-#: ../templates/bootstrap/promotion.tpl:38 ../templates/bootstrap/arbre.tpl:29
+#: ../templates/bootstrap/promotion.tpl:38 ../templates/bootstrap/arbre.tpl:45
 #: ../templates/bootstrap/liste_membres_aae.tpl:83
 #, fuzzy
 msgid "If you see an error, please send an email to:"
@@ -338,17 +352,15 @@ msgstr ""
 #: ../templates/bootstrap/voir_adherent_public.tpl:110
 #: ../templates/bootstrap/promotion.tpl:73
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:8
-#, fuzzy
 msgid "Name:"
-msgstr "Nom"
+msgstr "Nom :"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:38
-#, fuzzy
 msgid "Nickname:"
-msgstr " Nom: "
+msgstr "Surnom : "
 
 #: ../templates/bootstrap/detail_offre.tpl:19
 #, fuzzy
@@ -360,13 +372,17 @@ msgstr " Type :"
 msgid " Key word(s):"
 msgstr " Mot(s) clés :"
 
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:5
+msgid "Backtotree"
+msgstr "Retour"
+
 #: ../templates/default/menu.tpl:1 ../templates/bootstrap/menu.tpl:1
 msgid "AAE"
 msgstr "AAE"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:44
 msgid "Birth date:"
-msgstr ""
+msgstr "Date d'anniversaire :"
 
 #: ../templates/bootstrap/ajouter_offre.tpl:51
 msgid "Site:"
@@ -451,7 +467,7 @@ msgstr "Liste des offres d'emplois"
 msgid "Please log in to access contact information."
 msgstr "Merci de vous connecter pour accéder aux informations du contact."
 
-#: ../templates/bootstrap/arbre.tpl:7
+#: ../templates/bootstrap/arbre.tpl:12
 msgid "name or first name"
 msgstr "Nom et/ou prénom"
 
@@ -499,6 +515,15 @@ msgstr "Différents outils pour l'AAE"
 msgid "First Name"
 msgstr "Prénom"
 
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:11
+msgid "Research of parrain"
+msgstr "Rechercher un parrain"
+
+#: ../ajout_modif_parr_fillot.php:82
+#, fuzzy
+msgid "Add or modify the tree"
+msgstr "Ajouter une formation"
+
 #: ../templates/bootstrap/liste_offres.tpl:40
 #: ../templates/bootstrap/promotion.tpl:52
 #: ../templates/bootstrap/liste_membres_aae.tpl:130
@@ -525,6 +550,10 @@ msgstr "Ajouter une formation"
 msgid "please create a member"
 msgstr "merci de créer un membre"
 
+#: ../templates/bootstrap/arbre.tpl:5
+msgid "Add/Modify"
+msgstr "Ajouter/Modifier"
+
 #: ../templates/bootstrap/ajouter_offre.tpl:43
 msgid "Organisme:"
 msgstr "Organisme :"
@@ -538,13 +567,9 @@ msgstr ""
 msgid "Member:"
 msgstr "Membre :"
 
-#: ../arbre.php:155 ../promotion.php:57 ../liste_eleves.php:113
-#: ../templates/default/public_menu.tpl:2
-#: ../templates/default/public_menu.tpl:5
-#: ../templates/bootstrap/public_menu.tpl:3
-#: ../templates/bootstrap/public_menu.tpl:13
-msgid "Former students list"
-msgstr "Liste des anciens élèves"
+#: ../ajouter_offre.php:71
+msgid "Offer has not been modified!"
+msgstr "L'offre n'a pas été modifiée!"
 
 #: ../templates/bootstrap/ajouter_offre.tpl:74
 msgid "Salary:"
@@ -648,7 +673,7 @@ msgstr "Détails de l'offre"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:24
 msgid "Picture"
-msgstr ""
+msgstr "Image"
 
 #: ../templates/default/liste_membres_aae.tpl:63
 #: ../templates/bootstrap/promotion.tpl:67
@@ -696,10 +721,6 @@ msgstr "(format : aaaa)"
 #, fuzzy
 #~ msgid "Formation Gestion"
 #~ msgstr "Gestion des formations"
-
-#, fuzzy
-#~ msgid "Add or modify job offers"
-#~ msgstr "Ajouter une formation"
 
 #~ msgid " , phone: "
 #~ msgstr " , tel : "

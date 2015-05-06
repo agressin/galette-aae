@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Wed Apr 15 14:31:18 2015 (GMT)
+// This file was automatically generated on Wed May  6 10:10:10 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -7,10 +7,13 @@
 $lang['Title'] = 'Title';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:13 
-$lang['[M]'] = '';
+$lang['[M]'] = '[M]';
 
 // ../templates/default/ajouter_formation_eleve.tpl:68 ../templates/bootstrap/ajouter_formation_eleve.tpl:68 
 $lang['please create a member'] = 'please create a member';
+
+// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:11 
+$lang['Research of parrain'] = 'Research of parrain';
 
 // ../templates/default/aaecotiz.tpl:6 ../templates/bootstrap/aaecotiz.tpl:7 
 $lang['Merci d\'envoyer un chèque à l\'ordre de l\'AAE-ENSG à l\'adresse suivante :'] = 'Please contact aae@ensg.eu to pay by check';
@@ -19,7 +22,7 @@ $lang['Merci d\'envoyer un chèque à l\'ordre de l\'AAE-ENSG à l\'adresse suiv
 $lang['(yyyy format)'] = '(yyyy format)';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:108 ../templates/bootstrap/promotion.tpl:71 
-$lang['Please, log on in order to display information.'] = 'Please log in to access contact information.';
+$lang['Please, log on in order to display information.'] = 'Please, log on in order to display information.';
 
 // ../templates/default/adh_fiche_action.tpl:23 ../templates/bootstrap/adh_fiche_action.tpl:23 
 $lang['Add a formation'] = 'Add a formation';
@@ -45,7 +48,10 @@ $lang['Offer general '] = 'Job offer details';
 // ../templates/bootstrap/detail_offre.tpl:34 
 $lang['Pay: '] = 'Pay: ';
 
-// ../templates/default/liste_membres_aae.tpl:21 ../templates/bootstrap/arbre.tpl:10 ../templates/bootstrap/liste_membres_aae.tpl:42 
+// ../templates/default/gestion_formations.tpl:6 ../templates/bootstrap/gestion_formations.tpl:6 
+$lang['Cycle'] = 'Cycle';
+
+// ../templates/default/liste_membres_aae.tpl:21 ../templates/bootstrap/ajout_modif_parr_fillot.tpl:17 ../templates/bootstrap/ajout_modif_parr_fillot.tpl:51 ../templates/bootstrap/arbre.tpl:15 ../templates/bootstrap/liste_membres_aae.tpl:42 
 $lang['Refresh'] = 'Refresh';
 
 // ../ajouter_offre.php:34 
@@ -57,8 +63,11 @@ $lang['No offer to show'] = 'No offer to show';
 // ../templates/bootstrap/ajouter_offre.tpl:34 
 $lang['Description:'] = 'Description:';
 
-// ../templates/bootstrap/promotion.tpl:38 ../templates/bootstrap/arbre.tpl:29 ../templates/bootstrap/liste_membres_aae.tpl:83 
-$lang['If you see an error, please send an email to:'] = 'You are not allowed to modify your formations. However, if you see an error, please send an email to:';
+// ../templates/bootstrap/promotion.tpl:38 ../templates/bootstrap/arbre.tpl:45 ../templates/bootstrap/liste_membres_aae.tpl:83 
+$lang['If you see an error, please send an email to:'] = 'If you see an error, please send an email to:';
+
+// ../templates/bootstrap/arbre.tpl:5 
+$lang['Add/Modify'] = 'Add/Modify';
 
 // ../templates/bootstrap/ajouter_offre.tpl:74 
 $lang['Salary:'] = 'Salary:';
@@ -72,8 +81,8 @@ $lang['red'] = 'red';
 // ../templates/default/ajouter_formation_eleve.tpl:22 ../templates/bootstrap/ajouter_formation_eleve.tpl:22 
 $lang['Formation details'] = 'Formation details';
 
-// ../templates/default/gestion_formations.tpl:6 ../templates/bootstrap/gestion_formations.tpl:6 
-$lang['Cycle'] = 'Cycle';
+// ../templates/bootstrap/ajouter_offre.tpl:28 
+$lang['Stage'] = 'Internship';
 
 // ../templates/bootstrap/liste_offres.tpl:39 ../templates/bootstrap/promotion.tpl:51 ../templates/bootstrap/liste_membres_aae.tpl:129 
 $lang['Previous'] = 'Previous';
@@ -124,7 +133,7 @@ $lang['Job offers list'] = 'Job offers list';
 $lang['AAE Tools'] = 'AAE Tools';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:24 
-$lang['Picture'] = '';
+$lang['Picture'] = 'Picture';
 
 // ../templates/bootstrap/ajouter_offre.tpl:27 
 $lang[' select a type '] = ' select a type';
@@ -136,7 +145,7 @@ $lang['Paiement par RIB'] = 'Payment by bank transfer';
 $lang['Job offer'] = 'Job offer';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:38 
-$lang['Nickname:'] = ' Name ';
+$lang['Nickname:'] = 'Nickname:';
 
 // ../aaetools.php:58 
 $lang['RIB has been successfully modified.'] = 'RIB has been successfully modified.';
@@ -150,14 +159,17 @@ $lang['Speciality:'] = 'Speciality:';
 // ../templates/bootstrap/ajouter_offre.tpl:21 
 $lang['Contact Phone number:'] = 'Contact Phone number:';
 
-// ../templates/bootstrap/ajouter_offre.tpl:28 
-$lang['Stage'] = 'Internship';
+// ../templates/bootstrap/gestion_formations.tpl:143 
+$lang['You are not allowed to modify your formations. However, if you see an error, please send an email to:'] = 'You are not allowed to modify your formations. However, if you see an error, please send an email to:';
+
+// ../arbre.php:71 
+$lang['Parrain-fillots tree'] = 'Parrain-fillots tree';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:15 
-$lang['[W]'] = '';
+$lang['[W]'] = '[W]';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:80 
-$lang['Country:'] = '';
+$lang['Country:'] = 'Country:';
 
 // ../templates/default/gestion_formations.tpl:7 ../templates/default/liste_membres_aae.tpl:47 ../templates/bootstrap/gestion_formations.tpl:7 
 $lang['Speciality'] = 'Speciality';
@@ -190,7 +202,7 @@ $lang['Promotion:'] = 'Promotion:';
 $lang['Please log in to access contact information.'] = 'Please log in to access contact information.';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:6 
-$lang['Identity:'] = '';
+$lang['Identity:'] = 'Identité :';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:50 
 $lang['Profession:'] = 'Promotion:';
@@ -204,14 +216,14 @@ $lang['Available until:'] = 'Available until:';
 // ../templates/default/adh_fiche_action.tpl:14 ../templates/bootstrap/adh_fiche_action.tpl:14 
 $lang['View formations'] = 'View formations';
 
-// ../templates/default/ajouter_formation_eleve.tpl:5 ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/bootstrap/ajouter_offre.tpl:4 
-$lang['NB : The mandatory fields are in'] = 'NB : The mandatory fields are in';
+// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:5 
+$lang['Backtotree'] = 'Backtotree';
 
 // ../templates/default/menu.tpl:7 
 $lang['Add formation'] = 'Add formation';
 
-// ../templates/default/ajouter_formation_eleve.tpl:64 ../templates/bootstrap/ajouter_formation_eleve.tpl:64 
-$lang['No member registered!'] = 'No member registered!';
+// ../templates/default/ajouter_formation_eleve.tpl:5 ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/bootstrap/ajouter_offre.tpl:4 
+$lang['NB : The mandatory fields are in'] = 'NB : The mandatory fields are in';
 
 // ../templates/bootstrap/ajouter_offre.tpl:43 
 $lang['Organisme:'] = 'Compagny:';
@@ -241,13 +253,10 @@ $lang['En cas de virement groupé pour plusieurs personnes, merci de le précise
 $lang['Enterprise'] = 'Compagny';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:86 
-$lang['E-Mail:'] = '';
+$lang['E-Mail:'] = 'E_mail :';
 
 // ../aaecotiz.php:40 ../templates/default/menu.tpl:6 ../templates/bootstrap/menu.tpl:9 
 $lang['Contribution'] = 'Contribution';
-
-// ../templates/bootstrap/gestion_formations.tpl:143 
-$lang['You are not allowed to modify your formations. However, if you see an error, please send an email to:'] = 'You are not allowed to modify your formations. However, if you see an error, please send an email to:';
 
 // ../templates/bootstrap/ajouter_offre.tpl:29 
 $lang['CDD'] = 'CDD';
@@ -255,7 +264,7 @@ $lang['CDD'] = 'CDD';
 // ../templates/default/menu.tpl:7 
 $lang['Add a formation to someone'] = 'Add a formation to someone';
 
-// ../arbre.php:155 ../promotion.php:57 ../liste_eleves.php:113 ../templates/default/public_menu.tpl:2 ../templates/default/public_menu.tpl:5 ../templates/bootstrap/public_menu.tpl:3 ../templates/bootstrap/public_menu.tpl:13 
+// ../promotion.php:57 ../liste_eleves.php:113 ../templates/default/public_menu.tpl:2 ../templates/default/public_menu.tpl:5 ../templates/bootstrap/public_menu.tpl:3 ../templates/bootstrap/public_menu.tpl:13 
 $lang['Former students list'] = 'Former students list';
 
 // ../templates/default/aaetools.tpl:4 ../templates/bootstrap/aaetools.tpl:4 
@@ -282,8 +291,11 @@ $lang['RIB has not been modified!'] = 'RIB has not been modified!';
 // ../templates/default/aaetools.tpl:7 ../templates/bootstrap/aaetools.tpl:7 
 $lang['(Max 255 characters)'] = '(Max 255 characters)';
 
+// ../templates/default/ajouter_formation_eleve.tpl:64 ../templates/bootstrap/ajouter_formation_eleve.tpl:64 
+$lang['No member registered!'] = 'No member registered!';
+
 // ../templates/bootstrap/voir_adherent_public.tpl:44 
-$lang['Birth date:'] = '';
+$lang['Birth date:'] = 'Birth date:';
 
 // ../templates/default/liste_membres_aae.tpl:44 ../templates/bootstrap/promotion.tpl:16 ../templates/bootstrap/liste_membres_aae.tpl:13 ../templates/bootstrap/liste_membres_aae.tpl:61 
 $lang['First Name'] = 'First Name';
@@ -330,8 +342,11 @@ $lang['Formations managment'] = 'Formations managment';
 // ../templates/bootstrap/ajouter_offre.tpl:13 
 $lang['Contact Name:'] = 'Contact: ';
 
+// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:47 
+$lang['Research of fillot'] = 'Research of fillot';
+
 // ../templates/bootstrap/voir_adherent_public.tpl:8 
-$lang['Name:'] = 'Name';
+$lang['Name:'] = 'Name:';
 
 // ../templates/bootstrap/ajouter_offre.tpl:51 
 $lang['Site:'] = 'Place:';
@@ -352,13 +367,13 @@ $lang['Offer detail '] = 'Offer detail ';
 $lang['Continue'] = 'Continue';
 
 // ../templates/bootstrap/detail_offre.tpl:19 
-$lang[' Type:'] = ' Type:';
+$lang[' Type:'] = ' Type :';
 
 // ../templates/bootstrap/liste_offres.tpl:42 ../templates/bootstrap/promotion.tpl:54 ../templates/bootstrap/liste_membres_aae.tpl:132 
 $lang['Show:'] = 'Show:';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:110 ../templates/bootstrap/promotion.tpl:73 
-$lang['Login'] = '';
+$lang['Login'] = 'Login';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:71 
 $lang['Contact information:'] = 'Contact Mail: ';
@@ -376,7 +391,10 @@ $lang[', begining '] = ', begining ';
 $lang[' from '] = ' from ';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:11 
-$lang['[C]'] = '';
+$lang['[C]'] = '[C]';
+
+// ../ajout_modif_parr_fillot.php:82 
+$lang['Add or modify the tree'] = 'Add or modify job offers';
 
 // ../templates/default/ajouter_formation_eleve.tpl:33 ../templates/bootstrap/ajouter_formation_eleve.tpl:33 
 $lang['Beging of the formation:'] = 'Beging of the formation:';
@@ -385,19 +403,19 @@ $lang['Beging of the formation:'] = 'Beging of the formation:';
 $lang['Actions'] = 'Actions';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:74 
-$lang['City:'] = '';
+$lang['City:'] = 'City:';
 
 // ../templates/bootstrap/ajouter_offre.tpl:25 
 $lang['Offer Type:'] = 'Offer Type:';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:31 
-$lang['Company:'] = '';
+$lang['Company:'] = 'Company:';
 
-// ../templates/bootstrap/arbre.tpl:7 
+// ../templates/bootstrap/arbre.tpl:12 
 $lang['name or first name'] = 'name or first name';
 
 // ../templates/bootstrap/detail_offre.tpl:14 
-$lang[' Key word(s):'] = ' Key word(s) :';
+$lang[' Key word(s):'] = 'Key word(s):';
 
 // ../templates/bootstrap/liste_offres.tpl:10 
 $lang['Publication date'] = 'Publication date';
