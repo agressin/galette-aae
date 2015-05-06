@@ -45,6 +45,7 @@
 		var canvas = document.getElementById("cy");
 		var infobulle = document.getElementById("popup");
 		var lien = document.getElementById("lien_profil");
+		var lien_f = document.getElementById("lien_famille");
 		var x_souris = 0;
 		var y_souris = 0;
 
@@ -70,6 +71,7 @@
 			var node = evt.cyTarget;
 			var clic = node.id();
 			lien.href = ""; //Reset the link
+			lien_f.href = ""; //Reset the link
 			if (clic <= 100){ //If we tap a year
 				console.log(clic);
 			}else{ //If we tap someone
@@ -80,6 +82,7 @@
 				infobulle.style.left = (x_souris+15) + "px";
 				infobulle.style.top = (y_souris-100) + "px";
 				lien.href = "voir_adherent_public.php?id_adh="+clic; //Make the link of the member's page
+				lien_f.href = "arbre.php?id_adh="+clic;
 				//masq and display the tooltip
 				if (infobulle.style.display == 'none')
 					infobulle.style.display = 'block';

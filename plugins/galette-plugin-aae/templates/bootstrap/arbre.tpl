@@ -36,7 +36,7 @@
 			<div id="cy" style="border: 2px black solid; height:700px; position:relative;">
 				<div id="popup" style="z-index:10;">
 					<p><a id="lien_profil" href="">Mon profil</a></p>
-					<p><a href="http://www.google.fr">Ma famille</a></p>
+					<p><a id="lien_famille" href="">Ma famille</a></p>
 				</div>
 			</div>
 		</div>
