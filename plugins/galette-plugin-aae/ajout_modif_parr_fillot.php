@@ -24,18 +24,11 @@ use Galette\AAE\Cycles as Cycles;
 require_once 'lib/GaletteAAE/Formations.php';
 use Galette\AAE\Formations as Formations;
 
-
 //require_once 'generation_json.js';
 //require_once 'donnees_json.php';
 
-//teste l'égalité d'une chaine de caractères ch au milieu de plusieurs chaines chaines
-function chaines_egales($ch, $chaines){
-	for($i=0;$i<count($chaines);$i++){
-		 if ($ch === $chaines[$i]) {
-			return $ch;
-		}
-	}
-}
+$parr=[];
+$fill=[];
 
 if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
     //public pages are not actives
@@ -60,6 +53,7 @@ if ($id_parrain=="")
 }else {
 	//si le parrain est déjà recherché, on assigne ce qu'il y a dans la case à parrain
 	$tpl->assign('parrain', $_POST["parrain"]);
+	//si l'id du fillot n'est pas renseigné
 	if ($id_fillot=="")
 	{
 		$fill = $annuaire->rechercheParNom($_POST["fillot"]);
@@ -78,6 +72,8 @@ $tpl->assign('parrains', $parr);
 $tpl->assign('nb_parr', count($parr));
 $tpl->assign('fillots', $fill);
 $tpl->assign('nb_fill', count($fill));
+$tpl->assign('id_p', $id_parrain);
+$tpl->assign('id_f', $id_fillot);
 
 $tpl->assign('page_title', _T("Add or modify the tree"));
 $tpl->assign('value', $val);
