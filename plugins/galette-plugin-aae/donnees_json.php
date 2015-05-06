@@ -248,12 +248,13 @@ do  {
 							$edges = $edges.'{"data":{"id":"'.$ide.'","source":"9999","target":"'.$valeur.'"}},';
 							$ide = $ide+1;
 							foreach ($idfillot3 as $cle => $nouveaufillot){
-								$edges = $edges.'{"data":{"id":"'.$ide.'","source":"9999","target":"'.$nouveaufillot.'"}},';
+								$edges = $edges.'{"data":{"id":"'.$ide.'","source":"'.$valeur.'","target":"'.$nouveaufillot.'"}},';
 								$ide = $ide+1;
 							}
 						//}
 						//echo($idvieux);
 					}
+					
 				//}
 			}
 			$idp = $idvieux;
