@@ -9,9 +9,12 @@ require_once '_config.inc.php';
 require_once 'lib/GaletteAAE/Annuaire.php';
 use Galette\AAE\Annuaire as Annuaire;
 
+use Galette\Entity\Adherent as Adherent;
+
 require_once 'fonctions_json.php';
 
 $annuaire = new Annuaire();
+$member = new Adherent();
 
 //echo("coucou");
 
@@ -48,7 +51,7 @@ $idparrain = getParrains($id_fillot1);
 if (empty($idparrain)){
 	array_push($idracines,$id);
 	$infos = $annuaire->getInfoById($id);
-	if (strlen ($infos[0][nom])<3 && $infos[0][id_cycle]!=3){
+	if ($infos[0][id_cycle] == "B" || $infos[0][id_cycle] == "IT"){
 		$annee_debut = $infos[0][annee_debut];
 	}
 	else {
@@ -150,7 +153,7 @@ else{
 					else if ($infos[0][annee_fin] - $infos[0][annee_debut] == 4){
 						
 						echo("redoublant");
-						$personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
+						$personne = $member->getSName($valeur);
 						$nodes = $nodes.'{"data":{"id":'.$infos[0][id_adh].',"name":'.$personne.'}},';
 						$idn = $idn+1;
 						$idvieux = $idn-1;
@@ -161,10 +164,12 @@ else{
 						$yatildesarretes = 1;
 					}
 					else {
-						//var_dump($infos[0][annee_fin]);
+						//var_dump($infos[0][nom_adh]);
 						//echo($infos[0][annee_fin] - $infos[0][annee_debut]);
-						$personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
-						$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$personne.'"}},';
+						$nom = json_encode($infos[0][nom_adh]);
+						//$personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
+						$personne = $member->getSName($valeur);
+						$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":'.json_encode($personne).'}},';
 						$idn = $idn+1;
 						$idvieux = $idn-1;
 						//echo($idvieux);
@@ -220,7 +225,7 @@ $annee_fin = 0;
 
 if (empty($idfillot)){
 	$infos = $annuaire->getInfoById($id);
-	if (strlen ($infos[0][nom])<3 /*&& $infos[0][id_cycle]!=3*/){
+	if ($infos[0][id_cycle] == "B" || $infos[0][id_cycle] == "IT"){
 		$annee_fin = $infos[0][annee_debut];
 	}
 	else {
@@ -298,7 +303,7 @@ else{
 					}*/
 					//else {
 					//var_dump($idfillot3);
-						$personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
+						$personne = $member->getSName($valeur);
 						if ($personne != ""){
 							$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$personne.'"}},';
 						}
@@ -363,7 +368,7 @@ foreach ($idracines as $cle => $racine){
 $layout = '"layout": {"name": "breadthfirst", "directed": true, '.$roots.'#'.$premiereannee.'", "padding": 10} }';
 //,"style": "node { content: data(name);}"
 $infos = $annuaire->getInfoById($id_fillot1);
-$personne = $infos[0][prenom_adh].' '.$infos[0][nom_adh];
+$personne = $member->getSName($id);
 $nodes = $nodes.'{"data":{"id":"'.$id.'","name":"'.$personne.'"}}';
 if ($yatildesarretes == 1){
 	$edges = substr($edges,0,-1);
