@@ -46,14 +46,19 @@ if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
 $cycles = new Cycles();
 $annuaire = new Annuaire();
 
+//get ce qu'il y a dans le hidden
 $id_fillot = $_GET["id_f"];
 $id_parrain = $_GET["id_p"];
 
+//si le parrain n'est pas encore recherché
 if ($id_parrain=="")
 {
+	//recherche par nom de ce qu'il y a dans le champ parrain
 	$parr = $annuaire->rechercheParNom($_POST["parrain"]);
+	//assigner le parrain à rien dans le tpl
 	$tpl->assign('parrain', '');
 }else {
+	//si le parrain est déjà recherché, on assigne ce qu'il y a dans la case à parrain
 	$tpl->assign('parrain', $_POST["parrain"]);
 	if ($id_fillot=="")
 	{

@@ -9,8 +9,8 @@
 				<div class="col-md-4">						
 					{*Searching parrains by name*}
 					<label>{_T string="Research of parrain"}
-						<input type="text" name ="parrain" {if isset($parrain)} value="{$parrain}" {/if}/> 
-						<input type="hidden" name ="id_p" {if isset($id_p)} value="{$id_p}" {/if}/> 							
+						<input type="text" name ="parrain" id="p" {if isset($parrain)} value="{$parrain}" {/if}/> 
+						<input type="hidden" name ="id_p" id="idp" {if isset($id_p)} value="{$id_p}" {/if}/> 							
 					</label>
 					<div id="image">
 					</div>
@@ -22,17 +22,19 @@
 							{foreach from=$parrains item=p name=allparrains}
 								{if ($p.annee_debut >= 2000) && (($p.id_cycle == 51) || ($p.id_cycle == 2))}
 										<!-- On ne fait qu'un seul lien du nom+prénom-->
-										<div class="row" id="jesuisleparrain"><a href="ajout_modif_parr_fillot.php?id_p={$p.id_adh}&value=ok">{$p.nom_adh}{" "}{$p.prenom_adh}<br \></a></div>
+										<div class="row" id="parrain">{$p.nom_adh}{" "}{$p.prenom_adh}<br \></div>
 										<script type="text/javascript">
-											document.getElementById("jesuisleparrain").addEventListener("click", function(event){ 
-																													console.log("blabla");
-																													if (value==ok){
-																														var img = document.getElementById("image");
-																														var im_valid;
-																														im_valid = document.createElement('img');
-																														im_valid.src = 'templates/bootstrap/images/valid-icon.png';
-																														img.appendChild(im_valid);
-																														}
+											document.getElementById("parrain").addEventListener("click", function(event){ 
+																													var champ_p = document.getElementById("p");
+																													champ_p.value="{$p.nom_adh}{" "}{$p.prenom_adh}";
+																													var nom_p = document.getElementById("parrain");
+																													console.log(nom_p);
+																													while (nom_p.firstChild) {
+																														nom_p.removeChild(nom_p.firstChild);
+																													}
+																													//nom_p.parentNode.removeChild(nom_p);
+																													var idparrain = document.getElementById("idp");
+																													idparrain.value = "{$p.id_adh}";
 																													}, false);
 										</script>
 								{/if}
@@ -43,7 +45,8 @@
 				<div class="col-md-4">
 					{*Searching fillots by name*}
 					<label>{_T string="Research of fillot"}
-						<input type="text" name ="fillot" {if isset($fillot)} value="{$fillot}" {/if}/> 								
+						<input type="text" name ="fillot" id="f" {if isset($fillot)} value="{$fillot}" {/if}/> 	
+						<input type="hidden" name ="id_f" id="idf" {if isset($id_f)} value="{$id_f}" {/if}/> 							
 					</label>
 					<button type="submit" class="btn btn-primary"><img src="templates/bootstrap/images/loupe.png" class="img-responsive" />{if $param_selected eq 1} {_T string="Refresh"} {else} {""} {/if}</button>				
 					{*Display parrains found*}
