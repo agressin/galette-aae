@@ -70,7 +70,7 @@ msgstr "Liste des offres d'emplois"
 msgid "creation"
 msgstr "Création"
 
-#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:47
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:55
 msgid "Research of fillot"
 msgstr "Rechercher un fillot"
 
@@ -95,6 +95,10 @@ msgstr "Comment cotiser ?"
 #: ../templates/bootstrap/ajouter_offre.tpl:47
 msgid "Localisation:"
 msgstr "Localisation :"
+
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:96
+msgid "Execute"
+msgstr ""
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:86
 msgid "E-Mail:"
@@ -158,6 +162,10 @@ msgstr "Techniques majeures :"
 msgid "Name"
 msgstr "Nom"
 
+#: ../templates/bootstrap/arbre.tpl:5
+msgid "Add"
+msgstr ""
+
 #: ../templates/default/adh_fiche_action.tpl:23
 #: ../templates/bootstrap/adh_fiche_action.tpl:23
 msgid "Add a formation"
@@ -168,8 +176,8 @@ msgid "Duration:"
 msgstr "Durée :"
 
 #: ../templates/default/liste_membres_aae.tpl:21
-#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:17
-#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:51
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:15
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:59
 #: ../templates/bootstrap/arbre.tpl:15
 #: ../templates/bootstrap/liste_membres_aae.tpl:42
 msgid "Refresh"
@@ -435,6 +443,11 @@ msgstr "Aucun membre existant"
 msgid "Contact Mail:"
 msgstr "e-mail du contact : "
 
+#: ../ajout_modif_parr_fillot.php:78
+#, fuzzy
+msgid "Add to the tree"
+msgstr "Ajouter à l'arbre"
+
 #: ../templates/bootstrap/detail_offre.tpl:28
 msgid ", begining "
 msgstr ", commençant le "
@@ -519,11 +532,6 @@ msgstr "Prénom"
 msgid "Research of parrain"
 msgstr "Rechercher un parrain"
 
-#: ../ajout_modif_parr_fillot.php:82
-#, fuzzy
-msgid "Add or modify the tree"
-msgstr "Ajouter une formation"
-
 #: ../templates/bootstrap/liste_offres.tpl:40
 #: ../templates/bootstrap/promotion.tpl:52
 #: ../templates/bootstrap/liste_membres_aae.tpl:130
@@ -549,10 +557,6 @@ msgstr "Ajouter une formation"
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:68
 msgid "please create a member"
 msgstr "merci de créer un membre"
-
-#: ../templates/bootstrap/arbre.tpl:5
-msgid "Add/Modify"
-msgstr "Ajouter/Modifier"
 
 #: ../templates/bootstrap/ajouter_offre.tpl:43
 msgid "Organisme:"
@@ -700,6 +704,9 @@ msgstr "Détails des formations"
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:43
 msgid "(yyyy format)"
 msgstr "(format : aaaa)"
+
+#~ msgid "Add/Modify"
+#~ msgstr "Ajouter/Modifier"
 
 #~ msgid "or, among all available cycle:"
 #~ msgstr "ou parmi tous les cycles :"

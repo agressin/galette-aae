@@ -46,7 +46,7 @@ msgstr ""
 msgid "creation"
 msgstr ""
 
-#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:47
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:55
 msgid "Research of fillot"
 msgstr ""
 
@@ -66,6 +66,10 @@ msgstr ""
 
 #: ../templates/bootstrap/ajouter_offre.tpl:47
 msgid "Localisation:"
+msgstr ""
+
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:96
+msgid "Execute"
 msgstr ""
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:86
@@ -118,6 +122,10 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
+#: ../templates/bootstrap/arbre.tpl:5
+msgid "Add"
+msgstr ""
+
 #: ../templates/default/adh_fiche_action.tpl:23 ../templates/bootstrap/adh_fiche_action.tpl:23
 msgid "Add a formation"
 msgstr ""
@@ -126,8 +134,8 @@ msgstr ""
 msgid "Duration:"
 msgstr ""
 
-#: ../templates/default/liste_membres_aae.tpl:21 ../templates/bootstrap/ajout_modif_parr_fillot.tpl:17
-#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:51 ../templates/bootstrap/arbre.tpl:15
+#: ../templates/default/liste_membres_aae.tpl:21 ../templates/bootstrap/ajout_modif_parr_fillot.tpl:15
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:59 ../templates/bootstrap/arbre.tpl:15
 #: ../templates/bootstrap/liste_membres_aae.tpl:42
 msgid "Refresh"
 msgstr ""
@@ -357,6 +365,10 @@ msgstr ""
 msgid "Contact Mail:"
 msgstr ""
 
+#: ../ajout_modif_parr_fillot.php:78
+msgid "Add to the tree"
+msgstr ""
+
 #: ../templates/bootstrap/detail_offre.tpl:28
 msgid ", begining "
 msgstr ""
@@ -428,10 +440,6 @@ msgstr ""
 msgid "Research of parrain"
 msgstr ""
 
-#: ../ajout_modif_parr_fillot.php:82
-msgid "Add or modify the tree"
-msgstr ""
-
 #: ../templates/bootstrap/liste_offres.tpl:40 ../templates/bootstrap/promotion.tpl:52
 #: ../templates/bootstrap/liste_membres_aae.tpl:130
 msgid "Next"
@@ -451,10 +459,6 @@ msgstr ""
 
 #: ../templates/default/ajouter_formation_eleve.tpl:68 ../templates/bootstrap/ajouter_formation_eleve.tpl:68
 msgid "please create a member"
-msgstr ""
-
-#: ../templates/bootstrap/arbre.tpl:5
-msgid "Add/Modify"
 msgstr ""
 
 #: ../templates/bootstrap/ajouter_offre.tpl:43

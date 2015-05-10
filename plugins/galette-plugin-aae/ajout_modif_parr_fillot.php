@@ -75,7 +75,7 @@ $tpl->assign('nb_fill', count($fill));
 $tpl->assign('id_p', $id_parrain);
 $tpl->assign('id_f', $id_fillot);
 
-$tpl->assign('page_title', _T("Add or modify the tree"));
+$tpl->assign('page_title', _T("Add to the tree"));
 $tpl->assign('value', $val);
 
 //Set the path to the current plugin's templates,

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-05-06 12:06+0200\n"
+"PO-Revision-Date: 2015-05-10 15:58+0200\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -17,7 +17,6 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 
 #: ../templates/bootstrap/ajouter_offre.tpl:60
-#, fuzzy
 msgid "Key word(s):"
 msgstr " Key word(s) :"
 
@@ -70,7 +69,7 @@ msgstr "Job offers managment"
 msgid "creation"
 msgstr "creation"
 
-#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:47
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:55
 msgid "Research of fillot"
 msgstr "Research of fillot"
 
@@ -95,6 +94,10 @@ msgstr "How to contribute ?"
 #: ../templates/bootstrap/ajouter_offre.tpl:47
 msgid "Localisation:"
 msgstr "Localisation:"
+
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:96
+msgid "Execute"
+msgstr ""
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:86
 msgid "E-Mail:"
@@ -158,6 +161,10 @@ msgstr ""
 msgid "Name"
 msgstr "Name"
 
+#: ../templates/bootstrap/arbre.tpl:5
+msgid "Add"
+msgstr "Add"
+
 #: ../templates/default/adh_fiche_action.tpl:23
 #: ../templates/bootstrap/adh_fiche_action.tpl:23
 msgid "Add a formation"
@@ -168,8 +175,8 @@ msgid "Duration:"
 msgstr "Duration:"
 
 #: ../templates/default/liste_membres_aae.tpl:21
-#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:17
-#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:51
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:15
+#: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:59
 #: ../templates/bootstrap/arbre.tpl:15
 #: ../templates/bootstrap/liste_membres_aae.tpl:42
 msgid "Refresh"
@@ -430,6 +437,11 @@ msgstr "No member registered!"
 msgid "Contact Mail:"
 msgstr "Contact Mail: "
 
+#: ../ajout_modif_parr_fillot.php:78
+#, fuzzy
+msgid "Add to the tree"
+msgstr "Add to the tree"
+
 #: ../templates/bootstrap/detail_offre.tpl:28
 msgid ", begining "
 msgstr ", begining "
@@ -512,11 +524,6 @@ msgstr "First Name"
 msgid "Research of parrain"
 msgstr "Research of parrain"
 
-#: ../ajout_modif_parr_fillot.php:82
-#, fuzzy
-msgid "Add or modify the tree"
-msgstr "Add or modify job offers"
-
 #: ../templates/bootstrap/liste_offres.tpl:40
 #: ../templates/bootstrap/promotion.tpl:52
 #: ../templates/bootstrap/liste_membres_aae.tpl:130
@@ -541,10 +548,6 @@ msgstr "Add a formation to someone"
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:68
 msgid "please create a member"
 msgstr "please create a member"
-
-#: ../templates/bootstrap/arbre.tpl:5
-msgid "Add/Modify"
-msgstr "Add/Modify"
 
 #: ../templates/bootstrap/ajouter_offre.tpl:43
 msgid "Organisme:"
@@ -688,6 +691,9 @@ msgstr "Formation details"
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:43
 msgid "(yyyy format)"
 msgstr "(yyyy format)"
+
+#~ msgid "Add/Modify"
+#~ msgstr "Add/Modify"
 
 #~ msgid "Add job offers"
 #~ msgstr "Add job offers"
