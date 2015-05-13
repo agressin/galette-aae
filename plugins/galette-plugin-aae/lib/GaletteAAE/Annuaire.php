@@ -441,6 +441,37 @@ class Annuaire
 			return false;
 		}
 	}
+	
+	public function rechercheSimplifieeParNom($nomprenom)
+    {
+		$req = explode(" ", $nomprenom);
+		$count = count($req);
+		
+		if($count == 2){
+			//CASE NAME SURNAME
+			//Search the first word of the request as a name
+			$researched_namefirst=$req[0];			
+			//Text to upper
+			$researched_namefirst = strtoupper($researched_namefirst);
+			//Search the second word of the request as a surname
+			$researched_surnamesecond=$req[1];
+			//Text to lower, first letter to upper
+			$researched_surnamesecond[0] = strtoupper($researched_surnamesecond[0]);
+			$researched_surnamesecond = strtolower($researched_surnamesecond);
+			
+			//Récupération des noms
+			//$found_namefirst=$this->getStudent();
+			//$found_namefirst=$this->proximite_levenshtein($researched_namefirst,$studentsName1);
+			
+			$eleves =$this->getStudent($researched_namefirst,$researched_surnamesecond);
+		}
+		if (count($eleves)>0){
+			return $eleves;
+		}
+		else{
+			return false;
+		}
+	}
 }
 
 

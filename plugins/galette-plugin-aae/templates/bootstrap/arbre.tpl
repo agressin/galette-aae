@@ -2,7 +2,7 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
 	{if $login->isStaff() || $login->isAdmin()}
-		<input type="button" value={_T string="Add"} onclick="self.location.href='ajout_modif_parr_fillot.php'"/>
+		<input type="button" value={_T string="Add"} onclick="self.location.href='ajout_parrain_fillot.php'"/>
 	{/if}
 	<form action="arbre.php" method="post">
 		<fieldset class="form-group">
