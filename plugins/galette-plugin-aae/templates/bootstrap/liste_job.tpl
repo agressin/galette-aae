@@ -54,6 +54,9 @@
 						<th class="left">
 								{_T string="Annee de fin :"}
 						</th>
+						<th class="left">
+								{_T string="Détails :"}
+						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -67,6 +70,9 @@
 						<td class="nowrap">{$poste.ville}</td>
 						<td class="nowrap">{$poste.annee_ini}</td>
 						<td class="nowrap">{$poste.annee_fin}</td>
+						<td>
+							<a href="ajouter_poste.php?id_poste={$poste.id_poste|htmlspecialchars}"><img src="{$template_subdir}images/icon-fiche.png" align="middle"/>
+						</td>
 					</tr>
 		{/foreach}
 				</tbody>

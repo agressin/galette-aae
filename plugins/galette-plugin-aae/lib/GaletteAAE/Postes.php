@@ -87,24 +87,22 @@ class postes
         }
     }
     
-    /**
-     * Retrieve one poste
+     /**
+     * Retrieve entreprise information
      *
-     * @param int $id_form Member id
+     * @param int $id Entreprise id
      *
      * @return array
      */
-    public function getPoste($id_form)
+    public function getPoste($id)
     {
         global $zdb;
 
         try {
-            $select = $zdb->select($this->getTableName());
-            $select->where->equalTo(postes::PK, $id_form);
-
+            $select = $zdb->select(AAE_PREFIX . self::TABLE);
+            $select->where->equalTo('id_poste',$id);
             $res = $zdb->execute($select);
             $res = $res->toArray();
-            
             if ( count($res) > 0 ) {
                 return $res[0];
             } else {
@@ -112,8 +110,8 @@ class postes
             }
         } catch (\Exception $e) {
             Analog::log(
-                'Unable to retrieve poste with id : "' .
-                $id_form  . '". | ' . $e->getMessage(),
+                'Unable to retrieve entreprise information for "' .
+                $id  . '". | ' . $e->getMessage(),
                 Analog::WARNING
             );
             return false;
@@ -124,6 +122,7 @@ class postes
      * SetPoste
      * @param int $id_form
      * @param text $activite_principale
+     * @param text $type
      * @param boolean $encadrement
      * @param int $nb_personne_encadre
      * @param int $id_entreprise
@@ -134,7 +133,7 @@ class postes
      * @param int $annee_fin    
      * @param int $id_adh
      */
-    public function setPoste($id_form,$id_adh,$activite_principale,$encadrement,$nb_personne_encadre,$id_entreprise,$adresse,$code_postal,$ville,$annee_ini,$annee_fin)
+    public function setPoste($id_form,$id_adh,$activite_principale,$type,$encadrement,$nb_personne_encadre,$id_entreprise,$adresse,$code_postal,$ville,$annee_ini,$annee_fin)
     {
         global $zdb;
 
@@ -142,6 +141,7 @@ class postes
             $res  = null;
             $data = array(
                         'activite_principale'   => $activite_principale,
+                        'type' => $type,
                         'encadrement' => $encadrement,
                         'nb_personne_encadre' => $nb_personne_encadre,
                         'id_entreprise'  => $id_entreprise,

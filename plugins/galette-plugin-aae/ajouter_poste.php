@@ -16,66 +16,169 @@ $postes = new Postes();
 $entreprises = new Entreprises();
 
 if ( !$login->isLogged() ) {
-    header('location:'. GALETTE_BASE_PATH .'index.php');
-    die();
+	header('location:'. GALETTE_BASE_PATH .'index.php');
+	die();
 }
 
-if (isset($_POST['id_adh'])  && isset($_POST['annee_ini']) && isset($_POST['employeur']))
-{
+#----------CREATION----------#
 
-   $res2 = $entreprises->getAllEntreprises();
-   $test = false;
-   foreach ($res2 as $entreprise) {
+if(($_GET['id_adh']!='') && ($_GET['id_poste']=='')){
+ 
+    $vis=False;
+    $tpl->assign('vis',$vis);
 
-    $name = $entreprise["employeur"];
-    if($name == $_POST['employeur']) {
-        $test = true;
-        $entrId = $entreprise['id_entreprise'];
-        if($entreprise["website"]!=$_POST['employeur_website'] && $_POST['employeur_website']!="")
-        {$res1 = $entreprises->setEntreprise(
-            $entreprise['id_entreprise'],
-            $_POST['employeur'],
-            $_POST['employeur_website']
-            );
+    $modif=False;
+    $tpl->assign('modif',$modif);
 
-        print_r($res1);}
+    $id_adh = $login->id;
+	if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
+		$id_adh = $_GET['id_adh'];
+	}
+    $tpl->assign('id_adh', $id_adh);
+
+    //Recupération des entreprises :
+    $allEntreprises = $entreprises->getAllEntreprises();
+    foreach ($allEntreprises as $entreprise) {
+        $pk = Entreprises::PK;
+        $name = $entreprise["employeur"];
+        $entreprises_options[$entreprise[$pk]]["employeur"] = $name;
+        $entreprises_options[$entreprise[$pk]]["website"] = $entreprise["website"];
     }
-        $dernier=$entreprise['id_entreprise'];
+    $tpl->assign('entreprises', $entreprises_options);
+
+    if (isset($_POST['annee_ini']) && isset($_POST['employeur']))
+    {
+        
+
+       $res2 = $entreprises->getAllEntreprises();
+       foreach ($res2 as $entreprise) {
+
+        $name = $entreprise["employeur"];
+        if($name == $_POST['employeur'])
+        {
+            $entrId = $entreprise['id_entreprise'];
+           
+        }
+           
     }
-    
-    if (!$test) {
-        $res1 = $entreprises->setEntreprise(
+        
+
+
+        $res = $postes->setPoste(
             '',
-            $_POST['employeur'],
-            $_POST['employeur_website']
+            $id_adh,
+            $_POST['activite_principale'],
+            $_POST['type'],
+            $_POST['encadrement'],
+            $_POST['nb_personne_encadre'],
+            $entrId,
+            $_POST['adresse'],
+            $_POST['code_postal'],
+            $_POST['ville'],
+            $_POST['annee_ini'],
+            $_POST['annee_fin']
             );
 
-        print_r($res1);
 
-
-        $entrId =$dernier + 1;
     }
+}
+
+#----------MODIFICATION----------#
 
 
+if(($_GET['id_adh']!='') && ($_GET['id_poste']!='')){
 
+    $vis=False;
+    $tpl->assign('vis',$vis);
 
-    $res = $postes->setPoste(
-        '',
-        $_POST['id_adh'],
-        $_POST['activite_principale'],
-        $_POST['encadrement'],
-        $_POST['nb_personne_encadre'],
-        $entrId,
-        $_POST['adresse'],
-        $_POST['code_postal'],
-        $_POST['ville'],
-        $_POST['annee_ini'],
-        $_POST['annee_fin']
-        );
+    $modif=True;
+    $tpl->assign('modif',$modif);
 
-    print_r($res);
+    $id_adh = $login->id;
+	if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
+		$id_adh = $_GET['id_adh'];
+	}
+    $tpl->assign('id_adh', $id_adh);
 
+    $id_poste = $_GET['id_poste'];
+    $tpl->assign('id_poste', $id_poste);
 
+    //Recupération des entreprises :
+    $allEntreprises = $entreprises->getAllEntreprises();
+    foreach ($allEntreprises as $entreprise) {
+        $pk = Entreprises::PK;
+        $name = $entreprise["employeur"];
+        $entreprises_options[$entreprise[$pk]]["employeur"] = $name;
+        $entreprises_options[$entreprise[$pk]]["website"] = $entreprise["website"];
+    }
+    $tpl->assign('entreprises', $entreprises_options);
+
+    $pst = $postes->getPoste($id_poste);
+    $tpl->assign('poste',$pst);
+
+    $idEntr = $pst['id_entreprise'];
+    $ent = $entreprises->getEntreprise($idEntr);
+
+    $nomEnt = $ent['employeur'];
+
+    $tpl->assign('nomEnt',$nomEnt);
+
+    if (isset($_POST['annee_ini']) && isset($_POST['employeur']))
+    {
+        
+
+       $res2 = $entreprises->getAllEntreprises();
+       foreach ($res2 as $entreprise)
+       {
+			$name = $entreprise["employeur"];
+			if($name == $_POST['employeur'])
+			{
+				$entrId = $entreprise['id_entreprise'];
+			   
+			}     
+		}
+        
+        $res = $postes->setPoste(
+            $id_poste,
+            $id_adh,
+            $_POST['activite_principale'],
+            $_POST['type'],
+            $_POST['encadrement'],
+            $_POST['nb_personne_encadre'],
+            $entrId,
+            $_POST['adresse'],
+            $_POST['code_postal'],
+            $_POST['ville'],
+            $_POST['annee_ini'],
+            $_POST['annee_fin']
+            );
+
+	}
+
+}
+    
+#----------VISUALISATION----------#
+
+if(($_GET['id_adh']=='') && ($_GET['id_poste']!='')){
+
+    $vis=True;
+    $tpl->assign('vis',$vis);
+
+    $modif=False;
+    $tpl->assign('modif',$modif);
+
+    $id_poste = $_GET['id_poste'];
+    $tpl->assign('id_poste', $id_poste);
+
+    $pst = $postes->getPoste($id_poste);
+    $tpl->assign('poste',$pst);
+
+    $idEntr = $pst['id_entreprise'];
+    $ent = $entreprises->getEntreprise($idEntr);
+
+    $nomEnt = $ent['employeur'];
+
+    $tpl->assign('nomEnt',$nomEnt);
 }
 
 // page generation

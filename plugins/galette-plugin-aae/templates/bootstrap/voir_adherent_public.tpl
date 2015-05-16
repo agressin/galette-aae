@@ -115,6 +115,9 @@
 					<td>
 						<a href="{$key.website}">{$key.website}</a>
 					</td>
+					<td>
+						<a href="ajouter_poste.php?id_poste={$key.id_poste|htmlspecialchars}"><img src="{$template_subdir}images/icon-fiche.png" align="middle"/>
+					</td>	
 				</tr>
 		{/foreach}
 			</table>

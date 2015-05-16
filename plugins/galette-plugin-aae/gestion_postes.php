@@ -13,7 +13,6 @@ use Galette\AAE\Postes as Postes;
 require_once 'lib/GaletteAAE/Entreprises.php';
 use Galette\AAE\Entreprises as Entreprises;
 
-
 if ( !$login->isLogged() ) {
     header('location:'. GALETTE_BASE_PATH .'index.php');
     die();
@@ -42,6 +41,7 @@ $id_adh = $login->id;
 if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
 	$id_adh = $_GET['id_adh'];
 }
+$tpl->assign('id_adh', $id_adh);
 
 //Liste les postes 
 $list_postes = $postes->getPostes($id_adh);
