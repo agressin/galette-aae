@@ -5,12 +5,12 @@
 		<fieldset class="form-group">
 			<div class="col-md-4">						
 				{*Searching parrains by name*}
-				<label>{_T string="Research of parrain"}
+				<label>{_T string="Enter the name then the surname of the parrain"}
 					<input type="text" name ="parrain" id="p" {if isset($parrain)} value="{$parrain}" {/if}/> 
 					<input type="hidden" name ="id_p" id="idp" {if isset($id_p)} value="{$id_p}" {/if}/> 							
 				</label>
 				{*Searching fillots by name*}
-				<label>{_T string="Research of fillot"}
+				<label>{_T string="Enter the name then the surname of the fillot"}
 					<input type="text" name ="fillot" id="f" {if isset($fillot)} value="{$fillot}" {/if}/> 	
 					<input type="hidden" name ="id_f" id="idf" {if isset($id_f)} value="{$id_f}" {/if}/> 	
 				</label>
