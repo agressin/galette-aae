@@ -32,6 +32,9 @@
 				<div id="Execute">
 					<input type="submit" id="Exe" value={_T string="Execute"} onclick="self.location.href='ajout_parrain_fillot.php'"/>
 				</div>
+				<div>
+					{$result}
+				</div>
 			</div>
 		</fieldset>
 	</form>

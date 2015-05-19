@@ -27,8 +27,9 @@ use Galette\AAE\Formations as Formations;
 //require_once 'generation_json.js';
 //require_once 'donnees_json.php';
 
-//$parr=[];
-//$fill=[];
+$parr=[];
+$fill=[];
+$str_result = [];
 
 if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
     //public pages are not actives
@@ -54,31 +55,53 @@ if ($p!="" && $f!="")
 		
 		//s'il n'y a qu'un résultat pour le parrain et pour le fillot
 		if (count($parr) == 1 && count($fill) == 1){
-			//vérification années
-			//if (($parr[0]["annee_debut"]-$fillot[0]["annee_debut"]) <= 2{
-				//echo((int)($parr[0]["annee_debut"])-(int)($fillot[0]["annee_debut"]));
-				//echo("ok !");
-				$diff = (int)($parr[0]["annee_debut"]-$fillot[0]["annee_debut"]);
-				echo($diff);
+			//vérification cohérence des année_début entre parrain et fillot
+			$annee_parrain = $parr[0]["annee_debut"];
+			$annee_fillot = $fill[0]["annee_debut"];
+			$intannee_parrain = (int)$annee_parrain;
+			$intannee_fillot = (int)$annee_fillot;
+			$diff = $intannee_parrain-$intannee_fillot;
+			if (($diff <= 2) && ($intannee_fillot > $intannee_parrain)){
 				$id_parrain = $parr[0]["id_adh"];
 				$id_fillot = $fill[0]["id_adh"];
+				$str_result = "Le lien a bien été ajouté la base !";
+			}
+			else{
+				$str_result = "Ce lien est incohérent en ce qui concerne les années. Il n'a pas été ajouté dans la base";
+			}
 		}
-		//n'existe pas dans la base
-		else if (count($parr) == 0 || count($fill) == 0){
-			echo("un des noms n'est pas dans la base");
+		//parrain ou fillot n'existe pas dans la base
+		else if (count($parr) == 0){
+			$str_result = "Le nom du parrain est introuvable dans la base";
+		}
+		else if (count($fill) == 0){
+			$str_result = "Le nom du fillot est introuvable dans la base";
+		}
+		//Aucun des 2 n'existe dans la base
+		else if (count($fill) == 0 && count($parr) == 0){
+			$str_result = "Ces noms sont introuvables dans la base";
 		}
 		//plusieurs solutions
+		else if (count($parr) > 1){
+			$str_result = "Plusieurs solutions possibles pour le parrain";
+		}
+		else if (count($fill) > 1){
+			$str_result = "Plusieurs solutions possibles pour le fillot";
+		}
 		else if (count($parr) > 1 && count($fill) > 1){
-			echo("plusieurs solutions possibles");
+			$str_result = "Plusieurs solutions possibles pour parrain et fillot";
 		}
 	}
 	else{
-		echo("rentrez nom+prénom pour chacun");
+		$str_result = "Veuillez saisir le nom ET le prénom pour chacun";
 	}	
+}
+else{
+	$str_result = "Il faut saisir les 2 champs afin d'ajouter un lien";
 }
 
 $tpl->assign('page_title', _T("Add to the tree"));
-$tpl->assign('value', $val);
+$tpl->assign('result', $str_result);
 
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
