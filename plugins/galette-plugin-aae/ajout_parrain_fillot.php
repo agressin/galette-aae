@@ -24,6 +24,9 @@ use Galette\AAE\Cycles as Cycles;
 require_once 'lib/GaletteAAE/Formations.php';
 use Galette\AAE\Formations as Formations;
 
+require_once 'lib/GaletteAAE/Familles.php';
+use Galette\AAE\Familles as Familles;
+
 //require_once 'generation_json.js';
 //require_once 'donnees_json.php';
 
@@ -39,6 +42,7 @@ if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
 
 $cycles = new Cycles();
 $annuaire = new Annuaire();
+$familles = new Familles();
 
 //récupération de ce qu'il y a dans le formulaire
 $p = $_POST["parrain"];
@@ -64,6 +68,8 @@ if ($p!="" && $f!="")
 			if (($diff <= 2) && ($intannee_fillot > $intannee_parrain)){
 				$id_parrain = $parr[0]["id_adh"];
 				$id_fillot = $fill[0]["id_adh"];
+				//Ajout du lien dans la base
+				$familles -> ajoutLienParrainFillot($id_parrain, $id_fillot);
 				$str_result = "Le lien a bien été ajouté la base !";
 			}
 			else{
@@ -114,34 +120,5 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 
-if($id_parrain!='' && $id_fillot!=''){
-	global $zdb;
-	try {
-		    $res  = null;
-            $data = array(
-				'id_parrain'=>$id_parrain,
-				'id_fillot'=>$id_fillot
-            );
-			//insertion dans la BDD
-			$insert = $zdb->insert(AAE_PREFIX . 'familles');
-			$insert->values($data);
-			$add = $zdb->execute($insert);
-			
-			if ( $add->count() == 0) {
-				Analog::log('An error occured inserting new parrain!' );
-			}
-	} 
-		
-	catch (\Exception $e) {
-		Analog::log(
-			'Unable to retrieve parrain for "' .
-			$id_fillot . '" | "" | ' . $e->getMessage(),
-			Analog::WARNING
-		);
-		echo('raté');
-		return false;
-	}
-
-}	
 $tpl->display('public_page.tpl');
 ?>

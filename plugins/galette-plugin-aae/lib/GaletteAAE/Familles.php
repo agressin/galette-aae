@@ -512,6 +512,41 @@ class Familles
 		}
 	
 	}
+	
+	
+	/*ajoutLien
+	IN : id_parrain,id_fillot
+	COM : ajout du lien entre les personnes d'identifiant id_parrain et id_fillot*/
+	function ajoutLienParrainFillot ($id_parrain, $id_fillot)
+	{	
+		global $zdb;
+		try {
+			$res  = null;
+			$data = array(
+				'id_parrain'=>$id_parrain,
+				'id_fillot'=>$id_fillot
+			);
+			//insertion dans la BDD
+			$insert = $zdb->insert(AAE_PREFIX . 'familles');
+			$insert->values($data);
+			$add = $zdb->execute($insert);
+			
+			if ( $add->count() == 0) {
+				Analog::log('An error occured inserting new parrain!' );
+			}
+		} 
+			
+		catch (\Exception $e) {
+			Analog::log(
+				'Unable to retrieve parrain for "' .
+				$id_fillot . '" | "" | ' . $e->getMessage(),
+				Analog::WARNING
+			);
+			echo('raté');
+			return false;
+		}
+	}
+	
 }
 
 ?>
