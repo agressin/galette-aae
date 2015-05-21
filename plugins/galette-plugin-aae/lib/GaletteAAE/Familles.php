@@ -120,7 +120,10 @@ class Familles
 
 	}
 	
-	
+	/*CreateJSON
+	IN : id de la personne dont on veut connaître la famille
+	OUT : JSON de sa familles
+	COM : Trouver les personnes de la famille de la personne en entrée*/
 	function CreateJSON ($id)
 	{
 		$idn = 0;
@@ -191,7 +194,7 @@ class Familles
 							//var_dump($infos[0]);
 							$pasdeparrains = 0;
 							if ($valeur > 0){
-								if (strlen ($infos[0][nom])>3 /*&& $infos[0][id_cycle]!=3*/){
+								if ($infos[0][nom] == "B" || $infos[0][nom] == "IT"){
 									$annee_debut = $infos[0][annee_debut];
 								}
 								/*else {
@@ -340,14 +343,14 @@ class Familles
 
 		if (empty($idfillot)){
 			$infos = $annuaire->getInfoById($id);
-			echo($infos[0][id_cycle]);
+			//echo($infos[0][id_cycle]);
 			if ($infos[0][nom] == "B" || $infos[0][nom] == "IT"){
 				$annee_fin = $infos[0][annee_debut];
 			}
 			else {
 				$annee_fin = $infos[1][annee_debut];
 			}
-			echo($annee_fin);
+			//echo($annee_fin);
 		}
 		else{
 			do  {

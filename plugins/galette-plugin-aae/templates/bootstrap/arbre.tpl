@@ -33,7 +33,7 @@
 	{/if}
 	<div class="row">
 		<div class="col-md-15">
-			<div id="cy" style="border: 2px black solid; height:700px; position:relative;">
+			<div id="cy" style="border: 2px black solid; height:700px; position:relative; background:url(templates/bootstrap/images/Visage_transparent.png); background-repeat:no-repeat; background-position:center center; margin-top:100px;">
 				<div id="popup" style="z-index:10; text-align:center; border-radius: 10px 10px 10px 0; border:solid 2px #6B737F;">
 					<p style="margin-top:10px;"><a id="lien_profil" href="">Mon profil</a></p>
 					<p><a id="lien_famille" href="">Ma famille</a></p>
