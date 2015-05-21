@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Sun May 10 14:03:37 2015 (GMT)
+// This file was automatically generated on Thu May 21 07:05:42 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -91,7 +91,7 @@ $lang['Localisation:'] = 'Localisation:';
 $lang['End'] = 'End';
 
 // ../templates/bootstrap/ajouter_offre.tpl:82 
-$lang['Tech_majeures:'] = '';
+$lang['Tech_majeures:'] = 'Tech_majeures:';
 
 // ../templates/default/liste_membres_aae.tpl:3 ../templates/bootstrap/liste_membres_aae.tpl:4 
 $lang['Select cycle and promotion'] = 'Select cycle and promotion';
@@ -132,7 +132,7 @@ $lang['AAE Tools'] = 'AAE Tools';
 // ../templates/bootstrap/voir_adherent_public.tpl:24 
 $lang['Picture'] = 'Picture';
 
-// ../ajout_modif_parr_fillot.php:78 
+// ../ajout_parrain_fillot.php:109 ../ajout_modif_parr_fillot.php:78 
 $lang['Add to the tree'] = 'Add to the tree';
 
 // ../templates/bootstrap/ajouter_offre.tpl:27 
@@ -219,7 +219,7 @@ $lang['Available until:'] = 'Available until:';
 // ../templates/default/adh_fiche_action.tpl:14 ../templates/bootstrap/adh_fiche_action.tpl:14 
 $lang['View formations'] = 'View formations';
 
-// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:5 
+// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:5 ../templates/bootstrap/ajout_parrain_fillot.tpl:3 
 $lang['Backtotree'] = 'Backtotree';
 
 // ../templates/default/menu.tpl:7 
@@ -297,8 +297,8 @@ $lang['RIB has not been modified!'] = 'RIB has not been modified!';
 // ../templates/default/aaetools.tpl:7 ../templates/bootstrap/aaetools.tpl:7 
 $lang['(Max 255 characters)'] = '(Max 255 characters)';
 
-// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:96 
-$lang['Execute'] = '';
+// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:96 ../templates/bootstrap/ajout_parrain_fillot.tpl:33 
+$lang['Execute'] = 'Execute';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:44 
 $lang['Birth date:'] = 'Birth date:';
@@ -344,6 +344,9 @@ $lang['How to contribute ?'] = 'How to contribute ?';
 
 // ../gestion_formations_eleve.php:22 
 $lang['Formations managment'] = 'Formations managment';
+
+// ../templates/bootstrap/ajout_parrain_fillot.tpl:8 
+$lang['Enter the name then the surname of the parrain'] = 'Enter the name then the surname of the parrain';
 
 // ../templates/bootstrap/ajouter_offre.tpl:13 
 $lang['Contact Name:'] = 'Contact: ';
@@ -398,6 +401,9 @@ $lang[' from '] = ' from ';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:11 
 $lang['[C]'] = '[C]';
+
+// ../templates/bootstrap/ajout_parrain_fillot.tpl:13 
+$lang['Enter the name then the surname of the fillot'] = 'Enter the name then the surname of the fillot';
 
 // ../templates/default/ajouter_formation_eleve.tpl:33 ../templates/bootstrap/ajouter_formation_eleve.tpl:33 
 $lang['Beging of the formation:'] = 'Beging of the formation:';

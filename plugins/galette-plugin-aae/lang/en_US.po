@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-05-10 15:58+0200\n"
+"PO-Revision-Date: 2015-05-21 09:04+0200\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -24,6 +24,10 @@ msgstr " Key word(s) :"
 #, fuzzy
 msgid "Offer general "
 msgstr "Job offer details"
+
+#: ../templates/bootstrap/ajout_parrain_fillot.tpl:13
+msgid "Enter the name then the surname of the fillot"
+msgstr "Enter the name then the surname of the fillot"
 
 #: ../templates/bootstrap/liste_membres_aae.tpl:29
 #, fuzzy
@@ -96,8 +100,9 @@ msgid "Localisation:"
 msgstr "Localisation:"
 
 #: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:96
+#: ../templates/bootstrap/ajout_parrain_fillot.tpl:33
 msgid "Execute"
-msgstr ""
+msgstr "Execute"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:86
 msgid "E-Mail:"
@@ -152,7 +157,7 @@ msgstr "Actions"
 
 #: ../templates/bootstrap/ajouter_offre.tpl:82
 msgid "Tech_majeures:"
-msgstr ""
+msgstr "Tech_majeures:"
 
 #: ../templates/default/liste_membres_aae.tpl:41
 #: ../templates/bootstrap/promotion.tpl:13
@@ -376,6 +381,7 @@ msgid " Key word(s):"
 msgstr "Key word(s):"
 
 #: ../templates/bootstrap/ajout_modif_parr_fillot.tpl:5
+#: ../templates/bootstrap/ajout_parrain_fillot.tpl:3
 msgid "Backtotree"
 msgstr "Backtotree"
 
@@ -437,7 +443,7 @@ msgstr "No member registered!"
 msgid "Contact Mail:"
 msgstr "Contact Mail: "
 
-#: ../ajout_modif_parr_fillot.php:78
+#: ../ajout_parrain_fillot.php:109 ../ajout_modif_parr_fillot.php:78
 #, fuzzy
 msgid "Add to the tree"
 msgstr "Add to the tree"
@@ -584,6 +590,10 @@ msgstr "Promotion:"
 #: ../templates/bootstrap/menu.tpl:5
 msgid "AAE Tools"
 msgstr "AAE Tools"
+
+#: ../templates/bootstrap/ajout_parrain_fillot.tpl:8
+msgid "Enter the name then the surname of the parrain"
+msgstr "Enter the name then the surname of the parrain"
 
 #: ../templates/bootstrap/detail_offre.tpl:10
 msgid " by "

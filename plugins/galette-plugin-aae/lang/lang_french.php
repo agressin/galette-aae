@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Sun May 10 14:03:37 2015 (GMT)
+// This file was automatically generated on Thu May 21 07:05:42 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -132,7 +132,7 @@ $lang['AAE Tools'] = 'Outils pour l\'AAE';
 // ../templates/bootstrap/voir_adherent_public.tpl:24 
 $lang['Picture'] = 'Image';
 
-// ../ajout_modif_parr_fillot.php:78 
+// ../ajout_parrain_fillot.php:109 ../ajout_modif_parr_fillot.php:78 
 $lang['Add to the tree'] = 'Ajouter à l\'arbre';
 
 // ../templates/bootstrap/ajouter_offre.tpl:27 
@@ -205,7 +205,7 @@ $lang['Please log in to access contact information.'] = 'Merci de vous connecter
 $lang['Identity:'] = 'Identité :';
 
 // ../templates/bootstrap/arbre.tpl:5 
-$lang['Add'] = '';
+$lang['Add'] = 'Ajouter';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:50 
 $lang['Profession:'] = 'Promotion :';
@@ -219,7 +219,7 @@ $lang['Available until:'] = 'Disponible jusqu\'au :';
 // ../templates/default/adh_fiche_action.tpl:14 ../templates/bootstrap/adh_fiche_action.tpl:14 
 $lang['View formations'] = 'Voir les formations';
 
-// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:5 
+// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:5 ../templates/bootstrap/ajout_parrain_fillot.tpl:3 
 $lang['Backtotree'] = 'Retour';
 
 // ../templates/default/menu.tpl:7 
@@ -297,8 +297,8 @@ $lang['RIB has not been modified!'] = 'Le RIB n\'a pas été modifié';
 // ../templates/default/aaetools.tpl:7 ../templates/bootstrap/aaetools.tpl:7 
 $lang['(Max 255 characters)'] = '(Max 255 characters)';
 
-// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:96 
-$lang['Execute'] = '';
+// ../templates/bootstrap/ajout_modif_parr_fillot.tpl:96 ../templates/bootstrap/ajout_parrain_fillot.tpl:33 
+$lang['Execute'] = 'Executer';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:44 
 $lang['Birth date:'] = 'Date d\'anniversaire :';
@@ -344,6 +344,9 @@ $lang['How to contribute ?'] = 'Comment cotiser ?';
 
 // ../gestion_formations_eleve.php:22 
 $lang['Formations managment'] = 'Gestion des formations';
+
+// ../templates/bootstrap/ajout_parrain_fillot.tpl:8 
+$lang['Enter the name then the surname of the parrain'] = 'Entrer le nom puis le prénom du parrain';
 
 // ../templates/bootstrap/ajouter_offre.tpl:13 
 $lang['Contact Name:'] = 'Nom du contact : ';
@@ -398,6 +401,9 @@ $lang[' from '] = ' de ';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:11 
 $lang['[C]'] = '';
+
+// ../templates/bootstrap/ajout_parrain_fillot.tpl:13 
+$lang['Enter the name then the surname of the fillot'] = 'Entrer le nom puis le prénom du fillot';
 
 // ../templates/default/ajouter_formation_eleve.tpl:33 ../templates/bootstrap/ajouter_formation_eleve.tpl:33 
 $lang['Beging of the formation:'] = 'Début de la formation :';
