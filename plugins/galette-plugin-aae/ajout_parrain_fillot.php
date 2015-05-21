@@ -32,7 +32,7 @@ use Galette\AAE\Familles as Familles;
 
 $parr=[];
 $fill=[];
-$str_result = [];
+$str_result = "";
 
 if ( !$preferences->showPublicPages($login) ) { //$login->isLogged())
     //public pages are not actives
@@ -58,7 +58,7 @@ if ($p!="" && $f!="")
 		$fill = $annuaire->rechercheSimplifieeParNom($f);
 		
 		//s'il n'y a qu'un résultat pour le parrain et pour le fillot
-		if (count($parr) == 1 && count($fill) == 1){
+		if ($parr != false && $fill != false){
 			//vérification cohérence des année_début entre parrain et fillot
 			$annee_parrain = $parr[0]["annee_debut"];
 			$annee_fillot = $fill[0]["annee_debut"];
@@ -73,29 +73,29 @@ if ($p!="" && $f!="")
 				$str_result = "Le lien a bien été ajouté la base !";
 			}
 			else{
-				$str_result = "Ce lien est incohérent en ce qui concerne les années. Il n'a pas été ajouté dans la base";
+				$str_result = "Ce lien est incohérent au niveau des années. Il n'a pas été ajouté dans la base";
 			}
 		}
-		//parrain ou fillot n'existe pas dans la base
-		else if (count($parr) == 0){
-			$str_result = "Le nom du parrain est introuvable dans la base";
-		}
-		else if (count($fill) == 0){
-			$str_result = "Le nom du fillot est introuvable dans la base";
-		}
 		//Aucun des 2 n'existe dans la base
-		else if (count($fill) == 0 && count($parr) == 0){
+		else if ($fill == false && $parr == false){
 			$str_result = "Ces noms sont introuvables dans la base";
 		}
+		//parrain ou fillot n'existe pas dans la base
+		else if ($parr == false){
+			$str_result = "Le nom du parrain est introuvable dans la base";
+		}
+		else if ($fill == false){
+			$str_result = "Le nom du fillot est introuvable dans la base";
+		}
 		//plusieurs solutions
+		else if (count($parr) > 1 && count($fill) > 1){
+			$str_result = "Plusieurs solutions possibles pour parrain et fillot";
+		}
 		else if (count($parr) > 1){
 			$str_result = "Plusieurs solutions possibles pour le parrain";
 		}
 		else if (count($fill) > 1){
 			$str_result = "Plusieurs solutions possibles pour le fillot";
-		}
-		else if (count($parr) > 1 && count($fill) > 1){
-			$str_result = "Plusieurs solutions possibles pour parrain et fillot";
 		}
 	}
 	else{
