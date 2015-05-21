@@ -355,10 +355,12 @@ class Familles
 								$infos = $annuaire->getInfoById($valeur);
 								//On stocke l'année du plus récent fillot
 								if ($infos[0][nom] == "B" || $infos[0][nom] == "IT"){ 
-									$infos[0][annee_debut] = $infos[0][annee_debut] - 2;
+									$annee_final = $infos[0][annee_debut];
+								}
+								else {
+									$annee_final = $infos[1][annee_debut];
 								}
 								//var_dump($infos[0][nom]);
-								$annee_final = $infos[0][annee_debut];
 								if ($annee_final > $annee_fin){
 									$annee_fin = $annee_final;
 								}
@@ -397,7 +399,7 @@ class Familles
 									//S'il s'agit bien d'une personne, et pas d'un élément caché, on l'ajoute dans le JSON
 									$nodes = $nodes.'{"data":{"id":"'.$valeur.'","name":"'.$personne.'"}},';
 								}
-								$idvieux = $vieux
+								$idvieux = $valeur;
 								//On crée les liens entre parrains et fillots
 								if ($idp != $id_fillot1){
 									foreach ($idfillot3 as $cle => $nouveaufillot){
