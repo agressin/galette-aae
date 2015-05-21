@@ -46,6 +46,7 @@
 		var infobulle = document.getElementById("popup");
 		var lien = document.getElementById("lien_profil");
 		var lien_f = document.getElementById("lien_famille");
+		var message = "";
 		var x_souris = 0;
 		var y_souris = 0;
 
@@ -73,7 +74,14 @@
 			lien.href = ""; //Reset the link
 			lien_f.href = ""; //Reset the link
 			if (clic <= 100){ //If we tap a year
-				console.log(clic);
+				var annee = parseInt(clic) +2000;
+				console.log(annee);
+				if (annee > 2002){
+					document.location.href = "liste_eleves.php?cycle=51&year="+annee;
+				}
+				else{
+					document.location.href = "liste_eleves.php?cycle=2&year="+annee;
+				}
 			}else{ //If we tap someone
 				infobulle.style.height = 80+"px";
 				infobulle.style.width = 90+"px";
