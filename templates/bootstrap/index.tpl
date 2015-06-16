@@ -15,10 +15,11 @@
 				</div>
 				<a href="{$galette_base_path}lostpasswd.php">{_T string="Lost your password?"}</a>
 			  </div>
-			  <div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-				  <button type="submit" class="btn btn-primary">{_T string="Login"}</button>
-				  <input type="hidden" name="ident" value="1" />
+				  	<div class="form-group">
+						  <button type="submit" class="btn btn-primary">{_T string="Login"}</button>
+						  <input type="hidden" name="ident" value="1" />
+			  			<a class="btn btn-primary" href="{$galette_base_path}lostpasswd.php">{_T string="Logon"}</a>
+				  	</div>
 				</div>
-			  </div>
 			</form>
