@@ -29,9 +29,8 @@ if (isset($_POST['employeur']))
         $_POST['employeur_website']
         );
 
-    print_r($res);
-
-
+	header('location:'. 'ajouter_poste.php');
+	die();
 }
 
 // page generation

@@ -48,11 +48,7 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 
-//restricted to user only
-//if ( $login->isLogged() ) {
-//    $tpl->display('page.tpl', AAETOOLS_SMARTY_PREFIX);
-//} else {
-		$tpl->display('public_page.tpl');
-//}
+$tpl->display('public_page.tpl');
+
 
 ?>

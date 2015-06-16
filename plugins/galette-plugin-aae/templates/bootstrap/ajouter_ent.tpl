@@ -18,14 +18,10 @@
                 </div>
                 </div>
             </fieldset>
-
-
-        
         <div class="button-container">
             <input type="submit" id="btnsave" value="{_T string="Save"}"/>
             {* Second step validator *}
             <input type="hidden" name="valid" value="1"/>
-
         </div>
 	</form>
 </form>

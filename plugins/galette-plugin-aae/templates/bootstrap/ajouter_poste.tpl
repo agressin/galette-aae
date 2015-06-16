@@ -11,7 +11,7 @@
             </p>
             <p>
                 <select name="employeur" id="employeur" required {if {$vis} eq True} disabled {/if}>
-                    <option value="">{_T string=" Choissir un employeur "}</option>
+                    <option value="">{_T string=" Choisir un employeur "}</option>
                     {if {$vis} eq True}
                     <option value={$nomEnt} selected="selected">{$nomEnt}</option>
                     {/if}
