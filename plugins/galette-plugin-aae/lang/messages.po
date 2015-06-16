@@ -76,6 +76,10 @@ msgstr ""
 msgid "How to contribute ?"
 msgstr ""
 
+#: ../templates/bootstrap/ajouter_poste.tpl:14
+msgid " Choisir un employeur "
+msgstr ""
+
 #: ../templates/bootstrap/ajouter_offre.tpl:47
 msgid "Localisation:"
 msgstr ""
@@ -113,13 +117,13 @@ msgstr ""
 msgid "Unfortunately, there is no member in your database yet,"
 msgstr ""
 
-#: ../templates/bootstrap/aaecotiz.tpl:17 ../templates/default/aaecotiz.tpl:16
+#: ../templates/bootstrap/aaecotiz.tpl:16 ../templates/default/aaecotiz.tpl:16
 msgid "Merci de faire un virement avec l'intitulé 'cotis nom prenom' sur le compte suivant :"
 msgstr ""
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:36 ../templates/bootstrap/ajouter_formation_eleve.tpl:43
-#: ../templates/bootstrap/ajouter_poste.tpl:79 ../templates/bootstrap/ajouter_poste.tpl:86
-#: ../templates/default/ajouter_formation_eleve.tpl:36 ../templates/default/ajouter_formation_eleve.tpl:43
+#: ../templates/bootstrap/ajouter_poste.tpl:78 ../templates/default/ajouter_formation_eleve.tpl:36
+#: ../templates/default/ajouter_formation_eleve.tpl:43
 msgid "(yyyy format)"
 msgstr ""
 
@@ -186,7 +190,7 @@ msgstr ""
 msgid "Contact Name:"
 msgstr ""
 
-#: ../templates/bootstrap/aaecotiz.tpl:21 ../templates/default/aaecotiz.tpl:20
+#: ../templates/bootstrap/aaecotiz.tpl:20 ../templates/default/aaecotiz.tpl:20
 msgid "En cas de virement groupé pour plusieurs personnes, merci de le préciser dans votre mail."
 msgstr ""
 
@@ -210,10 +214,6 @@ msgstr ""
 msgid "My formations"
 msgstr ""
 
-#: ../templates/bootstrap/ajouter_poste.tpl:14
-msgid " Choissir un employeur "
-msgstr ""
-
 #: ../templates/bootstrap/detail_offre.tpl:23
 msgid " of "
 msgstr ""
@@ -222,7 +222,7 @@ msgstr ""
 msgid " select a type "
 msgstr ""
 
-#: ../templates/bootstrap/aaecotiz.tpl:11 ../templates/bootstrap/aaecotiz.tpl:19
+#: ../templates/bootstrap/aaecotiz.tpl:11 ../templates/bootstrap/aaecotiz.tpl:18
 #: ../templates/default/aaecotiz.tpl:10 ../templates/default/aaecotiz.tpl:18
 msgid "et de prévenir de votre paiement en envoyant un mail à"
 msgstr ""
@@ -270,7 +270,7 @@ msgstr ""
 msgid "Available until:"
 msgstr ""
 
-#: ../templates/bootstrap/gestion_formations.tpl:9 ../templates/bootstrap/ajouter_poste.tpl:83
+#: ../templates/bootstrap/gestion_formations.tpl:9 ../templates/bootstrap/ajouter_poste.tpl:82
 #: ../templates/default/gestion_formations.tpl:9
 msgid "End"
 msgstr ""
@@ -309,8 +309,8 @@ msgid "Add formation"
 msgstr ""
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:55 ../templates/bootstrap/aaetools.tpl:13
-#: ../templates/bootstrap/ajouter_offre.tpl:88 ../templates/bootstrap/ajouter_poste.tpl:95
-#: ../templates/bootstrap/ajouter_ent.tpl:25 ../templates/default/ajouter_formation_eleve.tpl:55
+#: ../templates/bootstrap/ajouter_offre.tpl:88 ../templates/bootstrap/ajouter_poste.tpl:91
+#: ../templates/bootstrap/ajouter_ent.tpl:22 ../templates/default/ajouter_formation_eleve.tpl:55
 #: ../templates/default/aaetools.tpl:13
 msgid "Save"
 msgstr ""
@@ -417,8 +417,8 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: ../templates/bootstrap/aaecotiz.tpl:25 ../templates/default/aaecotiz.tpl:24
-msgid "Veuillez vous identifier pour obtenir le RIB, ou le demander à"
+#: ../templates/bootstrap/detail_offre.tpl:46
+msgid "Please log in to access contact information."
 msgstr ""
 
 #: ../templates/bootstrap/liste_job.tpl:46
@@ -479,8 +479,8 @@ msgstr ""
 msgid "Job offers list"
 msgstr ""
 
-#: ../templates/bootstrap/detail_offre.tpl:46
-msgid "Please log in to access contact information."
+#: ../templates/default/aaecotiz.tpl:24
+msgid "Veuillez vous identifier pour obtenir le RIB, ou le demander à"
 msgstr ""
 
 #: ../templates/bootstrap/liste_job.tpl:30
@@ -628,6 +628,10 @@ msgstr ""
 
 #: ../templates/bootstrap/detail_offre.tpl:10
 msgid " by "
+msgstr ""
+
+#: ../templates/bootstrap/ajouter_poste.tpl:84
+msgid "empty if actual"
 msgstr ""
 
 #: ../templates/bootstrap/ajouter_offre.tpl:69

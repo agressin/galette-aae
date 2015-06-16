@@ -1,9 +1,9 @@
 <form class="form-horizontal" action="ajouter_poste.php?id_adh={$id_adh}&id_poste={$id_poste}" method="post">
     <form action="ajouter_poste.php?id_adh={$id_adh}&id_adh={$id_poste}" method="post">
-		<fieldset>
-			<legend>{_T string="Jobs details"}</legend>
-				<div class="row col-sm-offset-1"> 
-				<div class="form-group col-md-4">             
+
+		<legend>{_T string="Jobs details"}</legend>
+		<div class="row col-sm-offset-1"> 
+			<div class="form-group col-md-4">             
             <p>
                 <label class="bline" for="employeur">
                         {_T string="Employeur :"}
@@ -74,21 +74,17 @@
             <p>
                 <label class="bline" for="annee_ini">
                         {_T string="Begin"}
-                </label>
-                <input class="date" type="date" name="annee_ini" id="annee_ini" value="{$poste.annee_ini}" maxlength="10" required {if {$vis} eq True} disabled {/if}/>
-                <span class="exemple">{_T string="(yyyy format)"}</span>
+                </label><br>
+                <input class="date" type="number" name="annee_ini" id="annee_ini" value="{$poste.annee_ini}" placeholder="{_T string="(yyyy format)"}" maxlength="10" required {if {$vis} eq True} disabled {/if}/>
             </p>
             <p>
                 <label class="bline" for="annee_fin">
                         {_T string="End"}
-                </label>
-                <input class="date" type="date" name="annee_fin" id="annee_fin" value="{$poste.annee_fin}" maxlength="10" required  {if {$vis} eq True} disabled {/if}/>
-                <span class="exemple">{_T string="(yyyy format)"}</span>
+                </label><br>
+                <input class="date" type="number" name="annee_fin" id="annee_fin" value="{$poste.annee_fin}" placeholder="{_T string="empty if actual"}" maxlength="10" required  {if {$vis} eq True} disabled {/if}/>
             </p>
-            </div>
-            </div>
-        </fieldset>
-
+           </div>
+          </div>
 
     {if {$vis} eq False}
     <div class="button-container">

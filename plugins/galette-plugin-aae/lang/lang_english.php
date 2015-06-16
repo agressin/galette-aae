@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Sat May 16 19:32:48 2015 (GMT)
+// This file was automatically generated on Tue Jun 16 19:13:01 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -11,9 +11,6 @@ $lang['[M]'] = '[M]';
 
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:68 ../templates/default/ajouter_formation_eleve.tpl:68 
 $lang['please create a member'] = 'please create a member';
-
-// ../templates/bootstrap/ajouter_poste.tpl:14 
-$lang[' Choissir un employeur '] = '';
 
 // ../templates/bootstrap/liste_job.tpl:52 
 $lang['Annee de debut:'] = 'Begin year:';
@@ -45,7 +42,7 @@ $lang['RIB'] = 'RIB';
 // ../templates/bootstrap/detail_offre.tpl:52 
 $lang['Description: '] = 'Description: ';
 
-// ../templates/bootstrap/aaecotiz.tpl:17 ../templates/default/aaecotiz.tpl:16 
+// ../templates/bootstrap/aaecotiz.tpl:16 ../templates/default/aaecotiz.tpl:16 
 $lang['Merci de faire un virement avec l\'intitulé \'cotis nom prenom\' sur le compte suivant :'] = 'Thank you to make a transfer with the title \'cotis surname first name\' to the following account:';
 
 // ../templates/bootstrap/ajouter_offre.tpl:6 
@@ -75,7 +72,7 @@ $lang['Name and/or First Name'] = 'Name and/or First Name';
 // ../templates/bootstrap/ajouter_offre.tpl:34 
 $lang['Description:'] = 'Description:';
 
-// ../templates/bootstrap/ajouter_formation_eleve.tpl:36 ../templates/bootstrap/ajouter_formation_eleve.tpl:43 ../templates/bootstrap/ajouter_poste.tpl:79 ../templates/bootstrap/ajouter_poste.tpl:86 ../templates/default/ajouter_formation_eleve.tpl:36 ../templates/default/ajouter_formation_eleve.tpl:43 
+// ../templates/bootstrap/ajouter_formation_eleve.tpl:36 ../templates/bootstrap/ajouter_formation_eleve.tpl:43 ../templates/bootstrap/ajouter_poste.tpl:78 ../templates/bootstrap/ajouter_poste.tpl:84 ../templates/default/ajouter_formation_eleve.tpl:36 ../templates/default/ajouter_formation_eleve.tpl:43 
 $lang['(yyyy format)'] = '(yyyy format)';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:49 
@@ -105,7 +102,7 @@ $lang['Previous'] = 'Previous';
 // ../templates/bootstrap/ajouter_offre.tpl:47 
 $lang['Localisation:'] = 'Localisation:';
 
-// ../templates/bootstrap/gestion_formations.tpl:9 ../templates/bootstrap/ajouter_poste.tpl:83 ../templates/default/gestion_formations.tpl:9 
+// ../templates/bootstrap/gestion_formations.tpl:9 ../templates/bootstrap/ajouter_poste.tpl:82 ../templates/default/gestion_formations.tpl:9 
 $lang['End'] = 'End';
 
 // ../templates/bootstrap/ajouter_offre.tpl:82 
@@ -141,7 +138,7 @@ $lang['End of the formation:'] = 'End of the formation:';
 // ../templates/bootstrap/ajouter_offre.tpl:60 
 $lang['Key word(s):'] = ' Key word(s) :';
 
-// ../templates/bootstrap/ajouter_formation_eleve.tpl:55 ../templates/bootstrap/aaetools.tpl:13 ../templates/bootstrap/ajouter_offre.tpl:88 ../templates/bootstrap/ajouter_poste.tpl:95 ../templates/bootstrap/ajouter_ent.tpl:25 ../templates/default/ajouter_formation_eleve.tpl:55 ../templates/default/aaetools.tpl:13 
+// ../templates/bootstrap/ajouter_formation_eleve.tpl:55 ../templates/bootstrap/aaetools.tpl:13 ../templates/bootstrap/ajouter_offre.tpl:88 ../templates/bootstrap/ajouter_poste.tpl:91 ../templates/bootstrap/ajouter_ent.tpl:22 ../templates/default/ajouter_formation_eleve.tpl:55 ../templates/default/aaetools.tpl:13 
 $lang['Save'] = 'Save';
 
 // ../liste_offres.php:55 
@@ -150,7 +147,7 @@ $lang['Job offers list'] = 'Job offers list';
 // ../aaetools.php:64 ../templates/bootstrap/menu.tpl:5 ../templates/default/menu.tpl:4 
 $lang['AAE Tools'] = 'AAE Tools';
 
-// ../templates/bootstrap/aaecotiz.tpl:25 ../templates/default/aaecotiz.tpl:24 
+// ../templates/default/aaecotiz.tpl:24 
 $lang['Veuillez vous identifier pour obtenir le RIB, ou le demander à'] = 'Please login to get GDI, or ask it to';
 
 // ../liste_job.php:60 ../templates/bootstrap/public_menu.tpl:9 ../templates/bootstrap/public_menu.tpl:19 
@@ -228,7 +225,7 @@ $lang['Select entreprise'] = 'Select entreprise ';
 // ../templates/bootstrap/voir_adherent_public.tpl:30 
 $lang['Company'] = 'Company:';
 
-// ../templates/bootstrap/aaecotiz.tpl:11 ../templates/bootstrap/aaecotiz.tpl:19 ../templates/default/aaecotiz.tpl:10 ../templates/default/aaecotiz.tpl:18 
+// ../templates/bootstrap/aaecotiz.tpl:11 ../templates/bootstrap/aaecotiz.tpl:18 ../templates/default/aaecotiz.tpl:10 ../templates/default/aaecotiz.tpl:18 
 $lang['et de prévenir de votre paiement en envoyant un mail à'] = 'and prevent your payment by sending an email to';
 
 // ../templates/bootstrap/liste_job.tpl:40 
@@ -258,6 +255,9 @@ $lang['Pages:'] = 'Pages:';
 // ../templates/bootstrap/ajouter_offre.tpl:55 
 $lang['Available until:'] = 'Available until:';
 
+// ../templates/bootstrap/ajouter_poste.tpl:84 
+$lang['empty if actual'] = '';
+
 // ../templates/bootstrap/voir_adherent_public.tpl:95 ../templates/bootstrap/ajouter_ent.tpl:14 
 $lang['Website'] = 'Website:';
 
@@ -272,6 +272,9 @@ $lang['Please sign in to access search by name'] = 'Please sign in to access sea
 
 // ../templates/bootstrap/ajouter_poste.tpl:58 
 $lang['Adresse'] = 'Adress';
+
+// ../templates/bootstrap/ajouter_poste.tpl:14 
+$lang[' Choisir un employeur '] = '';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:85 
 $lang['E-Mail'] = 'E-Mail:';
@@ -318,7 +321,7 @@ $lang['Adresse :'] = 'Adress:';
 // ../templates/bootstrap/liste_membres_aae.tpl:111 ../templates/bootstrap/promotion.tpl:67 ../templates/default/liste_membres_aae.tpl:63 
 $lang['No member to show'] = 'No member to show';
 
-// ../templates/bootstrap/aaecotiz.tpl:21 ../templates/default/aaecotiz.tpl:20 
+// ../templates/bootstrap/aaecotiz.tpl:20 ../templates/default/aaecotiz.tpl:20 
 $lang['En cas de virement groupé pour plusieurs personnes, merci de le préciser dans votre mail.'] = 'In case of transfer grouped for several people, thank you specify in your email.';
 
 // ../templates/bootstrap/menu.tpl:12 ../templates/bootstrap/public_menu.tpl:35 
