@@ -14,171 +14,107 @@ use Galette\AAE\Entreprises as Entreprises;
 
 $postes = new Postes();
 $entreprises = new Entreprises();
+$member = new Galette\Entity\Adherent();
+
 
 if ( !$login->isLogged() ) {
 	header('location:'. GALETTE_BASE_PATH .'index.php');
 	die();
 }
 
-#----------CREATION----------#
 
-if(($_GET['id_adh']!='') && ($_GET['id_poste']=='')){
- 
-    $vis=False;
-    $tpl->assign('vis',$vis);
-
-    $modif=False;
-    $tpl->assign('modif',$modif);
-
-    $id_adh = $login->id;
-	if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
-		$id_adh = $_GET['id_adh'];
-	}
-    $tpl->assign('id_adh', $id_adh);
-
-    //Recupération des entreprises :
-    $allEntreprises = $entreprises->getAllEntreprises();
-    foreach ($allEntreprises as $entreprise) {
-        $pk = Entreprises::PK;
-        $name = $entreprise["employeur"];
-        $entreprises_options[$entreprise[$pk]]["employeur"] = $name;
-        $entreprises_options[$entreprise[$pk]]["website"] = $entreprise["website"];
-    }
-    $tpl->assign('entreprises', $entreprises_options);
-
-    if (isset($_POST['annee_ini']) && isset($_POST['employeur']))
-    {
-        
-
-       $res2 = $entreprises->getAllEntreprises();
-       foreach ($res2 as $entreprise) {
-
-        $name = $entreprise["employeur"];
-        if($name == $_POST['employeur'])
-        {
-            $entrId = $entreprise['id_entreprise'];
-           
-        }
-           
-    }
-        
-
-
-        $res = $postes->setPoste(
-            '',
-            $id_adh,
-            $_POST['activite_principale'],
-            $_POST['type'],
-            $_POST['encadrement'],
-            $_POST['nb_personne_encadre'],
-            $entrId,
-            $_POST['adresse'],
-            $_POST['code_postal'],
-            $_POST['ville'],
-            $_POST['annee_ini'],
-            $_POST['annee_fin']
-            );
-
-
-    }
+// on add entreprise succes (from ajouter_ent.php)
+if ( isset($_GET['ent_ok']) ) {
+	$success_detected[] = _T("Entreprise has been successfully added.");
 }
 
-#----------MODIFICATION----------#
+//Récupération de id_poste
+$id_poste = false;
+if(isset($_GET['id_poste'])) {
+	$id_poste = $_GET['id_poste'];
+}
+else if(isset($_POST['id_poste'])) {
+	$id_poste = $_POST['id_poste'];
+}
+
+//Récupération de id_adh
+$id_adh = false;
+if(isset($_GET['id_adh'])) {
+	$id_adh = $_GET['id_adh'];
+}
+else if(isset($_POST['id_adh'])) {
+	$id_adh = $_POST['id_adh'];
+} else {
+	$id_adh = $login->id;
+}
+$member->load($id_adh);
+
+//Gestion des droits
+if ( ($login->isAdmin() || $login->isStaff() || $_GET['id_adh'] == $login->id ) ){
+    $visu = false;
+}else{
+    $visu = true;
+}
+
+$tpl->assign('vis',$visu);
 
 
-if(($_GET['id_adh']!='') && ($_GET['id_poste']!='')){
+//Recupération des entreprises :
+$allEntreprises = $entreprises->getAllEntreprises();
+foreach ($allEntreprises as $entreprise) {
+	$pk = Entreprises::PK;
+	$name = $entreprise["employeur"];
+	$entreprises_options[$entreprise[$pk]]["employeur"] = $name;
+}
+$tpl->assign('entreprises', $entreprises_options);
 
-    $vis=False;
-    $tpl->assign('vis',$vis);
+#----------CREATION / MODIFICATION ----------#
+if( isset($_POST['valid']) && $haveRights ){
 
-    $modif=True;
-    $tpl->assign('modif',$modif);
-
-    $id_adh = $login->id;
-	if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
-		$id_adh = $_GET['id_adh'];
+	$res = $postes->setPoste(
+		$_GET['id_poste'],
+		$id_adh,
+		$_POST['activite_principale'],
+		$_POST['type'],
+		$_POST['encadrement'],
+		$_POST['nb_personne_encadre'],
+		$_POST['id_employeur'],
+		$_POST['adresse'],
+		$_POST['code_postal'],
+		$_POST['ville'],
+		$_POST['annee_ini'],
+		$_POST['annee_fin']
+	);
+	if($res){
+		$id_poste = $res;
+		$success_detected[] = _T("Job successfully added/modified");
 	}
-    $tpl->assign('id_adh', $id_adh);
-
-    $id_poste = $_GET['id_poste'];
-    $tpl->assign('id_poste', $id_poste);
-
-    //Recupération des entreprises :
-    $allEntreprises = $entreprises->getAllEntreprises();
-    foreach ($allEntreprises as $entreprise) {
-        $pk = Entreprises::PK;
-        $name = $entreprise["employeur"];
-        $entreprises_options[$entreprise[$pk]]["employeur"] = $name;
-        $entreprises_options[$entreprise[$pk]]["website"] = $entreprise["website"];
-    }
-    $tpl->assign('entreprises', $entreprises_options);
-
-    $pst = $postes->getPoste($id_poste);
-    $tpl->assign('poste',$pst);
-
-    $idEntr = $pst['id_entreprise'];
-    $ent = $entreprises->getEntreprise($idEntr);
-
-    $nomEnt = $ent['employeur'];
-
-    $tpl->assign('nomEnt',$nomEnt);
-
-    if (isset($_POST['annee_ini']) && isset($_POST['employeur']))
-    {
-        
-
-       $res2 = $entreprises->getAllEntreprises();
-       foreach ($res2 as $entreprise)
-       {
-			$name = $entreprise["employeur"];
-			if($name == $_POST['employeur'])
-			{
-				$entrId = $entreprise['id_entreprise'];
-			   
-			}     
-		}
-        
-        $res = $postes->setPoste(
-            $id_poste,
-            $id_adh,
-            $_POST['activite_principale'],
-            $_POST['type'],
-            $_POST['encadrement'],
-            $_POST['nb_personne_encadre'],
-            $entrId,
-            $_POST['adresse'],
-            $_POST['code_postal'],
-            $_POST['ville'],
-            $_POST['annee_ini'],
-            $_POST['annee_fin']
-            );
-
+	else {
+		$error_detected[] = _T("Unabled to add/modify the job");
 	}
-
 }
     
 #----------VISUALISATION----------#
 
-if(($_GET['id_adh']=='') && ($_GET['id_poste']!='')){
-
-    $vis=True;
-    $tpl->assign('vis',$vis);
-
-    $modif=False;
-    $tpl->assign('modif',$modif);
-
-    $id_poste = $_GET['id_poste'];
+if($id_poste){
     $tpl->assign('id_poste', $id_poste);
 
     $pst = $postes->getPoste($id_poste);
     $tpl->assign('poste',$pst);
+	$member->load($pst['id_adh']);
+}
+    
+if($member->id != null)
+	$tpl->assign('member', $member);
+else
+	$error_detected[] = _T("No member found.");   
 
-    $idEntr = $pst['id_entreprise'];
-    $ent = $entreprises->getEntreprise($idEntr);
-
-    $nomEnt = $ent['employeur'];
-
-    $tpl->assign('nomEnt',$nomEnt);
+//Erreur
+if (isset($error_detected)) {
+    $tpl->assign('error_detected', $error_detected);
+}
+if (isset($success_detected)) {
+    $tpl->assign('success_detected', $success_detected);
 }
 
 // page generation

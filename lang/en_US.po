@@ -184,11 +184,6 @@ msgstr "State of dues"
 msgid "No active plugin."
 msgstr "No active plugin."
 
-#: ../templates/bootstrap/gestion_pdf.tpl:45
-#: ../templates/default/gestion_pdf.tpl:57
-msgid "Contribution label"
-msgstr "Contribution label"
-
 #: ../templates/bootstrap/advanced_search.tpl:3
 #: ../templates/default/advanced_search.tpl:3
 msgid "Simple search"
@@ -213,6 +208,11 @@ msgstr "End date of membership:"
 #: ../templates/default/preferences.tpl:234
 msgid "SMTP port:"
 msgstr "SMTP port:"
+
+#: ../templates/bootstrap/gestion_adherents.tpl:313
+#: ../templates/default/gestion_adherents.tpl:319
+msgid "No member selected"
+msgstr "No member selected"
 
 #: ../templates/bootstrap/preferences.tpl:180
 #: ../templates/bootstrap/preferences.tpl:181
@@ -417,7 +417,7 @@ msgstr "Members management"
 msgid "Address (continuation):"
 msgstr "Address (continuation):"
 
-#: ../templates/bootstrap/index.tpl:16 ../templates/default/public_page.tpl:66
+#: ../templates/bootstrap/index.tpl:19 ../templates/default/public_page.tpl:66
 msgid "Lost your password?"
 msgstr "Lost your password?"
 
@@ -557,14 +557,13 @@ msgid "An error occured displaying plugin database initialization interface :("
 msgstr ""
 "An error occured displaying plugin database initialization interface :("
 
-#: ../templates/bootstrap/public_page.tpl:98
-#, fuzzy
-msgid "My formations"
-msgstr "My information"
+#: ../templates/bootstrap/gestion_pdf.tpl:45
+#: ../templates/default/gestion_pdf.tpl:57
+msgid "Contribution label"
+msgstr "Contribution label"
 
 #: ../champs_adherents.php:62 ../includes/fields_defs/members_fields.php:244
-#: ../templates/bootstrap/index.tpl:12 ../templates/bootstrap/member.tpl:317
-#: ../templates/bootstrap/member.tpl:329
+#: ../templates/bootstrap/member.tpl:317 ../templates/bootstrap/member.tpl:329
 #: ../templates/bootstrap/preferences.tpl:407
 #: ../templates/default/index.tpl:12 ../templates/default/member.tpl:317
 #: ../templates/default/member.tpl:329
@@ -710,7 +709,7 @@ msgstr "Please make sure to select one file to upload."
 msgid "Mail"
 msgstr "Mail"
 
-#: ../templates/bootstrap/index.tpl:14
+#: ../templates/bootstrap/index.tpl:13 ../templates/bootstrap/index.tpl:15
 #, fuzzy
 msgid "Password"
 msgstr "Password:"
@@ -2324,7 +2323,7 @@ msgstr "Number of label lines:"
 msgid "Contributions"
 msgstr "Contributions"
 
-#: ../templates/bootstrap/public_page.tpl:110
+#: ../templates/bootstrap/public_page.tpl:101
 #, fuzzy
 msgid "Identification"
 msgstr "Modification"
@@ -3179,11 +3178,6 @@ msgstr "separator"
 msgid "Benefactor member"
 msgstr "Benefactor member"
 
-#: ../templates/bootstrap/preferences.tpl:313
-#: ../templates/default/preferences.tpl:324
-msgid "(65 characters max)"
-msgstr "(65 characters max)"
-
 #: ../lib/Galette/Filters/MembersList.php:308
 msgid "Close expiries"
 msgstr "Close expiries"
@@ -3259,7 +3253,7 @@ msgstr ""
 "account to be visible here, edit your profile and check 'Be visible in the "
 "members list'"
 
-#: ../templates/bootstrap/public_page.tpl:104
+#: ../templates/bootstrap/public_page.tpl:95
 #: ../templates/bootstrap/page.tpl:172 ../templates/default/public_page.tpl:48
 #: ../templates/default/page.tpl:172
 msgid "Log off"
@@ -3330,6 +3324,10 @@ msgstr "Ok"
 #: ../templates/default/reminder.tpl:35
 msgid "Subject:"
 msgstr "Subject:"
+
+#: ../templates/bootstrap/plugins.tpl:57 ../templates/default/plugins.tpl:57
+msgid "No inactive plugin."
+msgstr "No inactive plugin."
 
 #: ../lib/Galette/IO/Charts.php:230
 msgid "Up to date"
@@ -3641,10 +3639,10 @@ msgstr "New account mail sent to '%s'."
 msgid "Database installation"
 msgstr "Database installation"
 
-#: ../templates/bootstrap/public_page.tpl:95
-#: ../templates/bootstrap/page.tpl:133 ../templates/default/page.tpl:133
-msgid "My information"
-msgstr "My information"
+#: ../templates/bootstrap/preferences.tpl:313
+#: ../templates/default/preferences.tpl:324
+msgid "(65 characters max)"
+msgstr "(65 characters max)"
 
 #: ../templates/bootstrap/gestion_mailings.tpl:152
 #: ../templates/bootstrap/mailing_adherents.tpl:143
@@ -3998,7 +3996,7 @@ msgid "logs are empty"
 msgstr "logs are empty"
 
 #: ../champs_adherents.php:61 ../includes/fields_defs/members_fields.php:236
-#: ../templates/bootstrap/index.tpl:6 ../templates/bootstrap/member.tpl:306
+#: ../templates/bootstrap/member.tpl:306
 #: ../templates/bootstrap/preferences.tpl:403
 #: ../templates/bootstrap/voir_adherent.tpl:241
 #: ../templates/default/index.tpl:8 ../templates/default/member.tpl:306
@@ -4166,7 +4164,7 @@ msgstr "Unable to detach contribution from transaction"
 msgid "Dry run"
 msgstr "Dry run"
 
-#: ../templates/bootstrap/index.tpl:8
+#: ../templates/bootstrap/index.tpl:7 ../templates/bootstrap/index.tpl:9
 msgid "Username"
 msgstr "Username"
 
@@ -4444,7 +4442,7 @@ msgid "- The name field cannot be void."
 msgstr "- The name field cannot be void."
 
 #: ../index.php:70 ../index.php:85 ../index.php:113
-#: ../templates/bootstrap/index.tpl:20 ../templates/default/index.tpl:16
+#: ../templates/bootstrap/index.tpl:23 ../templates/default/index.tpl:16
 msgid "Login"
 msgstr "Login"
 
@@ -4760,10 +4758,10 @@ msgstr "Hexadecimal color notation: #RRGGBB"
 msgid "Current model"
 msgstr "Current model"
 
-#: ../templates/bootstrap/gestion_adherents.tpl:313
-#: ../templates/default/gestion_adherents.tpl:319
-msgid "No member selected"
-msgstr "No member selected"
+#: ../templates/bootstrap/index.tpl:25
+#, fuzzy
+msgid "Logon"
+msgstr "Logo"
 
 #: ../templates/bootstrap/plugins.tpl:25 ../templates/default/plugins.tpl:25
 msgid "Click here to deactivate plugin '%name'"
@@ -5221,10 +5219,6 @@ msgstr "Size:"
 msgid "Parameted exports"
 msgstr "Parameted exports"
 
-#: ../templates/bootstrap/public_page.tpl:101
-msgid "My jobs"
-msgstr ""
-
 #: ../lib/Galette/Filters/MembersList.php:306
 msgid "All members"
 msgstr "All members"
@@ -5440,9 +5434,9 @@ msgstr "Member Picture deleted"
 msgid "Social networks"
 msgstr "Social networks"
 
-#: ../templates/bootstrap/plugins.tpl:57 ../templates/default/plugins.tpl:57
-msgid "No inactive plugin."
-msgstr "No inactive plugin."
+#: ../templates/bootstrap/page.tpl:133 ../templates/default/page.tpl:133
+msgid "My information"
+msgstr "My information"
 
 #: ../gestion_titres.php:65
 msgid "Title '%name' has been successfully deleted."
@@ -6806,7 +6800,7 @@ msgid "Font size:"
 msgstr "Font size:"
 
 #: ../templates/bootstrap/liste_membres.tpl:96
-#: ../templates/bootstrap/trombinoscope.tpl:26
+#: ../templates/bootstrap/trombinoscope.tpl:29
 #: ../templates/default/liste_membres.tpl:101
 #: ../templates/default/trombinoscope.tpl:7
 msgid "No member to show"
@@ -6908,6 +6902,10 @@ msgstr "Donation"
 #: ../templates/bootstrap/import.tpl:54 ../templates/default/import.tpl:54
 msgid "Upload new file"
 msgstr "Upload new file"
+
+#, fuzzy
+#~ msgid "My formations"
+#~ msgstr "My information"
 
 #~ msgid "Check the parameters and the existence of the database"
 #~ msgstr "Check the parameters and the existence of the database"
@@ -7699,9 +7697,6 @@ msgstr "Upload new file"
 
 #~ msgid "Edit labels"
 #~ msgstr "Edit labels"
-
-#~ msgid "Logo"
-#~ msgstr "Logo"
 
 #~ msgid "There is no member with public informations available."
 #~ msgstr "There is no member with public informations available."

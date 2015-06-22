@@ -23,15 +23,29 @@ if ( !$login->isLogged() ) {
 if (isset($_POST['employeur']))
 {
  
-    $res = $entreprises->setEntreprise(
-        '',
-        $_POST['employeur'],
-        $_POST['employeur_website']
-        );
+	$res = $entreprises->getEntrepriseByName($_POST['employeur']);
+	if ( count($res) > 0 ) {
+		$warning_detected[] = _T("Entreprise already exist in the DB.");
+	} else {	
+		$res = $entreprises->setEntreprise(
+			'',
+			$_POST['employeur'],
+			$_POST['employeur_website']
+			);
 
-	header('location:'. 'ajouter_poste.php');
-	die();
+		if ( !$res ) {
+			$error_detected[] = _T("Entreprise has not been added!");
+		} else {
+			header('location:'. 'ajouter_poste.php?ent_ok');
+		    die();	
+		}
+
+	}
 }
+
+//Error
+$tpl->assign('warning_detected', $warning_detected);
+$tpl->assign('error_detected', $error_detected);
 
 // page generation
 $orig_template_path = $tpl->template_dir;

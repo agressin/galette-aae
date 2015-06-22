@@ -138,7 +138,7 @@ class postes
         global $zdb;
 
         try {
-            $res  = null;
+            $res  = false;
             $data = array(
                         'activite_principale'   => $activite_principale,
                         'type' => $type,
@@ -161,17 +161,20 @@ class postes
                 
                 if ( $add->count() == 0) {
                     Analog::log('An error occured inserting new poste!' );
-                }
+                } else {
+					$res = $add->generatedValue;
+				}
                 
             } else {
                 //Poste already exists, just update               
                 $update = $zdb->update(AAE_PREFIX . self::TABLE);
                 $update->set($data)->where->equalTo(self::PK,$id_form);
                 $edit = $zdb->execute($update);
+                $res = $id_form;
                 //edit == 0 does not mean there were an error, but that there
                 //were nothing to change
             }
-            return ($res > 0);
+            return $res ;
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set poste ' .

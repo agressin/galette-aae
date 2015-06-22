@@ -1,7 +1,5 @@
-<form class="form-horizontal" action="ajouter_poste.php?id_adh={$id_adh}&id_poste={$id_poste}" method="post">
-    <form action="ajouter_poste.php?id_adh={$id_adh}&id_adh={$id_poste}" method="post">
-
-		<legend>{_T string="Jobs details"}</legend>
+<form class="form-horizontal" action="ajouter_poste.php" method="post">
+		<legend>{_T string="Job details of"} <strong>{$member->sname}</strong></legend>
 		<div class="row col-sm-offset-1"> 
 			<div class="form-group col-md-4">             
             <p>
@@ -10,18 +8,12 @@
                 </label>
             </p>
             <p>
-                <select name="employeur" id="employeur" required {if {$vis} eq True} disabled {/if}>
+                <select name="id_employeur" id="id_employeur" required {if {$vis} eq True} disabled {/if}>
                     <option value="">{_T string=" Choisir un employeur "}</option>
-                    {if {$vis} eq True}
-                    <option value={$nomEnt} selected="selected">{$nomEnt}</option>
-                    {/if}
-                    {if {$modif} eq True}
-                    <option value={$nomEnt} selected="selected">{$nomEnt}</option>
-                    {/if}
-                    {foreach from=$entreprises key=k item=v}
-                        <option value="{$v.employeur}" {if {$poste.employeur} eq {$v.employeur} } selected="selected"{/if}>{$v.employeur}</option>
-                    {/foreach}
-                </select> 
+						{foreach from=$entreprises key=k item=v}
+							<option value="{$k}" {if {$poste.id_entreprise} eq {$k} } selected="selected"{/if}>{$v.employeur}</option>
+						{/foreach}
+                </select>
             </p>
             {if {$vis} eq False}
             <p>
@@ -81,7 +73,7 @@
                 <label class="bline" for="annee_fin">
                         {_T string="End"}
                 </label><br>
-                <input class="date" type="number" name="annee_fin" id="annee_fin" value="{$poste.annee_fin}" placeholder="{_T string="empty if actual"}" maxlength="10" required  {if {$vis} eq True} disabled {/if}/>
+                <input class="date" type="number" name="annee_fin" id="annee_fin" value="{$poste.annee_fin}" placeholder="{_T string="empty if actual"}" maxlength="10"  {if {$vis} eq True} disabled {/if}/>
             </p>
            </div>
           </div>
@@ -89,12 +81,12 @@
     {if {$vis} eq False}
     <div class="button-container">
         <input type="submit" id="btnsave" value="{_T string="Save"}"/>
-        <input type="hidden" name="id_form" value="{$poste.id_poste}"/>
+        <input type="hidden" name="id_poste" value="{$poste.id_poste}"/>
+        <input type="hidden" name="id_adh" value="{$poste.id_adh}"/>
+
         {* Second step validator *}
         <input type="hidden" name="valid" value="1"/>
 
     </div>
     {/if}
-
-</form>
 </form>

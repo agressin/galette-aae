@@ -3,13 +3,13 @@
 {/if}
 			<form action="index.php" method="post">
 			  <div class="form-horizontal col-md-8">
-					<label for="login" class="col-sm-4 control-label">{_T string="Username:"}</label>
+					<label for="login" class="col-sm-4 control-label">{_T string="Username"}</label>
 					<div class="col-sm-6">
 					  <input class="form-control" name="login" id="login" placeholder="{_T string="Username"}">
 					</div>
 			  </div>
 			  <div class="form-horizontal col-md-8">
-					<label for="password" class="control-label col-sm-4">{_T string="Password:"}</label>
+					<label for="password" class="control-label col-sm-4">{_T string="Password"}</label>
 					<div class="col-sm-6">
 				 		<input type="password" class="form-control" name="password" id="password" placeholder="{_T string="Password"}">
 					</div>

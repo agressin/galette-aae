@@ -69,6 +69,36 @@ class Entreprises
         }
     }
 
+     /**
+     * Retrieve entreprise information by name
+     *
+     * @param string $name Entreprise naùe
+     *
+     * @return array
+     */
+    public function getEntrepriseByName($name)
+    {
+        global $zdb;
+
+        try {
+            $select = $zdb->select(AAE_PREFIX . self::TABLE);
+            $select->where->equalTo('employeur',$name);
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+            if ( count($res) > 0 ) {
+                return $res[0];
+            } else {
+                return array();
+            }
+        } catch (\Exception $e) {
+            Analog::log(
+                'Unable to retrieve entreprise information for "' .
+                $id  . '". | ' . $e->getMessage(),
+                Analog::WARNING
+            );
+            return false;
+        }
+    }
 
 
     
@@ -84,9 +114,8 @@ class Entreprises
         global $zdb;
 
         try {
-            $res  = null;
             $data = array(
-                        'employeur'   => $employeur,
+                        'employeur' => $employeur,
                         'website'   => $website
                     );
             if ( $id_form == '' ) {
@@ -107,7 +136,7 @@ class Entreprises
                 //edit == 0 does not mean there were an error, but that there
                 //were nothing to change
             }
-            return ($res > 0);
+            return true;
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set entreprise ' .

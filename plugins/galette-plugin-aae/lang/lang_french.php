@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Tue Jun 16 19:13:23 2015 (GMT)
+// This file was automatically generated on Mon Jun 22 18:10:02 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -72,7 +72,7 @@ $lang['Name and/or First Name'] = 'Nom et/ou Prénom';
 // ../templates/bootstrap/ajouter_offre.tpl:34 
 $lang['Description:'] = 'Description :';
 
-// ../templates/bootstrap/ajouter_formation_eleve.tpl:36 ../templates/bootstrap/ajouter_formation_eleve.tpl:43 ../templates/bootstrap/ajouter_poste.tpl:78 ../templates/bootstrap/ajouter_poste.tpl:84 ../templates/default/ajouter_formation_eleve.tpl:36 ../templates/default/ajouter_formation_eleve.tpl:43 
+// ../templates/bootstrap/ajouter_formation_eleve.tpl:36 ../templates/bootstrap/ajouter_formation_eleve.tpl:43 ../templates/bootstrap/ajouter_poste.tpl:78 ../templates/default/ajouter_formation_eleve.tpl:36 ../templates/default/ajouter_formation_eleve.tpl:43 
 $lang['(yyyy format)'] = '(format : aaaa)';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:49 

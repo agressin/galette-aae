@@ -20,8 +20,6 @@ if ( !$login->isLogged() ) {
 }
 
 
-
-
 $formation = new Formations();
 $cycles = new Cycles();
 
@@ -36,12 +34,14 @@ $tpl->assign('cycles', $cycles_options);
 
 $member = new Galette\Entity\Adherent();
 
+//Gestion des droits : on ne peut voir que ses formations, sauf si on est admin / staff
 if(isset($_GET['id_adh']) && $_GET['id_adh'] != '')
 	$id_adh = $_GET['id_adh'];
 else
 	$id_adh = $login->id;
-//Liste les formations 
-if ( ($login->isAdmin() || $login->isStaff()) ){ // && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
+
+//
+if ( ($login->isAdmin() || $login->isStaff()) ){
 	
     $list_formations = $formation->getFormations($id_adh);
     $tpl->assign('haveRights', true);

@@ -131,10 +131,6 @@ msgstr ""
 msgid "No active plugin."
 msgstr ""
 
-#: ../templates/bootstrap/gestion_pdf.tpl:45 ../templates/default/gestion_pdf.tpl:57
-msgid "Contribution label"
-msgstr ""
-
 #: ../templates/bootstrap/advanced_search.tpl:3 ../templates/default/advanced_search.tpl:3
 msgid "Simple search"
 msgstr ""
@@ -154,6 +150,10 @@ msgstr ""
 
 #: ../templates/bootstrap/preferences.tpl:223 ../templates/default/preferences.tpl:234
 msgid "SMTP port:"
+msgstr ""
+
+#: ../templates/bootstrap/gestion_adherents.tpl:313 ../templates/default/gestion_adherents.tpl:319
+msgid "No member selected"
 msgstr ""
 
 #: ../templates/bootstrap/preferences.tpl:180 ../templates/bootstrap/preferences.tpl:181
@@ -325,7 +325,7 @@ msgstr ""
 msgid "Address (continuation):"
 msgstr ""
 
-#: ../templates/bootstrap/index.tpl:16 ../templates/default/public_page.tpl:66
+#: ../templates/bootstrap/index.tpl:19 ../templates/default/public_page.tpl:66
 msgid "Lost your password?"
 msgstr ""
 
@@ -441,15 +441,15 @@ msgstr ""
 msgid "An error occured displaying plugin database initialization interface :("
 msgstr ""
 
-#: ../templates/bootstrap/public_page.tpl:98
-msgid "My formations"
+#: ../templates/bootstrap/gestion_pdf.tpl:45 ../templates/default/gestion_pdf.tpl:57
+msgid "Contribution label"
 msgstr ""
 
 #: ../champs_adherents.php:62 ../includes/fields_defs/members_fields.php:244
-#: ../templates/bootstrap/index.tpl:12 ../templates/bootstrap/member.tpl:317
-#: ../templates/bootstrap/member.tpl:329 ../templates/bootstrap/preferences.tpl:407
-#: ../templates/default/index.tpl:12 ../templates/default/member.tpl:317
-#: ../templates/default/member.tpl:329 ../templates/default/preferences.tpl:418
+#: ../templates/bootstrap/member.tpl:317 ../templates/bootstrap/member.tpl:329
+#: ../templates/bootstrap/preferences.tpl:407 ../templates/default/index.tpl:12
+#: ../templates/default/member.tpl:317 ../templates/default/member.tpl:329
+#: ../templates/default/preferences.tpl:418
 msgid "Password:"
 msgstr ""
 
@@ -560,7 +560,7 @@ msgstr ""
 msgid "Mail"
 msgstr ""
 
-#: ../templates/bootstrap/index.tpl:14
+#: ../templates/bootstrap/index.tpl:13 ../templates/bootstrap/index.tpl:15
 msgid "Password"
 msgstr ""
 
@@ -1861,7 +1861,7 @@ msgstr ""
 msgid "Contributions"
 msgstr ""
 
-#: ../templates/bootstrap/public_page.tpl:110
+#: ../templates/bootstrap/public_page.tpl:101
 msgid "Identification"
 msgstr ""
 
@@ -2583,10 +2583,6 @@ msgstr ""
 msgid "Benefactor member"
 msgstr ""
 
-#: ../templates/bootstrap/preferences.tpl:313 ../templates/default/preferences.tpl:324
-msgid "(65 characters max)"
-msgstr ""
-
 #: ../lib/Galette/Filters/MembersList.php:308
 msgid "Close expiries"
 msgstr ""
@@ -2643,7 +2639,7 @@ msgstr ""
 msgid "This page shows only members who have choosen to be visible on the public lists and are up-to-date within their contributions. If you want your account to be visible here, edit your profile and check 'Be visible in the members list'"
 msgstr ""
 
-#: ../templates/bootstrap/public_page.tpl:104 ../templates/bootstrap/page.tpl:172
+#: ../templates/bootstrap/public_page.tpl:95 ../templates/bootstrap/page.tpl:172
 #: ../templates/default/public_page.tpl:48 ../templates/default/public_page.tpl:48
 #: ../templates/default/page.tpl:172
 msgid "Log off"
@@ -2698,6 +2694,10 @@ msgstr ""
 #: ../templates/bootstrap/ajax_mailing_preview.tpl:15 ../templates/bootstrap/reminder.tpl:35
 #: ../templates/default/ajax_mailing_preview.tpl:15 ../templates/default/reminder.tpl:35
 msgid "Subject:"
+msgstr ""
+
+#: ../templates/bootstrap/plugins.tpl:57 ../templates/default/plugins.tpl:57
+msgid "No inactive plugin."
 msgstr ""
 
 #: ../lib/Galette/IO/Charts.php:230
@@ -2958,9 +2958,8 @@ msgstr ""
 msgid "Database installation"
 msgstr ""
 
-#: ../templates/bootstrap/public_page.tpl:95 ../templates/bootstrap/page.tpl:133
-#: ../templates/default/page.tpl:133
-msgid "My information"
+#: ../templates/bootstrap/preferences.tpl:313 ../templates/default/preferences.tpl:324
+msgid "(65 characters max)"
 msgstr ""
 
 #: ../templates/bootstrap/gestion_mailings.tpl:152 ../templates/bootstrap/mailing_adherents.tpl:143
@@ -3236,10 +3235,10 @@ msgid "logs are empty"
 msgstr ""
 
 #: ../champs_adherents.php:61 ../includes/fields_defs/members_fields.php:236
-#: ../templates/bootstrap/index.tpl:6 ../templates/bootstrap/member.tpl:306
-#: ../templates/bootstrap/preferences.tpl:403 ../templates/bootstrap/voir_adherent.tpl:241
-#: ../templates/default/index.tpl:8 ../templates/default/member.tpl:306
-#: ../templates/default/preferences.tpl:414 ../templates/default/voir_adherent.tpl:241
+#: ../templates/bootstrap/member.tpl:306 ../templates/bootstrap/preferences.tpl:403
+#: ../templates/bootstrap/voir_adherent.tpl:241 ../templates/default/index.tpl:8
+#: ../templates/default/member.tpl:306 ../templates/default/preferences.tpl:414
+#: ../templates/default/voir_adherent.tpl:241
 msgid "Username:"
 msgstr ""
 
@@ -3375,7 +3374,7 @@ msgstr ""
 msgid "Dry run"
 msgstr ""
 
-#: ../templates/bootstrap/index.tpl:8
+#: ../templates/bootstrap/index.tpl:7 ../templates/bootstrap/index.tpl:9
 msgid "Username"
 msgstr ""
 
@@ -3602,7 +3601,7 @@ msgid "- The name field cannot be void."
 msgstr ""
 
 #: ../index.php:70 ../index.php:85
-#: ../index.php:113 ../templates/bootstrap/index.tpl:20
+#: ../index.php:113 ../templates/bootstrap/index.tpl:23
 #: ../templates/default/index.tpl:16
 msgid "Login"
 msgstr ""
@@ -3834,8 +3833,8 @@ msgstr ""
 msgid "Current model"
 msgstr ""
 
-#: ../templates/bootstrap/gestion_adherents.tpl:313 ../templates/default/gestion_adherents.tpl:319
-msgid "No member selected"
+#: ../templates/bootstrap/index.tpl:25
+msgid "Logon"
 msgstr ""
 
 #: ../templates/bootstrap/plugins.tpl:25 ../templates/default/plugins.tpl:25
@@ -4218,10 +4217,6 @@ msgstr ""
 msgid "Parameted exports"
 msgstr ""
 
-#: ../templates/bootstrap/public_page.tpl:101
-msgid "My jobs"
-msgstr ""
-
 #: ../lib/Galette/Filters/MembersList.php:306
 msgid "All members"
 msgstr ""
@@ -4393,8 +4388,8 @@ msgstr ""
 msgid "Social networks"
 msgstr ""
 
-#: ../templates/bootstrap/plugins.tpl:57 ../templates/default/plugins.tpl:57
-msgid "No inactive plugin."
+#: ../templates/bootstrap/page.tpl:133 ../templates/default/page.tpl:133
+msgid "My information"
 msgstr ""
 
 #: ../gestion_titres.php:65
@@ -5512,7 +5507,7 @@ msgstr ""
 msgid "Font size:"
 msgstr ""
 
-#: ../templates/bootstrap/liste_membres.tpl:96 ../templates/bootstrap/trombinoscope.tpl:26
+#: ../templates/bootstrap/liste_membres.tpl:96 ../templates/bootstrap/trombinoscope.tpl:29
 #: ../templates/default/liste_membres.tpl:101 ../templates/default/trombinoscope.tpl:7
 msgid "No member to show"
 msgstr ""
