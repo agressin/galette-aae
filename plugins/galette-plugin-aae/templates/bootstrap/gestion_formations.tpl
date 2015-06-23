@@ -1,4 +1,3 @@
- <strong>{$member->sname}</strong>
     <table id='table_formation' class="table table-hover">
         <thead>
             <tr>
@@ -7,13 +6,10 @@
                 <th class="listing left">{_T string="Speciality"}</th>
                 <th class="listing left date_row"> {_T string="Begin"} </th>
                 <th class="listing left date_row"> {_T string="End"} </th>
-                {if $haveRights}
                 <th class="listing actions_row">{_T string="Actions"}</th>
-                {/if}
         </thead>
 
         <tbody>
- 
     {foreach from=$list_formations item=form}
             <tr class="formation_row">
                 <td class="center nowrap">{$form.nom}</td>
@@ -100,7 +96,7 @@
 
                 $.post( 'ajouter_formation_eleve.php',
                     {
-                        id_adh: {$mid},
+                        id_adh: {$member->id},
                         id_cycle: $('#id_cycle').find(":selected").val(), 
                         specialite: $('#specialite').val(),
                         annee_debut: $('#StartYear').find(":selected").val(),
@@ -135,7 +131,7 @@
 			};
 
             var reloadTable = function(){
-                $.get( 'gestion_formations_eleve.php?id_adh={$mid}')
+                $.get( 'gestion_formations_eleve.php?id_adh={$member->id}')
                     .done(function(data) {
                         var $response=$(data);
                         var table = $response.find('#table_formation').html();

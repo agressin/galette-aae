@@ -10,13 +10,6 @@
 							<input type="text" name ="nom_prenom" {if isset($nom_prenom)} value="{$nom_prenom}" {/if}
 							{if !$login->isLogged()} DISABLED {/if} /> 
 							</label><br>
-						{*
-							Searching student by first name
-							<label>{_T string="First Name"}{if !$login->isLogged()} (*) {/if}
-							<input type="text" name="prenom" {if isset($smarty.post.prenom)} value="{$smarty.post.prenom}" {/if}
-							{if !$login->isLogged()} DISABLED {/if} />
-							</label><br>
-						*}
 							{if !$login->isLogged()} * {_T string="Please sign in to access search by name"} <br> {/if}
 							{*Searching student by promotion*}
 							<label for="annee_debut" class="control-label">{_T string="Promotion"}</label><br>
@@ -28,9 +21,10 @@
 						<div class="form-group col-md-3">
 							{*Searching student by Formation*}
 							<label for="id_cycle_simple" class="control-label">{_T string="Formation"}</label> <br>
-								<input name="id_cycle_simple" id="IT" value="IT" type="radio" {if $id_cycle_simple == "IT"} checked {/if} > <label for="IT"> Ingénieur </label>  <br>
-								<input name="id_cycle_simple" id="G" value="G" type="radio" {if $id_cycle_simple == "G"} checked {/if} > <label for="G"> Géomètre  </label> <br>
-								<input name="id_cycle_simple" id="DC" value="DC" type="radio" {if $id_cycle_simple == "DC"} checked {/if}> <label for="DC"> Dessinateur </label> <br>
+								<input name="id_cycle_simple[]" id="IT"   value="IT"   type="checkbox" {if in_array("IT",$id_cycle_simple)}   checked {/if}> <label for="IT"> Ingénieur </label>  <br>
+								<input name="id_cycle_simple[]" id="G"    value="G"    type="checkbox" {if in_array("G",$id_cycle_simple)}    checked {/if}> <label for="G"> Géomètre  </label> <br>
+								<input name="id_cycle_simple[]" id="DC"   value="DC"   type="checkbox" {if in_array("DC",$id_cycle_simple)}   checked {/if}> <label for="DC"> Dessinateur </label> <br>
+								<input name="id_cycle_simple[]" id="LPRO" value="LPRO" type="checkbox" {if in_array("LPRO",$id_cycle_simple)} checked {/if}> <label for="LPRO"> Licence Pro </label> <br>
 							{*Searching student by Cycle*}
 							<label for="id_cycle" class="control-label">{_T string="or by Cycle"}</label> <br>
 							<select class="form-control" name="id_cycle" id="id_cycle">

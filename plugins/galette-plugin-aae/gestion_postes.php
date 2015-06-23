@@ -18,8 +18,10 @@ if ( !$login->isLogged() ) {
     die();
 }
 
-$tpl->assign('page_title', _T("postes managment"));
-
+// on add poste succes (from ajouter_poste.php)
+if ( isset($_GET['pos_ok']) ) {
+	$success_detected[] = _T("Job has been successfully added.");
+}
 
 $postes = new Postes();
 $entreprises = new Entreprises();
@@ -61,11 +63,12 @@ usort($list_postes, function($a, $b) {
 });
 $tpl->assign('list_postes', $list_postes);
 
-$tpl->assign('mid', $id_adh);
 
 $member->load($id_adh);
-
 $tpl->assign('member', $member);
+
+$nom = $member->sfullname;
+$tpl->assign('page_title', _T("Jobs managment")." ".$nom);
 
 
 if (isset($error_detected)) {

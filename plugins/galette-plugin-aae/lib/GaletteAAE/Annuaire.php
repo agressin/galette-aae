@@ -348,30 +348,35 @@ class Annuaire
 			};
 
 			if (array_key_exists("cycle_simple",$req)){
-				switch ($req["cycle_simple"]) {
-				case "IT":
-					$select->where->NEST
-						->equalTo('f.id_cycle', 2)
-						->OR
-						->equalTo('f.id_cycle', 51)
-						->UNNEST;
-					break;
-				case "G":
-					$select->where->NEST
-						->equalTo('f.id_cycle', 3)
-						->OR
-						->equalTo('f.id_cycle', 52)
-						->UNNEST;
-					break;
-				case "DC":
-					$select->where->NEST
-						->equalTo('f.id_cycle', 6)
-						->OR
-						->equalTo('f.id_cycle', 56)
-						->UNNEST;
-					break;
-				}
-				$init=true;
+				foreach ($req["cycle_simple"] as $i => $value) {
+					switch ($value) {
+					case "IT":
+						$select->where->NEST
+							->equalTo('f.id_cycle', 2)
+							->OR
+							->equalTo('f.id_cycle', 51)
+							->UNNEST;
+						break;
+					case "G":
+						$select->where->NEST
+							->equalTo('f.id_cycle', 3)
+							->OR
+							->equalTo('f.id_cycle', 52)
+							->UNNEST;
+						break;
+					case "DC":
+						$select->where->NEST
+							->equalTo('f.id_cycle', 6)
+							->OR
+							->equalTo('f.id_cycle', 56)
+							->UNNEST;
+						break;
+					case "LPRO":
+						$select->equalTo('f.id_cycle', 50);
+						break;
+					}//switch
+					$init=true;
+				}//foreach
 			};
 			if (array_key_exists("annee_debut",$req)){
 				$select->where->equalTo('f.annee_debut', $req["annee_debut"]);

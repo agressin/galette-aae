@@ -29,7 +29,7 @@ if ( isset($_GET['ent_ok']) ) {
 }
 
 //Récupération de id_poste
-$id_poste = false;
+$id_poste = '';
 if(isset($_GET['id_poste'])) {
 	$id_poste = $_GET['id_poste'];
 }
@@ -38,25 +38,28 @@ else if(isset($_POST['id_poste'])) {
 }
 
 //Récupération de id_adh
-$id_adh = false;
+$id_adh = '';
 if(isset($_GET['id_adh'])) {
 	$id_adh = $_GET['id_adh'];
 }
 else if(isset($_POST['id_adh'])) {
 	$id_adh = $_POST['id_adh'];
-} else {
+} 
+
+
+//Gestion des droits
+if ( ($login->isAdmin() || $login->isStaff() || $id_adh == $login->id ) ){
+    $haveRights = true;
+}else{
+    $haveRights = false;
+}
+$tpl->assign('vis',!$haveRights);
+
+if ($id_adh =='') {
 	$id_adh = $login->id;
 }
 $member->load($id_adh);
 
-//Gestion des droits
-if ( ($login->isAdmin() || $login->isStaff() || $_GET['id_adh'] == $login->id ) ){
-    $visu = false;
-}else{
-    $visu = true;
-}
-
-$tpl->assign('vis',$visu);
 
 
 //Recupération des entreprises :
@@ -72,7 +75,7 @@ $tpl->assign('entreprises', $entreprises_options);
 if( isset($_POST['valid']) && $haveRights ){
 
 	$res = $postes->setPoste(
-		$_GET['id_poste'],
+		$id_poste,
 		$id_adh,
 		$_POST['activite_principale'],
 		$_POST['type'],
@@ -87,7 +90,7 @@ if( isset($_POST['valid']) && $haveRights ){
 	);
 	if($res){
 		$id_poste = $res;
-		$success_detected[] = _T("Job successfully added/modified");
+		header('location:'. 'gestion_postes.php?pos_ok&id_adh='.$id_adh);
 	}
 	else {
 		$error_detected[] = _T("Unabled to add/modify the job");
@@ -103,7 +106,7 @@ if($id_poste){
     $tpl->assign('poste',$pst);
 	$member->load($pst['id_adh']);
 }
-    
+
 if($member->id != null)
 	$tpl->assign('member', $member);
 else

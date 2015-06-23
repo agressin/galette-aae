@@ -1,5 +1,5 @@
 <form class="form-horizontal" action="ajouter_poste.php" method="post">
-		<legend>{_T string="Job details of"} <strong>{$member->sname}</strong></legend>
+		<legend>{_T string="Job details of"} <strong>{$member->sfullname}</strong></legend>
 		<div class="row col-sm-offset-1"> 
 			<div class="form-group col-md-4">             
             <p>
@@ -67,13 +67,13 @@
                 <label class="bline" for="annee_ini">
                         {_T string="Begin"}
                 </label><br>
-                <input class="date" type="number" name="annee_ini" id="annee_ini" value="{$poste.annee_ini}" placeholder="{_T string="(yyyy format)"}" maxlength="10" required {if {$vis} eq True} disabled {/if}/>
+                <input class="date" type="number" name="annee_ini" id="annee_ini" min="1950" max="2100" value="{$poste.annee_ini}" placeholder="{_T string="(yyyy format)"}" maxlength="10" required {if {$vis} eq True} disabled {/if}/>
             </p>
             <p>
                 <label class="bline" for="annee_fin">
                         {_T string="End"}
                 </label><br>
-                <input class="date" type="number" name="annee_fin" id="annee_fin" value="{$poste.annee_fin}" placeholder="{_T string="empty if actual"}" maxlength="10"  {if {$vis} eq True} disabled {/if}/>
+                <input class="date" type="number" name="annee_fin" id="annee_fin" min="1950" max="2100" value="{$poste.annee_fin}" placeholder="{_T string="empty if actual"}" maxlength="10"  {if {$vis} eq True} disabled {/if}/>
             </p>
            </div>
           </div>
@@ -82,7 +82,7 @@
     <div class="button-container">
         <input type="submit" id="btnsave" value="{_T string="Save"}"/>
         <input type="hidden" name="id_poste" value="{$poste.id_poste}"/>
-        <input type="hidden" name="id_adh" value="{$poste.id_adh}"/>
+        <input type="hidden" name="id_adh" value="{$member->id}"/>
 
         {* Second step validator *}
         <input type="hidden" name="valid" value="1"/>

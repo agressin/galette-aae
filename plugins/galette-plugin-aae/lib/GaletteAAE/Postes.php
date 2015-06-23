@@ -162,7 +162,7 @@ class postes
                 if ( $add->count() == 0) {
                     Analog::log('An error occured inserting new poste!' );
                 } else {
-					$res = $add->generatedValue;
+					$res = $add->getGeneratedValue();
 				}
                 
             } else {

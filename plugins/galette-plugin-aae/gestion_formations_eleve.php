@@ -35,26 +35,16 @@ $tpl->assign('cycles', $cycles_options);
 $member = new Galette\Entity\Adherent();
 
 //Gestion des droits : on ne peut voir que ses formations, sauf si on est admin / staff
-if(isset($_GET['id_adh']) && $_GET['id_adh'] != '')
+$id_adh = $login->id;
+if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
 	$id_adh = $_GET['id_adh'];
-else
-	$id_adh = $login->id;
+}
 
 //
-if ( ($login->isAdmin() || $login->isStaff()) ){
-	
-    $list_formations = $formation->getFormations($id_adh);
-    $tpl->assign('haveRights', true);
-    $tpl->assign('mid', $_GET['id_adh']);
+$tpl->assign('haveRights', ($login->isAdmin() || $login->isStaff()));
 
-    $member->load($_GET['id_adh']);
-    
-}else{
-    $list_formations = $formation->getFormations($login->id);
-    $tpl->assign('haveRights', false);
-    $tpl->assign('mid', $login->id);
-    $member->load($login->id);
-}
+$list_formations = $formation->getFormations($id_adh);
+$member->load($id_adh);
 $tpl->assign('member', $member);
 
 //Tri le tableau en fonction de la date de début.
@@ -73,7 +63,7 @@ if (isset($warning_detected)) {
 }
 
 $nom = $member->sfullname;
-$tpl->assign('page_title', _T("Formations managment: ").$nom);
+$tpl->assign('page_title', _T("Formations managment:")." ".$nom);
 
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
