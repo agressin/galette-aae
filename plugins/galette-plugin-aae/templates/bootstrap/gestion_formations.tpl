@@ -6,7 +6,9 @@
                 <th class="listing left">{_T string="Speciality"}</th>
                 <th class="listing left date_row"> {_T string="Begin"} </th>
                 <th class="listing left date_row"> {_T string="End"} </th>
+             {if $haveRights}
                 <th class="listing actions_row">{_T string="Actions"}</th>
+             {/if}
         </thead>
 
         <tbody>
