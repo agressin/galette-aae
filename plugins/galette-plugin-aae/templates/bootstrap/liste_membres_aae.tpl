@@ -126,10 +126,10 @@
 				initiateSelects();
 				
 				$('#id_cycle').on('change', function() {
-					$('input[name=id_cycle_simple]').attr('checked',false);
+					$('input[name="id_cycle_simple[]"]').attr('checked',false);
 				});
 				
-				$('input[name=id_cycle_simple]').live('change', function() {
+				$('input[name="id_cycle_simple[]"]').live('change', function() {
 					$('#id_cycle').val('0');
 				});
 				

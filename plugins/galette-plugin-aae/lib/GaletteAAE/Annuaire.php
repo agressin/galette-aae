@@ -348,35 +348,51 @@ class Annuaire
 			};
 
 			if (array_key_exists("cycle_simple",$req)){
+				$all_cycle_simple=[];
 				foreach ($req["cycle_simple"] as $i => $value) {
 					switch ($value) {
 					case "IT":
+						$all_cycle_simple[] = 2;
+						$all_cycle_simple[] = 51;
+						/*
 						$select->where->NEST
 							->equalTo('f.id_cycle', 2)
 							->OR
 							->equalTo('f.id_cycle', 51)
 							->UNNEST;
+					    */
 						break;
 					case "G":
+						$all_cycle_simple[] = 3;
+						$all_cycle_simple[] = 52;
+						/*
 						$select->where->NEST
 							->equalTo('f.id_cycle', 3)
 							->OR
 							->equalTo('f.id_cycle', 52)
 							->UNNEST;
+						*/
 						break;
 					case "DC":
+						$all_cycle_simple[] = 6;
+						$all_cycle_simple[] = 56;
+						/*
 						$select->where->NEST
 							->equalTo('f.id_cycle', 6)
 							->OR
 							->equalTo('f.id_cycle', 56)
 							->UNNEST;
+						*/
 						break;
 					case "LPRO":
-						$select->equalTo('f.id_cycle', 50);
+						$all_cycle_simple[] = 50;
+						//$select->equalTo('f.id_cycle', 50);
 						break;
 					}//switch
 					$init=true;
 				}//foreach
+				//$select->where('f.id_cycle IN (?)', $all_cycle_simple);
+				$select->where(array('f.id_cycle' => $all_cycle_simple));
 			};
 			if (array_key_exists("annee_debut",$req)){
 				$select->where->equalTo('f.annee_debut', $req["annee_debut"]);
