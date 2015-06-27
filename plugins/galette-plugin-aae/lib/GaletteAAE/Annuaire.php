@@ -283,7 +283,7 @@ class Annuaire
 	* 		)
 	* (each one is optional, you just have to put only one)
 	OUT : array
-	COM : - Our principal fonction to select student*/
+	*/
 	
 	public function getStudent($req)
     {
@@ -354,44 +354,21 @@ class Annuaire
 					case "IT":
 						$all_cycle_simple[] = 2;
 						$all_cycle_simple[] = 51;
-						/*
-						$select->where->NEST
-							->equalTo('f.id_cycle', 2)
-							->OR
-							->equalTo('f.id_cycle', 51)
-							->UNNEST;
-					    */
 						break;
 					case "G":
 						$all_cycle_simple[] = 3;
 						$all_cycle_simple[] = 52;
-						/*
-						$select->where->NEST
-							->equalTo('f.id_cycle', 3)
-							->OR
-							->equalTo('f.id_cycle', 52)
-							->UNNEST;
-						*/
 						break;
 					case "DC":
 						$all_cycle_simple[] = 6;
 						$all_cycle_simple[] = 56;
-						/*
-						$select->where->NEST
-							->equalTo('f.id_cycle', 6)
-							->OR
-							->equalTo('f.id_cycle', 56)
-							->UNNEST;
-						*/
 						break;
 					case "LPRO":
 						$all_cycle_simple[] = 50;
-						//$select->equalTo('f.id_cycle', 50);
 						break;
 					}//switch
 					$init=true;
 				}//foreach
-				//$select->where('f.id_cycle IN (?)', $all_cycle_simple);
 				$select->where(array('f.id_cycle' => $all_cycle_simple));
 			};
 			if (array_key_exists("annee_debut",$req)){

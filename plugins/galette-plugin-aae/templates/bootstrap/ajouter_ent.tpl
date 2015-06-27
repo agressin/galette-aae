@@ -21,7 +21,7 @@
 				<div class="form-group">
 					  <button type="submit" class="btn btn-primary">{_T string="Save"}</button>
 					  <input type="hidden" name="ident" value="1" />
-					<a class="btn btn-warning" href="{$galette_base_path}ajouter_poste.php">{_T string="Go back"}</a>
+					<a class="btn btn-warning" href="{$galette_base_path}{$aaetools_path}ajouter_poste.php">{_T string="Go back"}</a>
 				</div>
 			</div>
 </form>

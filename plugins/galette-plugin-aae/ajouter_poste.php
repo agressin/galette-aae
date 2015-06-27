@@ -44,7 +44,8 @@ if(isset($_GET['id_adh'])) {
 }
 else if(isset($_POST['id_adh'])) {
 	$id_adh = $_POST['id_adh'];
-} 
+}
+
 
 
 //Gestion des droits
