@@ -36,7 +36,11 @@ if (isset($_POST['employeur']))
 		if ( !$res ) {
 			$error_detected[] = _T("Entreprise has not been added!");
 		} else {
-			header('location:'. 'ajouter_poste.php?ent_ok');
+			$session['ent_ok'] = true;
+			if(isset($session['caller']))				
+				header('location:'. $session['caller']);
+			else
+				header('location:'. 'ajouter_poste.php');
 		    die();	
 		}
 

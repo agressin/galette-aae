@@ -24,28 +24,35 @@ if ( !$login->isLogged() ) {
 
 
 // on add entreprise succes (from ajouter_ent.php)
-if ( isset($_GET['ent_ok']) ) {
+if ( isset($session['ent_ok'] )){
 	$success_detected[] = _T("Entreprise has been successfully added.");
+	unset($session['ent_ok']);
 }
 
-//Récupération de id_poste
 $id_poste = '';
-if(isset($_GET['id_poste'])) {
-	$id_poste = $_GET['id_poste'];
-}
-else if(isset($_POST['id_poste'])) {
-	$id_poste = $_POST['id_poste'];
-}
-
-//Récupération de id_adh
 $id_adh = '';
-if(isset($_GET['id_adh'])) {
-	$id_adh = $_GET['id_adh'];
-}
-else if(isset($_POST['id_adh'])) {
-	$id_adh = $_POST['id_adh'];
-}
+if(isset($session['caller']) and ($session['caller'] == "ajouter_poste.php")) {
+	if(isset($session['id_poste']))
+		$id_poste = $session['id_poste'];
+	if(isset($session['id_adh']))
+		$id_adh = $session['id_adh'];
+} else {
+	//Récupération de id_poste
+	if(isset($_GET['id_poste'])) {
+		$id_poste = $_GET['id_poste'];
+	}
+	else if(isset($_POST['id_poste'])) {
+		$id_poste = $_POST['id_poste'];
+	}
 
+	//Récupération de id_adh
+	if(isset($_GET['id_adh'])) {
+		$id_adh = $_GET['id_adh'];
+	}
+	else if(isset($_POST['id_adh'])) {
+		$id_adh = $_POST['id_adh'];
+	}
+}
 
 
 //Gestion des droits
@@ -91,7 +98,11 @@ if( isset($_POST['valid']) && $haveRights ){
 	);
 	if($res){
 		$id_poste = $res;
+		unset($session['caller']);
+		unset($session['id_poste']);
+		unset($session['id_adh']);
 		header('location:'. 'gestion_postes.php?pos_ok&id_adh='.$id_adh);
+		die();
 	}
 	else {
 		$error_detected[] = _T("Unabled to add/modify the job");
@@ -120,6 +131,11 @@ if (isset($error_detected)) {
 if (isset($success_detected)) {
     $tpl->assign('success_detected', $success_detected);
 }
+
+//Session
+$session['caller']   = "ajouter_poste.php";
+$session['id_poste'] = $id_poste;
+$session['id_adh']   = $id_adh;
 
 // page generation
 $orig_template_path = $tpl->template_dir;
