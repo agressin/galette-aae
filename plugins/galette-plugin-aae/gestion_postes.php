@@ -13,14 +13,18 @@ use Galette\AAE\Postes as Postes;
 require_once 'lib/GaletteAAE/Entreprises.php';
 use Galette\AAE\Entreprises as Entreprises;
 
+var_dump($session);
+
 if ( !$login->isLogged() ) {
     header('location:'. GALETTE_BASE_PATH .'index.php');
     die();
 }
 
 // on add poste succes (from ajouter_poste.php)
-if ( isset($_GET['pos_ok']) ) {
-	$success_detected[] = _T("Job has been successfully added.");
+if ( isset($session['ajouter_poste']) ) {
+	if( isset($session['ajouter_poste']['poste_ok']) )
+		$success_detected[] = _T("Job has been successfully added.");
+	unset($session['ajouter_poste']);
 }
 
 $postes = new Postes();
@@ -40,8 +44,14 @@ $tpl->assign('entreprises', $entreprises_options);
 $member = new Galette\Entity\Adherent();
 
 $id_adh = $login->id;
-if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
-	$id_adh = $_GET['id_adh'];
+
+if ( $login->isAdmin() || $login->isStaff() ) {
+	//Récupération de id_adh
+	if( isset($session['gestion_postes']) and isset($session['gestion_postes']['id_adh']) ){
+		$id_adh = $session['gestion_postes']['id_adh'];
+	} else if(isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
+		$id_adh = $_GET['id_adh'];
+	}
 }
 $tpl->assign('id_adh', $id_adh);
 
@@ -55,7 +65,6 @@ foreach ($list_postes as $pos){
 	$list_postes[$i]['website'] = $ent['website'];
 	$i=$i+1;
 }
-// $list_postes['employeur']=$ent;
 
 //Tri le tableau en fonction de la date de début.
 usort($list_postes, function($a, $b) {
@@ -67,17 +76,25 @@ $tpl->assign('list_postes', $list_postes);
 $member->load($id_adh);
 $tpl->assign('member', $member);
 
+if(! isset($session['gestion_postes.php'])){
+	$session['gestion_postes.php'] = [];
+}
+$session['gestion_postes.php']['id_adh'] = $id_adh;
+
 $nom = $member->sfullname;
 $tpl->assign('page_title', _T("Jobs managment")." ".$nom);
 
 
+//Messages
+if (isset($success_detected)) {
+    $tpl->assign('success_detected', $success_detected);
+}
 if (isset($error_detected)) {
     $tpl->assign('error_detected', $error_detected);
 }
 if (isset($warning_detected)) {
     $tpl->assign('warning_detected', $warning_detected);
 }
-
 
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
@@ -90,13 +107,6 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 
-/*
-if ($login->isAdmin() || $login->isStaff())
-	$tpl->display('page.tpl');
-else
-*/
-	$tpl->display('public_page.tpl');
-
-
+$tpl->display('public_page.tpl');
 
 ?>

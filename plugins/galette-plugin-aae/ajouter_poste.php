@@ -22,6 +22,7 @@ if ( !$login->isLogged() ) {
 	die();
 }
 
+var_dump($session);
 
 // on add entreprise succes (from ajouter_ent.php)
 if ( isset($session['ent_ok'] )){
@@ -31,27 +32,26 @@ if ( isset($session['ent_ok'] )){
 
 $id_poste = '';
 $id_adh = '';
-if(isset($session['caller']) and ($session['caller'] == "ajouter_poste.php")) {
-	if(isset($session['id_poste']))
-		$id_poste = $session['id_poste'];
-	if(isset($session['id_adh']))
-		$id_adh = $session['id_adh'];
-} else {
-	//Récupération de id_poste
-	if(isset($_GET['id_poste'])) {
-		$id_poste = $_GET['id_poste'];
-	}
-	else if(isset($_POST['id_poste'])) {
-		$id_poste = $_POST['id_poste'];
-	}
 
-	//Récupération de id_adh
-	if(isset($_GET['id_adh'])) {
-		$id_adh = $_GET['id_adh'];
-	}
-	else if(isset($_POST['id_adh'])) {
-		$id_adh = $_POST['id_adh'];
-	}
+
+
+//Récupération de id_poste
+if( isset($session['ajouter_poste']) and isset($session['ajouter_poste']['id_poste'])  ) {
+	$id_poste = $session['ajouter_poste']['id_poste'];
+} else if(isset($_GET['id_poste'])) {
+	$id_poste = $_GET['id_poste'];
+} else if(isset($_POST['id_poste'])) {
+	$id_poste = $_POST['id_poste'];
+}
+
+//Récupération de id_adh
+if( isset($session['ajouter_poste']) and isset($session['ajouter_poste']['id_adh']) ){
+	$id_adh = $session['ajouter_poste']['id_adh'];
+} else if(isset($_GET['id_adh'])) {
+	$id_adh = $_GET['id_adh'];
+}
+else if(isset($_POST['id_adh'])) {
+	$id_adh = $_POST['id_adh'];
 }
 
 
@@ -98,10 +98,28 @@ if( isset($_POST['valid']) && $haveRights ){
 	);
 	if($res){
 		$id_poste = $res;
-		unset($session['caller']);
-		unset($session['id_poste']);
-		unset($session['id_adh']);
-		header('location:'. 'gestion_postes.php?pos_ok&id_adh='.$id_adh);
+		
+		unset($session['ajouter_ent']);
+
+		if( !isset($session['ajouter_poste']))
+			$session['ajouter_poste'] = [];
+
+		$session['ajouter_poste']['poste_ok'] = true;
+		
+		//TODO récuperer caller et lui transmettre les infos
+		if( isset($session['ajouter_poste']['caller']) )
+			$caller = $session['ajouter_poste']['caller'];
+		else
+			$caller ="gestion_postes.php";
+		
+		/*
+		if(! isset($session[$caller])){
+			$session[$caller] = [];
+		}
+		$session[$caller]['id_adh'] = $id_adh;
+		*/
+		//header('location:'. 'gestion_postes.php?id_adh='.$id_adh);
+		header('location:'. $caller);
 		die();
 	}
 	else {
@@ -111,7 +129,7 @@ if( isset($_POST['valid']) && $haveRights ){
     
 #----------VISUALISATION----------#
 
-if($id_poste){
+if($id_poste != ''){
     $tpl->assign('id_poste', $id_poste);
 
     $pst = $postes->getPoste($id_poste);
@@ -133,9 +151,11 @@ if (isset($success_detected)) {
 }
 
 //Session
-$session['caller']   = "ajouter_poste.php";
-$session['id_poste'] = $id_poste;
-$session['id_adh']   = $id_adh;
+if( !isset($session['ajouter_poste']))
+	$session['ajouter_poste'] = [];
+
+$session['ajouter_poste']['id_poste'] = $id_poste;
+$session['ajouter_poste']['id_adh']   = $id_adh;
 
 // page generation
 $orig_template_path = $tpl->template_dir;
