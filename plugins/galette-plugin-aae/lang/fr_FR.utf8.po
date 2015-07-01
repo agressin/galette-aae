@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-06-27 17:07+0200\n"
+"PO-Revision-Date: 2015-07-01 13:47+0200\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -24,15 +24,19 @@ msgstr "Détails du poste de"
 msgid "Annee de fin :"
 msgstr "Année de fin"
 
+#: ../templates/bootstrap/voir_adherent_public.tpl:5
+msgid "Identity"
+msgstr "Identité"
+
 #: ../templates/bootstrap/voir_adherent_public.tpl:43
 msgid "Birth date"
 msgstr "Date de naissance"
 
-#: ../gestion_postes.php:23
+#: ../gestion_postes.php:26
 msgid "Job has been successfully added."
 msgstr "Le poste a bien été enregistré"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:112
+#: ../templates/bootstrap/voir_adherent_public.tpl:114
 #: ../templates/bootstrap/gestion_postes.tpl:15
 msgid "present"
 msgstr "actuel"
@@ -46,7 +50,7 @@ msgstr "Promotion"
 msgid "CDD"
 msgstr "CDD"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:95
+#: ../templates/bootstrap/voir_adherent_public.tpl:97
 #: ../templates/bootstrap/ajouter_ent.tpl:13
 #: ../templates/bootstrap/ajouter_ent.tpl:15
 msgid "Website"
@@ -73,7 +77,7 @@ msgstr "Comment cotiser ?"
 msgid " Choisir un employeur "
 msgstr " Choisir un employeur "
 
-#: ../ajouter_poste.php:96
+#: ../ajouter_poste.php:126
 msgid "Unabled to add/modify the job"
 msgstr ""
 "Désolé, nous avons rencontré un problème pendant l'ajout/la modification du "
@@ -97,8 +101,7 @@ msgstr "Type"
 msgid "student"
 msgstr "étudiant"
 
-#: ../liste_eleves.php:96 ../promotion.php:57
-#: ../templates/bootstrap/public_menu.tpl:6
+#: ../liste_eleves.php:96 ../templates/bootstrap/public_menu.tpl:6
 #: ../templates/bootstrap/public_menu.tpl:16
 #: ../templates/default/public_menu.tpl:2
 #: ../templates/default/public_menu.tpl:5
@@ -157,6 +160,10 @@ msgstr "Nom"
 msgid "Add a formation"
 msgstr "Ajouter une formation"
 
+#: ../templates/bootstrap/send_message.tpl:12
+msgid "Votre message sera précédé du message suivant :"
+msgstr "Votre message sera précédé du message suivant :"
+
 #: ../templates/bootstrap/voir_adherent_public.tpl:79
 msgid "Country"
 msgstr "Pays"
@@ -175,9 +182,17 @@ msgstr "Rafraîchir"
 msgid "Adresse :"
 msgstr "Adresse"
 
+#: ../send_message.php:37
+msgid "[AAE-ENSG] Un adhérent cherche à vous contacter"
+msgstr "[AAE-ENSG] Un adhérent cherche à vous contacter"
+
 #: ../templates/bootstrap/ajouter_poste.tpl:30
 msgid " Select a type "
 msgstr " Choisir un type"
+
+#: ../templates/bootstrap/send_message.tpl:15
+msgid "Message:"
+msgstr "Message"
 
 #: ../templates/bootstrap/aaecotiz.tpl:18 ../templates/default/aaecotiz.tpl:20
 msgid ""
@@ -284,7 +299,7 @@ msgstr "Période"
 msgid "Annee de debut:"
 msgstr "Année de début"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:108
+#: ../templates/bootstrap/voir_adherent_public.tpl:110
 msgid "Jobs information"
 msgstr "Information des postes"
 
@@ -350,6 +365,10 @@ msgstr "Information du contact"
 msgid "Please, log on in order to display information."
 msgstr "Merci de vous connecter pour accéder aux informations du contact."
 
+#: ../templates/bootstrap/send_message.tpl:7
+msgid "Subject"
+msgstr "Sujet"
+
 #: ../templates/bootstrap/liste_job.tpl:80
 #: ../templates/bootstrap/liste_membres_aae.tpl:101
 #: ../templates/bootstrap/promotion.tpl:38
@@ -361,6 +380,10 @@ msgstr ""
 #: ../templates/bootstrap/promotion.tpl:73
 msgid "Login"
 msgstr "Login"
+
+#: ../templates/bootstrap/send_message.tpl:2
+msgid "Send a message to"
+msgstr "Envoyer un message à"
 
 #: ../templates/bootstrap/menu.tpl:1 ../templates/default/menu.tpl:1
 msgid "AAE"
@@ -377,6 +400,10 @@ msgstr ""
 #: ../templates/bootstrap/ajouter_poste.tpl:7
 msgid "Employeur :"
 msgstr "Employeur"
+
+#: ../send_message.php:40
+msgid "Un ancien élève de l'ENSG cherche à vous contacter :"
+msgstr "Un ancien élève de l'ENSG cherche à vous contacter :"
 
 #: ../gestion_formations_eleve.php:66
 msgid "Formations managment:"
@@ -413,7 +440,6 @@ msgid "Paiement par RIB"
 msgstr "Paiement par RIB"
 
 #: ../templates/bootstrap/ajouter_ent.tpl:9
-#, fuzzy
 msgid "Entrepise"
 msgstr "Entreprise"
 
@@ -531,15 +557,19 @@ msgstr "[C]"
 msgid "Member:"
 msgstr "Membre :"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:5
-msgid "Identity"
-msgstr "Identité"
+#: ../send_message.php:67
+msgid "Mail sent to user %name"
+msgstr "Message envoyé à l'utilisateur "
+
+#: ../send_message.php:75
+msgid "A problem happened while sending email to user %name"
+msgstr "Un problème est survenu pendant l'envoi du mail à"
 
 #: ../templates/bootstrap/liste_job.tpl:30
 msgid "job"
 msgstr "poste"
 
-#: ../ajouter_poste.php:28
+#: ../ajouter_poste.php:29
 msgid "Entreprise has been successfully added."
 msgstr "L'entreprise a bien été ajoutée."
 
@@ -569,13 +599,17 @@ msgstr "Profession"
 msgid "empty if actual"
 msgstr "vide si emploi actuel"
 
-#: ../gestion_postes.php:71
+#: ../gestion_postes.php:85
 msgid "Jobs managment"
 msgstr "Gestion des postes"
 
 #: ../templates/bootstrap/ajouter_poste.tpl:56
 msgid "Code postal"
 msgstr "Code postal"
+
+#: ../templates/bootstrap/send_message.tpl:21
+msgid "Send"
+msgstr "Envoyer"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:24
 #: ../templates/bootstrap/promotion.tpl:22
@@ -611,7 +645,7 @@ msgstr "Entreprise"
 msgid "RIB has been successfully modified."
 msgstr "RIB bien enregistré"
 
-#: ../ajouter_poste.php:113
+#: ../ajouter_poste.php:143
 msgid "No member found."
 msgstr "Pas de membres à afficher."
 

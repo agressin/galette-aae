@@ -5,11 +5,9 @@ require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 
 //Constants and classes from plugin
 require_once '_config.inc.php';
-require_once 'lib/GaletteAAE/Offres.php';
 
 use Analog\Analog;
 use Galette\Core\GaletteMail;
-use Galette\AAE\Offres as Offres;
 use Galette\Entity\Adherent as Adherent;
 
 
@@ -27,20 +25,20 @@ if( $id_adh !='') {
 
 	//Expediteur = l'adh connecte
 	$adh->load($login->id);
-	$from_adh_name =  $adh->name . " " . $adh->surname;
+	$from_adh_name =  $adh->surname . " " . $adh->name;
 	$from_adh_email = $adh->email;
 	
 	//Destinateur : choisi dans le formulaire
     $adh->load($id_adh);
-	$to_adh_name =  $adh->name . " " . $adh->surname;
+	$to_adh_name =  $adh->surname . " " . $adh->name;
 	$to_adh_email = $adh->email;
 	$tpl->assign('to_adh_name', $to_adh_name);
 
 	$sujet =  _T("[AAE-ENSG] Un adhérent cherche à vous contacter");
 	$tpl->assign('sujet', $sujet);
 
-	$pre_message =  _T("Un ancien de l'ENSG cherche a vous contacter :\n");
-	$pre_message .= $from_adh_name . " (" . $from_adh_email . ")";
+	$pre_message =  _T("Un ancien élève de l'ENSG cherche à vous contacter :");
+	$pre_message .= "\n" . $from_adh_name . " (" . $from_adh_email . ")";
 	$tpl->assign('pre_message', $pre_message);
 	
 	if(isset($_POST['message'])) {
@@ -101,6 +99,7 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 
-$tpl->display('page.tpl');
+$tpl->display('public_page.tpl');
+//$tpl->display('page.tpl');
 
 ?>
