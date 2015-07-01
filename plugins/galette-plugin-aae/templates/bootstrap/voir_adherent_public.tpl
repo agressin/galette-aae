@@ -85,7 +85,9 @@
 					<th style="width:50%" >{_T string="E-Mail"}</th>
 					<td>
 		{if $member->email ne ''}
-						<a href="mailto:{$member->email}">{$member->email}</a>
+						<a href="{$galette_base_path}plugins/galette-plugin-aae/send_message.php?id_adh={$member->id}"><img src="{$template_subdir}images/icon-mail.png" alt="" width="16" height="16"/></a>
+		{else}
+						<img src="{$template_subdir}images/icon-empty.png" alt="" width="16" height="16"/>
 		{/if}
 					</td>
 				</tr>
