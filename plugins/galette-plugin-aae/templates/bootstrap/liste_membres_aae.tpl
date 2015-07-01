@@ -2,7 +2,7 @@
 		<form class="form-horizontal" action="liste_eleves.php" method="post">
 			<fieldset>
 				<legend>{_T string="Select cycle and promotion"}</legend>
-					<div class="row col-sm-offset-1">
+					<div class="row col-xs-offset-1">
 						<div class="form-group col-md-4">
 						
 							{*Searching student by name*}
@@ -158,5 +158,4 @@
 		
 				$(".dynatable-sort-header").css("color","black");
 
-    </script>		
-		
+    </script>

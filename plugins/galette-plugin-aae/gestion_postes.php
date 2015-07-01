@@ -13,7 +13,6 @@ use Galette\AAE\Postes as Postes;
 require_once 'lib/GaletteAAE/Entreprises.php';
 use Galette\AAE\Entreprises as Entreprises;
 
-var_dump($session);
 
 if ( !$login->isLogged() ) {
     header('location:'. GALETTE_BASE_PATH .'index.php');

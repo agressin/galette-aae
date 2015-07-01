@@ -56,16 +56,14 @@ if ( !$login->isLogged() ) {
 } else {
 	// Connecté on peut ne rien saisir
 	$param_selected = true;
+	//ou chercher par nom/prenom
+	$nom_prenom = $_POST["nom_prenom"];
+	if ($nom_prenom!="")
+	{	
+		$req["nom_prenom"] = $nom_prenom;
+	};
+	$tpl->assign('nom_prenom', $nom_prenom);
 }
-
-//If there is a name or surname
-$nom_prenom = $_POST["nom_prenom"];
-if ($nom_prenom!="")
-{	
-	$req["nom_prenom"] = $nom_prenom;
-	$param_selected = true;
-};
-$tpl->assign('nom_prenom', $nom_prenom);
 
 $tpl->assign('param_selected', $param_selected);
 

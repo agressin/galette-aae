@@ -22,8 +22,6 @@ if ( !$login->isLogged() ) {
 	die();
 }
 
-var_dump($session);
-
 // on add entreprise succes (from ajouter_ent.php)
 if ( isset($session['ent_ok'] )){
 	$success_detected[] = _T("Entreprise has been successfully added.");
