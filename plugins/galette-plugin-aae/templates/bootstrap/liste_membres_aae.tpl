@@ -1,13 +1,12 @@
 
 		<form class="form-horizontal" action="liste_eleves.php" method="post">
-			<fieldset>
 				<legend>{_T string="Select cycle and promotion"}</legend>
 					<div class="row col-xs-offset-1">
 						<div class="form-group col-md-4">
 						
 							{*Searching student by name*}
 							<label>{_T string="Name and/or First Name"}{if !$login->isLogged()} (*) {/if}
-							<input type="text" name ="nom_prenom" {if isset($nom_prenom)} value="{$nom_prenom}" {/if}
+							<input class="form-control" type="text" name ="nom_prenom" {if isset($nom_prenom)} value="{$nom_prenom}" {/if}
 							{if !$login->isLogged()} DISABLED {/if} /> 
 							</label><br>
 							{if !$login->isLogged()} * {_T string="Please sign in to access search by name"} <br> {/if}
@@ -18,7 +17,7 @@
 							</select><br>
 						</div>
 						<div class="form-group col-md-1"></div>
-						<div class="form-group col-md-3">
+						<div class="form-group col-md-4">
 							{*Searching student by Formation*}
 							<label for="id_cycle_simple" class="control-label">{_T string="Formation"}</label> <br>
 								<input name="id_cycle_simple[]" id="IT"   value="IT"   type="checkbox" {if in_array("IT",$id_cycle_simple)}   checked {/if}> <label for="IT"> Ingénieur </label>  <br>
@@ -42,7 +41,6 @@
 						  <button type="submit"  class="btn btn-primary">{if $param_selected eq 1} {_T string="Refresh"} {else} {_T string="Continue"} {/if}</button>
 						</div>
 					</div>
-			</fieldset>
 		</form>
 	{*Display student founds*}
 	{if $nb_eleves > 0}
