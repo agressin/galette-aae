@@ -118,10 +118,29 @@
 						<a href="{$key.website}">{$key.website}</a>
 					</td>
 					<td>
-						<a href="ajouter_poste.php?id_poste={$key.id_poste|htmlspecialchars}"><img src="{$template_subdir}images/icon-fiche.png" align="middle"/>
+						<a href="" data-toggle="modal" data-target=".bs-example-modal-lg-{$key.id_poste}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
 					</td>	
 				</tr>
 		{/foreach}
 			</table>
 
-	
+		{foreach $list_postes as $key}
+			<div class="modal fade bs-example-modal-lg-{$key.id_poste}" tabindex="-1" role="dialog">
+			  <div class="modal-dialog modal-lg">
+				<div class="modal-content">
+				  {$poste.nom_adh}
+				  {foreach $entreprises  as $entreprise}
+								{if $entreprise.id_entreprise eq $key.id_entreprise} {$entreprise.employeur} {/if}
+				  {/foreach}
+				  {$key.type}
+				  {$key.activite_principale}
+				  {$key.nb_personne_encadre}
+				  {$key.adresse}
+				  {$key.code_postal}
+				  {$key.ville}
+				  {$key.annee_ini}
+				  {$key.annee_fin}
+				</div>
+			  </div>
+			</div>
+		{/foreach}

@@ -22,12 +22,13 @@ Just put a {include file='common_header.tpl'} into the head tag.
  		<link rel='stylesheet' id='fontawesome-css'  href='http://{$template_subdir}fonts/font-awesome/font-awesome.css' type='text/css' media='all' />
  		<link rel='stylesheet' id='govpress-open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300' type='text/css' media='screen' />
  
+        <script type="text/javascript" src="{$jquery_dir}jquery-{$jquery_version}.min.js"></script>
+        <script type="text/javascript" src="{$jquery_dir}jquery-migrate-{$jquery_migrate_version}.min.js"></script>
+ 
          <!-- BOOSTRAP  -->
 		<link href="{$template_subdir}bootstrap/css/bootstrap.css" rel="stylesheet">
 		<script type="text/javascript" src="{$template_subdir}bootstrap/js/bootstrap.js"></script>		
         
-        <script type="text/javascript" src="{$jquery_dir}jquery-{$jquery_version}.min.js"></script>
-        <script type="text/javascript" src="{$jquery_dir}jquery-migrate-{$jquery_migrate_version}.min.js"></script>
         {* IE8 doe not know html5 tags *}
         <!--[if lte IE 9]>
             <script type="text/javascript" src="{$scripts_dir}html5-ie.js"></script>

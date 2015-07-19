@@ -8,7 +8,7 @@
 							<label for="id_entreprise" class="control-label">{_T string="Entreprise:"}</label> <br>
 							<select class="form-control" name="id_entreprise" id="id_cycle">
 								<option value="" {if $id_entreprise eq ""} selected="selected"{/if} > -- </option>
-								{foreach from=$entreprises item=entreprise name=allentreprises}
+								{foreach $entreprises  as $entreprise}
 								<option value="{$entreprise.id_entreprise}" {if $entreprise.id_entreprise eq $id_entreprise} selected="selected"{/if} >{$entreprise.employeur}</option>
 								{/foreach}
 							</select>
@@ -61,7 +61,7 @@
 				</thead>
 				<tbody>
 		{*Display all poste*}
-		{foreach from=$postes item=poste name=allpostes}
+		{foreach $postes as $poste}
 					<tr class="{if $smarty.foreach.allmembers.iteration % 2 eq 0}even{else}odd{/if}">
 						<td class="nowrap"><a href="voir_adherent_public.php?id_adh={$poste.id_adh}">{$poste.nom_adh}</a></td>
 						<td class="nowrap">{$poste.activite_principale}</td>
@@ -71,7 +71,7 @@
 						<td class="nowrap">{$poste.annee_ini}</td>
 						<td class="nowrap">{$poste.annee_fin}</td>
 						<td>
-							<a href="ajouter_poste.php?id_poste={$poste.id_poste|htmlspecialchars}"><img src="{$template_subdir}images/icon-fiche.png" align="middle"/>
+							<a href="" data-toggle="modal" data-target=".bs-example-modal-lg-{$poste.id_poste}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
 						</td>
 					</tr>
 		{/foreach}
@@ -80,6 +80,27 @@
 			{_T string="If you see an error, please send an email to:"}
 			<a href='mailto:{$preferences->pref_email}'>{$preferences->pref_email}</a>
 
+		{foreach $postes as $poste}
+			<div class="modal fade bs-example-modal-lg-{$poste.id_poste}" tabindex="-1" role="dialog">
+			  <div class="modal-dialog modal-lg">
+				<div class="modal-content">
+				  {$poste.nom_adh}
+				  {foreach $entreprises  as $entreprise}
+								{if $entreprise.id_entreprise eq $poste.id_entreprise} {$entreprise.employeur} {/if}
+				  {/foreach}
+				  {$poste.type}
+				  {$poste.activite_principale}
+				  {$poste.nb_personne_encadre}
+				  {$poste.adresse}
+				  {$poste.code_postal}
+				  {$poste.ville}
+				  {$poste.annee_ini}
+				  {$poste.annee_fin}
+				</div>
+			  </div>
+			</div>
+		{/foreach}
+		
 	{else}
 		<div id="warningbox">{_T string="No job to show"}</div>
 	{/if}

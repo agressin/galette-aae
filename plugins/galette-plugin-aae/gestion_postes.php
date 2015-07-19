@@ -21,8 +21,9 @@ if ( !$login->isLogged() ) {
 
 // on add poste succes (from ajouter_poste.php)
 if ( isset($session['ajouter_poste']) ) {
-	if( isset($session['ajouter_poste']['poste_ok']) )
+	if( isset($session['ajouter_poste']['poste_ok']) ) {
 		$success_detected[] = _T("Job has been successfully added.");
+	}
 	unset($session['ajouter_poste']);
 }
 

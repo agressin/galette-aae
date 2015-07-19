@@ -73,7 +73,7 @@
                 <label class="bline" for="annee_fin">
                         {_T string="End"}
                 </label><br>
-                <input class="date" type="number" name="annee_fin" id="annee_fin" min="1950" max="2100" value="{$poste.annee_fin}" placeholder="{_T string="empty if actual"}" maxlength="10"  {if {$vis} eq True} disabled {/if}/>
+                <input class="date" type="number" name="annee_fin" id="annee_fin" min="1950" max="2100" value="{if {$poste.annee_fin} neq 0}  $poste.annee_fin {/if}{}" placeholder="{_T string="empty if actual"}" maxlength="10"  {if {$vis} eq True} disabled {/if}/>
             </p>
            </div>
           </div>

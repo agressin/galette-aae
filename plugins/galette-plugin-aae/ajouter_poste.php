@@ -31,39 +31,40 @@ if ( isset($session['ent_ok'] )){
 $id_poste = '';
 $id_adh = '';
 
-
-
 //Récupération de id_poste
-if( isset($session['ajouter_poste']) and isset($session['ajouter_poste']['id_poste'])  ) {
-	$id_poste = $session['ajouter_poste']['id_poste'];
-} else if(isset($_GET['id_poste'])) {
+if(isset($_GET['id_poste'])) {
 	$id_poste = $_GET['id_poste'];
+	unset($session['ajouter_poste']);
 } else if(isset($_POST['id_poste'])) {
 	$id_poste = $_POST['id_poste'];
+	unset($session['ajouter_poste']);
+} else if( isset($session['ajouter_poste']) and isset($session['ajouter_poste']['id_poste'])  ) {
+	$id_poste = $session['ajouter_poste']['id_poste'];
 }
 
-//Récupération de id_adh
-if( isset($session['ajouter_poste']) and isset($session['ajouter_poste']['id_adh']) ){
-	$id_adh = $session['ajouter_poste']['id_adh'];
-} else if(isset($_GET['id_adh'])) {
-	$id_adh = $_GET['id_adh'];
+if($id_poste != '')
+{
+    $poste = $postes->getPoste($id_poste);
+    $id_adh = $poste['id_adh'];
+} else {
+	//Récupération de id_adh
+	if(isset($_POST['id_adh'])) {
+		$id_adh = $_POST['id_adh'];
+	} else if(isset($_GET['id_adh'])) {
+		$id_adh = $_GET['id_adh'];
+	} else if( isset($session['ajouter_poste']) and isset($session['ajouter_poste']['id_adh']) ){
+		$id_adh = $session['ajouter_poste']['id_adh'];
+	} else {
+		$id_adh = $login->id;
+	}
 }
-else if(isset($_POST['id_adh'])) {
-	$id_adh = $_POST['id_adh'];
-}
-
 
 //Gestion des droits
-if ( ($login->isAdmin() || $login->isStaff() || $id_adh == $login->id ) ){
-    $haveRights = true;
-}else{
-    $haveRights = false;
+if ( !($login->isAdmin() || $login->isStaff() || $id_adh == $login->id ) ){
+	header('location:'. GALETTE_BASE_PATH .'index.php');
+	die();
 }
-$tpl->assign('vis',!$haveRights);
 
-if ($id_adh =='') {
-	$id_adh = $login->id;
-}
 $member->load($id_adh);
 
 
@@ -78,7 +79,7 @@ foreach ($allEntreprises as $entreprise) {
 $tpl->assign('entreprises', $entreprises_options);
 
 #----------CREATION / MODIFICATION ----------#
-if( isset($_POST['valid']) && $haveRights ){
+if( isset($_POST['valid']) ){
 
 	$res = $postes->setPoste(
 		$id_poste,
@@ -94,6 +95,7 @@ if( isset($_POST['valid']) && $haveRights ){
 		$_POST['annee_ini'],
 		$_POST['annee_fin']
 	);
+	var_dump($res);
 	if($res){
 		$id_poste = $res;
 		
@@ -104,19 +106,11 @@ if( isset($_POST['valid']) && $haveRights ){
 
 		$session['ajouter_poste']['poste_ok'] = true;
 		
-		//TODO récuperer caller et lui transmettre les infos
 		if( isset($session['ajouter_poste']['caller']) )
 			$caller = $session['ajouter_poste']['caller'];
 		else
 			$caller ="gestion_postes.php";
 		
-		/*
-		if(! isset($session[$caller])){
-			$session[$caller] = [];
-		}
-		$session[$caller]['id_adh'] = $id_adh;
-		*/
-		//header('location:'. 'gestion_postes.php?id_adh='.$id_adh);
 		header('location:'. $caller);
 		die();
 	}
@@ -125,14 +119,10 @@ if( isset($_POST['valid']) && $haveRights ){
 	}
 }
     
-#----------VISUALISATION----------#
-
+#----------VISUALISATION / MODIFICATION ----------#
 if($id_poste != ''){
     $tpl->assign('id_poste', $id_poste);
-
-    $pst = $postes->getPoste($id_poste);
-    $tpl->assign('poste',$pst);
-	$member->load($pst['id_adh']);
+    $tpl->assign('poste',$poste);
 }
 
 if($member->id != null)
@@ -153,7 +143,8 @@ if( !isset($session['ajouter_poste']))
 	$session['ajouter_poste'] = [];
 
 $session['ajouter_poste']['id_poste'] = $id_poste;
-$session['ajouter_poste']['id_adh']   = $id_adh;
+$session['ajouter_poste']['id_adh'] = $id_adh;
+
 
 // page generation
 $orig_template_path = $tpl->template_dir;

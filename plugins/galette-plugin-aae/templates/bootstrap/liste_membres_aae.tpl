@@ -40,6 +40,7 @@
 						<div class=" col-sm-10">
 						  <button type="submit"  class="btn btn-primary">{if $param_selected eq 1} {_T string="Refresh"} {else} {_T string="Continue"} {/if}</button>
 						</div>
+					  </div>
 					</div>
 		</form>
 	{*Display student founds*}

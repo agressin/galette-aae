@@ -25,7 +25,7 @@
 				</td>
 				<td class="center nowrap">
 					<input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$key.id_poste|htmlspecialchars}' align="middle" />
-					<a href="ajouter_poste.php?id_adh={$id_adh}&id_poste={$key.id_poste|htmlspecialchars}"><img src="{$template_subdir}images/icon-edit.png" align="middle" /></a>
+					<a href="ajouter_poste.php?id_poste={$key.id_poste|htmlspecialchars}"><img src="{$template_subdir}images/icon-edit.png" align="middle" /></a>
 				</td>
 			</tr>
 	{/foreach}
