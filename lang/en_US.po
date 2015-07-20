@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-01-13 18:34+0100\n"
+"PO-Revision-Date: 2015-07-20 19:05+0200\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -417,7 +417,7 @@ msgstr "Members management"
 msgid "Address (continuation):"
 msgstr "Address (continuation):"
 
-#: ../templates/bootstrap/index.tpl:19 ../templates/default/public_page.tpl:66
+#: ../templates/bootstrap/index.tpl:18 ../templates/default/public_page.tpl:66
 msgid "Lost your password?"
 msgstr "Lost your password?"
 
@@ -585,9 +585,8 @@ msgid "%name (#%id - %days days)"
 msgstr "%name (#%id - %days days)"
 
 #: ../templates/bootstrap/gestion_contributions.tpl:3
-#, fuzzy
 msgid "Show contributions since"
-msgstr "Show contributions by"
+msgstr "Show contributions since"
 
 #: ../needs_update.php:72
 msgid "Please run install or upgrade procedure (check the documentation)"
@@ -696,7 +695,6 @@ msgid "Contribution full date"
 msgstr "Contribution full date"
 
 #: ../templates/bootstrap/preferences.tpl:185
-#, fuzzy
 msgid "Send email to administrators ?"
 msgstr "Send email to administrators?"
 
@@ -710,9 +708,8 @@ msgid "Mail"
 msgstr "Mail"
 
 #: ../templates/bootstrap/index.tpl:13 ../templates/bootstrap/index.tpl:15
-#, fuzzy
 msgid "Password"
-msgstr "Password:"
+msgstr "Password"
 
 #: ../lib/Galette/Entity/Group.php:352
 msgid "Group has been detached from its parent"
@@ -1218,9 +1215,8 @@ msgid "Reminders"
 msgstr "Reminders"
 
 #: ../templates/bootstrap/ajax_plugins_initdb.tpl:26
-#, fuzzy
 msgid "Your current %name version is"
-msgstr "You current %name version is..."
+msgstr "You current %name version is"
 
 #: ../templates/bootstrap/global_messages.tpl:28
 #: ../templates/default/global_messages.tpl:28
@@ -1457,7 +1453,6 @@ msgstr ""
 "- 'Extends membership?' field must be either 0 or 1! (current value: %s)"
 
 #: ../templates/bootstrap/preferences.tpl:190
-#, fuzzy
 msgid "Activate HTML editor ?"
 msgstr "Activate HTML editor?"
 
@@ -2086,7 +2081,7 @@ msgstr "- The username must be composed of at least 4 characters!"
 msgid "Pleade provide a group name"
 msgstr "Pleade provide a group name"
 
-#: ../sysinfos.php:50 ../templates/bootstrap/footer.tpl:6
+#: ../sysinfos.php:50 ../templates/bootstrap/footer.tpl:7
 #: ../templates/default/footer.tpl:4
 msgid "System informations"
 msgstr "System informations"
@@ -2324,9 +2319,8 @@ msgid "Contributions"
 msgstr "Contributions"
 
 #: ../templates/bootstrap/public_page.tpl:101
-#, fuzzy
 msgid "Identification"
-msgstr "Modification"
+msgstr "Identification"
 
 #: ../editer_champ.php:77
 msgid "Unable to retrieve field informations."
@@ -3248,7 +3242,7 @@ msgid ""
 "account to be visible here, edit your profile and check 'Be visible in the "
 "members list'"
 msgstr ""
-"This page shows only members who have choosen to be visible on the public "
+"This page shows only members who have chosen to be visible on the public "
 "lists and are up-to-date within their contributions. If you want your "
 "account to be visible here, edit your profile and check 'Be visible in the "
 "members list'"
@@ -3288,9 +3282,8 @@ msgid "comprised between"
 msgstr "comprised between"
 
 #: ../templates/bootstrap/lostpasswd.tpl:10
-#, fuzzy
 msgid "Username or email"
-msgstr "Username or email:"
+msgstr "Username or email"
 
 #: ../templates/bootstrap/preferences.tpl:204
 #: ../templates/default/preferences.tpl:215
@@ -4442,7 +4435,7 @@ msgid "- The name field cannot be void."
 msgstr "- The name field cannot be void."
 
 #: ../index.php:70 ../index.php:85 ../index.php:113
-#: ../templates/bootstrap/index.tpl:23 ../templates/default/index.tpl:16
+#: ../templates/bootstrap/index.tpl:24 ../templates/default/index.tpl:16
 msgid "Login"
 msgstr "Login"
 
@@ -4758,10 +4751,9 @@ msgstr "Hexadecimal color notation: #RRGGBB"
 msgid "Current model"
 msgstr "Current model"
 
-#: ../templates/bootstrap/index.tpl:25
-#, fuzzy
+#: ../templates/bootstrap/index.tpl:26
 msgid "Logon"
-msgstr "Logo"
+msgstr "Sign in"
 
 #: ../templates/bootstrap/plugins.tpl:25 ../templates/default/plugins.tpl:25
 msgid "Click here to deactivate plugin '%name'"

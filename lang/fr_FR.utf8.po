@@ -422,7 +422,7 @@ msgstr "Gestion des membres"
 msgid "Address (continuation):"
 msgstr "Adresse (suite)&nbsp;:"
 
-#: ../templates/bootstrap/index.tpl:19 ../templates/default/public_page.tpl:66
+#: ../templates/bootstrap/index.tpl:18 ../templates/default/public_page.tpl:66
 msgid "Lost your password?"
 msgstr "Mot de passe perdu&nbsp;?"
 
@@ -2113,7 +2113,7 @@ msgstr "- L'identifiant doit être composé d'au moins 4 caractères&nbsp;!"
 msgid "Pleade provide a group name"
 msgstr "Veuillez spécifier un nom de groupe"
 
-#: ../sysinfos.php:50 ../templates/bootstrap/footer.tpl:6
+#: ../sysinfos.php:50 ../templates/bootstrap/footer.tpl:7
 #: ../templates/default/footer.tpl:4
 msgid "System informations"
 msgstr "Informations système"
@@ -4496,7 +4496,7 @@ msgid "- The name field cannot be void."
 msgstr "- Le champ nom ne peut pas être vide."
 
 #: ../index.php:70 ../index.php:85 ../index.php:113
-#: ../templates/bootstrap/index.tpl:23 ../templates/default/index.tpl:16
+#: ../templates/bootstrap/index.tpl:24 ../templates/default/index.tpl:16
 msgid "Login"
 msgstr "Identification"
 
@@ -4815,7 +4815,7 @@ msgstr "Notation de couleur hexadécimale : #RRVVBB"
 msgid "Current model"
 msgstr "Modèle actuel"
 
-#: ../templates/bootstrap/index.tpl:25
+#: ../templates/bootstrap/index.tpl:26
 msgid "Logon"
 msgstr "Inscription"
 

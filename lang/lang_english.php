@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Mon Jun 22 18:11:14 2015 (GMT)
+// This file was automatically generated on Mon Jul 20 17:03:25 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -147,8 +147,8 @@ $lang['Please correct above warnings to continue.'] = 'Please correct above warn
 // ../lib/Galette/Core/Picture.php:743 
 $lang['An SQL error has occured.'] = 'An SQL error has occured.';
 
-// ../templates/bootstrap/index.tpl:25 
-$lang['Logon'] = 'Logo';
+// ../templates/bootstrap/index.tpl:26 
+$lang['Logon'] = 'Sign in';
 
 // ../templates/default/ajouter_contribution.tpl:91 
 $lang['Record date:'] = 'Record date:';
@@ -381,7 +381,7 @@ $lang['Status:'] = 'Status:';
 // ../lib/Galette/Entity/Group.php:409 
 $lang['Group added'] = 'Group added';
 
-// ../templates/bootstrap/index.tpl:19 ../templates/default/public_page.tpl:66 
+// ../templates/bootstrap/index.tpl:18 ../templates/default/public_page.tpl:66 
 $lang['Lost your password?'] = 'Lost your password?';
 
 // ../templates/bootstrap/group.tpl:26 ../templates/bootstrap/group.tpl:29 ../templates/default/group.tpl:26 ../templates/default/group.tpl:29 
@@ -1579,7 +1579,7 @@ $lang['View, search into and filter member\'s list'] = 'View, search into and fi
 $lang['Partnership'] = 'Partnership';
 
 // ../templates/bootstrap/gestion_contributions.tpl:3 
-$lang['Show contributions since'] = 'Show contributions by';
+$lang['Show contributions since'] = 'Show contributions since';
 
 // ../templates/bootstrap/mailing_adherents.tpl:36 ../templates/default/mailing_adherents.tpl:36 
 $lang['Go back to members list'] = 'Go back to members list';
@@ -1800,7 +1800,7 @@ $lang['Contribution label'] = 'Contribution label';
 // ../ajax_mailing_preview.php:87 ../templates/bootstrap/ajax_mailing_preview.tpl:2 ../templates/bootstrap/gestion_mailings.tpl:159 ../templates/bootstrap/mailing_adherents.tpl:150 ../templates/default/ajax_mailing_preview.tpl:2 ../templates/default/gestion_mailings.tpl:159 ../templates/default/mailing_adherents.tpl:150 
 $lang['Mailing preview'] = 'Mailing preview';
 
-// ../index.php:70 ../index.php:85 ../index.php:113 ../templates/bootstrap/index.tpl:23 ../templates/default/index.tpl:16 
+// ../index.php:70 ../index.php:85 ../index.php:113 ../templates/bootstrap/index.tpl:24 ../templates/default/index.tpl:16 
 $lang['Login'] = 'Login';
 
 // ../templates/bootstrap/member.tpl:136 ../templates/bootstrap/voir_adherent.tpl:105 ../templates/default/member.tpl:136 ../templates/default/voir_adherent.tpl:105 
@@ -1810,7 +1810,7 @@ $lang['Contact information:'] = 'Contact information:';
 $lang['Font size:'] = 'Font size:';
 
 // ../templates/bootstrap/ajax_plugins_initdb.tpl:26 
-$lang['Your current %name version is'] = 'You current %name version is...';
+$lang['Your current %name version is'] = 'You current %name version is';
 
 // ../templates/bootstrap/gestion_adherents.tpl:313 ../templates/default/gestion_adherents.tpl:319 
 $lang['Please make sure to select at least one member from the list to perform this action.'] = 'Please make sure to select at least one member from the list to perform this action.';
@@ -1938,7 +1938,7 @@ $lang['Export all groups and their members as PDF'] = 'Export all groups and the
 // ../templates/default/preferences.tpl:190 
 $lang['Send email to administrators?'] = 'Send email to administrators?';
 
-// ../sysinfos.php:50 ../templates/bootstrap/footer.tpl:6 ../templates/default/footer.tpl:4 
+// ../sysinfos.php:50 ../templates/bootstrap/footer.tpl:7 ../templates/default/footer.tpl:4 
 $lang['System informations'] = 'System informations';
 
 // ../lib/Galette/Filters/MembersList.php:322 
@@ -3301,7 +3301,7 @@ $lang['Trying to load mailing while mail is disabled in preferences.'] = 'Trying
 $lang['Page %i'] = 'Page %i';
 
 // ../templates/bootstrap/lostpasswd.tpl:10 
-$lang['Username or email'] = 'Username or email:';
+$lang['Username or email'] = 'Username or email';
 
 // ../templates/bootstrap/ajax_plugins_initdb.tpl:24 
 $lang['Your current %name version is comprised between'] = 'Your current %name version is comprised between';
@@ -3316,7 +3316,7 @@ $lang['Manage groups'] = 'Manage groups';
 $lang['Web Site'] = 'Web Site';
 
 // ../templates/bootstrap/public_page.tpl:101 
-$lang['Identification'] = 'Modification';
+$lang['Identification'] = 'Identification';
 
 // ../lib/Galette/Entity/Transaction.php:298 
 $lang['- Empty transaction description!'] = '- Empty transaction description!';
@@ -3613,7 +3613,7 @@ $lang['Remove criteria'] = 'Remove criteria';
 $lang['- The username cannot contain the @ character'] = '- The username cannot contain the @ character';
 
 // ../templates/bootstrap/index.tpl:13 ../templates/bootstrap/index.tpl:15 
-$lang['Password'] = 'Password:';
+$lang['Password'] = 'Password';
 
 // ../templates/bootstrap/plugins.tpl:49 ../templates/default/plugins.tpl:49 
 $lang['Click here to activate plugin \'%name\''] = 'Click here to activate plugin \'%name\'';

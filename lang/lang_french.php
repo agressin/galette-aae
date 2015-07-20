@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Mon Jun 22 18:12:25 2015 (GMT)
+// This file was automatically generated on Mon Jul 20 17:02:18 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -147,7 +147,7 @@ $lang['Please correct above warnings to continue.'] = 'Veuillez corriger les err
 // ../lib/Galette/Core/Picture.php:743 
 $lang['An SQL error has occured.'] = 'Une erreur SQL est survenue.';
 
-// ../templates/bootstrap/index.tpl:25 
+// ../templates/bootstrap/index.tpl:26 
 $lang['Logon'] = 'Inscription';
 
 // ../templates/default/ajouter_contribution.tpl:91 
@@ -381,7 +381,7 @@ $lang['Status:'] = 'Statut&nbsp;:';
 // ../lib/Galette/Entity/Group.php:409 
 $lang['Group added'] = 'Groupe ajouté';
 
-// ../templates/bootstrap/index.tpl:19 ../templates/default/public_page.tpl:66 
+// ../templates/bootstrap/index.tpl:18 ../templates/default/public_page.tpl:66 
 $lang['Lost your password?'] = 'Mot de passe perdu&nbsp;?';
 
 // ../templates/bootstrap/group.tpl:26 ../templates/bootstrap/group.tpl:29 ../templates/default/group.tpl:26 ../templates/default/group.tpl:29 
@@ -1800,7 +1800,7 @@ $lang['Contribution label'] = 'Libellé de la contribution';
 // ../ajax_mailing_preview.php:87 ../templates/bootstrap/ajax_mailing_preview.tpl:2 ../templates/bootstrap/gestion_mailings.tpl:159 ../templates/bootstrap/mailing_adherents.tpl:150 ../templates/default/ajax_mailing_preview.tpl:2 ../templates/default/gestion_mailings.tpl:159 ../templates/default/mailing_adherents.tpl:150 
 $lang['Mailing preview'] = 'Prévisualisation de l\'E-Mailing';
 
-// ../index.php:70 ../index.php:85 ../index.php:113 ../templates/bootstrap/index.tpl:23 ../templates/default/index.tpl:16 
+// ../index.php:70 ../index.php:85 ../index.php:113 ../templates/bootstrap/index.tpl:24 ../templates/default/index.tpl:16 
 $lang['Login'] = 'Identification';
 
 // ../templates/bootstrap/member.tpl:136 ../templates/bootstrap/voir_adherent.tpl:105 ../templates/default/member.tpl:136 ../templates/default/voir_adherent.tpl:105 
@@ -1938,7 +1938,7 @@ $lang['Export all groups and their members as PDF'] = 'Export de l\'ensemble des
 // ../templates/default/preferences.tpl:190 
 $lang['Send email to administrators?'] = 'Envoyer des mails aux administrateurs&nbsp;?';
 
-// ../sysinfos.php:50 ../templates/bootstrap/footer.tpl:6 ../templates/default/footer.tpl:4 
+// ../sysinfos.php:50 ../templates/bootstrap/footer.tpl:7 ../templates/default/footer.tpl:4 
 $lang['System informations'] = 'Informations système';
 
 // ../lib/Galette/Filters/MembersList.php:322 
