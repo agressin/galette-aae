@@ -6,9 +6,6 @@ use Analog\Analog as Analog;
 use Galette\Entity\Adherent as Adherent;
 use Galette\Repository\Members as Members;
 
-require_once 'lib/GaletteAAE/Cycles.php';
-use Galette\AAE\Cycles as Cycles;
-
 /**
  * Members postes
  *
@@ -67,9 +64,12 @@ class postes
 
         try {
             $select = $zdb->select(AAE_PREFIX . self::TABLE);
-            $select->where->equalTo('id_entreprise', $id_entreprise);
-            
-            $res = $zdb->execute($select);
+            if($id_entreprise != ''){
+				$select->where->equalTo('id_entreprise', $id_entreprise);
+				$res = $zdb->execute($select);
+            }else{
+				$res = $zdb->selectAll(AAE_PREFIX . self::TABLE);
+            }
             $res = $res->toArray();
             if ( count($res) > 0 ) {
                 return $res;
@@ -214,7 +214,7 @@ class postes
      *
      * @return string
      */
-    protected function getTableName()
+    static public function getTableName()
     {
         return PREFIX_DB . AAE_PREFIX . self::TABLE;
     }

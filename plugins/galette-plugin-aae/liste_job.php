@@ -28,7 +28,7 @@ $postes = new Postes();
 $entreprises = new Entreprises();
 
 //Recuperation entreprises
-$allEntreprises = $entreprises->getAllEntreprises();
+$allEntreprises = $entreprises->getAllEntreprises(true);
 foreach ($allEntreprises as $key => $entreprise) {
 	$tmp[$key] = $entreprise["employeur"];
 }
@@ -37,10 +37,19 @@ array_multisort($tmp, SORT_ASC, $allEntreprises);
 $tpl->assign('entreprises', $allEntreprises);
 
 //We get variables
-$id_entreprise = get_numeric_form_value('id_entreprise', '');
+$id_entreprise='';
+$is_valid = get_numeric_form_value('valid', false);
+
+if(isset($_POST['id_entreprise'])) {
+	$id_entreprise = $_POST['id_entreprise'];
+} else if(isset($_GET['id_entreprise'])) {
+	$id_entreprise = $_GET['id_entreprise'];
+	$is_valid=true;
+}
+
 $tpl->assign('id_entreprise', $id_entreprise);
 
-if($id_entreprise != '') {
+if($is_valid) {
 	$postes = $postes->getPostesByEnt($id_entreprise);
 	$nb_postes = count($postes);
 
@@ -50,6 +59,7 @@ if($id_entreprise != '') {
 		$postes[$key]['nom_adh'] = $adherent->getSName($id_adh[$key]);
 	}
 	$tpl->assign('postes', $postes);
+	$tpl->assign('param_selected',true);
 } else {
 	$nb_postes = 0;
 }

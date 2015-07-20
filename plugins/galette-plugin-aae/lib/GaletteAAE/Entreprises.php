@@ -4,6 +4,9 @@ namespace Galette\AAE;
 
 use Analog\Analog as Analog;
 
+require_once 'lib/GaletteAAE/Postes.php';
+use Galette\AAE\Postes as Postes;
+
 class Entreprises
 {
     const TABLE = 'entreprises';
@@ -17,13 +20,28 @@ class Entreprises
      *
      * @return array
      */
-    public function getAllEntreprises()
+    public function getAllEntreprises($onlyUsed = false)
     {
         global $zdb;
 
         try {
-            $select = $zdb->selectAll(AAE_PREFIX . self::TABLE);
-            $res = $select->toArray();
+            
+			if($onlyUsed){
+				$select = $zdb->sql->select();
+				$select->from(array('e' => self::getTableName()));
+				
+				$select->join(array('p' => Postes::getTableName()),
+					'p.id_entreprise = e.id_entreprise',
+					array());
+
+				$select->group('e.id_entreprise');
+				$res = $zdb->execute($select);
+			}else{
+				$res = $zdb->selectAll(AAE_PREFIX . self::TABLE);
+			}
+
+            $res = $res->toArray();
+            
             if ( count($res) > 0 ) {
                 return $res;
             } else {
