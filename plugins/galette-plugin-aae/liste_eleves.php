@@ -12,12 +12,18 @@ use Galette\AAE\Cycles as Cycles;
 require_once 'lib/GaletteAAE/Annuaire.php';
 use Galette\AAE\Annuaire as Annuaire;
 
+require_once 'lib/GaletteAAE/Preferences.php';
+use Galette\AAE\Preferences as AAE_Preferences;
+
 
 if ( !$preferences->showPublicPages($login) ) {
     //public pages are not actives
     header('location:' . GALETTE_BASE_PATH  . 'index.php');
     die();
 }
+
+$AAE_Pref = new AAE_Preferences();
+$tpl->assign('AAE_pref', $AAE_Pref);
 
 $cycles = new Cycles();
 $annuaire = new Annuaire();
@@ -100,6 +106,7 @@ $tpl->template_dir = 'templates/' . $preferences->pref_theme;
 
 $content = $tpl->fetch('liste_membres_aae.tpl');
 $tpl->assign('content', $content);
+
 
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;

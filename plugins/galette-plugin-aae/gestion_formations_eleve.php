@@ -13,12 +13,18 @@ use Galette\AAE\Formations as Formations;
 require_once 'lib/GaletteAAE/Cycles.php';
 use Galette\AAE\Cycles as Cycles;
 
+require_once 'lib/GaletteAAE/Preferences.php';
+use Galette\AAE\Preferences as AAE_Preferences;
+
+
 
 if ( !$login->isLogged() ) {
     header('location:'. GALETTE_BASE_PATH .'index.php');
     die();
 }
 
+$AAE_Pref = new AAE_Preferences();
+$tpl->assign('AAE_pref', $AAE_Pref);
 
 $formation = new Formations();
 $cycles = new Cycles();

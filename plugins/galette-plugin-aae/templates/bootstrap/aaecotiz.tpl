@@ -6,7 +6,7 @@
 		 	{$preferences->getPostalAdress()}
 		</br>
 		 	{_T string="et de prévenir de votre paiement en envoyant un mail à"}
-			<a href='mailto:{$preferences->pref_email}'>{$preferences->pref_email}</a>
+			<a href='mailto:{$AAE_Pref->getPref('cotisation')}'>{$AAE_Pref->getPref('cotisation')}</a>
 		</p>
 		<h3 class="page-header"> {_T string="Paiement par RIB"} </h3>
 {if $login->isLogged()}
@@ -14,13 +14,13 @@
 			{_T string="Merci de faire un virement avec l'intitulé 'cotis nom prenom' sur le compte suivant :"} </br>
 			{$AAE_pref->getRIB()} </br>
 			{_T string="et de prévenir de votre paiement en envoyant un mail à"}
-			<a href='mailto:{$preferences->pref_email}'>{$preferences->pref_email}</a>
+			<a href='mailto:{$AAE_Pref->getPref('cotisation')}'>{$AAE_Pref->getPref('cotisation')}</a>
 			{_T string="En cas de virement groupé pour plusieurs personnes, merci de le préciser dans votre mail."}
 		</p>
 {else}
 		<p>
 			{_T string="Veuillez vous identifier pour obtenir le RIB, ou le demander à"}
-			<a href='mailto:{$preferences->pref_email}'>{$preferences->pref_email}</a>
+			<a href='mailto:{$AAE_Pref->getPref('cotisation')}'>{$AAE_Pref->getPref('cotisation')}</a>
 			</p>
 {/if}
 </div>

@@ -18,10 +18,16 @@ use Galette\AAE\Postes as Postes;
 require_once 'lib/GaletteAAE/Entreprises.php';
 use Galette\AAE\Entreprises as Entreprises;
 
+require_once 'lib/GaletteAAE/Preferences.php';
+use Galette\AAE\Preferences as AAE_Preferences;
+
 if ( !$login->isLogged() ) {
     header('location:'. GALETTE_BASE_PATH .'index.php');
     die();
 }
+
+$AAE_Pref = new AAE_Preferences();
+$tpl->assign('AAE_pref', $AAE_Pref);
 
 $adherent = new Adherent();
 $postes = new Postes();

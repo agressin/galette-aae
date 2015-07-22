@@ -98,7 +98,7 @@
 				</tbody>
 			</table>
 			{_T string="If you see an error, please send an email to:"}
-			<a href='mailto:{$preferences->pref_email}'>{$preferences->pref_email}</a>
+			<a href='mailto:{$AAE_Pref->getPref('webmaster')}'>{$AAE_Pref->getPref('webmaster')}</a>
 
 	{else}
 		<div id="warningbox">{_T string="No member to show"}</div>
