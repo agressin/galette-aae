@@ -63,6 +63,12 @@ if($is_valid) {
 	foreach ($postes as $key => $row) {
 		$id_adh[$key] = $row['id_adh'];
 		$postes[$key]['nom_adh'] = $adherent->getSName($id_adh[$key]);
+		
+		$id_ent = $row['id_entreprise'];
+        $ent = $entreprises->getEntreprise($id_ent);
+        $postes[$key]['id_entreprise'] = $ent['id_entreprise'];
+        $postes[$key]['employeur'] = $ent['employeur'];
+        $postes[$key]['website'] = $ent['website'];
 	}
 	$tpl->assign('postes', $postes);
 	$tpl->assign('param_selected',true);

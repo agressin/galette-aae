@@ -128,18 +128,32 @@
 			<div class="modal fade bs-example-modal-lg-{$key.id_poste}" tabindex="-1" role="dialog">
 			  <div class="modal-dialog modal-lg">
 				<div class="modal-content">
-				  {$poste.nom_adh}
-				  {foreach $entreprises  as $entreprise}
-								{if $entreprise.id_entreprise eq $key.id_entreprise} {$entreprise.employeur} {/if}
-				  {/foreach}
-				  {$key.type}
-				  {$key.activite_principale}
-				  {$key.nb_personne_encadre}
-				  {$key.adresse}
-				  {$key.code_postal}
-				  {$key.ville}
-				  {$key.annee_ini}
-				  {$key.annee_fin}
+				  <table class="table"> 
+				    	<tr>
+				    		<td><h4>Période</h4> </td>
+				    		<td>{$key.annee_ini}-{if $key.annee_fin eq 0}{_T string="present"}{else}{$key.annee_fin}{/if}</td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Employeur</h4></td>
+				    		<td> <a href="liste_job.php?id_entreprise={$key.id_entreprise}">{$key.employeur}</a></td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Site internet</h4></td>
+				    		<td> <a href="{if strpos($key.website,"http") !==0}http://{/if}{$key.website}" target="_blank">{$key.website}</a></td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Adresse</h4></td>
+				    		<td>{$key.adresse} {$key.code_postal} {$key.ville}</td>
+				    	</tr> 
+				    	<tr>
+				    		<td><h4>Type de contrat</h4></td>
+				    		<td>{$key.type}</td>
+				    	</tr> 
+				    	<tr>
+				    		<td><h4>Intitulé du poste</h4></td>
+				    		<td>{$key.activite_principale}</td>
+				    	</tr>
+				    </table> 
 				</div>
 			  </div>
 			</div>

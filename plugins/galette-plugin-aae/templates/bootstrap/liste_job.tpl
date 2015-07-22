@@ -101,24 +101,35 @@
 			<div class="modal fade bs-example-modal-lg-{$poste.id_poste}" tabindex="-1" role="dialog">
 			  <div class="modal-dialog modal-lg">
 				<div class="modal-content">
-				    <p><h1>Adhérent</h1> {$poste.nom_adh}</p>      
-				    <p><h5>Période</h5> {$poste.annee_ini}-{$poste.annee_fin}</p>
-				    <p><h5>Employeur</h5> {foreach $entreprises  as $entreprise}{if $entreprise.id_entreprise eq $poste.id_entreprise} {$entreprise.employeur} {/if}{/foreach}</p> 
-				    <p><h5>Adresse</h5>{$poste.adresse},{$poste.code_postal},{$poste.ville}</p> 
-				    <p><h5>Type de contrat</h5>{$poste.type}</p> 
-				    <p><h5>Intitulé du poste</h5>{$poste.activite_principale}</p> 
-				  {$poste.nom_adh}
-				  {foreach $entreprises  as $entreprise}
-								{if $entreprise.id_entreprise eq $poste.id_entreprise} {$entreprise.employeur} {/if}
-				  {/foreach}
-				  {$poste.type}
-				  {$poste.activite_principale}
-				  {$poste.nb_personne_encadre}
-				  {$poste.adresse}
-				  {$poste.code_postal}
-				  {$poste.ville}
-				  {$poste.annee_ini}
-				  {$poste.annee_fin}
+					<table class="table">
+						<tr>
+				    		<td><h2><a href="voir_adherent_public.php?id_adh={$poste.id_adh}">{$poste.nom_adh}</a></h2></td>
+				    	</tr>    
+				    	<tr>
+				    		<td><h4>Période</h4> </td>
+				    		<td>{$poste.annee_ini}-{if $poste.annee_fin eq 0}{_T string="present"}{else}{$poste.annee_fin}{/if}</td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Employeur</h4></td>
+				    		<td> <a href="liste_job.php?id_entreprise={$poste.id_entreprise}">{foreach $entreprises  as $entreprise}{if $entreprise.id_entreprise eq $poste.id_entreprise} {$entreprise.employeur} {/if}{/foreach}</a></td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Site internet</h4></td>
+				    		<td> <a href="{if strpos($poste.website,"http") !==0}http://{/if}{$poste.website}" target="_blank">{$poste.website}</a></td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Adresse</h4></td>
+				    		<td>{$poste.adresse} {$poste.code_postal} {$poste.ville}</td>
+				    	</tr> 
+				    	<tr>
+				    		<td><h4>Type de contrat</h4></td>
+				    		<td>{$poste.type}</td>
+				    	</tr> 
+				    	<tr>
+				    		<td><h4>Intitulé du poste</h4></td>
+				    		<td>{$poste.activite_principale}</td>
+				    	</tr>
+				    </table> 
 				</div>
 			  </div>
 			</div>
