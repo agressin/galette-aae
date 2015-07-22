@@ -7,7 +7,7 @@ use Analog\Analog as Analog;
 class Preferences
 {
     const TABLE = 'preferences';
-    const PK = 'pref_aae_rib';
+    const PK = 'pref_aae_';
 
     /**
      * Retrieve RIB in preferences table
@@ -16,13 +16,13 @@ class Preferences
      *
      * @return array
      */
-    public function getRIB()
+    public function getPref($name)
     {
         global $zdb;
 
         try {
             $select = $zdb->select(self::TABLE);
-            $select->where->equalTo('nom_pref', self::PK);
+            $select->where->equalTo('nom_pref', self::PK . $name);
             
             $res = $zdb->execute($select);
             $res = $res->toArray();
@@ -34,7 +34,7 @@ class Preferences
             }
         } catch (\Exception $e) {
             Analog::log(
-                'Unable to retrieve RIB in preferences table : "' . $e->getMessage(),
+                'Unable to retrieve ' . $name.' in preferences table : "' . $e->getMessage(),
                 Analog::WARNING
             );
 
@@ -49,14 +49,14 @@ class Preferences
      *
      * @return boolean
      */
-    public function setRIB($rib)
+    public function setPref($name,$value)
     {
     	global $zdb;
         try {
         
         	 $data = array(
-                        'nom_pref'   => self::PK,
-                        'val_pref' => $rib
+                        'nom_pref'   => self::PK . $name,
+                        'val_pref' => $value
                     );
              //Try to insert RIB
              $insert = $zdb->insert( self::TABLE);
@@ -67,15 +67,15 @@ class Preferences
         } catch (\Exception $e) {
         	
         	 if($e->getCode() == 23000) {
-             	Analog::log('RIB already exist, try to update it' );
+             	Analog::log($name . ' already exist, try to update it' );
              	$update = $zdb->update( self::TABLE);
-                $update->set($data)->where->equalTo(nom_pref, self::PK);
+                $update->set($data)->where->equalTo(nom_pref, self::PK_RIB);
                 $edit = $zdb->execute($update);
                 return true;
                     
              }else{
             	Analog::log(
-            	    'Unable to store preferences RIB | ' . $e->getMessage(),
+            	    'Unable to store preferences ' . $name.' | ' . $e->getMessage(),
            	     	Analog::WARNING
             	);
             

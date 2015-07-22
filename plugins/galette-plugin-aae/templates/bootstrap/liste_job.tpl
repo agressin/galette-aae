@@ -101,6 +101,12 @@
 			<div class="modal fade bs-example-modal-lg-{$poste.id_poste}" tabindex="-1" role="dialog">
 			  <div class="modal-dialog modal-lg">
 				<div class="modal-content">
+				    <p><h1>Adhérent</h1> {$poste.nom_adh}</p>      
+				    <p><h5>Période</h5> {$poste.annee_ini}-{$poste.annee_fin}</p>
+				    <p><h5>Employeur</h5> {foreach $entreprises  as $entreprise}{if $entreprise.id_entreprise eq $poste.id_entreprise} {$entreprise.employeur} {/if}{/foreach}</p> 
+				    <p><h5>Adresse</h5>{$poste.adresse},{$poste.code_postal},{$poste.ville}</p> 
+				    <p><h5>Type de contrat</h5>{$poste.type}</p> 
+				    <p><h5>Intitulé du poste</h5>{$poste.activite_principale}</p> 
 				  {$poste.nom_adh}
 				  {foreach $entreprises  as $entreprise}
 								{if $entreprise.id_entreprise eq $poste.id_entreprise} {$entreprise.employeur} {/if}

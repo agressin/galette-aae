@@ -50,7 +50,12 @@ $AAE_Pref = new AAE_Preferences();
 if (isset($_POST['valid']) && $_POST['valid'] == '1') {
     //form was send normally, we try to store new values
     
-    $res = $AAE_Pref->setRIB($_POST['pref_rib']);
+    if(isset($_POST['pref_rib']))
+		$res = $AAE_Pref->setPref('rib',$_POST['pref_rib']);
+	if(isset($_POST['pref_webmaster']))
+		$res = $AAE_Pref->setPref('webmaster',$_POST['pref_webmaster']);
+	if(isset($_POST['pref_cotis']))
+		$res = $AAE_Pref->setPref('cotis',$_POST['pref_cotis']);
 
     if ( !$res ) {
         $error_detected[] = _T("RIB has not been modified!");
