@@ -1,0 +1,5 @@
+INSERT INTO galette_aae_postes SET annee_ini=2000, annee_fin=2020, id_adh=943, activite_principale="Chloé - Nantes", code_postal=44000, ville="Nantes";
+INSERT INTO galette_aae_postes SET annee_ini=2000, annee_fin=2020, id_adh=1926, activite_principale="Thomas - Stage Géodésie à l'ENSG", code_postal=77420, ville="Champs sur Marne";
+INSERT INTO galette_aae_postes SET annee_ini=2000, annee_fin=2020, id_adh=1699, activite_principale="Paul - Stage à Toulouse", code_postal=31000, ville="Toulouse";
+INSERT INTO galette_aae_postes SET annee_ini=2000, annee_fin=2020, id_adh=1711, activite_principale="Pierre - Stage à Saint-Etienne", code_postal=42000, ville="Saint-Etienne";
+INSERT INTO galette_aae_postes SET annee_ini=2000, annee_fin=2020, id_adh=1778, activite_principale="Régis - Stage à Noisiel", code_postal=77420, ville="Noisiel";
