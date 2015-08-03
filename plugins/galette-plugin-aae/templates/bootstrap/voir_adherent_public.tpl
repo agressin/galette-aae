@@ -85,9 +85,7 @@
 					<th style="width:50%" >{_T string="E-Mail"}</th>
 					<td>
 		{if $member->email ne ''}
-						<a href="{$galette_base_path}plugins/galette-plugin-aae/send_message.php?id_adh={$member->id}"><img src="{$template_subdir}images/icon-mail.png" alt="" width="16" height="16"/></a>
-		{else}
-						<img src="{$template_subdir}images/icon-empty.png" alt="" width="16" height="16"/>
+						<a href="mailto:{$member->email}">{$member->email}</a>
 		{/if}
 					</td>
 				</tr>
@@ -117,44 +115,56 @@
 					<td>
 						<a href="{$key.website}">{$key.website}</a>
 					</td>
-					<td>
-						<a href="" data-toggle="modal" data-target=".bs-example-modal-lg-{$key.id_poste}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
-					</td>	
 				</tr>
 		{/foreach}
 			</table>
 
-		{foreach $list_postes as $key}
-			<div class="modal fade bs-example-modal-lg-{$key.id_poste}" tabindex="-1" role="dialog">
-			  <div class="modal-dialog modal-lg">
-				<div class="modal-content">
-				  <table class="table"> 
-				    	<tr>
-				    		<td><h4>Période</h4> </td>
-				    		<td>{$key.annee_ini}-{if $key.annee_fin eq 0}{_T string="present"}{else}{$key.annee_fin}{/if}</td>
-				    	</tr>
-				    	<tr>
-				    		<td><h4>Employeur</h4></td>
-				    		<td> <a href="liste_job.php?id_entreprise={$key.id_entreprise}">{$key.employeur}</a></td>
-				    	</tr>
-				    	<tr>
-				    		<td><h4>Site internet</h4></td>
-				    		<td> <a href="{if strpos($key.website,"http") !==0}http://{/if}{$key.website}" target="_blank">{$key.website}</a></td>
-				    	</tr>
-				    	<tr>
-				    		<td><h4>Adresse</h4></td>
-				    		<td>{$key.adresse} {$key.code_postal} {$key.ville}</td>
-				    	</tr> 
-				    	<tr>
-				    		<td><h4>Type de contrat</h4></td>
-				    		<td>{$key.type}</td>
-				    	</tr> 
-				    	<tr>
-				    		<td><h4>Intitulé du poste</h4></td>
-				    		<td>{$key.activite_principale}</td>
-				    	</tr>
-				    </table> 
-				</div>
-			  </div>
-			</div>
-		{/foreach}
+			
+		<div class="details table-hover">
+			<legend>{_T string="Geographic situation"}</legend>
+			<div id="loading"><img src="../../templates/bootstrap/images/loading.gif" alt="{_T string="Loading..."}" title="{_T string="Loading..."}"></div>
+			<div id="noResult">{_T string="No detail found"}</div>
+			<div id="carteMembres" class="carteMembres" style="display:none;"><div id="popup"></div></div>
+		</div>
+
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+		<link rel="stylesheet" href="css/style_carte.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css">
+		<link rel="stylesheet" type="text/css" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css">
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+		<script type="text/javascript" src="http://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+		<script type="text/javascript" src="js/CarteMembres.js"></script>
+
+		<script type="text/javascript">
+			var carteMembres = false;
+
+
+			function lancerCarteMembres(id_adh) {
+				// Creation de la carte :
+				if (carteMembres === false) {
+					var options = {
+						idCarte : 'carteMembres',
+						idNoResult : 'noResult',
+						idLoading : 'loading',
+						center : [46.49839, 3.20801],
+						zoom : 6,
+						hauteurAuto : true,
+						keyMaps : 'AIzaSyCpMXa7ZJn2L7WebriShk4v8NSU4n3N-s8',
+						keyIGN : '6hjv98eu0bn2g0puikh3k1ux'
+					};
+					carteMembres = new CarteMembres(options);
+				}
+
+				// Ajout des résultats :
+				var paraAjax = {
+					type : 'GET',
+					url : 'ajax_carte.php?type=mono&id_adh='+id_adh
+				};
+				carteMembres.ajax(paraAjax);
+			}
+
+			lancerCarteMembres({$member->id});
+		</script>
+
+	
