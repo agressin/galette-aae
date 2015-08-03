@@ -19,16 +19,15 @@ class Preferences
     public function getPref($name)
     {
         global $zdb;
-
         try {
             $select = $zdb->select(self::TABLE);
-            $select->where->equalTo('nom_pref', self::PK . $name);
+            $select->where->equalTo(nom_pref, self::PK . $name);
             
             $res = $zdb->execute($select);
             $res = $res->toArray();
-            
+
             if ( count($res) > 0 ) {
-                return $res[0]["val_pref"];
+                return $res[0][val_pref];
             } else {
                 return false;
             }
@@ -55,10 +54,10 @@ class Preferences
         try {
         
         	 $data = array(
-                        'nom_pref'   => self::PK . $name,
-                        'val_pref' => $value
+                        nom_pref   => self::PK . $name,
+                        val_pref => $value
                     );
-             //Try to insert RIB
+             //Try to insert Pref
              $insert = $zdb->insert( self::TABLE);
              $insert->values($data);
              $add = $zdb->execute($insert);
@@ -69,7 +68,7 @@ class Preferences
         	 if($e->getCode() == 23000) {
              	Analog::log($name . ' already exist, try to update it' );
              	$update = $zdb->update( self::TABLE);
-                $update->set($data)->where->equalTo(nom_pref, self::PK_RIB);
+                $update->set($data)->where->equalTo(nom_pref, self::PK . $name);
                 $edit = $zdb->execute($update);
                 return true;
                     

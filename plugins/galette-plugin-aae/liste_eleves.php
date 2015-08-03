@@ -23,7 +23,7 @@ if ( !$preferences->showPublicPages($login) ) {
 }
 
 $AAE_Pref = new AAE_Preferences();
-$tpl->assign('AAE_pref', $AAE_Pref);
+$tpl->assign('AAE_Pref', $AAE_Pref);
 
 $cycles = new Cycles();
 $annuaire = new Annuaire();
