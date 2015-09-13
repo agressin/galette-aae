@@ -12,7 +12,11 @@
 	{foreach $list_postes as $key}
 			<tr>
 				<th style="width:50%" >
-					{$key.annee_ini|htmlspecialchars} - {if $key.annee_fin eq 0} {_T string="present"} {else} {$key.annee_fin|htmlspecialchars} {/if}
+					{if $key.annee_fin eq $key.annee_ini}
+	    				{$key.annee_fin}
+	    			{else}
+	    				{$key.annee_ini}-{if $key.annee_fin eq 0}{_T string="present"}{else}{$key.annee_fin}{/if}
+	    			{/if}
 				</th>
 				<td>
 					{$key.activite_principale|htmlspecialchars}

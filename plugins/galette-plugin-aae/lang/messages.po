@@ -1,4 +1,4 @@
-#: ../templates/bootstrap/liste_job.tpl:48
+#: ../templates/bootstrap/liste_job.tpl:51
 msgid "Postal code"
 msgstr ""
 
@@ -6,28 +6,33 @@ msgstr ""
 msgid "Job details of"
 msgstr ""
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:5
-msgid "Identity"
+#: ../send_message.php:75
+msgid "A problem happened while sending email to user %name"
 msgstr ""
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:43
 msgid "Birth date"
 msgstr ""
 
-#: ../gestion_postes.php:25
-msgid "Job has been successfully added."
+#: ../templates/bootstrap/aaetools.tpl:18
+msgid "Mail job"
 msgstr ""
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:114 ../templates/bootstrap/liste_job.tpl:77
+#: ../templates/bootstrap/voir_adherent_public.tpl:114 ../templates/bootstrap/voir_adherent_public.tpl:134
+#: ../templates/bootstrap/liste_job.tpl:87 ../templates/bootstrap/liste_job.tpl:110
 #: ../templates/bootstrap/gestion_postes.tpl:15
 msgid "present"
+msgstr ""
+
+#: ../aaetools.php:63
+msgid "Settings have not been modified!"
 msgstr ""
 
 #: ../templates/bootstrap/ajouter_poste.tpl:32
 msgid "CDD"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:41
+#: ../templates/bootstrap/liste_job.tpl:44
 msgid "Principal activity"
 msgstr ""
 
@@ -75,7 +80,7 @@ msgstr ""
 msgid "student"
 msgstr ""
 
-#: ../liste_eleves.php:94 ../templates/bootstrap/public_menu.tpl:6
+#: ../liste_eleves.php:100 ../templates/bootstrap/public_menu.tpl:6
 #: ../templates/bootstrap/public_menu.tpl:16 ../templates/default/public_menu.tpl:2
 #: ../templates/default/public_menu.tpl:5
 msgid "Former students list"
@@ -97,10 +102,8 @@ msgstr ""
 msgid "Merci de faire un virement avec l'intitulé 'cotis nom prenom' sur le compte suivant :"
 msgstr ""
 
-#: ../templates/bootstrap/ajouter_formation_eleve.tpl:36 ../templates/bootstrap/ajouter_formation_eleve.tpl:43
-#: ../templates/bootstrap/ajouter_poste.tpl:70 ../templates/default/ajouter_formation_eleve.tpl:36
-#: ../templates/default/ajouter_formation_eleve.tpl:43
-msgid "(yyyy format)"
+#: ../gestion_postes.php:25
+msgid "Job has been successfully added."
 msgstr ""
 
 #: ../templates/bootstrap/gestion_formations.tpl:10 ../templates/bootstrap/gestion_postes.tpl:9
@@ -112,11 +115,11 @@ msgstr ""
 msgid "Site web"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:145 ../templates/bootstrap/liste_membres_aae.tpl:148
+#: ../templates/bootstrap/liste_job.tpl:172 ../templates/bootstrap/liste_membres_aae.tpl:148
 msgid "Search"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:112
+#: ../templates/bootstrap/liste_job.tpl:139
 msgid "No job to show"
 msgstr ""
 
@@ -145,6 +148,10 @@ msgstr ""
 #: ../templates/bootstrap/liste_job.tpl:21 ../templates/bootstrap/liste_membres_aae.tpl:41
 #: ../templates/default/liste_membres_aae.tpl:21
 msgid "Refresh"
+msgstr ""
+
+#: ../templates/bootstrap/aaetools.tpl:10
+msgid "Mail webmaster"
 msgstr ""
 
 #: ../send_message.php:37
@@ -204,10 +211,6 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: ../aaetools.php:56
-msgid "RIB has not been modified!"
-msgstr ""
-
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:33 ../templates/default/ajouter_formation_eleve.tpl:33
 msgid "Beging of the formation:"
 msgstr ""
@@ -246,7 +249,7 @@ msgstr ""
 msgid "Jobs information"
 msgstr ""
 
-#: ../liste_job.php:63 ../templates/bootstrap/public_menu.tpl:9
+#: ../liste_job.php:82 ../templates/bootstrap/public_menu.tpl:9
 #: ../templates/bootstrap/public_menu.tpl:19
 msgid "Jobs list"
 msgstr ""
@@ -255,7 +258,7 @@ msgstr ""
 msgid "Add formation"
 msgstr ""
 
-#: ../templates/bootstrap/ajouter_formation_eleve.tpl:55 ../templates/bootstrap/aaetools.tpl:13
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:55 ../templates/bootstrap/aaetools.tpl:25
 #: ../templates/bootstrap/ajouter_poste.tpl:83 ../templates/bootstrap/ajouter_ent.tpl:22
 #: ../templates/default/ajouter_formation_eleve.tpl:55 ../templates/default/aaetools.tpl:13
 msgid "Save"
@@ -267,6 +270,10 @@ msgstr ""
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/default/ajouter_formation_eleve.tpl:5
 msgid "red"
+msgstr ""
+
+#: ../templates/bootstrap/aaetools.tpl:14
+msgid "Mail cotisation"
 msgstr ""
 
 #: ../voir_adherent_public.php:72
@@ -306,11 +313,11 @@ msgstr ""
 msgid "Member name"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:58
+#: ../templates/bootstrap/liste_job.tpl:61
 msgid "Year of end"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:85 ../templates/bootstrap/liste_membres_aae.tpl:100
+#: ../templates/bootstrap/liste_job.tpl:95 ../templates/bootstrap/liste_membres_aae.tpl:100
 #: ../templates/bootstrap/promotion.tpl:38
 msgid "If you see an error, please send an email to:"
 msgstr ""
@@ -339,7 +346,7 @@ msgstr ""
 msgid "Un ancien élève de l'ENSG cherche à vous contacter :"
 msgstr ""
 
-#: ../gestion_formations_eleve.php:66
+#: ../gestion_formations_eleve.php:72
 msgid "Formations managment:"
 msgstr ""
 
@@ -351,7 +358,7 @@ msgstr ""
 msgid "Please sign in to access search by name"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:146 ../templates/bootstrap/liste_membres_aae.tpl:149
+#: ../templates/bootstrap/liste_job.tpl:173 ../templates/bootstrap/liste_membres_aae.tpl:149
 msgid "Show"
 msgstr ""
 
@@ -376,11 +383,11 @@ msgstr ""
 msgid "Entrepise"
 msgstr ""
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:73 ../templates/bootstrap/liste_job.tpl:52
+#: ../templates/bootstrap/voir_adherent_public.tpl:73 ../templates/bootstrap/liste_job.tpl:55
 msgid "City"
 msgstr ""
 
-#: ../aaetools.php:64 ../templates/bootstrap/menu.tpl:5
+#: ../aaetools.php:71 ../templates/bootstrap/menu.tpl:5
 #: ../templates/default/menu.tpl:4
 msgid "AAE Tools"
 msgstr ""
@@ -447,12 +454,12 @@ msgstr ""
 msgid "Go back"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:144 ../templates/bootstrap/liste_membres_aae.tpl:147
+#: ../templates/bootstrap/liste_job.tpl:171 ../templates/bootstrap/liste_membres_aae.tpl:147
 #: ../templates/bootstrap/promotion.tpl:52
 msgid "Next"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:45
+#: ../templates/bootstrap/liste_job.tpl:48
 msgid "Address"
 msgstr ""
 
@@ -464,7 +471,7 @@ msgstr ""
 msgid "please create a member"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:147 ../templates/bootstrap/liste_membres_aae.tpl:150
+#: ../templates/bootstrap/liste_job.tpl:174 ../templates/bootstrap/liste_membres_aae.tpl:150
 msgid "Pages"
 msgstr ""
 
@@ -480,8 +487,8 @@ msgstr ""
 msgid "Mail sent to user %name"
 msgstr ""
 
-#: ../send_message.php:75
-msgid "A problem happened while sending email to user %name"
+#: ../templates/bootstrap/voir_adherent_public.tpl:5
+msgid "Identity"
 msgstr ""
 
 #: ../templates/bootstrap/liste_job.tpl:31
@@ -500,7 +507,7 @@ msgstr ""
 msgid "Select a member "
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:61
+#: ../templates/bootstrap/liste_job.tpl:64
 msgid "Details"
 msgstr ""
 
@@ -542,16 +549,19 @@ msgstr ""
 msgid "[W]"
 msgstr ""
 
-#: ../templates/bootstrap/aaetools.tpl:7 ../templates/default/aaetools.tpl:7
+#: ../templates/bootstrap/aaetools.tpl:7 ../templates/bootstrap/aaetools.tpl:11
+#: ../templates/bootstrap/aaetools.tpl:15 ../templates/bootstrap/aaetools.tpl:19
+#: ../templates/default/aaetools.tpl:7
 msgid "(Max 255 characters)"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:8 ../templates/bootstrap/gestion_postes.tpl:6
-msgid "Entreprise"
+#: ../aaetools.php:65
+msgid "Settings have been successfully modified."
 msgstr ""
 
-#: ../aaetools.php:58
-msgid "RIB has been successfully modified."
+#: ../templates/bootstrap/liste_job.tpl:8 ../templates/bootstrap/liste_job.tpl:41
+#: ../templates/bootstrap/gestion_postes.tpl:6
+msgid "Entreprise"
 msgstr ""
 
 #: ../ajouter_poste.php:131
@@ -566,7 +576,7 @@ msgstr ""
 msgid "Ajouter un employeur"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:55
+#: ../templates/bootstrap/liste_job.tpl:58
 msgid "Begin year"
 msgstr ""
 
@@ -575,7 +585,7 @@ msgstr ""
 msgid "students"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:143 ../templates/bootstrap/liste_membres_aae.tpl:146
+#: ../templates/bootstrap/liste_job.tpl:170 ../templates/bootstrap/liste_membres_aae.tpl:146
 #: ../templates/bootstrap/promotion.tpl:51
 msgid "Previous"
 msgstr ""
@@ -599,5 +609,11 @@ msgstr ""
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:22 ../templates/default/ajouter_formation_eleve.tpl:22
 msgid "Formation details"
+msgstr ""
+
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:36 ../templates/bootstrap/ajouter_formation_eleve.tpl:43
+#: ../templates/bootstrap/ajouter_poste.tpl:70 ../templates/default/ajouter_formation_eleve.tpl:36
+#: ../templates/default/ajouter_formation_eleve.tpl:43
+msgid "(yyyy format)"
 msgstr ""
 

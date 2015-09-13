@@ -146,6 +146,6 @@
         </script>
         {else}
         {_T string="You are not allowed to modify your formations. However, if you see an error, please send an email to:"}
-        <a href='mailto:{$AAE_Pref->getPref('webmaster')}'>{$AAE_Pref->getPref('webmaster')}</a>
+        <a href='mailto:{$AAE_Pref->getPref('mail_webmaster')}'>{$AAE_Pref->getPref('mail_webmaster')}</a>
         {/if}
 

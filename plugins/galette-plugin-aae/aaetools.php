@@ -53,21 +53,23 @@ if (isset($_POST['valid']) && $_POST['valid'] == '1') {
     if(isset($_POST['pref_rib']))
 		$res = $AAE_Pref->setPref('rib',$_POST['pref_rib']);
 	if(isset($_POST['pref_webmaster']))
-		$res = $AAE_Pref->setPref('webmaster',$_POST['pref_webmaster']);
+		$res = $AAE_Pref->setPref('mail_webmaster',$_POST['pref_webmaster']);
 	if(isset($_POST['pref_cotis']))
-		$res = $AAE_Pref->setPref('cotis',$_POST['pref_cotis']);
-
+		$res = $AAE_Pref->setPref('mail_cotis',$_POST['pref_cotis']);
+	if(isset($_POST['pref_job']))
+		$res = $AAE_Pref->setPref('mail_job',$_POST['pref_job']);
+		
     if ( !$res ) {
-        $error_detected[] = _T("RIB has not been modified!");
+        $error_detected[] = _T("Settings have not been modified!");
     } else {
-        $success_detected[] = _T("RIB has been successfully modified.");
+        $success_detected[] = _T("Settings have been successfully modified.");
     }
 }
 $tpl->assign('error_detected', $error_detected);
 $tpl->assign('success_detected', $success_detected);
 
 $tpl->assign('page_title', _T("AAE Tools"));
-$tpl->assign('AAE_pref', $AAE_Pref);
+$tpl->assign('AAE_Pref', $AAE_Pref);
 
 $content = $tpl->fetch('aaetools.tpl', AAETOOLS_SMARTY_PREFIX);
 //$content="Une page visible que par les gens du bureau";

@@ -27,7 +27,7 @@ if ( !$login->isLogged() ) {
 }
 
 $AAE_Pref = new AAE_Preferences();
-$tpl->assign('AAE_pref', $AAE_Pref);
+$tpl->assign('AAE_Pref', $AAE_Pref);
 
 $adherent = new Adherent();
 $postes = new Postes();

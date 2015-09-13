@@ -93,7 +93,7 @@
 				</tbody>
 			</table>
 			{_T string="If you see an error, please send an email to:"}
-			<a href='mailto:{$AAE_Pref->getPref('webmaster')}'>{$AAE_Pref->getPref('webmaster')}</a>
+			<a href='mailto:{$AAE_Pref->getPref('mail_webmaster')}'>{$AAE_Pref->getPref('mail_webmaster')}</a>
 
 
 
@@ -107,7 +107,12 @@
 				    	</tr>    
 				    	<tr>
 				    		<td><h4>Période</h4> </td>
-				    		<td>{$poste.annee_ini}-{if $poste.annee_fin eq 0}{_T string="present"}{else}{$poste.annee_fin}{/if}</td>
+				    		<td> {if $poste.annee_fin eq $poste.annee_ini}
+				    				{$poste.annee_fin}
+				    			{else}
+				    				{$poste.annee_ini}-{if $poste.annee_fin eq 0}{_T string="present"}{else}{$poste.annee_fin}{/if}
+				    			{/if}
+				    		</td>
 				    	</tr>
 				    	<tr>
 				    		<td><h4>Employeur</h4></td>
