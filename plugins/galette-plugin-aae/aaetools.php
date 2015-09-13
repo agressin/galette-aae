@@ -58,6 +58,8 @@ if (isset($_POST['valid']) && $_POST['valid'] == '1') {
 		$res = $AAE_Pref->setPref('mail_cotis',$_POST['pref_cotis']);
 	if(isset($_POST['pref_job']))
 		$res = $AAE_Pref->setPref('mail_job',$_POST['pref_job']);
+	if(isset($_POST['pref_montant']))
+		$res = $AAE_Pref->setPref('montant_cotis',$_POST['pref_montant']);
 		
     if ( !$res ) {
         $error_detected[] = _T("Settings have not been modified!");

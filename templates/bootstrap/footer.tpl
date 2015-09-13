@@ -1,4 +1,4 @@
-     <div class="col-width">
+
      <footer class="site-footer no-widgets" role="contentinfo">
 		
 			<a id="copyright" href="http://galette.eu/">Galette {$GALETTE_VERSION}</a>
@@ -7,7 +7,6 @@
             <br/><a id="sysinfos" href="{$galette_base_path}sysinfos.php">{_T string="System informations"}</a>
 {/if}
      
-	</footer><!-- .site-footer -->
-    </div><!-- .col-width -->   
+	</footer><!-- .site-footer --> 
 <script type="text/javascript" src="{$template_subdir}js/combined-min.js"></script>
 

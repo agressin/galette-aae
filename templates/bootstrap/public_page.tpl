@@ -119,18 +119,18 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 			<div id="primary" class="content-area">
 				<div id="main" class="site-main" role="main">
 
-<article class="page">
-	<header class="entry-header">
-		<h1 class="entry-title">{$page_title}</h1>   
-    </header><!-- .entry-header -->
-        {include file="global_messages.tpl"}
-        {$content}
-</article><!-- #post-## -->
+				<article class="page">
+					<header class="entry-header">
+						<h1 class="entry-title">{$page_title}</h1>   
+					</header><!-- .entry-header -->
+						{include file="global_messages.tpl"}
+						{$content}
+				</article><!-- #post-## -->
 
 			</div><!-- #main -->
 		</div><!-- #primary -->
 	</div><!-- #content -->
-        {include file="footer.tpl"}
-</div><!-- .col-width -->
+	{include file="footer.tpl"}
+	</div><!-- .col-width -->
     </body>
 </html>

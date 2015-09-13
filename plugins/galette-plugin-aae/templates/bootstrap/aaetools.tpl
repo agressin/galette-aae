@@ -18,6 +18,10 @@
                     <label for="pjob" class="bline">{_T string="Mail job"}</label> 
                     <input type="text" name="pref_job" id="pjob" value="{$AAE_Pref->getPref("mail_job")}" maxlength="255" size="32"/> <span class="exemple">{_T string="(Max 255 characters)"}</span>
                 </p>
+                <p>
+                 <label for="pmontant" class="bline">{_T string="Amount of contributions"}</label> 
+                    <textarea name="pref_montant" id="pmontant"  size="32" rows="5">{$AAE_Pref->getPref("montant_cotis")}</textarea>
+                </p>            
             </fieldset>
         </div>
         <div class="button-container">

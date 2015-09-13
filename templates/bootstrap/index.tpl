@@ -13,7 +13,7 @@
 						<label for="password" class="control-label col-sm-4">{_T string="Password"}</label>
 						<div class="col-sm-6">
 							<input type="password" class="form-control" name="password" id="password" placeholder="{_T string="Password"}">
-						</div
+						</div>
 						<div class="col-sm-2">
 							<a href="{$galette_base_path}lostpasswd.php">{_T string="Lost your password?"}</a>
 						</div>

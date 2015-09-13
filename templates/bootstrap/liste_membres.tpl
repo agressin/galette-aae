@@ -20,7 +20,6 @@
         </form>
         <table class=" table table-striped">
             <thead>
-
                 <tr>
                     <th class="left">
                         <a href="?tri={php}echo Galette\Repository\Members::ORDERBY_NAME;{/php}" class="listing">
@@ -71,7 +70,11 @@
                     {else}
                         <img src="{$template_subdir}images/icon-empty.png" alt="" width="10" height="12"/>
                     {/if}
-
+                    
+                    {if $member->email ne ''}
+                    <a href="{$galette_base_path}plugins/galette-plugin-aae/send_message.php?id_adh={$member->id}"><img src="{$template_subdir}images/icon-mail.png" alt="" width="16" height="16"/></a>
+					{/if}
+					
                     {if $member->website ne ''}
                         <a href="{$member->website}">{$member->sfullname}</a>
                     {else}
