@@ -27,7 +27,11 @@ Just put a {include file='common_header.tpl'} into the head tag.
  
          <!-- BOOSTRAP  -->
 		<link href="{$template_subdir}bootstrap/css/bootstrap.css" rel="stylesheet">
-		<script type="text/javascript" src="{$template_subdir}bootstrap/js/bootstrap.js"></script>		
+		<script type="text/javascript" src="{$template_subdir}bootstrap/js/bootstrap.js"></script>
+		<!-- BOOSTRAP SELECT -->
+		<link href="{$template_subdir}bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet"/>	
+		<script type="text/javascript" src="{$template_subdir}bootstrap-select/js/bootstrap-select.min.js"></script>
+
         
         {* IE8 doe not know html5 tags *}
         <!--[if lte IE 9]>

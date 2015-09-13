@@ -303,7 +303,7 @@ msgstr "Mailings"
 #: ../lib/Galette/Entity/PdfModel.php:478
 #: ../lib/Galette/Filters/MembersList.php:294
 #: ../templates/bootstrap/gestion_intitule_content.tpl:10
-#: ../templates/bootstrap/liste_membres.tpl:27
+#: ../templates/bootstrap/liste_membres.tpl:26
 #: ../templates/bootstrap/ajax_members.tpl:6
 #: ../templates/bootstrap/export.tpl:21 ../templates/bootstrap/export.tpl:57
 #: ../templates/bootstrap/group_persons.tpl:5
@@ -3021,7 +3021,7 @@ msgstr "Trombinoscope"
 msgid "Do you really want to delete this transaction of the database ?"
 msgstr "Do you really want to delete this transaction of the database ?"
 
-#: ../templates/bootstrap/liste_membres.tpl:50
+#: ../templates/bootstrap/liste_membres.tpl:49
 #: ../templates/bootstrap/group.tpl:4 ../templates/bootstrap/group.tpl:9
 #: ../templates/default/liste_membres.tpl:51 ../templates/default/group.tpl:4
 #: ../templates/default/group.tpl:9
@@ -4362,7 +4362,7 @@ msgstr "Records per page:"
 msgid "Some warnings has been thrown:"
 msgstr "Some warnings has been thrown:"
 
-#: ../templates/bootstrap/liste_membres.tpl:39
+#: ../templates/bootstrap/liste_membres.tpl:38
 #: ../templates/bootstrap/ajax_members.tpl:9
 #: ../templates/bootstrap/group_persons.tpl:8
 #: ../templates/bootstrap/preferences.tpl:364
@@ -6791,7 +6791,7 @@ msgstr "Contributions deleted (%list)"
 msgid "Font size:"
 msgstr "Font size:"
 
-#: ../templates/bootstrap/liste_membres.tpl:96
+#: ../templates/bootstrap/liste_membres.tpl:99
 #: ../templates/bootstrap/trombinoscope.tpl:29
 #: ../templates/default/liste_membres.tpl:101
 #: ../templates/default/trombinoscope.tpl:7

@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Mon Jul 20 17:02:18 2015 (GMT)
+// This file was automatically generated on Sun Sep 13 20:27:26 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -639,7 +639,7 @@ $lang['%s on Google+!'] = '%s sur Google+&nbsp;!';
 // ../templates/bootstrap/page.tpl:180 ../templates/bootstrap/gestion_adherents.tpl:329 ../templates/default/page.tpl:180 ../templates/default/gestion_adherents.tpl:335 
 $lang['Existing mailing'] = 'E-Mailings existants';
 
-// ../templates/bootstrap/liste_membres.tpl:50 ../templates/bootstrap/group.tpl:4 ../templates/bootstrap/group.tpl:9 ../templates/default/liste_membres.tpl:51 ../templates/default/group.tpl:4 ../templates/default/group.tpl:9 
+// ../templates/bootstrap/liste_membres.tpl:49 ../templates/bootstrap/group.tpl:4 ../templates/bootstrap/group.tpl:9 ../templates/default/liste_membres.tpl:51 ../templates/default/group.tpl:4 ../templates/default/group.tpl:9 
 $lang['Informations'] = 'Informations';
 
 // ../templates/bootstrap/mailing_adherents.tpl:281 ../templates/default/mailing_adherents.tpl:281 
@@ -1482,7 +1482,7 @@ $lang['Please make sure to select one file to import.'] = 'Assurez-vous de séle
 // ../templates/bootstrap/preferences.tpl:256 ../templates/default/preferences.tpl:267 
 $lang['Label generation parameters'] = 'Paramètres de génération d\'étiquettes';
 
-// ../templates/bootstrap/liste_membres.tpl:39 ../templates/bootstrap/ajax_members.tpl:9 ../templates/bootstrap/group_persons.tpl:8 ../templates/bootstrap/preferences.tpl:364 ../templates/bootstrap/gestion_adherents.tpl:77 ../templates/default/liste_membres.tpl:35 ../templates/default/group_persons.tpl:8 ../templates/default/preferences.tpl:375 ../templates/default/gestion_adherents.tpl:77 
+// ../templates/bootstrap/liste_membres.tpl:38 ../templates/bootstrap/ajax_members.tpl:9 ../templates/bootstrap/group_persons.tpl:8 ../templates/bootstrap/preferences.tpl:364 ../templates/bootstrap/gestion_adherents.tpl:77 ../templates/default/liste_membres.tpl:35 ../templates/default/group_persons.tpl:8 ../templates/default/preferences.tpl:375 ../templates/default/gestion_adherents.tpl:77 
 $lang['Nickname'] = 'Pseudo';
 
 // ../templates/bootstrap/gestion_textes.tpl:15 ../templates/default/gestion_textes.tpl:15 
@@ -1758,7 +1758,7 @@ $lang['Plugin \'%name\' requires a database to work. These screens will help you
 // ../templates/bootstrap/preferences.tpl:204 ../templates/default/preferences.tpl:215 
 $lang['Using a SMTP server (slower)'] = 'Utilisation d\'un SMTP (plus lent)';
 
-// ../groups_list.php:142 ../attendance_sheet.php:195 ../lib/Galette/Entity/PdfModel.php:478 ../lib/Galette/Filters/MembersList.php:294 ../templates/bootstrap/gestion_intitule_content.tpl:10 ../templates/bootstrap/liste_membres.tpl:27 ../templates/bootstrap/ajax_members.tpl:6 ../templates/bootstrap/export.tpl:21 ../templates/bootstrap/export.tpl:57 ../templates/bootstrap/group_persons.tpl:5 ../templates/bootstrap/configurer_fiche_content.tpl:5 ../templates/bootstrap/ajax_groups.tpl:6 ../templates/bootstrap/import.tpl:16 ../templates/bootstrap/gestion_adherents.tpl:65 ../templates/bootstrap/gestion_adherents.tpl:222 ../templates/bootstrap/gestion_adherents.tpl:228 ../templates/bootstrap/plugins.tpl:5 ../templates/default/gestion_intitule_content.tpl:10 ../templates/default/liste_membres.tpl:23 ../templates/default/ajax_members.tpl:6 ../templates/default/export.tpl:21 ../templates/default/export.tpl:57 ../templates/default/group_persons.tpl:5 ../templates/default/configurer_fiche_content.tpl:5 ../templates/default/ajax_groups.tpl:6 ../templates/default/import.tpl:16 ../templates/default/gestion_adherents.tpl:65 ../templates/default/gestion_adherents.tpl:228 ../templates/default/gestion_adherents.tpl:234 ../templates/default/plugins.tpl:5 
+// ../groups_list.php:142 ../attendance_sheet.php:195 ../lib/Galette/Entity/PdfModel.php:478 ../lib/Galette/Filters/MembersList.php:294 ../templates/bootstrap/gestion_intitule_content.tpl:10 ../templates/bootstrap/liste_membres.tpl:26 ../templates/bootstrap/ajax_members.tpl:6 ../templates/bootstrap/export.tpl:21 ../templates/bootstrap/export.tpl:57 ../templates/bootstrap/group_persons.tpl:5 ../templates/bootstrap/configurer_fiche_content.tpl:5 ../templates/bootstrap/ajax_groups.tpl:6 ../templates/bootstrap/import.tpl:16 ../templates/bootstrap/gestion_adherents.tpl:65 ../templates/bootstrap/gestion_adherents.tpl:222 ../templates/bootstrap/gestion_adherents.tpl:228 ../templates/bootstrap/plugins.tpl:5 ../templates/default/gestion_intitule_content.tpl:10 ../templates/default/liste_membres.tpl:23 ../templates/default/ajax_members.tpl:6 ../templates/default/export.tpl:21 ../templates/default/export.tpl:57 ../templates/default/group_persons.tpl:5 ../templates/default/configurer_fiche_content.tpl:5 ../templates/default/ajax_groups.tpl:6 ../templates/default/import.tpl:16 ../templates/default/gestion_adherents.tpl:65 ../templates/default/gestion_adherents.tpl:228 ../templates/default/gestion_adherents.tpl:234 ../templates/default/plugins.tpl:5 
 $lang['Name'] = 'Nom';
 
 // ../templates/bootstrap/gestion_transactions.tpl:16 ../templates/default/gestion_transactions.tpl:24 
@@ -3702,7 +3702,7 @@ $lang['Email sent is disabled in the preferences. Ask galette admin'] = 'L\'envo
 // ../templates/bootstrap/ajouter_transaction.tpl:5 ../templates/default/ajouter_transaction.tpl:5 
 $lang['Transaction details'] = 'Détails de la transaction';
 
-// ../templates/bootstrap/liste_membres.tpl:96 ../templates/bootstrap/trombinoscope.tpl:29 ../templates/default/liste_membres.tpl:101 ../templates/default/trombinoscope.tpl:7 
+// ../templates/bootstrap/liste_membres.tpl:99 ../templates/bootstrap/trombinoscope.tpl:29 ../templates/default/liste_membres.tpl:101 ../templates/default/trombinoscope.tpl:7 
 $lang['No member to show'] = 'Aucun adhérent à afficher';
 
 // ../templates/bootstrap/gestion_textes.tpl:67 ../templates/default/gestion_textes.tpl:67 
