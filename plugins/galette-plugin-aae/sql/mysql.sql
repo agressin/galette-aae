@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS galette_aae_cycles (
-  id_cycle int(10) NOT NULL AUTO_INCREMENT,
+  id_cycle int(10) unsigned NOT NULL AUTO_INCREMENT,
   nom varchar(60) NOT NULL,
   PRIMARY KEY (id_cycle)
 );
@@ -12,7 +12,47 @@ CREATE TABLE IF NOT EXISTS galette_aae_formations (
   annee_fin int(4) NOT NULL,
   id_adh int(10) unsigned NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (id_adh) REFERENCES galette_adherents (id_adh)
+  FOREIGN KEY (id_adh) REFERENCES galette_adherents (id_adh),
+  FOREIGN KEY (id_cycle) REFERENCES galette_cycles (id_cycle)
+);
+
+
+CREATE TABLE IF NOT EXISTS galette_aae_entreprises (
+  id_entreprise int(10) unsigned NOT NULL AUTO_INCREMENT,
+  employeur varchar(160) NOT NULL DEFAULT '',
+  website varchar(160)  DEFAULT '',
+  PRIMARY KEY (id_entreprise)
+);
+
+CREATE TABLE IF NOT EXISTS galette_aae_postes (
+  id_poste int(10) unsigned NOT NULL AUTO_INCREMENT,
+  id_adh int(10) unsigned NOT NULL,
+  id_entreprise int(10) unsigned NOT NULL,
+  type enum('Stage','CDD','CDI') NOT NULL,
+  titre text DEFAULT '',
+  activites text DEFAULT '',
+  adresse text DEFAULT '',
+  annee_ini int(4) unsigned NOT NULL DEFAULT '2015',
+  annee_fin int(4) unsigned DEFAULT NULL,
+  PRIMARY KEY (id_poste),
+  FOREIGN KEY (id_adh) REFERENCES galette_adherents (id_adh),
+  FOREIGN KEY (id_entreprise) REFERENCES galette_aae_entreprises (id_entreprise)
+);
+
+
+CREATE TABLE IF NOT EXISTS galette_aae_domaines (
+  id_domaine int(10) unsigned NOT NULL AUTO_INCREMENT,
+  nom varchar(60) NOT NULL,
+  PRIMARY KEY (id_domaine)
+);
+
+CREATE TABLE IF NOT EXISTS galette_aae_liens_poste_domaine (
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  id_poste int(10) unsigned NOT NULL,
+  id_domaine int(10) unsigned NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (id_poste) REFERENCES galette_aae_postes (id_poste),
+  FOREIGN KEY (id_domaine) REFERENCES galette_aae_domaines (id_domaine)
 );
 
 CREATE TABLE IF NOT EXISTS galette_aae_offres (
@@ -39,27 +79,3 @@ CREATE TABLE IF NOT EXISTS galette_aae_offres (
   FOREIGN KEY (id_adh) REFERENCES galette_adherents (id_adh)
 );
 
-CREATE TABLE IF NOT EXISTS `galette_aae_postes` (
-  `id_poste` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `annee_ini` int(4) unsigned NOT NULL DEFAULT '2015',
-  `annee_fin` int(4) unsigned DEFAULT NULL,
-  `activite_principale` text,
-  `encadrement` boolean,
-  `nb_personne_encadre` int(11) unsigned DEFAULT NULL,
-  `adresse` varchar(160) DEFAULT '',
-  `code_postal` int(5) unsigned,
-  `ville` varchar(160)  DEFAULT '',
-  `type` varchar(10)  DEFAULT '',
-  `id_adh` int(10) unsigned NOT NULL,
-  `id_entreprise` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id_poste`),
-  KEY `id_adh` (`id_adh`),
-  KEY `id_entreprise` (`id_entreprise`)
-);
-
-CREATE TABLE IF NOT EXISTS `galette_aae_entreprises` (
-  `id_entreprise` int(10) NOT NULL AUTO_INCREMENT,
-  `employeur` varchar(160) NOT NULL DEFAULT '',
-  `website` varchar(160)  DEFAULT '',
-  PRIMARY KEY (`id_entreprise`)
-);

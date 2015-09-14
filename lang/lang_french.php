@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Sun Sep 13 20:27:26 2015 (GMT)
+// This file was automatically generated on Mon Sep 14 16:18:57 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -3301,7 +3301,7 @@ $lang['Trying to load mailing while mail is disabled in preferences.'] = 'Tentat
 $lang['Page %i'] = 'Page %i';
 
 // ../templates/bootstrap/lostpasswd.tpl:10 
-$lang['Username or email'] = 'Identifiant ou adresse e-mail&nbsp;:';
+$lang['Username or email'] = 'Identifiant ou adresse e-mail';
 
 // ../templates/bootstrap/ajax_plugins_initdb.tpl:24 
 $lang['Your current %name version is comprised between'] = 'Votre version actuelle de %name est comprise entre';

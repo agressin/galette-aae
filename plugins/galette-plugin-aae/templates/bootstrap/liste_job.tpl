@@ -41,18 +41,10 @@
 								{_T string="Entreprise"}
 						</th>
 						<th class="left">
-								{_T string="Principal activity"}
+								{_T string="Title"}
 						</th>
-						{*
 						<th class="left">
 								{_T string="Address"}
-						</th>
-						<th class="left">
-								{_T string="Postal code"}
-						</th>
-						*}
-						<th class="left">
-								{_T string="City"}
 						</th>
 						<th class="left">
 								{_T string="Begin year"}
@@ -77,12 +69,8 @@
 						{/foreach}
 						</a>
 						</td>
-						<td class="nowrap">{$poste.activite_principale}</td>
-						{*
+						<td class="nowrap">{$poste.titre}</td>
 						<td class="nowrap">{$poste.adresse}</td>
-						<td class="nowrap">{$poste.code_postal}</td>
-						*}
-						<td class="nowrap">{$poste.ville}</td>
 						<td class="nowrap">{$poste.annee_ini}</td>
 						<td class="nowrap">{if $poste.annee_fin eq 0}{_T string="present"}{else}{$poste.annee_fin}{/if}</td>
 						<td>
@@ -124,7 +112,7 @@
 				    	</tr>
 				    	<tr>
 				    		<td><h4>Adresse</h4></td>
-				    		<td>{$poste.adresse} {$poste.code_postal} {$poste.ville}</td>
+				    		<td>{$poste.adresse}</td>
 				    	</tr> 
 				    	<tr>
 				    		<td><h4>Type de contrat</h4></td>
@@ -132,7 +120,11 @@
 				    	</tr> 
 				    	<tr>
 				    		<td><h4>Intitulé du poste</h4></td>
-				    		<td>{$poste.activite_principale}</td>
+				    		<td>{$poste.titre}</td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Compétences</h4></td>
+				    		<td>{$poste.domaines}</td>
 				    	</tr>
 				    </table> 
 				</div>

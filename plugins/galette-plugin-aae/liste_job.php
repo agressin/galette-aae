@@ -18,6 +18,9 @@ use Galette\AAE\Postes as Postes;
 require_once 'lib/GaletteAAE/Entreprises.php';
 use Galette\AAE\Entreprises as Entreprises;
 
+require_once 'lib/GaletteAAE/Domaines.php';
+use Galette\AAE\Domaines as Domaines;
+
 require_once 'lib/GaletteAAE/Preferences.php';
 use Galette\AAE\Preferences as AAE_Preferences;
 
@@ -32,6 +35,7 @@ $tpl->assign('AAE_Pref', $AAE_Pref);
 $adherent = new Adherent();
 $postes = new Postes();
 $entreprises = new Entreprises();
+$domaines = new Domaines();
 
 //Recuperation entreprises
 $allEntreprises = $entreprises->getAllEntreprises(true);
@@ -69,6 +73,7 @@ if($is_valid) {
         $postes[$key]['id_entreprise'] = $ent['id_entreprise'];
         $postes[$key]['employeur'] = $ent['employeur'];
         $postes[$key]['website'] = $ent['website'];
+        $postes[$key]['domaines'] = $domaines->getDomainesFromPosteToString($row['id_poste']);
 	}
 	$tpl->assign('postes', $postes);
 	$tpl->assign('param_selected',true);

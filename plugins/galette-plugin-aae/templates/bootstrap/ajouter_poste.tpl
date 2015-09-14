@@ -26,17 +26,18 @@
                 </label>
             </p>
             <p>
-                <select class="selectpicker" name="type" id="type" {if {$vis} eq True} disabled {/if} title="{_T string="Select a type"}">
+                <select class="selectpicker" name="type" id="type" required {if {$vis} eq True} disabled {/if} title="{_T string="Select a type"}">
                         <option value="Stage" {if {$poste.type} eq "Stage"} selected="selected"{/if}>{_T string="Stage"}</option>
                         <option value="CDD"   {if {$poste.type} eq "CDD"}   selected="selected"{/if}>{_T string="CDD"}</option>
                         <option value="CDI"   {if {$poste.type} eq "CDI"}   selected="selected"{/if}>{_T string="CDI"}</option>
                 </select>
             </p>
+            {$poste.type}
             <p>
-                <label class="bline" for="job_title" >
+                <label class="bline" for="titre" >
                         {_T string="Job title"}
                 </label>
-                <input class="text" type="text" name="job_title" id="job_title" value="{$poste.title}" maxlength="100" required {if {$vis} eq True} disabled {/if}/>
+                <input class="text" type="text" name="titre" id="titre" value="{$poste.titre}" maxlength="100" required {if {$vis} eq True} disabled {/if}/>
             </p>
             <p>
                 <label class="bline" for="activites">
@@ -50,10 +51,10 @@
                 </label>
             </p>
             <p>
-            	<select class="selectpicker" name="domaines" id="domaines" {if {$vis} eq True} disabled {/if} multiple title={_T string="Select one or more skill(s)"}>
-                        <option value="Photogrammétrie" >Photogrammétrie</option>
-                        <option value="Géodésie" >Géodésie</option>
-                        <option value="Cartographie" >Cartographie</option>
+            	<select class="selectpicker" name="domaines[]" id="domaines" {if {$vis} eq True} disabled {/if} multiple title="{_T string="Select one or more skill(s)"}">
+            		{foreach from=$domaines key=k item=d}
+        				<option value="{$k}"{if in_array($k, $poste.domaines)} selected="selected"{/if}>{$d|htmlspecialchars}</option>
+    				{/foreach}
                 </select>
             </p>
             <p>

@@ -2,7 +2,7 @@
 		 <thead>
             <tr>
                 <th class="listing left">{_T string="Period"}</th>
-                <th class="listing left">{_T string="Speciality"}</th>
+                <th class="listing left">{_T string="Title"}</th>
                 <th class="listing left date_row"> {_T string="Entreprise"} </th>
                 <th class="listing left date_row"> {_T string="Site web"} </th>
                 {if $haveRights}
@@ -11,7 +11,7 @@
         </thead>
 	{foreach $list_postes as $key}
 			<tr>
-				<th style="width:50%" >
+				<th>
 					{if $key.annee_fin eq $key.annee_ini}
 	    				{$key.annee_fin}
 	    			{else}
@@ -19,7 +19,7 @@
 	    			{/if}
 				</th>
 				<td>
-					{$key.activite_principale|htmlspecialchars}
+					{$key.titre|htmlspecialchars}
 				</td>
 				<td>
 					<a href="liste_job.php?id_entreprise={$key.id_entreprise}">{$key.employeur|htmlspecialchars}</a>

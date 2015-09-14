@@ -12,8 +12,12 @@ use Galette\AAE\Postes as Postes;
 require_once 'lib/GaletteAAE/Entreprises.php';
 use Galette\AAE\Entreprises as Entreprises;
 
+require_once 'lib/GaletteAAE/Domaines.php';
+use Galette\AAE\Domaines as Domaines;
+
 $postes = new Postes();
 $entreprises = new Entreprises();
+$domaines = new Domaines();
 $member = new Galette\Entity\Adherent();
 
 
@@ -84,18 +88,16 @@ if( isset($_POST['valid']) ){
 	$res = $postes->setPoste(
 		$id_poste,
 		$id_adh,
-		$_POST['activite_principale'],
-		$_POST['type'],
-		$_POST['encadrement'],
-		$_POST['nb_personne_encadre'],
 		$_POST['id_employeur'],
+		$_POST['type'],
+		$_POST['titre'],
+		$_POST['activites'],
+		$_POST['domaines'],
 		$_POST['adresse'],
-		$_POST['code_postal'],
-		$_POST['ville'],
 		$_POST['annee_ini'],
 		$_POST['annee_fin']
 	);
-	var_dump($res);
+	
 	if($res){
 		$id_poste = $res;
 		
@@ -122,7 +124,10 @@ if( isset($_POST['valid']) ){
 #----------VISUALISATION / MODIFICATION ----------#
 if($id_poste != ''){
     $tpl->assign('id_poste', $id_poste);
+    
+    $poste['domaines'] = $domaines->getDomainesFromPoste($id_poste);
     $tpl->assign('poste',$poste);
+    $tpl->assign('domaines',$domaines->getAllDomaines() );
 }
 
 if($member->id != null)

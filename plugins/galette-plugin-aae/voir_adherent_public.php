@@ -12,8 +12,12 @@ use Galette\AAE\Annuaire as Annuaire;
 require_once 'lib/GaletteAAE/Cycles.php';
 use Galette\AAE\Cycles as Cycles;
 
+require_once 'lib/GaletteAAE/Domaines.php';
+use Galette\AAE\Domaines as Domaines;
+
 use Galette\Entity\Adherent as Adherent;
 use Galette\Entity\FieldsConfig;
+
 
 if ( !$login->isLogged() ) {
     header('location:'. GALETTE_BASE_PATH .'index.php');
@@ -41,17 +45,17 @@ require_once 'lib/GaletteAAE/Entreprises.php';
 use Galette\AAE\Entreprises as Entreprises;
 $postes = new Postes();
 $entreprises = new Entreprises();
+$domaines = new Domaines();
 
-$i=0;
 
 $list_postes = $postes->getPostes($id_adh);  
-foreach ($list_postes as $pos){
+foreach ($list_postes as $i => $pos){
         $id_ent = $pos['id_entreprise'];
         $ent = $entreprises->getEntreprise($id_ent);
         $list_postes[$i]['id_entreprise'] = $ent['id_entreprise'];
         $list_postes[$i]['employeur'] = $ent['employeur'];
         $list_postes[$i]['website'] = $ent['website'];
-        $i=$i+1;
+        $list_postes[$i]['domaines'] =$domaines->getDomainesFromPosteToString($pos['id_poste']);
     }
  
 //Tri le tableau en fonction de la date de début.

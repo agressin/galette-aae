@@ -6,6 +6,9 @@ use Analog\Analog as Analog;
 use Galette\Entity\Adherent as Adherent;
 use Galette\Repository\Members as Members;
 
+require_once 'lib/GaletteAAE/Domaines.php';
+use Galette\AAE\Domaines as Domaines;
+
 /**
  * Members postes
  *
@@ -17,7 +20,7 @@ class postes
     const TABLE =  'postes';
     const PK = 'id_poste';
     const CA = 'id_adh';
-
+    
     /**
      * Retrieve member poste
      *
@@ -120,40 +123,37 @@ class postes
 
     /**
      * SetPoste
-     * @param int $id_form
-     * @param text $activite_principale
-     * @param text $type
-     * @param boolean $encadrement
-     * @param int $nb_personne_encadre
+     * @param int $id_poste
+     * @param int $id_adh
      * @param int $id_entreprise
-     * @param varchar $adresse
-     * @param int $code_postal
-     * @param varchar $ville
+     * @param text $type
+     * @param text $activites
+	 * @param array[int] $domaines
+     * @param text $adresse
      * @param int $annee_ini
      * @param int $annee_fin    
-     * @param int $id_adh
+     * 
      */
-    public function setPoste($id_form,$id_adh,$activite_principale,$type,$encadrement,$nb_personne_encadre,$id_entreprise,$adresse,$code_postal,$ville,$annee_ini,$annee_fin)
+    public function setPoste($id_poste,$id_adh,$id_entreprise,$type,$titre,$activites,$array_domaines,$adresse,$annee_ini,$annee_fin)
     {
         global $zdb;
 
         try {
+        
+        	$domaines = new Domaines();
             $res  = false;
             $data = array(
-                        'activite_principale'   => $activite_principale,
-                        'type' => $type,
-                        'encadrement' => $encadrement,
-                        'nb_personne_encadre' => $nb_personne_encadre,
-                        'id_entreprise'  => $id_entreprise,
-                        'adresse' => $adresse,
-                        'code_postal' => $code_postal,
-                        'ville' => $ville,
-                        'annee_ini'   => $annee_ini,
-                        'annee_fin' => $annee_fin,
-                        'id_adh' => $id_adh
+            			'id_adh' 		=> $id_adh,
+            			'id_entreprise' => $id_entreprise,
+                        'type' 			=> $type,
+                        'titre' 		=> $titre,
+                        'activites'  	=> $activites,
+                        'adresse' 		=> $adresse,
+                        'annee_ini'   	=> $annee_ini,
+                        'annee_fin' 	=> $annee_fin
                     );
 
-            if ( $id_form == '' ) {
+            if ( $id_poste == '' ) {
                 //Poste does not exists yet
                 $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
                 $insert->values($data);
@@ -168,17 +168,24 @@ class postes
             } else {
                 //Poste already exists, just update               
                 $update = $zdb->update(AAE_PREFIX . self::TABLE);
-                $update->set($data)->where->equalTo(self::PK,$id_form);
+                $update->set($data)->where->equalTo(self::PK,$id_poste);
                 $edit = $zdb->execute($update);
-                $res = $id_form;
+                $res = $id_poste;
+                $domaines->removeAllDomainesOfPoste($id_poste);
                 //edit == 0 does not mean there were an error, but that there
                 //were nothing to change
             }
+            
+            var_dump($array_domaines);
+            foreach( $array_domaines as $id_domaine){
+            	Analog::log('Add domaine array : ' . $id_domaine, Analog::WARNING );
+            	$domaines->addDomaineToPoste($id_domaine,$id_poste);
+            } 
             return $res ;
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set poste ' .
-                $id_form . ' | ' . $e->getMessage(),
+                $id_poste . ' | ' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
@@ -187,22 +194,23 @@ class postes
 
     /**
      * removeposte
-     * @param int $id_form
+     * @param int $id_poste
      */
-    public function removePoste($id_form)
+    public function removePoste($id_poste)
     {
         global $zdb;
 
         try {
-
+        	$domaines = new Domaines();
+			$domaines->removeAllDomainesOfPoste($id_poste);
             $delete = $zdb->delete(AAE_PREFIX . self::TABLE);
-            $delete->where->equalTo(self::PK, $id_form);
+            $delete->where->equalTo(self::PK, $id_poste);
             $zdb->execute($delete);
             return true;
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to delete poste ' .
-                $id_form . ' | ' . $e->getMessage(),
+                $id_poste . ' | ' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
