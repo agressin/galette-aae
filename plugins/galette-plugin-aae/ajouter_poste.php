@@ -127,8 +127,8 @@ if($id_poste != ''){
     
     $poste['domaines'] = $domaines->getDomainesFromPoste($id_poste);
     $tpl->assign('poste',$poste);
-    $tpl->assign('domaines',$domaines->getAllDomaines() );
 }
+$tpl->assign('domaines',$domaines->getAllDomaines() );
 
 if($member->id != null)
 	$tpl->assign('member', $member);

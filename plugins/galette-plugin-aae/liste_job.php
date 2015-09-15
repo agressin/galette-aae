@@ -79,6 +79,7 @@ if($is_valid) {
 	$tpl->assign('param_selected',true);
 } else {
 	$nb_postes = 0;
+	$tpl->assign('param_selected',false);
 }
 
 

@@ -18,7 +18,9 @@
 					<div class="row col-xs-offset-2">
 					  <div class="form-group">
 						<div class=" col-sm-10">
-						  <button type="submit"  class="btn btn-primary">{if $param_selected eq 1} {_T string="Refresh"} {else} {_T string="Continue"} {/if}</button>
+						  <button type="submit"  class="btn btn-primary">
+						  	{if $param_selected} {_T string="Refresh"} {else} {_T string="Continue"} {/if}
+						  </button>
 						  <input type="hidden" name="valid" value="1"/>
 						</div>
 					</div>
@@ -133,7 +135,8 @@
 		{/foreach}
 		
 	{else}
-		<div id="warningbox">{_T string="No job to show"}</div>
+		{if $param_selected } <div id="warningbox">{_T string="No job to show"}</div> {/if}
+		
 	{/if}
 
 		   <script type="text/javascript">
