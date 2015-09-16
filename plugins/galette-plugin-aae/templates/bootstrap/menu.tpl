@@ -14,4 +14,7 @@
         <li{if $PAGENAME eq "aaecotiz.php"} class="selected"{/if}>
 			<a href="{$galette_base_path}{$aaetools_path}aaecotiz.php" title="{_T string="Who to contribute ?"}">{_T string="Contribution"}</a>
 		</li>
+    <li{if $PAGENAME eq "gestion_offres.php"} class="selected"{/if}>
+			<a href="{$galette_base_path}{$aaetools_path}gestion_offres.php" title="{_T string="Add or modify job offers"}">{_T string="Job Offer Gestion"}</a>
+		</li>
     </ul>
