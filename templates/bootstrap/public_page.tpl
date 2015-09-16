@@ -41,7 +41,7 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<div id="head-banner-img">
-				<a href="{$galette_base_path}index.php" rel="home">
+				<a href="{$preferences->pref_website}" rel="home">
 					<img src="{$galette_base_path}/templates/bootstrap/images/cropped-AAE_bandeau.png" width="100%" height=250 alt="">
 				</a>
 			</div>
@@ -64,22 +64,15 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 			<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 			<div class="nav-menu">
 				<ul>
-					<li class="{if $PAGENAME eq "index.php"}current_{/if}page_item">
-						<a href="{$galette_base_path}index.php">{_T string="Home"}</a>
+					<li class="page_item">
+						<a href="{$preferences->pref_website}">{_T string="Home"}</a>
 					</li>
-    {if !$login->isLogged()}
+	{if !$login->isLogged()}
         {if $preferences->pref_bool_selfsubscribe eq true}
         			<li class="{if $PAGENAME eq "self_adherent.php"}current_{/if}page_item">
 						<a href="{$galette_base_path}self_adherent.php">{_T string="Subscribe"}</a>
 					</li>
         {/if}
-        <!--
-        {if $pref_mail_method neq constant('Galette\Core\GaletteMail::METHOD_DISABLED')}
-        			<li class="{if $PAGENAME eq "lostpasswd.php"}current_{/if}page_item">
-						<a href="{$galette_base_path}lostpasswd.php">{_T string="Lost your password?"}</a>
-					</li>
-        {/if}
-        -->
     {/if}
     {if $preferences->showPublicPages($login) eq true}
             		<li class="{if $PAGENAME eq "liste_membres.php"}current_{/if}page_item">
@@ -90,11 +83,6 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 						    </li>
 						</ul>
 					</li>
-			<!--
-            		<li class="{if $PAGENAME eq "trombinoscope.php"}current_{/if}page_item">
-						<a href="{$galette_base_path}public/trombinoscope.php">{_T string="Trombinoscope"}</a>
-					</li>
-			-->
             {* Include plugins menu entries *}
             {$plugins->getPublicMenus($tpl, $preferences, true)}
     {/if}
@@ -104,13 +92,14 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 					<a href="{$galette_base_path}voir_adherent.php">{$login->login}</a>
 						<ul class='children'>
 							<li class="page_item">
-						    	<a href="{$galette_base_path}voir_adherent.php" title="{_T string="View my member card"}">{_T string="My information"}</a>
-						    </li>			
-							<li class="page_item">
 						    	<a  href="{$galette_base_path}index.php?logout=1">{_T string="Log off"}</a>
 						    </li>
 						</ul>
 					</il>
+	{else}
+					<li class="{if $PAGENAME eq "index.php"}current_{/if}page_item">
+						<a href="{$galette_base_path}index.php">{_T string="Identification"}</a>
+					</li>
 	{/if}
 
 			{foreach item=langue from=$languages}
@@ -129,19 +118,19 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 
 			<div id="primary" class="content-area">
 				<div id="main" class="site-main" role="main">
-<!-- <article class="post type-post status-publish format-standard hentry"> -->
-<article class="page">
-	<header class="entry-header">
-		<h1 class="entry-title">{$page_title}</h1>   
-    </header><!-- .entry-header -->
-        {include file="global_messages.tpl"}
-        {$content}
-</article><!-- #post-## -->
+
+				<article class="page">
+					<header class="entry-header">
+						<h1 class="entry-title">{$page_title}</h1>   
+					</header><!-- .entry-header -->
+						{include file="global_messages.tpl"}
+						{$content}
+				</article><!-- #post-## -->
 
 			</div><!-- #main -->
 		</div><!-- #primary -->
 	</div><!-- #content -->
-        {include file="footer.tpl"}
-</div><!-- .col-width -->
+	{include file="footer.tpl"}
+	</div><!-- .col-width -->
     </body>
 </html>

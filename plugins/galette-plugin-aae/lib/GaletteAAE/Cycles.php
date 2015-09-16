@@ -4,6 +4,9 @@ namespace Galette\AAE;
 
 use Analog\Analog as Analog;
 
+require_once 'lib/GaletteAAE/Formations.php';
+use Galette\AAE\Formations as Formations;
+
 class Cycles
 {
     const TABLE = 'cycles';
@@ -21,8 +24,25 @@ class Cycles
         global $zdb;
 
         try {
-            $select = $zdb->selectAll(AAE_PREFIX . self::TABLE);
-            $res = $select->toArray();
+			/* select galette_aae_cycles.*
+			 * from galette_aae_cycles, galette_aae_formations
+			 * where galette_aae_cycles.id_cycle = galette_aae_formations.id_cycle
+			 * group by galette_aae_cycles.id_cycle
+            */
+            $select = $zdb->sql->select();
+
+			$select->from(array('c' => Cycles::getTableName()));
+			
+			$select->join(array('f' => Formations::getTableName()),
+				'f.id_cycle = c.id_cycle',
+				array());
+
+			$select->group('c.id_cycle');
+
+			$res = $zdb->execute($select);
+            $res = $res->toArray();
+            
+             
             if ( count($res) > 0 ) {
                 return $res;
             } else {

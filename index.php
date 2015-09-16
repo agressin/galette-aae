@@ -95,7 +95,8 @@ if (isset($_POST['ident'])) {
                     die();
                 }
             } else {
-                header('location: voir_adherent.php');
+				//header('location: voir_adherent.php');
+				header('location: plugins/galette-plugin-aae/voir_adherent_public.php');
                 die();
             }
         } else {
@@ -121,7 +122,8 @@ if ( !$login->isLogged() ) {
         header('location: gestion_adherents.php');
         die();
     } else {
-        header('location: voir_adherent.php');
+        //header('location: voir_adherent.php');
+        header('location: plugins/galette-plugin-aae/voir_adherent_public.php');
         die();
     }
 }

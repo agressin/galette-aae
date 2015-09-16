@@ -40,7 +40,7 @@ $tpl->assign(
 $tpl->assign('page_title', _T("Contribution"));
 
 $AAE_Pref = new AAE_Preferences();
-$tpl->assign('AAE_pref', $AAE_Pref);
+$tpl->assign('AAE_Pref', $AAE_Pref);
 
 $content = $tpl->fetch('aaecotiz.tpl', AAETOOLS_SMARTY_PREFIX);
 $tpl->assign('content', $content);
@@ -48,11 +48,7 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 
-//restricted to user only
-//if ( $login->isLogged() ) {
-//    $tpl->display('page.tpl', AAETOOLS_SMARTY_PREFIX);
-//} else {
-		$tpl->display('public_page.tpl');
-//}
+$tpl->display('public_page.tpl');
+
 
 ?>

@@ -13,14 +13,18 @@ use Galette\AAE\Formations as Formations;
 require_once 'lib/GaletteAAE/Cycles.php';
 use Galette\AAE\Cycles as Cycles;
 
+require_once 'lib/GaletteAAE/Preferences.php';
+use Galette\AAE\Preferences as AAE_Preferences;
+
+
 
 if ( !$login->isLogged() ) {
     header('location:'. GALETTE_BASE_PATH .'index.php');
     die();
 }
 
-$tpl->assign('page_title', _T("Formations managment"));
-
+$AAE_Pref = new AAE_Preferences();
+$tpl->assign('AAE_Pref', $AAE_Pref);
 
 $formation = new Formations();
 $cycles = new Cycles();
@@ -35,20 +39,18 @@ foreach ($allCycles as $cycle) {
 $tpl->assign('cycles', $cycles_options);
 
 $member = new Galette\Entity\Adherent();
-//Liste les formations 
-if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
-    $list_formations = $formation->getFormations($_GET['id_adh']);
-    $tpl->assign('haveRights', true);
-    $tpl->assign('mid', $_GET['id_adh']);
 
-    $member->load($_GET['id_adh']);
-    
-}else{
-    $list_formations = $formation->getFormations($login->id);
-    $tpl->assign('haveRights', false);
-    $tpl->assign('mid', $login->id);
-    $member->load($login->id);
+//Gestion des droits : on ne peut voir que ses formations, sauf si on est admin / staff
+$id_adh = $login->id;
+if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET['id_adh'] != '' ) {
+	$id_adh = $_GET['id_adh'];
 }
+
+//
+$tpl->assign('haveRights', ($login->isAdmin() || $login->isStaff()));
+
+$list_formations = $formation->getFormations($id_adh);
+$member->load($id_adh);
 $tpl->assign('member', $member);
 
 //Tri le tableau en fonction de la date de début.
@@ -66,6 +68,8 @@ if (isset($warning_detected)) {
     $tpl->assign('warning_detected', $warning_detected);
 }
 
+$nom = $member->sfullname;
+$tpl->assign('page_title', _T("Formations managment:")." ".$nom);
 
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
@@ -77,7 +81,11 @@ $tpl->assign('content', $content);
 
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
-$tpl->display('page.tpl');
+
+if ($login->isAdmin() || $login->isStaff())
+	$tpl->display('page.tpl');
+else
+	$tpl->display('public_page.tpl');
 
 
 
