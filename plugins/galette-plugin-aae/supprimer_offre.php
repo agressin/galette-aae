@@ -6,18 +6,19 @@ require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 //Constants and classes from plugin
 require_once '_config.inc.php';
 
-require_once 'lib/GaletteAAE/Postes.php';
-use Galette\AAE\Postes as Postes;
+require_once 'lib/GaletteAAE/Offres.php';
+use Galette\AAE\Offres as Offres;
 
-if ( !$login->isLogged() ) {
+if (!$login->isAdmin() && !$login->isStaff()) {
     header('location:'. GALETTE_BASE_PATH .'index.php');
     die();
 }
 
-$postes = new Postes();
 
-if (isset($_GET['id_form']) ) {
-            $postes->removePoste($_GET['id_form']);
+$offres = new Offres();
+
+if (isset($_GET['id_offre']) ) {
+            $offres->removeOffre($_GET['id_offre']);
 }
 
 ?>
