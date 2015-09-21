@@ -9,7 +9,7 @@
                 </label>
             </p>
             <p>
-                <select class="selectpicker" name="id_employeur" id="id_employeur" required {if {$vis} eq True} disabled {/if} title="{_T string="Choisir un employeur"}">
+                <select class="selectpicker" name="id_employeur" id="id_employeur" required {if {$vis} eq True} disabled {/if} title="{_T string="Choisir un employeur"}" data-size="auto">
 						{foreach from=$entreprises key=k item=v}
 							<option value="{$k}" {if {$poste.id_entreprise} eq {$k} } selected="selected"{/if}>{$v.employeur}</option>
 						{/foreach}
@@ -26,7 +26,7 @@
                 </label>
             </p>
             <p>
-                <select class="selectpicker" name="type" id="type" required {if {$vis} eq True} disabled {/if} title="{_T string="Select a type"}">
+                <select class="selectpicker" name="type" id="type" required {if {$vis} eq True} disabled {/if} title="{_T string="Select a type"}" data-size="auto">
                         <option value="Stage" {if {$poste.type} eq "Stage"} selected="selected"{/if}>{_T string="Stage"}</option>
                         <option value="CDD"   {if {$poste.type} eq "CDD"}   selected="selected"{/if}>{_T string="CDD"}</option>
                         <option value="CDI"   {if {$poste.type} eq "CDI"}   selected="selected"{/if}>{_T string="CDI"}</option>
@@ -51,7 +51,7 @@
                 </label>
             </p>
             <p>
-            	<select class="selectpicker" name="domaines[]" id="domaines" {if {$vis} eq True} disabled {/if} multiple title="{_T string="Select one or more skill(s)"}">
+            	<select class="selectpicker" name="domaines[]" id="domaines" {if {$vis} eq True} disabled {/if} multiple title="{_T string="Select one or more skill(s)"}" data-size="auto">
             		{foreach from=$domaines key=k item=d}
         				<option value="{$k}"{if in_array($k, $poste.domaines)} selected="selected"{/if}>{$d|htmlspecialchars}</option>
     				{/foreach}

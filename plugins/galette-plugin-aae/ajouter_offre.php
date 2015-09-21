@@ -5,13 +5,19 @@ require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 
 //Constants and classes from plugin
 require_once '_config.inc.php';
-require_once 'lib/GaletteAAE/Offres.php';
 
 use Analog\Analog;
 use Galette\Core\GaletteMail;
-use Galette\AAE\Offres as Offres;
 use Galette\Entity\Adherent as Adherent;
 
+require_once 'lib/GaletteAAE/Offres.php';
+use Galette\AAE\Offres as Offres;
+
+require_once 'lib/GaletteAAE/Entreprises.php';
+use Galette\AAE\Entreprises as Entreprises;
+
+require_once 'lib/GaletteAAE/Domaines.php';
+use Galette\AAE\Domaines as Domaines;
 
 if ( !$preferences->showPublicPages($login) ) {
     //public pages are not actives
@@ -28,6 +34,8 @@ if ( $login->isAdmin() || $login->isStaff() ){
 }
 
 $offres = new Offres();
+$entreprises = new Entreprises();
+$domaines = new Domaines();
 
 $id_offre = get_numeric_form_value('id_offre', '');
 $id_adh = get_numeric_form_value('id_adh', $login->id);
@@ -150,6 +158,15 @@ if (isset($_POST['titre_offre']) ) {
     }
 }
 
+//Recupération des entreprises :
+$allEntreprises = $entreprises->getAllEntreprises();
+foreach ($allEntreprises as $entreprise) {
+	$pk = Entreprises::PK;
+	$name = $entreprise["employeur"];
+	$entreprises_options[$entreprise[$pk]]["employeur"] = $name;
+}
+$tpl->assign('entreprises', $entreprises_options);
+
 if ( $id_offre!='') {
 	//Recup offre
 	$offre = $offres->getOffre($id_offre);
@@ -173,6 +190,8 @@ if ( $id_offre!='') {
 }
 
 $tpl->assign('haveRights', $haveRights);
+$tpl->assign('domaines',$domaines->getAllDomaines() );
+
 
 //Error
 $tpl->assign('warning_detected', $warning_detected);
@@ -191,6 +210,6 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 
-$tpl->display('page.tpl');
+$tpl->display('public_page.tpl');
 
 ?>
