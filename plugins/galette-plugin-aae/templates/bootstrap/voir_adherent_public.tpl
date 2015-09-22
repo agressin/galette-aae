@@ -51,7 +51,7 @@
 				</tr>
 	{/if}
 
-	
+
 				<tr>
 					<th style="width:50%" >{_T string="Cycle(s)"}</th>
 					<form class="form-horizontal" action="liste_eleves.php" method="post">
@@ -63,9 +63,9 @@
 					</form>
 				</tr>
 
-	
+
 			</table>
-			
+
 			<table class="details table-hover">
 				<legend>{_T string="Contact information"}</legend>
 	{if $visibles.ville_adh eq constant('Galette\Entity\FieldsConfig::VISIBLE') or ($visibles.ville_adh eq constant('Galette\Entity\FieldsConfig::ADMIN') and ($login->isStaff() or $login->isAdmin() or $login->isSuperAdmin()))}
@@ -103,11 +103,11 @@
 
 			</table>
 
-			
+
 			<table class="details table-hover">
 				<legend>{_T string="Jobs information"}</legend>
 		{foreach $list_postes as $key}
-		
+
 				<tr>
 					<th style="width:25%" >{$key.annee_ini|htmlspecialchars} - {if $key.annee_fin eq 0} {_T string="present"} {else} {$key.annee_fin|htmlspecialchars} {/if} </th>
 					<td>{$key.activite_principale|htmlspecialchars}</td>
@@ -119,7 +119,7 @@
 		{/foreach}
 			</table>
 
-			
+
 		<div class="details table-hover">
 			<legend>{_T string="Geographic situation"}</legend>
 			<div id="loading"><img src="../../templates/bootstrap/images/loading.gif" alt="{_T string="Loading..."}" title="{_T string="Loading..."}"></div>
@@ -151,7 +151,7 @@
 						zoom : 6,
 						hauteurAuto : true,
 						keyMaps : 'AIzaSyCpMXa7ZJn2L7WebriShk4v8NSU4n3N-s8',
-						keyIGN : '6hjv98eu0bn2g0puikh3k1ux'
+						//keyIGN : '6hjv98eu0bn2g0puikh3k1ux'
 					};
 					carteMembres = new CarteMembres(options);
 				}
@@ -166,5 +166,3 @@
 
 			lancerCarteMembres({$member->id});
 		</script>
-
-	

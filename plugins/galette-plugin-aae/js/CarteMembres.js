@@ -28,7 +28,7 @@ function CarteMembres(options) {
 	this.spiderfyDistanceMultiplier = options.spiderfyDistanceMultiplier || 2;
 	// Para keys :
 	this.keyMaps = options.keyMaps || 'AIzaSyCpMXa7ZJn2L7WebriShk4v8NSU4n3N-s8';
-	this.keyIGN = options.keyIGN || '6hjv98eu0bn2g0puikh3k1ux';
+	this.keyIGN = options.keyIGN || '61fs25ymczag0c67naqvvmap'; //'6hjv98eu0bn2g0puikh3k1ux';
 	// Autres attributs :
 	this.markers = L.markerClusterGroup({spiderfyDistanceMultiplier : this.spiderfyDistanceMultiplier});
 	var that = this;
@@ -73,7 +73,7 @@ console.log(L.latLngBounds([41.283207,1.738281], [46.75984, 9.747314]));
 		"Carte IGN" : this.layerIGN,
 		"Carte IGN France" : this.layerIGNzoom,
 	};
-	L.control.layers({}, baseLayers).addTo(this.map); 
+	L.control.layers({}, baseLayers).addTo(this.map);
 
 	if (this.hauteurAuto === true) {that.majTaille();}
 }
