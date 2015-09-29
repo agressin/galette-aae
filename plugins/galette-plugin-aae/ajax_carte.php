@@ -31,7 +31,7 @@ if ( !$login->isLogged() ) {
 	die('Vous devez être connecté.');
 }
 
-ini_set('display_errors', 1);
+//ini_set('display_errors', 1);
 
 /**
 	INITIALISATION
