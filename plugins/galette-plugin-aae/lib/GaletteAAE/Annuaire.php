@@ -449,6 +449,47 @@ class Annuaire
         }
     }
 	
+
+	public function getGeoSpatialInfo($id_adh)
+	{
+		global $zdb;
+
+		try {
+			$select = $zdb->sql->select();
+			$table_adh = PREFIX_DB . Adherent::TABLE;
+			$select->from(
+					array('a' => $table_adh)
+				);
+			
+			$select->columns(array(Adherent::PK, 'nom_adh', 'prenom_adh', 'pays_adh', 'cp_adh', 'ville_adh'));
+			
+ 			/*$select->join(array('f' => Formations::getTableName()),
+				'f.id_adh = a.' . Adherent::PK,
+				array('id_cycle','annee_debut'));
+			
+			$select->join(array('c' => Cycles::getTableName()),
+			'f.id_cycle = c.' . Cycles::PK,
+			array('nom'));*///*
+							
+			$select->where->equalTo('a.id_adh', $id_adh);
+			
+			$res = $zdb->execute($select);
+			$res = $res->toArray();
+			
+			if ( count($res) > 0 ) {
+				return $res;
+			} else {
+				return array();
+			}
+		} catch (\Exception $e) {
+			Analog::log(
+				'Unable to retrieve Student : "' .
+				$req .'" | ' . $e->getMessage(),
+				Analog::WARNING
+			);
+			return false;
+		}
+	}
 	
 }
 

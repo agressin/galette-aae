@@ -1,5 +1,6 @@
 <?php
 
+ ini_set('display_errors', 1);
 define('GALETTE_BASE_PATH', '../../');
 require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 

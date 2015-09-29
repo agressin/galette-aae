@@ -16,6 +16,9 @@
 		<a href="{$galette_base_path}{$aaetools_path}liste_eleves.php">{_T string="Former students list"}</a>
 		<ul class='children'>
 			<li class="page_item">
+				<a href="{$galette_base_path}{$aaetools_path}carte_eleves.php">{_T string="Former students maps"}</a>
+			</li>
+			<li class="page_item">
 				<a href="{$galette_base_path}{$aaetools_path}liste_job.php">{_T string="Jobs list"}</a>
 			</li>
 		</ul>
