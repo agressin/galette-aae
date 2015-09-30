@@ -131,6 +131,7 @@ foreach ($MAISONS as $maison) {
 		array_push($lieux, array(
 			'info' => '<p class="title">' . $maison['nom_adh'] . ' ' . $maison['prenom_adh'] . '</p><p class="center">Logement</p>',
 			'adresse' => $adr,
+			'coords' => false, // TODO : tester si les coordonnées existent dans la base et les envoyer directement
 			'type' => 'logement'
 		));
 	}
@@ -151,6 +152,7 @@ foreach ($POSTES as $poste) {
 		array_push($lieux, array(
 			'info' => $info,
 			'adresse' => $adr,
+			'coords' => false, // TODO : tester si les coordonnées existent dans la base et les envoyer directement
 			'type' => 'poste'
 		));
 	}

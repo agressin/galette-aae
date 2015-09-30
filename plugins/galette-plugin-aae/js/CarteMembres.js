@@ -104,25 +104,39 @@ CarteMembres.prototype.afficherLieux = function(data) {
 	} else {
 		$('#'+this.idNoResult).hide();
 		$(liste).each(function(i, elm){
-			setTimeout(function(){
-				$.ajax({
-					url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + elm.adresse + '&key=' + that.keyMaps,
-					success: function(retour) {
-						var lat = retour.results[0].geometry.location.lat;
-						var lon = retour.results[0].geometry.location.lng;
+			if (elm.coords === false) {
+				// Geocodage puis ajout :
+				setTimeout(function(){
+					$.ajax({
+						url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + elm.adresse + '&key=' + that.keyMaps,
+						success: function(retour) {
+							var lat = retour.results[0].geometry.location.lat;
+							var lon = retour.results[0].geometry.location.lng;
 
-						var marker = L.marker([lat, lon], {
-							title : elm.info,
-							icon: L.icon({
-								iconUrl: 'icone/' + elm.type + '.png',
-								iconAnchor: [16, 16],
-								shadowAnchor: [4, 62]
-							})
-						}).bindPopup(elm.info);
-						that.ajouterLieu(marker);
-					}
-				});
-			}, 200);
+							var marker = L.marker([lat, lon], {
+								title : elm.info,
+								icon: L.icon({
+									iconUrl: 'icone/' + elm.type + '.png',
+									iconAnchor: [16, 16],
+									shadowAnchor: [4, 62]
+								})
+							}).bindPopup(elm.info);
+							that.ajouterLieu(marker);
+						}
+					});
+				}, 200);
+			} else {
+				// Ajout direct :
+				var marker = L.marker([elm.coords.lat, elm.coords.lon], {
+					title : elm.info,
+					icon: L.icon({
+						iconUrl: 'icone/' + elm.type + '.png',
+						iconAnchor: [16, 16],
+						shadowAnchor: [4, 62]
+					})
+				}).bindPopup(elm.info);
+				that.ajouterLieu(marker);
+			}
 		});
 	}
 }
