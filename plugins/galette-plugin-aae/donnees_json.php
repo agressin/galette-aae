@@ -21,8 +21,6 @@ $annuaire = new Annuaire();
 $member = new Adherent();
 $familles = new Familles();
 
-//echo("coucou");
-
 $id = $_GET["id_adh"];
 
 if (!empty($id)){
