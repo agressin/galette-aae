@@ -3,11 +3,11 @@
 			<legend>{_T string="Select cycle and promotion"}</legend>
 				<div class="row col-xs-offset-1">
 					<div class="form-group col-md-4">
-					
+
 						{*Searching student by name*}
 						<label>{_T string="Name and/or First Name"}{if !$login->isLogged()} (*) {/if}
 						<input class="form-control" type="text" name ="nom_prenom" {if isset($nom_prenom)} value="{$nom_prenom}" {/if}
-						{if !$login->isLogged()} DISABLED {/if} /> 
+						{if !$login->isLogged()} DISABLED {/if} />
 						</label><br>
 						{if !$login->isLogged()} * {_T string="Please sign in to access search by name"} <br> {/if}
 						{*Searching student by promotion*}
@@ -34,23 +34,21 @@
 						</select>
 					</div>
 				</div>
-				
+
 				<div class="row col-xs-offset-2">
 				  <div class="form-group">
 					<div class=" col-sm-10">
 					 <input type="hidden" name="valid" id="valid" value="1">
-					  <button type="submit"  class="btn btn-primary">
-					  	{if $param_selected} {_T string="Refresh"} {else} {_T string="Continue"} {/if}
-					  </button>
+					  <button type="submit" id="btn-valid" class="btn btn-primary"> {_T string="Continue"} </button>
 					</div>
 				  </div>
 				</div>
 		</form>
 
-		<div class="details table-hover">
+		<div class="details table-hover" id="details" style="display:none;">
 			<legend>{_T string="Geographic situation"}</legend>
-			<div id="loading"><img src="../../templates/bootstrap/images/loading.gif" alt="{_T string="Loading..."}" title="{_T string="Loading..."}"></div>
-			<div id="noResult">{_T string="No detail found"}</div>
+			<div id="loading" style="display:none;"><img src="../../templates/bootstrap/images/loading.gif" alt="{_T string="Loading..."}" title="{_T string="Loading..."}"></div>
+			<div id="noResult" style="display:none;">{_T string="No detail found"}</div>
 			<div id="carteMembres" class="carteMembres" style="display:none;"><div id="popup"></div></div>
 		</div>
 
@@ -67,7 +65,7 @@
 
 			var initiateSelects = function() {
 				var myDate = new Date();
-			
+
 				var year = myDate.getFullYear();
 				var curYear = "{$annee_debut}";
 				//curYear = (curYear=="")?year-1:curYear;
@@ -82,39 +80,14 @@
 
 			// Set values from id_cycle to 0 if id_cycle_simple is selected
 			initiateSelects();
-			
+
 			$('#id_cycle').on('change', function() {
 				$('input[name=id_cycle_simple]').attr('checked',false);
 			});
-			
+
 			$('input[name=id_cycle_simple]').on('change', function() {
 				$('#id_cycle').val('0');
 			});
-			
-			// Sorting plugin Dynatable
-			$('#table_eleves').dynatable({
-				features: {
-					paginate: true,
-					sort: true,
-					pushState: false,
-					search: false,
-					recordCount: false,
-					perPageSelect: true
-				},
-				inputs: {
-					paginationPrev: '{_T string="Previous"}',
-					paginationNext: '{_T string="Next"}',
-					searchText: '{_T string="Search"}',
-					perPageText: '{_T string="Show"}',
-					pageText: '{_T string="Pages"}'
-	
-				},
-				dataset: {
-				perPageDefault: 100,
-				perPageOptions: [10,20,50,100]}
-			});
-	
-			$(".dynatable-sort-header").css("color","black");
 
 			// Ajout de la mise à jour de la carte :
 			var carteMembres = false;
@@ -147,8 +120,8 @@
 				}
 
 				lancerCarteMembres({$member->id});
+				$('#btn-valid').html('{_T string="Refresh"}');
 
 			});
 
-    </script>		
-		
+    </script>

@@ -19,6 +19,7 @@ function CarteMembres(options) {
 	// Para carte :
 	this.idCarte = options.idCarte || 'carteMembres';
 	this.idNoResult = options.idNoResult || 'noResult';
+	this.idDetails = options.idDetails || 'details';
 	this.center = options.center || [46.49839, 3.20801];
 	this.zoom = options.zoom || 6;
 	this.hauteurAuto = options.hauteurAuto || false;
@@ -45,7 +46,6 @@ function CarteMembres(options) {
 	**/
 
 	// Creation de la carte :
-	$('#'+this.idCarte).fadeIn();
 	this.map = L.map(this.idCarte, {
 		center : this.center,
 		zoom : this.zoom,
@@ -81,13 +81,14 @@ function CarteMembres(options) {
 			"Carte IGN" : this.layerIGN
 		};
 	}
-	L.control.layers({}, baseLayers).addTo(this.map); 
+	L.control.layers({}, baseLayers).addTo(this.map);
 
 	if (this.hauteurAuto === true) {that.majTaille();}
 }
 
 CarteMembres.prototype.ajax = function(paraAjax) {
 	var that = this;
+	$('#'+this.idDetails).fadeIn();
 	$('#'+that.idLoading).show();
 	$.ajax(paraAjax).done(function(data) {
 		that.afficherLieux(data);
@@ -100,9 +101,11 @@ CarteMembres.prototype.afficherLieux = function(data) {
 	var liste = JSON.parse(data);
 	$('#'+that.idLoading).hide();
 	if (liste.length == 0) {
+		$('#'+this.idCarte).hide();
 		$('#'+this.idNoResult).fadeIn();
 	} else {
 		$('#'+this.idNoResult).hide();
+		$('#'+this.idCarte).fadeIn();
 		$(liste).each(function(i, elm){
 			if (elm.coords === false) {
 				// Geocodage puis ajout :
