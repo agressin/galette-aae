@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-10-02 22:17+0200\n"
+"PO-Revision-Date: 2015-10-03 15:42+0200\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -21,7 +21,7 @@ msgid "Add a new job to"
 msgstr "Ajouter un poste à"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:176
-#: ../templates/bootstrap/carte_membres_aae.tpl:53
+#: ../templates/bootstrap/carte_membres_aae.tpl:51
 msgid "No detail found"
 msgstr "Pas de détails trouvés"
 
@@ -45,7 +45,7 @@ msgstr "Email emploi"
 msgid "present"
 msgstr "actuel"
 
-#: ../templates/bootstrap/carte_membres_aae.tpl:14
+#: ../templates/bootstrap/carte_membres_aae.tpl:13
 #: ../templates/bootstrap/liste_membres_aae.tpl:14
 #: ../templates/bootstrap/liste_membres_aae.tpl:66
 msgid "Promotion"
@@ -160,7 +160,6 @@ msgid "Site web"
 msgstr "Site internet"
 
 #: ../templates/bootstrap/liste_job.tpl:172
-#: ../templates/bootstrap/carte_membres_aae.tpl:107
 #: ../templates/bootstrap/liste_membres_aae.tpl:151
 msgid "Search"
 msgstr "Recherche"
@@ -177,6 +176,10 @@ msgstr "Aucun poste à afficher"
 msgid "Name"
 msgstr "Nom"
 
+#: ../templates/bootstrap/carte_membres_aae.tpl:42
+msgid "Please sign in to access to this functionality"
+msgstr "Merci de vous connecter pour accéder à cette fonctionnalité."
+
 #: ../templates/bootstrap/adh_fiche_action.tpl:31
 #: ../templates/default/adh_fiche_action.tpl:23
 msgid "Add a formation"
@@ -191,7 +194,7 @@ msgid "Country"
 msgstr "Pays"
 
 #: ../templates/bootstrap/liste_job.tpl:22
-#: ../templates/bootstrap/carte_membres_aae.tpl:43
+#: ../templates/bootstrap/carte_membres_aae.tpl:123
 #: ../templates/bootstrap/liste_membres_aae.tpl:43
 #: ../templates/default/liste_membres_aae.tpl:21
 msgid "Refresh"
@@ -248,7 +251,7 @@ msgid "Paiement par chèque"
 msgstr "Paiement par chèque"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:175
-#: ../templates/bootstrap/carte_membres_aae.tpl:52
+#: ../templates/bootstrap/carte_membres_aae.tpl:50
 msgid "Loading..."
 msgstr "Chargement ..."
 
@@ -354,7 +357,7 @@ msgstr "Spécialité"
 msgid "CDI"
 msgstr "CDI"
 
-#: ../templates/bootstrap/carte_membres_aae.tpl:28
+#: ../templates/bootstrap/carte_membres_aae.tpl:27
 #: ../templates/bootstrap/liste_membres_aae.tpl:28
 msgid "or by Cycle"
 msgstr "ou par Cycle"
@@ -428,13 +431,11 @@ msgstr "Gestion des formations :"
 msgid "End of the formation:"
 msgstr "Fin de la formation"
 
-#: ../templates/bootstrap/carte_membres_aae.tpl:12
 #: ../templates/bootstrap/liste_membres_aae.tpl:12
 msgid "Please sign in to access search by name"
 msgstr "Merci de vous connecter pour accéder à la recherche par nom et prénom."
 
 #: ../templates/bootstrap/liste_job.tpl:173
-#: ../templates/bootstrap/carte_membres_aae.tpl:108
 #: ../templates/bootstrap/liste_membres_aae.tpl:152
 msgid "Show"
 msgstr "Montrer"
@@ -514,7 +515,7 @@ msgstr "Promotion :"
 msgid "all"
 msgstr "tous"
 
-#: ../templates/bootstrap/carte_membres_aae.tpl:22
+#: ../templates/bootstrap/carte_membres_aae.tpl:21
 #: ../templates/bootstrap/liste_membres_aae.tpl:22
 msgid "Formation"
 msgstr "Formation"
@@ -529,7 +530,7 @@ msgid "Company"
 msgstr "Compagnie"
 
 #: ../templates/bootstrap/liste_job.tpl:22
-#: ../templates/bootstrap/carte_membres_aae.tpl:43
+#: ../templates/bootstrap/carte_membres_aae.tpl:41
 #: ../templates/bootstrap/liste_membres_aae.tpl:43
 #: ../templates/default/liste_membres_aae.tpl:25
 msgid "Continue"
@@ -560,7 +561,6 @@ msgid "Go back"
 msgstr "Retour"
 
 #: ../templates/bootstrap/liste_job.tpl:171
-#: ../templates/bootstrap/carte_membres_aae.tpl:106
 #: ../templates/bootstrap/liste_membres_aae.tpl:150
 #: ../templates/bootstrap/promotion.tpl:52
 msgid "Next"
@@ -584,7 +584,6 @@ msgid "please create a member"
 msgstr "merci de créer un membre"
 
 #: ../templates/bootstrap/liste_job.tpl:174
-#: ../templates/bootstrap/carte_membres_aae.tpl:109
 #: ../templates/bootstrap/liste_membres_aae.tpl:153
 msgid "Pages"
 msgstr "Pages"
@@ -625,7 +624,7 @@ msgid "Select a member "
 msgstr "Sélectionner un membre "
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:174
-#: ../templates/bootstrap/carte_membres_aae.tpl:51
+#: ../templates/bootstrap/carte_membres_aae.tpl:49
 msgid "Geographic situation"
 msgstr "Situation géographique"
 
@@ -717,7 +716,6 @@ msgid "students"
 msgstr "étudiants"
 
 #: ../templates/bootstrap/liste_job.tpl:170
-#: ../templates/bootstrap/carte_membres_aae.tpl:105
 #: ../templates/bootstrap/liste_membres_aae.tpl:149
 #: ../templates/bootstrap/promotion.tpl:51
 msgid "Previous"

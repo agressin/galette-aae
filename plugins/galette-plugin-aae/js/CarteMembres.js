@@ -31,7 +31,7 @@ function CarteMembres(options) {
 	this.spiderfyDistanceMultiplier = options.spiderfyDistanceMultiplier || 2;
 	// Para keys :
 	this.keyMaps = options.keyMaps || 'AIzaSyCpMXa7ZJn2L7WebriShk4v8NSU4n3N-s8';
-	this.keyIGN = options.keyIGN || '3s9er40tvaqliky3tswb38l2';
+	this.keyIGN = options.keyIGN || '61fs25ymczag0c67naqvvmap';
 	// Autres attributs :
 	this.markers = L.markerClusterGroup({spiderfyDistanceMultiplier : this.spiderfyDistanceMultiplier});
 	var that = this;
@@ -44,7 +44,7 @@ function CarteMembres(options) {
 			- GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE
 			- GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD
 	**/
-
+	$('#'+this.idDetails).fadeIn();
 	// Creation de la carte :
 	this.map = L.map(this.idCarte, {
 		center : this.center,
@@ -88,10 +88,10 @@ function CarteMembres(options) {
 
 CarteMembres.prototype.ajax = function(paraAjax) {
 	var that = this;
-	$('#'+this.idDetails).fadeIn();
 	$('#'+that.idLoading).show();
 	$.ajax(paraAjax).done(function(data) {
 		that.afficherLieux(data);
+		that.map._onResize(); 
 	});
 }
 

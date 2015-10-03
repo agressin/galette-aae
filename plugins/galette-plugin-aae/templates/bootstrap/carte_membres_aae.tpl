@@ -7,9 +7,8 @@
 						{*Searching student by name*}
 						<label>{_T string="Name and/or First Name"}{if !$login->isLogged()} (*) {/if}
 						<input class="form-control" type="text" name ="nom_prenom" {if isset($nom_prenom)} value="{$nom_prenom}" {/if}
-						{if !$login->isLogged()} DISABLED {/if} />
+
 						</label><br>
-						{if !$login->isLogged()} * {_T string="Please sign in to access search by name"} <br> {/if}
 						{*Searching student by promotion*}
 						<label for="annee_debut" class="control-label">{_T string="Promotion"}</label><br>
 						<select class="form-control" name="annee_debut" id="annee_debut" >
@@ -39,7 +38,8 @@
 				  <div class="form-group">
 					<div class=" col-sm-10">
 					 <input type="hidden" name="valid" id="valid" value="1">
-					  <button type="submit" id="btn-valid" class="btn btn-primary"> {_T string="Continue"} </button>
+					  <button type="submit" id="btn-valid" class="btn btn-primary" {if !$login->isLogged()} disabled="disabled" {/if}> {_T string="Continue"} </button>
+						{if !$login->isLogged()} * {_T string="Please sign in to access to this functionality"} <br> {/if}
 					</div>
 				  </div>
 				</div>
