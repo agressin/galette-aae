@@ -124,7 +124,7 @@
 						<a href="{$key.website}">{$key.website}</a>
 					</td>
 					<td>
-						<a href="" data-toggle="modal" data-target=".bs-example-modal-lg-{$key.id_poste}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
+						<a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg-{$key.id_poste}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
 					</td>	
 				</tr>
 		{/foreach}

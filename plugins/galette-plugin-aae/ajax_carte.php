@@ -155,7 +155,7 @@ foreach ($POSTES as $poste) {
 		// Creation des info :
 		$info = '';
 		$info .= '<p class="title">' . $poste['nom_adh'] . ' ' . $poste['prenom_adh'] . '</p>';
-		$info .= '<p><a href="TODO' . $poste['id_poste'] . '">' . $poste['activite_principale'] . '</a></p>';
+		$info .= '<p><a href="voir_adherent_public.php?id_adh=' . $poste['id_adh'] . '" title="' . $poste['nom_adh'] . ' ' . $poste['prenom_adh'] . '">' . $poste['activite_principale'] . '</a></p>';
 		// TODO : Lien vers la bonne page
 
 		array_push($lieux, array(
