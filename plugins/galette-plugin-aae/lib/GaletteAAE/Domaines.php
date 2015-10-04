@@ -22,7 +22,7 @@ class Domaines
     /**
      * Retrieve all domaines
      *
-     * @param 
+     * @param
      *
      * @return array
      */
@@ -53,7 +53,7 @@ class Domaines
             return false;
         }
     }
-    
+
      /**
      * Retrieve domaine information
      *
@@ -96,18 +96,18 @@ class Domaines
         global $zdb;
 
         try {
-        
+
         	$select = $zdb->sql->select();
         	$select->from(array('l' => $this->getTableLienName()));
-							
+
 			$select->join(array('d' => $this->getTableName()),
 				'd.id_domaine = l.id_domaine');
-				
+
 			$select->where->equalTo('l.id_poste', $id_poste);
-            
+
             $res = $zdb->execute($select);
             $res = $res->toArray();
-            
+
             $out = array();
             foreach( $res as $k){
             	$out[] = $k['id_domaine'];
@@ -122,7 +122,7 @@ class Domaines
             return false;
         }
     }
-    
+
      /**
      * Retrieve all domaines of one job
      *
@@ -184,7 +184,7 @@ class Domaines
             $insert = $zdb->insert(AAE_PREFIX . self::TABLE_LIEN);
             $insert->values($data);
             $add = $zdb->execute($insert);
-            
+
             if ( $add->count() == 0) {
                 Analog::log('An error occured when adding Domaine To Poste!' );
             }
@@ -211,7 +211,7 @@ class Domaines
     {
         return  PREFIX_DB . AAE_PREFIX  .  self::TABLE;
     }
-    
+
     /**
      * Get table link's name
      *
@@ -223,4 +223,3 @@ class Domaines
     }
 }
 ?>
-

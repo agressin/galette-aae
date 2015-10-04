@@ -20,7 +20,61 @@ class postes
     const TABLE =  'postes';
     const PK = 'id_poste';
     const CA = 'id_adh';
-    
+
+    public function getPostesMulti($req)
+      {
+        global $zdb;
+
+        try {
+              $select = $zdb->sql->select();
+              $table_adh = PREFIX_DB . Adherent::TABLE;
+        $select->from(
+            array('p' => $this->getTableName())
+          );
+
+        $select->join(array('d' => Domaines::getTableLienName()),
+          'p.id_poste = d.id_poste',
+          array('id_domaine'));
+
+        $init=false;
+        if (array_key_exists("entreprise",$req)){
+          //TODO
+          $select->where->equalTo('id_entreprise',  $req["entreprise"]);
+          $init=true;
+        };
+        if (array_key_exists("type",$req)){
+          //TODO
+          $select->where->equalTo('type',  $req["type"]);
+          $init=true;
+        };
+        if (array_key_exists("domaines",$req)){
+          //TODO
+          //$select->where(array('status_id' => $data));
+          $select->where->equalTo('domaines',  $req["domaines"]);
+          $init=true;
+        };
+
+        if (!$init){
+          $res = $zdb->selectAll(AAE_PREFIX . self::TABLE);
+        } else {
+          $res = $zdb->execute($select);
+        }
+
+          $res = $res->toArray();
+
+          if ( count($res) > 0 ) {
+              return $res;
+          } else {
+              return array();
+          }
+          } catch (\Exception $e) {
+              Analog::log(
+                  'Unable to retrieve poste | ' . $e->getMessage(),
+                  Analog::WARNING
+              );
+              return false;
+          }
+      }
     /**
      * Retrieve member poste
      *
@@ -35,7 +89,7 @@ class postes
         try {
             $select = $zdb->select(AAE_PREFIX . self::TABLE);
             $select->where->equalTo('id_adh', $id_adh);
-            
+
             $res = $zdb->execute($select);
             $res = $res->toArray();
             if ( count($res) > 0 ) {
@@ -89,7 +143,7 @@ class postes
             return false;
         }
     }
-    
+
      /**
      * Retrieve entreprise information
      *
@@ -128,18 +182,18 @@ class postes
      * @param int $id_entreprise
      * @param text $type
      * @param text $activites
-	 * @param array[int] $domaines
+	   * @param array[int] $domaines
      * @param text $adresse
      * @param int $annee_ini
-     * @param int $annee_fin    
-     * 
+     * @param int $annee_fin
+     *
      */
     public function setPoste($id_poste,$id_adh,$id_entreprise,$type,$titre,$activites,$array_domaines,$adresse,$annee_ini,$annee_fin)
     {
         global $zdb;
 
         try {
-        
+
         	$domaines = new Domaines();
             $res  = false;
             $data = array(
@@ -158,15 +212,15 @@ class postes
                 $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
                 $insert->values($data);
                 $add = $zdb->execute($insert);
-                
+
                 if ( $add->count() == 0) {
                     Analog::log('An error occured inserting new poste!' );
                 } else {
 					$res = $add->getGeneratedValue();
 				}
-                
+
             } else {
-                //Poste already exists, just update               
+                //Poste already exists, just update
                 $update = $zdb->update(AAE_PREFIX . self::TABLE);
                 $update->set($data)->where->equalTo(self::PK,$id_poste);
                 $edit = $zdb->execute($update);
@@ -175,12 +229,11 @@ class postes
                 //edit == 0 does not mean there were an error, but that there
                 //were nothing to change
             }
-            
-            var_dump($array_domaines);
+
             foreach( $array_domaines as $id_domaine){
             	Analog::log('Add domaine array : ' . $id_domaine, Analog::WARNING );
             	$domaines->addDomaineToPoste($id_domaine,$id_poste);
-            } 
+            }
             return $res ;
         } catch ( \Exception $e ) {
             Analog::log(
@@ -216,7 +269,7 @@ class postes
             return false;
         }
     }
-    
+
     /**
      * Get table's name
      *

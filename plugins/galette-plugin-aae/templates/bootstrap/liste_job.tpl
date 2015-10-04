@@ -13,8 +13,28 @@
 								{/foreach}
 							</select>
 						</div>
+						<div class="form-group col-md-1"></div>
+						<div class="form-group col-md-3">
+							{*Searching poste by Type*}
+							<label for="type" class="control-label">{_T string="Job Type"}</label> <br>
+							<select class="selectpicker" name="type" id="type" title="{_T string="Select a type"}" data-size="auto">
+											<option value="Stage" >{_T string="Stage"}</option>
+											<option value="CDD"   >{_T string="CDD"}</option>
+											<option value="CDI"   >{_T string="CDI"}</option>
+							</select>
+						</div>
+						<div class="form-group col-md-1"></div>
+						<div class="form-group col-md-3">
+							{*Searching poste by Skills*}
+							<label for="domaines" class="control-label">{_T string="Skills"}</label> <br>
+							<select class="selectpicker" name="domaines[]" id="domaines" multiple title="{_T string="Select one or more skill(s)"}" data-size="auto">
+								{foreach from=$domaines key=k item=d}
+        				<option value="{$k}">{$d|htmlspecialchars}</option>
+    						{/foreach}
+                </select>
+						</div>
 					</div>
-					
+
 					<div class="row col-xs-offset-2">
 					  <div class="form-group">
 						<div class=" col-sm-10">
@@ -94,7 +114,7 @@
 					<table class="table">
 						<tr>
 				    		<td><h2><a href="voir_adherent_public.php?id_adh={$poste.id_adh}">{$poste.nom_adh}</a></h2></td>
-				    	</tr>    
+				    	</tr>
 				    	<tr>
 				    		<td><h4>Période</h4> </td>
 				    		<td> {if $poste.annee_fin eq $poste.annee_ini}
@@ -115,11 +135,11 @@
 				    	<tr>
 				    		<td><h4>Adresse</h4></td>
 				    		<td>{$poste.adresse}</td>
-				    	</tr> 
+				    	</tr>
 				    	<tr>
 				    		<td><h4>Type de contrat</h4></td>
 				    		<td>{$poste.type}</td>
-				    	</tr> 
+				    	</tr>
 				    	<tr>
 				    		<td><h4>Intitulé du poste</h4></td>
 				    		<td>{$poste.titre}</td>
@@ -128,22 +148,22 @@
 				    		<td><h4>Compétences</h4></td>
 				    		<td>{$poste.domaines}</td>
 				    	</tr>
-				    </table> 
+				    </table>
 				</div>
 			  </div>
 			</div>
 		{/foreach}
-		
+
 	{else}
 		{if $param_selected } <div id="warningbox">{_T string="No job to show"}</div> {/if}
-		
+
 	{/if}
 
 		   <script type="text/javascript">
 
 				var initiateSelects = function() {
 					var myDate = new Date();
-				
+
 					var year = myDate.getFullYear();
 					var curYear = "{$annee_debut}";
 					//curYear = (curYear=="")?year-1:curYear;
@@ -172,14 +192,13 @@
 						searchText: '{_T string="Search"}',
 						perPageText: '{_T string="Show"}',
 						pageText: '{_T string="Pages"}'
-		
+
 					},
 					dataset: {
 					perPageDefault: 100,
 					perPageOptions: [10,20,50,100]}
 				});
-		
+
 				$(".dynatable-sort-header").css("color","black");
 
-    </script>		
-		
+    </script>

@@ -3,11 +3,11 @@
 				<legend>{_T string="Select cycle and promotion"}</legend>
 					<div class="row col-xs-offset-1">
 						<div class="form-group col-md-4">
-						
+
 							{*Searching student by name*}
 							<label>{_T string="Name and/or First Name"}{if !$login->isLogged()} (*) {/if}
 							<input class="form-control" type="text" name ="nom_prenom" {if isset($nom_prenom)} value="{$nom_prenom}" {/if}
-							{if !$login->isLogged()} DISABLED {/if} /> 
+							{if !$login->isLogged()} DISABLED {/if} />
 							</label><br>
 							{if !$login->isLogged()} * {_T string="Please sign in to access search by name"} <br> {/if}
 							{*Searching student by promotion*}
@@ -34,7 +34,7 @@
 							</select>
 						</div>
 					</div>
-					
+
 					<div class="row col-xs-offset-2">
 					  <div class="form-group">
 						<div class=" col-sm-10">
@@ -61,7 +61,7 @@
 						</th>
 						<th class="left">
 								{_T string="First Name"}
-						</th> 
+						</th>
 						<th class="left">
 								{_T string="Promotion"}
 						</th>
@@ -111,7 +111,7 @@
 
 				var initiateSelects = function() {
 					var myDate = new Date();
-				
+
 					var year = myDate.getFullYear();
 					var curYear = "{$annee_debut}";
 					//curYear = (curYear=="")?year-1:curYear;
@@ -126,15 +126,15 @@
 
 				// Set values from id_cycle to 0 if id_cycle_simple is selected
 				initiateSelects();
-				
+
 				$('#id_cycle').on('change', function() {
 					$('input[name="id_cycle_simple[]"]').attr('checked',false);
 				});
-				
+
 				$('input[name="id_cycle_simple[]"]').live('change', function() {
 					$('#id_cycle').val('0');
 				});
-				
+
 				// Sorting plugin Dynatable
 				$('#table_eleves').dynatable({
 					features: {
@@ -151,13 +151,13 @@
 						searchText: '{_T string="Search"}',
 						perPageText: '{_T string="Show"}',
 						pageText: '{_T string="Pages"}'
-		
+
 					},
 					dataset: {
 					perPageDefault: 100,
 					perPageOptions: [10,20,50,100]}
 				});
-		
+
 				$(".dynatable-sort-header").css("color","black");
 
     </script>
