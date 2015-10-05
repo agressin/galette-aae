@@ -35,10 +35,13 @@
 			<li class="{if $PAGENAME eq "ajouter_offre.php"}current_{/if}page_item">
 				<a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php">{_T string="Add job offers"}</a>
 			</li>
+			<li class="{if $PAGENAME eq "gestion_offres.php"}current_{/if}page_item">
+				<a href="{$galette_base_path}{$aaetools_path}gestion_offres.php">{_T string="Manage your job offers"}</a>
+			</li>
 		</ul>
 	</li>
-	
-	{if $login->isLogged()}	
+
+	{if $login->isLogged()}
 	<li class="{if $PAGENAME eq "voir_adherent_public.php"}current_{/if}page_item">
 		<a href="{$galette_base_path}{$aaetools_path}voir_adherent_public.php">{_T string="My shared profil"}</a>
 		<ul class='children'>

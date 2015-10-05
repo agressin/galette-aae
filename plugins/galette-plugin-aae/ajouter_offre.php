@@ -78,13 +78,17 @@ if (isset($_POST['titre_offre']) ) {
     }else{
 		$date_debut = $d->format('Y-m-d');
 	}
+    if($haveRights and isset($_POST['valid'])){
+      $valid = $_POST['valid'];
+    } else {
+      $valid = false;
+    }
     $res = $offres->setOffre(
 		$id_offre,
 		$id_adh,
 		$_POST['titre_offre'],
-		$_POST['organisme'],
+		$_POST['id_entreprise'],
 		$_POST['localisation'],
-		$_POST['site'],
 		$_POST['nom_contact'],
 		$_POST['mail_contact'],
 		$_POST['tel_contact'],
@@ -96,8 +100,8 @@ if (isset($_POST['titre_offre']) ) {
 		$date_debut,
 		$_POST['remuneration'],
 		$_POST['cursus'],
-		$_POST['rech_majeures'],
-		isset($_POST['valid'] ) //$haveRights
+		$_POST['domaines'],
+		$valid
     );
 
     if ( !$res ) {
@@ -110,51 +114,50 @@ if (isset($_POST['titre_offre']) ) {
   			$success_detected[] = _T("Offer has been successfully created, you will receive an confirmation email.");
   			if ( GaletteMail::isValidEmail($_POST['mail_contact']) ) {
   				$mail = new GaletteMail();
-                  $mail->setSubject(
-                      _T("Job offer post")
-                  );
-
+          $mail->setSubject(
+              _T("Job offer post")
+          );
   				//Send mail to contact + admin
-                  $mail->setRecipients(
-                      array(
+          $mail->setRecipients(
+            array(
   						$_POST['mail_contact'] => $_POST['nom_contact'],
   						$preferences->pref_email => "Admin"
-                      )
-                  );
-                  $message = _T("Your job offer has been successfully created.");
-                  $message .= "\n" . _T("You can view or modify your offer using the link below.");
-                  $message .= "\n\n";
-                  $message .= "http://".$_SERVER['HTTP_HOST']."/plugins/galette-plugin-aae/ajouter_offre.php?id_offre=".$res;
+            )
+          );
+          $message = _T("Your job offer has been successfully created.");
+          $message .= "\n" . _T("You can view or modify your offer using the link below.");
+          $message .= "\n\n";
+          $message .= "http://".$_SERVER['HTTP_HOST']."/plugins/galette-plugin-aae/ajouter_offre.php?id_offre=".$res;
 
-                  $mail->setMessage($message);
-                  $sent = $mail->send();
+          $mail->setMessage($message);
+          $sent = $mail->send();
 
-  		        if ( $sent ) {
-  		            $hist->add(
-  		                preg_replace(
-  		                    array('/%name/', '/%email/'),
-  		                    array($_POST['nom_contact'], $_POST['mail_contact']),
-  		                    _T("Mail sent to user %name (%email)")
-  		                )
-  		            );
-  		        } else {
-  		            $txt = preg_replace(
-  		                array('/%name/', '/%email/'),
-  		                array($_POST['nom_contact'], $_POST['mail_contact']),
-  		                _T("A problem happened while sending job offer confirmation to user %name (%email)")
-  		            );
-  		            $hist->add($txt);
-  		            $error_detected[] = $txt;
-  		        }
-  		    } else {
-  		        $txt = preg_replace(
-  		            array('/%name/', '/%email/'),
-  		            array($_POST['nom_contact'], $_POST['mail_contact']),
-  		            _T("Trying to send a mail to a member (%name) with an invalid adress: %email")
-  		        );
-  		        $hist->add($txt);
-  		        $warning_detected[] = $txt;
-  		    }
+	        if ( $sent ) {
+            $hist->add(
+                preg_replace(
+                    array('/%name/', '/%email/'),
+                    array($_POST['nom_contact'], $_POST['mail_contact']),
+                    _T("Mail sent to user %name (%email)")
+                )
+            );
+	        } else {
+            $txt = preg_replace(
+                array('/%name/', '/%email/'),
+                array($_POST['nom_contact'], $_POST['mail_contact']),
+                _T("A problem happened while sending job offer confirmation to user %name (%email)")
+            );
+            $hist->add($txt);
+            $error_detected[] = $txt;
+	        }
+		    } else {
+		        $txt = preg_replace(
+		            array('/%name/', '/%email/'),
+		            array($_POST['nom_contact'], $_POST['mail_contact']),
+		            _T("Trying to send a mail to a member (%name) with an invalid adress: %email")
+		        );
+		        $hist->add($txt);
+		        $warning_detected[] = $txt;
+		    }
   		}
     }
 }
@@ -173,18 +176,19 @@ if ( $id_offre!='') {
 	$offre = $offres->getOffre($id_offre);
 
 	$d = new \DateTime($offre->date_debut);
-    $offre['date_debut'] = $d->format(_T("Y-m-d"));
+  $offre['date_debut'] = $d->format(_T("Y-m-d"));
 
 	$d = new \DateTime($offre->date_fin);
-    $offre['date_fin'] =  $d->format(_T("Y-m-d"));
+  $offre['date_fin'] =  $d->format(_T("Y-m-d"));
+
+  $offre['domaines'] = $offres->getDomainesFromOffre($id_offre);
 
 	$tpl->assign('offer', $offre);
 
 }else if ( $login->isLogged() )  {
-
-    // Get member informations
-    $adh = new Adherent();
-    $adh->load($id_adh);
+  // Get member informations
+  $adh = new Adherent();
+  $adh->load($id_adh);
 	$offre['nom_contact'] =  $login->name . " " . $login->surname;
 	$offre['mail_contact'] = $adh->email;
 	$tpl->assign('offer', $offre);

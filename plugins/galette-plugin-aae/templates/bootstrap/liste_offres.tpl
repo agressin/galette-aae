@@ -14,7 +14,7 @@
         <tbody>
     		{foreach from=$offres item=offre}
 	            <tr class="formation_row">
-	                <td class="center nowrap"> <a href="{$galette_base_path}{$aaetools_path}liste_offres.php?id_offre={$offre.id}"> {utf8_encode($offre.titre)} </a> </td>
+	                <td class="center nowrap"> <a href="{$galette_base_path}{$aaetools_path}liste_offres.php?id_offre={$offre.id_offre}"> {utf8_encode($offre.titre)} </a> </td>
 	                <td class="center nowrap">{utf8_encode($offre.organisme)}</td>
 	                <td class="center nowrap">{utf8_encode($offre.date_parution)}</td>
 	                <td class="center nowrap">{utf8_encode($offre.type_offre)}</td>

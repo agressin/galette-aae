@@ -11,7 +11,7 @@ class Offres
 {
     const TABLE = 'offres';
     const TABLE_LIEN = 'liens_offre_domaine';
-    const PK = 'id';
+    const PK = 'id_offre';
 
     /**
      * Retrieve all Offres
@@ -64,17 +64,17 @@ class Offres
 
         try {
 
-            $select = $zdb->sql->select();
-			$select->from($this->getTableName())->where->equalTo("valide",false);
+          $select = $zdb->sql->select();
+		      $select->from($this->getTableName())->where->equalTo("valide",false);
 
-            $res = $zdb->execute($select);
-            $res = $res->toArray();
+          $res = $zdb->execute($select);
+          $res = $res->toArray();
 
-            if ( count($res) > 0 ) {
-                return $res;
-            } else {
-                return array();
-            }
+          if ( count($res) > 0 ) {
+              return $res;
+          } else {
+              return array();
+          }
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve offres : "' . $e->getMessage(),
@@ -157,36 +157,34 @@ class Offres
      * @param int $id_offre
      * @param ...
      */
-    public function setOffre($id_offre,$id_adh,$titre,$organisme,$localisation,$site,$nom_contact,$mail_contact,$tel_contact,$date_fin,
-		$type_offre,$desc_offre,$mots_cles,$duree,$date_debut,$remuneration, $cursus, $tech_majeures,$valide)
+    public function setOffre($id_offre,$id_adh,$titre,$id_entreprise,$localisation,$nom_contact,$mail_contact,$tel_contact,$date_fin,
+		$type_offre,$desc_offre,$mots_cles,$duree,$date_debut,$remuneration, $cursus, $array_domaines,$valide)
     {
 		global $zdb;
 
         try {
-			$date_parution = date("Y-m-d");
+			      $date_parution = date("Y-m-d");
             $res  = null;
             $data = null;
 
             $data = array(
-                        'titre'   		=> $titre,
-                        'id_adh'		=> $id_adh,
-                        'organisme'   	=> $organisme,
+                        'titre'   		  => $titre,
+                        'id_adh'		    => $id_adh,
+                        'id_entreprise' => $id_entreprise,
                         'localisation'  => $localisation,
-                        'site'   		=> $site,
                         'nom_contact'   => $nom_contact,
                         'mail_contact'  => $mail_contact,
                         'tel_contact'   => $tel_contact,
-                        'date_fin'   	=> $date_fin,
+                        'date_fin'   	  => $date_fin,
                         'type_offre'   	=> $type_offre,
                         'desc_offre'   	=> $desc_offre,
                         'mots_cles'   	=> $mots_cles,
-                        'duree'   		=> $duree,
+                        'duree'   		  => $duree,
                         'date_debut'   	=> $date_debut,
                         'remuneration'  => $remuneration,
-                        'cursus'   		=> $cursus,
-                        'tech_majeures' => $tech_majeures,
+                        'cursus'   		  => $cursus,
                         'date_parution' => $date_parution,
-                        'valide'		=> $valide
+                        'valide'		    => $valide
                     );
 
             if ( $id_offre == '' ) {
@@ -194,14 +192,19 @@ class Offres
                 $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
                 $insert->values($data);
                 $add = $zdb->execute($insert);
-				$id_offre = $add->getGeneratedValue();
+				        $id_offre = $add->getGeneratedValue();
             } else {
                 //Offer already exists, just update
                 $update = $zdb->update(AAE_PREFIX . self::TABLE);
                 $update->set($data)->where->equalTo(self::PK,$id_offre);
                 $edit = $zdb->execute($update);
+                $this->removeAllDomainesOfOffre($id_offre);
             }
-            return ($id_offre);
+
+            foreach( $array_domaines as $id_domaine){
+            	$this->addDomaineToOffre($id_domaine,$id_offre);
+            }
+            return $id_offre;
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set offer ' .

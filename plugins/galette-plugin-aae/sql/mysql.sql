@@ -56,12 +56,11 @@ CREATE TABLE IF NOT EXISTS galette_aae_liens_poste_domaine (
 );
 
 CREATE TABLE IF NOT EXISTS galette_aae_offres (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  id_offre int(10) unsigned NOT NULL AUTO_INCREMENT,
   id_adh int(10) unsigned NOT NULL,
+  id_entreprise int(10) unsigned NOT NULL,
   titre text  NOT NULL,
-  organisme text  NOT NULL,
   localisation text,
-  site text,
   nom_contact text  NOT NULL,
   mail_contact text  NOT NULL,
   tel_contact text,
@@ -74,15 +73,17 @@ CREATE TABLE IF NOT EXISTS galette_aae_offres (
   date_debut date NOT NULL,
   remuneration text,
   cursus text,
-  rech_majeures text,
-  PRIMARY KEY (id),
-  FOREIGN KEY (id_adh) REFERENCES galette_adherents (id_adh)
+  valide boolean,
+  PRIMARY KEY (id_offre),
+  FOREIGN KEY (id_adh) REFERENCES galette_adherents (id_adh),
+  FOREIGN KEY (id_entreprise) REFERENCES galette_aae_entreprises (id_entreprise)
 );
+
 CREATE TABLE IF NOT EXISTS galette_aae_liens_offre_domaine (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
   id_offre int(10) unsigned NOT NULL,
   id_domaine int(10) unsigned NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (id_poste) REFERENCES galette_aae_offres (id_poste),
+  FOREIGN KEY (id_offre) REFERENCES galette_aae_offres (id_offre),
   FOREIGN KEY (id_domaine) REFERENCES galette_aae_domaines (id_domaine)
 );

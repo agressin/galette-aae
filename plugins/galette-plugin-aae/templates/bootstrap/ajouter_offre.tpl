@@ -1,4 +1,4 @@
-<form class="form-horizontal" action="ajouter_poste.php" method="post">
+<form class="form-horizontal" action="ajouter_offre.php" method="post">
   </div>
 		{if $haveRights}
 		<p>
@@ -13,7 +13,7 @@
           <label for="organisme" class="bline">{_T string="Employeur :"}</label>
         </p>
         <p>
-          <select class="selectpicker" name="id_employeur" id="id_employeur" required {if {$vis} eq True} disabled {/if} title="{_T string="Choisir un employeur"}" data-size="auto">
+          <select class="selectpicker" name="id_entreprise" id="id_entreprise" required {if {$vis} eq True} disabled {/if} title="{_T string="Choisir un employeur"}" data-size="auto">
             {foreach from=$entreprises key=k item=v}
               <option value="{$k}" {if {$offer.id_entreprise} eq {$k} } selected="selected"{/if}>{$v.employeur}</option>
             {/foreach}
@@ -128,7 +128,7 @@
 
 			<div class="button-container">
 				<input type="submit" id="btnsave" value="{_T string="Save"}"/>
-				<input type="hidden" name="id_offre" value="{$offer.id}"/>
+				<input type="hidden" name="id_offre" value="{$offer.id_offre}"/>
 				<input type="hidden" name="id_adh" value="{$offer.id_adh}"/>
 			</div>
      </div>
