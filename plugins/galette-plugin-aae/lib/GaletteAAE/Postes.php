@@ -18,8 +18,8 @@ use Galette\AAE\Domaines as Domaines;
 class postes
 {
     const TABLE =  'postes';
+    const TABLE_LIEN = 'liens_poste_domaine';
     const PK = 'id_poste';
-    const CA = 'id_adh';
 
     public function getPostesMulti($req)
       {
@@ -208,31 +208,31 @@ class postes
                     );
 
             if ( $id_poste == '' ) {
-                //Poste does not exists yet
-                $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
-                $insert->values($data);
-                $add = $zdb->execute($insert);
+              //Poste does not exists yet
+              $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
+              $insert->values($data);
+              $add = $zdb->execute($insert);
 
-                if ( $add->count() == 0) {
-                    Analog::log('An error occured inserting new poste!' );
-                } else {
-					$res = $add->getGeneratedValue();
-				}
+              if ( $add->count() == 0) {
+                Analog::log('An error occured inserting new poste!' );
+              } else {
+				        $res = $add->getGeneratedValue();
+			        }
 
             } else {
-                //Poste already exists, just update
-                $update = $zdb->update(AAE_PREFIX . self::TABLE);
-                $update->set($data)->where->equalTo(self::PK,$id_poste);
-                $edit = $zdb->execute($update);
-                $res = $id_poste;
-                $domaines->removeAllDomainesOfPoste($id_poste);
-                //edit == 0 does not mean there were an error, but that there
-                //were nothing to change
+              //Poste already exists, just update
+              $update = $zdb->update(AAE_PREFIX . self::TABLE);
+              $update->set($data)->where->equalTo(self::PK,$id_poste);
+              $edit = $zdb->execute($update);
+              $res = $id_poste;
+              $this->removeAllDomainesOfPoste($id_poste);
+              //edit == 0 does not mean there were an error, but that there
+              //were nothing to change
             }
 
             foreach( $array_domaines as $id_domaine){
             	Analog::log('Add domaine array : ' . $id_domaine, Analog::WARNING );
-            	$domaines->addDomaineToPoste($id_domaine,$id_poste);
+            	$this->addDomaineToPoste($id_domaine,$id_poste);
             }
             return $res ;
         } catch ( \Exception $e ) {
@@ -270,6 +270,125 @@ class postes
         }
     }
 
+
+     /**
+     * Retrieve all domaines of one job
+     *
+     * @param int $id_poste domaine id
+     *
+     * @return array
+     */
+    public function getDomainesFromPoste($id_poste)
+    {
+        global $zdb;
+
+        try {
+          $domaines = new Domaines();
+
+        	$select = $zdb->sql->select();
+        	$select->from(array('l' => $this->getTableLienName()));
+
+    			$select->join(array('d' => $domaines->getTableName()),
+    				'd.id_domaine = l.id_domaine');
+
+    			$select->where->equalTo('l.id_poste', $id_poste);
+
+          $res = $zdb->execute($select);
+          $res = $res->toArray();
+
+          $out = array();
+          foreach( $res as $k){
+          	$out[] = $k['id_domaine'];
+          }
+    			return $out;
+        } catch (\Exception $e) {
+            Analog::log(
+                'Unable to retrieve domaine from poste "' .
+                $id_poste  . '". | ' . $e->getMessage(),
+                Analog::WARNING
+            );
+            return false;
+        }
+    }
+
+     /**
+     * Retrieve all domaines of one job
+     *
+     * @param int $id_poste domaine id
+     *
+     * @return array
+     */
+    public function getDomainesFromPosteToString($id_poste)
+    {
+        $domaines = new Domaines();
+        $dom = $this->getDomainesFromPoste($id_poste);
+        $temp= "";
+        $all_dom = $domaines->getAllDomaines();
+        foreach( $dom as $d){
+        	$temp .= $all_dom[$d] . ', ';
+        }
+        return rtrim($temp,', ');
+    }
+
+    /**
+     * remove All Domaines Of Poste
+     * @param int $id_poste
+     */
+    public function removeAllDomainesOfPoste($id_poste)
+    {
+        global $zdb;
+
+        try {
+
+            $delete = $zdb->delete(AAE_PREFIX . self::TABLE_LIEN);
+            $delete->where->equalTo('id_poste', $id_poste);
+            $zdb->execute($delete);
+            return true;
+        } catch ( \Exception $e ) {
+            Analog::log(
+                'Unable to delete domaines of poste ' .
+                $id_poste . ' | ' . $e->getMessage(),
+                Analog::ERROR
+            );
+            return false;
+        }
+    }
+
+/**
+     * SetFormation
+     * @param int $id_domaine
+     * @param int $id_poste
+     */
+    public function addDomaineToPoste($id_domaine,$id_poste)
+    {
+		global $zdb;
+
+        try {
+            $res  = null;
+            $data = array(
+                        'id_domaine' => $id_domaine,
+                        'id_poste'   => $id_poste
+                    );
+
+            $insert = $zdb->insert(AAE_PREFIX . self::TABLE_LIEN);
+            $insert->values($data);
+            $add = $zdb->execute($insert);
+
+            if ( $add->count() == 0) {
+                Analog::log('An error occured when adding Domaine To Poste!' );
+            }
+
+            return ($res > 0);
+        } catch ( \Exception $e ) {
+            Analog::log(
+                'Unable to add domaine to poste ' .
+                $id_poste . ' | ' . $e->getMessage(),
+                Analog::ERROR
+            );
+            return false;
+        }
+    }
+
     /**
      * Get table's name
      *
@@ -278,6 +397,16 @@ class postes
     static public function getTableName()
     {
         return PREFIX_DB . AAE_PREFIX . self::TABLE;
+    }
+
+    /**
+     * Get table link's name
+     *
+     * @return string
+     */
+	static public function getTableLienName()
+    {
+        return  PREFIX_DB . AAE_PREFIX  .  self::TABLE_LIEN;
     }
 }
 ?>

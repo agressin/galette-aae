@@ -48,16 +48,16 @@ $entreprises = new Entreprises();
 $domaines = new Domaines();
 
 
-$list_postes = $postes->getPostes($id_adh);  
+$list_postes = $postes->getPostes($id_adh);
 foreach ($list_postes as $i => $pos){
         $id_ent = $pos['id_entreprise'];
         $ent = $entreprises->getEntreprise($id_ent);
         $list_postes[$i]['id_entreprise'] = $ent['id_entreprise'];
         $list_postes[$i]['employeur'] = $ent['employeur'];
         $list_postes[$i]['website'] = $ent['website'];
-        $list_postes[$i]['domaines'] =$domaines->getDomainesFromPosteToString($pos['id_poste']);
+        $list_postes[$i]['domaines'] =$postes->getDomainesFromPosteToString($pos['id_poste']);
     }
- 
+
 //Tri le tableau en fonction de la date de début.
 usort($list_postes, function($a, $b) {
     return $b['annee_ini'] - $a['annee_ini'];

@@ -1,7 +1,7 @@
 <form class="form-horizontal" action="ajouter_ent.php" method="post">
 	<fieldset>
 		<legend>{_T string="Ajouter un employeur"}</legend>
-		
+
 			<div class="form-horizontal col-md-10">
 				<div class="form-group col-md-10">
 						<label for="employeur" class="col-sm-4 control-label">{_T string="Name"}</label>
@@ -21,8 +21,7 @@
 				<div class="form-group">
 					  <button type="submit" class="btn btn-primary">{_T string="Save"}</button>
 					  <input type="hidden" name="ident" value="1" />
-					<a class="btn btn-warning" href="{$galette_base_path}{$aaetools_path}ajouter_poste.php">{_T string="Go back"}</a>
+					<a class="btn btn-warning" href="{$galette_base_path}{$aaetools_path}{$caller}">{_T string="Go back"}</a>
 				</div>
 			</div>
 </form>
-

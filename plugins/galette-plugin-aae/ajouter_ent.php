@@ -22,11 +22,11 @@ if ( !$login->isLogged() ) {
 
 if (isset($_POST['employeur']))
 {
- 
+
 	$res = $entreprises->getEntrepriseByName($_POST['employeur']);
 	if ( count($res) > 0 ) {
 		$warning_detected[] = _T("Entreprise already exist in the DB.");
-	} else {	
+	} else {
 		$res = $entreprises->setEntreprise(
 			'',
 			$_POST['employeur'],
@@ -41,10 +41,16 @@ if (isset($_POST['employeur']))
 				header('location:'. $session['ajouter_ent_caller']);
 			else
 				header('location:'. 'ajouter_poste.php');
-		    die();	
+		    die();
 		}
 
 	}
+}
+
+if(isset($session['ajouter_ent_caller'])){
+  $tpl->assign('caller',$session['ajouter_ent_caller']);
+}else{
+  $tpl->assign('caller','ajouter_poste.php');
 }
 
 //Error

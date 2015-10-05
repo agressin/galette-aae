@@ -78,4 +78,11 @@ CREATE TABLE IF NOT EXISTS galette_aae_offres (
   PRIMARY KEY (id),
   FOREIGN KEY (id_adh) REFERENCES galette_adherents (id_adh)
 );
-
+CREATE TABLE IF NOT EXISTS galette_aae_liens_offre_domaine (
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  id_offre int(10) unsigned NOT NULL,
+  id_domaine int(10) unsigned NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (id_poste) REFERENCES galette_aae_offres (id_poste),
+  FOREIGN KEY (id_domaine) REFERENCES galette_aae_domaines (id_domaine)
+);

@@ -4,15 +4,19 @@ namespace Galette\AAE;
 
 use Analog\Analog as Analog;
 
+require_once 'lib/GaletteAAE/Domaines.php';
+use Galette\AAE\Domaines as Domaines;
+
 class Offres
 {
     const TABLE = 'offres';
+    const TABLE_LIEN = 'liens_offre_domaine';
     const PK = 'id';
 
     /**
      * Retrieve all Offres
      *
-     * @param 
+     * @param
      *
      * @return array
      */
@@ -29,10 +33,10 @@ class Offres
 			} else {
 				$select->from($this->getTableName())->where(true);;
 			}
-			
+
             $res = $zdb->execute($select);
             $res = $res->toArray();
-         
+
             if ( count($res) > 0 ) {
                 return $res;
             } else {
@@ -46,11 +50,11 @@ class Offres
             return false;
         }
     }
-    
+
  /**
      * Retrieve offers to valid
      *
-     * @param 
+     * @param
      *
      * @return array
      */
@@ -62,10 +66,10 @@ class Offres
 
             $select = $zdb->sql->select();
 			$select->from($this->getTableName())->where->equalTo("valide",false);
-			
+
             $res = $zdb->execute($select);
             $res = $res->toArray();
-            
+
             if ( count($res) > 0 ) {
                 return $res;
             } else {
@@ -79,7 +83,7 @@ class Offres
             return false;
         }
     }
- 
+
  /**
      * Retrieve offers of one adh
      *
@@ -95,10 +99,10 @@ class Offres
 
             $select = $zdb->sql->select();
 			$select->from($this->getTableName())->where->equalTo("id_adh",$id_adh);
-			
+
             $res = $zdb->execute($select);
             $res = $res->toArray();
-            
+
             if ( count($res) > 0 ) {
                 return $res;
             } else {
@@ -112,7 +116,7 @@ class Offres
             return false;
         }
     }
-    
+
      /**
      * Retrieve offre information
      *
@@ -146,8 +150,8 @@ class Offres
             return false;
         }
     }
-    
- 
+
+
     /**
      * SetOffre
      * @param int $id_offre
@@ -162,7 +166,7 @@ class Offres
 			$date_parution = date("Y-m-d");
             $res  = null;
             $data = null;
- 
+
             $data = array(
                         'titre'   		=> $titre,
                         'id_adh'		=> $id_adh,
@@ -232,8 +236,8 @@ class Offres
             return false;
         }
     }
- 
- 
+
+
  /**
      * ValidOffre
      * @param int $id_offre
@@ -262,6 +266,127 @@ class Offres
         }
     }
 
+
+         /**
+         * Retrieve all domaines of one job
+         *
+         * @param int $id_offre domaine id
+         *
+         * @return array
+         */
+        public function getDomainesFromOffre($id_offre)
+        {
+            global $zdb;
+
+            try {
+              $domaines = new Domaines();
+
+            	$select = $zdb->sql->select();
+            	$select->from(array('l' => $this->getTableLienName()));
+
+        			$select->join(array('d' => $domaines->getTableName()),
+        				'd.id_domaine = l.id_domaine');
+
+        			$select->where->equalTo('l.id_offre', $id_offre);
+
+              $res = $zdb->execute($select);
+              $res = $res->toArray();
+
+              $out = array();
+              foreach( $res as $k){
+              	$out[] = $k['id_domaine'];
+              }
+        			return $out;
+            } catch (\Exception $e) {
+                Analog::log(
+                    'Unable to retrieve domaine from offre "' .
+                    $id_offre  . '". | ' . $e->getMessage(),
+                    Analog::WARNING
+                );
+                return false;
+            }
+        }
+
+         /**
+         * Retrieve all domaines of one offre
+         *
+         * @param int $id_offre domaine id
+         *
+         * @return array
+         */
+        public function getDomainesFromOffreToString($id_offre)
+        {
+            $domaines = new Domaines();
+            $dom = $this->getDomainesFromOffre($id_offre);
+            $temp= "";
+            $all_dom = $domaines->getAllDomaines();
+            foreach( $dom as $d){
+            	$temp .= $all_dom[$d] . ', ';
+            }
+            return rtrim($temp,', ');
+        }
+
+        /**
+         * remove All Domaines Of offre
+         * @param int $id_offre
+         */
+        public function removeAllDomainesOfOffre($id_offre)
+        {
+            global $zdb;
+
+            try {
+
+                $delete = $zdb->delete(AAE_PREFIX . self::TABLE_LIEN);
+                $delete->where->equalTo('id_offre', $id_offre);
+                $zdb->execute($delete);
+                return true;
+            } catch ( \Exception $e ) {
+                Analog::log(
+                    'Unable to delete domaines of offre ' .
+                    $id_offre . ' | ' . $e->getMessage(),
+                    Analog::ERROR
+                );
+                return false;
+            }
+        }
+
+    /**
+         * SetFormation
+         * @param int $id_domaine
+         * @param int $id_offre
+         */
+        public function addDomaineToOffre($id_domaine,$id_offre)
+        {
+    		global $zdb;
+
+            try {
+                $res  = null;
+                $data = array(
+                            'id_domaine' => $id_domaine,
+                            'id_offre'   => $id_offre
+                        );
+
+                $insert = $zdb->insert(AAE_PREFIX . self::TABLE_LIEN);
+                $insert->values($data);
+                $add = $zdb->execute($insert);
+
+                if ( $add->count() == 0) {
+                    Analog::log('An error occured when adding Domaine To Offre!' );
+                }
+
+                return ($res > 0);
+            } catch ( \Exception $e ) {
+                Analog::log(
+                    'Unable to add domaine to offre ' .
+                    $id_offre . ' | ' . $e->getMessage(),
+                    Analog::ERROR
+                );
+                return false;
+            }
+        }
+
+
+
     /**
      * Get table's name
      *
@@ -270,6 +395,16 @@ class Offres
     protected function getTableName()
     {
         return PREFIX_DB . AAE_PREFIX  . self::TABLE;
+    }
+
+    /**
+     * Get table link's name
+     *
+     * @return string
+     */
+	static public function getTableLienName()
+    {
+        return  PREFIX_DB . AAE_PREFIX  .  self::TABLE_LIEN;
     }
 }
 ?>
