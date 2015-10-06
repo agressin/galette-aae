@@ -135,29 +135,15 @@
     </div>
 </form>
 <script type="text/javascript">
-	$(function() {
 
-		_collapsibleFieldsets();
-
-		$('#date_fin').datepicker({
+    option_date_picker = {
 			changeMonth: true,
 			changeYear: true,
-			showOn: 'button',
-			buttonImage: '{$template_subdir}images/calendar.png',
-			buttonImageOnly: true,
+      autoclose: true,
 			maxDate: '-0d',
 			yearRange: 'c-100:c+0'
-		});
+		};
 
-		$('#date_debut').datepicker({
-			changeMonth: true,
-			changeYear: true,
-			showOn: 'button',
-			buttonImage: '{$template_subdir}images/calendar.png',
-			buttonImageOnly: true,
-			maxDate: '-0d',
-			yearRange: 'c-100:c+0'
-		});
-
-	});
+		$('#date_fin').datepicker(option_date_picker);
+		$('#date_debut').datepicker(option_date_picker);
 </script>
