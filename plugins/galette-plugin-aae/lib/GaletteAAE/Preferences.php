@@ -12,7 +12,7 @@ class Preferences
     /**
      * Retrieve RIB in preferences table
      *
-     * @param 
+     * @param
      *
      * @return array
      */
@@ -21,13 +21,13 @@ class Preferences
         global $zdb;
         try {
             $select = $zdb->select(self::TABLE);
-            $select->where->equalTo(nom_pref, self::PK . $name);
-            
+            $select->where->equalTo('nom_pref', self::PK . $name);
+
             $res = $zdb->execute($select);
             $res = $res->toArray();
 
             if ( count($res) > 0 ) {
-                return $res[0][val_pref];
+                return $res[0]['val_pref'];
             } else {
                 return false;
             }
@@ -40,7 +40,7 @@ class Preferences
             return false;
         }
     }
-    
+
      /**
      * Will store the  RIB in the DB
      *
@@ -52,10 +52,10 @@ class Preferences
     {
     	global $zdb;
         try {
-        
+
         	 $data = array(
-                        nom_pref   => self::PK . $name,
-                        val_pref => $value
+                        'nom_pref'   => self::PK . $name,
+                        'val_pref' => $value
                     );
              //Try to insert Pref
              $insert = $zdb->insert( self::TABLE);
@@ -64,20 +64,20 @@ class Preferences
 
             return true;
         } catch (\Exception $e) {
-        	
+
         	 if($e->getCode() == 23000) {
              	Analog::log($name . ' already exist, try to update it' );
              	$update = $zdb->update( self::TABLE);
-                $update->set($data)->where->equalTo(nom_pref, self::PK . $name);
+                $update->set($data)->where->equalTo('nom_pref', self::PK . $name);
                 $edit = $zdb->execute($update);
                 return true;
-                    
+
              }else{
             	Analog::log(
             	    'Unable to store preferences ' . $name.' | ' . $e->getMessage(),
            	     	Analog::WARNING
             	);
-            
+
            		return false;
             }
         }
@@ -94,4 +94,3 @@ class Preferences
     }
 }
 ?>
-

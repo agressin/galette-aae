@@ -49,7 +49,7 @@ $entreprises = new Entreprises();
 $domaines = new Domaines();
 
 
-$list_postes = $postes->getPostes($id_adh);  
+$list_postes = $postes->getPostes($id_adh);
 foreach ($list_postes as $i => $pos){
         $id_ent = $pos['id_entreprise'];
         $ent = $entreprises->getEntreprise($id_ent);
@@ -58,13 +58,13 @@ foreach ($list_postes as $i => $pos){
         $list_postes[$i]['website'] = $ent['website'];
         $list_postes[$i]['domaines'] =$domaines->getDomainesFromPosteToString($pos['id_poste']);
     }
- 
+
 //Tri le tableau en fonction de la date de début.
 usort($list_postes, function($a, $b) {
     return $b['annee_ini'] - $a['annee_ini'];
 });
 
-$tpl->assign('list_postes', $list_postes);
+$nb_postes = count($list_postes);
 
 //----------------POSTES Fin---------------------
 
@@ -82,7 +82,10 @@ $tpl->assign('page_title', _T("Profil of ").$nom);
 $orig_template_path = $tpl->template_dir;
 $tpl->template_dir = 'templates/' . $preferences->pref_theme;
 
+$tpl->assign('postes', $list_postes);
+$tpl->assign('nb_postes', $nb_postes);
 $content = $tpl->fetch('voir_adherent_public.tpl');
+
 $tpl->assign('content', $content);
 
 //Set path back to main Galette's template

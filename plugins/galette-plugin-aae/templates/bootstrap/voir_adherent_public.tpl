@@ -1,5 +1,3 @@
-	<div class="bigtable wrmenu">
-		<div class="bigtable wrmenu">
 			<!--<div id="member_stateofdue" class="{$member->getRowClass()}">{$member->getDues()}</div>-->
 			<table class="details table-hover">
 				<legend>{_T string="Identity"}</legend>
@@ -51,7 +49,7 @@
 				</tr>
 	{/if}
 
-	
+
 				<tr>
 					<th style="width:50%" >{_T string="Cycle(s)"}</th>
 					<form class="form-horizontal" action="liste_eleves.php" method="post">
@@ -63,9 +61,9 @@
 					</form>
 				</tr>
 
-	
+
 			</table>
-			
+
 			<table class="details table-hover">
 				<legend>{_T string="Contact information"}</legend>
 	{if $visibles.ville_adh eq constant('Galette\Entity\FieldsConfig::VISIBLE') or ($visibles.ville_adh eq constant('Galette\Entity\FieldsConfig::ADMIN') and ($login->isStaff() or $login->isAdmin() or $login->isSuperAdmin()))}
@@ -105,11 +103,10 @@
 
 			</table>
 
-			
+
 			<table class="details table-hover">
 				<legend>{_T string="Jobs information"}</legend>
-		{foreach $list_postes as $key}
-		
+		{foreach $postes as $key}
 				<tr>
 					<th style="width:25%" >
 					{if $key.annee_fin eq $key.annee_ini}
@@ -125,50 +122,11 @@
 					</td>
 					<td>
 						<a href="" data-toggle="modal" data-target=".bs-example-modal-lg-{$key.id_poste}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
-					</td>	
+					</td>
 				</tr>
 		{/foreach}
 			</table>
-
-		{foreach $list_postes as $poste}
-			<div class="modal fade bs-example-modal-lg-{$poste.id_poste}" tabindex="-1" role="dialog">
-			  <div class="modal-dialog modal-lg">
-				<div class="modal-content">
-				  <table class="table"> 
-				    	<tr>
-				    		<td><h4>Période</h4> </td>
-				    		<td>{$poste.annee_ini}-{if $poste.annee_fin eq 0}{_T string="present"}{else}{$poste.annee_fin}{/if}</td>
-				    	</tr>
-				    	<tr>
-				    		<td><h4>Employeur</h4></td>
-				    		<td> <a href="liste_job.php?id_entreprise={$poste.id_entreprise}">{$poste.employeur}</a></td>
-				    	</tr>
-				    	<tr>
-				    		<td><h4>Site internet</h4></td>
-				    		<td> <a href="{if strpos($poste.website,"http") !==0}http://{/if}{$poste.website}" target="_blank">{$poste.website}</a></td>
-				    	</tr>
-				    	<tr>
-				    		<td><h4>Adresse</h4></td>
-				    		<td>{$poste.adresse}</td>
-				    	</tr> 
-				    	<tr>
-				    		<td><h4>Type de contrat</h4></td>
-				    		<td>{$poste.type}</td>
-				    	</tr> 
-				    	<tr>
-				    		<td><h4>Intitulé du poste</h4></td>
-				    		<td>{$poste.titre}</td>
-				    	</tr>
-				    	<tr>
-				    		<td><h4>Compétences</h4></td>
-				    		<td>{$poste.domaines}</td>
-				    	</tr>
-				    </table> 
-				</div>
-			  </div>
-			</div>
-		{/foreach}
-
+			{include file="details_job.tpl"}
 
 		<div class="details table-hover">
 			<legend>{_T string="Geographic situation"}</legend>
@@ -176,7 +134,7 @@
 			<div id="noResult">{_T string="No detail found"}</div>
 			<div id="carteMembres" class="carteMembres" style="display:none;"><div id="popup"></div></div>
 		</div>
-		
+
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
 		<link rel="stylesheet" href="css/style_cartes.css" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css">
@@ -217,5 +175,3 @@
 
 			lancerCarteMembres({$member->id});
 		</script>
-
-	

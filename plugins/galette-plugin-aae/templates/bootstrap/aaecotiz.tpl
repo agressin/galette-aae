@@ -1,10 +1,7 @@
 <div>
 		<h3 class="page-header"> {_T string="Montants des cotisations"} </h3>
 		<p>
-			{_T string="Les montants des différentes cotisations sont :"}
-		<br>
 		 	{$AAE_Pref->getPref('montant_cotis')}
-		<br>
 		</p>
 		<h3 class="page-header"> {_T string="Paiement par chèque"} </h3>
 		<p>

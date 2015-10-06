@@ -59,31 +59,28 @@ if(isset($_POST['id_entreprise'])) {
 
 $tpl->assign('id_entreprise', $id_entreprise);
 
+$list_postes = [];
 if($is_valid) {
-	$postes = $postes->getPostesByEnt($id_entreprise);
-	$nb_postes = count($postes);
+	$list_postes = $postes->getPostesByEnt($id_entreprise);
+	$nb_postes = count($list_postes);
 
 	// Obtient une liste de colonnes
-	foreach ($postes as $key => $row) {
+	foreach ($list_postes as $key => $row) {
 		$id_adh[$key] = $row['id_adh'];
-		$postes[$key]['nom_adh'] = $adherent->getSName($id_adh[$key]);
-		
+		$list_postes[$key]['nom_adh'] = $adherent->getSName($id_adh[$key]);
+
 		$id_ent = $row['id_entreprise'];
         $ent = $entreprises->getEntreprise($id_ent);
-        $postes[$key]['id_entreprise'] = $ent['id_entreprise'];
-        $postes[$key]['employeur'] = $ent['employeur'];
-        $postes[$key]['website'] = $ent['website'];
-        $postes[$key]['domaines'] = $domaines->getDomainesFromPosteToString($row['id_poste']);
+        $list_postes[$key]['employeur'] = $ent['employeur'];
+        $list_postes[$key]['id_entreprise'] = $ent['id_entreprise'];
+        $list_postes[$key]['website'] = $ent['website'];
+        $list_postes[$key]['domaines'] = $domaines->getDomainesFromPosteToString($row['id_poste']);
 	}
-	$tpl->assign('postes', $postes);
 	$tpl->assign('param_selected',true);
 } else {
 	$nb_postes = 0;
 	$tpl->assign('param_selected',false);
 }
-
-
-$tpl->assign('nb_postes', $nb_postes);
 
 $tpl->assign('page_title', _T("Jobs list"));
 
@@ -92,7 +89,10 @@ $tpl->assign('page_title', _T("Jobs list"));
 $orig_template_path = $tpl->template_dir;
 $tpl->template_dir = 'templates/' . $preferences->pref_theme;
 
-$content = $tpl->fetch('liste_job.tpl');
+$tpl->assign('postes', $list_postes);
+$tpl->assign('nb_postes', $nb_postes);
+$content  = $tpl->fetch('liste_job.tpl');
+
 $tpl->assign('content', $content);
 
 //Set path back to main Galette's template
