@@ -48,7 +48,7 @@
 		<div class="details table-hover" id="details" style="display:none;">
 			<legend>{_T string="Geographic situation"}</legend>
 			<div id="loading" style="display:none;"><img src="../../templates/bootstrap/images/loading.gif" alt="{_T string="Loading..."}" title="{_T string="Loading..."}"></div>
-			<div id="noResult" style="display:none;">{_T string="No detail found"}</div>
+			<div id="warningbox" style="display:none;">{_T string="No detail found"}</div>
 			<div id="carteMembres" class="carteMembres" style="display:none;"><div id="popup"></div></div>
 		</div>
 
@@ -97,7 +97,7 @@
 				function lancerCarteMembres(id_adh) {
 					var options = {
 						idCarte : 'carteMembres',
-						idNoResult : 'noResult',
+						idNoResult : 'warningbox',
 						idLoading : 'loading',
 						center : [46.49839, 3.20801],
 						zoom : 6,

@@ -15,6 +15,9 @@ use Galette\AAE\Postes as Postes;
 require_once 'lib/GaletteAAE/Annuaire.php';
 use Galette\AAE\Annuaire as Annuaire;
 
+//require_once 'lib/GaletteAAE/Entreprises.php';
+//use Galette\AAE\Entreprises as Entreprises;
+
 
 if ( !$preferences->showPublicPages($login) ) {
     //public pages are not actives
@@ -49,6 +52,7 @@ $POSTES = array();
 function recupererInfoAdherent($id_adh, $MAISONS, $POSTES) {
 	$postes = new Postes();
 	$annuaire = new Annuaire();
+	//$entreprises = new Entreprises();
 
 	// Recuperation du logement :
 	$maisons = $annuaire -> getGeoSpatialInfo($id_adh);
@@ -58,9 +62,13 @@ function recupererInfoAdherent($id_adh, $MAISONS, $POSTES) {
 	$info = $annuaire -> getInfoById($id_adh); // on recup le nom et prenom, pas envoyes par getPostes
 	$lesPostes = $postes -> getPostes($id_adh);
 	foreach ($lesPostes as $poste) {
+		//print_r($poste);
 			$tps = $poste; // on ajout le nom et prenom, pas envoyes par getPostes
 			$tps['nom_adh'] = $info[0]['nom_adh'];
 			$tps['prenom_adh'] = $info[0]['prenom_adh'];
+			// On ajoute le nom de l'entreprise, pas envoyé par poste :
+			//$ent = $entreprises->getEntreprise($poste['id_entreprise']);
+			//$tps['employeur'] = $ent['employeur'];
 			array_push($POSTES, $tps);
 	}
 
@@ -139,6 +147,7 @@ foreach ($MAISONS as $maison) {
 
 // Ou leurs postes :
 foreach ($POSTES as $poste) {
+	//print_r($poste);
 	$adr = $poste['adresse'];
 	$adr .= ($poste['code_postal'] != '' ? ($adr != '' ? ', ' : '') . $poste['code_postal'] : '');
 	$adr .= ($poste['ville'] != '' ? ($adr != '' ? ', ' : '') . $poste['ville'] : '');
@@ -146,8 +155,8 @@ foreach ($POSTES as $poste) {
 		// Creation des info :
 		$info = '';
 		$info .= '<p class="title">' . $poste['nom_adh'] . ' ' . $poste['prenom_adh'] . '</p>';
-		$info .= '<p>Activité : ' . $poste['activite_principale'] . '</p>';
-		$info .= '<p>Dates : ' . $poste['annee_ini'] . ' - ' . $poste['annee_fin'] . '</p>';
+		$info .= '<p><a href="voir_adherent_public.php?id_adh=' . $poste['id_adh'] . '" title="' . $poste['nom_adh'] . ' ' . $poste['prenom_adh'] . '">' . $poste['activite_principale'] . '</a></p>';
+		// TODO : Lien vers la bonne page
 
 		array_push($lieux, array(
 			'info' => $info,

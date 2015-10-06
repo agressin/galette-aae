@@ -121,7 +121,7 @@
 						<a href="{$key.website}">{$key.website}</a>
 					</td>
 					<td>
-						<a href="" data-toggle="modal" data-target=".bs-example-modal-lg-{$key.id_poste}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
+						<a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg-{$key.id_poste}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
 					</td>
 				</tr>
 		{/foreach}
@@ -131,7 +131,7 @@
 		<div class="details table-hover">
 			<legend>{_T string="Geographic situation"}</legend>
 			<div id="loading"><img src="../../templates/bootstrap/images/loading.gif" alt="{_T string="Loading..."}" title="{_T string="Loading..."}"></div>
-			<div id="noResult">{_T string="No detail found"}</div>
+			<div id="warningbox">{_T string="No detail found"}</div>
 			<div id="carteMembres" class="carteMembres" style="display:none;"><div id="popup"></div></div>
 		</div>
 
@@ -153,7 +153,7 @@
 				if (carteMembres === false) {
 					var options = {
 						idCarte : 'carteMembres',
-						idNoResult : 'noResult',
+						idNoResult : 'warningbox',
 						idLoading : 'loading',
 						center : [46.49839, 3.20801],
 						zoom : 6,
