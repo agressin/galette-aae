@@ -117,9 +117,7 @@
 					</th>
 					<td>{$key.activite_principale|htmlspecialchars}</td>
 					<td><a href="liste_job.php?id_entreprise={$key.id_entreprise}">{$key.employeur|htmlspecialchars}</a></td>
-					<td>
-						<a href="{$key.website}">{$key.website}</a>
-					</td>
+					<td>{$key.titre}</td>
 					<td>
 						<a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg-{$key.id_poste}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
 					</td>

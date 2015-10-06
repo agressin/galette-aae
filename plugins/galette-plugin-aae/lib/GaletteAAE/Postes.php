@@ -20,7 +20,7 @@ class postes
     const TABLE =  'postes';
     const PK = 'id_poste';
     const CA = 'id_adh';
-    
+
     /**
      * Retrieve member poste
      *
@@ -35,7 +35,7 @@ class postes
         try {
             $select = $zdb->select(AAE_PREFIX . self::TABLE);
             $select->where->equalTo('id_adh', $id_adh);
-            
+
             $res = $zdb->execute($select);
             $res = $res->toArray();
             if ( count($res) > 0 ) {
@@ -89,7 +89,7 @@ class postes
             return false;
         }
     }
-    
+
      /**
      * Retrieve entreprise information
      *
@@ -131,65 +131,62 @@ class postes
 	 * @param array[int] $domaines
      * @param text $adresse
      * @param int $annee_ini
-     * @param int $annee_fin    
-     * 
+     * @param int $annee_fin
+     *
      */
     public function setPoste($id_poste,$id_adh,$id_entreprise,$type,$titre,$activites,$array_domaines,$adresse,$annee_ini,$annee_fin)
     {
         global $zdb;
 
         try {
-        
-        	$domaines = new Domaines();
-            $res  = false;
-            $data = array(
-            			'id_adh' 		=> $id_adh,
-            			'id_entreprise' => $id_entreprise,
-                        'type' 			=> $type,
-                        'titre' 		=> $titre,
-                        'activites'  	=> $activites,
-                        'adresse' 		=> $adresse,
-                        'annee_ini'   	=> $annee_ini,
-                        'annee_fin' 	=> $annee_fin
-                    );
 
-            if ( $id_poste == '' ) {
-                //Poste does not exists yet
-                $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
-                $insert->values($data);
-                $add = $zdb->execute($insert);
-                
-                if ( $add->count() == 0) {
-                    Analog::log('An error occured inserting new poste!' );
-                } else {
-					$res = $add->getGeneratedValue();
-				}
-                
+        	$domaines = new Domaines();
+          $res  = false;
+          $data = array(
+          			'id_adh' 		=> $id_adh,
+          			'id_entreprise' => $id_entreprise,
+                      'type' 			=> $type,
+                      'titre' 		=> $titre,
+                      'activites'  	=> $activites,
+                      'adresse' 		=> $adresse,
+                      'annee_ini'   	=> $annee_ini,
+                      'annee_fin' 	=> $annee_fin
+                  );
+
+          if ( $id_poste == '' ) {
+            //Poste does not exists yet
+            $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
+            $insert->values($data);
+            $add = $zdb->execute($insert);
+
+            if ( $add->count() == 0) {
+                Analog::log('An error occured inserting new poste!' );
             } else {
-                //Poste already exists, just update               
-                $update = $zdb->update(AAE_PREFIX . self::TABLE);
-                $update->set($data)->where->equalTo(self::PK,$id_poste);
-                $edit = $zdb->execute($update);
-                $res = $id_poste;
-                $domaines->removeAllDomainesOfPoste($id_poste);
-                //edit == 0 does not mean there were an error, but that there
-                //were nothing to change
-            }
-            
-            var_dump($array_domaines);
-            foreach( $array_domaines as $id_domaine){
-            	Analog::log('Add domaine array : ' . $id_domaine, Analog::WARNING );
-            	$domaines->addDomaineToPoste($id_domaine,$id_poste);
-            } 
-            return $res ;
-        } catch ( \Exception $e ) {
-            Analog::log(
-                'Unable to set poste ' .
-                $id_poste . ' | ' . $e->getMessage(),
-                Analog::ERROR
-            );
-            return false;
-        }
+    					$id_poste = $add->getGeneratedValue();
+    				}
+
+          } else {
+              //Poste already exists, just update
+              $update = $zdb->update(AAE_PREFIX . self::TABLE);
+              $update->set($data)->where->equalTo(self::PK,$id_poste);
+              $edit = $zdb->execute($update);
+              $domaines->removeAllDomainesOfPoste($id_poste);
+              //edit == 0 does not mean there were an error, but that there
+              //were nothing to change
+          }
+          foreach( $array_domaines as $id_domaine){
+          	Analog::log('Add domaine array : ' . $id_domaine, Analog::WARNING );
+          	$domaines->addDomaineToPoste($id_domaine,$id_poste);
+          }
+          return $id_poste ;
+      } catch ( \Exception $e ) {
+          Analog::log(
+              'Unable to set poste ' .
+              $id_poste . ' | ' . $e->getMessage(),
+              Analog::ERROR
+          );
+          return false;
+      }
     }
 
     /**
@@ -216,7 +213,7 @@ class postes
             return false;
         }
     }
-    
+
     /**
      * Get table's name
      *
