@@ -74,26 +74,27 @@ if(isset($_POST['domaines'])) {
 	$req["domaines"] = $_GET['domaines'];
 	$is_valid=true;
 }
-$tpl->assign('domaines', $req["domaines"]);
+$tpl->assign('req_domaines', $req["domaines"]);
 
 if($is_valid) {
-	//$postes = $postes->getPostesByEnt($id_entreprise);
-  $postes = $postes->getPostesMulti($req);
-	$nb_postes = count($postes);
+	//$list_postes = $postes->getPostesByEnt($id_entreprise);
+  $list_postes = $postes->getPostesMulti($req);
+  //var_dump($list_postes);
+	$nb_postes = count($list_postes);
 
 	// Obtient une liste de colonnes
-	foreach ($postes as $key => $row) {
+	foreach ($list_postes as $key => $row) {
 		$id_adh[$key] = $row['id_adh'];
-		$postes[$key]['nom_adh'] = $adherent->getSName($id_adh[$key]);
+		$list_postes[$key]['nom_adh'] = $adherent->getSName($id_adh[$key]);
 
 		$id_ent = $row['id_entreprise'];
-        $ent = $entreprises->getEntreprise($id_ent);
-        $postes[$key]['id_entreprise'] = $ent['id_entreprise'];
-        $postes[$key]['employeur'] = $ent['employeur'];
-        $postes[$key]['website'] = $ent['website'];
-        $postes[$key]['domaines'] = $domaines->getDomainesFromPosteToString($row['id_poste']);
+    $ent = $entreprises->getEntreprise($id_ent);
+    $list_postes[$key]['id_entreprise'] = $ent['id_entreprise'];
+    $list_postes[$key]['employeur'] = $ent['employeur'];
+    $list_postes[$key]['website'] = $ent['website'];
+    $list_postes[$key]['domaines'] = $postes->getDomainesFromPosteToString($row['id_poste']);
 	}
-	$tpl->assign('postes', $postes);
+	$tpl->assign('postes', $list_postes);
 	$tpl->assign('param_selected',true);
 } else {
 	$nb_postes = 0;

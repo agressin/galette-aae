@@ -18,9 +18,10 @@
 							{*Searching poste by Type*}
 							<label for="type" class="control-label">{_T string="Job Type"}</label> <br>
 							<select class="selectpicker" name="type" id="type" title="{_T string="Select a type"}" data-size="auto">
-											<option value="Stage" >{_T string="Stage"}</option>
-											<option value="CDD"   >{_T string="CDD"}</option>
-											<option value="CDI"   >{_T string="CDI"}</option>
+											<option value="" {if $type eq ""} selected="selected"{/if} > -- {_T string="all"} -- </option>
+											<option value="Stage" {if $type eq "Stage"} selected="selected"{/if}>{_T string="Stage"}</option>
+											<option value="CDD"   {if $type eq "CDD"} selected="selected"{/if}>{_T string="CDD"}</option>
+											<option value="CDI"   {if $type eq "CDI"} selected="selected"{/if}>{_T string="CDI"}</option>
 							</select>
 						</div>
 						<div class="form-group col-md-1"></div>
@@ -29,7 +30,7 @@
 							<label for="domaines" class="control-label">{_T string="Skills"}</label> <br>
 							<select class="selectpicker" name="domaines[]" id="domaines" multiple title="{_T string="Select one or more skill(s)"}" data-size="auto">
 								{foreach from=$domaines key=k item=d}
-        				<option value="{$k}">{$d|htmlspecialchars}</option>
+        				<option value="{$k}" {if in_array($k, $req_domaines)} selected="selected"{/if}>{$d|htmlspecialchars}</option>
     						{/foreach}
                 </select>
 						</div>
