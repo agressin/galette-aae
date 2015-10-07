@@ -97,22 +97,22 @@ if( isset($_POST['valid']) ){
 		$_POST['annee_ini'],
 		$_POST['annee_fin']
 	);
-	
+
 	if($res){
 		$id_poste = $res;
-		
+
 		unset($session['ajouter_ent']);
 
 		if( !isset($session['ajouter_poste']))
 			$session['ajouter_poste'] = [];
 
 		$session['ajouter_poste']['poste_ok'] = true;
-		
+
 		if( isset($session['ajouter_poste']['caller']) )
 			$caller = $session['ajouter_poste']['caller'];
 		else
 			$caller ="gestion_postes.php";
-		
+
 		header('location:'. $caller);
 		die();
 	}
@@ -120,12 +120,12 @@ if( isset($_POST['valid']) ){
 		$error_detected[] = _T("Unabled to add/modify the job");
 	}
 }
-    
+
 #----------VISUALISATION / MODIFICATION ----------#
 if($id_poste != ''){
     $tpl->assign('id_poste', $id_poste);
-    
-    $poste['domaines'] = $domaines->getDomainesFromPoste($id_poste);
+
+    $poste['domaines'] = $postes->getDomainesFromPoste($id_poste);
     $tpl->assign('poste',$poste);
 }
 $tpl->assign('domaines',$domaines->getAllDomaines() );
@@ -133,7 +133,7 @@ $tpl->assign('domaines',$domaines->getAllDomaines() );
 if($member->id != null)
 	$tpl->assign('member', $member);
 else
-	$error_detected[] = _T("No member found.");   
+	$error_detected[] = _T("No member found.");
 
 //Erreur
 if (isset($error_detected)) {

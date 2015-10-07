@@ -52,13 +52,12 @@ $is_valid = get_numeric_form_value('valid', false);
 $req = array();
 $id_entreprise='';
 if(isset($_POST['id_entreprise'])) {
-
-	$req["id_entreprise"] = $_POST['id_entreprise'];
+	$req["entreprise"] = $_POST['id_entreprise'];
 } else if(isset($_GET['id_entreprise'])) {
-	$req["id_entreprise"] = $_GET['id_entreprise'];
+	$req["entreprise"] = $_GET['id_entreprise'];
 	$is_valid=true;
 }
-$tpl->assign('id_entreprise', $req["id_entreprise"]);
+$tpl->assign('id_entreprise', $req["entreprise"]);
 
 if(isset($_POST['type'])) {
 	$req["type"] = $_POST['type'];

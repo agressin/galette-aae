@@ -38,12 +38,13 @@ class postes
           $select->group('id_poste');
 
           $init=false;
-          if (array_key_exists("entreprise",$req) and ($req["entreprise"] != '')){
-            $select->where->equalTo('p.id_entreprise',  $req["entreprise"]);
+          if (array_key_exists("entreprise",$req) && ($req["entreprise"] != '')){
+            $select->where->equalTo('id_entreprise',  $req["entreprise"]);
             $init=true;
           };
-          if (array_key_exists("type",$req) and ($req["type"] != '')){
-            $select->where->equalTo('p.type',  $req["type"]);
+          if (array_key_exists("type",$req) && ($req["type"] != '')){
+            //$select->where->equalTo('type',  $req["type"]);
+            $select->where(array('type' => $req["type"]));
             $init=true;
           };
           if (array_key_exists("domaines",$req)){

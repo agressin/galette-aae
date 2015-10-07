@@ -1,16 +1,19 @@
 <?php
-// This file was automatically generated on Wed Oct  7 20:43:42 2015 (GMT)
+// This file was automatically generated on Wed Oct  7 21:53:42 2015 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
-// ../templates/bootstrap/liste_job.tpl:10 ../templates/bootstrap/liste_job.tpl:21 
+// ../templates/bootstrap/liste_job.tpl:10 
 $lang['all'] = 'all';
 
 // ../templates/bootstrap/send_message.tpl:15 
 $lang['Message:'] = 'Message:';
 
-// ../templates/bootstrap/liste_job.tpl:67 ../templates/bootstrap/gestion_postes.tpl:5 
+// ../templates/bootstrap/liste_job.tpl:66 ../templates/bootstrap/gestion_postes.tpl:5 
 $lang['Title'] = 'Title';
+
+// ../templates/bootstrap/liste_job.tpl:20 
+$lang['Select one or more type'] = 'Select one or more skill(s)';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:10 
 $lang['[M]'] = '[M]';
@@ -18,7 +21,7 @@ $lang['[M]'] = '[M]';
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:68 ../templates/default/ajouter_formation_eleve.tpl:68 
 $lang['please create a member'] = 'please create a member';
 
-// ../templates/bootstrap/liste_job.tpl:20 ../templates/bootstrap/ajouter_poste.tpl:29 
+// ../templates/bootstrap/ajouter_poste.tpl:29 
 $lang['Select a type'] = 'Select a type';
 
 // ../templates/bootstrap/aaecotiz.tpl:8 ../templates/default/aaecotiz.tpl:6 
@@ -30,7 +33,7 @@ $lang['Job details of'] = 'Job details of';
 // ../templates/bootstrap/gestion_postes.tpl:38 
 $lang['Add a job'] = 'Add a job';
 
-// ../templates/bootstrap/liste_job.tpl:54 
+// ../templates/bootstrap/liste_job.tpl:53 
 $lang['Jobs'] = 'Jobs';
 
 // ../ajouter_poste.php:136 
@@ -42,7 +45,7 @@ $lang['Select cycle and promotion'] = 'Select cycle and promotion';
 // ../templates/bootstrap/adh_fiche_action.tpl:31 ../templates/default/adh_fiche_action.tpl:23 
 $lang['Add a formation'] = 'Add a formation';
 
-// ../templates/bootstrap/liste_job.tpl:31 ../templates/bootstrap/ajouter_poste.tpl:54 
+// ../templates/bootstrap/liste_job.tpl:30 ../templates/bootstrap/ajouter_poste.tpl:54 
 $lang['Select one or more skill(s)'] = 'Select one or more skill(s)';
 
 // ../send_message.php:40 
@@ -63,7 +66,7 @@ $lang['Merci de faire un virement avec l\'intitulé \'cotis nom prenom\' sur le 
 // ../templates/bootstrap/gestion_formations.tpl:5 ../templates/bootstrap/liste_membres_aae.tpl:69 ../templates/default/gestion_formations.tpl:6 
 $lang['Cycle'] = 'Cycle';
 
-// ../templates/bootstrap/liste_job.tpl:43 ../templates/bootstrap/carte_membres_aae.tpl:123 ../templates/bootstrap/liste_membres_aae.tpl:43 ../templates/default/liste_membres_aae.tpl:21 
+// ../templates/bootstrap/liste_job.tpl:42 ../templates/bootstrap/carte_membres_aae.tpl:123 ../templates/bootstrap/liste_membres_aae.tpl:43 ../templates/default/liste_membres_aae.tpl:21 
 $lang['Refresh'] = 'Refresh';
 
 // ../ajouter_ent.php:37 
@@ -78,13 +81,13 @@ $lang['Name and/or First Name'] = 'Name and/or First Name';
 // ../templates/bootstrap/promotion.tpl:54 
 $lang['Show:'] = 'Show:';
 
-// ../templates/bootstrap/liste_job.tpl:106 ../templates/bootstrap/liste_membres_aae.tpl:103 ../templates/bootstrap/promotion.tpl:38 
+// ../templates/bootstrap/liste_job.tpl:105 ../templates/bootstrap/liste_membres_aae.tpl:103 ../templates/bootstrap/promotion.tpl:38 
 $lang['If you see an error, please send an email to:'] = 'If you see an error, please send an email to:';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:47 
 $lang['Profession'] = 'Profession';
 
-// ../templates/bootstrap/liste_job.tpl:8 ../templates/bootstrap/liste_job.tpl:64 ../templates/bootstrap/gestion_postes.tpl:6 
+// ../templates/bootstrap/liste_job.tpl:8 ../templates/bootstrap/liste_job.tpl:63 ../templates/bootstrap/gestion_postes.tpl:6 
 $lang['Entreprise'] = 'Compagny';
 
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:22 ../templates/default/ajouter_formation_eleve.tpl:22 
@@ -123,8 +126,8 @@ $lang['Contribution process'] = 'Contribution process';
 // ../templates/bootstrap/send_message.tpl:21 
 $lang['Send'] = 'Send';
 
-// ../templates/bootstrap/liste_job.tpl:24 ../templates/bootstrap/ajouter_poste.tpl:32 
-$lang['CDI'] = 'CDI';
+// ../templates/bootstrap/gestion_postes.tpl:4 
+$lang['Period'] = 'Period';
 
 // ../templates/bootstrap/ajouter_poste.tpl:76 
 $lang['yyyy'] = 'yyyy';
@@ -141,13 +144,13 @@ $lang['(Max 255 characters)'] = '(Max 255 characters)';
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:55 ../templates/bootstrap/aaetools.tpl:29 ../templates/bootstrap/ajouter_poste.tpl:82 ../templates/bootstrap/ajouter_ent.tpl:22 ../templates/default/ajouter_formation_eleve.tpl:55 ../templates/default/aaetools.tpl:13 
 $lang['Save'] = 'Save';
 
-// ../templates/bootstrap/liste_job.tpl:192 ../templates/bootstrap/liste_membres_aae.tpl:150 ../templates/bootstrap/promotion.tpl:52 
+// ../templates/bootstrap/liste_job.tpl:191 ../templates/bootstrap/liste_membres_aae.tpl:150 ../templates/bootstrap/promotion.tpl:52 
 $lang['Next'] = 'Next';
 
 // ../aaetools.php:73 ../templates/bootstrap/menu.tpl:5 ../templates/default/menu.tpl:4 
 $lang['AAE Tools'] = 'AAE Tools';
 
-// ../liste_job.php:107 ../templates/bootstrap/public_menu.tpl:9 ../templates/bootstrap/public_menu.tpl:22 
+// ../liste_job.php:106 ../templates/bootstrap/public_menu.tpl:9 ../templates/bootstrap/public_menu.tpl:22 
 $lang['Jobs list'] = 'Job list';
 
 // ../templates/bootstrap/aaecotiz.tpl:15 ../templates/default/aaecotiz.tpl:13 
@@ -168,7 +171,7 @@ $lang['Speciality:'] = 'Speciality:';
 // ../templates/bootstrap/ajouter_formation_eleve.tpl:5 ../templates/default/ajouter_formation_eleve.tpl:5 
 $lang['red'] = 'red';
 
-// ../templates/bootstrap/liste_job.tpl:22 ../templates/bootstrap/ajouter_poste.tpl:30 
+// ../templates/bootstrap/liste_job.tpl:21 ../templates/bootstrap/ajouter_poste.tpl:30 
 $lang['Stage'] = 'Internship';
 
 // ../templates/bootstrap/aaetools.tpl:10 
@@ -180,7 +183,7 @@ $lang['[W]'] = '[W]';
 // ../gestion_formations_eleve.php:72 
 $lang['Formations managment:'] = 'Formations managment:';
 
-// ../templates/bootstrap/liste_job.tpl:54 
+// ../templates/bootstrap/liste_job.tpl:53 
 $lang['job'] = 'job';
 
 // ../templates/bootstrap/ajouter_poste.tpl:8 
@@ -219,10 +222,10 @@ $lang['Please, log on in order to display information.'] = 'Please, log on in or
 // ../templates/bootstrap/liste_job.tpl:4 
 $lang['Select entreprise'] = 'Select entreprise ';
 
-// ../templates/bootstrap/liste_job.tpl:191 ../templates/bootstrap/liste_membres_aae.tpl:149 ../templates/bootstrap/promotion.tpl:51 
+// ../templates/bootstrap/liste_job.tpl:190 ../templates/bootstrap/liste_membres_aae.tpl:149 ../templates/bootstrap/promotion.tpl:51 
 $lang['Previous'] = 'Previous';
 
-// ../templates/bootstrap/liste_job.tpl:61 
+// ../templates/bootstrap/liste_job.tpl:60 
 $lang['Member name'] = 'Member name';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:28 
@@ -297,7 +300,7 @@ $lang['Identity'] = 'Identity';
 // ../templates/default/menu.tpl:7 
 $lang['Add formation'] = 'Add formation';
 
-// ../templates/bootstrap/liste_job.tpl:193 ../templates/bootstrap/liste_membres_aae.tpl:151 
+// ../templates/bootstrap/liste_job.tpl:192 ../templates/bootstrap/liste_membres_aae.tpl:151 
 $lang['Search'] = 'Search';
 
 // ../templates/bootstrap/send_message.tpl:12 
@@ -327,16 +330,16 @@ $lang['Contribution'] = 'Contribution';
 // ../templates/bootstrap/ajouter_poste.tpl:44 
 $lang['Activities description'] = 'Activities description';
 
-// ../templates/bootstrap/voir_adherent_public.tpl:115 ../templates/bootstrap/liste_job.tpl:98 ../templates/bootstrap/liste_job.tpl:124 ../templates/bootstrap/details_job.tpl:9 ../templates/bootstrap/gestion_postes.tpl:18 
+// ../templates/bootstrap/voir_adherent_public.tpl:115 ../templates/bootstrap/liste_job.tpl:97 ../templates/bootstrap/liste_job.tpl:123 ../templates/bootstrap/details_job.tpl:9 ../templates/bootstrap/gestion_postes.tpl:18 
 $lang['present'] = 'present';
 
-// ../templates/bootstrap/liste_job.tpl:23 ../templates/bootstrap/ajouter_poste.tpl:31 
+// ../templates/bootstrap/liste_job.tpl:22 ../templates/bootstrap/ajouter_poste.tpl:31 
 $lang['CDD'] = 'CDD';
 
 // ../templates/default/menu.tpl:7 
 $lang['Add a formation to someone'] = 'Add a formation to someone';
 
-// ../liste_eleves.php:100 ../templates/bootstrap/public_menu.tpl:6 ../templates/bootstrap/public_menu.tpl:16 ../templates/default/public_menu.tpl:2 ../templates/default/public_menu.tpl:5 
+// ../liste_eleves.php:101 ../templates/bootstrap/public_menu.tpl:6 ../templates/bootstrap/public_menu.tpl:16 ../templates/default/public_menu.tpl:2 ../templates/default/public_menu.tpl:5 
 $lang['Former students list'] = 'Former students list';
 
 // ../aaetools.php:65 
@@ -354,8 +357,8 @@ $lang['Choisir un employeur'] = 'Choose an employer';
 // ../templates/bootstrap/aaetools.tpl:18 
 $lang['Mail job'] = 'Mail job';
 
-// ../templates/bootstrap/gestion_postes.tpl:4 
-$lang['Period'] = 'Period';
+// ../templates/bootstrap/liste_job.tpl:23 ../templates/bootstrap/ajouter_poste.tpl:32 
+$lang['CDI'] = 'CDI';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:132 ../templates/bootstrap/carte_membres_aae.tpl:51 
 $lang['No detail found'] = 'No detail found';
@@ -381,7 +384,7 @@ $lang['Mail cotisation'] = 'Mail cotisation';
 // ../gestion_postes.php:85 
 $lang['Jobs managment'] = 'Jobs managment';
 
-// ../templates/bootstrap/liste_job.tpl:194 ../templates/bootstrap/liste_membres_aae.tpl:152 
+// ../templates/bootstrap/liste_job.tpl:193 ../templates/bootstrap/liste_membres_aae.tpl:152 
 $lang['Show'] = 'Show';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:54 
@@ -390,13 +393,13 @@ $lang['Cycle(s)'] = 'Cycle(s)';
 // ../templates/bootstrap/liste_membres_aae.tpl:63 ../templates/bootstrap/promotion.tpl:16 ../templates/default/liste_membres_aae.tpl:44 
 $lang['First Name'] = 'First Name';
 
-// ../templates/bootstrap/liste_job.tpl:79 
+// ../templates/bootstrap/liste_job.tpl:78 
 $lang['Details'] = 'Details';
 
-// ../templates/bootstrap/liste_job.tpl:76 
+// ../templates/bootstrap/liste_job.tpl:75 
 $lang['Year of end'] = 'Year of end';
 
-// ../templates/bootstrap/liste_job.tpl:159 
+// ../templates/bootstrap/liste_job.tpl:158 
 $lang['No job to show'] = 'No job to show';
 
 // ../voir_adherent_public.php:77 
@@ -420,16 +423,16 @@ $lang['Search:'] = 'Search:';
 // ../templates/bootstrap/public_menu.tpl:12 ../templates/bootstrap/public_menu.tpl:27 ../templates/bootstrap/adh_fiche_action.tpl:6 ../templates/default/public_menu.tpl:3 ../templates/default/public_menu.tpl:6 ../templates/default/adh_fiche_action.tpl:6 
 $lang['How to contribute ?'] = 'How to contribute ?';
 
-// ../templates/bootstrap/liste_job.tpl:73 
+// ../templates/bootstrap/liste_job.tpl:72 
 $lang['Begin year'] = 'Begin year';
 
-// ../templates/bootstrap/liste_job.tpl:70 
+// ../templates/bootstrap/liste_job.tpl:69 
 $lang['Address'] = 'Address';
 
 // ../templates/bootstrap/menu.tpl:9 ../templates/bootstrap/public_menu.tpl:35 
 $lang['My formations'] = 'My formations';
 
-// ../templates/bootstrap/liste_job.tpl:195 ../templates/bootstrap/liste_membres_aae.tpl:153 
+// ../templates/bootstrap/liste_job.tpl:194 ../templates/bootstrap/liste_membres_aae.tpl:153 
 $lang['Pages'] = 'Pages';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:5 ../templates/bootstrap/liste_membres_aae.tpl:60 ../templates/bootstrap/promotion.tpl:13 ../templates/bootstrap/ajouter_ent.tpl:7 ../templates/default/liste_membres_aae.tpl:41 
@@ -438,13 +441,13 @@ $lang['Name'] = 'Name';
 // ../templates/bootstrap/voir_adherent_public.tpl:21 
 $lang['Picture'] = 'Picture';
 
-// ../templates/bootstrap/liste_job.tpl:30 ../templates/bootstrap/ajouter_poste.tpl:50 
+// ../templates/bootstrap/liste_job.tpl:29 ../templates/bootstrap/ajouter_poste.tpl:50 
 $lang['Skills'] = 'Skills';
 
 // ../templates/bootstrap/voir_adherent_public.tpl:77 
 $lang['Country'] = 'Country';
 
-// ../templates/bootstrap/liste_job.tpl:43 ../templates/bootstrap/carte_membres_aae.tpl:41 ../templates/bootstrap/liste_membres_aae.tpl:43 ../templates/default/liste_membres_aae.tpl:25 
+// ../templates/bootstrap/liste_job.tpl:42 ../templates/bootstrap/carte_membres_aae.tpl:41 ../templates/bootstrap/liste_membres_aae.tpl:43 ../templates/default/liste_membres_aae.tpl:25 
 $lang['Continue'] = 'Continue';
 
 // ../send_message.php:75 

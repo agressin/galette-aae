@@ -56,7 +56,8 @@ if ($annee_debut != '0') {
 }
 $tpl->assign('annee_debut', $annee_debut);
 
-$param_selected = isset($_POST["valid"]);
+$param_selected = isset($_POST["valid"]) || isset($_GET["id_cycle"]) || isset($_GET["annnee_debut"]);
+
 if ( !$login->isLogged() ) {
 	//Non connecté : on est obligé de sélectionner 1 cycle ET 1 année de début
 	$param_selected = (($id_cycle != '0') || ($id_cycle_simple != '')) && ($annee_debut != '0');
@@ -65,7 +66,7 @@ if ( !$login->isLogged() ) {
 	//ou chercher par nom/prenom
 	$nom_prenom = $_POST["nom_prenom"];
 	if ($nom_prenom!="")
-	{	
+	{
 		$req["nom_prenom"] = $nom_prenom;
 	};
 	$tpl->assign('nom_prenom', $nom_prenom);
@@ -74,7 +75,7 @@ if ( !$login->isLogged() ) {
 $tpl->assign('param_selected', $param_selected);
 
 if($param_selected) {
-	
+
 	$eleves = $annuaire -> getStudent($req);
 
 	// Obtient une liste de colonnes
@@ -86,11 +87,11 @@ if($param_selected) {
 		//$promo[$key] = $row['annee_debut'];
 		//$id_cycle[$key] = $row['id_cycle'];
 	}
-		
+
 	// Trie les données par nom et prenom croissant
 	// Ajoute $eleves en tant que dernier paramètre, pour trier par la clé commune
 	array_multisort($nom, SORT_ASC, $prenom, SORT_ASC, $eleves);
-		
+
 	$tpl->assign('eleves', $eleves);
 	$tpl->assign('nb_eleves', count($eleves));
 } else {
