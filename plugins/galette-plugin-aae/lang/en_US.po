@@ -20,7 +20,7 @@ msgstr ""
 msgid "Add a new job to"
 msgstr "Add a new job to"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:176
+#: ../templates/bootstrap/voir_adherent_public.tpl:132
 #: ../templates/bootstrap/carte_membres_aae.tpl:51
 msgid "No detail found"
 msgstr "No detail found"
@@ -29,7 +29,7 @@ msgstr "No detail found"
 msgid "A problem happened while sending email to user %name"
 msgstr "A problem happened while sending email to user %name"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:43
+#: ../templates/bootstrap/voir_adherent_public.tpl:41
 msgid "Birth date"
 msgstr "Birth date"
 
@@ -37,10 +37,10 @@ msgstr "Birth date"
 msgid "Mail job"
 msgstr "Mail job"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:118
-#: ../templates/bootstrap/voir_adherent_public.tpl:140
-#: ../templates/bootstrap/liste_job.tpl:77
-#: ../templates/bootstrap/liste_job.tpl:103
+#: ../templates/bootstrap/voir_adherent_public.tpl:115
+#: ../templates/bootstrap/liste_job.tpl:98
+#: ../templates/bootstrap/liste_job.tpl:124
+#: ../templates/bootstrap/details_job.tpl:9
 #: ../templates/bootstrap/gestion_postes.tpl:18
 msgid "present"
 msgstr "present"
@@ -55,6 +55,7 @@ msgstr "Promotion"
 msgid "Settings have not been modified!"
 msgstr "Settings have not been modified!"
 
+#: ../templates/bootstrap/liste_job.tpl:23
 #: ../templates/bootstrap/ajouter_poste.tpl:31
 msgid "CDD"
 msgstr "CDD"
@@ -63,7 +64,7 @@ msgstr "CDD"
 msgid "Job title"
 msgstr "Job title"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:97
+#: ../templates/bootstrap/voir_adherent_public.tpl:95
 #: ../templates/bootstrap/ajouter_ent.tpl:13
 #: ../templates/bootstrap/ajouter_ent.tpl:15
 msgid "Website"
@@ -73,6 +74,7 @@ msgstr "Website"
 msgid "AAETools settings"
 msgstr "AAETools settings"
 
+#: ../templates/bootstrap/liste_job.tpl:22
 #: ../templates/bootstrap/ajouter_poste.tpl:30
 msgid "Stage"
 msgstr "Internship"
@@ -135,7 +137,7 @@ msgstr "Select cycle and promotion"
 msgid "Unfortunately, there is no member in your database yet,"
 msgstr "Unfortunately, there is no member in your database yet,"
 
-#: ../templates/bootstrap/aaecotiz.tpl:21 ../templates/default/aaecotiz.tpl:16
+#: ../templates/bootstrap/aaecotiz.tpl:18 ../templates/default/aaecotiz.tpl:16
 msgid ""
 "Merci de faire un virement avec l'intitulé 'cotis nom prenom' sur le compte "
 "suivant :"
@@ -157,16 +159,16 @@ msgstr "Actions"
 msgid "Site web"
 msgstr "Site web"
 
-#: ../templates/bootstrap/liste_job.tpl:172
+#: ../templates/bootstrap/liste_job.tpl:193
 #: ../templates/bootstrap/liste_membres_aae.tpl:151
 msgid "Search"
 msgstr "Search"
 
-#: ../templates/bootstrap/liste_job.tpl:138
+#: ../templates/bootstrap/liste_job.tpl:159
 msgid "No job to show"
 msgstr "No job to show"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:7
+#: ../templates/bootstrap/voir_adherent_public.tpl:5
 #: ../templates/bootstrap/liste_membres_aae.tpl:60
 #: ../templates/bootstrap/promotion.tpl:13
 #: ../templates/bootstrap/ajouter_ent.tpl:7
@@ -187,11 +189,11 @@ msgstr "Add a formation"
 msgid "Votre message sera précédé du message suivant :"
 msgstr "Your message will be preceded by the following text:"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:79
+#: ../templates/bootstrap/voir_adherent_public.tpl:77
 msgid "Country"
 msgstr "Country"
 
-#: ../templates/bootstrap/liste_job.tpl:22
+#: ../templates/bootstrap/liste_job.tpl:43
 #: ../templates/bootstrap/carte_membres_aae.tpl:123
 #: ../templates/bootstrap/liste_membres_aae.tpl:43
 #: ../templates/default/liste_membres_aae.tpl:21
@@ -210,7 +212,7 @@ msgstr "[AAE-ENSG] A member tries to contact you"
 msgid "Montants des cotisations"
 msgstr "Amount of contributions"
 
-#: ../templates/bootstrap/aaecotiz.tpl:25 ../templates/default/aaecotiz.tpl:20
+#: ../templates/bootstrap/aaecotiz.tpl:22 ../templates/default/aaecotiz.tpl:20
 msgid ""
 "En cas de virement groupé pour plusieurs personnes, merci de le préciser "
 "dans votre mail."
@@ -238,28 +240,33 @@ msgstr "My formations"
 msgid "Entreprise has not been added!"
 msgstr "Entreprise has not been added!"
 
-#: ../templates/bootstrap/aaecotiz.tpl:15
-#: ../templates/bootstrap/aaecotiz.tpl:23 ../templates/default/aaecotiz.tpl:10
+#: ../templates/bootstrap/aaecotiz.tpl:12
+#: ../templates/bootstrap/aaecotiz.tpl:20 ../templates/default/aaecotiz.tpl:10
 #: ../templates/default/aaecotiz.tpl:18
 msgid "et de prévenir de votre paiement en envoyant un mail à"
 msgstr "and prevent your payment by sending an email to"
 
-#: ../templates/bootstrap/aaecotiz.tpl:9 ../templates/default/aaecotiz.tpl:4
+#: ../templates/bootstrap/aaecotiz.tpl:6 ../templates/default/aaecotiz.tpl:4
 msgid "Paiement par chèque"
 msgstr "Payment by check"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:175
+#: ../templates/bootstrap/voir_adherent_public.tpl:131
 #: ../templates/bootstrap/carte_membres_aae.tpl:50
 msgid "Loading..."
 msgstr "Loading..."
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:85
+#: ../templates/bootstrap/voir_adherent_public.tpl:83
 msgid "E-Mail"
 msgstr "E-Mail"
 
 #: ../templates/bootstrap/promotion.tpl:55
 msgid "Pages:"
 msgstr "Pages:"
+
+#: ../templates/bootstrap/liste_job.tpl:19
+#, fuzzy
+msgid "Job Type"
+msgstr "Job Type:"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:33
 #: ../templates/default/ajouter_formation_eleve.tpl:33
@@ -277,13 +284,17 @@ msgstr "Contribution"
 msgid "End"
 msgstr "End"
 
+#: ../templates/bootstrap/liste_job.tpl:20
 #: ../templates/bootstrap/ajouter_poste.tpl:29
 msgid "Select a type"
 msgstr "Select a type"
 
-#: ../templates/bootstrap/ajouter_poste.tpl:54
-msgid "Select one or more skill(s)"
-msgstr "Select one or more skill(s)"
+#: ../templates/bootstrap/ajouter_formation_eleve.tpl:24
+#: ../templates/bootstrap/promotion.tpl:22
+#: ../templates/default/ajouter_formation_eleve.tpl:24
+#: ../templates/default/liste_membres_aae.tpl:5
+msgid "Cycle:"
+msgstr "Cycle:"
 
 #: ../ajouter_ent.php:28
 msgid "Entreprise already exist in the DB."
@@ -302,11 +313,11 @@ msgstr "Period"
 msgid "Message:"
 msgstr "Message:"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:110
+#: ../templates/bootstrap/voir_adherent_public.tpl:108
 msgid "Jobs information"
 msgstr "Jobs information"
 
-#: ../liste_job.php:88 ../templates/bootstrap/public_menu.tpl:9
+#: ../liste_job.php:107 ../templates/bootstrap/public_menu.tpl:9
 #: ../templates/bootstrap/public_menu.tpl:22
 msgid "Jobs list"
 msgstr "Job list"
@@ -324,7 +335,7 @@ msgstr "Add formation"
 msgid "Save"
 msgstr "Save"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:56
+#: ../templates/bootstrap/voir_adherent_public.tpl:54
 msgid "Cycle(s)"
 msgstr "Cycle(s)"
 
@@ -337,6 +348,7 @@ msgstr "red"
 msgid "Mail cotisation"
 msgstr "Mail cotisation"
 
+#: ../templates/bootstrap/liste_job.tpl:30
 #: ../templates/bootstrap/ajouter_poste.tpl:50
 msgid "Skills"
 msgstr "Skills"
@@ -351,6 +363,7 @@ msgstr "Profil of "
 msgid "Speciality"
 msgstr "Speciality"
 
+#: ../templates/bootstrap/liste_job.tpl:24
 #: ../templates/bootstrap/ajouter_poste.tpl:32
 msgid "CDI"
 msgstr "CDI"
@@ -360,11 +373,11 @@ msgstr "CDI"
 msgid "or by Cycle"
 msgstr "or by Cycle"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:37
+#: ../templates/bootstrap/voir_adherent_public.tpl:35
 msgid "Nickname"
 msgstr "Nickname"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:70
+#: ../templates/bootstrap/voir_adherent_public.tpl:68
 msgid "Contact information"
 msgstr "Contact information"
 
@@ -372,15 +385,15 @@ msgstr "Contact information"
 msgid "Please, log on in order to display information."
 msgstr "Please, log on in order to display information."
 
-#: ../templates/bootstrap/liste_job.tpl:40
+#: ../templates/bootstrap/liste_job.tpl:61
 msgid "Member name"
 msgstr "Member name"
 
-#: ../templates/bootstrap/liste_job.tpl:55
+#: ../templates/bootstrap/liste_job.tpl:76
 msgid "Year of end"
 msgstr "Year of end"
 
-#: ../templates/bootstrap/liste_job.tpl:85
+#: ../templates/bootstrap/liste_job.tpl:106
 #: ../templates/bootstrap/liste_membres_aae.tpl:103
 #: ../templates/bootstrap/promotion.tpl:38
 msgid "If you see an error, please send an email to:"
@@ -431,12 +444,12 @@ msgstr "End of the formation:"
 msgid "Please sign in to access search by name"
 msgstr "Please sign in to access search by name"
 
-#: ../templates/bootstrap/liste_job.tpl:173
+#: ../templates/bootstrap/liste_job.tpl:194
 #: ../templates/bootstrap/liste_membres_aae.tpl:152
 msgid "Show"
 msgstr "Show"
 
-#: ../templates/bootstrap/aaecotiz.tpl:29 ../templates/default/aaecotiz.tpl:24
+#: ../templates/bootstrap/aaecotiz.tpl:26 ../templates/default/aaecotiz.tpl:24
 msgid "Veuillez vous identifier pour obtenir le RIB, ou le demander à"
 msgstr "Please login to get GDI, or ask it to"
 
@@ -446,15 +459,11 @@ msgstr "Please login to get GDI, or ask it to"
 msgid "Cycle"
 msgstr "Cycle"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:12
+#: ../templates/bootstrap/voir_adherent_public.tpl:10
 msgid "[M]"
 msgstr "[M]"
 
-#: ../templates/bootstrap/aaecotiz.tpl:4
-msgid "Les montants des différentes cotisations sont :"
-msgstr "Amount of contributions are :"
-
-#: ../templates/bootstrap/aaecotiz.tpl:18 ../templates/default/aaecotiz.tpl:13
+#: ../templates/bootstrap/aaecotiz.tpl:15 ../templates/default/aaecotiz.tpl:13
 msgid "Paiement par RIB"
 msgstr "Payment by bank transfer"
 
@@ -462,7 +471,7 @@ msgstr "Payment by bank transfer"
 msgid "Entrepise"
 msgstr "Compagny"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:73
+#: ../templates/bootstrap/voir_adherent_public.tpl:71
 msgid "City"
 msgstr "City"
 
@@ -471,7 +480,7 @@ msgstr "City"
 msgid "AAE Tools"
 msgstr "AAE Tools"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:49
+#: ../templates/bootstrap/voir_adherent_public.tpl:47
 msgid "Profession"
 msgstr "Profession"
 
@@ -488,7 +497,7 @@ msgstr "Job details of"
 msgid "Add a job"
 msgstr "Add a job"
 
-#: ../templates/bootstrap/liste_job.tpl:46
+#: ../templates/bootstrap/liste_job.tpl:67
 #: ../templates/bootstrap/gestion_postes.tpl:5
 msgid "Title"
 msgstr "Title"
@@ -497,7 +506,7 @@ msgstr "Title"
 msgid "Send a message to"
 msgstr "Subject"
 
-#: ../templates/bootstrap/liste_job.tpl:33
+#: ../templates/bootstrap/liste_job.tpl:54
 msgid "Jobs"
 msgstr "Jobs"
 
@@ -507,6 +516,7 @@ msgid "Promotion:"
 msgstr "Promotion:"
 
 #: ../templates/bootstrap/liste_job.tpl:10
+#: ../templates/bootstrap/liste_job.tpl:21
 msgid "all"
 msgstr "all"
 
@@ -520,18 +530,18 @@ msgstr "Formation"
 msgid "View formations"
 msgstr "View formations"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:30
+#: ../templates/bootstrap/voir_adherent_public.tpl:28
 msgid "Company"
 msgstr "Company"
 
-#: ../templates/bootstrap/liste_job.tpl:22
+#: ../templates/bootstrap/liste_job.tpl:43
 #: ../templates/bootstrap/carte_membres_aae.tpl:41
 #: ../templates/bootstrap/liste_membres_aae.tpl:43
 #: ../templates/default/liste_membres_aae.tpl:25
 msgid "Continue"
 msgstr "Continue"
 
-#: ../templates/bootstrap/aaecotiz.tpl:11 ../templates/default/aaecotiz.tpl:6
+#: ../templates/bootstrap/aaecotiz.tpl:8 ../templates/default/aaecotiz.tpl:6
 msgid ""
 "Merci d'envoyer un chèque à l'ordre de l'AAE-ENSG à l'adresse suivante :"
 msgstr "Please contact aae@ensg.eu to pay by check"
@@ -554,7 +564,7 @@ msgstr "First Name"
 msgid "Go back"
 msgstr "Go back"
 
-#: ../templates/bootstrap/liste_job.tpl:171
+#: ../templates/bootstrap/liste_job.tpl:192
 #: ../templates/bootstrap/liste_membres_aae.tpl:150
 #: ../templates/bootstrap/promotion.tpl:52
 msgid "Next"
@@ -564,7 +574,7 @@ msgstr "Next"
 msgid "Show:"
 msgstr "Show:"
 
-#: ../templates/bootstrap/liste_job.tpl:49
+#: ../templates/bootstrap/liste_job.tpl:70
 msgid "Address"
 msgstr "Address"
 
@@ -577,12 +587,12 @@ msgstr "Add a formation to someone"
 msgid "please create a member"
 msgstr "please create a member"
 
-#: ../templates/bootstrap/liste_job.tpl:174
+#: ../templates/bootstrap/liste_job.tpl:195
 #: ../templates/bootstrap/liste_membres_aae.tpl:153
 msgid "Pages"
 msgstr "Pages"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:10
+#: ../templates/bootstrap/voir_adherent_public.tpl:8
 msgid "[C]"
 msgstr "[C]"
 
@@ -595,11 +605,11 @@ msgstr "Member:"
 msgid "Mail sent to user %name"
 msgstr "Mail sent to user %name"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:5
+#: ../templates/bootstrap/voir_adherent_public.tpl:3
 msgid "Identity"
 msgstr "Identity"
 
-#: ../templates/bootstrap/liste_job.tpl:33
+#: ../templates/bootstrap/liste_job.tpl:54
 msgid "job"
 msgstr "job"
 
@@ -617,12 +627,12 @@ msgstr "My jobs"
 msgid "Select a member "
 msgstr "Select a member "
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:174
+#: ../templates/bootstrap/voir_adherent_public.tpl:130
 #: ../templates/bootstrap/carte_membres_aae.tpl:49
 msgid "Geographic situation"
 msgstr "Geographic situation"
 
-#: ../templates/bootstrap/liste_job.tpl:58
+#: ../templates/bootstrap/liste_job.tpl:79
 msgid "Details"
 msgstr "Details"
 
@@ -647,12 +657,10 @@ msgstr "Jobs managment"
 msgid "Send"
 msgstr "Send"
 
-#: ../templates/bootstrap/ajouter_formation_eleve.tpl:24
-#: ../templates/bootstrap/promotion.tpl:22
-#: ../templates/default/ajouter_formation_eleve.tpl:24
-#: ../templates/default/liste_membres_aae.tpl:5
-msgid "Cycle:"
-msgstr "Cycle:"
+#: ../templates/bootstrap/liste_job.tpl:31
+#: ../templates/bootstrap/ajouter_poste.tpl:54
+msgid "Select one or more skill(s)"
+msgstr "Select one or more skill(s)"
 
 #: ../templates/bootstrap/gestion_formations.tpl:7
 #: ../templates/bootstrap/ajouter_poste.tpl:68
@@ -664,7 +672,7 @@ msgstr "Begin"
 msgid "Search:"
 msgstr "Search:"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:14
+#: ../templates/bootstrap/voir_adherent_public.tpl:12
 msgid "[W]"
 msgstr "[W]"
 
@@ -680,7 +688,7 @@ msgid "Settings have been successfully modified."
 msgstr "Settings have been successfully modified."
 
 #: ../templates/bootstrap/liste_job.tpl:8
-#: ../templates/bootstrap/liste_job.tpl:43
+#: ../templates/bootstrap/liste_job.tpl:64
 #: ../templates/bootstrap/gestion_postes.tpl:6
 msgid "Entreprise"
 msgstr "Compagny"
@@ -699,7 +707,7 @@ msgstr "-- select a name --"
 msgid "Ajouter un employeur"
 msgstr "Add an employer"
 
-#: ../templates/bootstrap/liste_job.tpl:52
+#: ../templates/bootstrap/liste_job.tpl:73
 msgid "Begin year"
 msgstr "Begin year"
 
@@ -709,7 +717,7 @@ msgstr "Begin year"
 msgid "students"
 msgstr "students"
 
-#: ../templates/bootstrap/liste_job.tpl:170
+#: ../templates/bootstrap/liste_job.tpl:191
 #: ../templates/bootstrap/liste_membres_aae.tpl:149
 #: ../templates/bootstrap/promotion.tpl:51
 msgid "Previous"
@@ -728,7 +736,7 @@ msgstr "My shared profil"
 msgid "yyyy"
 msgstr "yyyy"
 
-#: ../templates/bootstrap/voir_adherent_public.tpl:23
+#: ../templates/bootstrap/voir_adherent_public.tpl:21
 msgid "Picture"
 msgstr "Picture"
 
@@ -753,6 +761,9 @@ msgstr "Formation details"
 #: ../templates/default/ajouter_formation_eleve.tpl:43
 msgid "(yyyy format)"
 msgstr "(yyyy format)"
+
+#~ msgid "Les montants des différentes cotisations sont :"
+#~ msgstr "Amount of contributions are :"
 
 #~ msgid "Postal code"
 #~ msgstr "Postal code"

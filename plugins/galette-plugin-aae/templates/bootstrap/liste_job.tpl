@@ -13,6 +13,27 @@
 								{/foreach}
 							</select>
 						</div>
+						<div class="form-group col-md-1"></div>
+						<div class="form-group col-md-3">
+							{*Searching poste by Type*}
+							<label for="type" class="control-label">{_T string="Job Type"}</label> <br>
+							<select class="selectpicker" name="type" id="type" title="{_T string="Select a type"}" data-size="auto">
+											<option value="" {if $type eq ""} selected="selected"{/if} > -- {_T string="all"} -- </option>
+											<option value="Stage" {if $type eq "Stage"} selected="selected"{/if}>{_T string="Stage"}</option>
+											<option value="CDD"   {if $type eq "CDD"} selected="selected"{/if}>{_T string="CDD"}</option>
+											<option value="CDI"   {if $type eq "CDI"} selected="selected"{/if}>{_T string="CDI"}</option>
+							</select>
+						</div>
+						<div class="form-group col-md-1"></div>
+						<div class="form-group col-md-3">
+							{*Searching poste by Skills*}
+							<label for="domaines" class="control-label">{_T string="Skills"}</label> <br>
+							<select class="selectpicker" name="domaines[]" id="domaines" multiple title="{_T string="Select one or more skill(s)"}" data-size="auto">
+								{foreach from=$domaines key=k item=d}
+        				<option value="{$k}" {if in_array($k, $req_domaines)} selected="selected"{/if}>{$d|htmlspecialchars}</option>
+    						{/foreach}
+                </select>
+						</div>
 					</div>
 
 					<div class="row col-xs-offset-2">
@@ -84,7 +105,55 @@
 			</table>
 			{_T string="If you see an error, please send an email to:"}
 			<a href='mailto:{$AAE_Pref->getPref('mail_webmaster')}'>{$AAE_Pref->getPref('mail_webmaster')}</a>
-			{include file="details_job.tpl"}
+
+
+
+		{foreach $postes as $poste}
+			<div class="modal fade bs-example-modal-lg-{$poste.id_poste}" tabindex="-1" role="dialog">
+			  <div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<table class="table">
+						<tr>
+				    		<td><h2><a href="voir_adherent_public.php?id_adh={$poste.id_adh}">{$poste.nom_adh}</a></h2></td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Période</h4> </td>
+				    		<td> {if $poste.annee_fin eq $poste.annee_ini}
+				    				{$poste.annee_fin}
+				    			{else}
+				    				{$poste.annee_ini}-{if $poste.annee_fin eq 0}{_T string="present"}{else}{$poste.annee_fin}{/if}
+				    			{/if}
+				    		</td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Employeur</h4></td>
+				    		<td> <a href="liste_job.php?id_entreprise={$poste.id_entreprise}">{foreach $entreprises  as $entreprise}{if $entreprise.id_entreprise eq $poste.id_entreprise} {$entreprise.employeur} {/if}{/foreach}</a></td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Site internet</h4></td>
+				    		<td> <a href="{if strpos($poste.website,"http") !==0}http://{/if}{$poste.website}" target="_blank">{$poste.website}</a></td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Adresse</h4></td>
+				    		<td>{$poste.adresse}</td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Type de contrat</h4></td>
+				    		<td>{$poste.type}</td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Intitulé du poste</h4></td>
+				    		<td>{$poste.titre}</td>
+				    	</tr>
+				    	<tr>
+				    		<td><h4>Compétences</h4></td>
+				    		<td>{$poste.domaines}</td>
+				    	</tr>
+				    </table>
+				</div>
+			  </div>
+			</div>
+		{/foreach}
 
 	{else}
 		{if $param_selected } <div id="warningbox">{_T string="No job to show"}</div> {/if}
