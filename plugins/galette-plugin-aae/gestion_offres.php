@@ -25,7 +25,6 @@ if ( $login->isAdmin() || $login->isStaff() ){
     $tpl->assign('haveRights', false);
     $allOffres = $offres->getAdhOffres($login->id);
 }
-
 $tpl->assign('nb_offres', count($allOffres));
 $tpl->assign('offres', $allOffres);
 

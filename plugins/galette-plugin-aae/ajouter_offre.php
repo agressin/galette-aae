@@ -79,29 +79,29 @@ if (isset($_POST['titre_offre']) ) {
 		$date_debut = $d->format('Y-m-d');
 	}
     if($haveRights and isset($_POST['valid'])){
-      $valid = $_POST['valid'];
+      $valid = ($_POST['valid'] == 'on');
     } else {
       $valid = false;
     }
     $res = $offres->setOffre(
-		$id_offre,
-		$id_adh,
-		$_POST['titre_offre'],
-		$_POST['id_entreprise'],
-		$_POST['localisation'],
-		$_POST['nom_contact'],
-		$_POST['mail_contact'],
-		$_POST['tel_contact'],
-		$date_fin,
-		$_POST['type_offre'],
-		$_POST['desc_offre'],
-		$_POST['mots_cles'],
-		$_POST['duree'],
-		$date_debut,
-		$_POST['remuneration'],
-		$_POST['cursus'],
-		$_POST['domaines'],
-		$valid
+  		$id_offre,
+  		$id_adh,
+  		$_POST['titre_offre'],
+  		$_POST['id_entreprise'],
+  		$_POST['localisation'],
+  		$_POST['nom_contact'],
+  		$_POST['mail_contact'],
+  		$_POST['tel_contact'],
+  		$date_fin,
+  		$_POST['type_offre'],
+  		$_POST['desc_offre'],
+  		$_POST['mots_cles'],
+  		$_POST['duree'],
+  		$date_debut,
+  		$_POST['remuneration'],
+  		$_POST['cursus'],
+  		$_POST['domaines'],
+  		$valid
     );
 
     if ( !$res ) {

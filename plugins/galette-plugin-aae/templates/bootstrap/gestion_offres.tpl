@@ -1,6 +1,5 @@
 
-	<a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php" title="{_T string="Add job offer"}">{_T string="Add job offer"}</a> /
-	<a href="{$galette_base_path}{$aaetools_path}liste_offres.php">{_T string="Job offers list"}</a>
+	<a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php" title="{_T string="Add job offer"}"><img src="{$template_subdir}images/icon-add.png" align="middle" />{_T string="Add job offer"}</a>
 
     <table id='table_offre' class="table table-hover">
         <thead>
@@ -16,10 +15,10 @@
 
     {foreach from=$offres item=offre}
             <tr class="offre_row">
-                <td class="center nowrap"><a href="{$galette_base_path}plugins/galette-plugin-aae/ajouter_offre.php?id_offre={$offre.id_offre}"> {$offre.titre} </a></td>
-                <td class="center nowrap"> {$offre.type}</td>
-								<td class="center nowrap"><a href="liste_job.php?id_entreprise={$offre.id_entreprise}">{$offre.employeur|htmlspecialchars}</a></td>
-                <td class="center nowrap">
+                <td><a href="{$galette_base_path}plugins/galette-plugin-aae/ajouter_offre.php?id_offre={$offre.id_offre}"> {$offre.titre} </a></td>
+                <td> {$offre.type}</td>
+								<td><a href="liste_job.php?id_entreprise={$offre.id_entreprise}">{$offre.employeur|htmlspecialchars}</a></td>
+                <td>
                     <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$offre.id_offre}' align="middle" />
                {if $haveRights}
                     {if $offre.valide}

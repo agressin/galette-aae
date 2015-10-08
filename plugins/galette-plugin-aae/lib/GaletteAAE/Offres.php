@@ -31,9 +31,9 @@ class Offres
 
           $select = $zdb->sql->select();
           $entreprises = new Entreprises();
-          $select->from($this->getTableName());
-          $select->join(array('e' => $entreprises->getTableLienName()),
-            'e.id_entreprise = d.id_entreprise',
+          $select->from(array('o' => $this->getTableName()));
+          $select->join(array('e' => $entreprises->getTableName()),
+            'e.id_entreprise = o.id_entreprise',
             array('employeur','website'));
 
           if($onlyValidOffer) {
@@ -105,17 +105,22 @@ class Offres
 
         try {
 
-            $select = $zdb->sql->select();
-			$select->from($this->getTableName())->where->equalTo("id_adh",$id_adh);
+          $select = $zdb->sql->select();
+          $entreprises = new Entreprises();
+          $select->from(array('o' => $this->getTableName()));
+          $select->join(array('e' => $entreprises->getTableName()),
+            'e.id_entreprise = o.id_entreprise',
+            array('employeur','website'));
+		      $select->where->equalTo("id_adh",$id_adh);
 
-            $res = $zdb->execute($select);
-            $res = $res->toArray();
+          $res = $zdb->execute($select);
+          $res = $res->toArray();
 
-            if ( count($res) > 0 ) {
-                return $res;
-            } else {
-                return array();
-            }
+          if ( count($res) > 0 ) {
+              return $res;
+          } else {
+              return array();
+          }
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve offres : "' . $e->getMessage(),

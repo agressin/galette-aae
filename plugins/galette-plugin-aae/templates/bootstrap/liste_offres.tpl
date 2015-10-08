@@ -1,23 +1,23 @@
 {if $nb_offres > 0}
 
-	<a href="{$galette_base_path}{$aaetools_path}liste_offres.php?rss"> {_T string="Subscrite to "} <img src="{$galette_base_path}/templates/bootstrap/images/rss.png" width="20" height=20 alt="RSS"> </a> / <a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php">{_T string="Add job offers"}</a>
+	<img src="{$galette_base_path}/templates/bootstrap/images/rss.png" width="20" height=20 alt="RSS"> </a> <a href="{$galette_base_path}{$aaetools_path}liste_offres.php?rss"> {_T string="Subscrite"}  / <a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php"><img src="{$template_subdir}images/icon-add.png" align="middle" /> {_T string="Add job offers"}</a>
 	<br>
 	<table id='table_offre' class="listing">
         <thead>
             <tr>
-                <th class="listing left">{_T string="Title"}</th>
-                <th class="listing left">{_T string="Enterprise"}</th>
-                <th class="listing left date_row"> {_T string="Publication date"} </th>
-                <th class="listing left date_row"> {_T string="Offer type"} </th>
+                <th>{_T string="Title"}</th>
+                <th>{_T string="Enterprise"}</th>
+                <th> {_T string="Publication date"} </th>
+                <th> {_T string="Offer type"} </th>
         </thead>
 
         <tbody>
     		{foreach from=$offres item=offre}
 	            <tr class="formation_row">
-	                <td class="center nowrap"> <a href="{$galette_base_path}{$aaetools_path}liste_offres.php?id_offre={$offre.id_offre}"> {utf8_encode($offre.titre)} </a> </td>
-	                <td class="center nowrap">{utf8_encode($offre.organisme)}</td>
-	                <td class="center nowrap">{utf8_encode($offre.date_parution)}</td>
-	                <td class="center nowrap">{utf8_encode($offre.type_offre)}</td>
+	                <td> <a href="{$galette_base_path}{$aaetools_path}liste_offres.php?id_offre={$offre.id_offre}"> {utf8_encode($offre.titre)} </a> </td>
+	                <td><a href="liste_job.php?id_entreprise={$offre.id_entreprise}">{$offre.employeur|htmlspecialchars}</a></td>
+	                <td>{$offre.date_parution}</td>
+	                <td>{$offre.type_offre}</td>
 	            </tr>
 	    	{/foreach}
         </tbody>

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-10-04 18:15+0200\n"
+"PO-Revision-Date: 2015-10-08 23:14+0200\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -20,7 +20,11 @@ msgstr ""
 msgid "Add a new job to"
 msgstr "Ajouter un poste à"
 
-#: ../ajouter_offre.php:143
+#: ../templates/bootstrap/detail_offre.tpl:15
+msgid "Key word(s):"
+msgstr "Mot(s) clés :"
+
+#: ../ajouter_offre.php:147
 msgid ""
 "A problem happened while sending job offer confirmation to user %name "
 "(%email)"
@@ -49,15 +53,15 @@ msgstr "Date de naissance"
 msgid "Mail job"
 msgstr "Email emploi"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:72
-#: ../templates/bootstrap/ajouter_offre.tpl:90
+#: ../templates/bootstrap/ajouter_offre.tpl:68
+#: ../templates/bootstrap/ajouter_offre.tpl:114
 msgid "(dd/mm/yyyy format)"
 msgstr "(format : jj/mm/aaaa)"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:118
 #: ../templates/bootstrap/voir_adherent_public.tpl:140
-#: ../templates/bootstrap/liste_job.tpl:97
-#: ../templates/bootstrap/liste_job.tpl:123
+#: ../templates/bootstrap/liste_job.tpl:98
+#: ../templates/bootstrap/liste_job.tpl:124
 #: ../templates/bootstrap/gestion_postes.tpl:18
 msgid "present"
 msgstr "actuel"
@@ -66,7 +70,7 @@ msgstr "actuel"
 msgid "Offer type"
 msgstr "Type"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:63
+#: ../templates/bootstrap/ajouter_offre.tpl:53
 msgid "Description"
 msgstr "Description"
 
@@ -74,7 +78,7 @@ msgstr "Description"
 msgid "Publication date"
 msgstr "Date de publication"
 
-#: ../ajouter_offre.php:107
+#: ../ajouter_offre.php:112
 msgid "Offer has been successfully modified."
 msgstr "L'offre a bien été enregistrée"
 
@@ -86,8 +90,8 @@ msgstr "Posté le "
 msgid "Settings have not been modified!"
 msgstr "Les paramètres n'ont pas été modifiés!"
 
-#: ../templates/bootstrap/liste_job.tpl:22
-#: ../templates/bootstrap/ajouter_offre.tpl:39
+#: ../templates/bootstrap/liste_job.tpl:23
+#: ../templates/bootstrap/ajouter_offre.tpl:38
 #: ../templates/bootstrap/ajouter_poste.tpl:31
 msgid "CDD"
 msgstr "CDD"
@@ -114,8 +118,8 @@ msgstr "Site internet"
 msgid "AAETools settings"
 msgstr "AAETools paramètres"
 
-#: ../templates/bootstrap/liste_job.tpl:21
-#: ../templates/bootstrap/ajouter_offre.tpl:38
+#: ../templates/bootstrap/liste_job.tpl:22
+#: ../templates/bootstrap/ajouter_offre.tpl:37
 #: ../templates/bootstrap/ajouter_poste.tpl:30
 msgid "Stage"
 msgstr "Stage"
@@ -133,13 +137,13 @@ msgstr "Comment cotiser ?"
 msgid "Amount of contributions"
 msgstr "Montants des cotisations"
 
-#: ../ajouter_poste.php:120
+#: ../ajouter_poste.php:118
 msgid "Unabled to add/modify the job"
 msgstr ""
 "Désolé, nous avons rencontré un problème pendant l'ajout/la modification du "
 "poste."
 
-#: ../ajouter_offre.php:113
+#: ../ajouter_offre.php:118
 msgid "Job offer post"
 msgstr "Offres d'emploi"
 
@@ -151,20 +155,24 @@ msgstr "Sélectionner une entreprise"
 msgid "Name and/or First Name"
 msgstr "Nom et/ou Prénom"
 
+#: ../templates/bootstrap/public_menu.tpl:39
+msgid "Manage your job offers"
+msgstr "Gestion de vos offres d'emploi"
+
 #: ../ajouter_offre.php:49
 msgid "You don't have the permission to modify an existing offer."
 msgstr "Vous n'avez pas la permission de modifier une offre existante."
 
-#: ../templates/bootstrap/ajouter_offre.tpl:53
+#: ../templates/bootstrap/ajouter_offre.tpl:16
 #: ../templates/bootstrap/ajouter_poste.tpl:12
 msgid "Choisir un employeur"
 msgstr "Choisir un employeur"
 
-#: ../ajouter_offre.php:104
+#: ../ajouter_offre.php:108
 msgid "Offer has not been modified!"
 msgstr "L'offre n'a pas été modifiée"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:67
+#: ../templates/bootstrap/ajouter_offre.tpl:59
 msgid "Localisation"
 msgstr "Localisation"
 
@@ -179,7 +187,11 @@ msgstr "étudiant"
 msgid "Select cycle and promotion"
 msgstr "Sélectionner le cycle et la promotion"
 
-#: ../templates/bootstrap/gestion_offres.tpl:10
+#: ../templates/bootstrap/detail_offre.tpl:20
+msgid "Skills:"
+msgstr "Compétences :"
+
+#: ../templates/bootstrap/gestion_offres.tpl:9
 msgid "Type"
 msgstr "Type"
 
@@ -215,27 +227,31 @@ msgstr "Site internet"
 msgid "Job Offer Gestion"
 msgstr "Gestion des offres d'emploi"
 
-#: ../templates/bootstrap/liste_job.tpl:192
+#: ../templates/bootstrap/liste_job.tpl:193
 #: ../templates/bootstrap/liste_membres_aae.tpl:151
 msgid "Search"
 msgstr "Recherche"
 
-#: ../templates/bootstrap/liste_job.tpl:158
+#: ../templates/bootstrap/liste_job.tpl:159
 msgid "No job to show"
 msgstr "Aucun poste à afficher"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:26
+#: ../templates/bootstrap/ajouter_offre.tpl:9
 msgid "Offer general"
 msgstr "Description de l'offre"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:7
-#: ../templates/bootstrap/ajouter_offre.tpl:13
+#: ../templates/bootstrap/ajouter_offre.tpl:76
 #: ../templates/bootstrap/liste_membres_aae.tpl:60
 #: ../templates/bootstrap/promotion.tpl:13
 #: ../templates/bootstrap/ajouter_ent.tpl:7
 #: ../templates/default/liste_membres_aae.tpl:41
 msgid "Name"
 msgstr "Nom"
+
+#: ../templates/bootstrap/detail_offre.tpl:24
+msgid "Type:"
+msgstr "Type :"
 
 #: ../templates/bootstrap/liste_membres_aae.tpl:14
 #: ../templates/bootstrap/liste_membres_aae.tpl:66
@@ -255,15 +271,15 @@ msgstr "Votre message sera précédé du message suivant :"
 msgid "Country"
 msgstr "Pays"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:89
+#: ../templates/bootstrap/ajouter_offre.tpl:111
 msgid "Beginning"
 msgstr "Début"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:21
+#: ../templates/bootstrap/ajouter_offre.tpl:88
 msgid "Phone number"
 msgstr "Numéro de tel"
 
-#: ../templates/bootstrap/liste_job.tpl:42
+#: ../templates/bootstrap/liste_job.tpl:43
 #: ../templates/bootstrap/liste_membres_aae.tpl:43
 #: ../templates/default/liste_membres_aae.tpl:21
 msgid "Refresh"
@@ -278,7 +294,7 @@ msgstr "Email webmaster"
 msgid "Add job offer"
 msgstr "Ajouter une offre d'emploi"
 
-#: ../templates/bootstrap/liste_job.tpl:53
+#: ../templates/bootstrap/liste_job.tpl:54
 msgid "Jobs"
 msgstr "Postes"
 
@@ -286,7 +302,7 @@ msgstr "Postes"
 msgid "Montants des cotisations"
 msgstr "Montants des cotisations"
 
-#: ../templates/bootstrap/gestion_offres.tpl:9
+#: ../templates/bootstrap/gestion_offres.tpl:8
 msgid "Titre"
 msgstr "Titre"
 
@@ -298,7 +314,7 @@ msgstr ""
 "En cas de virement groupé pour plusieurs personnes, merci de le préciser "
 "dans votre mail."
 
-#: ../templates/bootstrap/gestion_offres.tpl:83
+#: ../templates/bootstrap/gestion_offres.tpl:84
 msgid "to delete offer"
 msgstr "pour supprimer l'offre"
 
@@ -306,7 +322,7 @@ msgstr "pour supprimer l'offre"
 msgid "Who to contribute ?"
 msgstr "Comment cotiser ?"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:76
+#: ../templates/bootstrap/ajouter_offre.tpl:95
 msgid "Offer details"
 msgstr "Détails de l'offre"
 
@@ -318,7 +334,7 @@ msgstr "Procédure de cotisation"
 msgid "RIB"
 msgstr "RIB"
 
-#: ../templates/bootstrap/menu.tpl:9 ../templates/bootstrap/public_menu.tpl:46
+#: ../templates/bootstrap/menu.tpl:9 ../templates/bootstrap/public_menu.tpl:49
 msgid "My formations"
 msgstr "Mes formations"
 
@@ -326,11 +342,11 @@ msgstr "Mes formations"
 msgid "Entreprise has not been added!"
 msgstr "Le poste n'a pas été rajouté."
 
-#: ../templates/bootstrap/detail_offre.tpl:24
+#: ../templates/bootstrap/detail_offre.tpl:28
 msgid " of "
 msgstr " de "
 
-#: ../templates/bootstrap/ajouter_offre.tpl:37
+#: ../templates/bootstrap/ajouter_offre.tpl:36
 msgid " select a type "
 msgstr "-- choisir un type --"
 
@@ -360,7 +376,6 @@ msgstr "Pages :"
 
 #: ../templates/bootstrap/liste_job.tpl:19
 #: ../templates/bootstrap/ajouter_poste.tpl:25
-#, fuzzy
 msgid "Job Type"
 msgstr "Type"
 
@@ -374,10 +389,6 @@ msgstr "Début de la formation :"
 msgid "Contribution"
 msgstr "Cotisation"
 
-#: ../templates/bootstrap/liste_offres.tpl:3
-msgid "Subscrite to "
-msgstr "Abonnez vous : "
-
 #: ../templates/bootstrap/adh_fiche_action.tpl:14
 #: ../templates/default/adh_fiche_action.tpl:14
 msgid "View formations"
@@ -389,15 +400,15 @@ msgstr "Voir les formations"
 msgid "End"
 msgstr "Fin"
 
-#: ../templates/bootstrap/detail_offre.tpl:39
+#: ../templates/bootstrap/detail_offre.tpl:43
 msgid "Contact: "
 msgstr "Contact : "
 
-#: ../templates/bootstrap/gestion_offres.tpl:83
+#: ../templates/bootstrap/gestion_offres.tpl:84
 msgid "Actions:"
 msgstr "Actions"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:17
+#: ../templates/bootstrap/ajouter_offre.tpl:82
 msgid "Mail"
 msgstr "Mail"
 
@@ -406,18 +417,18 @@ msgstr "Mail"
 msgid "Select a type"
 msgstr "Choisir un type"
 
-#: ../templates/bootstrap/liste_job.tpl:30
-#: ../templates/bootstrap/ajouter_offre.tpl:45
+#: ../templates/bootstrap/liste_job.tpl:31
+#: ../templates/bootstrap/ajouter_offre.tpl:46
 #: ../templates/bootstrap/ajouter_poste.tpl:54
 msgid "Select one or more skill(s)"
 msgstr "Choisir une ou plusieurs compétence(s)"
 
 #: ../templates/bootstrap/menu.tpl:12
-#: ../templates/bootstrap/public_menu.tpl:49
+#: ../templates/bootstrap/public_menu.tpl:52
 msgid "My jobs"
 msgstr "Mes postes"
 
-#: ../templates/bootstrap/liste_job.tpl:42
+#: ../templates/bootstrap/liste_job.tpl:43
 #: ../templates/bootstrap/liste_membres_aae.tpl:43
 #: ../templates/default/liste_membres_aae.tpl:25
 msgid "Continue"
@@ -428,15 +439,15 @@ msgstr "Continuer"
 msgid "Speciality:"
 msgstr "Spécialité :"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:85
-msgid "Duration"
-msgstr "Durée"
+#: ../templates/bootstrap/liste_offres.tpl:3
+msgid "Subscrite"
+msgstr "Abonnez vous"
 
 #: ../templates/bootstrap/send_message.tpl:15
 msgid "Message:"
 msgstr "Message"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:81
+#: ../templates/bootstrap/ajouter_offre.tpl:99
 msgid "Key word(s)"
 msgstr "Mot(s) clés"
 
@@ -444,7 +455,7 @@ msgstr "Mot(s) clés"
 msgid "Jobs information"
 msgstr "Information des postes"
 
-#: ../liste_job.php:88 ../templates/bootstrap/public_menu.tpl:9
+#: ../liste_job.php:107 ../templates/bootstrap/public_menu.tpl:9
 #: ../templates/bootstrap/public_menu.tpl:25
 msgid "Jobs list"
 msgstr "Liste des postes"
@@ -455,7 +466,7 @@ msgstr "Ajouter une formation"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:55
 #: ../templates/bootstrap/aaetools.tpl:29
-#: ../templates/bootstrap/ajouter_offre.tpl:103
+#: ../templates/bootstrap/ajouter_offre.tpl:130
 #: ../templates/bootstrap/ajouter_poste.tpl:82
 #: ../templates/bootstrap/ajouter_ent.tpl:22
 #: ../templates/default/ajouter_formation_eleve.tpl:55
@@ -476,8 +487,12 @@ msgstr "rouge"
 msgid "Mail cotisation"
 msgstr "Email cotisation"
 
-#: ../templates/bootstrap/liste_job.tpl:29
-#: ../templates/bootstrap/ajouter_offre.tpl:44
+#: ../templates/bootstrap/ajouter_offre.tpl:105
+msgid "Duration"
+msgstr "Durée"
+
+#: ../templates/bootstrap/liste_job.tpl:30
+#: ../templates/bootstrap/ajouter_offre.tpl:43
 #: ../templates/bootstrap/ajouter_poste.tpl:50
 msgid "Skills"
 msgstr "Compétences"
@@ -486,7 +501,7 @@ msgstr "Compétences"
 msgid "Profil of "
 msgstr "Profil de "
 
-#: ../templates/bootstrap/ajouter_offre.tpl:97
+#: ../templates/bootstrap/ajouter_offre.tpl:123
 msgid "Cursus"
 msgstr "Cursus"
 
@@ -496,12 +511,12 @@ msgstr "Cursus"
 msgid "Speciality"
 msgstr "Spécialité"
 
-#: ../templates/bootstrap/detail_offre.tpl:35
+#: ../templates/bootstrap/detail_offre.tpl:39
 msgid "Pay: "
 msgstr "Salaire : "
 
-#: ../templates/bootstrap/liste_job.tpl:23
-#: ../templates/bootstrap/ajouter_offre.tpl:40
+#: ../templates/bootstrap/liste_job.tpl:24
+#: ../templates/bootstrap/ajouter_offre.tpl:39
 #: ../templates/bootstrap/ajouter_poste.tpl:32
 msgid "CDI"
 msgstr "CDI"
@@ -515,7 +530,7 @@ msgid "Nickname"
 msgstr "Surnom"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:70
-#: ../templates/bootstrap/ajouter_offre.tpl:9
+#: ../templates/bootstrap/ajouter_offre.tpl:72
 msgid "Contact information"
 msgstr "Information du contact"
 
@@ -527,24 +542,24 @@ msgstr "Merci de vous connecter pour accéder aux informations du contact."
 msgid "AAE"
 msgstr "AAE"
 
-#: ../ajouter_offre.php:136
+#: ../ajouter_offre.php:140
 msgid "Mail sent to user %name (%email)"
 msgstr "Message envoyé à l'utilisateur  %name (%email)"
 
-#: ../templates/bootstrap/liste_job.tpl:60
+#: ../templates/bootstrap/liste_job.tpl:61
 msgid "Member name"
 msgstr "Membre"
 
-#: ../templates/bootstrap/liste_job.tpl:75
+#: ../templates/bootstrap/liste_job.tpl:76
 msgid "Year of end"
 msgstr "Fin"
 
-#: ../ajouter_offre.php:109
+#: ../ajouter_offre.php:114
 msgid ""
 "Offer has been successfully created, you will receive an confirmation email."
 msgstr "L'offre a bien été créée, vous allez recevoir un mail de confirmation"
 
-#: ../templates/bootstrap/liste_job.tpl:105
+#: ../templates/bootstrap/liste_job.tpl:106
 #: ../templates/bootstrap/liste_membres_aae.tpl:103
 #: ../templates/bootstrap/promotion.tpl:38
 msgid "If you see an error, please send an email to:"
@@ -552,7 +567,7 @@ msgstr ""
 "Si vous voyez une erreur merci de contacter le responsable du site à "
 "l'adresse suivante :"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:93
+#: ../templates/bootstrap/ajouter_offre.tpl:117
 msgid "Salary"
 msgstr "Salaire"
 
@@ -568,15 +583,7 @@ msgstr "Ajouter une ou modifier une offre d'emploi"
 msgid "Send a message to"
 msgstr "Envoyer un message à"
 
-#: ../templates/bootstrap/detail_offre.tpl:20
-msgid " Type:"
-msgstr "Type"
-
-#: ../templates/bootstrap/detail_offre.tpl:15
-msgid " Key word(s):"
-msgstr " Mot(s) clés :"
-
-#: ../templates/bootstrap/gestion_offres.tpl:85
+#: ../templates/bootstrap/gestion_offres.tpl:86
 msgid "Statut : "
 msgstr "Statut"
 
@@ -592,7 +599,7 @@ msgstr ""
 msgid "Activities description"
 msgstr "Description du poste"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:52
+#: ../templates/bootstrap/ajouter_offre.tpl:13
 #: ../templates/bootstrap/ajouter_poste.tpl:8
 msgid "Employeur :"
 msgstr "Employeur"
@@ -609,7 +616,7 @@ msgstr "Entreprise"
 msgid "Formations managment:"
 msgstr "Gestion des formations :"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:35
+#: ../templates/bootstrap/ajouter_offre.tpl:32
 msgid "Offer Type"
 msgstr "Type"
 
@@ -622,7 +629,7 @@ msgstr "Fin de la formation"
 msgid "Please sign in to access search by name"
 msgstr "Merci de vous connecter pour accéder à la recherche par nom et prénom."
 
-#: ../templates/bootstrap/liste_job.tpl:193
+#: ../templates/bootstrap/liste_job.tpl:194
 #: ../templates/bootstrap/liste_membres_aae.tpl:152
 msgid "Show"
 msgstr "Montrer"
@@ -673,7 +680,7 @@ msgstr "NB : Les champs obligatoire sont en "
 msgid "No member registered!"
 msgstr "Aucun membre existant"
 
-#: ../templates/bootstrap/detail_offre.tpl:29
+#: ../templates/bootstrap/detail_offre.tpl:33
 msgid ", begining "
 msgstr ", commençant le "
 
@@ -681,11 +688,11 @@ msgstr ", commençant le "
 msgid "Add a job"
 msgstr "Ajouter un poste"
 
-#: ../liste_offres.php:40
+#: ../liste_offres.php:41
 msgid "Job offer details"
 msgstr "Détails de l'offre"
 
-#: ../templates/bootstrap/detail_offre.tpl:53
+#: ../templates/bootstrap/detail_offre.tpl:57
 msgid "Description: "
 msgstr "Description"
 
@@ -693,21 +700,20 @@ msgstr "Description"
 msgid "Validation"
 msgstr "Validation"
 
-#: ../templates/bootstrap/liste_job.tpl:66
+#: ../templates/bootstrap/liste_job.tpl:67
 #: ../templates/bootstrap/liste_offres.tpl:8
-#: ../templates/bootstrap/ajouter_offre.tpl:31
+#: ../templates/bootstrap/ajouter_offre.tpl:26
 #: ../templates/bootstrap/gestion_postes.tpl:5
 msgid "Title"
 msgstr "Titre"
 
-#: ../liste_offres.php:58 ../templates/bootstrap/gestion_offres.tpl:3
-#: ../templates/bootstrap/detail_offre.tpl:60
+#: ../liste_offres.php:59 ../templates/bootstrap/detail_offre.tpl:64
 #: ../templates/bootstrap/public_menu.tpl:15
 #: ../templates/bootstrap/public_menu.tpl:33
 msgid "Job offers list"
 msgstr "Liste des offres d'emploi"
 
-#: ../templates/bootstrap/detail_offre.tpl:47
+#: ../templates/bootstrap/detail_offre.tpl:51
 msgid "Please log in to access contact information."
 msgstr "Merci de vous connecter pour accéder aux informations du contact."
 
@@ -721,6 +727,7 @@ msgid "Promotion:"
 msgstr "Promotion :"
 
 #: ../templates/bootstrap/liste_job.tpl:10
+#: ../templates/bootstrap/liste_job.tpl:21
 msgid "all"
 msgstr "tous"
 
@@ -728,7 +735,7 @@ msgstr "tous"
 msgid "Formation"
 msgstr "Formation"
 
-#: ../ajouter_offre.php:152
+#: ../ajouter_offre.php:156
 msgid ""
 "Trying to send a mail to a member (%name) with an invalid adress: %email"
 msgstr ""
@@ -779,7 +786,7 @@ msgstr "Prénom"
 msgid "Go back"
 msgstr "Retour"
 
-#: ../templates/bootstrap/liste_job.tpl:191
+#: ../templates/bootstrap/liste_job.tpl:192
 #: ../templates/bootstrap/liste_offres.tpl:40
 #: ../templates/bootstrap/liste_membres_aae.tpl:150
 #: ../templates/bootstrap/promotion.tpl:52
@@ -790,7 +797,7 @@ msgstr "Suivant"
 msgid "Add a formation to someone"
 msgstr "Ajouter une formation"
 
-#: ../templates/bootstrap/liste_job.tpl:69
+#: ../templates/bootstrap/liste_job.tpl:70
 msgid "Address"
 msgstr "Adresse"
 
@@ -803,7 +810,7 @@ msgstr " de "
 msgid "please create a member"
 msgstr "merci de créer un membre"
 
-#: ../templates/bootstrap/liste_job.tpl:194
+#: ../templates/bootstrap/liste_job.tpl:195
 #: ../templates/bootstrap/liste_membres_aae.tpl:153
 msgid "Pages"
 msgstr "Pages"
@@ -832,7 +839,7 @@ msgstr "Liste des anciens élèves"
 msgid "A problem happened while sending email to user %name"
 msgstr "Un problème est survenu pendant l'envoi du mail à"
 
-#: ../templates/bootstrap/liste_job.tpl:53
+#: ../templates/bootstrap/liste_job.tpl:54
 msgid "job"
 msgstr "poste"
 
@@ -840,7 +847,7 @@ msgstr "poste"
 msgid "Entreprise has been successfully added."
 msgstr "L'entreprise a bien été ajoutée."
 
-#: ../ajouter_offre.php:123
+#: ../ajouter_offre.php:127
 msgid "Your job offer has been successfully created."
 msgstr "L'offre d'emploi a bien été enregistrée"
 
@@ -849,7 +856,7 @@ msgstr "L'offre d'emploi a bien été enregistrée"
 msgid "Select a member "
 msgstr "Sélectionner un membre "
 
-#: ../templates/bootstrap/liste_job.tpl:78
+#: ../templates/bootstrap/liste_job.tpl:79
 msgid "Details"
 msgstr "Détails"
 
@@ -865,7 +872,7 @@ msgstr "Profession"
 msgid " by "
 msgstr " par "
 
-#: ../templates/bootstrap/gestion_offres.tpl:85
+#: ../templates/bootstrap/gestion_offres.tpl:86
 msgid "(click to change)"
 msgstr "(click to change)"
 
@@ -881,7 +888,7 @@ msgstr "Gestion des postes"
 msgid "Send"
 msgstr "Envoyer"
 
-#: ../ajouter_offre.php:124
+#: ../ajouter_offre.php:128
 msgid "You can view or modify your offer using the link below."
 msgstr "Vous pouvez voir ou modifier votre offre avec le lien ci-dessous."
 
@@ -918,21 +925,22 @@ msgstr "(Max 255 characters)"
 msgid "Settings have been successfully modified."
 msgstr "Les paramètres ont bien été modifiés."
 
+#: ../templates/bootstrap/gestion_offres.tpl:10
 #: ../templates/bootstrap/liste_job.tpl:8
-#: ../templates/bootstrap/liste_job.tpl:63
+#: ../templates/bootstrap/liste_job.tpl:64
 #: ../templates/bootstrap/gestion_postes.tpl:6
 msgid "Entreprise"
 msgstr "Entreprise"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:71
+#: ../templates/bootstrap/ajouter_offre.tpl:65
 msgid "Available until"
 msgstr "Disponible jusqu'au"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:86
+#: ../templates/bootstrap/ajouter_offre.tpl:108
 msgid "(e.g., 3 months or 2 years; leave empty for permanent job)"
 msgstr "(exemple : 3 mois, 2 ans; laisser vide pour un CDI)"
 
-#: ../ajouter_poste.php:136
+#: ../ajouter_poste.php:134
 msgid "No member found."
 msgstr "Pas de membres à afficher."
 
@@ -945,13 +953,13 @@ msgstr "Offres d'emploi"
 msgid "-- select a name --"
 msgstr "-- choisir un nom --"
 
-#: ../templates/bootstrap/ajouter_offre.tpl:60
+#: ../templates/bootstrap/ajouter_offre.tpl:23
 #: ../templates/bootstrap/ajouter_poste.tpl:20
 #: ../templates/bootstrap/ajouter_ent.tpl:3
 msgid "Ajouter un employeur"
 msgstr "Ajouter un employeur"
 
-#: ../templates/bootstrap/liste_job.tpl:72
+#: ../templates/bootstrap/liste_job.tpl:73
 msgid "Begin year"
 msgstr "Début"
 
@@ -961,7 +969,7 @@ msgstr "Début"
 msgid "students"
 msgstr "étudiants"
 
-#: ../templates/bootstrap/liste_job.tpl:190
+#: ../templates/bootstrap/liste_job.tpl:191
 #: ../templates/bootstrap/liste_offres.tpl:39
 #: ../templates/bootstrap/liste_membres_aae.tpl:149
 #: ../templates/bootstrap/promotion.tpl:51
@@ -973,7 +981,7 @@ msgid "Adresse"
 msgstr "Adresse"
 
 #: ../templates/bootstrap/public_menu.tpl:3
-#: ../templates/bootstrap/public_menu.tpl:43
+#: ../templates/bootstrap/public_menu.tpl:46
 msgid "My shared profil"
 msgstr "Mon profil partagé"
 
@@ -991,8 +999,8 @@ msgstr "Photo"
 msgid "No member to show"
 msgstr "Pas de membres à afficher"
 
-#: ../ajouter_offre.php:66 ../ajouter_offre.php:74 ../ajouter_offre.php:175
-#: ../ajouter_offre.php:178
+#: ../ajouter_offre.php:66 ../ajouter_offre.php:74 ../ajouter_offre.php:179
+#: ../ajouter_offre.php:182
 msgid "Y-m-d"
 msgstr "A-m-j"
 
