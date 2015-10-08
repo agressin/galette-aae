@@ -5,14 +5,14 @@
         <title>AAE ENSG</title>
         <description>Liste des offres d'emplois</description>
         <lastBuildDate> {$smarty.now|date_format:'%a, %d %b %Y %H:%M:%S'} </lastBuildDate>
-        
+
         <link> {$url} </link>
      		{foreach from=$offres item=offre}
 			<item>
 				<title>{utf8_encode($offre.titre)}</title>
 				<organisme>{utf8_encode($offre.organisme)}</organisme>
 				<pubDate>{date("D, d M o",strtotime($offre.date_parution))}</pubDate>
-				<link>{$url}/{$aaetools_path}liste_offres.php?id_offre={$offre.id}</link>
+				<link>{$url}/{$aaetools_path}liste_offres.php?id_offre={$offre.id_offre}</link>
 			</item>
 	    	{/foreach}
     </channel>

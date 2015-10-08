@@ -1,12 +1,12 @@
 		<table id='table_poste' class="table table-hover">
 		 <thead>
             <tr>
-                <th class="listing left">{_T string="Period"}</th>
-                <th class="listing left">{_T string="Title"}</th>
-                <th class="listing left date_row"> {_T string="Entreprise"} </th>
-                <th class="listing left date_row"> {_T string="Site web"} </th>
+                <th>{_T string="Period"}</th>
+                <th>{_T string="Title"}</th>
+                <th> {_T string="Entreprise"} </th>
+                <th> {_T string="Site web"} </th>
                 {if $haveRights}
-                <th class="listing actions_row">{_T string="Actions"}</th>
+                <th>{_T string="Actions"}</th>
                 {/if}
         </thead>
 	{foreach $list_postes as $key}
@@ -42,16 +42,16 @@
 
     var rmPoste = function(e) {
         e.preventDefault();
-        
+
         $.get( 'supprimer_poste.php',
             {
                 id_form: e.target.value
             })
-        .done(function(data) {       
+        .done(function(data) {
             reloadTable();
         });
     };
-    
+
 
     var reloadTable = function(){
         $.get( 'gestion_postes.php?id_adh={$member->id}')
@@ -63,14 +63,14 @@
             });
 
     }
-    
 
-    
+
+
     var init = function(){
-		
+
 		$('.btn_supp').click(rmPoste);
-		
+
 	};
-    
+
     init();
 </script>

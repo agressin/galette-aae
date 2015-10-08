@@ -7,6 +7,9 @@ use Analog\Analog as Analog;
 require_once 'lib/GaletteAAE/Domaines.php';
 use Galette\AAE\Domaines as Domaines;
 
+require_once 'lib/GaletteAAE/Entreprises.php';
+use Galette\AAE\Entreprises as Entreprises;
+
 class Offres
 {
     const TABLE = 'offres';
@@ -26,22 +29,27 @@ class Offres
 
         try {
 
-            $select = $zdb->sql->select();
+          $select = $zdb->sql->select();
+          $entreprises = new Entreprises();
+          $select->from($this->getTableName());
+          $select->join(array('e' => $entreprises->getTableLienName()),
+            'e.id_entreprise = d.id_entreprise',
+            array('employeur','website'));
 
-            if($onlyValidOffer) {
-				$select->from($this->getTableName())->where->equalTo("valide",true);
-			} else {
-				$select->from($this->getTableName())->where(true);;
-			}
+          if($onlyValidOffer) {
+    				$select->where->equalTo("valide",true);
+    			} else {
+    				$select->where(true);;
+    			}
 
-            $res = $zdb->execute($select);
-            $res = $res->toArray();
+          $res = $zdb->execute($select);
+          $res = $res->toArray();
 
-            if ( count($res) > 0 ) {
-                return $res;
-            } else {
-                return array();
-            }
+          if ( count($res) > 0 ) {
+              return $res;
+          } else {
+              return array();
+          }
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve offres : "' . $e->getMessage(),

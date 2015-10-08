@@ -1,7 +1,7 @@
 
 	<article class="post type-post">
 		<header class="entry-header">
-			<h1 class="entry-title">{$offre.titre}</h1>
+			<h3 class="entry-title">{$offre.titre}</h3>
 			<div class="entry-meta">
 			<span class="posted-on">
 				{_T string="Posted on "} {date("d/m/o",strtotime($offre.date_parution))}
@@ -12,12 +12,16 @@
 			</span>  <br>
 			{if  $offre.mots_cles!=""}
 			<span class="keyword">
-				{_T string=" Key word(s):"} {$offre.mots_cles}
+				{_T string="Key word(s):"} {$offre.mots_cles}
 			</span> <br>
 			{/if}
-			
+			{if  $offre.domaines!=""}
+			<span class="skills">
+				{_T string="Skills:"} {$offre.domaines}
+			</span> <br>
+			{/if}
 			<span class="type">
-				{_T string=" Type:"} {$offre.type_offre}
+				{_T string="Type:"} {$offre.type_offre}
 			</span>
 			{if $offre.duree!=""}
 			<span class="duration">
@@ -46,14 +50,14 @@
 	{else}
 				{_T string="Please log in to access contact information."}
 	{/if}
-			</span>		
+			</span>
 			</div><!-- .entry-meta -->
 			</header><!-- .entry-header -->
 			<div class="entry-content">
 			<h3> {_T string="Description: "}</h3>
 			<p style="text-align: justify;">{$offre.desc_offre}</p>
 			</div><!-- .entry-content -->
-	
+
 			<footer class="entry-meta">
 				<ul class="entry-meta-taxonomy"></ul>
 			</footer><!-- .entry-meta -->

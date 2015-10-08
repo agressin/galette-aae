@@ -117,19 +117,19 @@ class postes
         global $zdb;
 
         try {
-            $select = $zdb->select(AAE_PREFIX . self::TABLE);
-            if($id_entreprise != ''){
-				$select->where->equalTo('id_entreprise', $id_entreprise);
-				$res = $zdb->execute($select);
-            }else{
-				$res = $zdb->selectAll(AAE_PREFIX . self::TABLE);
-            }
-            $res = $res->toArray();
-            if ( count($res) > 0 ) {
-                return $res;
-            } else {
-                return array();
-            }
+          $select = $zdb->select(AAE_PREFIX . self::TABLE);
+          if($id_entreprise != ''){
+    				$select->where->equalTo('id_entreprise', $id_entreprise);
+    				$res = $zdb->execute($select);
+          }else{
+			      $res = $zdb->selectAll(AAE_PREFIX . self::TABLE);
+          }
+          $res = $res->toArray();
+          if ( count($res) > 0 ) {
+              return $res;
+          } else {
+              return array();
+          }
 
         } catch (\Exception $e) {
             Analog::log(

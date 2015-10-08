@@ -2,13 +2,14 @@
 	<a href="{$galette_base_path}{$aaetools_path}ajouter_offre.php" title="{_T string="Add job offer"}">{_T string="Add job offer"}</a> /
 	<a href="{$galette_base_path}{$aaetools_path}liste_offres.php">{_T string="Job offers list"}</a>
 
-    <table id='table_offre' class="listing">
+    <table id='table_offre' class="table table-hover">
         <thead>
             <tr>
                 <!-- <th class="listing id_row">#</th> -->
-                <th class="listing left">{_T string="Titre"}</th>
-                <th class="listing left">{_T string="Type"}</th>
-                <th class="listing actions_row">{_T string="Actions"}</th>
+                <th>{_T string="Titre"}</th>
+                <th>{_T string="Type"}</th>
+								<th> {_T string="Entreprise"} </th>
+                <th>{_T string="Actions"}</th>
         </thead>
         <tbody>
 
@@ -16,14 +17,15 @@
     {foreach from=$offres item=offre}
             <tr class="offre_row">
                 <td class="center nowrap"><a href="{$galette_base_path}plugins/galette-plugin-aae/ajouter_offre.php?id_offre={$offre.id_offre}"> {$offre.titre} </a></td>
-                <td class="center nowrap"> {$offre.type} </a></td>
+                <td class="center nowrap"> {$offre.type}</td>
+								<td class="center nowrap"><a href="liste_job.php?id_entreprise={$offre.id_entreprise}">{$offre.employeur|htmlspecialchars}</a></td>
                 <td class="center nowrap">
                     <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$offre.id_offre}' align="middle" />
                {if $haveRights}
                     {if $offre.valide}
 						<input class='btn_valid' border=0 src="{$template_subdir}images/icon-on.png" type=image Value='{$offre.id_offre}' align="middle" />
 					{else}
-						<input class='btn_invalid' border=0 src="{$template_subdir}images/icon-off.png" type=image Value='{$offre.id_offre}' align="middle" /> 
+						<input class='btn_invalid' border=0 src="{$template_subdir}images/icon-off.png" type=image Value='{$offre.id_offre}' align="middle" />
 					{/if}
 				{/if}
                 </td>

@@ -21,7 +21,8 @@ $detail_mode = false;
 $id_offre = get_numeric_form_value('id_offre', '');
 if($id_offre !='') {
 	$offre = $offres->getOffre($id_offre);
-	
+  $offre['domaines'] = $offres->getDomainesFromOffreToString($id_offre);
+
 	$detail_mode = ! empty($offre); # si l'offre n'existe pas, on reste sur la liste des offres
 }
 $rss_mode = isset($_GET['rss']);
@@ -31,7 +32,7 @@ $tpl->template_dir = 'templates/' . $preferences->pref_theme;
 
 if($detail_mode){
 	$tpl->assign('offre', $offre);
-	
+
 	$member = new Adherent();
 
 	$member->load($offre['id_adh']);
@@ -67,4 +68,3 @@ if(! $rss_mode) {
 	$tpl->template_dir = $orig_template_path;
 	$tpl->display('public_page.tpl');
 }
-
