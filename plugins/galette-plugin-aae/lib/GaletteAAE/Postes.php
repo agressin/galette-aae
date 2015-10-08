@@ -32,32 +32,31 @@ class postes
               array('p' => $this->getTableName())
             );
 
-          $select->join(array('d' => $this->getTableLienName()),
-            'p.id_poste = d.id_poste',
-            array('id_domaine'));
-          $select->group('id_poste');
-
           $init=false;
+
+          if (array_key_exists("domaines",$req)){
+            $select->join(array('d' => $this->getTableLienName()),
+              'p.id_poste = d.id_poste',
+              array('id_domaine'));
+            $select->group('id_poste');
+            $select->where(array('id_domaine' => $req["domaines"]));
+            $init=true;
+          };
+
+
           if (array_key_exists("entreprise",$req) && ($req["entreprise"] != '')){
             $select->where->equalTo('id_entreprise',  $req["entreprise"]);
             $init=true;
           };
           if (array_key_exists("type",$req) && ($req["type"] != '')){
-            //$select->where->equalTo('type',  $req["type"]);
             $select->where(array('type' => $req["type"]));
-            $init=true;
-          };
-          if (array_key_exists("domaines",$req)){
-            $select->where(array('id_domaine' => $req["domaines"]));
             $init=true;
           };
 
           if (!$init){
-            $res = $zdb->selectAll(AAE_PREFIX . self::TABLE);
-          } else {
-            $res = $zdb->execute($select);
+            $select->where(true);
           }
-
+          $res = $zdb->execute($select);
           $res = $res->toArray();
 
           if ( count($res) > 0 ) {

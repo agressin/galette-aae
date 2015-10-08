@@ -1,8 +1,8 @@
 <form class="form-horizontal" action="ajouter_poste.php" method="post">
 		<legend> {if {$vis} eq True} {_T string="Job details of"} {else} {_T string="Add a new job to"} {/if}  <strong>{$member->sfullname}</strong> </legend>
-		
-		<div class="row col-sm-offset-1"> 
-			<div class="form-group col-md-6">             
+
+		<div class="row col-sm-offset-1">
+			<div class="form-group col-md-6">
             <p>
                 <label class="bline" for="employeur">
                         {_T string="Employeur :"}
@@ -32,7 +32,6 @@
                         <option value="CDI"   {if {$poste.type} eq "CDI"}   selected="selected"{/if}>{_T string="CDI"}</option>
                 </select>
             </p>
-            {$poste.type}
             <p>
                 <label class="bline" for="titre" >
                         {_T string="Job title"}
