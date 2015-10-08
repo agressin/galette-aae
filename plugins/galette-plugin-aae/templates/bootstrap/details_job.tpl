@@ -18,19 +18,19 @@
           </tr>
           <tr>
             <td><h4>Adresse</h4></td>
-            <td>{$poste.adresse}</td>
+            <td>{$poste.adresse|htmlspecialchars}</td>
           </tr>
           <tr>
             <td><h4>Type de contrat</h4></td>
-            <td>{$poste.type}</td>
+            <td>{$poste.type|htmlspecialchars}</td>
           </tr>
           <tr>
             <td><h4>Intitulé du poste</h4></td>
-            <td>{$poste.titre}</td>
+            <td>{$poste.titre|htmlspecialchars}</td>
           </tr>
           <tr>
             <td><h4>Compétences</h4></td>
-            <td>{$poste.domaines}</td>
+            <td>{$poste.domaines|htmlspecialchars}</td>
           </tr>
           <tr>
             <td><h4>Description du poste</h4></td>

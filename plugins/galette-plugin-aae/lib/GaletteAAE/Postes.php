@@ -199,7 +199,7 @@ class postes
           			'id_entreprise' => $id_entreprise,
                 'type' 			=> $type,
                 'titre' 		=> $titre,
-                'activites'  	=> $activites,
+                'activites'  	=> nl2br($activites),
                 'adresse' 		=> $adresse,
                 'annee_ini'   	=> $annee_ini,
                 'annee_fin' 	=> $annee_fin
