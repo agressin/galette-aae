@@ -42,16 +42,16 @@
 
     var rmPoste = function(e) {
         e.preventDefault();
-        
+
         $.get( 'supprimer_poste.php',
             {
-                id_form: e.target.value
+                id_poste: e.target.value
             })
-        .done(function(data) {       
+        .done(function(data) {
             reloadTable();
         });
     };
-    
+
 
     var reloadTable = function(){
         $.get( 'gestion_postes.php?id_adh={$member->id}')
@@ -63,14 +63,14 @@
             });
 
     }
-    
 
-    
+
+
     var init = function(){
-		
+
 		$('.btn_supp').click(rmPoste);
-		
+
 	};
-    
+
     init();
 </script>

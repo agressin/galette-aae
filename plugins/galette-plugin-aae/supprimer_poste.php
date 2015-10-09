@@ -16,8 +16,8 @@ if ( !$login->isLogged() ) {
 
 $postes = new Postes();
 
-if (isset($_GET['id_form']) ) {
-            $postes->removePoste($_GET['id_form']);
+if (isset($_GET['id_poste']) ) {
+            $postes->removePoste($_GET['id_poste']);
 }
 
 ?>
