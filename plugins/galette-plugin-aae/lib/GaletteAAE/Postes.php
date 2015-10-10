@@ -250,19 +250,18 @@ class postes
         global $zdb;
 
         try {
-        	$domaines = new Domaines();
-			$domaines->removeAllDomainesOfPoste($id_poste);
-            $delete = $zdb->delete(AAE_PREFIX . self::TABLE);
-            $delete->where->equalTo(self::PK, $id_poste);
-            $zdb->execute($delete);
-            return true;
+		      $this->removeAllDomainesOfPoste($id_poste);
+          $delete = $zdb->delete(AAE_PREFIX . self::TABLE);
+          $delete->where->equalTo(self::PK, $id_poste);
+          $zdb->execute($delete);
+          return true;
         } catch ( \Exception $e ) {
-            Analog::log(
-                'Unable to delete poste ' .
-                $id_poste . ' | ' . $e->getMessage(),
-                Analog::ERROR
-            );
-            return false;
+          Analog::log(
+              'Unable to delete poste ' .
+              $id_poste . ' | ' . $e->getMessage(),
+              Analog::ERROR
+          );
+          return false;
         }
     }
 
