@@ -13,8 +13,8 @@ use Galette\AAE\Annuaire as Annuaire;
 require_once 'lib/GaletteAAE/Cycles.php';
 use Galette\AAE\Cycles as Cycles;
 
-require_once 'lib/GaletteAAE/Domaines.php';
-use Galette\AAE\Domaines as Domaines;
+require_once 'lib/GaletteAAE/Postes.php';
+use Galette\AAE\Postes as Postes;
 
 use Galette\Entity\Adherent as Adherent;
 use Galette\Entity\FieldsConfig;
@@ -40,34 +40,11 @@ $visibles = $fc->getVisibilities();
 
 //----------------POSTES---------------------
 
-require_once 'lib/GaletteAAE/Postes.php';
-use Galette\AAE\Postes as Postes;
-require_once 'lib/GaletteAAE/Entreprises.php';
-use Galette\AAE\Entreprises as Entreprises;
 $postes = new Postes();
-$entreprises = new Entreprises();
-$domaines = new Domaines();
-
-
-$list_postes = $postes->getPostes($id_adh);
-foreach ($list_postes as $i => $pos){
-        $id_ent = $pos['id_entreprise'];
-        $ent = $entreprises->getEntreprise($id_ent);
-        $list_postes[$i]['id_entreprise'] = $ent['id_entreprise'];
-        $list_postes[$i]['employeur'] = $ent['employeur'];
-        $list_postes[$i]['website'] = $ent['website'];
-        $list_postes[$i]['domaines'] =$postes->getDomainesFromPosteToString($pos['id_poste']);
-    }
-
-//Tri le tableau en fonction de la date de début.
-usort($list_postes, function($a, $b) {
-    return $b['annee_ini'] - $a['annee_ini'];
-});
-
+$list_postes = $postes->getPostes(array('id_adh' => $id_adh, 'get_domaines' => true));
 $nb_postes = count($list_postes);
 
 //----------------POSTES Fin---------------------
-
 
 $tpl->assign('form',$form);
 $tpl->assign('visibles', $visibles);

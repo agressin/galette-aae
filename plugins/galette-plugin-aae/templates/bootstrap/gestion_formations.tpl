@@ -12,7 +12,7 @@
         </thead>
 
         <tbody>
-    {foreach from=$list_formations item=form}
+    {foreach $list_formations as $form}
             <tr class="formation_row">
                 <td class="center nowrap">{$form.nom}</td>
                 <td class="center nowrap">{$form.specialite}</td>
@@ -21,7 +21,7 @@
                 {if $haveRights}
                 <td class="center nowrap">
 
-                    <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$form.id}' align="middle" /> 
+                    <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$form.id}' align="middle" />
 
                 </td>
                 {/if}
@@ -31,9 +31,9 @@
             <tr>
                 <td class="center nowrap">
                     <select name="id_cycle" id="id_cycle">
-                            {foreach from=$cycles key=k item=v}
-                            <option value="{$k}">{$v}</option>
-                            {/foreach}
+                      {foreach $cycles as $key}
+                      <option value="{$key.id_cycle}">{$key.nom}</option>
+                      {/foreach}
                     </select>
                 </td>
                 <td class="center nowrap">
@@ -46,18 +46,18 @@
                     <select id="EndYear"/>
                 </td>
                 <td class="center nowrap">
-                    <input id='btn_add' border=0 src="{$template_subdir}images/icon-add.png" type=image align="middle" /> 
+                    <input id='btn_add' border=0 src="{$template_subdir}images/icon-add.png" type=image align="middle" />
                 </td>
             </tr>
 	{/if}
        </tbody>
-    </table>    
+    </table>
     {if $haveRights}
         <script type="text/javascript">
 
             var initiateSelects = function() {
                 var myDate = new Date();
-            
+
                 var year = myDate.getFullYear();
 
                 for(var i = year-1; i >= 1950; i--){
@@ -78,7 +78,7 @@
                 $('#EndYear').find('option').remove();
 
                 var myDate = new Date();
-            
+
                 var year = myDate.getFullYear() +3;
 
                 for(var i = year; i >= 1950; i--){
@@ -86,38 +86,38 @@
                     if((i-1)<=endYearSave)
                     {
                         $('#StartYear').append('<option value="'+ (i-1) +'">'+ (i-1) +'</option>');
-                    } 
+                    }
                 };
 
                 $('#StartYear').val(startYearSave);
                 $('#EndYear').val(endYearSave);
 
             };
-            
+
             var addFormation = function(e) {
 
                 $.post( 'ajouter_formation_eleve.php',
                     {
                         id_adh: {$member->id},
-                        id_cycle: $('#id_cycle').find(":selected").val(), 
+                        id_cycle: $('#id_cycle').find(":selected").val(),
                         specialite: $('#specialite').val(),
                         annee_debut: $('#StartYear').find(":selected").val(),
                         annee_fin: $('#EndYear').find(":selected").val()
 
                     })
-                .done(function(data) {       
+                .done(function(data) {
                     reloadTable();
                 });
             };
-            
+
             var rmFormation = function(e) {
                 e.preventDefault();
-                
+
                 $.get( 'supprimer_formation_eleve.php',
                     {
                         id_form: e.target.value
                     })
-                .done(function(data) {       
+                .done(function(data) {
                     reloadTable();
                 });
             };
@@ -141,11 +141,10 @@
                         init();
                     });
             };
-            
+
             init();
         </script>
         {else}
         {_T string="You are not allowed to modify your formations. However, if you see an error, please send an email to:"}
         <a href='mailto:{$AAE_Pref->getPref('mail_webmaster')}'>{$AAE_Pref->getPref('mail_webmaster')}</a>
         {/if}
-

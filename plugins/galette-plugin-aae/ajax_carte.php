@@ -60,7 +60,7 @@ function recupererInfoAdherent($id_adh, $MAISONS, $POSTES) {
 
 	// Et des postes :
 	$info = $annuaire -> getInfoById($id_adh); // on recup le nom et prenom, pas envoyes par getPostes
-	$lesPostes = $postes -> getPostes($id_adh);
+	$lesPostes = $postes -> getPostes(array("id_adh" => $id_adh));
 	foreach ($lesPostes as $poste) {
 		//print_r($poste);
 			$tps = $poste; // on ajout le nom et prenom, pas envoyes par getPostes
@@ -82,11 +82,6 @@ function recupererInfoAdherent($id_adh, $MAISONS, $POSTES) {
 if ($type == 'multi') {
 	//Recuperation cycles
 	$allCycles = $cycles->getAllCycles();
-	foreach ($allCycles as $key => $cycle) {
-		$tmp[$key] = $cycle["nom"];
-	}
-	//Tri ascendant
-	array_multisort($tmp, SORT_ASC, $allCycles);
 
 	$req = array();
 	$id_cycle = get_numeric_form_value('id_cycle', '0');
@@ -105,10 +100,10 @@ if ($type == 'multi') {
 	}
 
 	$nom_prenom = $_GET["nom_prenom"];
-	if ($nom_prenom!="") {	
+	if ($nom_prenom!="") {
 		$req["nom_prenom"] = $nom_prenom;
 	};
-		
+
 	$eleves = $annuaire -> getStudent($req);
 
 	// Obtient une liste de colonnes
