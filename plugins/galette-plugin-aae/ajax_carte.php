@@ -78,8 +78,8 @@ if ($type == 'multi') {
 
 	// Obtient une liste de colonnes
 	foreach ($eleves as $key) {
-		$MAISONS = array_merge($annuaire->getGeoSpatialInfo($id_adh),$MAISONS);
-		$POSTES = array_merge($postes->getPostes(array('id_adh' => $id_adh,'get_info_adh' => true)),$POSTES);
+		$MAISONS = array_merge($annuaire->getGeoSpatialInfo($key['id_adh']),$MAISONS);
+		$POSTES = array_merge($postes->getPostes(array('id_adh' => $key['id_adh'],'get_info_adh' => true)),$POSTES);
 	}
 
 } elseif ($type == 'mono') {
