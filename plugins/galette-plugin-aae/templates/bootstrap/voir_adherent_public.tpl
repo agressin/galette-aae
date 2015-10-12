@@ -128,19 +128,10 @@
 
 		<div class="details table-hover">
 			<legend>{_T string="Geographic situation"}</legend>
-			<div id="loading"><img src="../../templates/bootstrap/images/loading.gif" alt="{_T string="Loading..."}" title="{_T string="Loading..."}"></div>
+			<div id="loading"><img src="../../templates/bootstrap/images/loading.png" alt="{_T string="Loading..."}" title="{_T string="Loading..."}"></div>
 			<div id="warningbox">{_T string="No detail found"}</div>
 			<div id="carteMembres" class="carteMembres" style="display:none;"><div id="popup"></div></div>
 		</div>
-
-		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
-		<link rel="stylesheet" href="css/style_cartes.css" type="text/css" />
-		<link rel="stylesheet" type="text/css" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css">
-		<link rel="stylesheet" type="text/css" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css">
-		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
-		<script type="text/javascript" src="http://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
-		<script type="text/javascript" src="js/CarteMembres.js"></script>
 
 		<script type="text/javascript">
 			var carteMembres = false;
@@ -156,9 +147,9 @@
 						center : [46.49839, 3.20801],
 						zoom : 6,
 						boundsFrance : L.latLngBounds([41.331554,-5.197418],[51.020073,9.516022]),
-						hauteurAuto : true/*,
-						keyMaps : 'AIzaSyCpMXa7ZJn2L7WebriShk4v8NSU4n3N-s8',
-						keyIGN : '3s9er40tvaqliky3tswb38l2'*/
+						hauteurAuto : true,
+						keyMaps : "{$AAE_Pref->getPref('api_key_google')}",
+						keyIGN : "{$AAE_Pref->getPref('api_key_ign')}"
 					};
 					carteMembres = new CarteMembres(options);
 				}

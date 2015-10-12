@@ -45,33 +45,48 @@ $tpl->assign(
 );
 
 $AAE_Pref = new AAE_Preferences();
-
+$tpl->assign('AAE_Pref', $AAE_Pref);
 
 if (isset($_POST['valid']) && $_POST['valid'] == '1') {
     //form was send normally, we try to store new values
-    
-    if(isset($_POST['pref_rib']))
-		$res = $AAE_Pref->setPref('rib',$_POST['pref_rib']);
-	if(isset($_POST['pref_webmaster']))
+
+  $res = false;
+
+  if(isset($_POST['pref_rib'])){
+		$res = $AAE_Pref->setPref('rib',$_POST['pref_rib']) || $res;
+  }
+	if(isset($_POST['pref_webmaster'])){
 		$res = $AAE_Pref->setPref('mail_webmaster',$_POST['pref_webmaster']);
-	if(isset($_POST['pref_cotis']))
-		$res = $AAE_Pref->setPref('mail_cotis',$_POST['pref_cotis']);
-	if(isset($_POST['pref_job']))
-		$res = $AAE_Pref->setPref('mail_job',$_POST['pref_job']);
-	if(isset($_POST['pref_montant']))
-		$res = $AAE_Pref->setPref('montant_cotis',$_POST['pref_montant']);
-		
-    if ( !$res ) {
-        $error_detected[] = _T("Settings have not been modified!");
-    } else {
-        $success_detected[] = _T("Settings have been successfully modified.");
-    }
+  }
+	if(isset($_POST['pref_cotis'])){
+		$res = $AAE_Pref->setPref('mail_cotis',$_POST['pref_cotis']) || $res;
+  }
+	if(isset($_POST['pref_job'])){
+		$res = $AAE_Pref->setPref('mail_job',$_POST['pref_job']) || $res;
+  }
+	if(isset($_POST['pref_montant'])){
+		$res = $AAE_Pref->setPref('montant_cotis',$_POST['pref_montant']) || $res;
+  }
+
+  if(isset($_POST['api_key_ign'])){
+    var_dump($_POST['api_key_ign']);
+		$res = $AAE_Pref->setPref('api_key_ign',$_POST['api_key_ign']) || $res;
+  }
+  if(isset($_POST['api_key_google'])){
+    var_dump($_POST['api_key_google']);
+		$res = $AAE_Pref->setPref('api_key_google',$_POST['api_key_google']) || $res;
+  }
+
+  if ( !$res ) {
+      $error_detected[] = _T("Settings have not been modified!");
+  } else {
+      $success_detected[] = _T("Settings have been successfully modified.");
+  }
 }
 $tpl->assign('error_detected', $error_detected);
 $tpl->assign('success_detected', $success_detected);
 
 $tpl->assign('page_title', _T("AAE Tools"));
-$tpl->assign('AAE_Pref', $AAE_Pref);
 
 $content = $tpl->fetch('aaetools.tpl', AAETOOLS_SMARTY_PREFIX);
 //$content="Une page visible que par les gens du bureau";

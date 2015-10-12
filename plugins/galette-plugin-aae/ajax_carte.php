@@ -85,8 +85,8 @@ if ($type == 'multi') {
 } elseif ($type == 'mono') {
 	$id_adh = (isset($_GET["id_adh"]) ? intval($_GET["id_adh"]) : '0');
 
-  $MAISONS = array_merge($annuaire->getGeoSpatialInfo($id_adh),$MAISONS);
-  $POSTES = array_merge($postes->getPostes(array('id_adh' => $id_adh,'get_info_adh' => true)),$POSTES);
+  $MAISONS = $annuaire->getGeoSpatialInfo($id_adh);
+  $POSTES = $postes->getPostes(array('id_adh' => $id_adh,'get_info_adh' => true));
 }
 
 /**

@@ -16,6 +16,9 @@ use Galette\AAE\Cycles as Cycles;
 require_once 'lib/GaletteAAE/Postes.php';
 use Galette\AAE\Postes as Postes;
 
+require_once 'lib/GaletteAAE/Preferences.php';
+use Galette\AAE\Preferences as AAE_Preferences;
+
 use Galette\Entity\Adherent as Adherent;
 use Galette\Entity\FieldsConfig;
 
@@ -24,6 +27,9 @@ if ( !$login->isLogged() ) {
     header('location:'. GALETTE_BASE_PATH .'index.php');
     die();
 }
+
+$AAE_Pref = new AAE_Preferences();
+$tpl->assign('AAE_Pref', $AAE_Pref);
 
 $id_adh = get_numeric_form_value('id_adh', '');
 if($id_adh == ''){
@@ -61,6 +67,9 @@ $tpl->template_dir = 'templates/' . $preferences->pref_theme;
 
 $tpl->assign('postes', $list_postes);
 $tpl->assign('nb_postes', $nb_postes);
+
+$tpl->assign('require_map', true);
+
 $content = $tpl->fetch('voir_adherent_public.tpl');
 
 $tpl->assign('content', $content);

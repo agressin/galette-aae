@@ -91,7 +91,7 @@ CarteMembres.prototype.ajax = function(paraAjax) {
 	$('#'+that.idLoading).show();
 	$.ajax(paraAjax).done(function(data) {
 		that.afficherLieux(data);
-		that.map._onResize(); 
+		that.map._onResize();
 	});
 }
 

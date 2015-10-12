@@ -12,6 +12,9 @@ use Galette\AAE\Cycles as Cycles;
 require_once 'lib/GaletteAAE/Annuaire.php';
 use Galette\AAE\Annuaire as Annuaire;
 
+require_once 'lib/GaletteAAE/Preferences.php';
+use Galette\AAE\Preferences as AAE_Preferences;
+
 
 if ( !$preferences->showPublicPages($login) ) {
     //public pages are not actives
@@ -24,7 +27,12 @@ $cycles = new Cycles();
 $allCycles = $cycles->getAllCycles();
 $tpl->assign('cycles', $allCycles);
 
+$AAE_Pref = new AAE_Preferences();
+$tpl->assign('AAE_Pref', $AAE_Pref);
+
 $tpl->assign('page_title', _T("Former students map"));
+
+$tpl->assign('require_map', true);
 
 //Set the path to the current plugin's templates,
 //but backup main Galette's template path before
