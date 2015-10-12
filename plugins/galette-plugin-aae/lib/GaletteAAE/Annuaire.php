@@ -4,7 +4,7 @@ namespace Galette\AAE;
 
 use Analog\Analog as Analog;
 use Galette\Entity\Adherent as Adherent;
-use Galette\Repository\Members as Members;
+//use Galette\Repository\Members as Members;
 
 require_once 'lib/GaletteAAE/Cycles.php';
 use Galette\AAE\Cycles as Cycles;
@@ -263,7 +263,8 @@ class Annuaire
 	* 			'cycle'  => ?,
 	* 			'cycle_simple'  => ?,
 	* 			'annee_debut' => ?,
-	*  			'employeur'  => ?,
+	*  			'employeur'  => ?,,
+	* 			'group_by_adh' => true/false
 	* 		)
 	* (each one is optional, you just have to put only one)
 	OUT : array
@@ -279,6 +280,10 @@ class Annuaire
 					$select->from(
 							array('a' => $table_adh)
 						);
+
+					if(array_key_exists('group_by_adh',$req) && $req['group_by_adh'] ){
+						$select->group('a.id_adh');
+					}
 
 		 			$select->join(array('f' => Formations::getTableName()),
 						'f.id_adh = a.' . Adherent::PK,

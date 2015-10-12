@@ -74,8 +74,8 @@ $tpl->assign('req_domaines', $req["domaines"]);
 
 if($is_valid) {
 	$req["get_domaines"] = true;
+
   $list_postes = $postes->getPostes($req);
-  var_dump($list_postes);
 	$nb_postes = count($list_postes);
 
 	// Obtient une liste de colonnes

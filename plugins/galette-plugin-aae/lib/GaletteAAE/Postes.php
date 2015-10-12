@@ -24,11 +24,26 @@ class postes
     const TABLE_LIEN = 'liens_poste_domaine';
     const PK = 'id_poste';
 
+
+     /**
+     * Retrieve postes information
+     *
+     * @param array
+     * array(
+     * 			'id_poste' => ?,
+     * 			'id_adh' => ?,
+     * 			'domaines'  => ?,
+     * 			'entreprise'  => ?,
+     * 			'type'  => ?,
+     * 			'get_domaines' => true/false,
+     *  		'get_info_adh'  => true/false,
+     * 		)
+     *
+     * @return array
+     */
     public function getPostes($req)
       {
         global $zdb;
-        var_dump($req);
-
         try {
           $select = $zdb->sql->select();
           $select->from(
@@ -40,6 +55,13 @@ class postes
             'p.id_entreprise = e.id_entreprise',
             array('employeur','website'));
 
+          if(array_key_exists('get_info_adh',$req) && $req['get_info_adh'] ){
+
+            $select->join(array('a' => PREFIX_DB . Adherent::TABLE),
+              'p.id_adh = a.id_adh',
+              array('nom_adh','prenom_adh'));
+          }
+
           $init=false;
 
           if(array_key_exists('id_poste',$req)){
@@ -47,7 +69,7 @@ class postes
             $init=true;
           }
           if(array_key_exists('id_adh',$req)){
-            $select->where->equalTo('id_adh',  $req['id_adh']);
+            $select->where->equalTo('p.id_adh',  $req['id_adh']);
             $init=true;
           }
 
@@ -76,7 +98,7 @@ class postes
           $res = $zdb->execute($select);
           $res = $res->toArray();
 
-          if(array_key_exists('get_domaines',$req)){
+          if(array_key_exists('get_domaines',$req) && $req['get_domaines'] ){
             foreach ($res as &$key){
                     $key['domaines'] = $this->getDomainesFromPosteToString($key['id_poste']);
                 }

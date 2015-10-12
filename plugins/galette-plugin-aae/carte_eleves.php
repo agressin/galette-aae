@@ -19,6 +19,11 @@ if ( !$preferences->showPublicPages($login) ) {
     die();
 }
 
+$cycles = new Cycles();
+//Recuperation cycles
+$allCycles = $cycles->getAllCycles();
+$tpl->assign('cycles', $allCycles);
+
 $tpl->assign('page_title', _T("Former students map"));
 
 //Set the path to the current plugin's templates,

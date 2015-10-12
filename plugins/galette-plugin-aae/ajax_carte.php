@@ -25,7 +25,6 @@ if ( !$preferences->showPublicPages($login) ) {
     die();
 }
 
-$cycles = new Cycles();
 $postes = new Postes();
 $annuaire = new Annuaire();
 
@@ -49,39 +48,8 @@ $POSTES = array();
 	REQUETES MULTI OU MONO
 **/
 
-function recupererInfoAdherent($id_adh, $MAISONS, $POSTES) {
-	$postes = new Postes();
-	$annuaire = new Annuaire();
-	//$entreprises = new Entreprises();
-
-	// Recuperation du logement :
-	$maisons = $annuaire -> getGeoSpatialInfo($id_adh);
-	foreach ($maisons as $maison) {array_push($MAISONS, $maison);}
-
-	// Et des postes :
-	$info = $annuaire -> getInfoById($id_adh); // on recup le nom et prenom, pas envoyes par getPostes
-	$lesPostes = $postes -> getPostes(array("id_adh" => $id_adh));
-	foreach ($lesPostes as $poste) {
-		//print_r($poste);
-			$tps = $poste; // on ajout le nom et prenom, pas envoyes par getPostes
-			$tps['nom_adh'] = $info[0]['nom_adh'];
-			$tps['prenom_adh'] = $info[0]['prenom_adh'];
-			// On ajoute le nom de l'entreprise, pas envoyé par poste :
-			//$ent = $entreprises->getEntreprise($poste['id_entreprise']);
-			//$tps['employeur'] = $ent['employeur'];
-			array_push($POSTES, $tps);
-	}
-
-	// Retour :
-	return array(
-		'MAISONS' => $MAISONS,
-		'POSTES' => $POSTES
-	);
-}
 
 if ($type == 'multi') {
-	//Recuperation cycles
-	$allCycles = $cycles->getAllCycles();
 
 	$req = array();
 	$id_cycle = get_numeric_form_value('id_cycle', '0');
@@ -104,21 +72,21 @@ if ($type == 'multi') {
 		$req["nom_prenom"] = $nom_prenom;
 	};
 
+  $req["group_by_adh"] = true;
+
 	$eleves = $annuaire -> getStudent($req);
 
 	// Obtient une liste de colonnes
-	foreach ($eleves as $key => $row) {
-		$temp = recupererInfoAdherent($row['id_adh'], $MAISONS, $POSTES);
-		$MAISONS = $temp['MAISONS'];
-		$POSTES = $temp['POSTES'];
+	foreach ($eleves as $key) {
+		$MAISONS = array_merge($annuaire->getGeoSpatialInfo($id_adh),$MAISONS);
+		$POSTES = array_merge($postes->getPostes(array('id_adh' => $id_adh,'get_info_adh' => true)),$POSTES);
 	}
 
 } elseif ($type == 'mono') {
 	$id_adh = (isset($_GET["id_adh"]) ? intval($_GET["id_adh"]) : '0');
 
-	$temp = recupererInfoAdherent($id_adh, $MAISONS, $POSTES);
-	$MAISONS = $temp['MAISONS'];
-	$POSTES = $temp['POSTES'];
+  $MAISONS = array_merge($annuaire->getGeoSpatialInfo($id_adh),$MAISONS);
+  $POSTES = array_merge($postes->getPostes(array('id_adh' => $id_adh,'get_info_adh' => true)),$POSTES);
 }
 
 /**
@@ -150,7 +118,7 @@ foreach ($POSTES as $poste) {
 		// Creation des info :
 		$info = '';
 		$info .= '<p class="title">' . $poste['nom_adh'] . ' ' . $poste['prenom_adh'] . '</p>';
-		$info .= '<p><a href="voir_adherent_public.php?id_adh=' . $poste['id_adh'] . '" title="' . $poste['nom_adh'] . ' ' . $poste['prenom_adh'] . '">' . $poste['activite_principale'] . '</a></p>';
+		$info .= '<p><a href="voir_adherent_public.php?id_adh=' . $poste['id_adh'] . '" title="' . $poste['nom_adh'] . ' ' . $poste['prenom_adh'] . '">' . $poste['titre'] . '</a></p>';
 		// TODO : Lien vers la bonne page
 
 		array_push($lieux, array(
