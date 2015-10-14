@@ -100,6 +100,7 @@ foreach ($MAISONS as $maison) {
 	$adr .= ($maison['pays_adh'] != '' ? ($adr != '' ? ', ' : '') . $maison['pays_adh'] : '');
 	if ($adr != '') {
 		array_push($lieux, array(
+			'title' => $maison['nom_adh'] . ' ' . $maison['prenom_adh'],
 			'info' => '<p class="title">' . $maison['nom_adh'] . ' ' . $maison['prenom_adh'] . '</p><p class="center">Logement</p>',
 			'adresse' => $adr,
 			'coords' => false, // TODO : tester si les coordonnées existent dans la base et les envoyer directement
@@ -122,6 +123,7 @@ foreach ($POSTES as $poste) {
 		// TODO : Lien vers la bonne page
 
 		array_push($lieux, array(
+			'title' => $poste['nom_adh'] . ' ' . $poste['prenom_adh'],
 			'info' => $info,
 			'adresse' => $adr,
 			'coords' => false, // TODO : tester si les coordonnées existent dans la base et les envoyer directement
