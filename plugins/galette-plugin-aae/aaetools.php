@@ -69,11 +69,9 @@ if (isset($_POST['valid']) && $_POST['valid'] == '1') {
   }
 
   if(isset($_POST['api_key_ign'])){
-    var_dump($_POST['api_key_ign']);
 		$res = $AAE_Pref->setPref('api_key_ign',$_POST['api_key_ign']) || $res;
   }
   if(isset($_POST['api_key_google'])){
-    var_dump($_POST['api_key_google']);
 		$res = $AAE_Pref->setPref('api_key_google',$_POST['api_key_google']) || $res;
   }
 
