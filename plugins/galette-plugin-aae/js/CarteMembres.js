@@ -91,7 +91,7 @@ CarteMembres.prototype.ajax = function(paraAjax) {
 	$('#'+that.idLoading).show();
 	$.ajax(paraAjax).done(function(data) {
 		that.afficherLieux(data);
-		that.map._onResize(); 
+		that.map._onResize();
 	});
 }
 
@@ -117,7 +117,7 @@ CarteMembres.prototype.afficherLieux = function(data) {
 							var lon = retour.results[0].geometry.location.lng;
 
 							var marker = L.marker([lat, lon], {
-								title : elm.info,
+								title : elm.title || '',
 								icon: L.icon({
 									iconUrl: 'icone/' + elm.type + '.png',
 									iconAnchor: [16, 16],

@@ -33,7 +33,7 @@ class Preferences
             }
         } catch (\Exception $e) {
             Analog::log(
-                'Unable to retrieve ' . $name.' in preferences table : "' . $e->getMessage(),
+                'Unable to retrieve ' . $name.' in preferences table : ' . $e->getMessage(),
                 Analog::WARNING
             );
 

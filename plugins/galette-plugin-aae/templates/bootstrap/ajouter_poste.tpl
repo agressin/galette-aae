@@ -10,8 +10,8 @@
             </p>
             <p>
                 <select class="selectpicker" name="id_employeur" id="id_employeur" required {if {$vis} eq True} disabled {/if} title="{_T string="Choisir un employeur"}">
-						{foreach from=$entreprises key=k item=v}
-							<option value="{$k}" {if {$poste.id_entreprise} eq {$k} } selected="selected"{/if}>{$v.employeur}</option>
+						{foreach $entreprises as $key}
+							<option value="{$key.id_entreprise}" {if {$poste.id_entreprise} eq {$key.id_entreprise} } selected="selected"{/if}>{$key.employeur}</option>
 						{/foreach}
                 </select>
             </p>

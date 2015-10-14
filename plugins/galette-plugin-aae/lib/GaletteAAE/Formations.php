@@ -32,25 +32,25 @@ class Formations
         global $zdb;
 
         try {
-        
-        	$select = $zdb->sql->select();
-        	$select->from(array('f' => $this->getTableName()));
-							
-			$select->join(array('c' => Cycles::getTableName()),
-				'f.id_cycle = c.' . Cycles::PK,
-				array('id_cycle','nom'));
-				
 
-			$select->where->equalTo('f.'. Adherent::PK, $id_adh);
-            
-            $res = $zdb->execute($select);
-            $res = $res->toArray();
-            
-            if ( count($res) > 0 ) {
-                return $res;
-            } else {
-                return array();
-            }
+      	$select = $zdb->sql->select();
+      	$select->from(array('f' => $this->getTableName()));
+
+    		$select->join(array('c' => Cycles::getTableName()),
+    			'f.id_cycle = c.' . Cycles::PK,
+    			array('id_cycle','nom'));
+
+    		$select->where->equalTo('f.'. Adherent::PK, $id_adh);
+        $select->order(annee_debut);
+        
+        $res = $zdb->execute($select);
+        $res = $res->toArray();
+
+        if ( count($res) > 0 ) {
+            return $res;
+        } else {
+            return array();
+        }
 
         } catch (\Exception $e) {
             Analog::log(
@@ -61,7 +61,7 @@ class Formations
             return false;
         }
     }
-    
+
     /**
      * Retrieve one formation
      *
@@ -79,7 +79,7 @@ class Formations
 
             $res = $zdb->execute($select);
             $res = $res->toArray();
-            
+
             if ( count($res) > 0 ) {
                 return $res[0];
             } else {
@@ -101,7 +101,7 @@ class Formations
      * @param int $id_cycle
      * @param string $specialite
      * @param int $date_debut
-     * @param int $date_fin    
+     * @param int $date_fin
      * @param int $id_adh
      */
     public function setFormation($id_form,$id_adh,$id_cycle,$specialite,$date_debut,$date_fin)
@@ -123,13 +123,13 @@ class Formations
                 $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
                 $insert->values($data);
                 $add = $zdb->execute($insert);
-                
+
                 if ( $add->count() == 0) {
                     Analog::log('An error occured inserting new formation!' );
                 }
-                
+
             } else {
-                //Formation already exists, just update               
+                //Formation already exists, just update
                 $update = $zdb->update(AAE_PREFIX . self::TABLE);
                 $update->set($data)->where->equalTo(self::PK,$id_form);
                 $edit = $zdb->execute($update);
@@ -170,7 +170,7 @@ class Formations
             return false;
         }
     }
-	
+
     /**
      * Get table's name
      *

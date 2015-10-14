@@ -15,39 +15,42 @@ class Cycles
     /**
      * Retrieve all cycles
      *
-     * @param 
+     * @param
      *
      * @return array
      */
-    public function getAllCycles()
+    public function getAllCycles($only_used = true)
     {
         global $zdb;
 
         try {
-			/* select galette_aae_cycles.*
-			 * from galette_aae_cycles, galette_aae_formations
-			 * where galette_aae_cycles.id_cycle = galette_aae_formations.id_cycle
-			 * group by galette_aae_cycles.id_cycle
-            */
-            $select = $zdb->sql->select();
+      		/* select galette_aae_cycles.*
+      		 * from galette_aae_cycles, galette_aae_formations
+      		 * where galette_aae_cycles.id_cycle = galette_aae_formations.id_cycle
+      		 * group by galette_aae_cycles.id_cycle
+           */
+          $select = $zdb->sql->select();
 
-			$select->from(array('c' => Cycles::getTableName()));
-			
-			$select->join(array('f' => Formations::getTableName()),
-				'f.id_cycle = c.id_cycle',
-				array());
+      		$select->from(array('c' => Cycles::getTableName()));
 
-			$select->group('c.id_cycle');
+          if($only_used){
+            $select->join(array('f' => Formations::getTableName()),
+        			'f.id_cycle = c.id_cycle',
+        			array());
+            $select->group('c.id_cycle');
+          }
+          $select->order('nom');
+          $select->where(true);
 
-			$res = $zdb->execute($select);
-            $res = $res->toArray();
-            
-             
-            if ( count($res) > 0 ) {
-                return $res;
-            } else {
-                return array();
-            }
+      		$res = $zdb->execute($select);
+          $res = $res->toArray();
+
+
+          if ( count($res) > 0 ) {
+              return $res;
+          } else {
+              return array();
+          }
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve cycles : "' . $e->getMessage(),
@@ -56,7 +59,7 @@ class Cycles
             return false;
         }
     }
-    
+
      /**
      * Retrieve cycle information
      *
@@ -98,4 +101,3 @@ class Cycles
     }
 }
 ?>
-

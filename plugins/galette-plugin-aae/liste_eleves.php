@@ -15,7 +15,6 @@ use Galette\AAE\Annuaire as Annuaire;
 require_once 'lib/GaletteAAE/Preferences.php';
 use Galette\AAE\Preferences as AAE_Preferences;
 
-
 if ( !$preferences->showPublicPages($login) ) {
     //public pages are not actives
     header('location:' . GALETTE_BASE_PATH  . 'index.php');
@@ -30,11 +29,6 @@ $annuaire = new Annuaire();
 
 //Recuperation cycles
 $allCycles = $cycles->getAllCycles();
-foreach ($allCycles as $key => $cycle) {
-	$tmp[$key] = $cycle["nom"];
-}
-//Tri ascendant
-array_multisort($tmp, SORT_ASC, $allCycles);
 $tpl->assign('cycles', $allCycles);
 
 $req = array();
@@ -77,20 +71,6 @@ $tpl->assign('param_selected', $param_selected);
 if($param_selected) {
 
 	$eleves = $annuaire -> getStudent($req);
-
-	// Obtient une liste de colonnes
-	foreach ($eleves as $key => $row) {
-		//$id_adh[$key]=$row['id_adh'];
-		$nom[$key]  = $row['nom_adh'];
-		$prenom[$key] = $row['prenom_adh'];
-		//$cycletab[$key] = $row['nom'];
-		//$promo[$key] = $row['annee_debut'];
-		//$id_cycle[$key] = $row['id_cycle'];
-	}
-
-	// Trie les données par nom et prenom croissant
-	// Ajoute $eleves en tant que dernier paramètre, pour trier par la clé commune
-	array_multisort($nom, SORT_ASC, $prenom, SORT_ASC, $eleves);
 
 	$tpl->assign('eleves', $eleves);
 	$tpl->assign('nb_eleves', count($eleves));

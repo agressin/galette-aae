@@ -9,6 +9,9 @@ use Galette\Repository\Members as Members;
 require_once 'lib/GaletteAAE/Domaines.php';
 use Galette\AAE\Domaines as Domaines;
 
+require_once 'lib/GaletteAAE/Entreprises.php';
+use Galette\AAE\Entreprises as Entreprises;
+
 /**
  * Members postes
  *
@@ -21,43 +24,85 @@ class postes
     const TABLE_LIEN = 'liens_poste_domaine';
     const PK = 'id_poste';
 
-    public function getPostesMulti($req)
+
+     /**
+     * Retrieve postes information
+     *
+     * @param array
+     * array(
+     * 			'id_poste' => ?,
+     * 			'id_adh' => ?,
+     * 			'domaines'  => ?,
+     * 			'entreprise'  => ?,
+     * 			'type'  => ?,
+     * 			'get_domaines' => true/false,
+     *  		'get_info_adh'  => true/false,
+     * 		)
+     *
+     * @return array
+     */
+    public function getPostes($req)
       {
         global $zdb;
-
         try {
           $select = $zdb->sql->select();
-          $table_adh = PREFIX_DB . Adherent::TABLE;
           $select->from(
               array('p' => $this->getTableName())
             );
 
+          $entreprises = new Entreprises();
+          $select->join(array('e' => $entreprises->getTableName()),
+            'p.id_entreprise = e.id_entreprise',
+            array('employeur','website'));
+
+          if(array_key_exists('get_info_adh',$req) && $req['get_info_adh'] ){
+
+            $select->join(array('a' => PREFIX_DB . Adherent::TABLE),
+              'p.id_adh = a.id_adh',
+              array('nom_adh','prenom_adh'));
+          }
+
           $init=false;
 
-          if (array_key_exists("domaines",$req)){
+          if(array_key_exists('id_poste',$req)){
+            $select->where->equalTo('id_poste',  $req['id_poste']);
+            $init=true;
+          }
+          if(array_key_exists('id_adh',$req)){
+            $select->where->equalTo('p.id_adh',  $req['id_adh']);
+            $init=true;
+          }
+
+          if (array_key_exists('domaines',$req)){
             $select->join(array('d' => $this->getTableLienName()),
               'p.id_poste = d.id_poste',
               array('id_domaine'));
+            $select->where(array('id_domaine' => $req['domaines']));
             $select->group('id_poste');
-            $select->where(array('id_domaine' => $req["domaines"]));
             $init=true;
           };
 
-
-          if (array_key_exists("entreprise",$req) && ($req["entreprise"] != '')){
-            $select->where->equalTo('id_entreprise',  $req["entreprise"]);
+          if (array_key_exists('entreprise',$req) && ($req['entreprise'] != '')){
+            $select->where->equalTo('e.id_entreprise',  $req['entreprise']);
             $init=true;
           };
-          if (array_key_exists("type",$req) && ($req["type"] != '')){
-            $select->where(array('type' => $req["type"]));
+          if (array_key_exists('type',$req) && ($req['type'] != '')){
+            $select->where(array('type' => $req['type']));
             $init=true;
           };
 
           if (!$init){
             $select->where(true);
           }
+          $select->order('annee_ini');
           $res = $zdb->execute($select);
           $res = $res->toArray();
+
+          if(array_key_exists('get_domaines',$req) && $req['get_domaines'] ){
+            foreach ($res as &$key){
+                    $key['domaines'] = $this->getDomainesFromPosteToString($key['id_poste']);
+                }
+          }
 
           if ( count($res) > 0 ) {
               return $res;
@@ -72,74 +117,6 @@ class postes
             return false;
         }
       }
-    /**
-     * Retrieve member poste
-     *
-     * @param int $id_adh Member id
-     *
-     * @return array
-     */
-    public function getPostes($id_adh)
-    {
-        global $zdb;
-
-        try {
-            $select = $zdb->select(AAE_PREFIX . self::TABLE);
-            $select->where->equalTo('id_adh', $id_adh);
-
-            $res = $zdb->execute($select);
-            $res = $res->toArray();
-            if ( count($res) > 0 ) {
-                return $res;
-            } else {
-                return array();
-            }
-
-        } catch (\Exception $e) {
-            Analog::log(
-                'Unable to retrieve members postes for "' .
-                $id_adh  . '". | ' . $e->getMessage(),
-                Analog::WARNING
-            );
-            return false;
-        }
-    }
-
-    /**
-     * Retrieve all poste by id_entreprise
-     *
-     * @param int id_entreprise Entreprise id
-     *
-     * @return array
-     */
-    public function getPostesByEnt($id_entreprise)
-    {
-        global $zdb;
-
-        try {
-            $select = $zdb->select(AAE_PREFIX . self::TABLE);
-            if($id_entreprise != ''){
-				$select->where->equalTo('id_entreprise', $id_entreprise);
-				$res = $zdb->execute($select);
-            }else{
-				$res = $zdb->selectAll(AAE_PREFIX . self::TABLE);
-            }
-            $res = $res->toArray();
-            if ( count($res) > 0 ) {
-                return $res;
-            } else {
-                return array();
-            }
-
-        } catch (\Exception $e) {
-            Analog::log(
-                'Unable to retrieve members postes for "' .
-                $id_adh  . '". | ' . $e->getMessage(),
-                Analog::WARNING
-            );
-            return false;
-        }
-    }
 
      /**
      * Retrieve entreprise information
@@ -233,8 +210,8 @@ class postes
           return $id_poste;
         } catch ( \Exception $e ) {
             Analog::log(
-                'Unable to set poste ' .
-                $id_poste . ' | ' . $e->getMessage(),
+                'Unable to set poste "' .
+                $id_poste . '" | ' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
@@ -299,7 +276,7 @@ class postes
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve domaine from poste "' .
-                $id_poste  . '". | ' . $e->getMessage(),
+                $id_poste  . '" | ' . $e->getMessage(),
                 Analog::WARNING
             );
             return false;
@@ -317,7 +294,7 @@ class postes
     {
         $domaines = new Domaines();
         $dom = $this->getDomainesFromPoste($id_poste);
-        $temp= "";
+        $temp= '';
         $all_dom = $domaines->getAllDomaines();
         foreach( $dom as $d){
         	$temp .= $all_dom[$d] . ', ';
@@ -341,8 +318,8 @@ class postes
             return true;
         } catch ( \Exception $e ) {
             Analog::log(
-                'Unable to delete domaines of poste ' .
-                $id_poste . ' | ' . $e->getMessage(),
+                'Unable to delete domaines of poste "' .
+                $id_poste . '" | ' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
@@ -376,8 +353,8 @@ class postes
             return ($res > 0);
         } catch ( \Exception $e ) {
             Analog::log(
-                'Unable to add domaine to poste ' .
-                $id_poste . ' | ' . $e->getMessage(),
+                'Unable to add domaine to poste "' .
+                $id_poste . '" | ' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
