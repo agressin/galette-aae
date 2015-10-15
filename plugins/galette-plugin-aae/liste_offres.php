@@ -8,6 +8,13 @@ require_once '_config.inc.php';
 
 require_once 'lib/GaletteAAE/Offres.php';
 use Galette\AAE\Offres as Offres;
+
+require_once 'lib/GaletteAAE/Entreprises.php';
+use Galette\AAE\Entreprises as Entreprises;
+
+require_once 'lib/GaletteAAE/Domaines.php';
+use Galette\AAE\Domaines as Domaines;
+
 use Galette\Entity\Adherent as Adherent;
 
 if ( !$preferences->showPublicPages($login) ) {
@@ -44,12 +51,48 @@ if($detail_mode){
 	$tpl->assign('content', $content);
 
 } else {
+  $entreprises = new Entreprises();
+  $domaines = new Domaines();
+
+  //Recuperation entreprises
+  $allEntreprises = $entreprises->getAllEntreprises(false,true);
+  $tpl->assign('entreprises', $allEntreprises);
+  $tpl->assign('domaines',$domaines->getAllDomaines());
+
+  //We get variables
+  $is_valid = get_numeric_form_value('valid', false);
+
+  $req = array();
+  $id_entreprise='';
+  if(isset($_POST['id_entreprise'])) {
+  	$req["entreprise"] = $_POST['id_entreprise'];
+  } else if(isset($_GET['id_entreprise'])) {
+  	$req["entreprise"] = $_GET['id_entreprise'];
+  	$is_valid=true;
+  }
+  $tpl->assign('id_entreprise', $req["entreprise"]);
+
+  if(isset($_POST['type'])) {
+  	$req["type"] = $_POST['type'];
+  } else if(isset($_GET['type'])) {
+  	$req["type"] = $_GET['type'];
+  	$is_valid=true;
+  }
+  $tpl->assign('type', $req["type"]);
+
+  if(isset($_POST['domaines'])) {
+  	$req["domaines"] = $_POST['domaines'];
+  } else if(isset($_GET['domaines'])) {
+  	$req["domaines"] = $_GET['domaines'];
+  	$is_valid=true;
+  }
+  $tpl->assign('req_domaines', $req["domaines"]);
 
 	//Recup Offres
-	$allOffres = $offres->getAllOffres();
-	$tpl->assign('nb_offres', count($allOffres));
+  $list_offres = $offres->getOffres($req);
+	$tpl->assign('nb_offres', count($list_offres));
 
-	$tpl->assign('offres', $allOffres);
+	$tpl->assign('offres', $list_offres);
 
 	if($rss_mode) {
 		$tpl->assign('url', "http://".$_SERVER['HTTP_HOST']);

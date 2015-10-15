@@ -7,6 +7,9 @@ use Analog\Analog as Analog;
 require_once 'lib/GaletteAAE/Postes.php';
 use Galette\AAE\Postes as Postes;
 
+require_once 'lib/GaletteAAE/Offres.php';
+use Galette\AAE\Offres as Offres;
+
 class Entreprises
 {
     const TABLE = 'entreprises';
@@ -20,7 +23,7 @@ class Entreprises
      *
      * @return array
      */
-    public function getAllEntreprises($onlyUsed = false)
+    public function getAllEntreprises($onlyUsedByPoste = false, $onlyUsedByOffre = false)
     {
         global $zdb;
 
@@ -29,9 +32,16 @@ class Entreprises
           $select = $zdb->sql->select();
           $select->from(array('e' => self::getTableName()));
 
-    			if($onlyUsed){
+    			if($onlyUsedByPoste){
     				$select->join(array('p' => Postes::getTableName()),
     					'p.id_entreprise = e.id_entreprise',
+    					array());
+
+    				$select->group('e.id_entreprise');
+    			}
+          if($onlyUsedByOffre){
+    				$select->join(array('o' => Offres::getTableName()),
+    					'o.id_entreprise = e.id_entreprise',
     					array());
 
     				$select->group('e.id_entreprise');

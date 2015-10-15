@@ -462,14 +462,14 @@ class Offres
                $init=true;
              };
              if (array_key_exists('type',$req) && ($req['type'] != '')){
-               $select->where(array('type' => $req['type']));
+               $select->where(array('type_offre' => $req['type']));
                $init=true;
              };
 
              if (!$init){
                $select->where(true);
              }
-             
+
              $select->order('date_parution');
              $res = $zdb->execute($select);
              $res = $res->toArray();
@@ -500,7 +500,7 @@ class Offres
      *
      * @return string
      */
-    protected function getTableName()
+    static public function getTableName()
     {
         return PREFIX_DB . AAE_PREFIX  . self::TABLE;
     }
