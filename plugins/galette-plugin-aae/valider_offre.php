@@ -10,17 +10,15 @@ require_once 'lib/GaletteAAE/Offres.php';
 use Galette\AAE\Offres as Offres;
 
 if (!$login->isAdmin() && !$login->isStaff()) {
-    header('location:'. GALETTE_BASE_PATH .'index.php');
-    die();
+  header('location:'. GALETTE_BASE_PATH .'index.php');
+  die();
 }
 
 
 $offres = new Offres();
 
 if (isset($_GET['id_offre']) && isset($_GET['valide'])  ) {
-	echo $_GET['id_offre'];
-	echo $_GET['valide'];
-            $offres->ValidOffre($_GET['id_offre'],$_GET['valide']);
+  $offres->ValidOffre($_GET['id_offre'],$_GET['valide']);
 }
 
 ?>

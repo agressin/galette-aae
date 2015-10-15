@@ -400,7 +400,98 @@ class Offres
                 return false;
             }
         }
+        /**
+        * Retrieve offres information
+        *
+        * @param array
+        * array(
+        * 			'id_offre' => ?,
+        * 			'id_adh' => ?,
+        * 			'domaines'  => ?,
+        * 			'entreprise'  => ?,
+        * 			'type'  => ?,
+        * 			'get_domaines' => true/false,
+        *  		'get_info_adh'  => true/false,
+        * 		)
+        *
+        * @return array
+        */
+       public function getOffres($req)
+         {
+           global $zdb;
+           try {
+             $select = $zdb->sql->select();
+             $select->from(
+                 array('o' => $this->getTableName())
+               );
 
+             $entreprises = new Entreprises();
+             $select->join(array('e' => $entreprises->getTableName()),
+               'o.id_entreprise = e.id_entreprise',
+               array('employeur','website'));
+
+             if(array_key_exists('get_info_adh',$req) && $req['get_info_adh'] ){
+
+               $select->join(array('a' => PREFIX_DB . Adherent::TABLE),
+                 'o.id_adh = a.id_adh',
+                 array('nom_adh','prenom_adh'));
+             }
+
+             $init=false;
+
+             if(array_key_exists('id_offre',$req)){
+               $select->where->equalTo('id_offre',  $req['id_offre']);
+               $init=true;
+             }
+             if(array_key_exists('id_adh',$req)){
+               $select->where->equalTo('o.id_adh',  $req['id_adh']);
+               $init=true;
+             }
+
+             if (array_key_exists('domaines',$req)){
+               $select->join(array('d' => $this->getTableLienName()),
+                 'o.id_offre = d.id_offre',
+                 array('id_domaine'));
+               $select->where(array('id_domaine' => $req['domaines']));
+               $select->group('id_offre');
+               $init=true;
+             };
+
+             if (array_key_exists('entreprise',$req) && ($req['entreprise'] != '')){
+               $select->where->equalTo('e.id_entreprise',  $req['entreprise']);
+               $init=true;
+             };
+             if (array_key_exists('type',$req) && ($req['type'] != '')){
+               $select->where(array('type' => $req['type']));
+               $init=true;
+             };
+
+             if (!$init){
+               $select->where(true);
+             }
+             $select->order('date_parution');
+             $res = $zdb->execute($select);
+             $res = $res->toArray();
+
+             if(array_key_exists('get_domaines',$req) && $req['get_domaines'] ){
+               foreach ($res as &$key){
+                       $key['domaines'] = $this->getDomainesFromOffreToString($key['id_offre']);
+                   }
+             }
+
+             if ( count($res) > 0 ) {
+                 return $res;
+             } else {
+                 return array();
+             }
+           } catch (\Exception $e) {
+               Analog::log(
+                   'Unable to retrieve poste | ' . $e->getMessage(),
+                   Analog::WARNING
+               );
+               return false;
+           }
+         }
 
 
     /**

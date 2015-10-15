@@ -72,13 +72,7 @@ if ( !($login->isAdmin() || $login->isStaff() || $id_adh == $login->id ) ){
 $member->load($id_adh);
 
 //Recupération des entreprises :
-$allEntreprises = $entreprises->getAllEntreprises();
-foreach ($allEntreprises as $entreprise) {
-	$pk = Entreprises::PK;
-	$name = $entreprise["employeur"];
-	$entreprises_options[$entreprise[$pk]]["employeur"] = $name;
-}
-$tpl->assign('entreprises', $entreprises_options);
+$tpl->assign('entreprises', $entreprises->getAllEntreprises());
 
 #----------CREATION / MODIFICATION ----------#
 if( isset($_POST['valid']) ){
@@ -99,7 +93,11 @@ if( isset($_POST['valid']) ){
 	if($res){
 		$id_poste = $res;
 
+<<<<<<< HEAD
 		unset($session['ajouter_ent_caller']);
+=======
+		unset($session['ajouter_ent']);
+>>>>>>> master
 
 		if( !isset($session['ajouter_poste']))
 			$session['ajouter_poste'] = [];

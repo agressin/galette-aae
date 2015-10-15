@@ -10,9 +10,6 @@ require_once '_config.inc.php';
 require_once 'lib/GaletteAAE/Postes.php';
 use Galette\AAE\Postes as Postes;
 
-require_once 'lib/GaletteAAE/Entreprises.php';
-use Galette\AAE\Entreprises as Entreprises;
-
 
 if ( !$login->isLogged() ) {
     header('location:'. GALETTE_BASE_PATH .'index.php');
@@ -28,18 +25,6 @@ if ( isset($session['ajouter_poste']) ) {
 }
 
 $postes = new Postes();
-$entreprises = new Entreprises();
-
-//Recupération des entreprises :
-$allEntreprises = $entreprises->getAllEntreprises();
-foreach ($allEntreprises as $entreprise) {
-    $pk = Entreprises::PK;
-    $name = $entreprise["employeur"];
-    $entreprises_options[$entreprise[$pk]]["employeur"] = $name;
-    $entreprises_options[$entreprise[$pk]]["website"] = $entreprise["website"];
-}
-$tpl->assign('entreprises', $entreprises_options);
-
 
 $member = new Galette\Entity\Adherent();
 
@@ -55,21 +40,8 @@ if ( $login->isAdmin() || $login->isStaff() ) {
 }
 $tpl->assign('id_adh', $id_adh);
 
-//Liste les postes 
-$list_postes = $postes->getPostes($id_adh);
-$i=0;
-foreach ($list_postes as $pos){
-	$id_ent = $pos['id_entreprise'];
-	$ent = $entreprises->getEntreprise($id_ent);
-	$list_postes[$i]['employeur'] = $ent['employeur'];
-	$list_postes[$i]['website'] = $ent['website'];
-	$i=$i+1;
-}
-
-//Tri le tableau en fonction de la date de début.
-usort($list_postes, function($a, $b) {
-    return $a['annee_ini'] - $b['annee_ini'];
-});
+//Liste les postes
+$list_postes = $postes->getPostes(array('id_adh' => $id_adh));
 $tpl->assign('list_postes', $list_postes);
 
 
@@ -82,7 +54,7 @@ if(! isset($session['gestion_postes.php'])){
 $session['gestion_postes.php']['id_adh'] = $id_adh;
 
 $nom = $member->sfullname;
-$tpl->assign('page_title', _T("Jobs managment")." ".$nom);
+$tpl->assign('page_title', _T('Jobs managment').' '.$nom);
 
 
 //Messages

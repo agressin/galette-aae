@@ -18,7 +18,7 @@ if (!$login->isAdmin() && !$login->isStaff()) {
 $offres = new Offres();
 
 if (isset($_GET['id_offre']) ) {
-            $offres->removeOffre($_GET['id_offre']);
+    $offres->removeOffre($_GET['id_offre']);
 }
 
 ?>

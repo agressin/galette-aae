@@ -28,7 +28,7 @@
 							<label for="id_cycle" class="control-label">{_T string="or by Cycle"}</label> <br>
 							<select class="form-control" name="id_cycle" id="id_cycle">
 								<option value="0" {if $param_selected eq 1} selected="selected"{/if} > -- </option>
-								{foreach from=$cycles item=cycle name=allcycles}
+								{foreach $cycles as $cycle}
 								<option value="{$cycle.id_cycle}" {if $cycle.id_cycle eq $id_cycle} selected="selected"{/if} >{$cycle.nom}</option>
 								{/foreach}
 							</select>

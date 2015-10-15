@@ -39,26 +39,21 @@ $domaines = new Domaines();
 
 //Recuperation entreprises
 $allEntreprises = $entreprises->getAllEntreprises(true);
-foreach ($allEntreprises as $key => $entreprise) {
-	$tmp[$key] = $entreprise["employeur"];
-}
-//Tri ascendant
-array_multisort($tmp, SORT_ASC, $allEntreprises);
 $tpl->assign('entreprises', $allEntreprises);
 $tpl->assign('domaines',$domaines->getAllDomaines());
+
 //We get variables
 $is_valid = get_numeric_form_value('valid', false);
 
 $req = array();
 $id_entreprise='';
 if(isset($_POST['id_entreprise'])) {
-
-	$req["id_entreprise"] = $_POST['id_entreprise'];
+	$req["entreprise"] = $_POST['id_entreprise'];
 } else if(isset($_GET['id_entreprise'])) {
-	$req["id_entreprise"] = $_GET['id_entreprise'];
+	$req["entreprise"] = $_GET['id_entreprise'];
 	$is_valid=true;
 }
-$tpl->assign('id_entreprise', $req["id_entreprise"]);
+$tpl->assign('id_entreprise', $req["entreprise"]);
 
 if(isset($_POST['type'])) {
 	$req["type"] = $_POST['type'];
@@ -77,22 +72,14 @@ if(isset($_POST['domaines'])) {
 $tpl->assign('req_domaines', $req["domaines"]);
 
 if($is_valid) {
-	//$list_postes = $postes->getPostesByEnt($id_entreprise);
-  $list_postes = $postes->getPostesMulti($req);
-  //var_dump($list_postes);
+	$req["get_domaines"] = true;
+
+  $list_postes = $postes->getPostes($req);
 	$nb_postes = count($list_postes);
 
 	// Obtient une liste de colonnes
-	foreach ($list_postes as $key => $row) {
-		$id_adh[$key] = $row['id_adh'];
-		$list_postes[$key]['nom_adh'] = $adherent->getSName($id_adh[$key]);
-
-		$id_ent = $row['id_entreprise'];
-    $ent = $entreprises->getEntreprise($id_ent);
-    $list_postes[$key]['id_entreprise'] = $ent['id_entreprise'];
-    $list_postes[$key]['employeur'] = $ent['employeur'];
-    $list_postes[$key]['website'] = $ent['website'];
-    $list_postes[$key]['domaines'] = $postes->getDomainesFromPosteToString($row['id_poste']);
+	foreach ($list_postes as &$key) {
+		$key['nom_adh'] = $adherent->getSName($key['id_adh']);
 	}
 	$tpl->assign('postes', $list_postes);
 	$tpl->assign('param_selected',true);

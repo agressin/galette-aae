@@ -16,7 +16,7 @@ class Entreprises
     /**
      * Retrieve all entreprises
      *
-     * @param 
+     * @param
      *
      * @return array
      */
@@ -25,28 +25,29 @@ class Entreprises
         global $zdb;
 
         try {
-            
-			if($onlyUsed){
-				$select = $zdb->sql->select();
-				$select->from(array('e' => self::getTableName()));
-				
-				$select->join(array('p' => Postes::getTableName()),
-					'p.id_entreprise = e.id_entreprise',
-					array());
 
-				$select->group('e.id_entreprise');
-				$res = $zdb->execute($select);
-			}else{
-				$res = $zdb->selectAll(AAE_PREFIX . self::TABLE);
-			}
+          $select = $zdb->sql->select();
+          $select->from(array('e' => self::getTableName()));
 
-            $res = $res->toArray();
-            
-            if ( count($res) > 0 ) {
-                return $res;
-            } else {
-                return array();
-            }
+    			if($onlyUsed){
+    				$select->join(array('p' => Postes::getTableName()),
+    					'p.id_entreprise = e.id_entreprise',
+    					array());
+
+    				$select->group('e.id_entreprise');
+    			}
+
+          $select->where(true);
+          $select->order('employeur');
+          $res = $zdb->execute($select);
+
+          $res = $res->toArray();
+
+          if ( count($res) > 0 ) {
+              return $res;
+          } else {
+              return array();
+          }
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve entreprises : "' . $e->getMessage(),
@@ -55,7 +56,7 @@ class Entreprises
             return false;
         }
     }
-    
+
      /**
      * Retrieve entreprise information
      *
@@ -119,7 +120,7 @@ class Entreprises
     }
 
 
-    
+
 
      /**
      * SetEntreprise
@@ -141,13 +142,13 @@ class Entreprises
                 $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
                 $insert->values($data);
                 $add = $zdb->execute($insert);
-                
+
                 if ( $add->count() == 0) {
                     Analog::log('An error occured inserting new poste!' );
                 }
-                
+
             } else {
-                //Entreprises already exists              
+                //Entreprises already exists
                 $update = $zdb->update(AAE_PREFIX . self::TABLE);
                 $update->set($data)->where->equalTo(self::PK,$id_form);
                 $edit = $zdb->execute($update);

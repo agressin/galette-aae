@@ -45,7 +45,7 @@
 
         $.get( 'supprimer_poste.php',
             {
-                id_form: e.target.value
+                id_poste: e.target.value
             })
         .done(function(data) {
             reloadTable();

@@ -9,9 +9,9 @@
                 </label>
             </p>
             <p>
-                <select class="selectpicker" name="id_employeur" id="id_employeur" required {if {$vis} eq True} disabled {/if} title="{_T string="Choisir un employeur"}" data-size="auto">
-						{foreach from=$entreprises key=k item=v}
-							<option value="{$k}" {if {$poste.id_entreprise} eq {$k} } selected="selected"{/if}>{$v.employeur}</option>
+                <select class="selectpicker" name="id_employeur" id="id_employeur" required {if {$vis} eq True} disabled {/if} title="{_T string="Choisir un employeur"}">
+						{foreach $entreprises as $key}
+							<option value="{$key.id_entreprise}" {if {$poste.id_entreprise} eq {$key.id_entreprise} } selected="selected"{/if}>{$key.employeur}</option>
 						{/foreach}
                 </select>
             </p>
@@ -32,7 +32,6 @@
                         <option value="CDI"   {if {$poste.type} eq "CDI"}   selected="selected"{/if}>{_T string="CDI"}</option>
                 </select>
             </p>
-            {$poste.type}
             <p>
                 <label class="bline" for="titre" >
                         {_T string="Job title"}

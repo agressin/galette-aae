@@ -20,7 +20,7 @@
           </select>
         </p>
         <p>
-          <a href="ajouter_ent.php"><img src="{$template_subdir}images/icon-add.png" align="middle" />{_T string="Ajouter un employeur"}</a>
+          <a {if $login->isLogged()} href="ajouter_ent.php" {/if}><img src="{$template_subdir}images/icon-add.png" align="middle" /> {_T string="Ajouter un employeur"}</a> {if !$login->isLogged()} {_T string="(Please sign in to add new society)"} <br> {/if}
         </p>
         <p>
           <label for="titre_offre">{_T string="Title"}</label>

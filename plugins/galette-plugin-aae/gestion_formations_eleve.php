@@ -30,13 +30,8 @@ $formation = new Formations();
 $cycles = new Cycles();
 
 //Recupération des cycles :
-$allCycles = $cycles->getAllCycles();
-foreach ($allCycles as $cycle) {
-    $pk = Cycles::PK;
-    $name = $cycle["nom"];
-    $cycles_options[$cycle[$pk]] = $name;
-}
-$tpl->assign('cycles', $cycles_options);
+$allCycles = $cycles->getAllCycles(false);
+$tpl->assign('cycles', $allCycles);
 
 $member = new Galette\Entity\Adherent();
 
@@ -50,16 +45,11 @@ if ( ($login->isAdmin() || $login->isStaff()) && isset($_GET['id_adh']) && $_GET
 $tpl->assign('haveRights', ($login->isAdmin() || $login->isStaff()));
 
 $list_formations = $formation->getFormations($id_adh);
+$tpl->assign('list_formations', $list_formations);
+
+//
 $member->load($id_adh);
 $tpl->assign('member', $member);
-
-//Tri le tableau en fonction de la date de début.
-usort($list_formations, function($a, $b) {
-    return $a['annee_debut'] - $b['annee_debut'];
-});
-
-
-$tpl->assign('list_formations', $list_formations);
 
 if (isset($error_detected)) {
     $tpl->assign('error_detected', $error_detected);
@@ -86,7 +76,5 @@ if ($login->isAdmin() || $login->isStaff())
 	$tpl->display('page.tpl');
 else
 	$tpl->display('public_page.tpl');
-
-
 
 ?>

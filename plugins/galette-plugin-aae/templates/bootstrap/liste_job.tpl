@@ -17,11 +17,10 @@
 						<div class="form-group col-md-3">
 							{*Searching poste by Type*}
 							<label for="type" class="control-label">{_T string="Job Type"}</label> <br>
-							<select class="selectpicker" name="type" id="type" title="{_T string="Select a type"}" data-size="auto">
-											<option value="" {if $type eq ""} selected="selected"{/if} > -- {_T string="all"} -- </option>
-											<option value="Stage" {if $type eq "Stage"} selected="selected"{/if}>{_T string="Stage"}</option>
-											<option value="CDD"   {if $type eq "CDD"} selected="selected"{/if}>{_T string="CDD"}</option>
-											<option value="CDI"   {if $type eq "CDI"} selected="selected"{/if}>{_T string="CDI"}</option>
+							<select class="selectpicker" name="type[]" id="type" multiple title="{_T string="Select one or more type"}" data-size="auto">
+											<option value="Stage" {if in_array("Stage",$type)} selected="selected"{/if}>{_T string="Stage"}</option>
+											<option value="CDD"   {if in_array("CDD",$type)} selected="selected"{/if}>{_T string="CDD"}</option>
+											<option value="CDI"   {if in_array("CDI",$type)} selected="selected"{/if}>{_T string="CDI"}</option>
 							</select>
 						</div>
 						<div class="form-group col-md-1"></div>
