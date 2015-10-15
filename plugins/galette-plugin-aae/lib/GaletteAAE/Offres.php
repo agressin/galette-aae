@@ -469,6 +469,7 @@ class Offres
              if (!$init){
                $select->where(true);
              }
+             
              $select->order('date_parution');
              $res = $zdb->execute($select);
              $res = $res->toArray();
