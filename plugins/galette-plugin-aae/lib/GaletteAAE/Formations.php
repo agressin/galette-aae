@@ -42,7 +42,7 @@ class Formations
 
     		$select->where->equalTo('f.'. Adherent::PK, $id_adh);
         $select->order(annee_debut);
-        
+
         $res = $zdb->execute($select);
         $res = $res->toArray();
 
