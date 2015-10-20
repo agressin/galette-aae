@@ -159,7 +159,8 @@ class Cycles
       			  array('count' => new Expression('COUNT(*)'),'annee_debut')
             );
 
-          $select->group('f.annee_debut');
+          $select->group('annee_debut');
+          $select->order('annee_debut');
           $select->where->equalTo('c.'.self::PK,$id_cycle);
 
       		$res = $zdb->execute($select);
