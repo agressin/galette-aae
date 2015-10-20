@@ -62,7 +62,7 @@
 				var curYear = "{$annee_debut}";
 				//curYear = (curYear=="")?year-1:curYear;
 
-				for(var i = year-1; i >= 1941; i--){
+				for(var i = year; i >= 1941; i--){
 					opt='<option value="'+ i +'">'+ i +'</option>';
 					if(curYear==i)
 						opt='<option value="'+ i +'" selected="selected" >'+ i +'</option>';
