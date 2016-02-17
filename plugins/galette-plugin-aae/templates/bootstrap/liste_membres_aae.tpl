@@ -5,11 +5,11 @@
 						<div class="form-group col-md-4">
 
 							{*Searching student by name*}
-							<label>{_T string="Name and/or First Name"}{if !$login->isLogged()} (*) {/if}
+							<label>{_T string="Name and/or First Name"}{if !$login->isUp2Date()} (*) {/if}
 							<input class="form-control" type="text" name ="nom_prenom" {if isset($nom_prenom)} value="{$nom_prenom}" {/if}
-							{if !$login->isLogged()} DISABLED {/if} />
+							{if !$login->isUp2Date()} DISABLED {/if} />
 							</label><br>
-							{if !$login->isLogged()} * {_T string="Please sign in to access search by name"} <br> {/if}
+							{if !$login->isUp2Date()} * {_T string="Please sign in to access search by name"} <br> {/if}
 							{*Searching student by promotion*}
 							<label for="annee_debut" class="control-label">{_T string="Promotion"}</label><br>
 							<select class="form-control" name="annee_debut" id="annee_debut" >
@@ -75,21 +75,21 @@
 		{foreach from=$eleves item=eleve name=alleleves}
 					<tr class="{if $smarty.foreach.allmembers.iteration % 2 eq 0}even{else}odd{/if}">
 						<td class="nowrap username_row">
-							{if $login->isLogged()}
+							{if $login->isUp2Date()}
 								<a href="voir_adherent_public.php?id_adh={$eleve.id_adh}">{$eleve.nom_adh}</a>
 							{else}
 								{$eleve.nom_adh}
 							{/if}
 						</td>
 						<td class="nowrap">
-							{if $login->isLogged()}
+							{if $login->isUp2Date()}
 								<a href="voir_adherent_public.php?id_adh={$eleve.id_adh}">{$eleve.prenom_adh}</a>
 							{else}
 								{$eleve.prenom_adh}
 							{/if}
 						</td>
 						<td class="nowrap">
-							{if $login->isLogged()}
+							{if $login->isUp2Date()}
 								<a href="liste_eleves.php?id_cycle={$eleve.id_cycle}&annee_debut={$eleve.annee_debut}">{$eleve.annee_debut}</a>
 							{else}
 								{$eleve.annee_debut}

@@ -32,7 +32,7 @@ $AAE_Pref = new AAE_Preferences();
 $tpl->assign('AAE_Pref', $AAE_Pref);
 
 $id_adh = get_numeric_form_value('id_adh', '');
-if($id_adh == ''){
+if(($id_adh == '') || ( !$login->isUp2Date()) ){
 	$id_adh = $login->id;
 }
 

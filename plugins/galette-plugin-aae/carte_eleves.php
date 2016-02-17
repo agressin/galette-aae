@@ -16,9 +16,8 @@ require_once 'lib/GaletteAAE/Preferences.php';
 use Galette\AAE\Preferences as AAE_Preferences;
 
 
-if ( !$preferences->showPublicPages($login) ) {
-    //public pages are not actives
-    header('location:' . GALETTE_BASE_PATH  . 'index.php');
+if ( !$login->isUp2Date() ) {
+    header('location:'. GALETTE_BASE_PATH .'index.php');
     die();
 }
 

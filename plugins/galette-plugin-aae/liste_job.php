@@ -24,7 +24,7 @@ use Galette\AAE\Domaines as Domaines;
 require_once 'lib/GaletteAAE/Preferences.php';
 use Galette\AAE\Preferences as AAE_Preferences;
 
-if ( !$login->isLogged() ) {
+if ( !$login->isUp2Date() ) {
     header('location:'. GALETTE_BASE_PATH .'index.php');
     die();
 }

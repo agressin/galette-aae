@@ -57,7 +57,7 @@ We have to use a template file, so Smarty will do its work (like replacing varia
             {_T string="Demonstration"}
         </div>
 	{/if}
-	</header>	
+	</header>
 
 	<nav id="site-navigation" class="main-navigation" role="navigation">
 		<h1 class="menu-toggle">Menu</h1>
@@ -79,7 +79,7 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 						<a href="{$galette_base_path}public/liste_membres.php">{_T string="Members list"}</a>
 						<ul class='children'>
 							<li class="page_item">
-						    	<a href="{$galette_base_path}public/trombinoscope.php">{_T string="Trombinoscope"}</a>
+						    	<a href="{$galette_base_path}public/trombinoscope.php" class="btn">{_T string="Trombinoscope"}</a>
 						    </li>
 						</ul>
 					</li>
@@ -92,7 +92,7 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 					<a href="{$galette_base_path}voir_adherent.php">{$login->login}</a>
 						<ul class='children'>
 							<li class="page_item">
-						    	<a  href="{$galette_base_path}index.php?logout=1">{_T string="Log off"}</a>
+						    	<a  href="{$galette_base_path}index.php?logout=1" class="btn">{_T string="Log off"}</a>
 						    </li>
 						</ul>
 					</il>
@@ -111,9 +111,9 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 
 				</ul>
 			</div>
-	</nav><!-- #site-navigation -->	
+	</nav><!-- #site-navigation -->
 
-	
+
 		<div id="content" class="site-content">
 
 			<div id="primary" class="content-area">
@@ -121,7 +121,7 @@ We have to use a template file, so Smarty will do its work (like replacing varia
 
 				<article class="page">
 					<header class="entry-header">
-						<h1 class="entry-title">{$page_title}</h1>   
+						<h1 class="entry-title">{$page_title}</h1>
 					</header><!-- .entry-header -->
 						{include file="global_messages.tpl"}
 						{$content}

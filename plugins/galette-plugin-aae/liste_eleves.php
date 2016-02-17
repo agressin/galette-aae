@@ -52,7 +52,7 @@ $tpl->assign('annee_debut', $annee_debut);
 
 $param_selected = isset($_POST["valid"]) || isset($_GET["id_cycle"]) || isset($_GET["annnee_debut"]);
 
-if ( !$login->isLogged() ) {
+if ( !$login->isUp2Date() ) {
 	//Non connecté : on est obligé de sélectionner 1 cycle ET 1 année de début
 	$param_selected = (($id_cycle != '0') || ($id_cycle_simple != '')) && ($annee_debut != '0');
 } else {
