@@ -98,7 +98,7 @@ class Cycles
      *
      * @return array
      */
-    public function getAllCyclesStats()
+    public function getAllCyclesStats($only_used = true)
     {
         global $zdb;
 
@@ -109,10 +109,18 @@ class Cycles
 
       		$select->from(array('c' => Cycles::getTableName()));
 
-          $select->join(array('f' => Formations::getTableName()),
-      			  'f.id_cycle = c.id_cycle',
-      			  array('count' => new Expression('COUNT(*)'))
-            );
+          if($only_used){
+            $select->join(array('f' => Formations::getTableName()),
+        			  'f.id_cycle = c.id_cycle',
+        			  array('count' => new Expression('COUNT(*)'))
+              );
+          }else{
+            $select->joinLeft(array('f' => Formations::getTableName()),
+                'f.id_cycle = c.id_cycle',
+                array('count' => new Expression('COUNT(*)'))
+              );
+          }
+
           $select->group('c.id_cycle');
 
           $select->order('nom');
@@ -178,6 +186,75 @@ class Cycles
                 Analog::WARNING
             );
             return false;
+        }
+    }
+    /**
+     * SetCycle
+     * @param int $id_cycle
+     * @param text $nom
+     *
+     */
+    public function setCycle($id_cycle,$nom)
+    {
+        global $zdb;
+
+        try {
+          $res  = false;
+          $data = array(
+                'id_cycle' 	=> $id_cycle,
+                'nom'       => $nom,
+          );
+
+          if ( $id_cycle == '' ) {
+            //Cycle does not exists yet
+            $insert = $zdb->insert(AAE_PREFIX . self::TABLE);
+            $insert->values($data);
+            $add = $zdb->execute($insert);
+
+            if ( $add->count() == 0) {
+              Analog::log('An error occured inserting new Cycle!' );
+            } else {
+              $id_cycle = $add->getGeneratedValue();
+
+            }
+
+          } else {
+            //Cycle already exists, just update
+            $update = $zdb->update(AAE_PREFIX . self::TABLE);
+            $update->set($data)->where->equalTo(self::PK,$id_cycle);
+            $edit = $zdb->execute($update);
+          }
+          return $id_cycle;
+        } catch ( \Exception $e ) {
+            Analog::log(
+                'Unable to set cycle "' .
+                $id_cycle . '" | ' . $e->getMessage(),
+                Analog::ERROR
+            );
+            return false;
+        }
+    }
+
+    /**
+     * removeCycle
+     * @param int $id_cycle
+     */
+    public function removeCycle($id_cycle)
+    {
+        global $zdb;
+
+        try {
+          $delete = $zdb->delete(AAE_PREFIX . self::TABLE);
+          $delete->where->equalTo(self::PK, $id_cycle);
+          $zdb->execute($delete);
+          return true;
+        } catch ( \Exception $e ) {
+          Analog::log(
+              'Unable to delete cycle ' .
+              $id_cycle . ' | ' . $e->getMessage(),
+              Analog::ERROR
+          );
+          return false;
         }
     }
 
