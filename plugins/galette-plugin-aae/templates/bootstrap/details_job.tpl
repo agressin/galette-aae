@@ -5,6 +5,9 @@
     <div class="modal-content">
       <table class="table">
           <tr>
+            <td><h2><a href="voir_adherent_public.php?id_adh={$poste.id_adh}">{$poste.nom_adh}</a></h2></td>
+          </tr>
+          <tr>
             <td><h4>Période</h4> </td>
             <td>{$poste.annee_ini}-{if $poste.annee_fin eq 0}{_T string="present"}{else}{$poste.annee_fin}{/if}</td>
           </tr>

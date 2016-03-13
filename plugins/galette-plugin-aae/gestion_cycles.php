@@ -44,7 +44,14 @@ if (isset($_GET['action']))
 }
 
 //Recupération des cycles :
-$tpl->assign('cycles', $cycles->getAllCycles(false));
+$all_cycles = array();
+$tmp = $cycles->getAllCycles(false);
+foreach ($tmp as $key => $value) {
+  $all_cycles[$value['id_cycle']] = $value['nom'];
+}
+#var_dump($all_cycles);
+#$all_cycles = $cycles->getAllCycles(false);
+$tpl->assign('cycles', $all_cycles);
 $cycles_stats = $cycles->getAllCyclesStats();
 $tpl->assign('cycles_stats', $cycles_stats);
 $cycles_stats_by_year = array();
