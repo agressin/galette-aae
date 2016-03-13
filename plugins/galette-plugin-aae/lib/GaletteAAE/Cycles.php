@@ -98,7 +98,7 @@ class Cycles
      *
      * @return array
      */
-    public function getAllCyclesStats($only_used = true)
+    public function getAllCyclesStats()
     {
         global $zdb;
 
@@ -109,17 +109,10 @@ class Cycles
 
       		$select->from(array('c' => Cycles::getTableName()));
 
-          if($only_used){
-            $select->join(array('f' => Formations::getTableName()),
-        			  'f.id_cycle = c.id_cycle',
-        			  array('count' => new Expression('COUNT(*)'))
-              );
-          }else{
-            $select->joinLeft(array('f' => Formations::getTableName()),
-                'f.id_cycle = c.id_cycle',
-                array('count' => new Expression('COUNT(*)'))
-              );
-          }
+          $select->join(array('f' => Formations::getTableName()),
+      			  'f.id_cycle = c.id_cycle',
+      			  array('count' => new Expression('COUNT(*)'))
+            );
 
           $select->group('c.id_cycle');
 
@@ -128,13 +121,13 @@ class Cycles
 
       		$res = $zdb->execute($select);
           $res = $res->toArray();
-
-
-          if ( count($res) > 0 ) {
-              return $res;
-          } else {
-              return array();
+          $out = array();
+          foreach($res as $k => $v){
+            $out[$v['id_cycle']] = $v['count'];
           }
+
+
+          return $out;
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve cycles : "' . $e->getMessage(),
@@ -174,12 +167,12 @@ class Cycles
       		$res = $zdb->execute($select);
           $res = $res->toArray();
 
-
-          if ( count($res) > 0 ) {
-              return $res;
-          } else {
-              return array();
+          $out = array();
+          foreach($res as $k => $v){
+            $out[$v['annee_debut']] = $v['count'];
           }
+
+          return $out;
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve cycles : "' . $e->getMessage(),

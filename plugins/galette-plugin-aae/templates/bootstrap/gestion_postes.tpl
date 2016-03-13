@@ -5,9 +5,7 @@
                 <th class="listing left">{_T string="Title"}</th>
                 <th class="listing left date_row"> {_T string="Entreprise"} </th>
                 <th class="listing left date_row"> {_T string="Site web"} </th>
-                {if $haveRights}
                 <th class="listing actions_row">{_T string="Actions"}</th>
-                {/if}
         </thead>
 	{foreach $list_postes as $key}
 			<tr>

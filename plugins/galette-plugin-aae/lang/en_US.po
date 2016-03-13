@@ -1,12 +1,12 @@
 # Header entry was created by Lokalize.
 #
 # , 2013.
-# AGressin <adrien.gressin@gmail.com>, 2014, 2015.
+# AGressin <adrien.gressin@gmail.com>, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2015-10-03 15:43+0200\n"
+"PO-Revision-Date: 2016-03-13 18:56+0100\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../templates/bootstrap/ajouter_poste.tpl:2
 msgid "Add a new job to"
@@ -33,7 +33,7 @@ msgstr "A problem happened while sending email to user %name"
 msgid "Birth date"
 msgstr "Birth date"
 
-#: ../templates/bootstrap/aaetools.tpl:18
+#: ../templates/bootstrap/aaetools.tpl:18 ../templates/default/aaetools.tpl:18
 msgid "Mail job"
 msgstr "Mail job"
 
@@ -41,7 +41,7 @@ msgstr "Mail job"
 #: ../templates/bootstrap/liste_job.tpl:97
 #: ../templates/bootstrap/liste_job.tpl:123
 #: ../templates/bootstrap/details_job.tpl:9
-#: ../templates/bootstrap/gestion_postes.tpl:18
+#: ../templates/bootstrap/gestion_postes.tpl:16
 msgid "present"
 msgstr "present"
 
@@ -51,7 +51,7 @@ msgstr "present"
 msgid "Promotion"
 msgstr "Promotion"
 
-#: ../aaetools.php:65
+#: ../aaetools.php:79
 msgid "Settings have not been modified!"
 msgstr "Settings have not been modified!"
 
@@ -60,7 +60,11 @@ msgstr "Settings have not been modified!"
 msgid "CDD"
 msgstr "CDD"
 
-#: ../templates/bootstrap/ajouter_poste.tpl:38
+#: ../templates/bootstrap/aaetools.tpl:26 ../templates/default/aaetools.tpl:26
+msgid "API Key for Geoportail"
+msgstr "API Key for Geoportail"
+
+#: ../templates/bootstrap/ajouter_poste.tpl:37
 msgid "Job title"
 msgstr "Job title"
 
@@ -74,13 +78,17 @@ msgstr "Website"
 msgid "AAETools settings"
 msgstr "AAETools settings"
 
+#: ../ajouter_ent.php:28
+msgid "Entreprise already exist in the DB."
+msgstr "Entreprise already exist in the DB."
+
 #: ../templates/bootstrap/liste_job.tpl:21
 #: ../templates/bootstrap/ajouter_poste.tpl:30
 msgid "Stage"
 msgstr "Internship"
 
 #: ../templates/bootstrap/public_menu.tpl:12
-#: ../templates/bootstrap/public_menu.tpl:27
+#: ../templates/bootstrap/public_menu.tpl:30
 #: ../templates/bootstrap/adh_fiche_action.tpl:6
 #: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:6
@@ -88,11 +96,11 @@ msgstr "Internship"
 msgid "How to contribute ?"
 msgstr "How to contribute ?"
 
-#: ../templates/bootstrap/aaetools.tpl:22
+#: ../templates/bootstrap/aaetools.tpl:22 ../templates/default/aaetools.tpl:22
 msgid "Amount of contributions"
 msgstr "Amount of contributions"
 
-#: ../ajouter_poste.php:120
+#: ../ajouter_poste.php:112
 msgid "Unabled to add/modify the job"
 msgstr "Unabled to add/modify the job"
 
@@ -113,7 +121,7 @@ msgstr "Job Type:"
 msgid "Choisir un employeur"
 msgstr "Choose an employer"
 
-#: ../liste_eleves.php:101 ../templates/bootstrap/public_menu.tpl:6
+#: ../liste_eleves.php:81 ../templates/bootstrap/public_menu.tpl:6
 #: ../templates/bootstrap/public_menu.tpl:16
 #: ../templates/default/public_menu.tpl:2
 #: ../templates/default/public_menu.tpl:5
@@ -145,12 +153,13 @@ msgstr ""
 "Thank you to make a transfer with the title 'cotis surname first name' to "
 "the following account:"
 
-#: ../gestion_postes.php:25
+#: ../gestion_postes.php:22
 msgid "Job has been successfully added."
 msgstr "Job has been successfully added."
 
 #: ../templates/bootstrap/gestion_formations.tpl:10
-#: ../templates/bootstrap/gestion_postes.tpl:9
+#: ../templates/bootstrap/gestion_cycles.tpl:7
+#: ../templates/bootstrap/gestion_postes.tpl:8
 #: ../templates/default/gestion_formations.tpl:11
 msgid "Actions"
 msgstr "Actions"
@@ -169,9 +178,8 @@ msgid "No job to show"
 msgstr "No job to show"
 
 #: ../templates/bootstrap/liste_job.tpl:20
-#, fuzzy
 msgid "Select one or more type"
-msgstr "Select one or more skill(s)"
+msgstr "Select one or more type"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:5
 #: ../templates/bootstrap/liste_membres_aae.tpl:60
@@ -199,13 +207,13 @@ msgid "Country"
 msgstr "Country"
 
 #: ../templates/bootstrap/liste_job.tpl:42
-#: ../templates/bootstrap/carte_membres_aae.tpl:123
+#: ../templates/bootstrap/carte_membres_aae.tpl:115
 #: ../templates/bootstrap/liste_membres_aae.tpl:43
 #: ../templates/default/liste_membres_aae.tpl:21
 msgid "Refresh"
 msgstr "Refresh"
 
-#: ../templates/bootstrap/aaetools.tpl:10
+#: ../templates/bootstrap/aaetools.tpl:10 ../templates/default/aaetools.tpl:10
 msgid "Mail webmaster"
 msgstr "Mail webmaster"
 
@@ -225,7 +233,7 @@ msgstr ""
 "In case of transfer grouped for several people, thank you specify in your "
 "email."
 
-#: ../templates/bootstrap/menu.tpl:15 ../templates/default/menu.tpl:6
+#: ../templates/bootstrap/menu.tpl:18 ../templates/default/menu.tpl:6
 msgid "Who to contribute ?"
 msgstr "Who to contribute ?"
 
@@ -237,7 +245,8 @@ msgstr "Contribution process"
 msgid "RIB"
 msgstr "RIB"
 
-#: ../templates/bootstrap/menu.tpl:9 ../templates/bootstrap/public_menu.tpl:35
+#: ../templates/bootstrap/menu.tpl:12
+#: ../templates/bootstrap/public_menu.tpl:38
 msgid "My formations"
 msgstr "My formations"
 
@@ -269,25 +278,32 @@ msgid "Pages:"
 msgstr "Pages:"
 
 #: ../templates/bootstrap/liste_job.tpl:19
-#, fuzzy
 msgid "Job Type"
-msgstr "Job Type:"
+msgstr "Job Type"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:33
 #: ../templates/default/ajouter_formation_eleve.tpl:33
 msgid "Beging of the formation:"
 msgstr "Beging of the formation:"
 
-#: ../aaecotiz.php:40 ../templates/bootstrap/menu.tpl:15
+#: ../aaecotiz.php:40 ../templates/bootstrap/menu.tpl:18
 #: ../templates/default/menu.tpl:6
 msgid "Contribution"
 msgstr "Contribution"
 
+#: ../templates/bootstrap/menu.tpl:8
+msgid "Cycles managment"
+msgstr "Cycles management"
+
 #: ../templates/bootstrap/gestion_formations.tpl:8
-#: ../templates/bootstrap/ajouter_poste.tpl:72
+#: ../templates/bootstrap/ajouter_poste.tpl:71
 #: ../templates/default/gestion_formations.tpl:9
 msgid "End"
 msgstr "End"
+
+#: ../gestion_cycles.php:51
+msgid "Cycles managment:"
+msgstr "Cycles management:"
 
 #: ../templates/bootstrap/ajouter_poste.tpl:29
 msgid "Select a type"
@@ -300,9 +316,12 @@ msgstr "Select a type"
 msgid "Cycle:"
 msgstr "Cycle:"
 
-#: ../ajouter_ent.php:28
-msgid "Entreprise already exist in the DB."
-msgstr "Entreprise already exist in the DB."
+#: ../templates/bootstrap/liste_job.tpl:42
+#: ../templates/bootstrap/carte_membres_aae.tpl:41
+#: ../templates/bootstrap/liste_membres_aae.tpl:43
+#: ../templates/default/liste_membres_aae.tpl:25
+msgid "Continue"
+msgstr "Continue"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:47
 #: ../templates/default/ajouter_formation_eleve.tpl:47
@@ -321,7 +340,7 @@ msgstr "Message:"
 msgid "Jobs information"
 msgstr "Jobs information"
 
-#: ../liste_job.php:106 ../templates/bootstrap/public_menu.tpl:9
+#: ../liste_job.php:95 ../templates/bootstrap/public_menu.tpl:9
 #: ../templates/bootstrap/public_menu.tpl:22
 msgid "Jobs list"
 msgstr "Job list"
@@ -331,11 +350,11 @@ msgid "Add formation"
 msgstr "Add formation"
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:55
-#: ../templates/bootstrap/aaetools.tpl:29
-#: ../templates/bootstrap/ajouter_poste.tpl:82
+#: ../templates/bootstrap/aaetools.tpl:37
+#: ../templates/bootstrap/ajouter_poste.tpl:81
 #: ../templates/bootstrap/ajouter_ent.tpl:22
 #: ../templates/default/ajouter_formation_eleve.tpl:55
-#: ../templates/default/aaetools.tpl:13
+#: ../templates/default/aaetools.tpl:37
 msgid "Save"
 msgstr "Save"
 
@@ -348,18 +367,22 @@ msgstr "Cycle(s)"
 msgid "red"
 msgstr "red"
 
-#: ../templates/bootstrap/aaetools.tpl:14
+#: ../templates/bootstrap/aaetools.tpl:14 ../templates/default/aaetools.tpl:14
 msgid "Mail cotisation"
 msgstr "Mail cotisation"
 
 #: ../templates/bootstrap/liste_job.tpl:29
-#: ../templates/bootstrap/ajouter_poste.tpl:50
+#: ../templates/bootstrap/ajouter_poste.tpl:49
 msgid "Skills"
 msgstr "Skills"
 
-#: ../voir_adherent_public.php:77
+#: ../voir_adherent_public.php:60
 msgid "Profil of "
 msgstr "Profil of "
+
+#: ../templates/bootstrap/public_menu.tpl:25
+msgid "Cycles list"
+msgstr "Cycles list"
 
 #: ../templates/bootstrap/gestion_formations.tpl:6
 #: ../templates/default/gestion_formations.tpl:7
@@ -423,7 +446,7 @@ msgstr ""
 "You are not allowed to modify your formations. However, if you see an error, "
 "please send an email to:"
 
-#: ../templates/bootstrap/ajouter_poste.tpl:44
+#: ../templates/bootstrap/ajouter_poste.tpl:43
 msgid "Activities description"
 msgstr "Activities description"
 
@@ -435,7 +458,7 @@ msgstr "Employer:"
 msgid "Un ancien élève de l'ENSG cherche à vous contacter :"
 msgstr "A former student of the ENSG tries to contact you:"
 
-#: ../gestion_formations_eleve.php:72
+#: ../gestion_formations_eleve.php:62
 msgid "Formations managment:"
 msgstr "Formations managment:"
 
@@ -459,6 +482,7 @@ msgstr "Please login to get GDI, or ask it to"
 
 #: ../templates/bootstrap/gestion_formations.tpl:5
 #: ../templates/bootstrap/liste_membres_aae.tpl:69
+#: ../templates/bootstrap/gestion_cycles.tpl:5
 #: ../templates/default/gestion_formations.tpl:6
 msgid "Cycle"
 msgstr "Cycle"
@@ -479,7 +503,7 @@ msgstr "Compagny"
 msgid "City"
 msgstr "City"
 
-#: ../aaetools.php:73 ../templates/bootstrap/menu.tpl:5
+#: ../aaetools.php:87 ../templates/bootstrap/menu.tpl:5
 #: ../templates/default/menu.tpl:4
 msgid "AAE Tools"
 msgstr "AAE Tools"
@@ -497,7 +521,7 @@ msgstr "No member registered!"
 msgid "Job details of"
 msgstr "Job details of"
 
-#: ../templates/bootstrap/gestion_postes.tpl:38
+#: ../templates/bootstrap/gestion_postes.tpl:36
 msgid "Add a job"
 msgstr "Add a job"
 
@@ -537,12 +561,9 @@ msgstr "View formations"
 msgid "Company"
 msgstr "Company"
 
-#: ../templates/bootstrap/liste_job.tpl:42
-#: ../templates/bootstrap/carte_membres_aae.tpl:41
-#: ../templates/bootstrap/liste_membres_aae.tpl:43
-#: ../templates/default/liste_membres_aae.tpl:25
-msgid "Continue"
-msgstr "Continue"
+#: ../templates/bootstrap/aaetools.tpl:30 ../templates/default/aaetools.tpl:30
+msgid "API Key for Google Maps"
+msgstr "API Key for Google Maps"
 
 #: ../templates/bootstrap/aaecotiz.tpl:8 ../templates/default/aaecotiz.tpl:6
 msgid ""
@@ -572,6 +593,10 @@ msgstr "Go back"
 #: ../templates/bootstrap/promotion.tpl:52
 msgid "Next"
 msgstr "Next"
+
+#: ../templates/bootstrap/gestion_cycles.tpl:6
+msgid "Effectifs"
+msgstr "Effectifs"
 
 #: ../templates/bootstrap/promotion.tpl:54
 msgid "Show:"
@@ -620,8 +645,8 @@ msgstr "job"
 msgid "Entreprise has been successfully added."
 msgstr "Entreprise has been successfully added."
 
-#: ../templates/bootstrap/menu.tpl:12
-#: ../templates/bootstrap/public_menu.tpl:38
+#: ../templates/bootstrap/menu.tpl:15
+#: ../templates/bootstrap/public_menu.tpl:41
 msgid "My jobs"
 msgstr "My jobs"
 
@@ -636,6 +661,7 @@ msgid "Geographic situation"
 msgstr "Geographic situation"
 
 #: ../templates/bootstrap/liste_job.tpl:78
+#: ../templates/bootstrap/gestion_cycles.tpl:7
 msgid "Details"
 msgstr "Details"
 
@@ -648,25 +674,21 @@ msgstr "View jobs"
 msgid "NB : The mandatory fields are in"
 msgstr "NB : The mandatory fields are in"
 
-#: ../templates/bootstrap/ajouter_poste.tpl:78
+#: ../templates/bootstrap/ajouter_poste.tpl:77
 msgid "empty if actual"
 msgstr "empty if actual"
-
-#: ../gestion_postes.php:85
-msgid "Jobs managment"
-msgstr "Jobs managment"
 
 #: ../templates/bootstrap/send_message.tpl:21
 msgid "Send"
 msgstr "Send"
 
 #: ../templates/bootstrap/liste_job.tpl:30
-#: ../templates/bootstrap/ajouter_poste.tpl:54
+#: ../templates/bootstrap/ajouter_poste.tpl:53
 msgid "Select one or more skill(s)"
 msgstr "Select one or more skill(s)"
 
 #: ../templates/bootstrap/gestion_formations.tpl:7
-#: ../templates/bootstrap/ajouter_poste.tpl:68
+#: ../templates/bootstrap/ajouter_poste.tpl:67
 #: ../templates/default/gestion_formations.tpl:8
 msgid "Begin"
 msgstr "Begin"
@@ -682,11 +704,16 @@ msgstr "[W]"
 #: ../templates/bootstrap/aaetools.tpl:7
 #: ../templates/bootstrap/aaetools.tpl:11
 #: ../templates/bootstrap/aaetools.tpl:15
-#: ../templates/bootstrap/aaetools.tpl:19 ../templates/default/aaetools.tpl:7
+#: ../templates/bootstrap/aaetools.tpl:19
+#: ../templates/bootstrap/aaetools.tpl:27
+#: ../templates/bootstrap/aaetools.tpl:31 ../templates/default/aaetools.tpl:7
+#: ../templates/default/aaetools.tpl:11 ../templates/default/aaetools.tpl:15
+#: ../templates/default/aaetools.tpl:19 ../templates/default/aaetools.tpl:27
+#: ../templates/default/aaetools.tpl:31
 msgid "(Max 255 characters)"
 msgstr "(Max 255 characters)"
 
-#: ../aaetools.php:67
+#: ../aaetools.php:81
 msgid "Settings have been successfully modified."
 msgstr "Settings have been successfully modified."
 
@@ -696,7 +723,7 @@ msgstr "Settings have been successfully modified."
 msgid "Entreprise"
 msgstr "Compagny"
 
-#: ../ajouter_poste.php:136
+#: ../ajouter_poste.php:128
 msgid "No member found."
 msgstr "No member found."
 
@@ -726,16 +753,16 @@ msgstr "students"
 msgid "Previous"
 msgstr "Previous"
 
-#: ../templates/bootstrap/ajouter_poste.tpl:62
+#: ../templates/bootstrap/ajouter_poste.tpl:61
 msgid "Adresse"
 msgstr "Adress"
 
 #: ../templates/bootstrap/public_menu.tpl:3
-#: ../templates/bootstrap/public_menu.tpl:32
+#: ../templates/bootstrap/public_menu.tpl:35
 msgid "My shared profil"
 msgstr "My shared profil"
 
-#: ../templates/bootstrap/ajouter_poste.tpl:76
+#: ../templates/bootstrap/ajouter_poste.tpl:75
 msgid "yyyy"
 msgstr "yyyy"
 
@@ -749,7 +776,7 @@ msgstr "Picture"
 msgid "No member to show"
 msgstr "No member to show"
 
-#: ../carte_eleves.php:22
+#: ../carte_eleves.php:33
 msgid "Former students map"
 msgstr "Former students map"
 
@@ -764,6 +791,9 @@ msgstr "Formation details"
 #: ../templates/default/ajouter_formation_eleve.tpl:43
 msgid "(yyyy format)"
 msgstr "(yyyy format)"
+
+#~ msgid "Jobs managment"
+#~ msgstr "Jobs managment"
 
 #~ msgid "Les montants des différentes cotisations sont :"
 #~ msgstr "Amount of contributions are :"
@@ -950,9 +980,6 @@ msgstr "(yyyy format)"
 
 #~ msgid "Jobs information:"
 #~ msgstr "Jobs information:"
-
-#~ msgid "postes managment"
-#~ msgstr "Jobs managment"
 
 #~ msgid "Encadrement"
 #~ msgstr "Management"

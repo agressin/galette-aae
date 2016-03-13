@@ -11,11 +11,14 @@ use Galette\AAE\Cycles as Cycles;
 
 $cycles = new Cycles();
 
-//restricted to Staff only
-if ( !$login->isStaff() && !$login->isAdmin()) {
-    header('location: ' . GALETTE_BASE_PATH . 'index.php');
+if ( !($login->isUp2Date() || $login->isAdmin() || $login->isStaff()) ) {
+    //public pages are not actives
+    header('location:' . GALETTE_BASE_PATH  . 'index.php');
     die();
 }
+
+//restricted some features to Staff only
+$tpl->assign('haveRights', ($login->isAdmin() || $login->isStaff()));
 
 
 if (isset($error_detected)) {
@@ -41,11 +44,14 @@ if (isset($_GET['action']))
 }
 
 //Recupération des cycles :
-$allCycles = $cycles->getAllCycles(false);
-$tpl->assign('cycles', $allCycles);
-
-var_dump($cycles->getAllCyclesStats());
-#var_dump($cycles->getCycleStatByYear(1));
+$tpl->assign('cycles', $cycles->getAllCycles(false));
+$cycles_stats = $cycles->getAllCyclesStats();
+$tpl->assign('cycles_stats', $cycles_stats);
+$cycles_stats_by_year = array();
+foreach ($cycles_stats as $key => $value) {
+  $cycles_stats_by_year[$key] = $cycles->getCycleStatByYear($key);
+}
+$tpl->assign('cycles_stats_by_year', $cycles_stats_by_year);
 
 
 $tpl->assign('page_title', _T("Cycles managment:"));
@@ -61,4 +67,7 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 
-$tpl->display('page.tpl');
+#if ($login->isAdmin() || $login->isStaff())
+#	$tpl->display('page.tpl');
+#else
+	$tpl->display('public_page.tpl');
