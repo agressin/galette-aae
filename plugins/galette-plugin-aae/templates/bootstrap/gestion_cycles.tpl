@@ -1,4 +1,5 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.js"></script>
+
 <table id='table_cycle' class="table table-hover">
     <thead>
         <tr>
@@ -12,7 +13,15 @@
 {foreach $cycles as $id_cycle => $nom}
         <tr class="formation_row">
             <td class="center nowrap">{$nom}</td>
-            <td class="center nowrap">{$cycles_stats[$id_cycle]} <span class="inlinesparkline">1,4,4,7,5,9,10</span> </td>
+            <td class="center nowrap">{$cycles_stats[$id_cycle]}
+               {if isset($cycles_stats_by_year[$id_cycle])}
+               <span class="inlinesparkline">
+               {foreach $cycles_stats_by_year[$id_cycle] as $year => $count}
+                 {$count},
+               {/foreach}
+               </span>
+               {/if}
+            </td>
             <td class="center nowrap">
                 {if not isset($cycles_stats[$id_cycle])}
                   {if $haveRights}
@@ -38,9 +47,9 @@
    </tbody>
 </table>
 
-{if $haveRights}
-<script type="text/javascript">
 
+<script type="text/javascript">
+{if $haveRights}
     var addCycle = function(e) {
 
         $.get( 'gestion_cycles.php',
@@ -64,7 +73,7 @@
   var init = function() {
     $('#btn_add').click(addCycle);
     $('.btn_supp').click(rmCycle);
-    $('.inlinesparkline').sparkline({type: 'bar'});
+  };
   var reloadTable = function(data){
       var $response=$(data);
       var table = $response.find('#table_cycle').html();
@@ -72,8 +81,16 @@
       init();
   };
   init();
+  {/if}
+
+  $('.inlinesparkline').sparkline('html',
+      {
+        type: 'bar',
+        barColor: 'red'
+      }
+    );
 </script>
-{/if}
+
 
 {foreach $cycles_stats_by_year as $id_cycle => $stat}
   <div class="modal fade bs-example-modal-lg-{$id_cycle}" tabindex="-1" role="dialog">
