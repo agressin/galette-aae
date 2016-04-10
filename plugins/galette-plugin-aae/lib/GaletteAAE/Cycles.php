@@ -73,14 +73,33 @@ class Cycles
         global $zdb;
 
         try {
+
+            $select = $zdb->sql->select();
+
+        		$select->from(array('c' => Cycles::getTableName()));
+
+            if($only_used){
+              $select->join(array('f' => Formations::getTableName()),
+          			'f.id_cycle = c.id_cycle',
+          			array());
+              $select->group('c.id_cycle');
+            }
+            $select->where->equalTo(self::PK,$id);
+
+            $res = $zdb->execute($select);
+            $res = $res->toArray();
+
+            /*
             $select = $zdb->select(AAE_PREFIX . self::TABLE);
             $select->where->equalTo(self::PK,$id);
-            $res = $select->toArray();
+            */
+
             if ( count($res) > 0 ) {
                 return $res[0];
             } else {
                 return array();
             }
+
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to retrieve cycle information for "' .
@@ -187,7 +206,7 @@ class Cycles
      * @param text $nom
      *
      */
-    public function setCycle($id_cycle,$nom)
+    public function setCycle($id_cycle,$nom, $detail='')
     {
         global $zdb;
 
@@ -196,6 +215,7 @@ class Cycles
           $data = array(
                 'id_cycle' 	=> $id_cycle,
                 'nom'       => $nom,
+                'detail'    => $detail
           );
 
           if ( $id_cycle == '' ) {

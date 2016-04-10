@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS galette_aae_cycles (
   id_cycle int(10) unsigned NOT NULL AUTO_INCREMENT,
   nom varchar(60) NOT NULL,
+  detail text DEFAULT '',
   PRIMARY KEY (id_cycle)
 );
 
@@ -78,4 +79,3 @@ CREATE TABLE IF NOT EXISTS galette_aae_offres (
   PRIMARY KEY (id),
   FOREIGN KEY (id_adh) REFERENCES galette_adherents (id_adh)
 );
-

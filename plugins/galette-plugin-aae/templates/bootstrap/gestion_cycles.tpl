@@ -12,53 +12,38 @@
     <tbody>
 {foreach $cycles as $id_cycle => $nom}
         <tr class="formation_row">
-            <td class="center nowrap">{$nom}</td>
+            <td class="center nowrap"><a href="gestion_cycles.php?cycle_detail={$id_cycle}">{$nom}</a></td>
             <td class="center nowrap">{$cycles_stats[$id_cycle]}
                {if isset($cycles_stats_by_year[$id_cycle])}
                <span class="inlinesparkline">
-               {foreach $cycles_stats_by_year[$id_cycle] as $year => $count}
-                 {$count},
+               {foreach $cycles_stats_by_year[$id_cycle] as $year => $count name=stat_foreach}
+                 {$count} {if not $smarty.foreach.stat_foreach.last}, {/if}
                {/foreach}
                </span>
                {/if}
             </td>
             <td class="center nowrap">
-                {if not isset($cycles_stats[$id_cycle])}
-                  {if $haveRights}
-                  <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$id_cycle}' align="middle" />
-                  {/if}
-                {else}
-                  <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg-{$id_cycle}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
+              {if not isset($cycles_stats[$id_cycle])}
+                {if $haveRights}
+                <input class='btn_supp' border=0 src="{$template_subdir}images/delete.png" type=image Value='{$id_cycle}' align="middle" />
                 {/if}
+              {else}
+                <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg-{$id_cycle}"><img src="{$template_subdir}images/icon-fiche.png" align="middle" /></a>
+              {/if}
+              {if $haveRights}
+                <a href="ajouter_cycle.php?id_cycle={$id_cycle}"><img src="{$template_subdir}images/icon-edit.png" align="middle" /></a>
+              {/if}
             </td>
         </tr>
 {/foreach}
-        {if $haveRights}
-        <tr>
-            <td class="center nowrap">
-              <input id="cycle_name" name="cycle_name" type="text"/>
-            </td>
-            <td class="center nowrap"></td>
-            <td class="center nowrap">
-                <input id='btn_add' border=0 src="{$template_subdir}images/icon-add.png" type=image align="middle" />
-            </td>
-        </tr>
-        {/if}
    </tbody>
 </table>
-
+{if $haveRights}
+<a href="ajouter_cycle.php"><img src="{$template_subdir}images/icon-add.png" align="middle" />   {_T string="Add a cycle"}</a>
+{/if}
 
 <script type="text/javascript">
 {if $haveRights}
-    var addCycle = function(e) {
-
-        $.get( 'gestion_cycles.php',
-            {
-                nom: $('#cycle_name').val(),
-                action:"add"
-            })
-        .done(reloadTable);
-    };
 
     var rmCycle = function(e) {
         e.preventDefault();
@@ -71,7 +56,6 @@
     };
 
   var init = function() {
-    $('#btn_add').click(addCycle);
     $('.btn_supp').click(rmCycle);
   };
   var reloadTable = function(data){
@@ -86,7 +70,10 @@
   $('.inlinesparkline').sparkline('html',
       {
         type: 'bar',
-        barColor: 'red'
+        chartRangeMin: 0,
+        chartRangeMinX: 1941,
+        chartRangeMaxX: 2016
+        //barColor: 'red'
       }
     );
 </script>
