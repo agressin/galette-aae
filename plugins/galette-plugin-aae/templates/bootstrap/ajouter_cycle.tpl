@@ -16,7 +16,7 @@
             <label class="bline" for="detail">
                     {_T string="Cycle description"}
             </label>
-            <textarea class="text" type="text" name="detail" id="detail" required >{$cycle.detail|htmlspecialchars}</textarea>
+            <textarea class="text" type="text" name="detail" id="detail" >{$cycle.detail|htmlspecialchars}</textarea>
         </p>
 				<div class="button-container">
 					<input type="submit" id="btnsave" value="{_T string="Save"}"/>

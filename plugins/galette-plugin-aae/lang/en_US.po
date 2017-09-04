@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2016-03-13 18:56+0100\n"
+"PO-Revision-Date: 2016-04-10 20:57+0200\n"
 "Last-Translator: AGressin <adrien.gressin@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -39,17 +39,24 @@ msgstr "Mail job"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:115
 #: ../templates/bootstrap/liste_job.tpl:97
-#: ../templates/bootstrap/liste_job.tpl:123
-#: ../templates/bootstrap/details_job.tpl:9
+#: ../templates/bootstrap/details_job.tpl:12
 #: ../templates/bootstrap/gestion_postes.tpl:16
 msgid "present"
 msgstr "present"
+
+#: ../templates/bootstrap/ajouter_cycle.tpl:8
+msgid "Name :"
+msgstr "Name:"
 
 #: ../templates/bootstrap/carte_membres_aae.tpl:13
 #: ../templates/bootstrap/liste_membres_aae.tpl:14
 #: ../templates/bootstrap/liste_membres_aae.tpl:66
 msgid "Promotion"
 msgstr "Promotion"
+
+#: ../templates/bootstrap/gestion_cycles.tpl:42
+msgid "Add a cycle"
+msgstr "Add a cycle"
 
 #: ../aaetools.php:79
 msgid "Settings have not been modified!"
@@ -99,6 +106,12 @@ msgstr "How to contribute ?"
 #: ../templates/bootstrap/aaetools.tpl:22 ../templates/default/aaetools.tpl:22
 msgid "Amount of contributions"
 msgstr "Amount of contributions"
+
+#: ../templates/bootstrap/gestion_formations.tpl:8
+#: ../templates/bootstrap/ajouter_poste.tpl:71
+#: ../templates/default/gestion_formations.tpl:9
+msgid "End"
+msgstr "End"
 
 #: ../ajouter_poste.php:112
 msgid "Unabled to add/modify the job"
@@ -158,7 +171,7 @@ msgid "Job has been successfully added."
 msgstr "Job has been successfully added."
 
 #: ../templates/bootstrap/gestion_formations.tpl:10
-#: ../templates/bootstrap/gestion_cycles.tpl:7
+#: ../templates/bootstrap/gestion_cycles.tpl:9
 #: ../templates/bootstrap/gestion_postes.tpl:8
 #: ../templates/default/gestion_formations.tpl:11
 msgid "Actions"
@@ -168,12 +181,12 @@ msgstr "Actions"
 msgid "Site web"
 msgstr "Site web"
 
-#: ../templates/bootstrap/liste_job.tpl:192
+#: ../templates/bootstrap/liste_job.tpl:146
 #: ../templates/bootstrap/liste_membres_aae.tpl:151
 msgid "Search"
 msgstr "Search"
 
-#: ../templates/bootstrap/liste_job.tpl:158
+#: ../templates/bootstrap/liste_job.tpl:112
 msgid "No job to show"
 msgstr "No job to show"
 
@@ -198,9 +211,9 @@ msgstr "Please sign in to access to this functionality"
 msgid "Add a formation"
 msgstr "Add a formation"
 
-#: ../templates/bootstrap/send_message.tpl:12
-msgid "Votre message sera précédé du message suivant :"
-msgstr "Your message will be preceded by the following text:"
+#: ../templates/bootstrap/ajouter_cycle.tpl:2
+msgid "Add / edit Cycle"
+msgstr "Add / edit Cycle"
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:77
 msgid "Country"
@@ -217,13 +230,17 @@ msgstr "Refresh"
 msgid "Mail webmaster"
 msgstr "Mail webmaster"
 
-#: ../send_message.php:37
-msgid "[AAE-ENSG] Un adhérent cherche à vous contacter"
-msgstr "[AAE-ENSG] A member tries to contact you"
+#: ../templates/bootstrap/liste_job.tpl:53
+msgid "Jobs"
+msgstr "Jobs"
 
 #: ../templates/bootstrap/aaecotiz.tpl:2
 msgid "Montants des cotisations"
 msgstr "Amount of contributions"
+
+#: ../templates/bootstrap/send_message.tpl:15
+msgid "Message:"
+msgstr "Message:"
 
 #: ../templates/bootstrap/aaecotiz.tpl:22 ../templates/default/aaecotiz.tpl:20
 msgid ""
@@ -241,12 +258,15 @@ msgstr "Who to contribute ?"
 msgid "Contribution process"
 msgstr "Contribution process"
 
+#: ../templates/bootstrap/send_message.tpl:12
+msgid "Votre message sera précédé du message suivant :"
+msgstr "Your message will be preceded by the following text:"
+
 #: ../templates/bootstrap/aaetools.tpl:6 ../templates/default/aaetools.tpl:6
 msgid "RIB"
 msgstr "RIB"
 
-#: ../templates/bootstrap/menu.tpl:12
-#: ../templates/bootstrap/public_menu.tpl:38
+#: ../templates/bootstrap/menu.tpl:12 ../templates/bootstrap/public_menu.tpl:38
 msgid "My formations"
 msgstr "My formations"
 
@@ -295,13 +315,15 @@ msgstr "Contribution"
 msgid "Cycles managment"
 msgstr "Cycles management"
 
-#: ../templates/bootstrap/gestion_formations.tpl:8
-#: ../templates/bootstrap/ajouter_poste.tpl:71
-#: ../templates/default/gestion_formations.tpl:9
-msgid "End"
-msgstr "End"
+#: ../templates/bootstrap/ajouter_cycle.tpl:17
+msgid "Cycle description"
+msgstr "Cycle description"
 
-#: ../gestion_cycles.php:51
+#: ../gestion_cycles.php:45
+msgid "Cycle detail:"
+msgstr "Cycle detail:"
+
+#: ../gestion_cycles.php:85
 msgid "Cycles managment:"
 msgstr "Cycles management:"
 
@@ -332,9 +354,9 @@ msgstr "Speciality:"
 msgid "Period"
 msgstr "Period"
 
-#: ../templates/bootstrap/send_message.tpl:15
-msgid "Message:"
-msgstr "Message:"
+#: ../gestion_cycles.php:27
+msgid "Cycle has been successfully added / modified."
+msgstr "Cycle has been successfully added / modified."
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:108
 msgid "Jobs information"
@@ -352,6 +374,7 @@ msgstr "Add formation"
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:55
 #: ../templates/bootstrap/aaetools.tpl:37
 #: ../templates/bootstrap/ajouter_poste.tpl:81
+#: ../templates/bootstrap/ajouter_cycle.tpl:22
 #: ../templates/bootstrap/ajouter_ent.tpl:22
 #: ../templates/default/ajouter_formation_eleve.tpl:55
 #: ../templates/default/aaetools.tpl:37
@@ -471,7 +494,7 @@ msgstr "End of the formation:"
 msgid "Please sign in to access search by name"
 msgstr "Please sign in to access search by name"
 
-#: ../templates/bootstrap/liste_job.tpl:193
+#: ../templates/bootstrap/liste_job.tpl:147
 #: ../templates/bootstrap/liste_membres_aae.tpl:152
 msgid "Show"
 msgstr "Show"
@@ -482,7 +505,7 @@ msgstr "Please login to get GDI, or ask it to"
 
 #: ../templates/bootstrap/gestion_formations.tpl:5
 #: ../templates/bootstrap/liste_membres_aae.tpl:69
-#: ../templates/bootstrap/gestion_cycles.tpl:5
+#: ../templates/bootstrap/gestion_cycles.tpl:7
 #: ../templates/default/gestion_formations.tpl:6
 msgid "Cycle"
 msgstr "Cycle"
@@ -534,9 +557,9 @@ msgstr "Title"
 msgid "Send a message to"
 msgstr "Subject"
 
-#: ../templates/bootstrap/liste_job.tpl:53
-msgid "Jobs"
-msgstr "Jobs"
+#: ../send_message.php:37
+msgid "[AAE-ENSG] Un adhérent cherche à vous contacter"
+msgstr "[AAE-ENSG] A member tries to contact you"
 
 #: ../templates/bootstrap/promotion.tpl:19
 #: ../templates/default/liste_membres_aae.tpl:13
@@ -588,13 +611,13 @@ msgstr "First Name"
 msgid "Go back"
 msgstr "Go back"
 
-#: ../templates/bootstrap/liste_job.tpl:191
+#: ../templates/bootstrap/liste_job.tpl:145
 #: ../templates/bootstrap/liste_membres_aae.tpl:150
 #: ../templates/bootstrap/promotion.tpl:52
 msgid "Next"
 msgstr "Next"
 
-#: ../templates/bootstrap/gestion_cycles.tpl:6
+#: ../templates/bootstrap/gestion_cycles.tpl:8
 msgid "Effectifs"
 msgstr "Effectifs"
 
@@ -615,7 +638,7 @@ msgstr "Add a formation to someone"
 msgid "please create a member"
 msgstr "please create a member"
 
-#: ../templates/bootstrap/liste_job.tpl:194
+#: ../templates/bootstrap/liste_job.tpl:148
 #: ../templates/bootstrap/liste_membres_aae.tpl:153
 msgid "Pages"
 msgstr "Pages"
@@ -645,8 +668,7 @@ msgstr "job"
 msgid "Entreprise has been successfully added."
 msgstr "Entreprise has been successfully added."
 
-#: ../templates/bootstrap/menu.tpl:15
-#: ../templates/bootstrap/public_menu.tpl:41
+#: ../templates/bootstrap/menu.tpl:15 ../templates/bootstrap/public_menu.tpl:41
 msgid "My jobs"
 msgstr "My jobs"
 
@@ -661,7 +683,7 @@ msgid "Geographic situation"
 msgstr "Geographic situation"
 
 #: ../templates/bootstrap/liste_job.tpl:78
-#: ../templates/bootstrap/gestion_cycles.tpl:7
+#: ../templates/bootstrap/gestion_cycles.tpl:9
 msgid "Details"
 msgstr "Details"
 
@@ -701,8 +723,7 @@ msgstr "Search:"
 msgid "[W]"
 msgstr "[W]"
 
-#: ../templates/bootstrap/aaetools.tpl:7
-#: ../templates/bootstrap/aaetools.tpl:11
+#: ../templates/bootstrap/aaetools.tpl:7 ../templates/bootstrap/aaetools.tpl:11
 #: ../templates/bootstrap/aaetools.tpl:15
 #: ../templates/bootstrap/aaetools.tpl:19
 #: ../templates/bootstrap/aaetools.tpl:27
@@ -716,6 +737,10 @@ msgstr "(Max 255 characters)"
 #: ../aaetools.php:81
 msgid "Settings have been successfully modified."
 msgstr "Settings have been successfully modified."
+
+#: ../ajouter_cycle.php:54
+msgid "Unabled to add/modify the cycle"
+msgstr "Unabled to add/modify the cycle"
 
 #: ../templates/bootstrap/liste_job.tpl:8
 #: ../templates/bootstrap/liste_job.tpl:63
@@ -747,7 +772,7 @@ msgstr "Begin year"
 msgid "students"
 msgstr "students"
 
-#: ../templates/bootstrap/liste_job.tpl:190
+#: ../templates/bootstrap/liste_job.tpl:144
 #: ../templates/bootstrap/liste_membres_aae.tpl:149
 #: ../templates/bootstrap/promotion.tpl:51
 msgid "Previous"
@@ -818,9 +843,6 @@ msgstr "(yyyy format)"
 
 #~ msgid "RIB has not been modified!"
 #~ msgstr "RIB has not been modified!"
-
-#~ msgid "RIB has been successfully modified."
-#~ msgstr "RIB has been successfully modified."
 
 #~ msgid "Entreprise:"
 #~ msgstr "Compagny:"
@@ -992,9 +1014,6 @@ msgstr "(yyyy format)"
 
 #~ msgid "Site internet"
 #~ msgstr "Website"
-
-#~ msgid "Name:"
-#~ msgstr "Name:"
 
 #~ msgid "Add job offers"
 #~ msgstr "Add job offers"

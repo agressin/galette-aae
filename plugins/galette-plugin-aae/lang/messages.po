@@ -19,14 +19,21 @@ msgid "Mail job"
 msgstr ""
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:115 ../templates/bootstrap/liste_job.tpl:97
-#: ../templates/bootstrap/liste_job.tpl:123 ../templates/bootstrap/details_job.tpl:9
-#: ../templates/bootstrap/gestion_postes.tpl:16
+#: ../templates/bootstrap/details_job.tpl:12 ../templates/bootstrap/gestion_postes.tpl:16
 msgid "present"
+msgstr ""
+
+#: ../templates/bootstrap/ajouter_cycle.tpl:8
+msgid "Name :"
 msgstr ""
 
 #: ../templates/bootstrap/carte_membres_aae.tpl:13 ../templates/bootstrap/liste_membres_aae.tpl:14
 #: ../templates/bootstrap/liste_membres_aae.tpl:66
 msgid "Promotion"
+msgstr ""
+
+#: ../templates/bootstrap/gestion_cycles.tpl:42
+msgid "Add a cycle"
 msgstr ""
 
 #: ../aaetools.php:79
@@ -70,6 +77,11 @@ msgstr ""
 
 #: ../templates/bootstrap/aaetools.tpl:22 ../templates/default/aaetools.tpl:22
 msgid "Amount of contributions"
+msgstr ""
+
+#: ../templates/bootstrap/gestion_formations.tpl:8 ../templates/bootstrap/ajouter_poste.tpl:71
+#: ../templates/default/gestion_formations.tpl:9
+msgid "End"
 msgstr ""
 
 #: ../ajouter_poste.php:112
@@ -120,7 +132,7 @@ msgstr ""
 msgid "Job has been successfully added."
 msgstr ""
 
-#: ../templates/bootstrap/gestion_formations.tpl:10 ../templates/bootstrap/gestion_cycles.tpl:7
+#: ../templates/bootstrap/gestion_formations.tpl:10 ../templates/bootstrap/gestion_cycles.tpl:9
 #: ../templates/bootstrap/gestion_postes.tpl:8 ../templates/default/gestion_formations.tpl:11
 msgid "Actions"
 msgstr ""
@@ -129,11 +141,11 @@ msgstr ""
 msgid "Site web"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:192 ../templates/bootstrap/liste_membres_aae.tpl:151
+#: ../templates/bootstrap/liste_job.tpl:146 ../templates/bootstrap/liste_membres_aae.tpl:151
 msgid "Search"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:158
+#: ../templates/bootstrap/liste_job.tpl:112
 msgid "No job to show"
 msgstr ""
 
@@ -155,8 +167,8 @@ msgstr ""
 msgid "Add a formation"
 msgstr ""
 
-#: ../templates/bootstrap/send_message.tpl:12
-msgid "Votre message sera précédé du message suivant :"
+#: ../templates/bootstrap/ajouter_cycle.tpl:2
+msgid "Add / edit Cycle"
 msgstr ""
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:77
@@ -172,12 +184,16 @@ msgstr ""
 msgid "Mail webmaster"
 msgstr ""
 
-#: ../send_message.php:37
-msgid "[AAE-ENSG] Un adhérent cherche à vous contacter"
+#: ../templates/bootstrap/liste_job.tpl:53
+msgid "Jobs"
 msgstr ""
 
 #: ../templates/bootstrap/aaecotiz.tpl:2
 msgid "Montants des cotisations"
+msgstr ""
+
+#: ../templates/bootstrap/send_message.tpl:15
+msgid "Message:"
 msgstr ""
 
 #: ../templates/bootstrap/aaecotiz.tpl:22 ../templates/default/aaecotiz.tpl:20
@@ -190,6 +206,10 @@ msgstr ""
 
 #: ../templates/default/aaecotiz.tpl:3
 msgid "Contribution process"
+msgstr ""
+
+#: ../templates/bootstrap/send_message.tpl:12
+msgid "Votre message sera précédé du message suivant :"
 msgstr ""
 
 #: ../templates/bootstrap/aaetools.tpl:6 ../templates/default/aaetools.tpl:6
@@ -243,12 +263,15 @@ msgstr ""
 msgid "Cycles managment"
 msgstr ""
 
-#: ../templates/bootstrap/gestion_formations.tpl:8 ../templates/bootstrap/ajouter_poste.tpl:71
-#: ../templates/default/gestion_formations.tpl:9
-msgid "End"
+#: ../templates/bootstrap/ajouter_cycle.tpl:17
+msgid "Cycle description"
 msgstr ""
 
-#: ../gestion_cycles.php:51
+#: ../gestion_cycles.php:45
+msgid "Cycle detail:"
+msgstr ""
+
+#: ../gestion_cycles.php:85
 msgid "Cycles managment:"
 msgstr ""
 
@@ -274,8 +297,8 @@ msgstr ""
 msgid "Period"
 msgstr ""
 
-#: ../templates/bootstrap/send_message.tpl:15
-msgid "Message:"
+#: ../gestion_cycles.php:27
+msgid "Cycle has been successfully added / modified."
 msgstr ""
 
 #: ../templates/bootstrap/voir_adherent_public.tpl:108
@@ -292,8 +315,9 @@ msgid "Add formation"
 msgstr ""
 
 #: ../templates/bootstrap/ajouter_formation_eleve.tpl:55 ../templates/bootstrap/aaetools.tpl:37
-#: ../templates/bootstrap/ajouter_poste.tpl:81 ../templates/bootstrap/ajouter_ent.tpl:22
-#: ../templates/default/ajouter_formation_eleve.tpl:55 ../templates/default/aaetools.tpl:37
+#: ../templates/bootstrap/ajouter_poste.tpl:81 ../templates/bootstrap/ajouter_cycle.tpl:22
+#: ../templates/bootstrap/ajouter_ent.tpl:22 ../templates/default/ajouter_formation_eleve.tpl:55
+#: ../templates/default/aaetools.tpl:37
 msgid "Save"
 msgstr ""
 
@@ -399,7 +423,7 @@ msgstr ""
 msgid "Please sign in to access search by name"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:193 ../templates/bootstrap/liste_membres_aae.tpl:152
+#: ../templates/bootstrap/liste_job.tpl:147 ../templates/bootstrap/liste_membres_aae.tpl:152
 msgid "Show"
 msgstr ""
 
@@ -408,7 +432,7 @@ msgid "Veuillez vous identifier pour obtenir le RIB, ou le demander à"
 msgstr ""
 
 #: ../templates/bootstrap/gestion_formations.tpl:5 ../templates/bootstrap/liste_membres_aae.tpl:69
-#: ../templates/bootstrap/gestion_cycles.tpl:5 ../templates/default/gestion_formations.tpl:6
+#: ../templates/bootstrap/gestion_cycles.tpl:7 ../templates/default/gestion_formations.tpl:6
 msgid "Cycle"
 msgstr ""
 
@@ -457,8 +481,8 @@ msgstr ""
 msgid "Send a message to"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:53
-msgid "Jobs"
+#: ../send_message.php:37
+msgid "[AAE-ENSG] Un adhérent cherche à vous contacter"
 msgstr ""
 
 #: ../templates/bootstrap/promotion.tpl:19 ../templates/default/liste_membres_aae.tpl:13
@@ -506,12 +530,12 @@ msgstr ""
 msgid "Go back"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:191 ../templates/bootstrap/liste_membres_aae.tpl:150
+#: ../templates/bootstrap/liste_job.tpl:145 ../templates/bootstrap/liste_membres_aae.tpl:150
 #: ../templates/bootstrap/promotion.tpl:52
 msgid "Next"
 msgstr ""
 
-#: ../templates/bootstrap/gestion_cycles.tpl:6
+#: ../templates/bootstrap/gestion_cycles.tpl:8
 msgid "Effectifs"
 msgstr ""
 
@@ -531,7 +555,7 @@ msgstr ""
 msgid "please create a member"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:194 ../templates/bootstrap/liste_membres_aae.tpl:153
+#: ../templates/bootstrap/liste_job.tpl:148 ../templates/bootstrap/liste_membres_aae.tpl:153
 msgid "Pages"
 msgstr ""
 
@@ -571,7 +595,7 @@ msgstr ""
 msgid "Geographic situation"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:78 ../templates/bootstrap/gestion_cycles.tpl:7
+#: ../templates/bootstrap/liste_job.tpl:78 ../templates/bootstrap/gestion_cycles.tpl:9
 msgid "Details"
 msgstr ""
 
@@ -621,6 +645,10 @@ msgstr ""
 msgid "Settings have been successfully modified."
 msgstr ""
 
+#: ../ajouter_cycle.php:54
+msgid "Unabled to add/modify the cycle"
+msgstr ""
+
 #: ../templates/bootstrap/liste_job.tpl:8 ../templates/bootstrap/liste_job.tpl:63
 #: ../templates/bootstrap/gestion_postes.tpl:6
 msgid "Entreprise"
@@ -647,7 +675,7 @@ msgstr ""
 msgid "students"
 msgstr ""
 
-#: ../templates/bootstrap/liste_job.tpl:190 ../templates/bootstrap/liste_membres_aae.tpl:149
+#: ../templates/bootstrap/liste_job.tpl:144 ../templates/bootstrap/liste_membres_aae.tpl:149
 #: ../templates/bootstrap/promotion.tpl:51
 msgid "Previous"
 msgstr ""
