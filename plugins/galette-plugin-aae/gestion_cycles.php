@@ -18,81 +18,63 @@ if ( !($login->isUp2Date() || $login->isAdmin() || $login->isStaff()) ) {
 }
 
 //restricted some features to Staff only
-$haveRights = ($login->isAdmin() || $login->isStaff());
-$tpl->assign('haveRights', $haveRights);
+$tpl->assign('haveRights', ($login->isAdmin() || $login->isStaff()));
 
 
-// on add cycle succes (from ajouter_cycle.php)
-if ( isset($session['cycle_ok'] )){
-	$success_detected[] = _T("Cycle has been successfully added / modified.");
-  $tpl->assign('success_detected', $success_detected);
-	unset($session['cycle_ok']);
+if (isset($error_detected)) {
+    $tpl->assign('error_detected', $error_detected);
+}
+if (isset($warning_detected)) {
+    $tpl->assign('warning_detected', $warning_detected);
 }
 
-//get action
 if (isset($_GET['action']))
 {
-  $action = $_GET['action'];
-  if ($action == "rm") {
+    $action = $_GET['action'];
+  if($action == "add"){
+    if (isset($_GET['nom'])){
+      $cycles->setCycle("",$_GET['nom']);
+    }
+
+  }elseif ($action == "rm") {
     if (isset($_GET['id_cycle'])){
       $cycles->removeCycle($_GET['id_cycle']);
     }
   }
 }
 
-//Cycle detail
-if (isset($_GET['cycle_detail'])){
-  $tpl->assign('page_title', _T("Cycle detail:"));
-
-  $id_cycle = $_GET['cycle_detail'];
-  $cycle = $cycles->getCycle($id_cycle);
-  $stat = $cycles->getCycleStatByYear($id_cycle);
-
-  $tpl->assign('id_cycle', $id_cycle);
-  $tpl->assign('cycle', $cycle);
-  $tpl->assign('stat', $stat);
-  //Set the path to the current plugin's templates,
-  //but backup main Galette's template path before
-  $orig_template_path = $tpl->template_dir;
-  $tpl->template_dir = 'templates/' . $preferences->pref_theme;
-
-  $content = $tpl->fetch('cycle_detail.tpl');
-  $tpl->assign('content', $content);
-
-  //Set path back to main Galette's template
-  $tpl->template_dir = $orig_template_path;
-  $tpl->display('public_page.tpl');
-
-}else{
-  //Recupération des cycles :
-  $all_cycles = array();
-  $tmp = $cycles->getAllCycles(!$haveRights);
-  foreach ($tmp as $key => $value) {
-    $all_cycles[$value['id_cycle']] = $value['nom'];
-  }
-  #var_dump($all_cycles);
-  #$all_cycles = $cycles->getAllCycles(false);
-  $tpl->assign('cycles', $all_cycles);
-  $cycles_stats = $cycles->getAllCyclesStats();
-  $tpl->assign('cycles_stats', $cycles_stats);
-  $cycles_stats_by_year = array();
-  foreach ($cycles_stats as $key => $value) {
-    $cycles_stats_by_year[$key] = $cycles->getCycleStatByYear($key);
-  }
-
-
-  $tpl->assign('cycles_stats_by_year', $cycles_stats_by_year);
-  $tpl->assign('page_title', _T("Cycles managment:"));
-
-  //Set the path to the current plugin's templates,
-  //but backup main Galette's template path before
-  $orig_template_path = $tpl->template_dir;
-  $tpl->template_dir = 'templates/' . $preferences->pref_theme;
-
-  $content = $tpl->fetch('gestion_cycles.tpl');
-  $tpl->assign('content', $content);
-
-  //Set path back to main Galette's template
-  $tpl->template_dir = $orig_template_path;
-  $tpl->display('public_page.tpl');
+//Recupération des cycles :
+$all_cycles = array();
+$tmp = $cycles->getAllCycles(false);
+foreach ($tmp as $key => $value) {
+  $all_cycles[$value['id_cycle']] = $value['nom'];
 }
+#var_dump($all_cycles);
+#$all_cycles = $cycles->getAllCycles(false);
+$tpl->assign('cycles', $all_cycles);
+$cycles_stats = $cycles->getAllCyclesStats();
+$tpl->assign('cycles_stats', $cycles_stats);
+$cycles_stats_by_year = array();
+foreach ($cycles_stats as $key => $value) {
+  $cycles_stats_by_year[$key] = $cycles->getCycleStatByYear($key);
+}
+$tpl->assign('cycles_stats_by_year', $cycles_stats_by_year);
+
+
+$tpl->assign('page_title', _T("Cycles managment:"));
+
+//Set the path to the current plugin's templates,
+//but backup main Galette's template path before
+$orig_template_path = $tpl->template_dir;
+$tpl->template_dir = 'templates/' . $preferences->pref_theme;
+
+$content = $tpl->fetch('gestion_cycles.tpl');
+$tpl->assign('content', $content);
+
+//Set path back to main Galette's template
+$tpl->template_dir = $orig_template_path;
+
+#if ($login->isAdmin() || $login->isStaff())
+#	$tpl->display('page.tpl');
+#else
+	$tpl->display('public_page.tpl');
