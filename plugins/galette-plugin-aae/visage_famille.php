@@ -31,7 +31,6 @@ if(($id_adh == '') || ( !$login->isUp2Date()) ){
 }
 $remonter = get_numeric_form_value('id_adh', 1) === 1 ? true : false;
 
-$visage = new Visage();
+$data = Visage::getDataByAdherent($id_adh, $remonter);
 
-$data = json_encode($visage->getDataByAdherent($id_adh, $remonter));
-echo $data;
+echo json_encode($data);

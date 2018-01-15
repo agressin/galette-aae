@@ -17,8 +17,9 @@ class Visage
 
    /**
     * Get visage data of one adherent
-    * IN : $adherent, $remonter if need to go back
-    * OUT : array with all data
+    * @param Integer $id_cible The $id_adh
+    * @param Boolean $remonter if need to go back
+    * @return Array with all data
     */
    public function getDataByAdherent($id_cible, $remonter)
     {
@@ -77,6 +78,7 @@ class Visage
      * Get parrains of specified adherent
      * @param $id_adh
      * @return parrains Adherent
+     * @deprecated a priori pas utile au final
      */
     public function getParrains($id_adh)
     {
@@ -106,6 +108,7 @@ class Visage
      * Get fillots of specified adherent
      * @param $id_adh
      * @return fillots Adherent
+     * @deprecated a priori pas utile au final
      */
     public function getFillots($id_adh)
     {
@@ -135,7 +138,7 @@ class Visage
      * Get attributs in key_value of specified adherent
      * @param  Adherent   $adherent
      * @return Array                 Adherent data
-     * @deprecated Voir en bas
+     * @deprecated Voir en bas, à priori plutot utiliser l'autre fonction
      */
     /*private function getAttributs(Adherent $adherent) {
 
@@ -226,7 +229,9 @@ class Visage
 
 
 
-
+/*
+Fonctions conservée pour avoir des exemples.
+ */
 
 
     /*Select the closest element of one other in a list with levhenstein distance
@@ -234,7 +239,7 @@ class Visage
    OUT : the closest element found
    COM : levhenstein was soon implemented in php*/
 
-   public function search_name_surname($researched_name_surname)
+   /*public function search_name_surname($researched_name_surname)
    {
       $req = explode(' ', $researched_name_surname);
       $count = count($req);
@@ -337,7 +342,7 @@ class Visage
    OUT : array
    */
 
-   public function getStudent($req)
+   /*public function getStudent($req)
     {
         global $zdb;
 
@@ -483,7 +488,7 @@ class Visage
          'f.id_cycle = c.' . Cycles::PK,
          array('nom'));*///*
 
-         $select->where->equalTo('a.id_adh', $id_adh);
+         /*$select->where->equalTo('a.id_adh', $id_adh);
 
          $res = $zdb->execute($select);
          $res = $res->toArray();
@@ -501,7 +506,7 @@ class Visage
          );
          return false;
       }
-   }
+   }*/
 
 }
 
