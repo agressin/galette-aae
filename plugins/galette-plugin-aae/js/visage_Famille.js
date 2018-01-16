@@ -182,7 +182,7 @@ class Famille {
 
 		// Gestion de l'historique :
 		if (histo) {
-			history.pushState(JSON.parse(JSON.stringify(data)), '', "arbre.php?ide={0}".format(data.cible.ide));
+			history.pushState(JSON.parse(JSON.stringify(data)), '', "visage.html?ide={0}".format(data.cible.ide));
 			window.onpopstate = function(event) {
 				//console.log(event);
 				that.reset();
@@ -226,6 +226,9 @@ class Famille {
 			that.draw();
 			$('#parentForm').addClass('active');
 			$(that.parentCanvas).removeClass('loading');
+			console.log(that);
+			console.log(that['eleves']);
+			console.log(that.cible.ide);
 			that.eleves[that.cible.ide].scrollTo(that.canvas, that.para);
 		});
 	}

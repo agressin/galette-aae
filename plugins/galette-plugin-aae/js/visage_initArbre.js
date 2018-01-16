@@ -11,8 +11,8 @@ $(document).ready(function() {
 			directParentCanvas : '#directParentCanvas',
 		},
 		url: {
-			str : 'like.php?str={0}',
-			graph : 'famille.php?ide={0}&remonter={1}',
+			str : 'visage_like.php?str={0}',
+			graph : 'visage_famille.php?id_adh={0}&remonter={1}',
 		}
 	});
 
