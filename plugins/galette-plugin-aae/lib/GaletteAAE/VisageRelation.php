@@ -6,7 +6,7 @@ use Analog\Analog as Analog;
 
 class VisageRelation
 {
-    const TABLE = 'visage_relations';
+    const TABLE = 'aae_visage_relation';
     const PK = 'id_relation';
 
 
@@ -19,14 +19,6 @@ class VisageRelation
     {
         global $zdb;
 
-        /*$sql = 'SELECT parrain FROM relation WHERE fillot = ' . $id_adh;
-        $request = $this->pdo->query($sql);
-        $parrainsIds = array();
-        while ($parrainId = $request->fetch()) {
-            $parrainsIds[] = $parrainId;
-        }
-        return $parrainsIds;*/
-
         try {
 
             $select = $zdb->sql->select();
@@ -35,11 +27,16 @@ class VisageRelation
                  array('r' => $table_relation)
             );
             $select->columns(array('parrain'));
-            $select->order('parrain');
-            $select->where->equalTo('fillot', $id_adh);
+            $select->where->equalTo('r.fillot', $id_adh);
+            //$select->order('parrain');
 
             $res = $zdb->execute($select);
-            $parrainsIds = $res->toArray();
+
+            $parrainsIds = [];
+            foreach ($res->toArray() as $parrain) {
+                $parrainsIds[] = $parrain['parrain'];
+            };
+            return $parrainsIds;
 
             return $parrainsIds;
 
@@ -62,14 +59,6 @@ class VisageRelation
     {
         global $zdb;
 
-        /*$sql = 'SELECT fillot FROM relation WHERE parrain = ' . $id_adh;
-        $request = $this->pdo->query($sql);
-        $fillotsIds = array();
-        while ($fillotId = $request->fetch()) {
-            $fillotsIds[] = $fillotId;
-        }
-        return $fillotsIds;*/
-
         try {
 
             $select = $zdb->sql->select();
@@ -78,12 +67,15 @@ class VisageRelation
                  array('r' => $table_relation)
             );
             $select->columns(array('fillot'));
-            $select->order('fillot');
-            $select->where->equalTo('parrain', $id_adh);
+            $select->where->equalTo('r.parrain', $id_adh);
+            //$select->order('fillot');
 
             $res = $zdb->execute($select);
-            $fillotsIds = $res->toArray();
 
+            $fillotsIds = [];
+            foreach ($res->toArray() as $fillot) {
+                $fillotsIds[] = $fillot['fillot'];
+            };
             return $fillotsIds;
 
         } catch (\Exception $e) {

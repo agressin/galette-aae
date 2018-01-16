@@ -6,11 +6,21 @@ use Analog\Analog as Analog;
 use Galette\Entity\Adherent as Adherent;
 //use Galette\Repository\Members as Members;
 
+
+require_once 'lib/GaletteAAE/Cycles.php';
+use Galette\AAE\Cycles as Cycles;
+require_once 'lib/GaletteAAE/Formations.php';
+use Galette\AAE\Formations as Formations;
+
 /**
  * Members Visage
  *
  * @category  Plugins
  */
+
+/*if ( ini_set( 'display_errors', '1' ) === false ) {
+    echo 'Unable to set display_errors.';
+}*/
 
 class Visage
 {
@@ -34,7 +44,7 @@ class Visage
 
         if ($cible->load($id_cible)) {
 
-            $data['cible'] = $this->getAttributs($id_cible);
+            $data['cible'] = Visage::getAttributs($id_cible);
 
             $eleves = [];
 
@@ -44,7 +54,7 @@ class Visage
                 $fillots = [];
                 foreach ($parrains as $parrain) {
                     $fillots = array_merge($fillots, VisageRelation::getParrainsIds($parrain));
-                    $eleves[$parrain] = $this->getAttributs($parrain);
+                    $eleves[$parrain] = Visage::getAttributs($parrain);
                 }
                 $parrains = $fillots;
             }
@@ -57,13 +67,13 @@ class Visage
                     $parrains = [];
                     foreach ($fillots as $fillot) {
                         $parrains = array_merge($parrains, VisageRelation::getFillotsIds($fillot));
-                        $eleves[$fillot] = $this->getAttributs($fillot);
+                        $eleves[$fillot] = Visage::getAttributs($fillot);
                     }
                     $fillots = $parrains;
                 }
             }
 
-            $eleves[$cible->getIde()] = $data['cible'];
+            $eleves[$id_cible] = $data['cible'];
 
             $data['success'] = true;
             $data['error'] = true;
@@ -133,49 +143,12 @@ class Visage
         }
     }
 
-
-    /**
-     * Get attributs in key_value of specified adherent
-     * @param  Adherent   $adherent
-     * @return Array                 Adherent data
-     * @deprecated Voir en bas, à priori plutot utiliser l'autre fonction
-     */
-    /*private function getAttributs(Adherent $adherent) {
-
-        global $zdb;
-
-        $data = [];
-
-        try {
-            $select = $zdb->select(Adherent::TABLE);
-            $select->where(Adherent::PK . ' = ' . $id);
-
-            $results = $zdb->execute($select);
-            $row = $results->current();
-            $data['ide'] = $row->id_adh;
-            $data['nom'] = ucfirst(mb_strtolower($row->nom_adh, 'UTF-8');
-            $data['prenom'] = ucfirst(mb_strtolower($row->prenom_adh, 'UTF-8');
-            $data['annee'] = 2015;
-            $data['has_picture'] => $adherent->hasPicture(),
-            $data['src'] => $adherent->hasPicture() ? 'TODO' : '';
-            $data['parrains'] => $adherent->getIde();
-            $data['fillots'] => $adherent->getIde();
-        } catch (\Exception $e) {
-            Analog::log(
-                'Cannot get attributs for member id=`' . $id . '` | ' . $e->getMessage(),
-                Analog::WARNING
-            );
-            return false;
-        }
-    }*/
-
-
     /**
      * Get attributs in key_value of specified adherent
      * @param  Adherent   $adherent
      * @return Array                 Adherent data
      */
-   public function getAttributs($id_adh)
+   public static function getAttributs($id_adh)
     {
         global $zdb;
 
@@ -188,7 +161,7 @@ class Visage
 
             $select->columns(array(Adherent::PK, 'id_adh', 'nom_adh', 'prenom_adh'));
 
-            $select->join(array('f' => Formations::getTableName()), 'f.id_adh = a.' . Adherent::PK, array('id_cycle','annee_debut'));
+            $select->join(array('f' => Formations::getTableName()), 'f.id_adh = a.' . Adherent::PK, array('id_cycle', 'annee_debut'));
 
             $select->join(array('c' => Cycles::getTableName()), 'f.id_cycle = c.' . Cycles::PK, array('nom'));
 
@@ -205,7 +178,7 @@ class Visage
                     'prenom' => $d['prenom_adh'],
                     'annee' => $d['annee_debut'],
                     'cycle' => $d['cycle'],
-                    'src' => false, // TODO
+                    'src' => 'icone/visage.jpg', // TODO
                     'parrains' => VisageRelation::getParrainsIds($d['id_adh']),
                     'fillots' => VisageRelation::getFillotsIds($d['id_adh'])
                 ];
@@ -213,9 +186,10 @@ class Visage
                 return false;
             }
         } catch (\Exception $e) {
+            print_r('Unable to retrieve attributs : "' . $id_adh .'" | ' . $e->getMessage());
             Analog::log(
                 'Unable to retrieve attributs : "' . $id_adh .'" | ' . $e->getMessage(),
-                Analog::WARNING
+                Analog::ERROR
             );
             return false;
         }

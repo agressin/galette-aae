@@ -4,7 +4,11 @@
  * Page to get family data of one adherent
  */
 
- ini_set('display_errors', 1);
+// En dev
+if ( ini_set( 'display_errors', '1' ) === false ) {
+    echo 'Unable to set display_errors.';
+}
+
 define('GALETTE_BASE_PATH', '../../');
 require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 
@@ -12,9 +16,11 @@ require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 require_once '_config.inc.php';
 
 require_once 'lib/GaletteAAE/Visage.php';
+require_once 'lib/GaletteAAE/VisageRelation.php';
 
 use Galette\Entity\Adherent as Adherent;
-use Galette\Entity\FieldsConfig;
+use Galette\AAE\Visage as Visage;
+use Galette\AAE\VisageRelation as VisageRelation;
 
 
 if ( !$login->isLogged() ) {
@@ -29,7 +35,7 @@ $id_adh = get_numeric_form_value('id_adh', '');
 if(($id_adh == '') || ( !$login->isUp2Date()) ){
 	$id_adh = $login->id;
 }
-$remonter = get_numeric_form_value('id_adh', 1) === 1 ? true : false;
+$remonter = get_numeric_form_value('remonter', false) === 'true' ? true : false;
 
 $data = Visage::getDataByAdherent($id_adh, $remonter);
 
