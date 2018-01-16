@@ -182,7 +182,7 @@ class Famille {
 
 		// Gestion de l'historique :
 		if (histo) {
-			history.pushState(JSON.parse(JSON.stringify(data)), '', "visage.html?ide={0}".format(data.cible.ide));
+			history.pushState(JSON.parse(JSON.stringify(data)), '', "visage.php?ide={0}".format(data.cible.ide));
 			window.onpopstate = function(event) {
 				//console.log(event);
 				that.reset();
