@@ -16,11 +16,8 @@ require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 require_once '_config.inc.php';
 
 require_once 'lib/GaletteAAE/Visage.php';
-require_once 'lib/GaletteAAE/VisageRelation.php';
 
-use Galette\Entity\Adherent as Adherent;
 use Galette\AAE\Visage as Visage;
-use Galette\AAE\VisageRelation as VisageRelation;
 
 
 if ( !$login->isLogged() ) {
