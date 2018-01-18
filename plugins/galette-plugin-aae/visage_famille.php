@@ -5,9 +5,9 @@
  */
 
 // En dev
-if ( ini_set( 'display_errors', '1' ) === false ) {
+/*if ( ini_set( 'display_errors', '1' ) === false ) {
     echo 'Unable to set display_errors.';
-}
+}*/
 
 define('GALETTE_BASE_PATH', '../../');
 require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
@@ -31,12 +31,29 @@ if ( !$login->isLogged() ) {
 //$AAE_Pref = new AAE_Preferences();
 //$tpl->assign('AAE_Pref', $AAE_Pref);
 
-$id_adh = get_numeric_form_value('id_adh', '');
-if(($id_adh == '') || ( !$login->isUp2Date()) ){
+
+// Recup id_adh
+$id_adh = false;
+if (isset($_GET["id_adh"])) {
+	$row = $_GET["id_adh"];
+	if (ctype_digit($row)) {
+		$id_adh = intval($row);
+	}
+}
+
+// Validation $id_adh
+if (($id_adh == false) || ( $login->isUp2Date()) ){
 	$id_adh = $login->id;
 }
-$remonter = get_numeric_form_value('remonter', false) === 'true' ? true : false;
+
+// Recup remonter
+$remonter = false;
+if (isset($_GET["remonter"]) && $_GET["remonter"] == 'true') {
+	$remonter = true;
+}
 
 $data = Visage::getDataByAdherent($id_adh, $remonter);
+
+header('Content-Type: application/json');
 
 echo json_encode($data);

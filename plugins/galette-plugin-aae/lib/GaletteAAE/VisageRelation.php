@@ -34,7 +34,7 @@ class VisageRelation
 
             $parrainsIds = [];
             foreach ($res->toArray() as $parrain) {
-                $parrainsIds[] = $parrain['parrain'];
+                $parrainsIds[] = intval($parrain['parrain']);
             };
             return $parrainsIds;
 
@@ -74,7 +74,7 @@ class VisageRelation
 
             $fillotsIds = [];
             foreach ($res->toArray() as $fillot) {
-                $fillotsIds[] = $fillot['fillot'];
+                $fillotsIds[] = intval($fillot['fillot']);
             };
             return $fillotsIds;
 

@@ -121,8 +121,8 @@ class Famille {
 			$.ajax({
 				url : this.options.url.graph.format(ide, remonter),
 				type : 'GET',
-				success : function(json) {
-					var data = JSON.parse(json);
+				success : function(data) {
+					//var data = JSON.parse(json);
 					// On va afficher le graph
 					if (data.success === true) {
 						that.loadEnd(data, true);
@@ -226,9 +226,6 @@ class Famille {
 			that.draw();
 			$('#parentForm').addClass('active');
 			$(that.parentCanvas).removeClass('loading');
-			console.log(that);
-			console.log(that['eleves']);
-			console.log(that.cible.ide);
 			that.eleves[that.cible.ide].scrollTo(that.canvas, that.para);
 		});
 	}
@@ -432,25 +429,30 @@ class Famille {
 				$('#popoverTitle').html('{0} {1} ({2})'.format(eleve.prenom, eleve.nom, eleve.annee));
 
 				// I-2) Informations
-				var lienProfil = '#lien{0}'.format(eleve.ide); // TODO
+				
+				var lienContacter = 'http://adherents.aae-ensg.eu/plugins/galette-plugin-aae/send_message.php?id_adh={0}'.format(eleve.ide);
+				//var lienProfil = '#lien{0}'.format(eleve.ide);
 				var table = $('<table/>');
 				var line = $('<tr/>').appendTo(table);
 				var imageContainer = $('<td/>', {addClass: 'image-container center-align'}).appendTo(line);
 				var infoContainer = $('<td/>', {addClass: 'profil-container'}).appendTo(line);
 				var image = $('<img/>', {src: eleve.src}).appendTo(imageContainer);
-				$('<p/>', {html: '{0} {1}'.format(eleve.prenom, eleve.nom), addClass: 'identite'}).appendTo(infoContainer);
+				//$('<p/>', {html: '{0} {1}'.format(eleve.prenom, eleve.nom), addClass: 'identite'}).appendTo(infoContainer);
 				$('<p/>', {html: 'Promotion : {0}'.format(eleve.annee), addClass: 'promotion'}).appendTo(infoContainer);
-				$('<p/>', {html: 'Mail : <a href="mailto:{0}">{0}</a>'.format(eleve.mail||'toto@tata.fr'), addClass: 'promotion'}).appendTo(infoContainer);
-				$('<a/>', {href: lienProfil, html: 'Consulter le profil AAE', addClass: 'display-block big-screen', target: '_blank'}).appendTo(infoContainer);
-				$('<a/>', {href: '#', 'data-ide': eleve.ide, html: 'Voir l\'arbre', addClass: 'show-graph display-block big-screen'}).click(function() {
+				//$('<p/>', {html: 'Mail : <a href="mailto:{0}">{0}</a>'.format(eleve.mail||'toto@tata.fr'), addClass: 'promotion'}).appendTo(infoContainer);
+				$('<a/>', {href: lienContacter, html: 'Contacter', addClass: 'display-block big-screen', target: '_blank'}).appendTo(infoContainer);
+				//$('<a/>', {href: lienProfil, html: 'Consulter le profil AAE', addClass: 'display-block big-screen', target: '_blank'}).appendTo(infoContainer);
+				$('<a/>', {href: '#', 'data-ide': eleve.ide, html: 'Voir l\'arbre', addClass: 'show-graph display-block big-screen'}).click(function(event) {
+					event.preventDefault();
 					that.load($(this).data('ide'));
 				}).appendTo(infoContainer);
 				// Other lines for litte screens :
-				var openProfil = $('<a/>', {href: lienProfil, html: 'Consulter le profil AAE', addClass: 'display-block center-align', target: '_blank'});
+				//var openProfil = $('<a/>', {href: lienProfil, html: 'Consulter le profil AAE', addClass: 'display-block center-align', target: '_blank'});
 				var openGraph = $('<a/>', {href: '#', 'data-ide': eleve.ide, html: 'Voir l\'arbre', addClass: 'show-graph display-block center-align'}).click(function() {
+					event.preventDefault();
 					that.load($(this).data('ide'));
 				});
-				$('<tr/>', {html: $('<td/>', {html: openProfil, colspan: 2}), addClass: 'little-screen cente'}).appendTo(table);
+				//$('<tr/>', {html: $('<td/>', {html: openProfil, colspan: 2}), addClass: 'little-screen cente'}).appendTo(table);
 				$('<tr/>', {html: $('<td/>', {html: openGraph, colspan: 2}), addClass: 'little-screen cente'}).appendTo(table);
 				$('#popoverContent').empty().append(table);
 

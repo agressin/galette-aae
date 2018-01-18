@@ -49,27 +49,27 @@ class Visage
             $eleves = [];
 
             // On descend :
-            $parrains = VisageRelation::getFillotsIds($id_cible);
-            while (count($parrains) > 0) {
-                $fillots = [];
-                foreach ($parrains as $parrain) {
-                    $fillots = array_merge($fillots, VisageRelation::getParrainsIds($parrain));
-                    $eleves[$parrain] = Visage::getAttributs($parrain);
+            $fillotsIDs = VisageRelation::getFillotsIds($id_cible);
+            while (count($fillotsIDs) > 0) {
+                $newFillotsIDs = [];
+                foreach ($fillotsIDs as $fillotID) {
+                    $newFillotsIDs = array_merge($newFillotsIDs, VisageRelation::getFillotsIds($fillotID));
+                    $eleves[$fillotID] = Visage::getAttributs($fillotID);
                 }
-                $parrains = $fillots;
+                $fillotsIDs = $newFillotsIDs;
             }
 
             // On remonte ?
             if ($remonter === true) {
 
-                $fillots = VisageRelation::getParrainsIds($id_cible);
-                while (count($fillots) > 0) {
-                    $parrains = [];
-                    foreach ($fillots as $fillot) {
-                        $parrains = array_merge($parrains, VisageRelation::getFillotsIds($fillot));
-                        $eleves[$fillot] = Visage::getAttributs($fillot);
+                $parrainsIDs = VisageRelation::getParrainsIds($id_cible);
+                while (count($parrainsIDs) > 0) {
+                    $newParrainsIDs = [];
+                    foreach ($parrainsIDs as $parrainID) {
+                        $newParrainsIDs = array_merge($newParrainsIDs, VisageRelation::getParrainsIds($parrainID));
+                        $eleves[$parrainID] = Visage::getAttributs($parrainID);
                     }
-                    $fillots = $parrains;
+                    $parrainsIDs = $newParrainsIDs;
                 }
             }
 
@@ -173,12 +173,11 @@ class Visage
             if ( count($res) == 1 ) {
                 $d = $res[0];
                 return [
-                    'ide' => $d['id_adh'],
+                    'ide' => intval($d['id_adh']),
                     'nom' => $d['nom_adh'],
                     'prenom' => $d['prenom_adh'],
                     'annee' => $d['annee_debut'],
-                    'cycle' => $d['cycle'],
-                    'src' => 'icone/visage.jpg', // TODO
+                    'src' => sprintf('../../picture.php?id_adh=%d&rand=', $d['id_adh']),
                     'parrains' => VisageRelation::getParrainsIds($d['id_adh']),
                     'fillots' => VisageRelation::getFillotsIds($d['id_adh'])
                 ];
