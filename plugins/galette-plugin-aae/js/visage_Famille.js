@@ -53,32 +53,29 @@ class Famille {
 				if (str.length >= 2) {
 					$.ajax({
 						url : that.options.url.str.format(str),
-						success : function(json) {
+						success : function(data) {
 							$(this).data('n', 0);
-							if (json != '') {
-								// Code HTML
-								var data = JSON.parse(json);
-								if (data.success) {
-									var html = $('');
-									if (data.elements.length > 0) {
-										$.each(data.elements, function() {
-											var li = $('<li/>', {'data-ide': this.ide, html: $('<span/>', {html: '{0} {1}'.format(this.prenom, this.nom)})});
-											html = html.add(li);
-										});
-									} else {
-										html = $('<li/>', {addClass: 'collection-item', html: 'Aucun résultat.'});
-									}
+							if (data && 'success' in data && data.success) {
+								var html = $('');
+								if (data.elements.length > 0) {
+									$.each(data.elements, function() {
+										var li = $('<li/>', {'data-ide': this.ide, html: $('<span/>', {html: '{0} {1}'.format(this.prenom, this.nom)})});
+										html = html.add(li);
+									});
 								} else {
-									html = $('<li/>', {addClass: 'collection-item', html: 'Erreur. Aucun résultat.'});
+									html = $('<li/>', {addClass: 'collection-item', html: 'Aucun résultat.'});
 								}
-								$('#str-results').html(html);
+							} else {
+								html = $('<li/>', {addClass: 'collection-item', html: 'Erreur. Aucun résultat.'});
+							}
+							$('#str-results').html(html);
 
-								// Affichage et event
-								$('#str-results').fadeIn();
-								$('#str-results li').click(function() {
-									that.load($(this).data('ide'));
-								});
-							} else {$('#str-results').hide();}
+							// Affichage et event
+							$('#str-results').fadeIn();
+							$('#str-results li').click(function() {
+								that.load($(this).data('ide'));
+							});
+							//} else {$('#str-results').hide();}
 						}
 					});
 				} else {$('#str-results').hide();}
@@ -172,7 +169,17 @@ class Famille {
 		that.ready = true;
 
 		that.cible = data.cible;
-		that.eleves = data.eleves;
+		that.eleves = {};
+
+		for (var ide in data.eleves) {
+			if (data.eleves.hasOwnProperty(ide)) {
+				if (data.eleves[ide]) {
+					that.eleves[ide] = data.eleves[ide];
+				} else {
+					console.log("id_adh={0}".format(ide));
+				}
+			}
+		}
 
 		that.objectOriented();
 		that.afficher();
@@ -426,7 +433,7 @@ class Famille {
 				// I - Ajout des info
 
 				// I-1) Titre
-				$('#popoverTitle').html('{0} {1} ({2})'.format(eleve.prenom, eleve.nom, eleve.annee));
+				$('#popoverTitle').html('{0} {1} ({2})'.format(eleve.prenom, eleve.nom.capitalize(), eleve.annee));
 
 				// I-2) Informations
 				

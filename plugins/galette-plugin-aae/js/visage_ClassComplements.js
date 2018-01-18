@@ -64,19 +64,29 @@ CanvasRenderingContext2D.prototype.drawCircle = function(x, y, d) {
 
 String.prototype.format = String.prototype.format ||
 function () {
-    "use strict";
-    var str = this.toString();
-    if (arguments.length) {
-        var t = typeof arguments[0];
-        var key;
-        var args = ("string" === t || "number" === t) ?
-            Array.prototype.slice.call(arguments)
-            : arguments[0];
+	"use strict";
+	var str = this.toString();
+	if (arguments.length) {
+		var t = typeof arguments[0];
+		var key;
+		var args = ("string" === t || "number" === t) ?
+			Array.prototype.slice.call(arguments)
+			: arguments[0];
 
-        for (key in args) {
-            str = str.replace(new RegExp("\\{" + key + "\\}", "gi"), args[key]);
-        }
-    }
+		for (key in args) {
+			str = str.replace(new RegExp("\\{" + key + "\\}", "gi"), args[key]);
+		}
+	}
 
-    return str;
+	return str;
+};
+
+String.prototype.capitalize = function() {
+	var str = this.toLowerCase();
+	return str.replace( /(^|[\s-])([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } );
+};
+
+String.prototype.limit = function(length) {
+	var length = length || 15;
+	return this.length > length ? '{0}...'.format(this.substring(0, length)) : this;
 };

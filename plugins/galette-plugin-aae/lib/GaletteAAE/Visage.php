@@ -166,6 +166,11 @@ class Visage
             $select->join(array('c' => Cycles::getTableName()), 'f.id_cycle = c.' . Cycles::PK, array('nom'));
 
             $select->where->equalTo('a.id_adh', $id_adh);
+            $select->where->equalTo('c.nom', 'IT'); // TODO quand y'aura les géomètres...
+            $select->where->notEqualTo('f.annee_debut', 0);
+
+            $select->order('f.annee_debut');
+            $select->limit(1);
 
             $res = $zdb->execute($select);
             $res = $res->toArray();

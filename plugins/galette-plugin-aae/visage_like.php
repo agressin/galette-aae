@@ -1,5 +1,5 @@
 <?php /*TODO*/ ?>
-<?
+<?php
 
 header('Content-Type: application/json');
 

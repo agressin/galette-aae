@@ -339,7 +339,8 @@ class Eleve {
 		// Draw eleve : image arrondie
 		ctx.drawRoundedSquareCenteredImage(that.image, that.getX(para, -para.w / 2), that.getY(para, -para.w / 2), para.w, (para.w / 2) * 1.1);
 		// Draw eleve : prenom
-		ctx.fillText('{0} {1}'.format(that.prenom, that.nom), that.getX(para), that.getY(para, para.w / 2 + para.fontSize));
+		var name = that.prenom.limit(12) + ' ' + that.nom.limit(12).capitalize();
+		ctx.fillText(name, that.getX(para), that.getY(para, para.w / 2 + para.fontSize));
 	}
 
 	drawRelations(ctx, para, eleves) {
