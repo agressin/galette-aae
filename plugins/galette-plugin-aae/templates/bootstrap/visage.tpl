@@ -33,7 +33,12 @@
 		<div id="parentForm" class="">
 			<div id="formEleve">
 
-				<h3 class="red-text text-darken-4 center-align">Visage</h3>
+				<!--h3 class="red-text text-darken-4 center-align">Visage</h3-->
+				<div id="logo">
+					<a href="{$galette_base_path}" title="Retourer sur le site AAE-ENSG">
+						<img src="icone/logo_visage.png">
+					</a>
+				</div>
 
 				<p class="input-field">
 					<input type="text" value="" id="str" name="str" data-n="0" data-ide="true" />

@@ -59,6 +59,11 @@ body {
 	padding: 15px;
 }
 
+#formEleve #logo img {
+	max-width: 240px;
+	margin-bottom: 15px;
+}
+
 #parentForm:not(.active) #export-small-screen {display: none !important;}
 #parentForm:not(.active) #export-large-screen {display: none !important;}
 
