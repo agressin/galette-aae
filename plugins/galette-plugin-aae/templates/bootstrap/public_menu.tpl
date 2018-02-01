@@ -22,6 +22,10 @@
 				<a href="{$galette_base_path}{$aaetools_path}liste_job.php" class="btn {if !$login->isUp2Date()}disabled{/if}" >{_T string="Jobs list"}</a>
 
 			</li>
+			<li class="page_item">
+				<a href="{$galette_base_path}{$aaetools_path}visage.php" class="btn {if !$login->isUp2Date()}disabled{/if}" >{_T string="Visage"}</a>
+
+			</li>
 		</ul>
 	</li>
 	<li class="{if $PAGENAME eq "aaecotiz.php"}current_{/if}page_item">
