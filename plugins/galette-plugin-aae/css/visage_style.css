@@ -59,6 +59,7 @@ body {
 	padding: 15px;
 }
 
+#formEleve #logo {text-align: center;}
 #formEleve #logo img {
 	max-width: 240px;
 	margin-bottom: 15px;
