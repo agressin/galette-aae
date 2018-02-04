@@ -28,7 +28,7 @@ if ( ini_set( 'display_errors', '1' ) === false ) {
 // Recup str
 $str = '';
 if (isset($_GET["str"])) {
-	$str = $_GET["str"];
+	$str = substr($_GET["str"], 0, 12); // 12
 }
 
 $elements = Visage::like($str);

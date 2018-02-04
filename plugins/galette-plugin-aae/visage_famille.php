@@ -35,14 +35,14 @@ if ( !$login->isLogged() ) {
 // Recup id_adh
 $id_adh = false;
 if (isset($_GET["id_adh"])) {
-	$row = $_GET["id_adh"];
-	if (ctype_digit($row)) {
-		$id_adh = intval($row);
+	$raw = $_GET["id_adh"];
+	if (ctype_digit($raw)) {
+		$id_adh = intval($raw);
 	}
 }
 
 // Validation $id_adh
-if (($id_adh == false) || ( $login->isUp2Date()) ){
+if (($id_adh == false) || ( !$login->isUp2Date()) ){
 	$id_adh = $login->id;
 }
 
