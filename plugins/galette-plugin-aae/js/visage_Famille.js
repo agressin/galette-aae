@@ -118,8 +118,13 @@ class Famille {
 			$.ajax({
 				url : this.options.url.graph.format(ide, remonter),
 				type : 'GET',
-				success : function(data) {
-					//var data = JSON.parse(json);
+				success : function(json) {
+					var data;
+					if (typeof json == 'string') {
+						data = JSON.parse(json);
+					} else {
+						data = json;
+					}
 					// On va afficher le graph
 					if (data.success === true) {
 						that.loadEnd(data, true);
@@ -138,7 +143,12 @@ class Famille {
 					url : this.options.url.str.format(str),
 					type : 'GET',
 					success : function(json) {
-						var data = JSON.parse(json);
+						var data;
+						if (typeof json == 'string') {
+							data = JSON.parse(json);
+						} else {
+							data = json;
+						}
 						var html = $('<li/>', {addClass: 'collection-item', html: 'Erreur. Aucun résultat.'});
 						if (data.success) {
 							html = $('<li/>', {'addClass': 'collection-header', html: $('<h4/>', {html: '{0} résultat{1}'.format(data.elements.length, data.elements.length > 1 ? 's' : '')})});
